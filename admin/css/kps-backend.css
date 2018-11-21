@@ -1,0 +1,240 @@
+/*
+ * JavaScript für KPS
+ *
+ * @author 		Alexander Ott
+ * @copyright 	2018
+ * @email 		kps@nirus-online.de
+ *
+ * All rights reserved
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+ * Dieses Programm ist Freie Software: Sie können es unter den Bedingungen
+ * der GNU General Public License, wie von der Free Software Foundation,
+ * Version 3 der Lizenz oder (nach Ihrer Wahl) jeder neueren
+ * veröffentlichten Version, weiterverbreiten und/oder modifizieren.
+
+ * Dieses Programm wird in der Hoffnung, dass es nützlich sein wird, aber
+ * OHNE JEDE GEWÄHRLEISTUNG, bereitgestellt; sogar ohne die implizite
+ * Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
+ * Siehe die GNU General Public License für weitere Details.
+
+ * Sie sollten eine Kopie der GNU General Public License zusammen mit diesem
+ * Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
+ */
+
+/* ====== Floating ======  */
+#kps {
+	clear: both;
+}
+
+/* ====== Pagination ======  */
+#kps .tablenav .tablenav-pages a {
+	display: inline;
+	padding: 2px 6px 5px 6px;
+    font-size: 16px;
+	margin-left: 4px;
+}
+
+#kps .tablenav .tablenav-pages span.current {
+	display: inline;
+	padding: 2px 6px 5px 6px;
+	margin-left: 4px;
+	border: 1px solid #ccc;
+    background-color: rgba(253, 253, 253, 1);
+	font-size: 16px;
+	line-height: 1;
+}
+
+#kps .tablenav .tablenav-pages span.dots {
+	margin-left: 4px;
+}
+
+/* ====== Tabellen ======  */
+#kps .kps-divTable{
+	display: table;
+}
+#kps .kps-divTableRow {
+	display: table-row;
+}
+#kps .kps-divTableHeading {
+	display: table-header-group;
+}
+#kps .kps-divTableCell, .divTableHead {
+	display: table-cell;
+	padding: 3px 10px;
+    vertical-align: middle;
+}
+#kps .kps-divTableHeading {
+	display: table-header-group;
+	font-weight: bold;
+}
+#kps .kps-divTableFoot {
+	display: table-footer-group;
+}
+#kps .kps-divTableBody {
+	display: table-row-group;
+}
+
+/* ====== Listen ======  */
+#kps .ul .ul-square {
+    margin-left: 1.8em;
+    list-style: square;
+}
+
+/* ====== Tabellen Listen ======  */
+
+#kps .table {
+    width: 100%;
+    }
+#kps .table_list {
+    width: 100%;
+    }
+
+#kps .th_list_top {
+    background-color: rgba(241, 214, 173, 1);
+    border-bottom: 1px solid #3C3C3C;
+    vertical-align: middle;
+    padding: 3px 3px 3px 3px;
+    text-align: center;
+    font-weight: bold;
+    }
+
+#kps .th_list_bottom {
+    background-color: rgba(241, 214, 173, 1);
+    vertical-align: middle;
+    padding: 3px 3px 3px 3px;
+    text-align: center;
+    font-weight: bold;
+    }
+
+#kps .tr_list, .td_list {
+    padding: 4px 4px 4px 4px;
+    border-bottom: 1px solid #3C3C3C;
+    vertical-align: top;
+}
+
+#kps .tr_list_child:nth-child(even) {
+    background-color: rgba(221, 221, 221, 1);
+}
+
+/* ====== Tabs ======  */
+#kps form.kps_options {
+    display: none;
+}
+#kps form.kps_options.active {
+    display: block;
+}
+
+/* ====== Container ======  */
+#kps .kps_container {
+    padding: 0px 3px 15px 3px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 1px solid #3C3C3C;
+}
+
+/* ====== Linie Horizontal ======  */
+#kps .hr {
+    border: 0;
+    height: 0;
+    color: #3C3C3C;
+    border-top: 2px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ====== Eingabefeld ======  */
+#kps .form_num {
+    display: inline-block;
+    box-sizing: content-box;
+    border-radius: 3px;
+    vertical-align: middle;
+    color: rgba(55, 75, 108, 1);
+    letter-spacing: 1px;
+    font-size: 13px;
+    padding: 3px 3px 3px 3px;
+    position: relative;
+    text-align: right;
+    width: 50px;
+}
+
+#kps .form_field {
+    display: inline-block;
+    border: 1px solid #3C3C3C;
+    box-sizing: content-box;
+    border-radius: 3px;
+    vertical-align: middle;
+    color: rgba(55, 75, 108, 1);
+    letter-spacing: 1px;
+    font-size: 13px;
+    padding: 3px 3px 3px 3px;
+    width: 250px;
+    position: relative;
+}
+
+#kps form {
+    width: auto;
+    margin: auto;
+}
+
+#kps textarea {
+    resize: none;
+    background-color: white;
+    border: 1px solid #3C3C3C;
+    border-radius: 3px;
+    padding: 3px 3px 3px 3px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 13px;
+    width: 500px;
+    min-height: 400px;
+}
+
+/* ====== Labels ======  */
+#kps .labelCheckbox {
+    vertical-align: bottom
+}
+
+/* ====== Fehlermeldung Glowing ======  */
+#kps input[type="checkbox"] {
+    background-color: #8cad2d;
+    display: block;
+    content: "";
+    float: left;
+}
+
+/* ====== Verticaler Text ======  */
+#kps .kps-vert-text {
+    writing-mode: vertical-rl;
+    vertical-align: middle;
+    text-align: left;
+    font-weight: 500;
+    word-break: break-word;
+    height: inherit;
+    width: inherit;
+}
+
+/* ====== Formularinfo ======  */
+#kps .kps-form-info {
+    font-size: 90%;
+}
+
+/* ====== Zeilenumbruch ======  */
+#kps .kps-br {
+    content: "&#160;";
+    margin: 2em;
+    display: block;
+    font-size: 30%;
+}
