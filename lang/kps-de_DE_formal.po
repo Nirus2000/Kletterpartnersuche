@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kletterpartner-Suche\n"
-"POT-Creation-Date: 2018-10-14 19:04+0200\n"
-"PO-Revision-Date: 2018-10-14 19:04+0200\n"
+"POT-Creation-Date: 2018-11-21 09:35+0100\n"
+"PO-Revision-Date: 2018-11-21 09:35+0100\n"
 "Last-Translator: Alexander Ott <kps@nirus-online.de>\n"
 "Language-Team: Alexander Ott\n"
 "Language: de_DE@formal\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -57,8 +57,8 @@ msgstr "Kletterpartner-Suche"
 msgid "Übersicht"
 msgstr "Übersicht"
 
-#: admin/kps-agb.php:116 admin/kps-agb.php:212 admin/kps-design.php:179
-#: admin/kps-design.php:473 admin/kps-design.php:673 admin/kps-email.php:190
+#: admin/kps-agb.php:116 admin/kps-agb.php:212 admin/kps-design.php:186
+#: admin/kps-design.php:480 admin/kps-design.php:680 admin/kps-email.php:190
 #: admin/kps-email.php:469 admin/kps-email.php:750 admin/kps-email.php:1010
 #: admin/kps-entries.php:377 admin/kps-entries.php:390
 #: admin/kps-entries.php:403 admin/kps-entries.php:416
@@ -101,8 +101,8 @@ msgstr ""
 msgid "Auswahl"
 msgstr "Auswahl"
 
-#: admin/kps-agb.php:162 admin/kps-agb.php:255 admin/kps-design.php:390
-#: admin/kps-design.php:594 admin/kps-design.php:788 admin/kps-email.php:300
+#: admin/kps-agb.php:162 admin/kps-agb.php:255 admin/kps-design.php:397
+#: admin/kps-design.php:601 admin/kps-design.php:795 admin/kps-email.php:300
 #: admin/kps-email.php:578 admin/kps-email.php:857 admin/kps-email.php:1133
 #: admin/kps-privacy.php:200 admin/kps-privacy.php:314
 #: admin/kps-settings.php:462 admin/kps-settings.php:659
@@ -135,24 +135,28 @@ msgstr ""
 msgid "DSGVO"
 msgstr "DSGVO"
 
-#: admin/kps-design.php:73 admin/kps-design.php:179
+#: admin/kps-design.php:73
+msgid "Shortcodes"
+msgstr "Shortcodes"
+
+#: admin/kps-design.php:76 admin/kps-design.php:186
 msgid "Icons"
 msgstr "Icons"
 
-#: admin/kps-design.php:76 admin/kps-design.php:473
+#: admin/kps-design.php:79 admin/kps-design.php:480
 msgid "Legende"
 msgstr "Legende"
 
-#: admin/kps-design.php:79 admin/kps-design.php:673
+#: admin/kps-design.php:82 admin/kps-design.php:680
 msgid "Widget"
 msgstr "Widget"
 
-#: admin/kps-design.php:169
+#: admin/kps-design.php:176
 msgid "Keine Icons ausgewählt"
 msgstr "Keine Icons ausgewählt"
 
-#: admin/kps-design.php:192 admin/kps-design.php:484 admin/kps-design.php:498
-#: admin/kps-design.php:684 admin/kps-design.php:698 admin/kps-email.php:201
+#: admin/kps-design.php:199 admin/kps-design.php:491 admin/kps-design.php:505
+#: admin/kps-design.php:691 admin/kps-design.php:705 admin/kps-email.php:201
 #: admin/kps-email.php:215 admin/kps-email.php:480 admin/kps-email.php:494
 #: admin/kps-email.php:761 admin/kps-email.php:775 admin/kps-email.php:1021
 #: admin/kps-email.php:1035 admin/kps-settings.php:333
@@ -165,7 +169,7 @@ msgstr "Keine Icons ausgewählt"
 msgid "Fehler"
 msgstr "Fehler"
 
-#: admin/kps-design.php:205 admin/kps-design.php:511 admin/kps-design.php:711
+#: admin/kps-design.php:212 admin/kps-design.php:518 admin/kps-design.php:718
 #: admin/kps-email.php:228 admin/kps-email.php:507 admin/kps-email.php:788
 #: admin/kps-email.php:1048 admin/kps-privacy.php:157 admin/kps-privacy.php:274
 #: admin/kps-settings.php:357 admin/kps-settings.php:567
@@ -175,85 +179,9 @@ msgstr "Fehler"
 msgid "Fehler: Token ungültig"
 msgstr "Fehler: Token ungültig"
 
-#: admin/kps-design.php:235 admin/kps-design.php:535 admin/kps-design.php:734
+#: admin/kps-design.php:242 admin/kps-design.php:542 admin/kps-design.php:741
 msgid "Keine Transparenz"
 msgstr "Keine Transparenz"
-
-#: admin/kps-design.php:240 admin/kps-design.php:253 admin/kps-design.php:266
-#: admin/kps-design.php:279 admin/kps-design.php:292 admin/kps-design.php:305
-#: admin/kps-design.php:324 admin/kps-design.php:337 admin/kps-design.php:350
-#: admin/kps-design.php:363 admin/kps-design.php:376 admin/kps-design.php:540
-#: admin/kps-design.php:553 admin/kps-design.php:572 admin/kps-design.php:739
-#: admin/kps-design.php:752 admin/kps-design.php:771
-#: classes/kps-entries.php:434 frontend/kps-entries.php:205
-#: frontend/kps-form.php:535
-msgid "Halle"
-msgstr "Halle"
-
-#: admin/kps-design.php:241 admin/kps-design.php:254 admin/kps-design.php:267
-#: admin/kps-design.php:280 admin/kps-design.php:293 admin/kps-design.php:306
-#: admin/kps-design.php:325 admin/kps-design.php:338 admin/kps-design.php:351
-#: admin/kps-design.php:364 admin/kps-design.php:377 admin/kps-design.php:541
-#: admin/kps-design.php:554 admin/kps-design.php:573 admin/kps-design.php:740
-#: admin/kps-design.php:753 admin/kps-design.php:772
-#: classes/kps-entries.php:439 frontend/kps-entries.php:206
-#: frontend/kps-form.php:536
-msgid "Klettern"
-msgstr "Klettern"
-
-#: admin/kps-design.php:242 admin/kps-design.php:255 admin/kps-design.php:268
-#: admin/kps-design.php:281 admin/kps-design.php:294 admin/kps-design.php:307
-#: admin/kps-design.php:326 admin/kps-design.php:339 admin/kps-design.php:352
-#: admin/kps-design.php:365 admin/kps-design.php:378 admin/kps-design.php:542
-#: admin/kps-design.php:555 admin/kps-design.php:574 admin/kps-design.php:741
-#: admin/kps-design.php:754 admin/kps-design.php:773
-#: classes/kps-entries.php:449 frontend/kps-entries.php:207
-msgid "Wandern/Trekking"
-msgstr "Wandern/Trekking"
-
-#: admin/kps-design.php:243 admin/kps-design.php:256 admin/kps-design.php:269
-#: admin/kps-design.php:282 admin/kps-design.php:295 admin/kps-design.php:308
-#: admin/kps-design.php:327 admin/kps-design.php:340 admin/kps-design.php:353
-#: admin/kps-design.php:366 admin/kps-design.php:379 admin/kps-design.php:543
-#: admin/kps-design.php:556 admin/kps-design.php:575 admin/kps-design.php:742
-#: admin/kps-design.php:755 admin/kps-design.php:774
-#: classes/kps-entries.php:444 frontend/kps-entries.php:208
-#: frontend/kps-form.php:538
-msgid "Reisen"
-msgstr "Reisen"
-
-#: admin/kps-design.php:244 admin/kps-design.php:257 admin/kps-design.php:270
-#: admin/kps-design.php:283 admin/kps-design.php:296 admin/kps-design.php:309
-#: admin/kps-design.php:328 admin/kps-design.php:341 admin/kps-design.php:354
-#: admin/kps-design.php:367 admin/kps-design.php:380 admin/kps-design.php:544
-#: admin/kps-design.php:557 admin/kps-design.php:576 admin/kps-design.php:743
-#: admin/kps-design.php:756 admin/kps-design.php:775
-#: classes/kps-entries.php:475 frontend/kps-entries.php:209
-#: frontend/kps-form.php:546
-msgid "Einmalig"
-msgstr "Einmalig"
-
-#: admin/kps-design.php:245 admin/kps-design.php:258 admin/kps-design.php:271
-#: admin/kps-design.php:284 admin/kps-design.php:297 admin/kps-design.php:310
-#: admin/kps-design.php:329 admin/kps-design.php:342 admin/kps-design.php:355
-#: admin/kps-design.php:368 admin/kps-design.php:381 admin/kps-design.php:545
-#: admin/kps-design.php:558 admin/kps-design.php:577 admin/kps-design.php:744
-#: admin/kps-design.php:757 admin/kps-design.php:776
-#: classes/kps-entries.php:480 frontend/kps-entries.php:212
-#: frontend/kps-form.php:547
-msgid "Regelmäßig"
-msgstr "Regelmäßig"
-
-#: admin/kps-design.php:246 admin/kps-design.php:259 admin/kps-design.php:272
-#: admin/kps-design.php:285 admin/kps-design.php:298 admin/kps-design.php:311
-#: admin/kps-design.php:330 admin/kps-design.php:343 admin/kps-design.php:356
-#: admin/kps-design.php:369 admin/kps-design.php:382 admin/kps-design.php:546
-#: admin/kps-design.php:559 admin/kps-design.php:578 admin/kps-design.php:745
-#: admin/kps-design.php:758 admin/kps-design.php:777
-#: classes/kps-entries.php:506 frontend/kps-entries.php:213
-#: frontend/kps-form.php:555
-msgid "Einzelperson"
-msgstr "Einzelperson"
 
 #: admin/kps-design.php:247 admin/kps-design.php:260 admin/kps-design.php:273
 #: admin/kps-design.php:286 admin/kps-design.php:299 admin/kps-design.php:312
@@ -261,10 +189,10 @@ msgstr "Einzelperson"
 #: admin/kps-design.php:370 admin/kps-design.php:383 admin/kps-design.php:547
 #: admin/kps-design.php:560 admin/kps-design.php:579 admin/kps-design.php:746
 #: admin/kps-design.php:759 admin/kps-design.php:778
-#: classes/kps-entries.php:511 frontend/kps-entries.php:214
-#: frontend/kps-form.php:556
-msgid "Familie"
-msgstr "Familie"
+#: classes/kps-entries.php:434 frontend/kps-entries.php:205
+#: frontend/kps-form.php:535
+msgid "Halle"
+msgstr "Halle"
 
 #: admin/kps-design.php:248 admin/kps-design.php:261 admin/kps-design.php:274
 #: admin/kps-design.php:287 admin/kps-design.php:300 admin/kps-design.php:313
@@ -272,20 +200,96 @@ msgstr "Familie"
 #: admin/kps-design.php:371 admin/kps-design.php:384 admin/kps-design.php:548
 #: admin/kps-design.php:561 admin/kps-design.php:580 admin/kps-design.php:747
 #: admin/kps-design.php:760 admin/kps-design.php:779
+#: classes/kps-entries.php:439 frontend/kps-entries.php:206
+#: frontend/kps-form.php:536
+msgid "Klettern"
+msgstr "Klettern"
+
+#: admin/kps-design.php:249 admin/kps-design.php:262 admin/kps-design.php:275
+#: admin/kps-design.php:288 admin/kps-design.php:301 admin/kps-design.php:314
+#: admin/kps-design.php:333 admin/kps-design.php:346 admin/kps-design.php:359
+#: admin/kps-design.php:372 admin/kps-design.php:385 admin/kps-design.php:549
+#: admin/kps-design.php:562 admin/kps-design.php:581 admin/kps-design.php:748
+#: admin/kps-design.php:761 admin/kps-design.php:780
+#: classes/kps-entries.php:449 frontend/kps-entries.php:207
+msgid "Wandern/Trekking"
+msgstr "Wandern/Trekking"
+
+#: admin/kps-design.php:250 admin/kps-design.php:263 admin/kps-design.php:276
+#: admin/kps-design.php:289 admin/kps-design.php:302 admin/kps-design.php:315
+#: admin/kps-design.php:334 admin/kps-design.php:347 admin/kps-design.php:360
+#: admin/kps-design.php:373 admin/kps-design.php:386 admin/kps-design.php:550
+#: admin/kps-design.php:563 admin/kps-design.php:582 admin/kps-design.php:749
+#: admin/kps-design.php:762 admin/kps-design.php:781
+#: classes/kps-entries.php:444 frontend/kps-entries.php:208
+#: frontend/kps-form.php:538
+msgid "Reisen"
+msgstr "Reisen"
+
+#: admin/kps-design.php:251 admin/kps-design.php:264 admin/kps-design.php:277
+#: admin/kps-design.php:290 admin/kps-design.php:303 admin/kps-design.php:316
+#: admin/kps-design.php:335 admin/kps-design.php:348 admin/kps-design.php:361
+#: admin/kps-design.php:374 admin/kps-design.php:387 admin/kps-design.php:551
+#: admin/kps-design.php:564 admin/kps-design.php:583 admin/kps-design.php:750
+#: admin/kps-design.php:763 admin/kps-design.php:782
+#: classes/kps-entries.php:475 frontend/kps-entries.php:209
+#: frontend/kps-form.php:546
+msgid "Einmalig"
+msgstr "Einmalig"
+
+#: admin/kps-design.php:252 admin/kps-design.php:265 admin/kps-design.php:278
+#: admin/kps-design.php:291 admin/kps-design.php:304 admin/kps-design.php:317
+#: admin/kps-design.php:336 admin/kps-design.php:349 admin/kps-design.php:362
+#: admin/kps-design.php:375 admin/kps-design.php:388 admin/kps-design.php:552
+#: admin/kps-design.php:565 admin/kps-design.php:584 admin/kps-design.php:751
+#: admin/kps-design.php:764 admin/kps-design.php:783
+#: classes/kps-entries.php:480 frontend/kps-entries.php:212
+#: frontend/kps-form.php:547
+msgid "Regelmäßig"
+msgstr "Regelmäßig"
+
+#: admin/kps-design.php:253 admin/kps-design.php:266 admin/kps-design.php:279
+#: admin/kps-design.php:292 admin/kps-design.php:305 admin/kps-design.php:318
+#: admin/kps-design.php:337 admin/kps-design.php:350 admin/kps-design.php:363
+#: admin/kps-design.php:376 admin/kps-design.php:389 admin/kps-design.php:553
+#: admin/kps-design.php:566 admin/kps-design.php:585 admin/kps-design.php:752
+#: admin/kps-design.php:765 admin/kps-design.php:784
+#: classes/kps-entries.php:506 frontend/kps-entries.php:213
+#: frontend/kps-form.php:555
+msgid "Einzelperson"
+msgstr "Einzelperson"
+
+#: admin/kps-design.php:254 admin/kps-design.php:267 admin/kps-design.php:280
+#: admin/kps-design.php:293 admin/kps-design.php:306 admin/kps-design.php:319
+#: admin/kps-design.php:338 admin/kps-design.php:351 admin/kps-design.php:364
+#: admin/kps-design.php:377 admin/kps-design.php:390 admin/kps-design.php:554
+#: admin/kps-design.php:567 admin/kps-design.php:586 admin/kps-design.php:753
+#: admin/kps-design.php:766 admin/kps-design.php:785
+#: classes/kps-entries.php:511 frontend/kps-entries.php:214
+#: frontend/kps-form.php:556
+msgid "Familie"
+msgstr "Familie"
+
+#: admin/kps-design.php:255 admin/kps-design.php:268 admin/kps-design.php:281
+#: admin/kps-design.php:294 admin/kps-design.php:307 admin/kps-design.php:320
+#: admin/kps-design.php:339 admin/kps-design.php:352 admin/kps-design.php:365
+#: admin/kps-design.php:378 admin/kps-design.php:391 admin/kps-design.php:555
+#: admin/kps-design.php:568 admin/kps-design.php:587 admin/kps-design.php:754
+#: admin/kps-design.php:767 admin/kps-design.php:786
 #: classes/kps-entries.php:516 frontend/kps-entries.php:215
 #: frontend/kps-form.php:557
 msgid "Club/Gruppe"
 msgstr "Club/Gruppe"
 
-#: admin/kps-design.php:319 admin/kps-design.php:567 admin/kps-design.php:766
+#: admin/kps-design.php:326 admin/kps-design.php:574 admin/kps-design.php:773
 msgid "Transparenz"
 msgstr "Transparenz"
 
-#: admin/kps-design.php:453
+#: admin/kps-design.php:460
 msgid "Keine Legenden-Icons ausgewählt"
 msgstr "Keine Legenden-Icons ausgewählt"
 
-#: admin/kps-design.php:457 admin/kps-design.php:657 admin/kps-email.php:168
+#: admin/kps-design.php:464 admin/kps-design.php:664 admin/kps-email.php:168
 #: admin/kps-email.php:444 admin/kps-email.php:725 admin/kps-email.php:988
 #: admin/kps-settings.php:345 admin/kps-settings.php:555
 #: admin/kps-settings.php:786 admin/kps-settings.php:813
@@ -295,20 +299,32 @@ msgstr "Keine Legenden-Icons ausgewählt"
 msgid "Fehler bei der Validierung der Daten"
 msgstr "Fehler bei der Validierung der Daten"
 
-#: admin/kps-design.php:484 admin/kps-design.php:684 admin/kps-email.php:201
+#: admin/kps-design.php:491 admin/kps-design.php:691 admin/kps-email.php:201
 #: admin/kps-email.php:480 admin/kps-email.php:761 admin/kps-email.php:1021
 #: admin/kps-settings.php:333 admin/kps-settings.php:543
 #: admin/kps-settings.php:1561
 msgid "Fehler beim Serialieren der Daten"
 msgstr "Fehler beim Serialieren der Daten"
 
-#: admin/kps-design.php:587
+#: admin/kps-design.php:594
 msgid "Legende aktivieren"
 msgstr "Legende aktivieren"
 
-#: admin/kps-design.php:653
+#: admin/kps-design.php:660
 msgid "Keine Widget-Icons ausgewählt"
 msgstr "Keine Widget-Icons ausgewählt"
+
+#: admin/kps-design.php:821
+msgid "Standart"
+msgstr "Standart"
+
+#: admin/kps-design.php:825
+msgid "Formular"
+msgstr "Formular"
+
+#: admin/kps-design.php:829 admin/kps-entries.php:562 kps-hooks.php:95
+msgid "Einträge"
+msgstr "Einträge"
 
 #: admin/kps-email.php:72 admin/kps-email.php:1010 admin/kps-email.php:1062
 #: admin/kps.php:273 classes/kps-write.php:880
@@ -802,10 +818,6 @@ msgstr "Löschen"
 #: frontend/kps-widget.php:144
 msgid "Keine Einträge vorhanden!"
 msgstr "Keine Einträge vorhanden!"
-
-#: admin/kps-entries.php:562 kps-hooks.php:95
-msgid "Einträge"
-msgstr "Einträge"
 
 #: admin/kps-entries.php:579 admin/kps-entries.php:584
 msgid "Alle"
@@ -1319,7 +1331,7 @@ msgstr ""
 "Administrator freigegeben werden müssen. Es können zusätzliche Information "
 "zu den Aktivitäten abgerufen werden."
 
-#: admin/kps-settings.php:1612 admin/kps.php:216 admin/kps.php:431
+#: admin/kps-settings.php:1612 admin/kps.php:216 admin/kps.php:435
 #: frontend/kps-form.php:570 frontend/kps-form.php:571
 #: frontend/kps-form.php:658 frontend/template/kps-template.php:273
 #: frontend/template/kps-template.php:280
@@ -1406,7 +1418,7 @@ msgstr "Fehler! mail()-Funktion!"
 msgid "Einstellungsübersicht (kurz)"
 msgstr "Einstellungsübersicht (kurz)"
 
-#: admin/kps.php:64 admin/kps.php:420
+#: admin/kps.php:64 admin/kps.php:424
 msgid "Copyright"
 msgstr "Copyright"
 
@@ -1461,7 +1473,7 @@ msgstr "Backend"
 msgid "Frontend"
 msgstr "Frontend"
 
-#: admin/kps.php:238 admin/kps.php:464
+#: admin/kps.php:238 admin/kps.php:468
 msgid "Google reCaptcha"
 msgstr "Google reCaptcha"
 
@@ -1587,35 +1599,39 @@ msgstr "Support"
 msgid "Support-Forum"
 msgstr "Support-Forum"
 
-#: admin/kps.php:416
+#: admin/kps.php:413 admin/kps.php:414
+msgid "GitHub"
+msgstr "GitHub"
+
+#: admin/kps.php:420
 msgid "Version"
 msgstr "Version"
 
-#: admin/kps.php:427
+#: admin/kps.php:431
 msgid "SBB-Mitgliedsnummer"
 msgstr "SBB-Mitgliedsnummer"
 
-#: admin/kps.php:435
+#: admin/kps.php:439
 msgid "Internet"
 msgstr "Internet"
 
-#: admin/kps.php:453
+#: admin/kps.php:457
 msgid "HTML5"
 msgstr "HTML5"
 
-#: admin/kps.php:454
+#: admin/kps.php:458
 msgid "W3C401"
 msgstr "W3C401"
 
-#: admin/kps.php:457
+#: admin/kps.php:461
 msgid "Mysql"
 msgstr "Mysql"
 
-#: admin/kps.php:458
+#: admin/kps.php:462
 msgid "PHP"
 msgstr "PHP"
 
-#: admin/kps.php:461
+#: admin/kps.php:465
 msgid "JQuery"
 msgstr "JQuery"
 
