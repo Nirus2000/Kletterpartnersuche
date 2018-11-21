@@ -93,6 +93,7 @@ function kps_install()
                 userEmail varchar(255) NOT NULL,
                 timestamp bigint(8) UNSIGNED NOT NULL,
                 expire bigint(8) UNSIGNED NOT NULL,
+                sendTimestamp BIGINT(8) UNSIGNED NOT NULL,
                 sendData tinyint(1) NOT NULL,
                 PRIMARY KEY  (id)
                 ) ENGINE=MyISAM CHARACTER SET utf8 COLLATE utf8_general_ci";

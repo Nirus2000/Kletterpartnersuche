@@ -69,6 +69,9 @@ function kps_DesignSettings()
 
             <h2 class="nav-tab-wrapper kps_nav_tab_wrapper">
 
+    			<a href="" class="nav-tab <?php if ($kps_tab == 'kps_Shortcodes') { echo "nav-tab-active";} ?>" rel="kps_Shortcodes">
+                    <div style="text-align: center;"><?php  esc_html_e('Shortcodes', 'kps'); ?></div>
+                </a>
     			<a href="" class="nav-tab <?php if ($kps_tab == 'kps_Icons') { echo "nav-tab-active";} ?>" rel="kps_Icons">
                     <div style="text-align: center;"><?php  esc_html_e('Icons', 'kps'); ?></div>
                 </a>
@@ -79,6 +82,10 @@ function kps_DesignSettings()
                     <div style="text-align: center;"><?php  esc_html_e('Widget', 'kps'); ?></div>
                 </a>
     		</h2>
+
+            <form name="kps_options" class="kps_options kps_Shortcodes <?php if ($kps_tab == 'kps_Shortcodes') { echo "active";} ?>" method="post" action="">
+                <?php kps_Shortcodes(); ?>
+    		</form>
 
             <form name="kps_options" class="kps_options kps_Icons <?php if ($kps_tab == 'kps_Icons') { echo "active";} ?>" method="post" action="">
                 <?php kps_Icons(); ?>
@@ -788,6 +795,40 @@ function kps_Widget()
                                                 <input class="button-primary" type="submit" name="submitWidget" value="' . esc_html(__('Speichern', 'kps')) . '">
                                             </td>
                                 		</tr>
+                                	</tbody>
+                                </table>
+                            </form>
+                        </div>
+            		</div>
+            	</div>
+            </div>
+        ';
+}
+/**
+ * Funktion Shortcodes
+ */
+function kps_Shortcodes()
+{
+    echo '
+            <div class="kps-divTable kps_container">
+            	<div class="kps-divTableBody">
+            		<div class="kps-divTableRow">
+            			<div class="kps-divTableCell" style="width: 100%; vertical-align: top;">
+                            <form class="form" action="" method="post">
+                                <table class="table" style="border-spacing: 20px;">
+                                	<tbody>
+                                        <tr>
+                                            <td><b>' . esc_html(__('Standart', 'kps')) . '</b></td>
+                                            <td><input type="text" name="kps-shortcode" size="40" readonly="readonly" value="[kps-shortcode]" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>' . esc_html(__('Formular', 'kps')) . '</b></td>
+                                            <td><input type="text" name="kps-shortcode" size="40" readonly="readonly" value="[kps-shortcode show-form-only=“true“]" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>' . esc_html(__('Einträge', 'kps')) . '</b></td>
+                                            <td><input type="text" name="kps-shortcode" size="40" readonly="readonly" value="[kps-shortcode button-write=“false“]" /></td>
+                                        </tr>
                                 	</tbody>
                                 </table>
                             </form>

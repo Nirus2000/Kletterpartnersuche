@@ -110,14 +110,12 @@ function kps_admin_overview_setting() {
     $delete_entry_time   = get_option('kps_deleteEntryTime', false) / 24 / 60 / 60;
     $delete_noentry_time = get_option('kps_deleteNoEntryTime', false) / 24 / 60 / 60;
 
-    // Hole EmailCC Einstellungen
+    // Hole Email-Kopie/Email-Report Einstellungen
     $emailCC = kps_unserialize(get_option('kps_mailFromCC', false));
-    $setEmailCC = esc_attr($emailCC['kpsEmailCC']);
 
     // Hole Report Einstellungen
     $report = kps_unserialize(get_option('kps_report', false));
     $adminSendReportAfter = $report['kpsAdminSendReportAfter'];
-    $autoReportLock = $report['kpsAutoReportLock'];
     $reportIsActivated = ($report['kpsReportActivation'] === 'true') ? '<span class="dashicons dashicons-yes"></span>' : '<span class="dashicons dashicons-no-alt"></span>';
 
     // Hole Usereinstellungen
@@ -198,12 +196,8 @@ function kps_admin_overview_setting() {
                             <td colspan="2" class="hr"></td>
                         </tr>
                         <tr>
-                            <td>' . esc_html(__('Eintrag melden nach', 'kps')) . '</td>
-                            <td><b>' . $adminSendReportAfter . '</b> ' . esc_html(_n('Tag', 'Tage', $adminSendReportAfter , 'kps')) . '</td>
-                        </tr>
-                        <tr>
                             <td>' . esc_html(__('Automatische Sperre nach', 'kps')) . '</td>
-                            <td><b>' . $autoReportLock . '</b> ' . esc_html(_n('Tag', 'Tage', $autoReportLock , 'kps')) . '</td>
+                            <td><b>' . $adminSendReportAfter . '</b> ' . esc_html(_n('Meldung', 'Meldungen', $adminSendReportAfter , 'kps')) . '</td>
                         </tr>
                         <tr>
                             <td>' . esc_html(__('Sperre aktiv', 'kps')) . '</td>
@@ -218,7 +212,11 @@ function kps_admin_overview_setting() {
                         </tr>
                         <tr>
                             <td>' . esc_html(__('Email-Kopie', 'kps')) . '</td>
-                            <td><b>' . $setEmailCC . '</b></td>
+                            <td><b>' . esc_attr($emailCC['kpsEmailCC']) . '</b></td>
+                        </tr>
+                        <tr>
+                            <td>' . esc_html(__('Report-Email', 'kps')) . '</td>
+                            <td><b>' . esc_attr($emailCC['kpsEmailReport']) . '</b></td>
                         </tr>
                         <tr>
                             <td colspan="2" class="hr"></td>
@@ -408,6 +406,10 @@ function kps_admin_overview_copyright() {
                         <tr>
                             <td>' . esc_html(__('Support', 'kps')) . '</td>
                             <td><a href="https://wordpress.org/support/plugin/kletterpartner-suche" target="_blank">' . esc_html(__('Support-Forum', 'kps')) . '</a></td>
+                        </tr>
+                        <tr>
+                            <td>' . esc_html(__('GitHub', 'kps')) . '</td>
+                            <td><a href="https://github.com/Nirus2000/Kletterpartnersuche" target="_blank">' . esc_html(__('GitHub', 'kps')) . '</a></td>
                         </tr>
                         <tr>
                             <td colspan="2" class="hr"></td>
