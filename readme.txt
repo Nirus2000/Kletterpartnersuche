@@ -4,7 +4,7 @@ Tags: Klettern, Climb, Wandern, Walking, Trekking, Climbing, Climbpartner, Walki
 Requires at least: 4.9.8
 Requires PHP: 7.0
 Tested up to: 4.9.8
-Stable tag: 1.5
+Stable tag: 1.6
 License: GPLv2 or later
 
 „Kletterpartner-Suche“ verbindet Kletter-, Wander-, Tracking- und Sportfreunde miteinander. Es ist ein Plugin, das für den Sächsische Bergsteigerbund e. V.
@@ -35,22 +35,38 @@ Sollten Sie Frage oder Probleme haben, nutzen Sie das Supportforum unter Wordpre
 (https://wordpress.org/support/plugin/kletterpartner-suche)
 Ich werde mein Bestes tun, um so schnell wie möglich zu antworten.
 
-= Kann ich helfen beim Übersetzen des Plugins =
+= Kann ich helfen beim Übersetzen des Plugins? =
+
 Super! Schreib uns einfach eine Nachricht ins Supportforum und ich werde
 Dich als Editor registrieren lassen. Sollten schon mehrere
 Editoren für deine Sprache geben, so nutz einfach die
 [GlotPress](https://translate.wordpress.org/projects/wp-plugins/kletterpartner-suche).
 Hier kannst Du uns die String übersetzen.
 
+= Wie kann ich aktiv am Plugin mitarbeiten oder modifizieren? =
+
+Das kannst du. Unter https://github.com/Nirus2000/Kletterpartnersuche
+kannst du aktiv am Quellcode mitarbeiten, Bugs bearbeiten und natürlich auch
+Verbesserungen mit einbringen.
+Wenn Du einen Wordpress-Account hast, so schreib mich an und ich werde Dich mit
+bei den Committer/Mitwirkende hinzufügen, sowie freue ich mich über jede Hilfe im
+Support-Team.
+
+= Wie lautet die GitHub Url? =
+
+Die URL lautet:
+https://github.com/Nirus2000/Kletterpartnersuche
+
+
 = Kann ich das Formular auch in einer anderen Seite/Menü einblenden? =
 
-Ja, kannst du.
+Ja, kannst Du.
 Gehe wie in der Installation vor und schreibe statt dem Standart-Shortcode,
 den Shortcode [kps-shortcode show-form-only="true"] ein.
 
 = Kann ich die Einträge auch ohne Formular-Button anzeigen? =
 
-Ja, kannst du.
+Ja, kannst Du.
 Gehe wie in der Installation vor und schreibe statt dem Standart-Shortcode,
 den Shortcode [kps-shortcode button-write="false"] ein.
 
@@ -101,12 +117,27 @@ Fehlerbehebung und Erweiterung des Plugins
 
 == Changelog ==
 
+= v. 1.6 =
+*[21.11.2018]*
+
+* Add: Design Shortcode-Übersicht
+* Add: GitHub URL
+* Fix: Einstellungsübersicht (kurz)
+* Fix: Pflichtfelder im Formular
+* Fix: Verifizierung
+* Fix: Install
+* Fix: Datenbank
+* Upd: Readme-Datei
+* Upd: FAQs
+* Upd: Übersetzungen de_DE
+* Upd: Übersetzungen de_DE_formal
+* Upd: Übersetzungen en_US
+
 = v. 1.5 =
 *[20.11.2018]*
 
 * Fix: Abstand zu den Optionsfeldern
 * Fix: Readme-Datei
-
 
 = v. 1.4 =
 *[14.10.2018]*
