@@ -1,0 +1,415 @@
+/*
+ * JavaScript für KPS
+ *
+ * @author 		Alexander Ott
+ * @copyright 	2018-2019
+ * @email 		kps@nirus-online.de
+ *
+ * All rights reserved
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+ * Dieses Programm ist Freie Software: Sie können es unter den Bedingungen
+ * der GNU General Public License, wie von der Free Software Foundation,
+ * Version 3 der Lizenz oder (nach Ihrer Wahl) jeder neueren
+ * veröffentlichten Version, weiterverbreiten und/oder modifizieren.
+
+ * Dieses Programm wird in der Hoffnung, dass es nützlich sein wird, aber
+ * OHNE JEDE GEWÄHRLEISTUNG, bereitgestellt; sogar ohne die implizite
+ * Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
+ * Siehe die GNU General Public License für weitere Details.
+
+ * Sie sollten eine Kopie der GNU General Public License zusammen mit diesem
+ * Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
+*/
+/* ====== Google rCaptcha ======  */
+.g-recaptcha {
+   display: inline-block;
+   margin: 15px auto !important;
+   width: auto !important;
+   height: auto !important;
+   text-align: -webkit-center;
+   text-align: -moz-center;
+   text-align: -o-center;
+   text-align: -ms-center;
+}
+/* ====== Floating ======  */
+#kps {
+	clear: left;
+	position: relative;
+}
+
+#kps span {
+	display: inline;
+}
+
+/* ====== Formular Show/Hide ======  */
+#kps .kps-hide-form {
+	display: none;
+}
+
+#kps-write-button {
+	margin: 20px 0 10px;
+}
+
+#kps button.kps-closeFrom {
+	position: absolute;
+	top: 0;
+	right: 1px;
+	border: none;
+	margin: 0;
+	padding: 9px;
+	background: none;
+	color: #72777C;
+	cursor: pointer;
+}
+
+#kps button.kps-closeFrom:before {
+    font-family: "Font Awesome 5 Free";
+    background: none;
+	color: #72777C;
+	content: "\f057";
+	display: block;
+	speak: none;
+    font-size: 24px;
+	text-align: center;
+    font-weight: 900;
+}
+
+
+/* ====== Formular Eintrag schreiben ======  */
+#kps form#kps-new-entry {
+    padding: 3px 10px;
+	margin: 0 0 5px 0;
+	text-align: left;
+}
+
+/* ====== Formular Meldngen ======  */
+#kps form#kps-new-report {
+    padding: 3px 10px;
+	margin: 0 0 5px 0;
+	text-align: left;
+}
+
+/* ====== Formular Aktivierung ======  */
+#kps form#kps-new-activation {
+    padding: 3px 10px;
+	margin: 0 0 5px 0;
+	text-align: left;
+}
+
+/* ====== Formular Verifizierung ======  */
+#kps form#kps-verify {
+    padding: 3px 10px;
+	margin: 0 0 5px 0;
+	text-align: left;
+}
+
+/* ====== Formular Anforderung ======  */
+#kps form#kps-delete {
+    padding: 3px 10px;
+	margin: 0 0 5px 0;
+	text-align: left;
+}
+
+/* ====== Formular Löschen ======  */
+#kps form#kps-delete {
+    padding: 3px 10px;
+	margin: 0 0 5px 0;
+	text-align: left;
+}
+
+/* ====== Widget ======  */
+.kps-widget {
+    vertical-align: middle;
+    border: none;
+}
+
+/* ====== Zeilenumbruch Widget ======  */
+.kps-widget-br {
+  content: "&#160;";
+  margin: 2em;
+  display: block;
+  font-size: 20%;
+}
+
+/* ====== Tabelle Widget ======  */
+.kps-widget-divTable{
+	display: table;
+}
+.kps-widget-divTableRow {
+	display: table-row;
+}
+.kps-widget-divTableCell {
+	display: table-cell;
+    vertical-align: middle;
+}
+.kps-widget--divTableBody {
+	display: table-row-group;
+}
+
+
+/* ====== Tabellen ======  */
+.kps-divTable{
+	display: table;
+	width: 100%;
+}
+.kps-divTableRow {
+	display: table-row;
+}
+.kps-divTableHeading {
+	display: table-header-group;
+}
+.kps-divTableCell, .divTableHead {
+	display: table-cell;
+	padding: 3px 10px;
+    vertical-align: middle;
+}
+.kps-divTableHeading {
+	display: table-header-group;
+	font-weight: bold;
+}
+.kps-divTableFoot {
+	display: table-footer-group;
+}
+.kps-divTableBody {
+	display: table-row-group;
+}
+
+/* ====== Eintrag ======  */
+#kps #kps-entries {
+	position: relative;
+}
+
+/* ====== Formular Optionen ======  */
+#kps .kps-option {
+    float: left;
+    position: relative;
+    vertical-align: middle;
+    padding: 3px 30px 3px 3px;
+}
+
+/* ====== Eintrag / Foreach-Schleife ======  */
+#kps .kps-entry {
+    padding: 10px 10px;
+   	padding-left: 5px;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+#kps .kps-entry .kps-author {
+    display: block;
+    margin: 0 0 5px 0;
+    padding-left: 10px;
+	font-weight: bold;
+}
+
+/* ====== Eintrag / Zeit ======  */
+#kps .kps-entry .kps-entry-datetime {
+    letter-spacing: 1px;
+    position: relative;
+    text-align: left;
+    font-size: 74%;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+/* ====== Moderate Link ======  */
+#kps .kps-entry .kps-entry-moderate {
+    letter-spacing: 1px;
+    position: relative;
+    text-align: right;
+    font-size: 84%;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+/* ====== Meldungen ======  */
+#kps .kps-messagebox {
+    display: block;
+    margin: 0 0 10px 0;
+    padding-left: 10px;
+	font-weight: normal;
+}
+
+#kps .kps-message {
+    display: block;
+    border: 0;
+    margin: 0 0 0px 0;
+    padding-left: 15px;
+	font-weight: normal;
+}
+
+#kps .kps-message-reason {
+    font-size: 84%;
+}
+
+/* ====== Pagination ======  */
+#kps .page-navigation {
+	width: 100%;
+	text-align: right;
+	padding: 8px 0;
+}
+
+#kps .page-navigation a,
+#kps .page-navigation span {
+	display: inline-block;
+	padding: 0px 6px;
+	margin-left: 0;
+	border: 0px;
+	text-decoration: none;
+	box-shadow: none;
+}
+
+#kps .page-navigation a:hover,
+#kps .page-navigation span.current {
+	opacity: 0.5;
+	border: 1px solid #ddd;
+}
+#kps .page-navigation span.dots {
+	padding: 0px 3px;
+}
+
+#kps .page-navigation a:first-child,
+#kps .page-navigation span:first-child {
+	border-radius: 3px 0 0 3px;
+}
+#kps .page-navigation a:last-child,
+#kps .page-navigation span:last-child {
+	border-radius: 0 3px 3px 0;
+}
+
+/* ====== Formularinfo ======  */
+#kps .kps-form-info {
+  font-size: 75%;
+}
+
+/* ====== Zeilenumbruch ======  */
+#kps .kps-br {
+  content: "&#160;";
+  margin: 2em;
+  display: block;
+  font-size: 20%;
+}
+
+/* ====== Zeilenumbruch deaktivieren ======  */
+#kps .kps-nobr {
+  white-space: nowrap;
+}
+
+/* ====== Eingabefeld ======  */
+#kps .form_num {
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border: 1px solid #3C3C3C;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    vertical-align: middle;
+    color: rgba(55, 75, 108, 1);
+    letter-spacing: 1px;
+    padding: 3px 3px 3px 3px;
+    position: relative;
+    text-align: right;
+    width: 50px;
+    font-size: 90%;
+}
+
+#kps .form_field {
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border: 1px solid #3C3C3C;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    vertical-align: middle;
+    color: rgba(55, 75, 108, 1);
+    letter-spacing: 1px;
+    padding: 3px 3px 3px 3px;
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+    font-size: 90%;
+}
+
+[type="checkbox"],
+[type="radio"] {
+	display: inline-block;
+    box-sizing: border-box;
+	margin-right: 3px;
+    cursor: pointer;
+}
+
+#kps form {
+    width: auto;
+    margin: auto;
+}
+
+#kps textarea {
+    resize: vertical;
+    background-color: white;
+    border: 1px solid #3C3C3C;
+    border-radius: 3px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    width: 100%;
+    max-width: 350px;
+    font-size: 90%;
+}
+
+/* ====== Avatar ======  */
+#kps .kps-avatar {
+    vertical-align: middle;
+}
+
+/* ====== Icon-Pak ======  */
+#kps .kps-icon-pak {
+    vertical-align: middle;
+}
+
+/* ====== Legende ======  */
+#kps .kps-legend {
+    letter-spacing: 1px;
+    font-size: 50%;
+    vertical-align: middle;
+}
+
+/* ====== Fehlermeldung Glowing ======  */
+#kps .kps-form_glowing {
+    border: 1px solid #FE2E2E;
+    -webkit-box-shadow: 0px 0px 3px 0px #FE2E2E;
+    box-shadow: 0px 0px 3px 0px #FE2E2E;
+}
+
+/* ====== Pflichtfeld ======  */
+#kps .kps-required {
+    font-size: 80%;
+    color: rgba(255, 0, 0, .8);
+}
+
+/* ====== Für Screenreader ======  */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
