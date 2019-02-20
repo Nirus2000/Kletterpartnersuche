@@ -982,7 +982,7 @@ function kps_Shortcodes()
                                             <td>' . esc_html(__('Standard-Edition', 'kps')) . '</td>
                                         </tr>
                                         <tr>
-                                            <td><b>' . esc_html(__('Formular', 'kps')) . '</b></td>
+                                            <td><b>' . esc_html(__('Form', 'kps')) . '</b></td>
                                             <td><input type="text" name="kps-shortcode" size="40" readonly="readonly" value="[kps-shortcode show-form-only=“true“]" /></td>
                                             <td>' . esc_html(__('Only the form will be displayed without entries.', 'kps')) . '</td>
                                         </tr>

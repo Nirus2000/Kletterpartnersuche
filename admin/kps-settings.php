@@ -84,7 +84,7 @@ function kps_Settings()
                     <div style="text-align: center;"><?php  esc_html_e('Spam-Protection', 'kps'); ?></div>
                 </a>
                 <a href="" class="nav-tab <?php if ($kps_tab == 'kps_Optionfields') { echo "nav-tab-active";} ?>" rel="kps_Optionfields">
-                    <div style="text-align: center;"><?php  esc_html_e('Formular-Optionen', 'kps'); ?></div>
+                    <div style="text-align: center;"><?php  esc_html_e('Form-Optionen', 'kps'); ?></div>
                 </a>
                 <a href="" class="nav-tab <?php if ($kps_tab == 'kps_Pagination') { echo "nav-tab-active";} ?>" rel="kps_Pagination">
                     <div style="text-align: center;"><?php  esc_html_e('Navigation', 'kps'); ?></div>
@@ -529,7 +529,7 @@ function kps_Optionfields()
                     update_option('kps_formOptions', $setFormOption);
                     echo '
                     <div class="notice notice-success is-dismissible">
-                    	<p><strong>' . esc_html(__('Saved', 'kps')) . ':&#160;' . esc_html(__('Formular-Optionen', 'kps')) . '</strong></p>
+                    	<p><strong>' . esc_html(__('Saved', 'kps')) . ':&#160;' . esc_html(__('Form-Optionen', 'kps')) . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -1453,7 +1453,7 @@ In the textarea the minimum number of words to be written by the author is deter
                                 <td width="50%" style="text-align: left;"><input type="number" name="kpsDeleteTimeNoEntry" id="kpsDeleteTimeNoEntry" class="form_num" value="' . $checkedDeleteTimeNoEntry . '" min="30" max="180" aria-required="true" required="required" /> ' . esc_html(_n('day', 'days', $checkedDeleteTimeNoEntry , 'kps')) . '</td>
                             </tr>
                             <tr>
-                                <td width="50%" style="text-align: right;"><label for="kpsFormWordCount">' . esc_html(__('Formular-Textarea', 'kps')) . '</label></td>
+                                <td width="50%" style="text-align: right;"><label for="kpsFormWordCount">' . esc_html(__('Form-Textarea', 'kps')) . '</label></td>
                                 <td width="50%" style="text-align: left;"><input type="number" name="kpsFormWordCount" id="kpsFormWordCount" class="form_num" value="' . get_option('kps_formWordCount', false) . '" min="1" /> ' . esc_html(_n('word', 'words', get_option('kps_formWordCount', false) , 'kps')) . '</td>
                             </tr>
                             <tr>

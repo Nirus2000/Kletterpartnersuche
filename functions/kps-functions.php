@@ -49,7 +49,7 @@ function get_PermalinksWithShortCode() {
 
 	$theQuery = new WP_Query(  array(
                                     'post_type'           => 'any',             // Status des Post
-                                    'ignore_sticky_posts' => true,              //  ignore the procedure
+                                    'ignore_sticky_posts' => true,              // Ignore the procedure
                                     's'                   => 'kps-shortcode',   // Shortcode
                                 )
     );

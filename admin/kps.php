@@ -189,7 +189,7 @@ function kps_admin_overview_setting() {
                             <td><b>' . $delete_noentry_time . '</b> ' . esc_html(_n('delete day', 'delete days', get_option('kps_formWordCount', false) , 'kps')) . '</td>
                         </tr>
                         <tr>
-                            <td>' . esc_html(__('Formular-Textarea', 'kps')) . '</td>
+                            <td>' . esc_html(__('Form-Textarea', 'kps')) . '</td>
                             <td><b>' . get_option('kps_formWordCount', false) . '</b> ' . esc_html(_n('word', 'words', get_option('kps_formWordCount', false) , 'kps')) . '</td>
                         </tr>
                         <tr>
@@ -223,11 +223,11 @@ function kps_admin_overview_setting() {
                         </tr>
                         <tr>
                             <td>' . esc_html(__('Backend', 'kps')) . '</td>
-                            <td><b>' . get_option('kps_backendPagination', false) . '</b> ' . esc_html(_n('entry per page', 'entries2 per page', get_option('kps_backendPagination', false) , 'kps')) . '</td>
+                            <td><b>' . get_option('kps_backendPagination', false) . '</b> ' . esc_html(_n('entry per page', 'entries per page', get_option('kps_backendPagination', false) , 'kps')) . '</td>
                         </tr>
                         <tr>
                             <td>' . esc_html(__('Frontend', 'kps')) . '</td>
-                            <td><b>' . get_option('kps_frontendPagination', false) . '</b> ' . esc_html(_n('entry per page', 'entries2 per page', get_option('kps_frontendPagination', false) , 'kps')) . '</td>
+                            <td><b>' . get_option('kps_frontendPagination', false) . '</b> ' . esc_html(_n('entry per page', 'entries per page', get_option('kps_frontendPagination', false) , 'kps')) . '</td>
                         </tr>
                         <tr>
                             <td colspan="2" class="hr"></td>

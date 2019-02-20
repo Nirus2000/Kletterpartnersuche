@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kletterpartner-Suche\n"
-"POT-Creation-Date: 2019-02-16 16:44+0100\n"
-"PO-Revision-Date: 2019-02-16 16:46+0100\n"
+"POT-Creation-Date: 2019-02-19 10:17+0100\n"
+"PO-Revision-Date: 2019-02-19 10:17+0100\n"
 "Last-Translator: Alexander Ott <kps@nirus-online.de>\n"
 "Language-Team: Alexander Ott\n"
 "Language: de_DE\n"
@@ -192,7 +192,7 @@ msgstr "Keine Transparenz"
 #: admin/kps-design.php:377 admin/kps-design.php:390 admin/kps-design.php:706
 #: admin/kps-design.php:719 admin/kps-design.php:738 admin/kps-design.php:905
 #: admin/kps-design.php:918 admin/kps-design.php:937
-#: classes/kps-entries.php:527 frontend/kps-entries.php:205
+#: classes/kps-entries.php:525 frontend/kps-entries.php:205
 #: frontend/kps-form.php:535
 msgid "Hall"
 msgstr "Halle"
@@ -203,7 +203,7 @@ msgstr "Halle"
 #: admin/kps-design.php:378 admin/kps-design.php:391 admin/kps-design.php:707
 #: admin/kps-design.php:720 admin/kps-design.php:739 admin/kps-design.php:906
 #: admin/kps-design.php:919 admin/kps-design.php:938
-#: classes/kps-entries.php:532 frontend/kps-entries.php:206
+#: classes/kps-entries.php:530 frontend/kps-entries.php:206
 #: frontend/kps-form.php:536
 msgid "Climbing"
 msgstr "Klettern"
@@ -214,9 +214,9 @@ msgstr "Klettern"
 #: admin/kps-design.php:379 admin/kps-design.php:392 admin/kps-design.php:708
 #: admin/kps-design.php:721 admin/kps-design.php:740 admin/kps-design.php:907
 #: admin/kps-design.php:920 admin/kps-design.php:939
-#: classes/kps-entries.php:542 frontend/kps-entries.php:207
+#: classes/kps-entries.php:540 frontend/kps-entries.php:207
 msgid "Walking/Trekking"
-msgstr "Walking/Trekking"
+msgstr "Wandern/Trekking"
 
 #: admin/kps-design.php:257 admin/kps-design.php:270 admin/kps-design.php:283
 #: admin/kps-design.php:296 admin/kps-design.php:309 admin/kps-design.php:322
@@ -224,7 +224,7 @@ msgstr "Walking/Trekking"
 #: admin/kps-design.php:380 admin/kps-design.php:393 admin/kps-design.php:709
 #: admin/kps-design.php:722 admin/kps-design.php:741 admin/kps-design.php:908
 #: admin/kps-design.php:921 admin/kps-design.php:940
-#: classes/kps-entries.php:537 frontend/kps-entries.php:208
+#: classes/kps-entries.php:535 frontend/kps-entries.php:208
 #: frontend/kps-form.php:538
 msgid "Travels"
 msgstr "Reisen"
@@ -235,7 +235,7 @@ msgstr "Reisen"
 #: admin/kps-design.php:381 admin/kps-design.php:394 admin/kps-design.php:710
 #: admin/kps-design.php:723 admin/kps-design.php:742 admin/kps-design.php:909
 #: admin/kps-design.php:922 admin/kps-design.php:941
-#: classes/kps-entries.php:568 frontend/kps-entries.php:209
+#: classes/kps-entries.php:566 frontend/kps-entries.php:209
 #: frontend/kps-form.php:546
 msgid "Unique"
 msgstr "Einmalig"
@@ -246,7 +246,7 @@ msgstr "Einmalig"
 #: admin/kps-design.php:382 admin/kps-design.php:395 admin/kps-design.php:711
 #: admin/kps-design.php:724 admin/kps-design.php:743 admin/kps-design.php:910
 #: admin/kps-design.php:923 admin/kps-design.php:942
-#: classes/kps-entries.php:573 frontend/kps-entries.php:212
+#: classes/kps-entries.php:571 frontend/kps-entries.php:212
 #: frontend/kps-form.php:547
 msgid "Regularly"
 msgstr "Regelmäßig"
@@ -257,7 +257,7 @@ msgstr "Regelmäßig"
 #: admin/kps-design.php:383 admin/kps-design.php:396 admin/kps-design.php:712
 #: admin/kps-design.php:725 admin/kps-design.php:744 admin/kps-design.php:911
 #: admin/kps-design.php:924 admin/kps-design.php:943
-#: classes/kps-entries.php:599 frontend/kps-entries.php:213
+#: classes/kps-entries.php:597 frontend/kps-entries.php:213
 #: frontend/kps-form.php:555
 msgid "Single person"
 msgstr "Einzelperson"
@@ -268,7 +268,7 @@ msgstr "Einzelperson"
 #: admin/kps-design.php:384 admin/kps-design.php:397 admin/kps-design.php:713
 #: admin/kps-design.php:726 admin/kps-design.php:745 admin/kps-design.php:912
 #: admin/kps-design.php:925 admin/kps-design.php:944
-#: classes/kps-entries.php:604 frontend/kps-entries.php:214
+#: classes/kps-entries.php:602 frontend/kps-entries.php:214
 #: frontend/kps-form.php:556
 msgid "Family"
 msgstr "Familie"
@@ -279,7 +279,7 @@ msgstr "Familie"
 #: admin/kps-design.php:385 admin/kps-design.php:398 admin/kps-design.php:714
 #: admin/kps-design.php:727 admin/kps-design.php:746 admin/kps-design.php:913
 #: admin/kps-design.php:926 admin/kps-design.php:945
-#: classes/kps-entries.php:609 frontend/kps-entries.php:215
+#: classes/kps-entries.php:607 frontend/kps-entries.php:215
 #: frontend/kps-form.php:557
 msgid "Club/Group"
 msgstr "Club/Gruppe"
@@ -342,7 +342,7 @@ msgid "Standard-Edition"
 msgstr "Standard-Edition"
 
 #: admin/kps-design.php:985
-msgid "Formular"
+msgid "Form"
 msgstr "Formular"
 
 #: admin/kps-design.php:987
@@ -674,7 +674,7 @@ msgid ""
 "\n"
 "Activate entry:\n"
 "*******************\n"
-"%linkaactivation%\n"
+"%linkactivation%\n"
 "\n"
 "Delete entry:\n"
 "*******************\n"
@@ -937,7 +937,7 @@ msgstr "Freigabe (Autor)"
 
 #: admin/kps-entries.php:841 functions/kps-privacy.php:174
 msgid "IP-Adress"
-msgstr "IP-Adress"
+msgstr "IP-Adresse"
 
 #: admin/kps-entries.php:842 functions/kps-privacy.php:175
 msgid "Host"
@@ -1027,7 +1027,7 @@ msgid "Spam-Protection"
 msgstr "Spam-Schutz"
 
 #: admin/kps-settings.php:87 admin/kps-settings.php:532
-msgid "Formular-Optionen"
+msgid "Form-Optionen"
 msgstr "Formular-Optionen"
 
 #: admin/kps-settings.php:90 admin/kps-settings.php:1095
@@ -1313,7 +1313,7 @@ msgid "Waiting entries"
 msgstr "Wartende Einträge"
 
 #: admin/kps-settings.php:1456 admin/kps.php:192
-msgid "Formular-Textarea"
+msgid "Form-Textarea"
 msgstr "Formular-Textarea"
 
 #: admin/kps-settings.php:1457 admin/kps.php:193
@@ -1639,7 +1639,7 @@ msgstr "PHP"
 msgid "JQuery"
 msgstr "JQuery"
 
-#: classes/kps-entries.php:423 classes/kps-write.php:1028
+#: classes/kps-entries.php:421 classes/kps-write.php:1028
 msgid "Wait for release from the Author"
 msgstr "Warte auf Freigabe vom Autor"
 
@@ -1910,7 +1910,7 @@ msgstr "Ich suche für"
 
 #: frontend/kps-form.php:537
 msgid "Walking"
-msgstr "Walking"
+msgstr "Wandern"
 
 #: frontend/kps-form.php:543 functions/kps-privacy.php:180
 msgid "Kind of search"

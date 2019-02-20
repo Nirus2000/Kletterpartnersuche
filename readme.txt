@@ -4,8 +4,9 @@ Tags: Klettern, Climb, Wandern, Walking, Trekking, Climbing, Climbpartner, Walki
 Requires at least: 4.9.8
 Requires PHP: 7.0
 Tested up to: 5.0.3
-Stable tag: 1.7
-License: GPLv2 or later
+Stable tag: 1.72
+License: GPL Version 3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 Die „Kletterpartner-Suche“ verbindet Kletter-, Wander-, Tracking- und Sportfreunde miteinander. Es ist ein Plugin, das für den Sächsische Bergsteigerbund e. V.
 (eine Sektion des DAV - Deutsche Alpenverein e. V.) entwickelt wurde.
@@ -103,8 +104,8 @@ Wenn Sie mir eine E-Mail senden, werde ich nicht antworten.
 
 == Description ==
 
-"Kletterpartner-Suche" verbindet Kletter-, Wander-, Tracking- und Sportfreunde miteinander.
-"Kletterpatner-Suche" wurde für den Sächsische Bergsteigerbund e. V. entwickelt.
+Die "Kletterpartner-Suche" verbindet Kletter-, Wander-, Tracking- und Sportfreunde miteinander.
+Die "Kletterpartner-Suche" wurde für den Sächsische Bergsteigerbund e. V. entwickelt.
 Sektion des Deutschen Alpenvereins ist ein Bund von Einzelmitgliedern, kleinen und größeren Clubs und der
 größte Bergsportverband der Region für bergsportliche Aktivitäten in der Sächsischen Schweiz und deren Umgebung.
 
@@ -127,6 +128,20 @@ größte Bergsportverband der Region für bergsportliche Aktivitäten in der Sä
 Fehlerbehebung und Erweiterung des Plugins
 
 == Changelog ==
+
+= v. 1.72 =
+*[19.02.2019]*
+* Upd: GPL Version 3.0
+* Upd: Readme-Datei
+* Upd: Übersetzungen de_DE
+* Upd: Übersetzungen de_DE_formal
+* Upd: Übersetzungen en_US
+
+= v. 1.71 =
+*[18.02.2019]*
+* Upd: Readme-Datei
+* Upd: Übersetzungen de_DE
+* Upd: Übersetzungen de_DE_formal
 
 = v. 1.7 =
 *[16.02.2019]*

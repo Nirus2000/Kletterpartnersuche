@@ -887,7 +887,7 @@ deleted on %erasedatetime% from our database.
 
 Activate entry:
 *******************
-%linkaactivation%
+%linkactivation%
 
 Delete entry:
 *******************
