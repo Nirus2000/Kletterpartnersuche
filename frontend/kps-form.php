@@ -210,9 +210,9 @@ function kps_frontend_form($shortCodeValues)
             // Messagebox
             $messageboxContent = '
             <ul>
-                <li>' . esc_html(__('In the next few minutes, you should receive an Activation-Email!', 'kps')) . '</li>
-                <li>' . esc_html(__('If you have not received any email from us, it may also be stuck in your spam filter (spam folder)!', 'kps')) . '</li>
-                <li>' . esc_html(__('It could be that the entry only becomes visible after we have checked this!', 'kps')) . '</li>
+                <li>' . esc_html(__('You should receive an Activation-Email in the next few minutes!', 'kps')) . '</li>
+                <li>' . esc_html(__('If you have not received any email from us, it may also be in your junk folder!', 'kps')) . '</li>
+                <li>' . esc_html(__('It could be that the entry only becomes visible after we have approved it!', 'kps')) . '</li>
                 <li>' . esc_html(__('We reserve the right to edit, delete or not publish entries!', 'kps')) . '</li>
             </ul>';
 
@@ -239,7 +239,7 @@ function kps_frontend_form($shortCodeValues)
         // Messagebox Ausgabe
         $messageboxContent = '
         <div style="text-align: center; color: red">' . esc_html(__('The form was processed too fast. Always with tranquillity!', 'kps')) . '</div>
-        <div style="text-align: center; color: red">' . esc_html(__('Form has been reset!', 'kps')) . '</div>
+        <div style="text-align: center; color: red">' . esc_html(__('The Form has been reset!', 'kps')) . '</div>
         ';
 
         // Eintrag ist schon in Datenbank verhanden
@@ -377,9 +377,25 @@ function kps_frontend_form($shortCodeValues)
             }
             else
             {
+                // Button Standard-Text durch Custom ersetzen
+                if ($shortCodeValues['button-text'] === '')
+                {
+                    $buttonText = esc_html(__('Write an entry', 'kps'));
+                }
+                else
+                {
+
+                    $buttonText = esc_html(trim($shortCodeValues['button-text']));
+
+                    if (!empty($buttonText) OR $buttonText = "")
+                    {
+                        $buttonText = esc_html(__('Write an entry', 'kps'));
+                    }
+                }
+
                 $kpsWriteButton = '
                     <div id="kps-write-button" style="text-align: center;">
-                        <input type="button" class="button btn btn-primary" value="' . esc_html(__('Write an entry', 'kps')) . '" />
+                        <input type="button" class="button btn btn-primary" value="' . $buttonText . '" />
                     </div>';
                 $formClass .= ' kps-hide-form ';
             }
@@ -456,19 +472,19 @@ function kps_frontend_form($shortCodeValues)
                 // Wenn AGB's und DSGVO gesetzt sind
                 if ($checkedUserSettings['kpsUserPrivacyAGB'] === 'true' && $checkedUserSettings['kpsUserPrivacyDSGVO'] === 'true')
                 {
-                    $userNotAcceptAGBDSGVO = '<li>' . esc_html(__('Terms and Conditions and GDPR was not accepted!', 'kps')) . '</li>';
+                    $userNotAcceptAGBDSGVO = '<li>' . esc_html(__('Please accept the Terms and Conditions and GDPR!', 'kps')) . '</li>';
                 }
 
                 // Wenn nur AGB's gesetzt ist
                 if ($checkedUserSettings['kpsUserPrivacyAGB'] === 'true' && $checkedUserSettings['kpsUserPrivacyDSGVO'] === 'false')
                 {
-                    $userNotAcceptAGBDSGVO = '<li>' . esc_html(__('Terms and conditions was not accepted!', 'kps')) . '</li>';
+                    $userNotAcceptAGBDSGVO = '<li>' . esc_html(__('Please accept the Terms and Conditions!', 'kps')) . '</li>';
                 }
 
                 // Wenn nur DSGVO gesetzt ist
                 if ($checkedUserSettings['kpsUserPrivacyAGB'] === 'false' && $checkedUserSettings['kpsUserPrivacyDSGVO'] === 'true')
                 {
-                    $userNotAcceptAGBDSGVO = '<li>' . esc_html(__('General Data Protection Regulation was not accepted!', 'kps')) . '</li>';
+                    $userNotAcceptAGBDSGVO = '<li>' . esc_html(__('Please accept the GDPR!', 'kps')) . '</li>';
                 }
             }
 
@@ -481,7 +497,7 @@ function kps_frontend_form($shortCodeValues)
             // Messagebox
             if ($entryIsFound === true OR $entryNotWritten === true)
             {
-                $fillTheForm = '<li>' . esc_html(__('Please complete the form completely!', 'kps')) . '</li>';
+                $fillTheForm = '<li>' . esc_html(__('Please ensure you have completed every field in the form!', 'kps')) . '</li>';
             }
             $messageboxContent = '
             <ul>
@@ -594,6 +610,28 @@ function kps_frontend_form($shortCodeValues)
                         ';
         }
 
+        // Wenn Facebook Messenger aktiviert ist
+        if ($formOptions['kpsFormOptionFacebookMessenger'] === 'true')
+        {
+            $output .= '
+                                    <div class="kps-divTableRow">
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorFacebookMessenger"><i class="fab fa-facebook-messenger"></i>&#160;' . esc_html(__('Facebook', 'kps')) . '</label></div>
+                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorFacebookMessenger" name="kps_authorFacebookMessenger" value="' . $setAuthorFacebookMessenger . '" placeholder="' . esc_html(__('https://m.me/[Login-Name][.xyz]', 'kps')) . '" minlength="6" size="245" maxlength="245" type="' . $html5TypUrl . '"></div>
+                                    </div>
+                        ';
+        }
+
+        // Wenn Hoccer aktiviert ist
+        if ($formOptions['kpsFormOptionHoccer'] === 'true')
+        {
+            $output .= '
+                                    <div class="kps-divTableRow">
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorHoccer"><i class="far fa-comments"></i>&#160;' . esc_html(__('Hoccer', 'kps')) . '</label></div>
+                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorHoccer" name="kps_authorHoccer" value="' . $setAuthorHoccer . '" placeholder="' . esc_html(__('Email', 'kps')) . '" minlength="6" size="245" maxlength="245" type="' . $html5TypEmail . '"></div>
+                                    </div>
+                        ';
+        }
+
         // Wenn Signal aktiviert ist
         if ($formOptions['kpsFormOptionSignal'] === 'true')
         {
@@ -601,6 +639,17 @@ function kps_frontend_form($shortCodeValues)
                                     <div class="kps-divTableRow">
                                         <div class="kps-divTableCell kps-nobr"><label for="kps_authorSignal"><i class="fas fa-signal"></i>&#160;' . esc_html(__('Signal', 'kps')) . '</label></div>
                                         <div class="kps-divTableCell"><input class="form_field" id="kps_authorSignal" name="kps_authorSignal" value="' . $setAuthorSignal . '" placeholder="' . esc_html(__('0170/123456', 'kps')) . '" size="60" maxlength="60" type="' . $html5TypTele . '"></div>
+                                    </div>
+                        ';
+        }
+
+        // Wenn Skype aktiviert ist
+        if ($formOptions['kpsFormOptionSkype'] === 'true')
+        {
+            $output .= '
+                                    <div class="kps-divTableRow">
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorSkype"><i class="fab fa-skype"></i>&#160;' . esc_html(__('Skype', 'kps')) . '</label></div>
+                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorSkype" name="kps_authorSkype" value="' . $setAuthorSkype . '" placeholder="' . esc_html(__('Email, mobile number or Skype username', 'kps')) . '" size="245" maxlength="245" type="text"></div>
                                     </div>
                         ';
         }
@@ -634,39 +683,6 @@ function kps_frontend_form($shortCodeValues)
                                     <div class="kps-divTableRow">
                                         <div class="kps-divTableCell kps-nobr"><label for="kps_authorWhatsapp"><i class="fab fa-whatsapp"></i>&#160;' . esc_html(__('Whatsapp', 'kps')) . '</label></div>
                                         <div class="kps-divTableCell"><input class="form_field" id="kps_authorWhatsapp" name="kps_authorWhatsapp" value="' . $setAuthorWhatsapp . '" placeholder="' . esc_html(__('0170/123456', 'kps')) . '" size="60" maxlength="60" type="' . $html5TypTele . '"></div>
-                                    </div>
-                        ';
-        }
-
-        // Wenn Facebook Messenger aktiviert ist
-        if ($formOptions['kpsFormOptionFacebookMessenger'] === 'true')
-        {
-            $output .= '
-                                    <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorFacebookMessenger"><i class="fab fa-facebook-messenger"></i>&#160;' . esc_html(__('Facebook', 'kps')) . '</label></div>
-                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorFacebookMessenger" name="kps_authorFacebookMessenger" value="' . $setAuthorFacebookMessenger . '" placeholder="' . esc_html(__('https://m.me/[Login-Name][.xyz]', 'kps')) . '" minlength="6" size="245" maxlength="245" type="' . $html5TypUrl . '"></div>
-                                    </div>
-                        ';
-        }
-
-        // Wenn Hoccer aktiviert ist
-        if ($formOptions['kpsFormOptionHoccer'] === 'true')
-        {
-            $output .= '
-                                    <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorHoccer"><i class="far fa-comments"></i>&#160;' . esc_html(__('Hoccer', 'kps')) . '</label></div>
-                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorHoccer" name="kps_authorHoccer" value="' . $setAuthorHoccer . '" placeholder="' . esc_html(__('Email', 'kps')) . '" minlength="6" size="245" maxlength="245" type="' . $html5TypEmail . '"></div>
-                                    </div>
-                        ';
-        }
-
-        // Wenn Skype aktiviert ist
-        if ($formOptions['kpsFormOptionSkype'] === 'true')
-        {
-            $output .= '
-                                    <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorSkype"><i class="fab fa-skype"></i>&#160;' . esc_html(__('Skype', 'kps')) . '</label></div>
-                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorSkype" name="kps_authorSkype" value="' . $setAuthorSkype . '" placeholder="' . esc_html(__('Email, mobile number or Skype username', 'kps')) . '" size="245" maxlength="245" type="text"></div>
                                     </div>
                         ';
         }
@@ -734,6 +750,7 @@ function kps_frontend_form($shortCodeValues)
         {
             $output .= $formCheckboxAGBDSGVO;
         }
+
             $output .= '
                                     <div class="kps-br"></div>
                                     <div class="kps-divTableRow">
@@ -763,7 +780,7 @@ function kps_frontend_form($shortCodeValues)
                                 <li><sup><span class="kps-required">*</span></sup>&#160;' . esc_html(__('Required fields', 'kps')) . '</li>
                                 <li>' . esc_html(__('As a registered user, the registered login / display name and the corresponding email address are automatically used. This can not be changed!', 'kps')) . '</li>
                                 <li>' . esc_html(__('All contact details, except those that may be publicly accessible in the user profile, are not published, but can only be accessed!', 'kps')) . '</li>
-                                <li>' . esc_html(__('It could be that the entry only becomes visible after we have checked this!', 'kps')) . '</li>
+                                <li>' . esc_html(__('It could be that the entry only becomes visible after we have approved it!', 'kps')) . '</li>
                                 <li>' . esc_html(__('We reserve the right to edit, delete or not publish entries!', 'kps')) . '</li>
                             </ul>
                         </div>

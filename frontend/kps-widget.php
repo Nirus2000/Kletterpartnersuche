@@ -203,7 +203,7 @@ class Kletterpartner_Suche extends WP_Widget {
         $linkText       = esc_html($instance['linkText']);
 
         echo '
-                    <label for="' . $this->get_field_name('title') . '">' . esc_html(__('Titel', 'kps')) . ':</label><br />
+                    <label for="' . $this->get_field_name('title') . '">' . esc_html(__('Title', 'kps')) . ':</label><br />
                     <input id="' . $this->get_field_name('title') . '" value="' . $title . '" name="' . $this->get_field_name('title') . '" type="text" /><br />
                     <label for="' . $this->get_field_name('showEntries'). '">' . esc_html(__('Number of entries', 'kps')) . ':</label><br />
     				<select id="' . $this->get_field_name('showEntries'). '" name="' . $this->get_field_name('showEntries'). '">';

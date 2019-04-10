@@ -167,11 +167,11 @@ function kps_AgbSetting()
             <div class="kps_container" style="width: 50%">
                 <h5>
 ' . esc_html(__('The General Terms and Conditions (GTC) are contractual clauses that standardize
-and concretisation of mass contracts. They are unilaterally provided by a contracting party
+and regulate mass contracts. They are unilaterally provided by a contracting party
 and therefore require some control to prevent their misuse. We recommend this
-to explain to the user (author) that the contact data, which the user (author), the requester
-(User) leaves without the control, verification and verification of the site operator or the
-Requester happens. Here you can assign your terms and conditions in the form.', 'kps')) . '
+to explain to the user (author) that the contact details, which the user (author), passes to the requester
+(User) are left without the control, checking and verification of the site operator or the
+Requester. Here you can assign your own terms and conditions in the form.', 'kps')) . '
                 </h5>
                 <form class="form" action="" method="post">
                     <table class="table">
@@ -282,10 +282,10 @@ function kps_DsgvoSetting()
 
     echo '
             <div class="kps_container" style="width: 50%"><h5>
-' . esc_html(__('GPDR is the common abbreviation for the General Data Protection Regulation. With this the EU (European Union) wants
-create a single legal framework for the processing and storage of personal data. In this plugin, will be
-Personal data are processed, stored and retrieved without verification and verification.
-Here you can assign your GPDR to the form.', 'kps')) .
+' . esc_html(__('GPDR is the common abbreviation for the General Data Protection Regulation.
+With this the EU (European Union) wants create a single legal framework for the processing and
+storage of personal data. In this plugin, Personal data can be processed, stored and retrieved
+without checking and verification. Here you can assign your own GPDR to the form.', 'kps')) .
                 '&#160;(<a href="https://de.wikipedia.org/wiki/Datenschutz-Grundverordnung" target="_blank">' . esc_html(__('GDPR', 'kps')) . '</a>)</h5>
                 <form class="form" action="" method="post">
                     <table class="table">

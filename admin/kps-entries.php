@@ -840,8 +840,8 @@ Your team
                                                 echo    '
                                                         <div style="text-align: left;"><b>' . esc_html(__('IP-Adress', 'kps')) . ':</b>&#160;' . nl2br($read->show_authorIp()) . '</div>
                                                         <div style="text-align: left;"><b>' . esc_html(__('Host', 'kps')) . ':</b>&#160;' . nl2br($read->show_authorHost()) . '</div>
-                                                        <div style="text-align: left;"><b>' . esc_html(__('Activation-Key', 'kps')) . ':</b>&#160;' . getFirstChars($read->show_activationcode(), 5) . '[...]' . getLastChars($read->show_activationcode(), 5) . '</div>
-                                                        <div style="text-align: left;"><b>' . esc_html(__('Delete-Key', 'kps')) . ':</b>&#160;' . getFirstChars($read->show_deletecode(), 5) . '[...]' . getLastChars($read->show_deletecode(), 5) . '</div>
+                                                        <div style="text-align: left;"><b>' . esc_html(__('Activation-Key', 'kps')) . ':</b>&#160;' . kps_getFirstChars($read->show_activationcode(), 5) . '[...]' . kps_getLastChars($read->show_activationcode(), 5) . '</div>
+                                                        <div style="text-align: left;"><b>' . esc_html(__('Delete-Key', 'kps')) . ':</b>&#160;' . kps_getFirstChars($read->show_deletecode(), 5) . '[...]' . kps_getLastChars($read->show_deletecode(), 5) . '</div>
                                                         <div class="kps-br"></div>
                                                         <div style="text-align: left;">' . $read->show_authorSearchfor() . '&#160;' . $read->show_authorRule() . '&#160;' . $read->show_yourRule() . '<div>
                                                         <div class="kps-br"></div>

@@ -168,19 +168,19 @@ class kps_entry_write
         $this->get_authorIpHost();
 
         // zusätzliche Kontaktmöglichkeiten escapen
-        $this->_authorTelephone         = $this->get_AuthorURLEmailNumber($write['kps_authorTelephone']);
-        $this->_authorMobile            = $this->get_AuthorURLEmailNumber($write['kps_authorMobile']);
-        $this->_authorSignal            = $this->get_AuthorURLEmailNumber($write['kps_authorSignal']);
-        $this->_authorViper             = $this->get_AuthorURLEmailNumber($write['kps_authorViper']);
-        $this->_authorTelegram          = $this->get_AuthorURLEmailNumber($write['kps_authorTelegram']);
-        $this->_authorWhatsapp          = $this->get_AuthorURLEmailNumber($write['kps_authorWhatsapp']);
-        $this->_authorHoccer            = $this->get_AuthorURLEmailNumber($write['kps_authorHoccer']);
-        $this->_authorWire              = $this->get_AuthorURLEmailNumber($write['kps_authorWire']);
-        $this->_authorSkype             = $this->get_AuthorURLEmailNumber($write['kps_authorSkype']);
-        $this->_authorFacebookMessenger = $this->get_AuthorURLEmailNumber($write['kps_authorFacebookMessenger']);
-        $this->_authorWebsite           = $this->get_AuthorURLEmailNumber($write['kps_authorWebsite']);
-        $this->_authorFacebook          = $this->get_AuthorURLEmailNumber($write['kps_authorFacebook']);
-        $this->_authorInstagram         = $this->get_AuthorURLEmailNumber($write['kps_authorInstagram']);
+        $this->_authorTelephone         = $this->get_AuthorURLEmailNumber($write['kps_authorTelephone'], false, false, true, false);
+        $this->_authorMobile            = $this->get_AuthorURLEmailNumber($write['kps_authorMobile'], false, false, true, false);
+        $this->_authorSignal            = $this->get_AuthorURLEmailNumber($write['kps_authorSignal'], false, false, true, false);
+        $this->_authorViper             = $this->get_AuthorURLEmailNumber($write['kps_authorViper'], false, false, true, false);
+        $this->_authorTelegram          = $this->get_AuthorURLEmailNumber($write['kps_authorTelegram'], false, false, true, false);
+        $this->_authorWhatsapp          = $this->get_AuthorURLEmailNumber($write['kps_authorWhatsapp'], false, false, true, false);
+        $this->_authorHoccer            = $this->get_AuthorURLEmailNumber($write['kps_authorHoccer'], true, false, false, false);
+        $this->_authorWire              = $this->get_AuthorURLEmailNumber($write['kps_authorWire'], true, false, true, false);
+        $this->_authorSkype             = $this->get_AuthorURLEmailNumber($write['kps_authorSkype'], true, false, true, true);
+        $this->_authorFacebookMessenger = $this->get_AuthorURLEmailNumber($write['kps_authorFacebookMessenger'], false, true, false, false);
+        $this->_authorWebsite           = $this->get_AuthorURLEmailNumber($write['kps_authorWebsite'], false, true, false, false);
+        $this->_authorFacebook          = $this->get_AuthorURLEmailNumber($write['kps_authorFacebook'], false, true, false, false);
+        $this->_authorInstagram         = $this->get_AuthorURLEmailNumber($write['kps_authorInstagram'], false, true, false, false);
 
         // Salt generieren
         $salt = Hash::salt(32); // Salt erstellen mit einer Zeichenlänge von 32
@@ -657,101 +657,54 @@ class kps_entry_write
     }
 
     /**
-     * Autor Telefonnmmern Kontaktoptionen escapen
+     * Autor Kontaktoptionen escapen
+     * URL / Email / Nummern / Username
      */
-    public function get_TelephoneNumbers($number = '')
-    {
-        if (!empty($number))
-        {
-            $number =  kps_sanitize_field($number);
-
-            $validChars = "<^((\\+|00)[1-9]\\d{0,3}|0 ?[1-9]|\\(00? ?[1-9][\\d ]*\\))[\\d\\-/ ]*$>";
-            if (preg_match($validChars, $number))
-            {
-                $number = preg_replace("<^\\+>", "00", $number);
-                $number = preg_replace("<\\D+>", "", $number);
-
-                return $number;
-            }
-            else
-            {
-                $number = '';
-                return $number;
-            }
-        }
-        else
-        {
-            $number = '';
-            return $number;
-        }
-    }
-
-    /**
-     * Autor Email Kontaktoptionen escapen
-     */
-    public function get_AuthorContactEmailNumber($string = '')
+    public function get_AuthorURLEmailNumber($string = '', $allowedEmail = false, $allowedURL = false, $allowedNumber = false, $allowedString = false)
     {
         if (!empty($string))
         {
-            $email = esc_html(sanitize_email($string));
-            if (is_email($email) !== false)
+
+            // Charset Telephone oder Mobilenummern
+            $validChars = "<^((\\+|00)[1-9]\\d{0,3}|0 ?[1-9]|\\(00? ?[1-9][\\d ]*\\))[\\d\\-/ ]*$>";
+
+            $string = kps_sanitize_field($string);
+
+            $url    = $string; // URL
+            $email  = esc_html(sanitize_email($string)); // Email
+            $number = preg_replace("![^+0-9]!", "", $string); // nur Zahlen und + am Anfang des Strings
+
+            // Email
+            if ($allowedEmail === true AND is_email($email) !== false)
             {
                 return $email;
             }
-            else
+
+            // Telephone oder Mobilenumbers
+            if ($allowedNumber === true AND preg_match($validChars, $number) !== 0)
             {
-                $string = '';
+                $number = preg_replace("<^\\+>", "00", $number); // + durch 00 ersetzen
+                $number = preg_replace("<\\D+>", "", $number); // Nur Zahlen erlauben mit einem +
+
+                return $number;
+            }
+
+            // URL
+            if ($allowedURL === true AND filter_var($url, FILTER_VALIDATE_URL) !== false)
+            {
+                return esc_url($url);
+            }
+
+            // String z.B. Username
+            if ($allowedString === true AND $string != '')
+            {
                 return $string;
             }
         }
         else
         {
             $string = '';
-            return $string;
-        }
-    }
 
-    /**
-     * Autor URL/Email/Number Kontaktoptionen escapen
-     */
-    public function get_AuthorURLEmailNumber($string = '')
-    {
-        if (!empty($string))
-        {
-            $number = kps_sanitize_field($string);
-            $url    = kps_sanitize_field($string);
-            $email  = esc_html(sanitize_email($string));
-
-            if (filter_var($url, FILTER_VALIDATE_URL) !== false)
-            {
-                // Ist URL?
-                return esc_url($url);
-            }
-            elseif (is_email($email) !== false)
-            {
-                // Ist Email
-                return $email;
-            }
-            else
-            {
-                $validChars = "<^((\\+|00)[1-9]\\d{0,3}|0 ?[1-9]|\\(00? ?[1-9][\\d ]*\\))[\\d\\-/ ]*$>";
-                if (preg_match($validChars, $number))
-                {
-                    $number = preg_replace("<^\\+>", "00", $number);
-                    $number = preg_replace("<\\D+>", "", $number);
-
-                    return $number;
-                }
-                else
-                {
-                    $number = '';
-                    return $number;
-                }
-            }
-        }
-        else
-        {
-            $string = '';
             return $string;
         }
     }
@@ -762,7 +715,7 @@ class kps_entry_write
     public function get_authorIpHost()
     {
         // Author-IP
-        if (!empty( $_SERVER['HTTP_CLIENT_IP']))
+        if (!empty($_SERVER['HTTP_CLIENT_IP']))
         {
             $this->_authorIp = $_SERVER['HTTP_CLIENT_IP'];
         }
@@ -796,7 +749,7 @@ class kps_entry_write
                                 $authorWebsite = '',
                                 $authorFacebook = '',
                                 $authorInstagram = ''
-    )
+                            )
     {
         if (!empty($authorTelephone))
         {
@@ -880,14 +833,14 @@ class kps_entry_write
             $auhorMailContent   =
 esc_html(__('You have just posted a new entry on %blogname%.
 
-To be able to unlock it, you have to use the
-Confirm entry via the following link and enter your email address.
-If you do not release this post, it will become automatic
-deleted on %erasedatetime% from our database.
+To be able to publish it, you have to confirm it via the link
+below and enter your email address. If you do not release this
+post, it will be deleted automatically on %erasedatetime% from
+our database.
 
 Activate entry:
 *******************
-%linkactivation%
+%linkaactivation%
 
 Delete entry:
 *******************
@@ -1034,6 +987,7 @@ Your team
         // Email versenden
         $headers = 'From: ' . get_bloginfo('name'). ' <' .  esc_attr(get_option('kps_MailFrom', false)) . '>';
         $this->_activationEmailIsSend = wp_mail( esc_attr($this->_authorEmail), $authorMailSubject, $auhorMailContent, $headers);
+
         return $this->_activationEmailIsSend; // Rückgabe des Wertes
     }
 
@@ -1056,6 +1010,7 @@ Your team
         // Email versenden
         $headers = 'From: ' . get_bloginfo('name'). ' <' .  esc_attr(get_option('kps_MailFrom', false)) . '>';
         $this->_adminActivationIsSend = wp_mail( esc_attr(get_option('kps_MailFrom', false)), $adminActivationSubject, $adminActivationMessage, $headers);
+
         return $this->_adminActivationIsSend; // Rückgabe des Wertes
     }
 
@@ -1074,6 +1029,7 @@ Your team
         // Email versenden
         $headers = 'From: ' . get_bloginfo('name'). ' <' .  esc_attr(get_option('kps_MailFrom', false)) . '>';
         $this->_emailCopyIsSend = wp_mail( esc_attr($this->_emailCopyCC['kpsEmailCC']), $emailCopySubject, $emailCopyMessage, $headers);
+
         return $this->_emailCopyIsSend; // Rückgabe des Wertes
     }
 

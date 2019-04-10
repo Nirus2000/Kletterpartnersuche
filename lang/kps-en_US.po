@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kletterpartner-Suche\n"
-"POT-Creation-Date: 2019-02-19 10:17+0100\n"
-"PO-Revision-Date: 2019-02-19 10:17+0100\n"
+"POT-Creation-Date: 2019-04-10 18:35+0200\n"
+"PO-Revision-Date: 2019-04-10 18:35+0200\n"
 "Last-Translator: Alexander Ott <kps@nirus-online.de>\n"
 "Language-Team: Alexander Ott\n"
 "Language: en_US\n"
@@ -66,27 +66,27 @@ msgstr "Saved"
 msgid ""
 "The General Terms and Conditions (GTC) are contractual clauses that "
 "standardize\n"
-"and concretisation of mass contracts. They are unilaterally provided by a "
-"contracting party\n"
+"and regulate mass contracts. They are unilaterally provided by a contracting "
+"party\n"
 "and therefore require some control to prevent their misuse. We recommend "
 "this\n"
-"to explain to the user (author) that the contact data, which the user "
-"(author), the requester\n"
-"(User) leaves without the control, verification and verification of the site "
+"to explain to the user (author) that the contact details, which the user "
+"(author), passes to the requester\n"
+"(User) are left without the control, checking and verification of the site "
 "operator or the\n"
-"Requester happens. Here you can assign your terms and conditions in the form."
+"Requester. Here you can assign your own terms and conditions in the form."
 msgstr ""
 "The General Terms and Conditions (GTC) are contractual clauses that "
 "standardize\n"
-"and concretisation of mass contracts. They are unilaterally provided by a "
-"contracting party\n"
+"and regulate mass contracts. They are unilaterally provided by a contracting "
+"party\n"
 "and therefore require some control to prevent their misuse. We recommend "
 "this\n"
-"to explain to the user (author) that the contact data, which the user "
-"(author), the requester\n"
-"(User) leaves without the control, verification and verification of the site "
+"to explain to the user (author) that the contact details, which the user "
+"(author), passes to the requester\n"
+"(User) are left without the control, checking and verification of the site "
 "operator or the\n"
-"Requester happens. Here you can assign your terms and conditions in the form."
+"Requester. Here you can assign your own terms and conditions in the form."
 
 #: admin/kps-agb.php:145 admin/kps-agb.php:238 admin/kps-privacy.php:185
 #: admin/kps-privacy.php:299
@@ -106,21 +106,21 @@ msgstr "Save"
 
 #: admin/kps-agb.php:224 admin/kps-privacy.php:285
 msgid ""
-"GPDR is the common abbreviation for the General Data Protection Regulation. "
-"With this the EU (European Union) wants\n"
-"create a single legal framework for the processing and storage of personal "
-"data. In this plugin, will be\n"
-"Personal data are processed, stored and retrieved without verification and "
-"verification.\n"
-"Here you can assign your GPDR to the form."
+"GPDR is the common abbreviation for the General Data Protection Regulation.\n"
+"With this the EU (European Union) wants create a single legal framework for "
+"the processing and\n"
+"storage of personal data. In this plugin, Personal data can be processed, "
+"stored and retrieved\n"
+"without checking and verification. Here you can assign your own GPDR to the "
+"form."
 msgstr ""
-"GPDR is the common abbreviation for the General Data Protection Regulation. "
-"With this the EU (European Union) wants\n"
-"create a single legal framework for the processing and storage of personal "
-"data. In this plugin, will be\n"
-"Personal data are processed, stored and retrieved without verification and "
-"verification.\n"
-"Here you can assign your GPDR to the form."
+"GPDR is the common abbreviation for the General Data Protection Regulation.\n"
+"With this the EU (European Union) wants create a single legal framework for "
+"the processing and\n"
+"storage of personal data. In this plugin, Personal data can be processed, "
+"stored and retrieved\n"
+"without checking and verification. Here you can assign your own GPDR to the "
+"form."
 
 #: admin/kps-agb.php:228 admin/kps-privacy.php:289 admin/kps.php:177
 #: frontend/kps-form.php:300 frontend/kps-form.php:342 kps-hooks.php:73
@@ -192,8 +192,8 @@ msgstr "No transparency"
 #: admin/kps-design.php:377 admin/kps-design.php:390 admin/kps-design.php:706
 #: admin/kps-design.php:719 admin/kps-design.php:738 admin/kps-design.php:905
 #: admin/kps-design.php:918 admin/kps-design.php:937
-#: classes/kps-entries.php:525 frontend/kps-entries.php:205
-#: frontend/kps-form.php:535
+#: classes/kps-entries.php:523 frontend/kps-entries.php:205
+#: frontend/kps-form.php:551
 msgid "Hall"
 msgstr "Hall"
 
@@ -203,8 +203,8 @@ msgstr "Hall"
 #: admin/kps-design.php:378 admin/kps-design.php:391 admin/kps-design.php:707
 #: admin/kps-design.php:720 admin/kps-design.php:739 admin/kps-design.php:906
 #: admin/kps-design.php:919 admin/kps-design.php:938
-#: classes/kps-entries.php:530 frontend/kps-entries.php:206
-#: frontend/kps-form.php:536
+#: classes/kps-entries.php:528 frontend/kps-entries.php:206
+#: frontend/kps-form.php:552
 msgid "Climbing"
 msgstr "Climbing"
 
@@ -214,7 +214,7 @@ msgstr "Climbing"
 #: admin/kps-design.php:379 admin/kps-design.php:392 admin/kps-design.php:708
 #: admin/kps-design.php:721 admin/kps-design.php:740 admin/kps-design.php:907
 #: admin/kps-design.php:920 admin/kps-design.php:939
-#: classes/kps-entries.php:540 frontend/kps-entries.php:207
+#: classes/kps-entries.php:538 frontend/kps-entries.php:207
 msgid "Walking/Trekking"
 msgstr "Walking/Trekking"
 
@@ -224,8 +224,8 @@ msgstr "Walking/Trekking"
 #: admin/kps-design.php:380 admin/kps-design.php:393 admin/kps-design.php:709
 #: admin/kps-design.php:722 admin/kps-design.php:741 admin/kps-design.php:908
 #: admin/kps-design.php:921 admin/kps-design.php:940
-#: classes/kps-entries.php:535 frontend/kps-entries.php:208
-#: frontend/kps-form.php:538
+#: classes/kps-entries.php:533 frontend/kps-entries.php:208
+#: frontend/kps-form.php:554
 msgid "Travels"
 msgstr "Travels"
 
@@ -235,8 +235,8 @@ msgstr "Travels"
 #: admin/kps-design.php:381 admin/kps-design.php:394 admin/kps-design.php:710
 #: admin/kps-design.php:723 admin/kps-design.php:742 admin/kps-design.php:909
 #: admin/kps-design.php:922 admin/kps-design.php:941
-#: classes/kps-entries.php:566 frontend/kps-entries.php:209
-#: frontend/kps-form.php:546
+#: classes/kps-entries.php:564 frontend/kps-entries.php:209
+#: frontend/kps-form.php:562
 msgid "Unique"
 msgstr "Unique"
 
@@ -246,8 +246,8 @@ msgstr "Unique"
 #: admin/kps-design.php:382 admin/kps-design.php:395 admin/kps-design.php:711
 #: admin/kps-design.php:724 admin/kps-design.php:743 admin/kps-design.php:910
 #: admin/kps-design.php:923 admin/kps-design.php:942
-#: classes/kps-entries.php:571 frontend/kps-entries.php:212
-#: frontend/kps-form.php:547
+#: classes/kps-entries.php:569 frontend/kps-entries.php:212
+#: frontend/kps-form.php:563
 msgid "Regularly"
 msgstr "Regularly"
 
@@ -257,8 +257,8 @@ msgstr "Regularly"
 #: admin/kps-design.php:383 admin/kps-design.php:396 admin/kps-design.php:712
 #: admin/kps-design.php:725 admin/kps-design.php:744 admin/kps-design.php:911
 #: admin/kps-design.php:924 admin/kps-design.php:943
-#: classes/kps-entries.php:597 frontend/kps-entries.php:213
-#: frontend/kps-form.php:555
+#: classes/kps-entries.php:595 frontend/kps-entries.php:213
+#: frontend/kps-form.php:571
 msgid "Single person"
 msgstr "Single person"
 
@@ -268,8 +268,8 @@ msgstr "Single person"
 #: admin/kps-design.php:384 admin/kps-design.php:397 admin/kps-design.php:713
 #: admin/kps-design.php:726 admin/kps-design.php:745 admin/kps-design.php:912
 #: admin/kps-design.php:925 admin/kps-design.php:944
-#: classes/kps-entries.php:602 frontend/kps-entries.php:214
-#: frontend/kps-form.php:556
+#: classes/kps-entries.php:600 frontend/kps-entries.php:214
+#: frontend/kps-form.php:572
 msgid "Family"
 msgstr "Family"
 
@@ -279,8 +279,8 @@ msgstr "Family"
 #: admin/kps-design.php:385 admin/kps-design.php:398 admin/kps-design.php:714
 #: admin/kps-design.php:727 admin/kps-design.php:746 admin/kps-design.php:913
 #: admin/kps-design.php:926 admin/kps-design.php:945
-#: classes/kps-entries.php:607 frontend/kps-entries.php:215
-#: frontend/kps-form.php:557
+#: classes/kps-entries.php:605 frontend/kps-entries.php:215
+#: frontend/kps-form.php:573
 msgid "Club/Group"
 msgstr "Club/Group"
 
@@ -357,8 +357,20 @@ msgstr "Entries"
 msgid "Only the entries are displayed without form and form button."
 msgstr "Only the entries are displayed without form and form button."
 
+#: admin/kps-design.php:995
+msgid "Button Name"
+msgstr "Button name"
+
+#: admin/kps-design.php:996 frontend/kps-form.php:383 frontend/kps-form.php:392
+msgid "Write an entry"
+msgstr "Write an entry"
+
+#: admin/kps-design.php:997
+msgid "Change button name in the form."
+msgstr "Change button name in the form."
+
 #: admin/kps-email.php:72 admin/kps-email.php:1088 admin/kps-email.php:1140
-#: admin/kps.php:271 classes/kps-write.php:879
+#: admin/kps.php:271 classes/kps-write.php:832
 msgid "Activation"
 msgstr "Activation"
 
@@ -489,7 +501,7 @@ msgstr "Author contact details"
 #: admin/kps-email.php:1299 admin/kps-entries.php:534 admin/kps-entries.php:812
 #: admin/kps-entries.php:906 admin/kps.php:267 admin/kps.php:283
 #: classes/kps-reporting.php:220 frontend/kps-entries.php:74
-#: frontend/kps-form.php:562 functions/kps-privacy.php:182
+#: frontend/kps-form.php:578 functions/kps-privacy.php:182
 msgid "Entry"
 msgid_plural "Entries"
 msgstr[0] "Entry"
@@ -662,18 +674,18 @@ msgstr "Shorttag %linkdelete% missing"
 msgid "Shorttag %erasepassword% missing"
 msgstr "Shorttag %erasepassword% missing"
 
-#: admin/kps-email.php:1142 classes/kps-write.php:881
+#: admin/kps-email.php:1142 classes/kps-write.php:834
 msgid ""
 "You have just posted a new entry on %blogname%.\n"
 "\n"
-"To be able to unlock it, you have to use the\n"
-"Confirm entry via the following link and enter your email address.\n"
-"If you do not release this post, it will become automatic\n"
-"deleted on %erasedatetime% from our database.\n"
+"To be able to publish it, you have to confirm it via the link\n"
+"below and enter your email address. If you do not release this\n"
+"post, it will be deleted automatically on %erasedatetime% from\n"
+"our database.\n"
 "\n"
 "Activate entry:\n"
 "*******************\n"
-"%linkactivation%\n"
+"%linkaactivation%\n"
 "\n"
 "Delete entry:\n"
 "*******************\n"
@@ -702,10 +714,10 @@ msgid ""
 msgstr ""
 "You have just posted a new entry on %blogname%.\n"
 "\n"
-"To be able to unlock it, you have to use the\n"
-"Confirm entry via the following link and enter your email address.\n"
-"If you do not release this post, it will become automatic\n"
-"deleted on %erasedatetime% from our database.\n"
+"To be able to publish it, you have to confirm it via the link\n"
+"below and enter your email address. If you do not release this\n"
+"post, it will be deleted automatically on %erasedatetime% from\n"
+"our database.\n"
 "\n"
 "Activate entry:\n"
 "*******************\n"
@@ -748,75 +760,75 @@ msgstr "Delete-Link"
 msgid "Entry unlocked"
 msgstr "Entry unlocked"
 
-#: admin/kps-entries.php:272 admin/kps-settings.php:602
-#: classes/kps-requirement.php:250 classes/kps-write.php:936
-#: frontend/kps-form.php:580 functions/kps-privacy.php:226
+#: admin/kps-entries.php:272 admin/kps-settings.php:604
+#: classes/kps-requirement.php:250 classes/kps-write.php:889
+#: frontend/kps-form.php:596 functions/kps-privacy.php:226
 msgid "Telephone"
 msgstr "Telephone"
 
-#: admin/kps-entries.php:276 admin/kps-settings.php:604
-#: classes/kps-requirement.php:254 classes/kps-write.php:940
-#: frontend/kps-form.php:591 functions/kps-privacy.php:230
+#: admin/kps-entries.php:276 admin/kps-settings.php:602
+#: classes/kps-requirement.php:254 classes/kps-write.php:893
+#: frontend/kps-form.php:607 functions/kps-privacy.php:230
 msgid "Mobile Phone"
 msgstr "Mobile Phone"
 
 #: admin/kps-entries.php:280 classes/kps-requirement.php:258
-#: classes/kps-write.php:944 functions/kps-privacy.php:234
+#: classes/kps-write.php:897 functions/kps-privacy.php:234
 msgid "Signal-Messenger"
 msgstr "Signal-Messenger"
 
 #: admin/kps-entries.php:284 classes/kps-requirement.php:262
-#: classes/kps-write.php:948 functions/kps-privacy.php:238
+#: classes/kps-write.php:901 functions/kps-privacy.php:238
 msgid "Viper-Messenger"
 msgstr "Viper-Messenger"
 
 #: admin/kps-entries.php:288 classes/kps-requirement.php:266
-#: classes/kps-write.php:952 functions/kps-privacy.php:242
+#: classes/kps-write.php:905 functions/kps-privacy.php:242
 msgid "Telegram-Messenger"
 msgstr "Telegram-Messenger"
 
 #: admin/kps-entries.php:292 classes/kps-requirement.php:270
-#: classes/kps-write.php:956 functions/kps-privacy.php:246
+#: classes/kps-write.php:909 functions/kps-privacy.php:246
 msgid "Whatsapp-Messenger"
 msgstr "Whatsapp-Messenger"
 
 #: admin/kps-entries.php:296 classes/kps-requirement.php:274
-#: classes/kps-write.php:960 functions/kps-privacy.php:250
+#: classes/kps-write.php:913 functions/kps-privacy.php:250
 msgid "Hoccer-Messenger"
 msgstr "Hoccer-Messenger"
 
 #: admin/kps-entries.php:300 classes/kps-requirement.php:278
-#: classes/kps-write.php:964 functions/kps-privacy.php:254
+#: classes/kps-write.php:917 functions/kps-privacy.php:254
 msgid "Wire-Messenger"
 msgstr "Wire-Messenger"
 
 #: admin/kps-entries.php:304 classes/kps-requirement.php:282
-#: classes/kps-write.php:968 functions/kps-privacy.php:258
+#: classes/kps-write.php:921 functions/kps-privacy.php:258
 msgid "Skype-Messenger"
 msgstr "Skype-Messenger"
 
-#: admin/kps-entries.php:308 admin/kps-settings.php:626
-#: classes/kps-requirement.php:286 classes/kps-write.php:972
+#: admin/kps-entries.php:308 admin/kps-settings.php:616
+#: classes/kps-requirement.php:286 classes/kps-write.php:925
 #: functions/kps-privacy.php:262
 msgid "Facebook-Messenger"
 msgstr "Facebook-Messenger"
 
-#: admin/kps-entries.php:312 admin/kps-settings.php:646
-#: classes/kps-requirement.php:290 classes/kps-write.php:976
-#: frontend/kps-form.php:690 functions/kps-privacy.php:266
+#: admin/kps-entries.php:312 admin/kps-settings.php:650
+#: classes/kps-requirement.php:290 classes/kps-write.php:929
+#: frontend/kps-form.php:706 functions/kps-privacy.php:266
 msgid "Website"
 msgstr "Website"
 
-#: admin/kps-entries.php:316 admin/kps-settings.php:648
-#: classes/kps-requirement.php:294 classes/kps-write.php:980
-#: frontend/kps-form.php:646 frontend/kps-form.php:701
+#: admin/kps-entries.php:316 admin/kps-settings.php:646
+#: classes/kps-requirement.php:294 classes/kps-write.php:933
+#: frontend/kps-form.php:618 frontend/kps-form.php:717
 #: functions/kps-privacy.php:270
 msgid "Facebook"
 msgstr "Facebook"
 
-#: admin/kps-entries.php:320 admin/kps-settings.php:650
-#: classes/kps-requirement.php:298 classes/kps-write.php:984
-#: frontend/kps-form.php:712 functions/kps-privacy.php:274
+#: admin/kps-entries.php:320 admin/kps-settings.php:648
+#: classes/kps-requirement.php:298 classes/kps-write.php:937
+#: frontend/kps-form.php:728 functions/kps-privacy.php:274
 msgid "Instagram"
 msgstr "Instagram"
 
@@ -1026,8 +1038,8 @@ msgid "Spam-Protection"
 msgstr "Spam-Protection"
 
 #: admin/kps-settings.php:87 admin/kps-settings.php:532
-msgid "Form-Optionen"
-msgstr "Formular-Optionen"
+msgid "Form options"
+msgstr "Form options"
 
 #: admin/kps-settings.php:90 admin/kps-settings.php:1095
 msgid "Navigation"
@@ -1036,14 +1048,16 @@ msgstr "Navigation"
 #: admin/kps-settings.php:383
 msgid ""
 "Set the number of messages per entry until the administrator is informed.\n"
-"The car lock picks up as soon as the number is reached. The range to the "
-"notification is between 1-499\n"
-"Messages. The range up to the automatic lock is between 2-500 messages."
+"The automatic lock kicks in as soon as the number is reached. The range to "
+"the notification is\n"
+"between 1-499 messages. The range up to the automatic lock is between 2-500 "
+"messages."
 msgstr ""
 "Set the number of messages per entry until the administrator is informed.\n"
-"The car lock picks up as soon as the number is reached. The range to the "
-"notification is between 1-499\n"
-"Messages. The range up to the automatic lock is between 2-500 messages."
+"The automatic lock kicks in as soon as the number is reached. The range to "
+"the notification is\n"
+"between 1-499 messages. The range up to the automatic lock is between 2-500 "
+"messages."
 
 #: admin/kps-settings.php:390
 msgid "Total Message-Reporting"
@@ -1086,33 +1100,33 @@ msgstr "Direct Contact"
 msgid "Messenger-Services"
 msgstr "Messenger-Services"
 
-#: admin/kps-settings.php:616 frontend/kps-form.php:602
-msgid "Signal"
-msgstr "Signal"
-
-#: admin/kps-settings.php:618 frontend/kps-form.php:624
-msgid "Viper"
-msgstr "Viper"
-
-#: admin/kps-settings.php:620 frontend/kps-form.php:613
-msgid "Telegram"
-msgstr "Telegram"
-
-#: admin/kps-settings.php:624 frontend/kps-form.php:635
-msgid "Whatsapp"
-msgstr "Whatsapp"
-
-#: admin/kps-settings.php:628 frontend/kps-form.php:657
-msgid "Hoccer"
-msgstr "Hoccer"
-
-#: admin/kps-settings.php:632 frontend/kps-form.php:668
+#: admin/kps-settings.php:618 frontend/kps-form.php:651
 msgid "Skype"
 msgstr "Skype"
 
-#: admin/kps-settings.php:634 frontend/kps-form.php:679
+#: admin/kps-settings.php:620 frontend/kps-form.php:684
+msgid "Whatsapp"
+msgstr "Whatsapp"
+
+#: admin/kps-settings.php:624 frontend/kps-form.php:629
+msgid "Hoccer"
+msgstr "Hoccer"
+
+#: admin/kps-settings.php:626 frontend/kps-form.php:662
+msgid "Telegram"
+msgstr "Telegram"
+
+#: admin/kps-settings.php:628 frontend/kps-form.php:695
 msgid "Wire"
 msgstr "Wire"
+
+#: admin/kps-settings.php:632 frontend/kps-form.php:640
+msgid "Signal"
+msgstr "Signal"
+
+#: admin/kps-settings.php:634 frontend/kps-form.php:673
+msgid "Viper"
+msgstr "Viper"
 
 #: admin/kps-settings.php:642
 msgid "Web- / Profilpages"
@@ -1258,14 +1272,14 @@ msgstr "No spam protection possible"
 #: admin/kps-settings.php:1289
 msgid ""
 "Enter the Google reCaptcha Keys here. The site key is used for the robot. "
-"The secret key will use\n"
+"The secret key will be used\n"
 "for communication between your website and Google. Keep the key secret. You "
-"can sign up under"
+"can sign in under:"
 msgstr ""
 "Enter the Google reCaptcha Keys here. The site key is used for the robot. "
-"The secret key will use\n"
+"The secret key will be used\n"
 "for communication between your website and Google. Keep the key secret. You "
-"can sign up under"
+"can sign in under:"
 
 #: admin/kps-settings.php:1296
 msgid "Site-Key"
@@ -1310,8 +1324,8 @@ msgid "Waiting entries"
 msgstr "Waiting entries"
 
 #: admin/kps-settings.php:1456 admin/kps.php:192
-msgid "Form-Textarea"
-msgstr "Formular-Textarea"
+msgid "Form textarea"
+msgstr "Form textarea"
 
 #: admin/kps-settings.php:1457 admin/kps.php:193
 msgid "word"
@@ -1327,19 +1341,17 @@ msgstr "Email was set to default"
 msgid ""
 "The email addresses are an optional input. If no email address is entered,\n"
 "the script uses the email address set in the board. Furthermore, this is "
-"used when the entries by the\n"
-"Administrator must be released. Additional information about the activities "
-"can be retrieved."
+"used when the entries must be released  by the\n"
+"Administrator. Additional information about the activities can be retrieved."
 msgstr ""
 "The email addresses are an optional input. If no email address is entered,\n"
 "the script uses the email address set in the board. Furthermore, this is "
-"used when the entries by the\n"
-"Administrator must be released. Additional information about the activities "
-"can be retrieved."
+"used when the entries must be released  by the\n"
+"Administrator. Additional information about the activities can be retrieved."
 
 #: admin/kps-settings.php:1609 admin/kps.php:210 admin/kps.php:433
-#: frontend/kps-form.php:570 frontend/kps-form.php:571
-#: frontend/kps-form.php:658 frontend/template/kps-template.php:273
+#: frontend/kps-form.php:586 frontend/kps-form.php:587
+#: frontend/kps-form.php:630 frontend/template/kps-template.php:273
 #: frontend/template/kps-template.php:280
 #: frontend/template/kps-template.php:366 functions/kps-privacy.php:172
 msgid "Email"
@@ -1392,23 +1404,23 @@ msgstr "Dashboard"
 
 #: admin/kps-uninstall.php:161
 msgid ""
-"With the uninstall you delete all entries in the database, as well as the "
-"attitudes!"
+"If you proceed with uninstall you delete all entries in the database, as "
+"well as the settings!"
 msgstr ""
-"With the uninstall you delete all entries in the database, as well as the "
-"attitudes!"
+"If you proceed with uninstall you delete all entries in the database, as "
+"well as the settings!"
 
 #: admin/kps-uninstall.php:164
 msgid "This can not be undone. The process is final."
 msgstr "This can not be undone. The process is final."
 
 #: admin/kps-uninstall.php:170
-msgid "Acknowledge!"
-msgstr "Acknowledge!"
+msgid "Confirm!"
+msgstr "Confirm!"
 
 #: admin/kps-uninstall.php:173
-msgid "Yes, I am absolutely sure. Run!"
-msgstr "Yes, I am absolutely sure. Run!"
+msgid "Yes, I am absolutely sure. Go ahead!"
+msgstr "Yes, I am absolutely sure. Go ahead!"
 
 #: admin/kps-uninstall.php:182
 msgid "Yes, uninstall!"
@@ -1440,14 +1452,14 @@ msgstr "Statistics"
 
 #: admin/kps.php:94
 msgid ""
-"The function mail () is required to send emails and is not active in your "
-"PHP configuration.\n"
+"The function mail () is used to send emails and is not active in your PHP "
+"configuration.\n"
 "You can install a Wordpress plugin that uses SMTP instead of the mail () "
 "function, or you can contact your provider,\n"
 "that he unlocks this feature."
 msgstr ""
-"The function mail () is required to send emails and is not active in your "
-"PHP configuration.\n"
+"The function mail () is used to send emails and is not active in your PHP "
+"configuration.\n"
 "You can install a Wordpress plugin that uses SMTP instead of the mail () "
 "function, or you can contact your provider,\n"
 "that he unlocks this feature."
@@ -1631,7 +1643,7 @@ msgstr "PHP"
 msgid "JQuery"
 msgstr "JQuery"
 
-#: classes/kps-entries.php:421 classes/kps-write.php:1028
+#: classes/kps-entries.php:418 classes/kps-write.php:981
 msgid "Wait for release from the Author"
 msgstr "Wait for release from the Author"
 
@@ -1664,8 +1676,8 @@ msgid "Edit-Link"
 msgstr "Edit-Link"
 
 #: classes/kps-reporting.php:207
-msgid "System-Data"
-msgstr "System-Data"
+msgid "System data"
+msgstr "System data"
 
 #: classes/kps-reporting.php:210
 msgid "Created on"
@@ -1680,11 +1692,11 @@ msgstr "Released on"
 msgid "Requirement"
 msgstr "Requirement"
 
-#: classes/kps-write.php:1047
+#: classes/kps-write.php:1001
 msgid "Release required"
 msgstr "Release required"
 
-#: classes/kps-write.php:1048
+#: classes/kps-write.php:1002
 msgid ""
 "A new entry in the Climbing-Partner-Search is available and requires your "
 "approval!"
@@ -1692,20 +1704,20 @@ msgstr ""
 "A new entry in the Climbing-Partner-Search is available and requires your "
 "approval!"
 
-#: classes/kps-write.php:1067
+#: classes/kps-write.php:1022
 msgid "New entry"
 msgstr "New entry"
 
-#: classes/kps-write.php:1068
+#: classes/kps-write.php:1023
 msgid "There is a new entry in the Climbing-Partner-Search!"
 msgstr "There is a new entry in the Climbing-Partner-Search!"
 
 #: frontend/kps-activation.php:123 frontend/kps-activation.php:143
-#: frontend/kps-form.php:215 frontend/kps-form.php:766
+#: frontend/kps-form.php:215 frontend/kps-form.php:783
 msgid ""
-"It could be that the entry only becomes visible after we have checked this!"
+"It could be that the entry only becomes visible after we have approved it!"
 msgstr ""
-"It could be that the entry only becomes visible after we have checked this!"
+"It could be that the entry only becomes visible after we have approved it!"
 
 #: frontend/kps-activation.php:126
 msgid "Entry has been unlocked!"
@@ -1726,7 +1738,7 @@ msgstr "Note! Entry has already been activated!"
 
 #: frontend/kps-activation.php:153 frontend/kps-activation.php:179
 #: frontend/kps-delete.php:138 frontend/kps-delete.php:163
-#: frontend/kps-form.php:426 frontend/kps-report.php:139
+#: frontend/kps-form.php:442 frontend/kps-report.php:139
 #: frontend/kps-report.php:165 frontend/kps-requirement.php:181
 #: frontend/kps-requirement.php:191 frontend/kps-requirement.php:214
 #: frontend/kps-verify.php:156 frontend/kps-verify.php:175
@@ -1735,7 +1747,7 @@ msgid "Please contact the administrator if the problem reappears!"
 msgstr "Please contact the administrator if the problem reappears!"
 
 #: frontend/kps-activation.php:169 frontend/kps-delete.php:155
-#: frontend/kps-form.php:478 frontend/kps-report.php:156
+#: frontend/kps-form.php:494 frontend/kps-report.php:156
 #: frontend/kps-requirement.php:205 frontend/kps-verify.php:202
 msgid "Google reCaptcha has not been confirmed!"
 msgstr "Google reCaptcha has not been confirmed!"
@@ -1773,25 +1785,25 @@ msgstr "Entry could not be deleted!"
 
 #: frontend/kps-delete.php:161 frontend/kps-requirement.php:180
 msgid ""
-"You entered password is incorrectly. Please pay attention to upper and lower "
-"case!"
+"The password you entered is incorrect. Make sure you pay attention to upper "
+"and lower case!"
 msgstr ""
-"You entered password is incorrectly. Please pay attention to upper and lower "
-"case!"
+"The password you entered is incorrect. Make sure you pay attention to upper "
+"and lower case!"
 
 #: frontend/kps-form.php:213
-msgid "In the next few minutes, you should receive an Activation-Email!"
-msgstr "In the next few minutes, you should receive an Activation-Email!"
+msgid "You should receive an Activation-Email in the next few minutes!"
+msgstr "You should receive an Activation-Email in the next few minutes!"
 
 #: frontend/kps-form.php:214 frontend/kps-verify.php:155
 msgid ""
-"If you have not received any email from us, it may also be stuck in your "
-"spam filter (spam folder)!"
+"If you have not received any email from us, it may also be in your junk "
+"folder!"
 msgstr ""
-"If you have not received any email from us, it may also be stuck in your "
-"spam filter (spam folder)!"
+"If you have not received any email from us, it may also be in your junk "
+"folder!"
 
-#: frontend/kps-form.php:216 frontend/kps-form.php:767
+#: frontend/kps-form.php:216 frontend/kps-form.php:784
 msgid "We reserve the right to edit, delete or not publish entries!"
 msgstr "We reserve the right to edit, delete or not publish entries!"
 
@@ -1804,8 +1816,8 @@ msgid "The form was processed too fast. Always with tranquillity!"
 msgstr "The form was processed too fast. Always with tranquillity!"
 
 #: frontend/kps-form.php:242
-msgid "Form has been reset!"
-msgstr "Form has been reset!"
+msgid "The Form has been reset!"
+msgstr "The Form has been reset!"
 
 #: frontend/kps-form.php:246
 msgid "Error! Spam-Block was triggered!"
@@ -1834,125 +1846,121 @@ msgstr "Login"
 msgid "Registration"
 msgstr "Registration"
 
-#: frontend/kps-form.php:382
-msgid "Write an entry"
-msgstr "Write an entry"
-
-#: frontend/kps-form.php:425 frontend/kps-verify.php:179
+#: frontend/kps-form.php:441 frontend/kps-verify.php:179
 msgid "Error! Database connection disturbed!"
 msgstr "Error! Database connection disturbed!"
 
-#: frontend/kps-form.php:432
+#: frontend/kps-form.php:448
 msgid "There is already an entry of you with the same intentions!"
 msgstr "There is already an entry of you with the same intentions!"
 
-#: frontend/kps-form.php:438
+#: frontend/kps-form.php:454
 msgid "The entered name is already taken. Please choose another!"
 msgstr "The entered name is already taken. Please choose another!"
 
-#: frontend/kps-form.php:444
+#: frontend/kps-form.php:460
 msgid "The entered email address already exists. Please choose another!"
 msgstr "The entered email address already exists. Please choose another!"
 
-#: frontend/kps-form.php:450
+#: frontend/kps-form.php:466
 msgid "Your entry is too short. The minimum number of words is"
 msgstr "Your entry is too short. The minimum number of words is"
 
-#: frontend/kps-form.php:459
-msgid "Terms and Conditions and GDPR was not accepted!"
-msgstr "Terms and Conditions and GDPR was not accepted!"
+#: frontend/kps-form.php:475
+msgid "Please accept the Terms and Conditions and GDPR!"
+msgstr "Please accept the Terms and Conditions and GDPR!"
 
-#: frontend/kps-form.php:465
-msgid "Terms and conditions was not accepted!"
-msgstr "Terms and conditions was not accepted!"
+#: frontend/kps-form.php:481
+msgid "Please accept the Terms and Conditions!"
+msgstr "Please accept the Terms and Conditions!"
 
-#: frontend/kps-form.php:471
-msgid "General Data Protection Regulation was not accepted!"
-msgstr "General Data Protection Regulation was not accepted!"
+#: frontend/kps-form.php:487
+msgid "Please accept the GDPR!"
+msgstr "Please accept the GDPR!"
 
-#: frontend/kps-form.php:484
-msgid "Please complete the form completely!"
-msgstr "Please complete the form completely!"
+#: frontend/kps-form.php:500
+msgid "Please ensure you have completed every field in the form!"
+msgstr "Please ensure you have completed every field in the form!"
 
-#: frontend/kps-form.php:498
+#: frontend/kps-form.php:514
 msgid "Error! Form is incorrect!"
 msgstr "Error! Form is incorrect!"
 
-#: frontend/kps-form.php:510
+#: frontend/kps-form.php:526
 msgid "Close form"
 msgstr "Close form"
 
-#: frontend/kps-form.php:528 functions/kps-privacy.php:171
+#: frontend/kps-form.php:544 functions/kps-privacy.php:171
 msgid "Name"
 msgstr "Name"
 
-#: frontend/kps-form.php:529
+#: frontend/kps-form.php:545
 msgid "First name, name or nickname"
 msgstr "First name, name or nickname"
 
-#: frontend/kps-form.php:532 functions/kps-privacy.php:179
+#: frontend/kps-form.php:548 functions/kps-privacy.php:179
 msgid "I am looking for"
 msgstr "I am looking for"
 
-#: frontend/kps-form.php:537
+#: frontend/kps-form.php:553
 msgid "Walking"
 msgstr "Walking"
 
-#: frontend/kps-form.php:543 functions/kps-privacy.php:180
+#: frontend/kps-form.php:559 functions/kps-privacy.php:180
 msgid "Kind of search"
 msgstr "Kind of search"
 
-#: frontend/kps-form.php:552 functions/kps-privacy.php:181
+#: frontend/kps-form.php:568 functions/kps-privacy.php:181
 msgid "I am"
 msgstr "I am"
 
-#: frontend/kps-form.php:567
+#: frontend/kps-form.php:583
 msgid "How would you like to be contacted?"
 msgstr "How would you like to be contacted?"
 
-#: frontend/kps-form.php:581
+#: frontend/kps-form.php:597
 msgid "0351/123456"
 msgstr "0351/123456"
 
-#: frontend/kps-form.php:592 frontend/kps-form.php:603
-#: frontend/kps-form.php:614 frontend/kps-form.php:625
-#: frontend/kps-form.php:636
+#: frontend/kps-form.php:608 frontend/kps-form.php:641
+#: frontend/kps-form.php:663 frontend/kps-form.php:674
+#: frontend/kps-form.php:685
 msgid "0170/123456"
 msgstr "0170/123456"
 
-#: frontend/kps-form.php:647
+#: frontend/kps-form.php:619
 msgid "https://m.me/[Login-Name][.xyz]"
 msgstr "https://m.me/[Login-Name][.xyz]"
 
-#: frontend/kps-form.php:669
+#: frontend/kps-form.php:652
 msgid "Email, mobile number or Skype username"
 msgstr "Email, mobile number or Skype username"
 
-#: frontend/kps-form.php:680
+#: frontend/kps-form.php:696
 msgid "Email or mobile number"
 msgstr "Email or mobile number"
 
-#: frontend/kps-form.php:691
+#: frontend/kps-form.php:707
 msgid "https://www.your-website.com"
 msgstr "https://www.your-website.com"
 
-#: frontend/kps-form.php:702
+#: frontend/kps-form.php:718
 msgid "https://facebook.com/[Login-Name][.xyz]"
 msgstr "https://facebook.com/[Login-Name][.xyz]"
 
-#: frontend/kps-form.php:713
+#: frontend/kps-form.php:729
 msgid "https://instagram.com/[Login-Name]"
 msgstr "https://instagram.com/[Login-Name]"
 
-#: frontend/kps-form.php:754
+#: frontend/kps-form.php:771
 msgid "Send"
 msgstr "Send"
 
-#: frontend/kps-form.php:763
+#: frontend/kps-form.php:780
 msgid "Required fields"
 msgstr "Required fields"
 
-#: frontend/kps-form.php:764
+#: frontend/kps-form.php:781
 msgid ""
 "As a registered user, the registered login / display name and the "
 "corresponding email address are automatically used. This can not be changed!"
@@ -1960,7 +1968,7 @@ msgstr ""
 "As a registered user, the registered login / display name and the "
 "corresponding email address are automatically used. This can not be changed!"
 
-#: frontend/kps-form.php:765
+#: frontend/kps-form.php:782
 msgid ""
 "All contact details, except those that may be publicly accessible in the "
 "user profile, are not published, but can only be accessed!"
@@ -2055,8 +2063,8 @@ msgid "Read more..."
 msgstr "Read more..."
 
 #: frontend/kps-widget.php:206
-msgid "Titel"
-msgstr "Titel"
+msgid "Title"
+msgstr "Title"
 
 #: frontend/kps-widget.php:208
 msgid "Number of entries"
@@ -2147,7 +2155,7 @@ msgstr "Climbing-Partner-Search entries"
 msgid "Climbing-Partner"
 msgstr "Climbing-Partner"
 
-#: kps-hooks.php:91 kps-hooks.php:206
+#: kps-hooks.php:91 kps-hooks.php:203
 msgid "Settings"
 msgstr "Settings"
 
@@ -2165,17 +2173,17 @@ msgstr "Design"
 
 #: kps-hooks.php:136
 msgid ""
-"If you use the climbing partner search form and leave an entry, we will save "
-"entered data in our database. These can be retrieved depending on how the "
-"site operator has set this. The stored data will be sent on demand, "
-"automatically, to the email address of the requester. We may also store your "
-"IP, host name and other system information to improve spam detection."
+"If you use the climbing partner search form and leave an entry, your entered "
+"data will automatically be saved in our database. This can be retrieved "
+"depending on settings by the site operator. On request, stored data can be "
+"send to the email address of the requester. We may also store your IP, host "
+"name and other system information to improve spam detection."
 msgstr ""
-"If you use the climbing partner search form and leave an entry, we will save "
-"entered data in our database. These can be retrieved depending on how the "
-"site operator has set this. The stored data will be sent on demand, "
-"automatically, to the email address of the requester. We may also store your "
-"IP, host name and other system information to improve spam detection."
+"If you use the climbing partner search form and leave an entry, your entered "
+"data will automatically be saved in our database. This can be retrieved "
+"depending on settings by the site operator. On request, stored data can be "
+"send to the email address of the requester. We may also store your IP, host "
+"name and other system information to improve spam detection."
 
 #: kps-hooks.php:137
 msgid ""
@@ -2192,3 +2200,24 @@ msgid ""
 msgstr ""
 "Entries that have not been released will be stored for a minimum of 30 days "
 "and automatically deleted after a maximum of 180 days."
+
+#~ msgid "Acknowledge!"
+#~ msgstr "Acknowledge!"
+
+#~ msgid "In the next few minutes, you should receive an Activation-Email!"
+#~ msgstr "In the next few minutes, you should receive an Activation-Email!"
+
+#~ msgid "Terms and Conditions and GDPR was not accepted!"
+#~ msgstr "Terms and Conditions and GDPR was not accepted!"
+
+#~ msgid "Terms and conditions was not accepted!"
+#~ msgstr "Terms and conditions was not accepted!"
+
+#~ msgid "General Data Protection Regulation was not accepted!"
+#~ msgstr "General Data Protection Regulation was not accepted!"
+
+#~ msgid "Please complete the form completely!"
+#~ msgstr "Please complete the form completely!"
+
+#~ msgid "Titel"
+#~ msgstr "Titel"

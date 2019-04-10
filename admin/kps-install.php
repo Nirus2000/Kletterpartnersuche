@@ -47,9 +47,10 @@ function kps_install()
     global $wpdb;
 
     // Tabelle existiert nicht, dann erstellen
-    $result = $wpdb->query("SHOW TABLES LIKE '" . $wpdb->prefix . "kps_entries'");
+    $result_entries         = $wpdb->query("SHOW TABLES LIKE '" . $wpdb->prefix . "kps_entries'");
+    $result_requirements    = $wpdb->query("SHOW TABLES LIKE '" . $wpdb->prefix . "kps_requirement'");
 
-    if ($result == 0)
+    if ($result_entries == 0)
     {
         $sql = "
                 CREATE TABLE
@@ -80,8 +81,11 @@ function kps_install()
                 isReported tinyint(1) NOT NULL,
                 PRIMARY KEY  (id)
                 ) ENGINE=MyISAM CHARACTER SET utf8 COLLATE utf8_general_ci";
-        $result = $wpdb->query($sql);
+        $result_entries = $wpdb->query($sql);
+    }
 
+    if ($result_requirements == 0)
+    {
         $sql = "
                 CREATE TABLE
                 " . KPS_TABLE_REQUIREMENT . "
@@ -97,12 +101,15 @@ function kps_install()
                 sendData tinyint(1) NOT NULL,
                 PRIMARY KEY  (id)
                 ) ENGINE=MyISAM CHARACTER SET utf8 COLLATE utf8_general_ci";
-        $result2 = $wpdb->query($sql);
+        $result_requirements = $wpdb->query($sql);
     }
 
+    // Warte 1 Sekunde für Delay
+    sleep(1);
+
     // Prüfen, ob Tabelle existiert nach Installation
-    $resultkpsEntriesNotExist = $wpdb->query("SHOW TABLES LIKE '" . $wpdb->prefix . "kps_entries'");
-    $resultkpsRequirementNotExist = $wpdb->query("SHOW TABLES LIKE '" . $wpdb->prefix . "kps_requirement'");
+    $resultkpsEntriesNotExist       = $wpdb->query("SHOW TABLES LIKE '" . $wpdb->prefix . "kps_entries'");
+    $resultkpsRequirementNotExist   = $wpdb->query("SHOW TABLES LIKE '" . $wpdb->prefix . "kps_requirement'");
 
     if ($resultkpsEntriesNotExist != 0 && $resultkpsRequirementNotExist !=0)
     {
@@ -191,7 +198,7 @@ function kps_install()
             'kpsEmailDeleteTime'                => 'true'
         ));
 
-        // Einstellungen speichern inder der Wordpress Options-Tabelle
+        // Einstellungen speichern in der Options-Tabelle
         add_option('kps_version', KPS_VER);                             // KPS-Version
         add_option('kps_formOptions', $formOptions);                    // Formularoptionen
         add_option('kps_formWordCount', 25);                            // mindestwörter im Formular
@@ -236,7 +243,7 @@ function kps_upgrade()
         exit;
     }
 
-    if (version_compare($current_version, '1.2', '<='))
+    if (version_compare($current_version, '1.2', '<'))
     {
         // Versendungszeitstempel einfügen
         $sql =  "ALTER TABLE
@@ -252,7 +259,7 @@ function kps_upgrade()
         update_option('kps_widget', $widget, 'yes');
     }
 
-    if (version_compare($current_version, '1.3', '<='))
+    if (version_compare($current_version, '1.3', '<'))
     {
         // Formular-Optionen updaten
         $formOptions = kps_unserialize(get_option('kps_formOptions'));
@@ -278,7 +285,7 @@ function kps_upgrade()
         update_option('kps_formOptions', $setFormOption);
     }
 
-    if (version_compare($current_version, '1.5', '<='))
+    if (version_compare($current_version, '1.5', '<'))
     {
         $output = serialize(array(
             'kpsUnlockTime'                                 => 'false',

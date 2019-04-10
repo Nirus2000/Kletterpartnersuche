@@ -978,18 +978,23 @@ function kps_Shortcodes()
                                 	<tbody>
                                         <tr>
                                             <td><b>' . esc_html(__('Standard', 'kps')) . '</b></td>
-                                            <td><input type="text" name="kps-shortcode" size="40" readonly="readonly" value="[kps-shortcode]" /></td>
+                                            <td><input type="text" name="kps-shortcode" size="50" readonly="readonly" value="[kps-shortcode]" /></td>
                                             <td>' . esc_html(__('Standard-Edition', 'kps')) . '</td>
                                         </tr>
                                         <tr>
                                             <td><b>' . esc_html(__('Form', 'kps')) . '</b></td>
-                                            <td><input type="text" name="kps-shortcode" size="40" readonly="readonly" value="[kps-shortcode show-form-only=“true“]" /></td>
+                                            <td><input type="text" name="kps-shortcode" size="50" readonly="readonly" value="[kps-shortcode show-form-only=“true“]" /></td>
                                             <td>' . esc_html(__('Only the form will be displayed without entries.', 'kps')) . '</td>
                                         </tr>
                                         <tr>
                                             <td><b>' . esc_html(__('Entries', 'kps')) . '</b></td>
-                                            <td><input type="text" name="kps-shortcode" size="40" readonly="readonly" value="[kps-shortcode button-write=“false“]" /></td>
+                                            <td><input type="text" name="kps-shortcode" size="50" readonly="readonly" value="[kps-shortcode button-write=“false“]" /></td>
                                             <td>' . esc_html(__('Only the entries are displayed without form and form button.', 'kps')) . '</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>' . esc_html(__('Button Name', 'kps')) . '</b></td>
+                                            <td><input type="text" name="kps-shortcode" size="50" readonly="readonly" value="[kps-shortcode button-text=“' . esc_html(__('Write an entry', 'kps')) . '“]" /></td>
+                                            <td>' . esc_html(__('Change button name in the form.', 'kps')) . '</td>
                                         </tr>
                                 	</tbody>
                                 </table>

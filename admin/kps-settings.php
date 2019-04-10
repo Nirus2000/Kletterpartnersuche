@@ -84,7 +84,7 @@ function kps_Settings()
                     <div style="text-align: center;"><?php  esc_html_e('Spam-Protection', 'kps'); ?></div>
                 </a>
                 <a href="" class="nav-tab <?php if ($kps_tab == 'kps_Optionfields') { echo "nav-tab-active";} ?>" rel="kps_Optionfields">
-                    <div style="text-align: center;"><?php  esc_html_e('Form-Optionen', 'kps'); ?></div>
+                    <div style="text-align: center;"><?php  esc_html_e('Form options', 'kps'); ?></div>
                 </a>
                 <a href="" class="nav-tab <?php if ($kps_tab == 'kps_Pagination') { echo "nav-tab-active";} ?>" rel="kps_Pagination">
                     <div style="text-align: center;"><?php  esc_html_e('Navigation', 'kps'); ?></div>
@@ -381,8 +381,8 @@ function kps_Reporting()
     echo '
             <div class="kps_container" style="width: 33%"><h5>
 ' . esc_html(__('Set the number of messages per entry until the administrator is informed.
-The car lock picks up as soon as the number is reached. The range to the notification is between 1-499
-Messages. The range up to the automatic lock is between 2-500 messages.', 'kps')) . '.</h5>
+The automatic lock kicks in as soon as the number is reached. The range to the notification is
+between 1-499 messages. The range up to the automatic lock is between 2-500 messages.', 'kps')) . '.</h5>
                 <form class="form" action="" method="post">
                     <table class="table">
                         <tbody>
@@ -529,7 +529,7 @@ function kps_Optionfields()
                     update_option('kps_formOptions', $setFormOption);
                     echo '
                     <div class="notice notice-success is-dismissible">
-                    	<p><strong>' . esc_html(__('Saved', 'kps')) . ':&#160;' . esc_html(__('Form-Optionen', 'kps')) . '</strong></p>
+                    	<p><strong>' . esc_html(__('Saved', 'kps')) . ':&#160;' . esc_html(__('Form options', 'kps')) . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -598,10 +598,10 @@ function kps_Optionfields()
                                 <td colspan="6"><u>' . esc_html(__('Direct Contact', 'kps')) . '</u></td>
                             </tr>
                             <tr>
-                                <td width="25"><input type="checkbox" name="kpsFormOptionTelephone" id="kpsFormOptionTelephone" value="1" ' . $checkedFormOptionTelephone . ' /></td>
-                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionTelephone">' . esc_html(__('Telephone', 'kps')) . '</label></td>
                                 <td width="25"><input type="checkbox" name="kpsFormOptionMobile" id="kpsFormOptionMobile" value="1" ' . $checkedFormOptionMobile . ' /></td>
                                 <td width="33%"><label class="labelCheckbox" for="kpsFormOptionMobile">' . esc_html(__('Mobile Phone', 'kps')) . '</label></td>
+                                <td width="25"><input type="checkbox" name="kpsFormOptionTelephone" id="kpsFormOptionTelephone" value="1" ' . $checkedFormOptionTelephone . ' /></td>
+                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionTelephone">' . esc_html(__('Telephone', 'kps')) . '</label></td>
                                 <td width="25"></td>
                                 <td width="33%"></td>
                             </tr>
@@ -612,26 +612,26 @@ function kps_Optionfields()
                                 <td colspan="6"><u>' . esc_html(__('Messenger-Services', 'kps')) . '</u></td>
                             </tr>
                             <tr>
+                                <td width="25"><input type="checkbox" name="kpsFormOptionFacebookMessenger" id="kpsFormOptionFacebookMessenger" value="1" ' . $checkedFormOptionFacebookMessenger . ' /></td>
+                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionFacebookMessenger">' . esc_html(__('Facebook-Messenger', 'kps')) . '</label></td>
+                                <td width="25"><input type="checkbox" name="kpsFormOptionSkype" id="kpsFormOptionSkype" value="1" ' . $checkedFormOptionSkype . ' /></td>
+                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionSkype">' . esc_html(__('Skype', 'kps')) . '</label></td>
+                                <td width="25"><input type="checkbox" name="kpsFormOptionWhatsapp" id="kpsFormOptionWhatsapp" value="1" ' . $checkedFormOptionWhatsapp . ' /></td>
+                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionWhatsapp">' . esc_html(__('Whatsapp', 'kps')) . '</label></td>
+                            </tr>
+                            <tr>
+                                <td width="25"><input type="checkbox" name="kpsFormOptionHoccer" id="kpsFormOptionHoccer" value="1" ' . $checkedFormOptionHoccer . ' /></td>
+                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionHoccer">' . esc_html(__('Hoccer', 'kps')) . '</label></td>
+                                <td width="25"><input type="checkbox" name="kpsFormOptionTelegram" id="kpsFormOptionTelegram" value="1" ' . $checkedFormOptionTelegram . ' /></td>
+                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionTelegram">' . esc_html(__('Telegram', 'kps')) . '</label></td>
+                                <td width="25"><input type="checkbox" name="kpsFormOptionWire" id="kpsFormOptionWire" value="1" ' . $checkedFormOptionWire . ' /></td>
+                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionWire">' . esc_html(__('Wire', 'kps')) . '</label></td>
+                            </tr>
+                            <tr>
                                 <td width="25"><input type="checkbox" name="kpsFormOptionSignal" id="kpsFormOptionSignal" value="1" ' . $checkedFormOptionSignal . ' /></td>
                                 <td width="33%"><label class="labelCheckbox" for="kpsFormOptionSignal">' . esc_html(__('Signal', 'kps')) . '</label></td>
                                 <td width="25"><input type="checkbox" name="kpsFormOptionViper" id="kpsFormOptionViper" value="1" ' . $checkedFormOptionViper . ' /></td>
                                 <td width="33%"><label class="labelCheckbox" for="kpsFormOptionViper">' . esc_html(__('Viper', 'kps')) . '</label></td>
-                                <td width="25"><input type="checkbox" name="kpsFormOptionTelegram" id="kpsFormOptionTelegram" value="1" ' . $checkedFormOptionTelegram . ' /></td>
-                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionTelegram">' . esc_html(__('Telegram', 'kps')) . '</label></td>
-                            </tr>
-                            <tr>
-                                <td width="25"><input type="checkbox" name="kpsFormOptionWhatsapp" id="kpsFormOptionWhatsapp" value="1" ' . $checkedFormOptionWhatsapp . ' /></td>
-                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionWhatsapp">' . esc_html(__('Whatsapp', 'kps')) . '</label></td>
-                                <td width="25"><input type="checkbox" name="kpsFormOptionFacebookMessenger" id="kpsFormOptionFacebookMessenger" value="1" ' . $checkedFormOptionFacebookMessenger . ' /></td>
-                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionFacebookMessenger">' . esc_html(__('Facebook-Messenger', 'kps')) . '</label></td>
-                                <td width="25"><input type="checkbox" name="kpsFormOptionHoccer" id="kpsFormOptionHoccer" value="1" ' . $checkedFormOptionHoccer . ' /></td>
-                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionHoccer">' . esc_html(__('Hoccer', 'kps')) . '</label></td>
-                            </tr>
-                            <tr>
-                                <td width="25"><input type="checkbox" name="kpsFormOptionSkype" id="kpsFormOptionSkype" value="1" ' . $checkedFormOptionSkype . ' /></td>
-                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionSkype">' . esc_html(__('Skype', 'kps')) . '</label></td>
-                                <td width="25"><input type="checkbox" name="kpsFormOptionWire" id="kpsFormOptionWire" value="1" ' . $checkedFormOptionWire . ' /></td>
-                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionWire">' . esc_html(__('Wire', 'kps')) . '</label></td>
                                 <td width="25"></td>
                                 <td width="33%"></td>
                             </tr>
@@ -642,12 +642,12 @@ function kps_Optionfields()
                                 <td colspan="6"><u>' . esc_html(__('Web- / Profilpages', 'kps')) . '</u></td>
                             </tr>
                             <tr>
-                                <td width="25"><input type="checkbox" name="kpsFormOptionWebsite" id="kpsFormOptionWebsite" value="1" ' . $checkedFormOptionWebsite . ' /></td>
-                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionWebsite">' . esc_html(__('Website', 'kps')) . '</label></td>
                                 <td width="25"><input type="checkbox" name="kpsFormOptionFacebook" id="kpsFormOptionFacebook" value="1" ' . $checkedFormOptionFacebook . ' /></td>
                                 <td width="33%"><label class="labelCheckbox" for="kpsFormOptionFacebook">' . esc_html(__('Facebook', 'kps')) . '</label></td>
                                 <td width="25"><input type="checkbox" name="kpsFormOptionInstagram" id="kpsFormOptionInstagram" value="1" ' . $checkedFormOptionInstagram . ' /></td>
                                 <td width="33%"><label class="labelCheckbox" for="kpsFormOptionInstagram">' . esc_html(__('Instagram', 'kps')) . '</label></td>
+                                <td width="25"><input type="checkbox" name="kpsFormOptionWebsite" id="kpsFormOptionWebsite" value="1" ' . $checkedFormOptionWebsite . ' /></td>
+                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionWebsite">' . esc_html(__('Website', 'kps')) . '</label></td>
                             </tr>
                             <tr>
                                 <td colspan="6" class="kps-br"></td>
@@ -1069,9 +1069,9 @@ function kps_Pagination()
             $setBackendPagination   = (isset($postVars['kpsBackendPagination'])
                                         && !empty($postVars['kpsBackendPagination'])
                                         && is_numeric($postVars['kpsBackendPagination'])
-                                        && is_int((int)$postVars['kpsBackendPagination']
+                                        && is_int((int)$postVars['kpsBackendPagination'])
+                                        && $postVars['kpsBackendPagination'] >= 1
                                         && $postVars['kpsBackendPagination'] < 100)
-                                        && $postVars['kpsBackendPagination'] >= 1 )
                                         ? absint($postVars['kpsBackendPagination']) : 10;
 
             // Seitenanzahl Frontend escapen -> default sind 5 Seiten
@@ -1080,7 +1080,7 @@ function kps_Pagination()
                                         && is_numeric($postVars['kpsFrontendPagination'])
                                         && is_int((int)$postVars['kpsFrontendPagination'])
                                         && $postVars['kpsFrontendPagination'] >= 1
-                                        && $postVars['kpsFrontendPagination']< 100)
+                                        && $postVars['kpsFrontendPagination'] < 100)
                                         ? absint($postVars['kpsFrontendPagination']) : 5;
 
             // Pagination aktualisieren
@@ -1286,8 +1286,8 @@ function kps_Spam()
 
     echo '
             <div class="kps_container" style="width: 33%"><h5>
-' . esc_html(__('Enter the Google reCaptcha Keys here. The site key is used for the robot. The secret key will use
-for communication between your website and Google. Keep the key secret. You can sign up under', 'kps')) .
+' . esc_html(__('Enter the Google reCaptcha Keys here. The site key is used for the robot. The secret key will be used
+for communication between your website and Google. Keep the key secret. You can sign in under:', 'kps')) .
                 ' <a href="https://www.google.com/recaptcha/" target="_blank" rel="noopener">https://www.google.com/recaptcha/</a>.</h5>
                 <form class="form" action="" method="post">
                     <table class="table">
@@ -1453,7 +1453,7 @@ In the textarea the minimum number of words to be written by the author is deter
                                 <td width="50%" style="text-align: left;"><input type="number" name="kpsDeleteTimeNoEntry" id="kpsDeleteTimeNoEntry" class="form_num" value="' . $checkedDeleteTimeNoEntry . '" min="30" max="180" aria-required="true" required="required" /> ' . esc_html(_n('day', 'days', $checkedDeleteTimeNoEntry , 'kps')) . '</td>
                             </tr>
                             <tr>
-                                <td width="50%" style="text-align: right;"><label for="kpsFormWordCount">' . esc_html(__('Form-Textarea', 'kps')) . '</label></td>
+                                <td width="50%" style="text-align: right;"><label for="kpsFormWordCount">' . esc_html(__('Form textarea', 'kps')) . '</label></td>
                                 <td width="50%" style="text-align: left;"><input type="number" name="kpsFormWordCount" id="kpsFormWordCount" class="form_num" value="' . get_option('kps_formWordCount', false) . '" min="1" /> ' . esc_html(_n('word', 'words', get_option('kps_formWordCount', false) , 'kps')) . '</td>
                             </tr>
                             <tr>
@@ -1600,8 +1600,8 @@ function kps_EmailSettings()
     echo '
             <div class="kps_container" style="width: 33%"><h5>
 ' . esc_html(__('The email addresses are an optional input. If no email address is entered,
-the script uses the email address set in the board. Furthermore, this is used when the entries by the
-Administrator must be released. Additional information about the activities can be retrieved.', 'kps')) . '</h5>
+the script uses the email address set in the board. Furthermore, this is used when the entries must be released  by the
+Administrator. Additional information about the activities can be retrieved.', 'kps')) . '</h5>
                 <form class="form" action="" method="post">
                     <table class="table">
                         <tbody>

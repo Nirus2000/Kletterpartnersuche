@@ -3,236 +3,251 @@ Contributors: Nirus
 Tags: Klettern, Climb, Wandern, Walking, Trekking, Climbing, Climbpartner, Walkingpartner, Tekkingpartner, Kletterpartner, Wanderpartner
 Requires at least: 4.9.8
 Requires PHP: 7.0
-Tested up to: 5.0.3
-Stable tag: 1.72
+Tested up to: 5.1.1
+Stable tag: 1.8
 License: GPL Version 3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Die **Kletterpartner-Suche** verbindet Kletter-, Wander-, Tracking- und Sportfreunde miteinander. "Kletterpatner-Suche" wurde für den Sächsische Bergsteigerbund e. V. entwickelt. Sektion des Deutschen Alpenvereins ist ein Bund von Einzelmitgliedern, kleinen und größeren Clubs und der größte Bergsportverband der Region für bergsportliche Aktivitäten in der Sächsischen Schweiz und deren Umgebung.
-
-## Was kann dieses Plugin alles?
-
-- Einfache Einbindung durch Shortcodes
-- Automatisches Versenden von Emails für die Aktivierung und Verifizierung
-- User können Ihre Einträge selbständig löschen
-- Ein Widget gibt dem Besucher eine schnelle Übersicht
-- Die Einträge kann auf einer separaten Seite angezeigt werden
-- Das Eingabe-Formular kann auf separaten Seite angezeigt werden
-- Übersichtlicher Adminpanel
-- Editierbare Email-Vorlagen für jeden Aktion
-- Einträge melden
-- Integierung der eigenen AGB's / DSGVO
-- und und und...
+The "Climbing-Partner-Search" connects climbing, hiking, tracking and sports fans.
 
 ## Installation
 
-1. Laden Sie die Plugin-Dateien in das Verzeichnis /wp-content/plugins/plugin-name hoch oder installieren Sie das Plugin direkt über den WordPress Plugins-Bildschirm.
-2. Aktivieren Sie das Plugin über den 'Plugins'-Bildschirm in WordPress
-3. Verwenden Sie die Kletterpartner->Einstellungen, um das Plugin zu konfigurieren
-3. Setzen Sie die AGB's und DSGVO unter Kletterpartner->AGB's / DSGVO um die Nutzer auf die Verwendung Ihrer Daten hinzuweisen
-4. Erstellen Sie eine Seite unter Seiten
-5. Geben Sie der Seite einen Titel.
-6. Schreibe in den Seitenkontex den Shortcode: `[kps-shortcode]`
-7. Veröffentlichen Sie diese Seite.
-8.1. Geh im Hauptmenü unter Design->Menüs und fügen Sie Seite einem Menü hinzu.
-8.2. Alternativ können Sie ein neues Menü erstellen und die Seite dort hinzufügen
-8. Speichern. Veröffentlichen, Fertig
+### Installation
+1. Unpack and upload the contents of the zipfile to your /wp-content/plugins/ directory or install the plugin through the admin page "Plugins".
+2. Activate the plugin via the 'Plugins' screen in WordPress
+3. Set the Settings under  Climb-Partner->Settings to configure the plugin
+3. Set the GTC and/or GDPR under Climb-Partner->GTC / GDPR
+4. Create a page under Menue->Pages
+5. Give the page a title.
+6. Write the shortcode in the page context: [kps-shortcode]
+7. Publish this page.
+8.1. Go to the main menu under Design->Menus and add page to a menu.
+8.2. Alternatively, you can create a new menu and add the page there
+8. Save it. Publish, Done.
 
-## Hinweis
-*Natürlich können Sie den Shortcode auch in einem Beitrag implementieren.*
+ Tip
+*Of course you can also implement the shortcode in a post.*
 
 
 ## Frequently Asked Questions
 
-Sollten Sie Frage oder Probleme haben, nutzen Sie das Supportforum unter Wordpress.org
-[Link zum Wordpress-Plugin Verzeichnis](https://wordpress.org/support/plugin/kletterpartner-suche)
-Ich werde mein Bestes tun, um so schnell wie möglich zu antworten.
+If you have questions or problems, use the support forum at Wordpress.org
+(https://wordpress.org/support/plugin/kletterpartner-suche)
+I will do my best to answer as soon as possible.
 
-### Kann ich helfen beim Übersetzen des Plugins?
+### I want to translate this plugin
 
-Super! Schreib uns einfach eine Nachricht ins Supportforum und ich werde Dich als Editor registrieren lassen. Sollten schon mehrere Editoren für deine Sprache geben, so nutz einfach die
-[GlotPress](https://translate.wordpress.org/projects/wp-plugins/kletterpartner-suche). Hier kannst Du uns die String übersetzen.
+Excellent! Just drop us a message in the support forum and I will
+register as an editor.
+[GlotPress](https://translate.wordpress.org/projects/wp-plugins/kletterpartner-suche).
 
-### Wie kann ich aktiv am Plugin mitarbeiten oder modifizieren?
+### I want to show the form without the entries.
 
-Das kannst du. Unter https://github.com/Nirus2000/Kletterpartnersuche kannst du aktiv am Quellcode mitarbeiten, Bugs bearbeiten und natürlich auch Verbesserungen mit einbringen. Wenn Du einen Wordpress-Account hast, so schreib mich an und ich werde Dich mit bei den Committer/Mitwirkende hinzufügen, sowie freue ich mich über jede Hilfe im Support-Team.
+Use the shortcode [kps-shortcode show-form-only="true"].
 
-### Kann ich das Formular auch in einer anderen Seite/Menü einblenden?
+### I want to show the entries without the button.
 
-Ja, kannst Du.
-Gehe wie in der Installation vor und schreibe statt dem Standart-Shortcode, den Shortcode `[kps-shortcode show-form-only="true"]` ein.
+Use the shortcode [kps-shortcode button-write="false"].
 
-### Kann ich die Einträge auch ohne Formular-Button anzeigen?
+### I want to change the form button text.
 
-Ja, kannst Du.
-Gehe wie in der Installation vor und schreibe statt dem Standart-Shortcode, den Shortcode `[kps-shortcode button-write="false"]` ein.
+Use the shortcode [kps-shortcode button-text="Your button name"].
 
+### Should I have a GTC for this plugin?
+
+You should decide this yourself.
+However, I recommend a few ground rules in the GTC
+set.
+
+### Should I have a GDPR for this plugin?
+
+Yes, you should.
+Once personal data is collected, stored or processed,
+comes the GDPR into play. Inform yourself before there are problems!
+
+### How can I contribute or modify the plugin?
+
+Yes, you can. Under https://github.com/Nirus2000/Kletterpartnersuche
+you can actively contribute to the source code, edit bugs and of course
+bring in improvements.
+f you have a Github account, please contact me and I will contact you
+Add to the committer / contributors, and I look forward to any help in the
+Support Team.
+
+### What is the GitHub url?
+
+The URL is:
+https://github.com/Nirus2000/Kletterpartnersuche
 
 ## Support
 
-Bitte benutzen Sie das Support-Forum. (https://wordpress.org/support/plugin/kletterpartner-suche)
-Um schnellen Support zu leisten, schreibe Sie Schritt für Schritt auf, wie Sie zu dem Problem/Fehler gekommen sind ggf. fügen Sie einzelne Teilschritte ein.
+Please use the support forum. (https://wordpress.org/support/plugin/kletterpartner-suche)
+To provide quick support, write down step by step how you came to the problem / error, if necessary add
+individual partial steps.
 
-Wenn Sie mir eine E-Mail senden, werde ich nicht antworten.
+If you send me an e-mail, I will not answer.
 
 ## Screenshots
 
-1. Eingabeformular
-2. Ausgabe
-3. Einstellungsmöglichkeiten im Adminpanel
-4. Einstellungsmöglichkeiten im Adminpanel
-5. Einstellungsmöglichkeiten im Adminpanel
-6. Einstellungsmöglichkeiten im Adminpanel
-7. Einfaches integieren der DSGVO oder AGB's
-8. Einstellung der Email-Vorlagen für jedes Bedürfnis
-9. Einstellung von verschiedenen Icons, Widget und anderen Dingen
+1. Form
+2. Output
+3. Settings in the admin panel
+4. Settings in the admin panel
+5. Settings in the admin panel
+6. Settings in the admin panel
+7. Simple integration of the GTC or GDPR
+8. Settings for the email templates
+9. Settings for different icons, widget and other things
+
+## Description
+
+The "Climbing-Partner-Search" connects climbing, hiking, tracking and sports fans. It was for the Saxon Mountaineering Federation e. V.
+(a section of the DAV - German Alpine Association e.V.) developed.
+
+### What can this plugin do?
+
+* Simple installation with shortcodes
+* Automatic sending of emails for activation and verification
+* Editable email templates for every action
+* Users can delete their own entries
+* Report entries
+* Integration of own GTC / GDPR
+* Widget
 
 ## Upgrade Notice
 
-Fehlerbehebung und Erweiterung des Plugins
+Bugfix and extension of the plugin...
 
 ## Changelog
 
-### v. 1.72 =
+= v. 1.8 =
+*[31.03.2019]*
+* ADD: Shorttag for change form button text
+* Fix: Pagination admin panel
+* Fix: Install update function
+* Fix: Install
+* Fix: Direct link in Menue->Plugins
+* Fix: Released time translation in admin panel
+* Fix: Form escape
+
+= v. 1.72 =
 *[19.02.2019]*
 * Upd: GPL Version 3.0
-* Upd: Readme-Datei
-* Upd: Übersetzungen de_DE
-* Upd: Übersetzungen de_DE_formal
-* Upd: Übersetzungen en_US
+* Upd: Readme file
+* Upd: Translation de_DE
+* Upd: Translation de_DE_formal
+* Upd: Translation en_US
 
-### v. 1.71 =
+= v. 1.71 =
 *[18.02.2019]*
-* Upd: Readme-Datei
-* Upd: Übersetzungen de_DE
-* Upd: Übersetzungen de_DE_formal
+* Upd: Readme file
+* Upd: Translation de_DE
+* Upd: Translation de_DE_formal
 
-### v. 1.7 =
+= v. 1.7 =
 *[16.02.2019]*
 
-* Add: Design Uhrzeit in Datumsangabe
-* Fix: CSS-Style Eintrag-Button
-* Fix: Einstellungen Email-Adressen
-* Fix: Shorttag Beispiele Email-Templates
-* Fix: Aktivierungsmail Freigabezeit
-* Fix: Übersetzungen (Singular/Plural)
-* Fix: Fehlende/Falsche Übersetzungen
-* Fix: Formular Close-SVG
-* Fix: Email Header-Information
-* Fix: Email Copy-Information
+* Add: Design Time format in date output
+* Fix: CSS-Style entry button
+* Fix: Setting e-mail address
+* Fix: Shorttag examples in e-mail templates
+* Fix: Activation email release time
+* Fix: Translation (Singular/Plural)
+* Fix: Missing/false translation
+* Fix: Form Close-SVG
+* Fix: E-mail header information
+* Fix: E-mail copy information
 * Upd: Checkbox Background-Color
 * Upd: FontAwesome to 5.7.2
-* Upd: DashIcon im Formular
-* Upd: Language-Source-Code Translation in English
-* Upd: Readme-Datei
-* Upd: Übersetzungen de_DE
-* Upd: Übersetzungen de_DE_formal
-* Upd: Übersetzungen en_US
+* Upd: DashIcon in form
+* Upd: Glotpress source code translation in english
 
-### v. 1.6
+= v. 1.6 =
 *[21.11.2018]*
 
-* Add: Design Shortcode-Übersicht
+* Add: Design Shortcode overview
 * Add: GitHub URL
-* Fix: Einstellungsübersicht (kurz)
-* Fix: Pflichtfelder im Formular
-* Fix: Verifizierung
+* Fix: Setting overview (short)
+* Fix: Required fields in form
+* Fix: Verification
 * Fix: Install
-* Fix: Datenbank
-* Upd: Readme-Datei
+* Fix: Database
 * Upd: FAQs
-* Upd: Übersetzungen de_DE
-* Upd: Übersetzungen de_DE_formal
-* Upd: Übersetzungen en_US
 
-### v. 1.5
+= v. 1.5 =
 *[20.11.2018]*
 
-* Fix: Abstand zu den Optionsfeldern
-* Fix: Readme-Datei
+* Fix: Distance option fields
+* Fix: Readme file
 
-### v. 1.4
+= v. 1.4 =
 *[14.10.2018]*
 
-* Add: DashIcon im Formular
-* Add: Formular-Option Messenger Viper
-* Add: Formular-Option Messenger Signal
-* Add: Formular-Option Messenger Telegram
-* Add: Formular-Option Messenger Whatsapp
-* Add: Formular-Option Messenger Facebook
-* Add: Formular-Option Messenger Hoccer
-* Add: Formular-Option Messenger Skype
-* Add: Formular-Option Messenger Wire
-* Add: Formular-Option Webseite
-* Fix: Widget Keine Einträge
-* Fix: Formular Fehlermeldung Eintrag vorhanden
-* Fix: Formular Fehlermeldung Eintrag Insert in Datenbank
-* Fix: Javascript in header laden
+* Add: DashIcon in form
+* Add: Form option Messenger Viper
+* Add: Form option Messenger Signal
+* Add: Form option Messenger Telegram
+* Add: Form option Messenger Whatsapp
+* Add: Form option Messenger Facebook
+* Add: Form option Messenger Hoccer
+* Add: Form option Messenger Skype
+* Add: Form option Messenger Wire
+* Add: Form option Website
+* Fix: Widget no entry
+* Fix: Form error entry existing
+* Fix: Form error entry insert in database
+* Fix: Javascript loading in header
 * Fix: HTML5 Input-Type "tel"
-* Fix: Email versenden, wenn Eintrag freigegeben wurde
-* Fix: Legende
-* Upd: Code-Cleaning
-* Upd: Übersetzungen de_DE
-* Upd: Übersetzungen de_DE_formal
-* Upd: Übersetzungen en_US
+* Fix: Send e-mail, if entry was released
+* Fix: Legend
 
-### v. 1.3
+= v. 1.3 =
 *[11.10.2018]*
 
 * Add: Widget
-* Add: Export für personenbezogene Daten
-* Add: Erasure für personenbezogene Daten
-* Fix: zusätzliche Informationen per Email
-* Fix: Formular-Option
-* Upd: AGBs / DSGVO Status
-* Upd: Aktivierung
-* Upd: Code-Cleaning
-* Upd: Übersetzungen de_DE
-* Upd: Übersetzungen de_DE_formal
-* Upd: Übersetzungen en_US
-* Del: Form-Option Google+ (Closed Aug. 2019)
+* Add: Export for personal data
+* Add: Erasure for personal data
+* Fix: Additional information via e-mail
+* Fix: Form option
+* Upd: GTC / GDPR status
+* Upd: Activation
+* Del: Form option Google+ (Closed Aug. 2019)
 
 
-### v. 1.2
+= v. 1.2 =
 *[05.10.2018]*
 
-* Add: Fastlink "gesperrte durch Meldung"
-* Add: Fastlink "Auto-Sperre"
-* Add: Meldungen werden geloggt
-* Add: Einstellungen -> Meldungen
+* Add: Quicklaunch "locked by message"
+* Add: Quicklaunch "Auto-Lock"
+* Add: Reports are logged
+* Add: Settings -> Reports
 * Add: Reporting
 * Add: Design
 * Add: Icon-Pak
-* Add: Legende
-* Add: Legenden-Pak
+* Add: Legend
+* Add: Legende-Pak
 * Add: Design
-* Add: Tabs in den Einstellungen
-* Fix: Link "Bearbeiten" für Moderatoren
-* Fix: Autor-IP anzeigen
-* Fix: Formlar Checkbox "AGBs/DSGVO"
-* Fix: Prüfung Checkbox "AGBs/DSGVO"
+* Add: Tabs in the Settings
+* Fix: Link "Edit" for moderators
+* Fix: Show Author-IP
+* Fix: Form checkbox "GTC/GDPR"
+* Fix: Test checkbox "GTC/GDPR"
 * Fix: Shorttage %linkactivation%
 * Fix: Shorttage %linkdelete%
-* Fix: Formular Fehlermeldungen
-* Fix: Kleine Übersetzungsfehler
-* Upd: Komplettes Redesign im Adminbereich
+* Fix: Form errors
+* Fix: Small translation errors
+* Upd: Complet redesign in the admin panel
 * Upd: div. Variablen umbenannt
 * Upd: CSS
-* Upd: Code-Cleaning
-* Upd: Übersetzungen de_DE
-* Upd: Übersetzungen de_DE_formal
 
 
-### v. 1.1
+= v. 1.1 =
 *[27.09.2018]*
 
-* Fix: Berechtigungen im Adminbereich
-* Fix: Umbruch der Options-Label im Formular
-* Fix: Deinstallation nur durch Rolle "Administrator möglich"
-* Upd: Code-Cleaning
-* Upd: Übersetzungen de_DE
-* Upd: Übersetzungen de_DE_formal
+* Fix: Permissions in the admin panel
+* Fix: Page makeup options labels in the form
+* Fix: Uninstall only by role adminnistrator
 
 
-### v. 1.0
+= v. 1.0 =
 * 1st Release

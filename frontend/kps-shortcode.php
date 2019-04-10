@@ -44,10 +44,10 @@ if (strpos($_SERVER['PHP_SELF'], basename(__FILE__)))
  */
 function get_kps($atts)
 {
-	$shortCodeValues = shortcode_atts(array('button-write'          => 'true',
-                                            'show-form-only'        => 'false',
-                                            'button-write-content'  => ''
-	), $atts);
+    $shortCodeValues = shortcode_atts(array('button-write'      => 'true',
+                                            'show-form-only'    => 'false',
+                                            'button-text'       => ''
+	                                   ), $atts);
 
     // Aktivierungs-Code
     if (isset($_GET['kps_akey']) && !empty($_GET['kps_akey']) && is_string($_GET['kps_akey']) && strlen($_GET['kps_akey']) == 32)

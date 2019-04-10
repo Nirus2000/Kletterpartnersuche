@@ -1141,14 +1141,14 @@ function kps_ActivationEmail()
         $checkedActivationContent   =
 esc_html(__('You have just posted a new entry on %blogname%.
 
-To be able to unlock it, you have to use the
-Confirm entry via the following link and enter your email address.
-If you do not release this post, it will become automatic
-deleted on %erasedatetime% from our database.
+To be able to publish it, you have to confirm it via the link
+below and enter your email address. If you do not release this
+post, it will be deleted automatically on %erasedatetime% from
+our database.
 
 Activate entry:
 *******************
-%linkactivation%
+%linkaactivation%
 
 Delete entry:
 *******************

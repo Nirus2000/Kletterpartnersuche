@@ -120,7 +120,7 @@ function kps_activationcode($activationCode = '0')
         {
             // Messagebox Ausgabe
             $messageboxContent = '
-            <div style="text-align: center;">' . esc_html(__('It could be that the entry only becomes visible after we have checked this!', 'kps')) . '</div>
+            <div style="text-align: center;">' . esc_html(__('It could be that the entry only becomes visible after we have approved it!', 'kps')) . '</div>
             ';
 
             $output .= kps_messagebox(esc_html(__('Entry has been unlocked!', 'kps')) , $messageboxContent);
@@ -140,7 +140,7 @@ function kps_activationcode($activationCode = '0')
             // Messagebox Ausgabe
             $messageboxContent = '
             <ul>
-                <li>' . esc_html(__('It could be that the entry only becomes visible after we have checked this!', 'kps')) . '</li>
+                <li>' . esc_html(__('It could be that the entry only becomes visible after we have approved it!', 'kps')) . '</li>
             </ul>';
 
             // Klasse meldet Fehler

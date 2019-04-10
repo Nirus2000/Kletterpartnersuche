@@ -133,7 +133,7 @@ function kps_register_settings()
     if (function_exists('wp_add_privacy_policy_content'))
     {
     	$DSGVOSection = sprintf(
-        '<p>' . esc_html(__( 'If you use the climbing partner search form and leave an entry, we will save entered data in our database. These can be retrieved depending on how the site operator has set this. The stored data will be sent on demand, automatically, to the email address of the requester. We may also store your IP, host name and other system information to improve spam detection.', 'kps' )) . '</p>' .
+        '<p>' . esc_html(__( 'If you use the climbing partner search form and leave an entry, your entered data will automatically be saved in our database. This can be retrieved depending on settings by the site operator. On request, stored data can be send to the email address of the requester. We may also store your IP, host name and other system information to improve spam detection.', 'kps' )) . '</p>' .
         '<p>' . esc_html(__( 'Entries that have been released are displayed visibly for a minimum of 1 day and automatically deleted after a maximum of 180 days.', 'kps' )) . '</p>' .
         '<p>' . esc_html(__( 'Entries that have not been released will be stored for a minimum of 30 days and automatically deleted after a maximum of 180 days.', 'kps' )) . '</p>');
 
@@ -181,9 +181,6 @@ function kps_admin_enqueue()
  */
 function kps_frontend_enqueue()
 {
-    //Fontawesome
-    wp_enqueue_script('kps-frontend-dashicons', 'https://use.fontawesome.com/releases/v5.7.2/js/all.js', array(), KPS_VER, false);
-
     // DataPicking
     wp_enqueue_script('kps-frontend', plugins_url('/frontend/js/kps-frontend.js', __FILE__) , array('jquery'), KPS_VER, false);
 	$dataSpamPicker = array('kps_spamtimer1'    => 'kps_spamtimer1',
@@ -203,7 +200,7 @@ function kps_links($links, $file)
 {
     if ($file == plugin_basename(dirname(__FILE__) . '/kps.php'))
     {
-        $links[] = '<a href="' . admin_url('admin.php?page=Kletterpartner-Suche/settings.php') . '">' . esc_html(__('Settings', 'kps')) . '</a>';
+        $links[] = '<a href="' . admin_url('admin.php?page=kletterpartner-suche/settings.php') . '">' . esc_html(__('Settings', 'kps')) . '</a>';
     }
     return $links;
 }

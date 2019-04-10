@@ -380,12 +380,9 @@ class kps_entry_read
             }
 
             // Dashboard erkennen
-            if ( is_admin())
+            if ( is_admin() && (current_user_can('editor') || current_user_can('administrator')))
             {
-                if (is_admin() && (current_user_can('editor') || current_user_can('administrator')))
-                {
-                    $this->_setDateTime = date_i18n(get_option('date_format'), $setDateTime) . ', ' . date_i18n(get_option('time_format'), $setDateTime);
-                }
+                $this->_setDateTime = date_i18n(get_option('date_format'), $setDateTime) . ', ' . date_i18n(get_option('time_format'), $setDateTime);
             }
         }
     }
@@ -397,7 +394,7 @@ class kps_entry_read
     {
         if (is_numeric($unlockDateTime))
         {
-            if ($unlockDateTime != 0)
+            if ($unlockDateTime !== 0)
             {
                 if ($this->_outputSettings['kpsUnlockTime'] === 'true')
                 {
@@ -412,7 +409,7 @@ class kps_entry_read
             }
             else
             {
-                $this->_unlockDateTime = '---';
+                $this->_unlockDateTime = "---";
             }
 
             // Für Freigabe-Email, wenn Autor noch nicht freigegeben hat.
@@ -433,11 +430,15 @@ class kps_entry_read
             }
 
             // Dashboard erkennen
-            if ( is_admin())
+            if (is_admin() && (current_user_can('editor') || current_user_can('administrator')))
             {
-                if (is_admin() && (current_user_can('editor') || current_user_can('administrator')))
+                if ($unlockDateTime != 0)
                 {
                     $this->_unlockDateTime  = date_i18n(get_option('date_format'), $unlockDateTime) . ', ' . date_i18n(get_option('time_format'), $unlockDateTime);
+                }
+                else
+                {
+                    $this->_unlockDateTime = "---";
                 }
             }
         }
@@ -470,12 +471,9 @@ class kps_entry_read
             }
 
             // Dashboard erkennen
-            if ( is_admin())
+            if ( is_admin() && (current_user_can('editor') || current_user_can('administrator')))
             {
-                if (is_admin() && (current_user_can('editor') || current_user_can('administrator')))
-                {
-                    $this->_deleteDateTime = date_i18n(get_option('date_format'), $deleteDateTime) . ', ' . date_i18n(get_option('time_format'), $deleteDateTime);
-                }
+                $this->_deleteDateTime = date_i18n(get_option('date_format'), $deleteDateTime) . ', ' . date_i18n(get_option('time_format'), $deleteDateTime);
             }
         }
     }

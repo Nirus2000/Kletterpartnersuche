@@ -152,7 +152,7 @@ function kps_verifyId($kps_data = '0')
                 // Messagebox Ausgabe
                 $messageboxContent = '
                 <ul>
-                    <li>' . esc_html(__('If you have not received any email from us, it may also be stuck in your spam filter (spam folder)!', 'kps')) . '</li>
+                    <li>' . esc_html(__('If you have not received any email from us, it may also be in your junk folder!', 'kps')) . '</li>
                     <li>' . esc_html(__('Please contact the administrator if the problem reappears!', 'kps')) . '</li>
                 </ul>';
 

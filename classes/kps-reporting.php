@@ -204,7 +204,7 @@ class kps_reporting
 **************************
 ' . KPS_ADMIN_URL . '/entries.php&edit_id=' . $id . '
 
-' . esc_html(__('System-Data', 'kps')) . '
+' . esc_html(__('System data', 'kps')) . '
 **************************
 ID: ' . $id . '
 '. esc_html(__('Created on', 'kps')) . ': ' . $this->_setDateTime . '

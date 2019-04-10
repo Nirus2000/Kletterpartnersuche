@@ -91,7 +91,7 @@ function kps_welcome() {
 function kps_admin_overview_nomailinphp() {
     echo '
             <div><font color="red"><b>' .
-esc_html(__('The function mail () is required to send emails and is not active in your PHP configuration.
+esc_html(__('The function mail () is used to send emails and is not active in your PHP configuration.
 You can install a Wordpress plugin that uses SMTP instead of the mail () function, or you can contact your provider,
 that he unlocks this feature.', 'kps')) .
             '<b></font></div>
@@ -189,7 +189,7 @@ function kps_admin_overview_setting() {
                             <td><b>' . $delete_noentry_time . '</b> ' . esc_html(_n('delete day', 'delete days', get_option('kps_formWordCount', false) , 'kps')) . '</td>
                         </tr>
                         <tr>
-                            <td>' . esc_html(__('Form-Textarea', 'kps')) . '</td>
+                            <td>' . esc_html(__('Form textarea', 'kps')) . '</td>
                             <td><b>' . get_option('kps_formWordCount', false) . '</b> ' . esc_html(_n('word', 'words', get_option('kps_formWordCount', false) , 'kps')) . '</td>
                         </tr>
                         <tr>

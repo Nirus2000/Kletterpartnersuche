@@ -177,7 +177,7 @@ function kps_requirement($kps_require = '0')
                 // Messagebox Ausgabe
                 $messageboxContent = '
                 <ul>
-                    <li>' . esc_html(__('You entered password is incorrectly. Please pay attention to upper and lower case!', 'kps')) . '</li>
+                    <li>' . esc_html(__('The password you entered is incorrect. Make sure you pay attention to upper and lower case!', 'kps')) . '</li>
                     <li>' . esc_html(__('Please contact the administrator if the problem reappears!', 'kps')) . '</li>
                 </ul>';
 

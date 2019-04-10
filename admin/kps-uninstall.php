@@ -158,7 +158,7 @@ function kps_admin_uninstalling()
                 <table class="table_list">
                     <tbody>
                         <tr>
-                            <td colspan="2">' . esc_html(__('With the uninstall you delete all entries in the database, as well as the attitudes!', 'kps')) . '</td>
+                            <td colspan="2">' . esc_html(__('If you proceed with uninstall you delete all entries in the database, as well as the settings!', 'kps')) . '</td>
                         </tr>
                         <tr>
                             <td colspan="2">' . esc_html(__('This can not be undone. The process is final.', 'kps')) . '</td>
@@ -167,10 +167,10 @@ function kps_admin_uninstalling()
                             <td colspan="2">&#160;</td>
                         </tr>
                         <tr>
-                            <td>' . esc_html(__('Acknowledge!', 'kps')) . '</td>
+                            <td>' . esc_html(__('Confirm!', 'kps')) . '</td>
                             <td>
                                 <input type="checkbox" name="kpsUninstallConfirmed" id="kpsUninstallConfirmed" />
-                                <label for="kpsUninstallConfirmed">' . esc_html(__('Yes, I am absolutely sure. Run!', 'kps')) . '</label>
+                                <label for="kpsUninstallConfirmed">' . esc_html(__('Yes, I am absolutely sure. Go ahead!', 'kps')) . '</label>
                             </td>
                         </tr>
                         <tr>

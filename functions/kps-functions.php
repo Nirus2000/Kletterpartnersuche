@@ -43,99 +43,111 @@ if (strpos($_SERVER['PHP_SELF'], basename(__FILE__)))
  * Funktion Permalink-Id
  * Hole alle ID's, wo der Shortcode eingesetzt wird
  */
-function get_PermalinksWithShortCode() {
-    ob_start();
-    $permaLinkId = array();
+if (!function_exists('get_PermalinksWithShortCode'))
+{
+    function get_PermalinksWithShortCode() {
+        ob_start();
+        $permaLinkId = array();
 
-	$theQuery = new WP_Query(  array(
-                                    'post_type'           => 'any',             // Status des Post
-                                    'ignore_sticky_posts' => true,              // Ignore the procedure
-                                    's'                   => 'kps-shortcode',   // Shortcode
-                                )
-    );
+    	$theQuery = new WP_Query(  array(
+                                        'post_type'           => 'any',             // Status des Post
+                                        'ignore_sticky_posts' => true,              // Ignore the procedure
+                                        's'                   => 'kps-shortcode',   // Shortcode
+                                    )
+        );
 
-	if ($theQuery->have_posts())
-    {
-		// Alle Id's in das Array schreiben
-        while ($theQuery->have_posts())
+    	if ($theQuery->have_posts())
         {
-            $theQuery->the_post();
-			$permaLinkId[] = get_the_ID();
-        }
-		wp_reset_postdata(); // Reset
-	}
+    		// Alle Id's in das Array schreiben
+            while ($theQuery->have_posts())
+            {
+                $theQuery->the_post();
+    			$permaLinkId[] = get_the_ID();
+            }
+    		wp_reset_postdata(); // Reset
+    	}
 
-	return $permaLinkId;
-    return ob_get_clean();
+    	return $permaLinkId;
+        return ob_get_clean();
+    }
 }
 
 /**
  * Funktion Array Withelist
  * Nur diese Arrays sind erlaubt
  */
-function kps_array_whitelist_assoc($array1 = '', $array2 = '')
+if (!function_exists('kps_array_whitelist_assoc'))
 {
-    if (is_array($array1) && is_array($array2))
+    function kps_array_whitelist_assoc($array1 = '', $array2 = '')
     {
-        if (func_num_args() > 2)
+        if (is_array($array1) && is_array($array2))
         {
-            $args = func_get_args();
-            array_shift($args);
-            $array2 = call_user_func_array('array_merge', $args);
-        }
+            if (func_num_args() > 2)
+            {
+                $args = func_get_args();
+                array_shift($args);
+                $array2 = call_user_func_array('array_merge', $args);
+            }
 
-        /*
-         * Leerzeichen entfernen im Value des Array's
-         * Wird nur auf erste Dimension des Array's' angewendet!
-         */
-        $multiArray = array_filter($array1,'is_array');
-        if(count($multiArray) == 0)
-        {
-            $array1 = array_map('trim', $array1);
+            /*
+             * Leerzeichen entfernen im Value des Array's
+             * Wird nur auf erste Dimension des Array's' angewendet!
+             */
+            $multiArray = array_filter($array1,'is_array');
+            if(count($multiArray) == 0)
+            {
+                $array1 = array_map('trim', $array1);
+            }
+            return array_intersect_key($array1, array_flip($array2));
         }
-        return array_intersect_key($array1, array_flip($array2));
+        return false;
     }
-    return false;
 }
 
 /**
  * Funktion Sanitize Textarea
  */
-function kps_sanitize_textarea($textarea = '')
+if (!function_exists('kps_sanitize_textarea'))
 {
-    $textarea = str_replace("&nbsp;", "", $textarea); // Leerzeichen entfernen
-    $textarea = str_replace("&#160;", "", $textarea); // Leerzeichen entfernen
-    $textarea = str_replace("&#x00A0;", "", $textarea); // Leerzeichen entfernen
-    $textarea = strval($textarea); // Variable in String konvertieren
-    $textarea = htmlspecialchars_decode($textarea, ENT_COMPAT); // Konvertiert Anführungszeichen doppelt
-    $textarea = strip_tags($textarea); // Entfernt HTML und PHP Tags
-    $textarea = stripslashes($textarea); // Entfernt Maskierungszeichen aus einem String.
-    $textarea = str_replace('\\', '&#92;', $textarea); // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
-    $textarea = str_replace('"', '&quot;', $textarea); // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
-    $textarea = str_replace("'", '&#39;', $textarea); // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
-    $textarea = trim($textarea); // Entfernt Whitespaces (oder andere Zeichen) am Anfang und Ende eines Strings
-    $textarea = sanitize_textarea_field($textarea);
-    return $textarea;
+    function kps_sanitize_textarea($textarea = '')
+    {
+        $textarea = str_replace("&nbsp;", "", $textarea); // Leerzeichen entfernen
+        $textarea = str_replace("&#160;", "", $textarea); // Leerzeichen entfernen
+        $textarea = str_replace("&#x00A0;", "", $textarea); // Leerzeichen entfernen
+        $textarea = strval($textarea); // Variable in String konvertieren
+        $textarea = htmlspecialchars_decode($textarea, ENT_COMPAT); // Konvertiert Anführungszeichen doppelt
+        $textarea = strip_tags($textarea); // Entfernt HTML und PHP Tags
+        $textarea = stripslashes($textarea); // Entfernt Maskierungszeichen aus einem String.
+        $textarea = str_replace('\\', '&#92;', $textarea); // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
+        $textarea = str_replace('"', '&quot;', $textarea); // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
+        $textarea = str_replace("'", '&#39;', $textarea); // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
+        $textarea = trim($textarea); // Entfernt Whitespaces (oder andere Zeichen) am Anfang und Ende eines Strings
+        $textarea = sanitize_textarea_field($textarea);
+        return $textarea;
+    }
 }
 
 /**
  * Funktion Sanitize Field
  */
-function kps_sanitize_field($string = '')
+if (!function_exists('kps_sanitize_field'))
 {
-    $string = str_replace("&nbsp;", "", $string); // Leerzeichen entfernen
-    $string = str_replace("&#160;", "", $string); // Leerzeichen entfernen
-    $string = str_replace("&#x00A0;", "", $string); // Leerzeichen entfernen
-    $string = strval($string); // Variable in String konvertieren
-    $string = htmlspecialchars_decode($string, ENT_COMPAT); // Konvertiert Anführungszeichen doppelt
-    $string = strip_tags($string); // Entfernt HTML und PHP Tags
-    $string = stripslashes($string); // Entfernt Maskierungszeichen aus einem String.
-    $string = str_replace('\\', '&#92;', $string); // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
-    $string = str_replace('"', '&quot;', $string); // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
-    $string = str_replace("'", '&#39;', $string); // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
-    $string = trim($string); // Entfernt Whitespaces (oder andere Zeichen) am Anfang und Ende eines Strings
-    $string = sanitize_text_field($string);
-    return $string;
+    function kps_sanitize_field($string = '')
+    {
+        $string = str_replace("&nbsp;", "", $string); // Leerzeichen entfernen
+        $string = str_replace("&#160;", "", $string); // Leerzeichen entfernen
+        $string = str_replace("&#x00A0;", "", $string); // Leerzeichen entfernen
+        $string = strval($string); // Variable in String konvertieren
+        $string = htmlspecialchars_decode($string, ENT_COMPAT); // Konvertiert Anführungszeichen doppelt
+        $string = strip_tags($string); // Entfernt HTML und PHP Tags
+        $string = stripslashes($string); // Entfernt Maskierungszeichen aus einem String.
+        $string = str_replace('\\', '&#92;', $string); // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
+        $string = str_replace('"', '&quot;', $string); // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
+        $string = str_replace("'", '&#39;', $string); // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
+        $string = trim($string); // Entfernt Whitespaces (oder andere Zeichen) am Anfang und Ende eines Strings
+        $string = sanitize_text_field($string);
+        return $string;
+    }
 }
 
 /**
@@ -149,31 +161,34 @@ if (!function_exists('kps_unserialize'))
         {
             return maybe_unserialize($string);
         }
-        else
-        {
-            return false;
-        }
+        return false;
     }
 }
 
 /**
  * Funktion Ersten Zeichen einen Strings
  */
-function getFirstChars($string, $length) {
-    if (is_string($string))
-    {
-        return mb_substr($string, 0, $length);
+if (!function_exists('kps_getFirstChars'))
+{
+    function kps_getFirstChars($string, $length) {
+        if (is_string($string))
+        {
+            return mb_substr($string, 0, $length);
+        }
+        return false;
     }
-    return false;
 }
 
 /**
  * Funktion Letzten Zeichen eines Strings
  */
-function getLastChars($string, $length) {
-    if (is_string($string))
-    {
-        return mb_substr($string, -$length, $length);
+if (!function_exists('kps_getLastChars'))
+{
+    function kps_getLastChars($string, $length) {
+        if (is_string($string))
+        {
+            return mb_substr($string, -$length, $length);
+        }
+        return false;
     }
-    return false;
 }
