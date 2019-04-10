@@ -121,7 +121,7 @@ Bugfix and extension of the plugin...
 ## Changelog
 
 = v. 1.8 =
-*[31.03.2019]*
+*[10.04.2019]*
 * ADD: Shorttag for change form button text
 * Fix: Pagination admin panel
 * Fix: Install update function
@@ -129,6 +129,9 @@ Bugfix and extension of the plugin...
 * Fix: Direct link in Menue->Plugins
 * Fix: Released time translation in admin panel
 * Fix: Form escape
+* Upd: Translation de_DE
+* Upd: Translation de_DE_formal
+* Upd: Translation en_US
 
 = v. 1.72 =
 *[19.02.2019]*
