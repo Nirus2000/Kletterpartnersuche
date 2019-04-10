@@ -384,11 +384,11 @@ function kps_frontend_form($shortCodeValues)
                 }
                 else
                 {
-
                     $buttonText = esc_html(trim($shortCodeValues['button-text']));
 
-                    if (!empty($buttonText) OR $buttonText = "")
+                    if (empty($buttonText) OR $buttonText == "")
                     {
+                        echo "hier";
                         $buttonText = esc_html(__('Write an entry', 'kps'));
                     }
                 }
