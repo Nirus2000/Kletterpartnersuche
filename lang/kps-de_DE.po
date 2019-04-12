@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kletterpartner-Suche\n"
 "POT-Creation-Date: 2019-04-10 18:31+0200\n"
-"PO-Revision-Date: 2019-04-10 18:31+0200\n"
+"PO-Revision-Date: 2019-04-10 20:11+0200\n"
 "Last-Translator: Alexander Ott <kps@nirus-online.de>\n"
 "Language-Team: Alexander Ott\n"
 "Language: de_DE\n"
@@ -360,7 +360,7 @@ msgstr ""
 
 #: admin/kps-design.php:995
 msgid "Button Name"
-msgstr "Button name"
+msgstr "Button Name"
 
 #: admin/kps-design.php:996 frontend/kps-form.php:383 frontend/kps-form.php:392
 msgid "Write an entry"

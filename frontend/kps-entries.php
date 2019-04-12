@@ -74,7 +74,7 @@ function kps_frontend_entries($kps_paged = '1')
     $translationAllEntries = ($countTotalEntries >= 1) ? esc_html(_n('Entry', 'Entries', $countTotalEntries, 'kps')) : esc_html(__('No entries available!', 'kps'));
 
     // Alle Einträge pro Seite aus Datenbank holen
-    $results = $wpdb->get_results("SELECT id FROM " . KPS_TABLE_ENTRIES . " WHERE isLockedByAdmin = 1 AND isLocked = 1 AND lockedAutoReport = 0 AND deleteDateTime < NOW() ORDER BY ID DESC LIMIT {$limits}, {$maxEntriesPerPage}", object);
+    $results = $wpdb->get_results("SELECT id FROM " . KPS_TABLE_ENTRIES . " WHERE isLockedByAdmin = 1 AND isLocked = 1 AND lockedAutoReport = 0 AND deleteDateTime < NOW() ORDER BY unlockDateTime DESC LIMIT {$limits}, {$maxEntriesPerPage}", object);
 
     // Übersichtsinformation Einträge
     if ($countTotalEntries == 0)
