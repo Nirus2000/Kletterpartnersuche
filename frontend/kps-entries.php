@@ -70,19 +70,11 @@ function kps_frontend_entries($kps_paged = '1')
     $limits             = (int)($getPage - 1) * $maxEntriesPerPage; // Limit für Query
     $pageUrl            = get_post_permalink(); // Hole die derzeitige Post-ID von Wordpress
 
-    // Übersetzung Single, Plural, Null
-    $translationAllEntries = ($countTotalEntries >= 1) ? esc_html(_n('Entry', 'Entries', $countTotalEntries, 'kps')) : esc_html(__('No entries available!', 'kps'));
-
     // Alle Einträge pro Seite aus Datenbank holen
     $results = $wpdb->get_results("SELECT id FROM " . KPS_TABLE_ENTRIES . " WHERE isLockedByAdmin = 1 AND isLocked = 1 AND lockedAutoReport = 0 AND deleteDateTime < NOW() ORDER BY unlockDateTime DESC LIMIT {$limits}, {$maxEntriesPerPage}", object);
 
-    // Übersichtsinformation Einträge
-    if ($countTotalEntries == 0)
-    {
-        $firstEntry = 0;
-        $lastEntry  = 0;
-    }
-    else
+    // Blätterfunktion
+    if ($countTotalEntries > 0)
     {
         $firstEntry     = ($getPage - 1) * $maxEntriesPerPage + 1;
         $totalPerPage   = $countTotalEntries - (($getPage - 1) * $maxEntriesPerPage);
@@ -91,23 +83,30 @@ function kps_frontend_entries($kps_paged = '1')
             $totalPerPage = $maxEntriesPerPage;
         }
         $lastEntry = $firstEntry + $totalPerPage - 1;
+
+        // Blätterfunktion im Frontend
+        $pagination = kps_pagination_frontend($totalPages, $getPage, $lastPage, $previosPage, $nextPage, $pageUrl);
     }
 
-    // Blätterfunktion im Frontend
-    $pagination = kps_pagination_frontend($totalPages, $getPage, $lastPage, $previosPage, $nextPage, $pageUrl);
-
+    // HTML5
     if ($html5)
     {
         $output = '<header>';
         $output .= '<nav>';
 
         // Paginagtion
-        $output .= '<div class="page-navigation">' . $pagination . '</div>';
+        if ($countTotalEntries > 0)
+        {
+            $output .= '<div class="page-navigation">' . $pagination . '</div>';
+        }
     }
     else
     {
         // Paginagtion
-        $output = '<div class="page-navigation">' . $pagination . '</div>';
+        if ($countTotalEntries > 0)
+        {
+            $output .= '<div class="page-navigation">' . $pagination . '</div>';
+        }
     }
 
     // HTML5
@@ -116,7 +115,6 @@ function kps_frontend_entries($kps_paged = '1')
         $output .= '</nav>';
         $output .= '</header>';
     }
-
     $output .= '<div id="kps-entries">';
 
     // HTML5
@@ -125,14 +123,14 @@ function kps_frontend_entries($kps_paged = '1')
         $output .= '<main>';
     }
 
-    // Try to load and require_once the template from the themes folders.
+    // Prüfe, ob ein Custom-Template im Themenordner vorhanden ist.
     if (locate_template(array(
         'kps-entries.php'
     ) , true, true) == '')
     {
         // Lade Default Template
         $output .= '<!-- KPS-Default Template -->';
-        require_once ('kps-entries.php');
+        require_once ( KPS_DIR . '/frontend/kps-entries.php');
     }
     else
     {
@@ -194,7 +192,10 @@ function kps_frontend_entries($kps_paged = '1')
     }
 
     // Paginagtion
-    $output .=  '<div class="page-navigation">' . $pagination . '</div>';
+    if ($countTotalEntries > 0)
+    {
+        $output .= '<div class="page-navigation">' . $pagination . '</div>';
+    }
 
     if ($legendActivated === true && count($results) > 0)
     {

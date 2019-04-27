@@ -131,6 +131,7 @@ function kps_install()
             'kpsFormOptionSignal'               => 'false',
             'kpsFormOptionViper'                => 'false',
             'kpsFormOptionTelegram'             => 'false',
+            'kpsFormOptionThreema'              => 'false',
             'kpsFormOptionFacebookMessenger'    => 'false',
             'kpsFormOptionWire'                 => 'false',
             'kpsFormOptionHoccer'               => 'false',
@@ -295,6 +296,33 @@ function kps_upgrade()
         ));
 
         add_option('kps_output', $output);
+    }
+
+    if (version_compare($current_version, '1.81', '<'))
+    {
+        // Formular-Optionen updaten
+        $formOptions = kps_unserialize(get_option('kps_formOptions'));
+
+        $setFormOption['kpsFormOptionTelephone']            = $formOptions['kpsFormOptionTelephone'];
+        $setFormOption['kpsFormOptionMobile']               = $formOptions['kpsFormOptionMobile'];
+        $setFormOption['kpsFormOptionWhatsapp']             = $formOptions['kpsFormOptionWhatsapp'];
+        $setFormOption['kpsFormOptionSignal']               = $formOptions['kpsFormOptionSignal'];
+        $setFormOption['kpsFormOptionViper']                = $formOptions['kpsFormOptionViper'];
+        $setFormOption['kpsFormOptionTelegram']             = $formOptions['kpsFormOptionTelegram'];
+        $setFormOption['kpsFormOptionThreema']              = 'false';
+        $setFormOption['kpsFormOptionFacebookMessenger']    = $formOptions['kpsFormOptionFacebookMessenger'];
+        $setFormOption['kpsFormOptionWire']                 = $formOptions['kpsFormOptionWire'];
+        $setFormOption['kpsFormOptionHoccer']               = $formOptions['kpsFormOptionHoccer'];
+        $setFormOption['kpsFormOptionSkype']                = $formOptions['kpsFormOptionSkype'];
+        $setFormOption['kpsFormOptionWebsite']              = $formOptions['kpsFormOptionWebsite'];
+        $setFormOption['kpsFormOptionInstagram']            = $formOptions['kpsFormOptionInstagram'];
+        $setFormOption['kpsFormOptionFacebook']             = $formOptions['kpsFormOptionFacebook'];
+
+        $setFormOption = serialize(array(
+                                        $setFormOption
+        ));
+
+        update_option('kps_formOptions', $setFormOption);
     }
 
     // Version updaten

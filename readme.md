@@ -4,7 +4,7 @@ Tags: Klettern, Climb, Wandern, Walking, Trekking, Climbing, Climbpartner, Walki
 Requires at least: 4.9.8
 Requires PHP: 5.2.4
 Tested up to: 5.1.1
-Stable tag: 1.81
+Stable tag: 1.9
 License: GPL Version 3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -119,6 +119,16 @@ The "Climbing-Partner-Search" connects climbing, hiking, tracking and sports fan
 Bugfix and extension of the plugin...
 
 ## Changelog
+
+= v. 1.9 =
+*[24.04.2019]*
+* Add: Form option Messenger Threema
+* Upd: Optimize source code
+* Upd: Some checks of variables
+* Upd: Pagination Backend
+* Upd: Pagination Frontend
+* Upd: FontAwesome to 5.8.1
+* Fix: Form escape
 
 = v. 1.81 =
 *[12.04.2019]*

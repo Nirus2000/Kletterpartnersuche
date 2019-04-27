@@ -40,12 +40,118 @@ if (strpos($_SERVER['PHP_SELF'], basename(__FILE__)))
 }
 
 /**
+ * Funktion zusätzliche Kontaktinformationen
+ * Prüft die zusätzlichen Kontaktinformationen, falls vorhanden
+ * Key => Übersetzung
+ */
+if (!function_exists('kps_contact_informations'))
+{
+    function kps_contact_informations($string = '') {
+
+        $array = kps_unserialize($string);
+
+        if (is_array($array) AND !empty($array))
+        {
+            $data = '';
+
+            foreach ($array AS $key => $value)
+            {
+                if( $key == 'authorTelephone')
+                {
+                    $data .= esc_html(__('Telephone', 'kps')) . ": " . $value . " \r\n";
+                }
+                elseif( $key == 'authorMobile')
+                {
+                    $data .= esc_html(__('Mobile Phone', 'kps')) . ": " . $value . " \r\n";
+                }
+                elseif( $key == 'authorSignal')
+                {
+                    $data .= esc_html(__('Signal-Messenger', 'kps')) . ": " . $value . " \r\n";
+                }
+                elseif( $key == 'authorViper')
+                {
+                    $data .= esc_html(__('Viper-Messenger', 'kps')) . ": " . $value . " \r\n";
+                }
+                elseif( $key == 'authorTelegram')
+                {
+                    $data .= esc_html(__('Telegram-Messenger', 'kps')) . ": " . $value . " \r\n";
+                }
+                elseif( $key == 'authorThreema')
+                {
+                    $data .= esc_html(__('Threema-Messenger', 'kps')) . ": " . $value . " \r\n";
+                }
+                elseif( $key == 'authorWhatsapp')
+                {
+                    $data .= esc_html(__('Whatsapp-Messenger', 'kps')) . ": " . $value . " \r\n";
+                }
+                elseif( $key == 'authorHoccer')
+                {
+                    $data .= esc_html(__('Hoccer-Messenger', 'kps')) . ": " . $value . " \r\n";
+                }
+                elseif( $key == 'authorWire')
+                {
+                    $data .= esc_html(__('Wire-Messenger', 'kps')) . ": " . $value . " \r\n";
+                }
+                elseif( $key == 'authorSkype')
+                {
+                    $data .= esc_html(__('Skype-Messenger', 'kps')) . ": " . $value . " \r\n";
+                }
+                elseif( $key == 'authorFacebookMessenger')
+                {
+                    $data .= esc_html(__('Facebook-Messenger', 'kps')) . ": " . $value . " \r\n";
+                }
+                elseif( $key == 'authorWebsite')
+                {
+                    $data .= esc_html(__('Website', 'kps')) . ": " . $value . " \r\n";
+                }
+                elseif( $key == 'authorFacebook')
+                {
+                    $data .= esc_html(__('Facebook', 'kps')) . ": " . $value . " \r\n";
+                }
+                elseif( $key == 'authorInstagram')
+                {
+                    $data .= esc_html(__('Instagram', 'kps')) . ": " . $value . " \r\n";
+                }
+                else
+                {
+                    $data .= ' \r\n';
+                }
+            }
+
+            return $data;
+        }
+        return false;
+    }
+}
+
+/**
+ * Funktion Min-Max-Default Range
+ * $int     -> Variable
+ * $min     -> Minimum
+ * $max     -> Maximum
+ * $default -> Defaultwert
+ */
+if (!function_exists('kps_min_max_default_range'))
+{
+    function kps_min_max_default_range($int = '', $min = '', $max = '', $default = '' ) {
+        if ($int >= $min && $int <= $max)
+        {
+            return $int;
+        }
+        else
+        {
+            return $default;
+        }
+    }
+}
+
+/**
  * Funktion Permalink-Id
  * Hole alle ID's, wo der Shortcode eingesetzt wird
  */
-if (!function_exists('get_PermalinksWithShortCode'))
+if (!function_exists('kps_PermalinksWithShortCode'))
 {
-    function get_PermalinksWithShortCode() {
+    function kps_PermalinksWithShortCode() {
         ob_start();
         $permaLinkId = array();
 

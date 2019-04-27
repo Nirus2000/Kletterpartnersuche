@@ -71,6 +71,7 @@ class kps_entry_write
                 $_authorSignal,             // Signal
                 $_authorViper,              // Viper
                 $_authorTelegram,           // Telegram
+                $_authorThreema,            // Threema
                 $_authorWhatsapp,           // Whatsapp
                 $_authorFacebookMessenger,  // Facebook Messenger
                 $_authorHoccer,             // Hoccer
@@ -121,6 +122,7 @@ class kps_entry_write
         $this->_authorSignal            = (string)'';
         $this->_authorViper             = (string)'';
         $this->_authorTelegram          = (string)'';
+        $this->_authorThreema           = (string)'';
         $this->_authorWhatsapp          = (string)'';
         $this->_authorFacebookMessenger = (string)'';
         $this->_authorHoccer            = (string)'';
@@ -168,19 +170,20 @@ class kps_entry_write
         $this->get_authorIpHost();
 
         // zusätzliche Kontaktmöglichkeiten escapen
-        $this->_authorTelephone         = $this->get_AuthorURLEmailNumber($write['kps_authorTelephone'], false, false, true, false);
-        $this->_authorMobile            = $this->get_AuthorURLEmailNumber($write['kps_authorMobile'], false, false, true, false);
-        $this->_authorSignal            = $this->get_AuthorURLEmailNumber($write['kps_authorSignal'], false, false, true, false);
-        $this->_authorViper             = $this->get_AuthorURLEmailNumber($write['kps_authorViper'], false, false, true, false);
-        $this->_authorTelegram          = $this->get_AuthorURLEmailNumber($write['kps_authorTelegram'], false, false, true, false);
-        $this->_authorWhatsapp          = $this->get_AuthorURLEmailNumber($write['kps_authorWhatsapp'], false, false, true, false);
-        $this->_authorHoccer            = $this->get_AuthorURLEmailNumber($write['kps_authorHoccer'], true, false, false, false);
-        $this->_authorWire              = $this->get_AuthorURLEmailNumber($write['kps_authorWire'], true, false, true, false);
-        $this->_authorSkype             = $this->get_AuthorURLEmailNumber($write['kps_authorSkype'], true, false, true, true);
-        $this->_authorFacebookMessenger = $this->get_AuthorURLEmailNumber($write['kps_authorFacebookMessenger'], false, true, false, false);
-        $this->_authorWebsite           = $this->get_AuthorURLEmailNumber($write['kps_authorWebsite'], false, true, false, false);
-        $this->_authorFacebook          = $this->get_AuthorURLEmailNumber($write['kps_authorFacebook'], false, true, false, false);
-        $this->_authorInstagram         = $this->get_AuthorURLEmailNumber($write['kps_authorInstagram'], false, true, false, false);
+        $this->_authorTelephone         = $this->get_AuthorURLEmailNumber($write['kps_authorTelephone'], false, false, true, false, false);
+        $this->_authorMobile            = $this->get_AuthorURLEmailNumber($write['kps_authorMobile'], false, false, true, false, false);
+        $this->_authorSignal            = $this->get_AuthorURLEmailNumber($write['kps_authorSignal'], false, false, true, false, false);
+        $this->_authorViper             = $this->get_AuthorURLEmailNumber($write['kps_authorViper'], false, false, true, false, false);
+        $this->_authorTelegram          = $this->get_AuthorURLEmailNumber($write['kps_authorTelegram'], false, false, true, false, false);
+        $this->_authorThreema           = $this->get_AuthorURLEmailNumber($write['kps_authorThreema'], false, false, false, true, false);
+        $this->_authorWhatsapp          = $this->get_AuthorURLEmailNumber($write['kps_authorWhatsapp'], false, false, true, false, false);
+        $this->_authorHoccer            = $this->get_AuthorURLEmailNumber($write['kps_authorHoccer'], true, false, false, false, false);
+        $this->_authorWire              = $this->get_AuthorURLEmailNumber($write['kps_authorWire'], true, false, true, false, false);
+        $this->_authorSkype             = $this->get_AuthorURLEmailNumber($write['kps_authorSkype'], true, false, true, false, true);
+        $this->_authorFacebookMessenger = $this->get_AuthorURLEmailNumber($write['kps_authorFacebookMessenger'], false, true, false, false, false);
+        $this->_authorWebsite           = $this->get_AuthorURLEmailNumber($write['kps_authorWebsite'], false, true, false, false, false);
+        $this->_authorFacebook          = $this->get_AuthorURLEmailNumber($write['kps_authorFacebook'], false, true, false, false, false);
+        $this->_authorInstagram         = $this->get_AuthorURLEmailNumber($write['kps_authorInstagram'], false, true, false, false, false);
 
         // Salt generieren
         $salt = Hash::salt(32); // Salt erstellen mit einer Zeichenlänge von 32
@@ -211,6 +214,7 @@ class kps_entry_write
                                 $this->_authorSignal,
                                 $this->_authorViper,
                                 $this->_authorTelegram,
+                                $this->_authorThreema,
                                 $this->_authorWhatsapp,
                                 $this->_authorHoccer,
                                 $this->_authorWire,
@@ -350,14 +354,12 @@ class kps_entry_write
             $this->_isInsertDB = $wpdb->insert(KPS_TABLE_ENTRIES, $insertData, $insertFormat);
 
             // Gesamtzähler für Statistik
-            $countActivation    = kps_unserialize(get_option('kps_kpsCounter', false));
-            $newSetKPSCounter['kpsAllEntrys']           = $countActivation['kpsAllEntrys'] + 1;
-            $newSetKPSCounter['kpsAllActivatedEntrys']  = $countActivation['kpsAllActivatedEntrys'];
-            $newSetKPSCounter['kpsAllVerfifications']   = $countActivation['kpsAllVerfifications'];
-            $newSetKPSCounter['kpsAllSendRequirements'] = $countActivation['kpsAllSendRequirements'];
-            $newSetKPSCounter['kpsAllDeleteEntrys']     = $countActivation['kpsAllDeleteEntrys'];
-            $newSetKPSCounter = serialize($newSetKPSCounter);
-            update_option('kps_kpsCounter', $newSetKPSCounter);
+            $countKPSCounter = kps_unserialize(get_option('kps_kpsCounter', false));
+            foreach ($countKPSCounter as $key => $value)
+            {
+                if ($key == 'kpsAllEntrys') { $countKPSCounter[$key]++; }
+            }
+            update_option('kps_kpsCounter', serialize($countKPSCounter));
 
             return $this->_isInsertDB; // Rückgabe des Wertes
         }
@@ -660,7 +662,7 @@ class kps_entry_write
      * Autor Kontaktoptionen escapen
      * URL / Email / Nummern / Username
      */
-    public function get_AuthorURLEmailNumber($string = '', $allowedEmail = false, $allowedURL = false, $allowedNumber = false, $allowedString = false)
+    public function get_AuthorURLEmailNumber($string = '', $allowedEmail = false, $allowedURL = false, $allowedNumber = false, $allowedThreema = false, $allowedString = false)
     {
         if (!empty($string))
         {
@@ -675,13 +677,16 @@ class kps_entry_write
             $number = preg_replace("![^+0-9]!", "", $string); // nur Zahlen und + am Anfang des Strings
 
             // Email
-            if ($allowedEmail === true AND is_email($email) !== false)
+            if ($allowedEmail === true
+                AND is_email($email) !== false)
             {
                 return $email;
             }
 
             // Telephone oder Mobilenumbers
-            if ($allowedNumber === true AND preg_match($validChars, $number) !== 0)
+            if ($allowedNumber === true
+                AND preg_match($validChars, $number) !== false
+                AND $number != '')
             {
                 $number = preg_replace("<^\\+>", "00", $number); // + durch 00 ersetzen
                 $number = preg_replace("<\\D+>", "", $number); // Nur Zahlen erlauben mit einem +
@@ -690,9 +695,19 @@ class kps_entry_write
             }
 
             // URL
-            if ($allowedURL === true AND filter_var($url, FILTER_VALIDATE_URL) !== false)
+            if ($allowedURL === true
+                AND filter_var($url, FILTER_VALIDATE_URL) !== false)
             {
                 return esc_url($url);
+            }
+
+            // Threema ID-Code -> 8 Zeichen
+            if ($allowedThreema === true
+                AND preg_match("/^[a-zA-Z0-9]+$/s", $string) !== false
+                AND strlen($string) === 8
+                AND $string != '')
+            {
+                return $string;
             }
 
             // String z.B. Username
@@ -734,13 +749,13 @@ class kps_entry_write
 
     /**
      * zusätzliche Kontaktdaten serialisieren
-     * Array zusammensetzen, Key => Translation
      */
     public function get_serial( $authorTelephone = '',
                                 $authorMobile = '',
                                 $authorSignal = '',
                                 $authorViper = '',
                                 $authorTelegram = '',
+                                $authorThreema = '',
                                 $authorWhatsapp = '',
                                 $authorHoccer = '',
                                 $authorWire = '',
@@ -774,6 +789,11 @@ class kps_entry_write
         if (!empty($authorTelegram))
         {
             $authorContactData['authorTelegram'] = $authorTelegram;
+        }
+
+        if (!empty($authorThreema))
+        {
+            $authorContactData['authorThreema'] = $authorThreema;
         }
 
         if (!empty($authorWhatsapp))
@@ -874,74 +894,7 @@ Your team
         }
 
         // zusätzliche Kontaktdaten
-        $authorContactData = kps_unserialize($this->_authorContactData);
-
-        // Übersetzung der zusätzlichen Kontaktinformationen
-        if (!empty($authorContactData) AND $authorContactData != '' AND is_array($authorContactData) AND !is_string($authorContactData))
-        {
-            $authorContactInfo  = '';
-
-            // Übersetzungen
-            foreach ($authorContactData AS $key => $value)
-            {
-                if( $key == 'authorTelephone')
-                {
-                    $authorContactInfo .= esc_html(__('Telephone', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorMobile')
-                {
-                    $authorContactInfo .= esc_html(__('Mobile Phone', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorSignal')
-                {
-                    $authorContactInfo .= esc_html(__('Signal-Messenger', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorViper')
-                {
-                    $authorContactInfo .= esc_html(__('Viper-Messenger', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorTelegram')
-                {
-                    $authorContactInfo .= esc_html(__('Telegram-Messenger', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorWhatsapp')
-                {
-                    $authorContactInfo .= esc_html(__('Whatsapp-Messenger', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorHoccer')
-                {
-                    $authorContactInfo .= esc_html(__('Hoccer-Messenger', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorWire')
-                {
-                    $authorContactInfo .= esc_html(__('Wire-Messenger', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorSkype')
-                {
-                    $authorContactInfo .= esc_html(__('Skype-Messenger', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorFacebookMessenger')
-                {
-                    $authorContactInfo .= esc_html(__('Facebook-Messenger', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorWebsite')
-                {
-                    $authorContactInfo .= esc_html(__('Website', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorFacebook')
-                {
-                    $authorContactInfo .= esc_html(__('Facebook', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorInstagram')
-                {
-                    $authorContactInfo .= esc_html(__('Instagram', 'kps')) . ": " . $value . " \r\n";
-                }
-                else
-                {
-                    $authorContactInfo .= ' \r\n';
-                }
-            }
-        }
+        $authorContactData = kps_contact_informations($this->_authorContactData);
 
         // Links
         $activationLink = esc_url_raw($pageUrl . '&kps_akey=' . $activationHash);
@@ -972,7 +925,7 @@ Your team
             '%blogemail%'           => get_option('kps_mailFrom', false),
             '%authorname%'          => $this->_authorName,
             '%authoremail%'         => $this->_authorEmail,
-            '%authorcontactdata%'   => $authorContactInfo,
+            '%authorcontactdata%'   => $authorContactData,
             '%entrycontent%'        => $this->_authorEntry,
             '%linkactivation%'      => $activationLink,
             '%linkdelete%'          => $deletelink,

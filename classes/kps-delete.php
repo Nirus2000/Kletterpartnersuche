@@ -128,14 +128,12 @@ class kps_delete
         );
 
         // Gesamtzähler für Statistik
-        $countActivation    = kps_unserialize(get_option('kps_kpsCounter', false));
-        $newSetKPSCounter['kpsAllEntrys']           = $countActivation['kpsAllEntrys'];
-        $newSetKPSCounter['kpsAllActivatedEntrys']  = $countActivation['kpsAllActivatedEntrys'];
-        $newSetKPSCounter['kpsAllVerfifications']   = $countActivation['kpsAllVerfifications'];
-        $newSetKPSCounter['kpsAllSendRequirements'] = $countActivation['kpsAllSendRequirements'];
-        $newSetKPSCounter['kpsAllDeleteEntrys']     = $countActivation['kpsAllDeleteEntrys'] + 1;
-        $newSetKPSCounter = serialize($newSetKPSCounter);
-        update_option('kps_kpsCounter', $newSetKPSCounter);
+        $countKPSCounter = kps_unserialize(get_option('kps_kpsCounter', false));
+        foreach ($countKPSCounter as $key => $value)
+        {
+            if ($key == 'kpsAllDeleteEntrys') { $countKPSCounter[$key]++; }
+        }
+        update_option('kps_kpsCounter', serialize($countKPSCounter));
 
         return $this->_isDelete; // Rückgabe des Wertes
     }

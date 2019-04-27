@@ -66,8 +66,8 @@ class Kletterpartner_Suche extends WP_Widget {
     function widget($args, $instance)
     {
         global $wpdb;
+
         //  Importiert Variablen eines Arrays in die aktuelle Symboltabelle
-        //var_dump($args);
         extract($args);
         $defaultValues = array( 'title'         =>  esc_html(__('Climbing-Partner-Search', 'kps')),
                                 'showEntries'   =>  3,
@@ -136,7 +136,7 @@ class Kletterpartner_Suche extends WP_Widget {
             }
 
             // Link zum weiterlesen
-            $output .= '<a href="' .  esc_url(get_post_permalink(get_PermalinksWithShortCode()[0])) . '" title="' . $linkText . '">' . $linkText . '</a>';
+            $output .= '<a href="' .  esc_url(get_post_permalink(kps_PermalinksWithShortCode()[0])) . '" title="' . $linkText . '">' . $linkText . '</a>';
         }
         else
         {

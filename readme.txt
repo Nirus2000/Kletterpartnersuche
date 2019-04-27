@@ -4,7 +4,7 @@ Tags: Klettern, Climb, Wandern, Walking, Trekking, Climbing, Climbpartner, Walki
 Requires at least: 4.9.8
 Requires PHP: 5.2.4
 Tested up to: 5.1.1
-Stable tag: 1.81
+Stable tag: 1.9
 License: GPL Version 3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -120,6 +120,16 @@ Bugfix and extension of the plugin...
 
 == Changelog ==
 
+= v. 1.9 =
+*[27.04.2019]*
+* Add: Form option Messenger Threema
+* Upd: Optimize source code
+* Upd: Some checks of variables
+* Upd: Pagination Backend
+* Upd: Pagination Frontend
+* Upd: FontAwesome to 5.8.1
+* Fix: Form escape
+
 = v. 1.81 =
 *[12.04.2019]*
 * Fix: Output entries
@@ -154,7 +164,6 @@ Bugfix and extension of the plugin...
 
 = v. 1.7 =
 *[16.02.2019]*
-
 * Add: Design Time format in date output
 * Fix: CSS-Style entry button
 * Fix: Setting e-mail address
@@ -172,7 +181,6 @@ Bugfix and extension of the plugin...
 
 = v. 1.6 =
 *[21.11.2018]*
-
 * Add: Design Shortcode overview
 * Add: GitHub URL
 * Fix: Setting overview (short)
@@ -184,13 +192,11 @@ Bugfix and extension of the plugin...
 
 = v. 1.5 =
 *[20.11.2018]*
-
 * Fix: Distance option fields
 * Fix: Readme file
 
 = v. 1.4 =
 *[14.10.2018]*
-
 * Add: DashIcon in form
 * Add: Form option Messenger Viper
 * Add: Form option Messenger Signal
@@ -211,7 +217,6 @@ Bugfix and extension of the plugin...
 
 = v. 1.3 =
 *[11.10.2018]*
-
 * Add: Widget
 * Add: Export for personal data
 * Add: Erasure for personal data
@@ -224,7 +229,6 @@ Bugfix and extension of the plugin...
 
 = v. 1.2 =
 *[05.10.2018]*
-
 * Add: Quicklaunch "locked by message"
 * Add: Quicklaunch "Auto-Lock"
 * Add: Reports are logged
@@ -251,7 +255,6 @@ Bugfix and extension of the plugin...
 
 = v. 1.1 =
 *[27.09.2018]*
-
 * Fix: Permissions in the admin panel
 * Fix: Page makeup options labels in the form
 * Fix: Uninstall only by role adminnistrator

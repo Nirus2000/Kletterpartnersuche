@@ -214,139 +214,75 @@ function kps_PrivacyExporter($authorEmail) {
                		break;
                 	case 'formOptions':
                         // zusätzliche Kontaktdaten
-                        $setAuthorContactInfo = kps_unserialize($entry->show_authorContactData());
+                        $authorContactData = kps_contact_informations($entry->show_authorContactData());
+                        $value = $authorContactData;
+               		break;
+                	case 'authorIp':
+                		$value = $entry->show_authorIp();
+               		break;
+                	case 'authorHost':
+                		$value = $entry->show_authorHost();
+               		break;
+                	case 'setDateTime':
+                		$value = $entry->show_setDateTime();
+               		break;
+                	case 'unlockDateTime':
+                		$value = $entry->show_unlockDateTime();
+               		break;
+                	case 'deleteDateTime':
+                		$value = $entry->show_deleteDateTime();
+               		break;
+                	case 'authorSearchfor':
+                		$value = $entry->show_authorSearchfor_raw();
+               		break;
+                	case 'authorRule':
+                		$value = $entry->show_authorRule_raw();
+               		break;
+                	case 'yourRule':
+                		$value = $entry->show_yourRule_raw();
+               		break;
+                	case 'content':
+                		$value = $entry->show_authorContent();
+               		break;
+                	case 'url':
+                        // Daten für Export-Array zusammenstellen
+                        $permalinkId = kps_PermalinksWithShortCode();
 
-                        // Übersetzung der zusätzlichen Kontaktinformationen
-                        if (!empty($setAuthorContactInfo) AND $setAuthorContactInfo != "" AND is_array($setAuthorContactInfo))
+                        // Links zum Eintrag, wenn sichtbar
+                        if ($entry->show_isLocked() === true
+                            && $entry->show_isLockedByAdmin() === true
+                            && $entry->show_lockedAutoReport() === false)
                         {
-                            foreach ($setAuthorContactInfo AS $key => $value)
+                            foreach ($permalinkId as $url)
                             {
-                                if( $key == 'authorTelephone')
-                                {
-                                    $setAuthorContactInfoData .= esc_html(__('Telephone', 'kps')) . ": " . $value . "<br />";
-                                }
-                                elseif( $key == 'authorMobile')
-                                {
-                                    $setAuthorContactInfoData .= esc_html(__('Mobile Phone', 'kps')) . ": " . $value . "<br />";
-                                }
-                                elseif( $key == 'authorSignal')
-                                {
-                                    $setAuthorContactInfoData .= esc_html(__('Signal-Messenger', 'kps')) . ": " . $value . "<br />";
-                                }
-                                elseif( $key == 'authorViper')
-                                {
-                                    $setAuthorContactInfoData .= esc_html(__('Viper-Messenger', 'kps')) . ": " . $value . "<br />";
-                                }
-                                elseif( $key == 'authorTelegram')
-                                {
-                                    $setAuthorContactInfoData .= esc_html(__('Telegram-Messenger', 'kps')) . ": " . $value . "<br />";
-                                }
-                                elseif( $key == 'authorWhatsapp')
-                                {
-                                    $setAuthorContactInfoData .= esc_html(__('Whatsapp-Messenger', 'kps')) . ": " . $value . "<br />";
-                                }
-                                elseif( $key == 'authorHoccer')
-                                {
-                                    $setAuthorContactInfoData .= esc_html(__('Hoccer-Messenger', 'kps')) . ": " . $value . "<br />";
-                                }
-                                elseif( $key == 'authorWire')
-                                {
-                                    $setAuthorContactInfoData .= esc_html(__('Wire-Messenger', 'kps')) . ": " . $value . "<br />";
-                                }
-                                elseif( $key == 'authorSkype')
-                                {
-                                    $setAuthorContactInfoData .= esc_html(__('Skype-Messenger', 'kps')) . ": " . $value . "<br />";
-                                }
-                                elseif( $key == 'authorFacebookMessenger')
-                                {
-                                    $setAuthorContactInfoData .= esc_html(__('Facebook-Messenger', 'kps')) . ": " . $value . "<br />";
-                                }
-                                elseif( $key == 'authorWebsite')
-                                {
-                                    $setAuthorContactInfoData .= esc_html(__('Website', 'kps')) . ": " . $value . "<br />";
-                                }
-                                elseif( $key == 'authorFacebook')
-                                {
-                                    $setAuthorContactInfoData .= esc_html(__('Facebook', 'kps')) . ": " . $value . "<br />";
-                                }
-                                elseif( $key == 'authorInstagram')
-                                {
-                                    $setAuthorContactInfoData .= esc_html(__('Instagram', 'kps')) . ": " . $value . "<br />";
-                                }
-                                else
-                                {
-                                    $setAuthorContactInfoData .= ' ';
-                                }
+                                $value  .= '<a href="' . esc_url(get_post_permalink($url)) . '" target="_blank">' .esc_url(get_post_permalink($url)) . '</a><br />';
                             }
                         }
-                        $value = $setAuthorContactInfoData;
-                   		break;
-                    	case 'authorIp':
-                    		$value = $entry->show_authorIp();
-                   		break;
-                    	case 'authorHost':
-                    		$value = $entry->show_authorHost();
-                   		break;
-                    	case 'setDateTime':
-                    		$value = $entry->show_setDateTime();
-                   		break;
-                    	case 'unlockDateTime':
-                    		$value = $entry->show_unlockDateTime();
-                   		break;
-                    	case 'deleteDateTime':
-                    		$value = $entry->show_deleteDateTime();
-                   		break;
-                    	case 'authorSearchfor':
-                    		$value = $entry->show_authorSearchfor_raw();
-                   		break;
-                    	case 'authorRule':
-                    		$value = $entry->show_authorRule_raw();
-                   		break;
-                    	case 'yourRule':
-                    		$value = $entry->show_yourRule_raw();
-                   		break;
-                    	case 'content':
-                    		$value = $entry->show_authorContent();
-                   		break;
-                    	case 'url':
-                            // Daten für Export-Array zusammenstellen
-                            $permalinkId = get_PermalinksWithShortCode();
+                        else
+                        {
+                            $value = esc_html(__('This entry is not visible!', 'kps'));
+                        }
+               		break;
+                	case 'verifications':
+                        $resultVerifications = $wpdb->get_results("SELECT * FROM " . KPS_TABLE_REQUIREMENT . " WHERE entryId =  '" . $entries->id . "' AND sendData = 1", object);
+                        if (is_array($resultVerifications) && count($resultVerifications) > 0)
+                        {
+                            foreach ($resultVerifications as $verifications)
+                            {
+                                $value  .= $verifications->userEmail . '<font size="4"><span>&#160;&#10140;&#160;</span></font>' . date_i18n(get_option('date_format'), $verifications->sendTimestamp) . ', ' . date_i18n(get_option('time_format'), $verifications->sendTimestamp) . '<br />';
+                            }
+                        }
+                        else
+                        {
+                            $value = esc_html(__('No personal-data sent!', 'kps'));
+                        }
+               		break;
+                }
 
-                            // Links zum Eintrag, wenn sichtbar
-                            if ($entry->show_isLocked() === true
-                                && $entry->show_isLockedByAdmin() === true
-                                && $entry->show_lockedAutoReport() === false)
-                            {
-                                foreach ($permalinkId as $url)
-                                {
-                                    $value  .= '<a href="' . esc_url(get_post_permalink($url)) . '" target="_blank">' .esc_url(get_post_permalink($url)) . '</a><br />';
-                                }
-                            }
-                            else
-                            {
-                                $value = esc_html(__('This entry is not visible!', 'kps'));
-                            }
-                   		break;
-                    	case 'verifications':
-                            $resultVerifications = $wpdb->get_results("SELECT * FROM " . KPS_TABLE_REQUIREMENT . " WHERE entryId =  '" . $entries->id . "' AND sendData = 1", object);
-                            if (is_array($resultVerifications) && count($resultVerifications) > 0)
-                            {
-                                foreach ($resultVerifications as $verifications)
-                                {
-                                    $value  .= $verifications->userEmail . '<font size="4"><span>&#160;&#10140;&#160;</span></font>' . date_i18n(get_option('date_format'), $verifications->sendTimestamp) . ', ' . date_i18n(get_option('time_format'), $verifications->sendTimestamp) . '<br />';
-                                }
-                            }
-                            else
-                            {
-                                $value = esc_html(__('No personal-data sent!', 'kps'));
-                            }
-                   		break;
-                    }
-
-                    // Daten für Export-Array zusammenstellen
-                    $entryDataToExport[] = array(   'name'  => $name,
-                                                    'value' => $value
-                    );
+                // Daten für Export-Array zusammenstellen
+                $entryDataToExport[] = array(   'name'  => $name,
+                                                'value' => $value
+                );
  			}
 
             // Export-Array

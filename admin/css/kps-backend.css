@@ -113,6 +113,7 @@
 
 #kps .th_list_bottom {
     background-color: rgba(241, 214, 173, 1);
+    border-top: 1px solid #3C3C3C;
     vertical-align: middle;
     padding: 3px 3px 3px 3px;
     text-align: center;

@@ -257,74 +257,7 @@ Your team
                                 }
 
                                 // zusätzliche Kontaktdaten
-                                $authorContactData = kps_unserialize($entry->show_authorContactData());
-
-                                // Übersetzung der zusätzlichen Kontaktinformationen
-                                if (!empty($authorContactData) AND $authorContactData != '' AND is_array($authorContactData) AND !is_string($authorContactData))
-                                {
-                                    $authorContactInfo  = '';
-
-                                    // Übersetzungen
-                                    foreach ($authorContactData AS $key => $value)
-                                    {
-                                        if( $key == 'authorTelephone')
-                                        {
-                                            $authorContactInfo .= esc_html(__('Telephone', 'kps')) . ": " . $value . " \r\n";
-                                        }
-                                        elseif( $key == 'authorMobile')
-                                        {
-                                            $authorContactInfo .= esc_html(__('Mobile Phone', 'kps')) . ": " . $value . " \r\n";
-                                        }
-                                        elseif( $key == 'authorSignal')
-                                        {
-                                            $authorContactInfo .= esc_html(__('Signal-Messenger', 'kps')) . ": " . $value . " \r\n";
-                                        }
-                                        elseif( $key == 'authorViper')
-                                        {
-                                            $authorContactInfo .= esc_html(__('Viper-Messenger', 'kps')) . ": " . $value . " \r\n";
-                                        }
-                                        elseif( $key == 'authorTelegram')
-                                        {
-                                            $authorContactInfo .= esc_html(__('Telegram-Messenger', 'kps')) . ": " . $value . " \r\n";
-                                        }
-                                        elseif( $key == 'authorWhatsapp')
-                                        {
-                                            $authorContactInfo .= esc_html(__('Whatsapp-Messenger', 'kps')) . ": " . $value . " \r\n";
-                                        }
-                                        elseif( $key == 'authorHoccer')
-                                        {
-                                            $authorContactInfo .= esc_html(__('Hoccer-Messenger', 'kps')) . ": " . $value . " \r\n";
-                                        }
-                                        elseif( $key == 'authorWire')
-                                        {
-                                            $authorContactInfo .= esc_html(__('Wire-Messenger', 'kps')) . ": " . $value . " \r\n";
-                                        }
-                                        elseif( $key == 'authorSkype')
-                                        {
-                                            $authorContactInfo .= esc_html(__('Skype-Messenger', 'kps')) . ": " . $value . " \r\n";
-                                        }
-                                        elseif( $key == 'authorFacebookMessenger')
-                                        {
-                                            $authorContactInfo .= esc_html(__('Facebook-Messenger', 'kps')) . ": " . $value . " \r\n";
-                                        }
-                                        elseif( $key == 'authorWebsite')
-                                        {
-                                            $authorContactInfo .= esc_html(__('Website', 'kps')) . ": " . $value . " \r\n";
-                                        }
-                                        elseif( $key == 'authorFacebook')
-                                        {
-                                            $authorContactInfo .= esc_html(__('Facebook', 'kps')) . ": " . $value . " \r\n";
-                                        }
-                                        elseif( $key == 'authorInstagram')
-                                        {
-                                            $authorContactInfo .= esc_html(__('Instagram', 'kps')) . ": " . $value . " \r\n";
-                                        }
-                                        else
-                                        {
-                                            $authorContactInfo .= ' \r\n';
-                                        }
-                                    }
-                                }
+                                $authorContactData = kps_contact_informations($entry->show_authorContactData());
 
                                 // Ersetze Shorttags
                                 $postShorttags = array(
@@ -334,7 +267,7 @@ Your team
                                     '%authorname%'          => $entry->show_authorName_raw(),
                                     '%authoremail%'         => $entry->show_authorEmail_raw(),
                                     '%entrycontent%'        => $entry->show_authorContent(),
-                                    '%authorcontactdata%'   => $authorContactInfo,
+                                    '%authorcontactdata%'   => $authorContactData,
                                     '%setdate%'             => $entry->show_emailSetDateTime(),
                                     '%unlockdatetime%'      => $entry->show_emailUnlockDateTime(),
                                     '%erasedatetime%'       => $entry->show_emailDeleteDateTime()
@@ -530,19 +463,11 @@ Your team
     $limits = (int)($getPage - 1) * $maxEntriesPerPage; // Limit für Query
     $pageUrl = "admin.php?page=" . KPS_FOLDER . "/entries.php";
 
-    // Übersetzung Single, Plural, Null
-    $translationAllEntries = ($countTotalEntries >= 1) ? esc_html(_n('Entry', 'Entries', $countTotalEntries, 'kps')) : esc_html(__('No entries available!'), 'kps');
-
     // Alle Einträge pro Seite aus Datenbank holen
     $results = $wpdb->get_results("SELECT id FROM " . KPS_TABLE_ENTRIES . " " . $query . " ORDER BY ID DESC LIMIT {$limits}, {$maxEntriesPerPage}", object);
 
-    // Übersichtsinformation Einträge
-    if ($countTotalEntries == 0)
-    {
-        $firstEntry = 0;
-        $lastEntry = 0;
-    }
-    else
+    // Blätterfunktion
+    if ($countTotalEntries > 0)
     {
         $firstEntry = ($getPage - 1) * $maxEntriesPerPage + 1;
         $totalPerPage = $countTotalEntries - (($getPage - 1) * $maxEntriesPerPage);
@@ -551,6 +476,13 @@ Your team
             $totalPerPage = $maxEntriesPerPage;
         }
         $lastEntry = $firstEntry + $totalPerPage - 1;
+
+        $pagination =   '
+                        <div class="tablenav-pages">
+                            <span class="displaying-num">' . $firstEntry . ' &#45; ' . $lastEntry . ' ' . esc_html(__('of', 'kps')) . ' ' . $countTotalEntries . '</span>
+                            ' . kps_pagination_backend($totalPages, $getPage, $lastPage, $previosPage, $nextPage, $pageUrl) . '
+                        </div>
+                        ';
     }
 ?>
   <div id="kps">
@@ -793,11 +725,7 @@ Your team
                     <input type="hidden" id="kpsActionToken" name="kpsActionToken" value="<?php echo $token; ?>" />
                     <input value="<?php echo esc_html(__('Execute', 'kps')); ?>" name="kpsAdminDoIt" id="kpsAdminDoIt" class="button action" type="submit" />
                 </div>
-                <div class="tablenav-pages">
-                    <span class="displaying-num"> <?php echo $firstEntry . ' &#45; ' . $lastEntry . ' ' . esc_html(__('of', 'kps')) . ' ' . $countTotalEntries; ?>
-                  </span>
-                        <?php echo kps_pagination_backend($totalPages, $getPage, $lastPage, $previosPage, $nextPage, $pageUrl); ?>
-              </div>
+                <?php echo $pagination; ?>
             </div>
             <div>
                 <table class="table_list">
@@ -928,12 +856,7 @@ Your team
                     <input type="hidden" id="kpsActionToken" name="kpsActionToken" value="<?php echo $token; ?>" />
                     <input value="<?php echo __('Execute', 'kps'); ?>" name="kpsAdminDoIt" id="kpsAdminDoIt" class="button action" type="submit" />
                 </div>
-                <div class="tablenav-pages">
-                    <span class="displaying-num">
-                        <?php echo $firstEntry . ' &#45; ' . $lastEntry . ' ' . esc_html(__('of', 'kps')) . ' ' . $countTotalEntries; ?>
-                  </span>
-                        <?php echo kps_pagination_backend($totalPages, $getPage, $lastPage, $previosPage, $nextPage, $pageUrl); ?>
-              </div>
+                <?php echo $pagination; ?>
             </div>
         </form>
         <div class="kps-br"></div>

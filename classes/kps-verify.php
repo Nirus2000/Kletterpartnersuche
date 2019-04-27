@@ -242,14 +242,12 @@ Your team
             $this->_insertId    = $wpdb->insert_id; // Datenbank-Id
 
             // Gesamtzähler für Statistik
-            $countActivation    = kps_unserialize(get_option('kps_kpsCounter', false));
-            $newSetKPSCounter['kpsAllEntrys']           = $countActivation['kpsAllEntrys'];
-            $newSetKPSCounter['kpsAllActivatedEntrys']  = $countActivation['kpsAllActivatedEntrys'];
-            $newSetKPSCounter['kpsAllVerfifications']   = $countActivation['kpsAllVerfifications'] + 1;
-            $newSetKPSCounter['kpsAllSendRequirements'] = $countActivation['kpsAllSendRequirements'];
-            $newSetKPSCounter['kpsAllDeleteEntrys']     = $countActivation['kpsAllDeleteEntrys'];
-            $newSetKPSCounter = serialize($newSetKPSCounter);
-            update_option('kps_kpsCounter', $newSetKPSCounter);
+            $countKPSCounter = kps_unserialize(get_option('kps_kpsCounter', false));
+            foreach ($countKPSCounter as $key => $value)
+            {
+                if ($key == 'kpsAllVerfifications') { $countKPSCounter[$key]++; }
+            }
+            update_option('kps_kpsCounter', serialize($countKPSCounter));
 
             return $this->_isInsertDB; // Rückgabe des Wertes
         }

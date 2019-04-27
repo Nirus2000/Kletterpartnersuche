@@ -105,6 +105,7 @@ function kps_frontend_form($shortCodeValues)
             'kps_authorMobile',
             'kps_authorSignal',
             'kps_authorTelegram',
+            'kps_authorThreema',
             'kps_authorViper',
             'kps_authorWhatsapp',
             'kps_authorFacebookMessenger',
@@ -268,6 +269,7 @@ function kps_frontend_form($shortCodeValues)
     $setAuthorMobile            = (isset($write->_authorMobile) && !empty($write->_authorMobile)) ? $write->_authorMobile : '';
     $setAuthorSignal            = (isset($write->_authorSignal) && !empty($write->_authorSignal)) ? $write->_authorSignal : '';
     $setAuthorTelegram          = (isset($write->_authorTelegram) && !empty($write->_authorTelegram)) ? $write->_authorTelegram : '';
+    $setAuthorThreema           = (isset($write->_authorThreema) && !empty($write->_authorThreema)) ? $write->_authorThreema : '';
     $setAuthorViper             = (isset($write->_authorViper) && !empty($write->_authorViper)) ? $write->_authorViper : '';
     $setAuthorWhatsapp          = (isset($write->_authorWhatsapp) && !empty($write->_authorWhatsapp)) ? $write->_authorWhatsapp : '';
     $setAuthorFacebookMessenger = (isset($write->_authorFacebookMessenger) && !empty($write->_authorFacebookMessenger)) ? $write->_authorFacebookMessenger : '';
@@ -660,6 +662,17 @@ function kps_frontend_form($shortCodeValues)
                                     <div class="kps-divTableRow">
                                         <div class="kps-divTableCell kps-nobr"><label for="kps_authorTelegram"><i class="fab fa-telegram-plane"></i>&#160;' . esc_html(__('Telegram', 'kps')) . '</label></div>
                                         <div class="kps-divTableCell"><input class="form_field" id="kps_authorTelegram" name="kps_authorTelegram" value="' . $setAuthorTelegram . '" placeholder="' . esc_html(__('0170/123456', 'kps')) . '" size="60" maxlength="60" type="' . $html5TypTele . '"></div>
+                                    </div>
+                        ';
+        }
+
+        // Wenn Threema aktiviert ist
+        if ($formOptions['kpsFormOptionThreema'] === 'true')
+        {
+            $output .= '
+                                    <div class="kps-divTableRow">
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorThreema"><i class="far fa-comment-alt"></i>&#160;' . esc_html(__('Threema', 'kps')) . '</label></div>
+                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorThreema" name="kps_authorThreema" value="' . $setAuthorThreema . '" placeholder="' . esc_html(__('Threema-ID', 'kps')) . '" size="60" maxlength="8" type="text"></div>
                                     </div>
                         ';
         }

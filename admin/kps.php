@@ -162,7 +162,7 @@ function kps_admin_overview_setting() {
     // Hole Captcha Einstellungen
     $captchaSiteKey     = get_option('kps_captcha', false);
     $isCaptchaActivated = ($captchaSiteKey === 'true') ? '<span class="dashicons dashicons-yes"></span>' : '<span class="dashicons dashicons-no-alt"></span>';
-    $errorCaptcha = ($captchaSiteKey === 'true') ? '' : 'form_glowing';
+    $errorCaptcha       = ($captchaSiteKey === 'true') ? '' : 'form_glowing';
 
     echo '
             <div>
@@ -268,7 +268,7 @@ function kps_admin_overview_statistics() {
                         </tr>
                         <tr>
                             <td><b>' . esc_html(__('Activated entries', 'kps')) . '</b></td>
-                            <td>' . $kpsCounterActivatedEntrys . ' ' . esc_html(__('Activation', 'Activations', $kpsCounterActivatedEntrys, 'kps')) . '</td>
+                            <td>' . $kpsCounterActivatedEntrys . ' ' . esc_html(_n('Activation', 'Activations', $kpsCounterActivatedEntrys, 'kps')) . '</td>
                         </tr>
                         <tr>
                             <td><b>' . esc_html(__('Reqirement contact details', 'kps')) . '</b></td>

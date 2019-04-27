@@ -150,7 +150,7 @@ function kps_backend_enqueue_style()
     wp_enqueue_style('kps-backend', plugins_url('/admin/css/kps-backend.css', __FILE__) , array(), KPS_VER, 'all');
 
     //Fontawesome
-    wp_enqueue_style('kps-frontend-dashicons', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css' , array(), KPS_VER, 'all');
+    wp_enqueue_style('kps-frontend-dashicons', 'https://use.fontawesome.com/releases/v5.8.1/css/all.css' , array(), KPS_VER, 'all');
 }
 add_action('admin_enqueue_scripts', 'kps_backend_enqueue_style');
 
@@ -162,7 +162,7 @@ function kps_frontend_enqueue_style()
     wp_enqueue_style('kps-frontend', plugins_url('/frontend/css/kps-frontend.css', __FILE__) , array(), KPS_VER, 'all');
 
     //Fontawesome
-    wp_enqueue_style('kps-frontend-dashicons', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css' , array(), KPS_VER, 'all');
+    wp_enqueue_style('kps-frontend-dashicons', 'https://use.fontawesome.com/releases/v5.8.1/css/all.css' , array(), KPS_VER, 'all');
 }
 add_action('wp_enqueue_scripts', 'kps_frontend_enqueue_style');
 

@@ -238,71 +238,7 @@ Your team
         }
 
         // zusätzliche Kontaktdaten
-        $setAuthorContactInfo = kps_unserialize($authorContactData);
-
-        // Übersetzung der zusätzlichen Kontaktinformationen
-        if (!empty($setAuthorContactInfo) AND $setAuthorContactInfo != "" AND is_array($setAuthorContactInfo))
-        {
-            foreach ($setAuthorContactInfo AS $key => $value)
-            {
-                if( $key == 'authorTelephone')
-                {
-                    $setAuthorContactInfoData .= esc_html(__('Telephone', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorMobile')
-                {
-                    $setAuthorContactInfoData .= esc_html(__('Mobile Phone', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorSignal')
-                {
-                    $setAuthorContactInfoData .= esc_html(__('Signal-Messenger', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorViper')
-                {
-                    $setAuthorContactInfoData .= esc_html(__('Viper-Messenger', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorTelegram')
-                {
-                    $setAuthorContactInfoData .= esc_html(__('Telegram-Messenger', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorWhatsapp')
-                {
-                    $setAuthorContactInfoData .= esc_html(__('Whatsapp-Messenger', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorHoccer')
-                {
-                    $setAuthorContactInfoData .= esc_html(__('Hoccer-Messenger', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorWire')
-                {
-                    $setAuthorContactInfoData .= esc_html(__('Wire-Messenger', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorSkype')
-                {
-                    $setAuthorContactInfoData .= esc_html(__('Skype-Messenger', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorFacebookMessenger')
-                {
-                    $setAuthorContactInfoData .= esc_html(__('Facebook-Messenger', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorWebsite')
-                {
-                    $setAuthorContactInfoData .= esc_html(__('Website', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorFacebook')
-                {
-                    $setAuthorContactInfoData .= esc_html(__('Facebook', 'kps')) . ": " . $value . " \r\n";
-                }
-                elseif( $key == 'authorInstagram')
-                {
-                    $setAuthorContactInfoData .= esc_html(__('Instagram', 'kps')) . ": " . $value . " \r\n";
-                }
-                else
-                {
-                    $setAuthorContactInfoData .= ' \r\n';
-                }
-            }
-        }
+        $authorContactData = kps_contact_informations($authorContactData);
 
         // Ersetze Shorttags
         $postShorttags = array(
@@ -311,7 +247,7 @@ Your team
             '%blogemail%'           => get_option('kps_mailFrom', false),
             '%authorname%'          => $this->_authorName,
             '%authoremail%'         => $this->_authorEmail,
-            '%authorcontactdata%'   => $setAuthorContactInfoData,
+            '%authorcontactdata%'   => $authorContactData,
             '%entrycontent%'        => $this->_authorContent,
             '%setdate%'             => $this->_setDateTime,
             '%unlockdatetime%'      => $this->_unlockDateTime,
@@ -325,14 +261,12 @@ Your team
         $this->_isSend = wp_mail( $email, $userMailSubject, $userMailContent, $headers);
 
         // Gesamtzähler für Statistik
-        $countActivation    = kps_unserialize(get_option('kps_kpsCounter', false));
-        $newSetKPSCounter['kpsAllEntrys']           = $countActivation['kpsAllEntrys'];
-        $newSetKPSCounter['kpsAllActivatedEntrys']  = $countActivation['kpsAllActivatedEntrys'];
-        $newSetKPSCounter['kpsAllVerfifications']   = $countActivation['kpsAllVerfifications'];
-        $newSetKPSCounter['kpsAllSendRequirements'] = $countActivation['kpsAllSendRequirements'] + 1;
-        $newSetKPSCounter['kpsAllDeleteEntrys']     = $countActivation['kpsAllDeleteEntrys'];
-        $newSetKPSCounter = serialize($newSetKPSCounter);
-        update_option('kps_kpsCounter', $newSetKPSCounter);
+        $countKPSCounter = kps_unserialize(get_option('kps_kpsCounter', false));
+        foreach ($countKPSCounter as $key => $value)
+        {
+            if ($key == 'kpsAllSendRequirements') { $countKPSCounter[$key]++; }
+        }
+        update_option('kps_kpsCounter', serialize($countKPSCounter));
     }
 
     /**

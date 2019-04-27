@@ -159,149 +159,38 @@ function kps_Reporting()
         // Verifizieren
         if ($verification == true)
         {
-            /* Reportanzahl escapen -> default sind 50 Meldungen
-            * Reportanzahl darf nicht kleiner gleich 10 sein
-            * Reportanzahl darf nicht größer 499 sein
-            * -> default sind 50 Meldungen
-            */
-            $setReport['kpsAdminSendReportAfter']   = (isset($postVars['kpsAdminSendReportAfter'])
-                                                        && !empty($postVars['kpsAdminSendReportAfter'])
-                                                        && is_numeric($postVars['kpsAdminSendReportAfter'])
-                                                        && is_int((int)$postVars['kpsAdminSendReportAfter'])
-                                                        && $postVars['kpsAdminSendReportAfter'] >= 10
-                                                        && $postVars['kpsAdminSendReportAfter'] < 499)
-                                                        ? absint($postVars['kpsAdminSendReportAfter']) : 50;
+            // Reportanzahl escapen -> default sind 50 Meldungen
+            $setReport['kpsAdminSendReportAfter'] = kps_min_max_default_range($postVars['kpsAdminSendReportAfter'], 10, 499, 50);
 
-            /* Werbuns/Spam escapen
-            *  nicht kleiner Sperre
-            *  darf nicht größer als 500 sein
-            *  -> default ist 25
-            */
-            $setReport['kpsReportSpam']             = (isset($postVars['kpsReportSpam'])
-                                                        && !empty($postVars['kpsReportSpam'])
-                                                        && is_numeric($postVars['kpsReportSpam'])
-                                                        && is_int((int)$postVars['kpsReportSpam'])
-                                                        && $postVars['kpsReportSpam'] >= 1
-                                                        && $postVars['kpsReportSpam'] < 499)
-                                                        ? absint($postVars['kpsReportSpam']) : 25;
+            // Werbuns/Spam escapen -> default ist 25
+            $setReport['kpsReportSpam'] = kps_min_max_default_range($postVars['kpsReportSpam'], 25, 499, 50);
 
-            /* Auto-Sperre Werbuns/Spam escapen
-            *  nicht kleiner Werbuns/Spam
-            *  nicht größer als 500 sein
-            *  -> default ist Werbuns/Spam + 1
-            */
-            $setReport['kpsAutoReportSpam']         = (isset($postVars['kpsAutoReportSpam'])
-                                                        && !empty($postVars['kpsAutoReportSpam'])
-                                                        && is_numeric($postVars['kpsAutoReportSpam'])
-                                                        && is_int((int)$postVars['kpsAutoReportSpam'])
-                                                        && $postVars['kpsAutoReportSpam'] > $setReport['kpsReportSpam']
-                                                        && $postVars['kpsAutoReportSpam'] <= 500)
-                                                        ? absint($postVars['kpsAutoReportSpam']) : $setReport['kpsReportSpam'] + 1;
+            // Auto-Sperre Werbuns/Spam escapen -> default ist Werbuns/Spam + 1
+            $setReport['kpsAutoReportSpam'] = kps_min_max_default_range($postVars['kpsAutoReportSpam'], $setReport['kpsReportSpam'], 500, $setReport['kpsReportSpam'] + 1);
 
+            // Unangemessen/Gewalt escapen -> default ist 25
+            $setReport['kpsReportUnreasonable'] = kps_min_max_default_range($postVars['kpsReportUnreasonable'], 1, 499, 25);
 
-            /* Unangemessen/Gewalt escapen
-            *  nicht kleiner Sperre
-            *  darf nicht größer als 500 sein
-            *  -> default ist 25
-            */
-            $setReport['kpsReportUnreasonable']     = (isset($postVars['kpsReportUnreasonable'])
-                                                        && !empty($postVars['kpsReportUnreasonable'])
-                                                        && is_numeric($postVars['kpsReportUnreasonable'])
-                                                        && is_int((int)$postVars['kpsReportUnreasonable'])
-                                                        && $postVars['kpsReportUnreasonable'] >= 1
-                                                        && $postVars['kpsReportUnreasonable'] < 499)
-                                                        ? absint($postVars['kpsReportUnreasonable']) : 25;
+            // Auto-Sperre Unangemessen/Gewalt escapen -> default ist Werbuns/Spam + 1
+            $setReport['kpsAutoReportUnreasonable'] = kps_min_max_default_range($postVars['kpsAutoReportUnreasonable'], $setReport['kpsReportUnreasonable'], 500, $setReport['kpsReportUnreasonable'] + 1);
 
-            /* Auto-Sperre Unangemessen/Gewalt escapen
-            *  nicht kleiner Unangemessen/Gewalt
-            *  nicht größer als 500 sein
-            *  -> default ist Werbuns/Spam + 1
-            */
-            $setReport['kpsAutoReportUnreasonable'] = (isset($postVars['kpsAutoReportUnreasonable'])
-                                                        && !empty($postVars['kpsAutoReportUnreasonable'])
-                                                        && is_numeric($postVars['kpsAutoReportUnreasonable'])
-                                                        && is_int((int)$postVars['kpsAutoReportUnreasonable'])
-                                                        && $postVars['kpsAutoReportUnreasonable'] > $setReport['kpsReportUnreasonable']
-                                                        && $postVars['kpsAutoReportUnreasonable'] <= 500)
-                                                        ? absint($postVars['kpsAutoReportUnreasonable']) : $setReport['kpsReportUnreasonable'] + 1;
+            // Doppelter Eintrag escapen -> default ist 25
+            $setReport['kpsReportDouble'] = kps_min_max_default_range($postVars['kpsReportDouble'], 1, 499, 25);
 
-            /* Doppelter Eintrag escapen
-            *  nicht kleiner Sperre
-            *  darf nicht größer als 500 sein
-            *  -> default ist 25
-            */
-            $setReport['kpsReportDouble']           = (isset($postVars['kpsReportDouble'])
-                                                        && !empty($postVars['kpsReportDouble'])
-                                                        && is_numeric($postVars['kpsReportDouble'])
-                                                        && is_int((int)$postVars['kpsReportDouble'])
-                                                        && $postVars['kpsReportDouble'] >= 1
-                                                        && $postVars['kpsReportDouble'] < 499)
-                                                        ? absint($postVars['kpsReportDouble']) : 25;
+            // Auto-Sperre Doppelter Eintrag escapen -> default ist Werbuns/Spam + 1
+            $setReport['kpsAutoReportDouble'] = kps_min_max_default_range($postVars['kpsAutoReportDouble'], $setReport['kpsReportDouble'], 500, $setReport['kpsReportDouble'] + 1);
 
-            /* Auto-Sperre Doppelter Eintrag escapen
-            *  nicht kleiner Doppelter Eintrag
-            *  nicht größer als 500 sein
-            *  -> default ist Werbuns/Spam + 1
-            */
-            $setReport['kpsAutoReportDouble']       = (isset($postVars['kpsAutoReportDouble'])
-                                                        && !empty($postVars['kpsAutoReportDouble'])
-                                                        && is_numeric($postVars['kpsAutoReportDouble'])
-                                                        && is_int((int)$postVars['kpsAutoReportDouble'])
-                                                        && $postVars['kpsAutoReportDouble'] > $setReport['kpsReportDouble']
-                                                        && $postVars['kpsAutoReportDouble'] <= 500)
-                                                        ? absint($postVars['kpsAutoReportDouble']) : $setReport['kpsReportDouble'] + 1;
+            // Personlichkeitsrecht escapen -> default ist 25
+            $setReport['kpsReportPrivacy'] = kps_min_max_default_range($postVars['kpsReportPrivacy'], 1, 499, 25);
 
-            /* Personlichkeitsrecht escapen
-            *  nicht kleiner Sperre
-            *  darf nicht größer als 500 sein
-            *  -> default ist 25
-            */
-            $setReport['kpsReportPrivacy']          = (isset($postVars['kpsReportPrivacy'])
-                                                        && !empty($postVars['kpsReportPrivacy'])
-                                                        && is_numeric($postVars['kpsReportPrivacy'])
-                                                        && is_int((int)$postVars['kpsReportPrivacy'])
-                                                        && $postVars['kpsReportPrivacy'] >= 1
-                                                        && $postVars['kpsReportPrivacy'] < 499)
-                                                        ? absint($postVars['kpsReportPrivacy']) : 25;
+            // Auto-Sperre Personlichkeitsrecht escapen -> default ist Werbuns/Spam + 1
+            $setReport['kpsAutoReportPrivacy'] = kps_min_max_default_range($postVars['kpsAutoReportPrivacy'], $setReport['kpsReportPrivacy'], 500, $setReport['kpsReportPrivacy'] + 1);
 
-            /* Auto-Sperre Personlichkeitsrecht escapen
-            *  nicht kleiner Personlichkeitsrecht
-            *  nicht größer als 500 sein
-            *  -> default ist Werbuns/Spam + 1
-            */
-            $setReport['kpsAutoReportPrivacy']      = (isset($postVars['kpsAutoReportPrivacy'])
-                                                        && !empty($postVars['kpsAutoReportPrivacy'])
-                                                        && is_numeric($postVars['kpsAutoReportPrivacy'])
-                                                        && is_int((int)$postVars['kpsAutoReportPrivacy'])
-                                                        && $postVars['kpsAutoReportPrivacy'] > $setReport['kpsReportPrivacy']
-                                                        && $postVars['kpsAutoReportPrivacy'] <= 500)
-                                                        ? absint($postVars['kpsAutoReportPrivacy']) : $setReport['kpsReportPrivacy'] + 1;
+            // Sonstiges escapen -> default ist 25
+            $setReport['kpsReportOthers'] = kps_min_max_default_range($postVars['kpsReportOthers'], 1, 499, 25);
 
-            /* Sonstiges escapen
-            *  nicht kleiner Sperre
-            *  darf nicht größer als 500 sein
-            *  -> default ist 25
-            */
-            $setReport['kpsReportOthers']           = (isset($postVars['kpsReportOthers'])
-                                                        && !empty($postVars['kpsReportOthers'])
-                                                        && is_numeric($postVars['kpsReportOthers'])
-                                                        && is_int((int)$postVars['kpsReportOthers'])
-                                                        && $postVars['kpsReportOthers'] >= 1
-                                                        && $postVars['kpsReportOthers'] < 499)
-                                                        ? absint($postVars['kpsReportOthers']) : 25;
-
-            /* Auto-Sperre Sonstiges escapen
-            *  nicht kleiner Sonstiges
-            *  nicht größer als 500 sein
-            *  -> default ist Werbuns/Spam + 1
-            */
-            $setReport['kpsAutoReportOthers']       = (isset($postVars['kpsAutoReportOthers'])
-                                                        && !empty($postVars['kpsAutoReportOthers'])
-                                                        && is_numeric($postVars['kpsAutoReportOthers'])
-                                                        && is_int((int)$postVars['kpsAutoReportOthers'])
-                                                        && $postVars['kpsAutoReportOthers'] > $setReport['kpsReportOthers']
-                                                        && $postVars['kpsAutoReportOthers'] <= 500)
-                                                        ? absint($postVars['kpsAutoReportOthers']) : $setReport['kpsReportOthers'] + 1;
+            // Auto-Sperre Sonstiges escapen -> default ist Werbuns/Spam + 1
+            $setReport['kpsAutoReportOthers'] = kps_min_max_default_range($postVars['kpsAutoReportOthers'], $setReport['kpsReportOthers'], 500, $setReport['kpsReportOthers'] + 1);
 
             // Checkbox escapen
             $setReport['kpsReportActivation'] = ($postVars['kpsReportActivation'] === '1') ? 'true' : 'false';
@@ -364,19 +253,8 @@ function kps_Reporting()
     }
 
     // Hole Report Einstellungen
-    $checked = kps_unserialize(get_option('kps_report', false));
-    $checkedAdminSendReportAfter    = $checked['kpsAdminSendReportAfter'];
-    $checkedReportSpam              = $checked['kpsReportSpam'];
-    $checkedAutoReportSpam          = $checked['kpsAutoReportSpam'];
-    $checkedReportUnreasonable      = $checked['kpsReportUnreasonable'];
-    $checkedAutoReportUnreasonable  = $checked['kpsAutoReportUnreasonable'];
-    $checkedReportDouble            = $checked['kpsReportDouble'];
-    $checkedAutoReportDouble        = $checked['kpsAutoReportDouble'];
-    $checkedReportPrivacy           = $checked['kpsReportPrivacy'];
-    $checkedAutoReportPrivacy       = $checked['kpsAutoReportPrivacy'];
-    $checkedReportOthers            = $checked['kpsReportPrivacy'];
-    $checkedAutoReportOthers        = $checked['kpsAutoReportOthers'];
-    $checkedReportIsActivated       = ($checked['kpsReportActivation'] === 'true') ? 'checked' : '';
+    $checked                    = kps_unserialize(get_option('kps_report', false));
+    $checkedReportIsActivated   = ($checked['kpsReportActivation'] === 'true') ? 'checked' : '';
 
     echo '
             <div class="kps_container" style="width: 33%"><h5>
@@ -388,62 +266,62 @@ between 1-499 messages. The range up to the automatic lock is between 2-500 mess
                         <tbody>
                             <tr>
                                 <td><label for="kpsAdminSendReportAfter">' . esc_html(__('Total Message-Reporting', 'kps')) . '</label></td>
-                                <td><input type="number" name="kpsAdminSendReportAfter" id="kpsAdminSendReportAfter" class="form_num" value="' . $checkedAdminSendReportAfter . '" min="10" max="499" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
+                                <td><input type="number" name="kpsAdminSendReportAfter" id="kpsAdminSendReportAfter" class="form_num" value="' . $checked['kpsAdminSendReportAfter'] . '" min="10" max="499" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
                             </tr>
                             <tr>
                                 <td colspan="2" class="hr"></td>
                             </tr>
                             <tr>
                                 <td><label for="kpsReportSpam">' . esc_html(__('Spam/Advertising', 'kps')) . '</label></td>
-                                <td><input type="number" name="kpsReportSpam" id="kpsReportSpam" class="form_num" value="' . $checkedReportSpam . '" min="1" max="499" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
+                                <td><input type="number" name="kpsReportSpam" id="kpsReportSpam" class="form_num" value="' . $checked['kpsReportSpam'] . '" min="1" max="499" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
                             </tr>
                             <tr>
                                 <td><label for="kpsAutoReportSpam">' . esc_html(__('Automatic-Lock after', 'kps')) . '</label></td>
-                                <td><input type="number" name="kpsAutoReportSpam" id="kpsAutoReportSpam" class="form_num" value="' . $checkedAutoReportSpam . '" min="2" max="500" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
+                                <td><input type="number" name="kpsAutoReportSpam" id="kpsAutoReportSpam" class="form_num" value="' . $checked['kpsAutoReportSpam'] . '" min="2" max="500" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
                             </tr>
                             <tr>
                                 <td colspan="2" class="hr"></td>
                             </tr>
                             <tr>
                                 <td><label for="kpsReportUnreasonable">' . esc_html(__('Inappropriate/Violence', 'kps')) . '</label></td>
-                                <td><input type="number" name="kpsReportUnreasonable" id="kpsReportUnreasonable" class="form_num" value="' . $checkedReportUnreasonable . '" min="1" max="499" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
+                                <td><input type="number" name="kpsReportUnreasonable" id="kpsReportUnreasonable" class="form_num" value="' . $checked['kpsReportUnreasonable'] . '" min="1" max="499" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
                             </tr>
                             <tr>
                                 <td><label for="kpsAutoReportUnreasonable">' . esc_html(__('Automatic-Lock after', 'kps')) . '</label></td>
-                                <td><input type="number" name="kpsAutoReportUnreasonable" id="kpsAutoReportUnreasonable" class="form_num" value="' . $checkedAutoReportUnreasonable . '" min="2" max="500" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
+                                <td><input type="number" name="kpsAutoReportUnreasonable" id="kpsAutoReportUnreasonable" class="form_num" value="' . $checked['kpsAutoReportUnreasonable'] . '" min="2" max="500" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
                             </tr>
                             <tr>
                                 <td colspan="2" class="hr"></td>
                             </tr>
                             <tr>
                                 <td><label for="kpsReportDouble">' . esc_html(__('Double entry', 'kps')) . '</label></td>
-                                <td><input type="number" name="kpsReportDouble" id="kpsReportDouble" class="form_num" value="' . $checkedReportDouble . '" min="1" max="499" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
+                                <td><input type="number" name="kpsReportDouble" id="kpsReportDouble" class="form_num" value="' . $checked['kpsReportDouble'] . '" min="1" max="499" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
                             </tr>
                             <tr>
                                 <td><label for="kpsAutoReportDouble">' . esc_html(__('Automatic-Lock after', 'kps')) . '</label></td>
-                                <td><input type="number" name="kpsAutoReportDouble" id="kpsAutoReportDouble" class="form_num" value="' . $checkedAutoReportDouble . '" min="2" max="500" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
+                                <td><input type="number" name="kpsAutoReportDouble" id="kpsAutoReportDouble" class="form_num" value="' . $checked['kpsAutoReportDouble'] . '" min="2" max="500" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
                             </tr>
                             <tr>
                                 <td colspan="2" class="hr"></td>
                             </tr>
                             <tr>
                                 <td><label for="kpsReportPrivacy">' . esc_html(__('Personality rights', 'kps')) . '</label></td>
-                                <td><input type="number" name="kpsReportPrivacy" id="kpsReportPrivacy" class="form_num" value="' . $checkedReportPrivacy . '" min="1" max="499" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
+                                <td><input type="number" name="kpsReportPrivacy" id="kpsReportPrivacy" class="form_num" value="' . $checked['kpsReportPrivacy'] . '" min="1" max="499" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
                             </tr>
                             <tr>
                                 <td><label for="kpsAutoReportPrivacy">' . esc_html(__('Automatic-Lock after', 'kps')) . '</label></td>
-                                <td><input type="number" name="kpsAutoReportPrivacy" id="kpsAutoReportPrivacy" class="form_num" value="' . $checkedAutoReportPrivacy . '" min="2" max="500" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
+                                <td><input type="number" name="kpsAutoReportPrivacy" id="kpsAutoReportPrivacy" class="form_num" value="' . $checked['kpsAutoReportPrivacy'] . '" min="2" max="500" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
                             </tr>
                             <tr>
                                 <td colspan="2" class="hr"></td>
                             </tr>
                             <tr>
                                 <td><label for="kpsReportOthers">' . esc_html(__('Others', 'kps')) . '</label></td>
-                                <td><input type="number" name="kpsReportOthers" id="kpsReportOthers" class="form_num" value="' . $checkedReportOthers . '" min="1" max="499" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
+                                <td><input type="number" name="kpsReportOthers" id="kpsReportOthers" class="form_num" value="' . $checked['kpsReportOthers'] . '" min="1" max="499" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
                             </tr>
                             <tr>
                                 <td><label for="kpsAutoReportOthers">' . esc_html(__('Automatic-Lock after', 'kps')) . '</label></td>
-                                <td><input type="number" name="kpsAutoReportOthers" id="kpsAutoReportOthers" class="form_num" value="' . $checkedAutoReportOthers . '" min="2" max="500" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
+                                <td><input type="number" name="kpsAutoReportOthers" id="kpsAutoReportOthers" class="form_num" value="' . $checked['kpsAutoReportOthers'] . '" min="2" max="500" /> ' . esc_html(_n('report', 'reports', $countAction->isLockedBoth, 'kps')) . '</td>
                             </tr>
                             <tr>
                                 <td colspan="2" class="hr"></td>
@@ -489,6 +367,7 @@ function kps_Optionfields()
             'kpsFormOptionSignal',
             'kpsFormOptionViper',
             'kpsFormOptionTelegram',
+            'kpsFormOptionThreema',
             'kpsFormOptionFacebookMessenger',
             'kpsFormOptionWire',
             'kpsFormOptionHoccer',
@@ -581,6 +460,7 @@ function kps_Optionfields()
     $checkedFormOptionSignal                = ($checked['kpsFormOptionSignal'] === 'true') ? 'checked' : '';
     $checkedFormOptionViper                 = ($checked['kpsFormOptionViper'] === 'true') ? 'checked' : '';
     $checkedFormOptionTelegram              = ($checked['kpsFormOptionTelegram'] === 'true') ? 'checked' : '';
+    $checkedFormOptionThreema               = ($checked['kpsFormOptionThreema'] === 'true') ? 'checked' : '';
     $checkedFormOptionWire                  = ($checked['kpsFormOptionWire'] === 'true') ? 'checked' : '';
     $checkedFormOptionHoccer                = ($checked['kpsFormOptionHoccer'] === 'true') ? 'checked' : '';
     $checkedFormOptionFacebookMessenger     = ($checked['kpsFormOptionFacebookMessenger'] === 'true') ? 'checked' : '';
@@ -624,16 +504,16 @@ function kps_Optionfields()
                                 <td width="33%"><label class="labelCheckbox" for="kpsFormOptionHoccer">' . esc_html(__('Hoccer', 'kps')) . '</label></td>
                                 <td width="25"><input type="checkbox" name="kpsFormOptionTelegram" id="kpsFormOptionTelegram" value="1" ' . $checkedFormOptionTelegram . ' /></td>
                                 <td width="33%"><label class="labelCheckbox" for="kpsFormOptionTelegram">' . esc_html(__('Telegram', 'kps')) . '</label></td>
-                                <td width="25"><input type="checkbox" name="kpsFormOptionWire" id="kpsFormOptionWire" value="1" ' . $checkedFormOptionWire . ' /></td>
-                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionWire">' . esc_html(__('Wire', 'kps')) . '</label></td>
+                                <td width="25"><input type="checkbox" name="kpsFormOptionThreema" id="kpsFormOptionThreema" value="1" ' . $checkedFormOptionThreema . ' /></td>
+                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionThreema">' . esc_html(__('Threema', 'kps')) . '</label></td>
                             </tr>
                             <tr>
+                                <td width="25"><input type="checkbox" name="kpsFormOptionWire" id="kpsFormOptionWire" value="1" ' . $checkedFormOptionWire . ' /></td>
+                                <td width="33%"><label class="labelCheckbox" for="kpsFormOptionWire">' . esc_html(__('Wire', 'kps')) . '</label></td>
                                 <td width="25"><input type="checkbox" name="kpsFormOptionSignal" id="kpsFormOptionSignal" value="1" ' . $checkedFormOptionSignal . ' /></td>
                                 <td width="33%"><label class="labelCheckbox" for="kpsFormOptionSignal">' . esc_html(__('Signal', 'kps')) . '</label></td>
                                 <td width="25"><input type="checkbox" name="kpsFormOptionViper" id="kpsFormOptionViper" value="1" ' . $checkedFormOptionViper . ' /></td>
                                 <td width="33%"><label class="labelCheckbox" for="kpsFormOptionViper">' . esc_html(__('Viper', 'kps')) . '</label></td>
-                                <td width="25"></td>
-                                <td width="33%"></td>
                             </tr>
                             <tr>
                                 <td colspan="6"><hr></td>
@@ -1066,22 +946,10 @@ function kps_Pagination()
         if ($verification == true)
         {
             // Seitenanzahl Backend escapen -> default sind 10 Seiten
-            $setBackendPagination   = (isset($postVars['kpsBackendPagination'])
-                                        && !empty($postVars['kpsBackendPagination'])
-                                        && is_numeric($postVars['kpsBackendPagination'])
-                                        && is_int((int)$postVars['kpsBackendPagination'])
-                                        && $postVars['kpsBackendPagination'] >= 1
-                                        && $postVars['kpsBackendPagination'] < 100)
-                                        ? absint($postVars['kpsBackendPagination']) : 10;
+            $setBackendPagination = kps_min_max_default_range(absint($postVars['kpsBackendPagination']), 1, 100, 10);
 
             // Seitenanzahl Frontend escapen -> default sind 5 Seiten
-            $setFrontendPagination  = (isset($postVars['kpsFrontendPagination'])
-                                        && !empty($postVars['kpsFrontendPagination'])
-                                        && is_numeric($postVars['kpsFrontendPagination'])
-                                        && is_int((int)$postVars['kpsFrontendPagination'])
-                                        && $postVars['kpsFrontendPagination'] >= 1
-                                        && $postVars['kpsFrontendPagination'] < 100)
-                                        ? absint($postVars['kpsFrontendPagination']) : 5;
+            $setFrontendPagination = kps_min_max_default_range(absint($postVars['kpsFrontendPagination']), 1, 100, 10);
 
             // Pagination aktualisieren
             if (is_numeric($setBackendPagination)
@@ -1278,11 +1146,7 @@ function kps_Spam()
 
     // Hole Captcha Einstellungen
     $checkedKeys                = kps_unserialize(get_option('kps_captchakeys', false));
-    $checkedCaptchaSiteKey      = esc_attr($checkedKeys['kpsCaptchaSiteKey']);
-    $checkedCaptchaSecretKey    = esc_attr($checkedKeys['kpsCaptchaSecretKey']);
-
-    $checked = get_option('kps_captcha', false);
-    $checkedCaptchaActivated = ($checked === 'true') ? 'checked' : '';
+    $checkedCaptchaActivated    = (get_option('kps_captcha', false) === 'true') ? 'checked' : '';
 
     echo '
             <div class="kps_container" style="width: 33%"><h5>
@@ -1294,11 +1158,11 @@ for communication between your website and Google. Keep the key secret. You can 
                         <tbody>
                             <tr>
                                 <td><label for="kpsCaptchaSiteKey">' . esc_html(__('Site-Key', 'kps')) . '</label></td>
-                                <td><input type="text" name="kpsCaptchaSiteKey" id="kpsCaptchaSiteKey" autocomplete="off" class="form_field" value="' . $checkedCaptchaSiteKey . '" /></td>
+                                <td><input type="text" name="kpsCaptchaSiteKey" id="kpsCaptchaSiteKey" autocomplete="off" class="form_field" value="' . esc_attr($checkedKeys['kpsCaptchaSiteKey']) . '" /></td>
                             </tr>
                             <tr>
                                 <td><label for="kpsCaptchaSecretKey">' . esc_html(__('Secret-Key', 'kps')) . '</label></td>
-                                <td><input type="text" name="kpsCaptchaSecretKey" id="kpsCaptchaSecretKey" autocomplete="off" class="form_field" value="' . $checkedCaptchaSecretKey . '" /></td>
+                                <td><input type="text" name="kpsCaptchaSecretKey" id="kpsCaptchaSecretKey" autocomplete="off" class="form_field" value="' . esc_attr($checkedKeys['kpsCaptchaSecretKey']) . '" /></td>
                             </tr>
                             <tr>
                                 <td><label class="labelCheckbox" for="kpsCaptchaActivated">' . esc_html(__('Google reCaptcha enable', 'kps')) . '</label></td>
@@ -1349,38 +1213,14 @@ function kps_BasicSettings()
         if ($verification == true)
         {
             // Freigegebene Einträge
-            $setDeleteTimeEntry = floor(absint($postVars['kpsDeleteTimeEntry'])) * 24 * 60 * 60;
-
             // Zeit darf nicht kleiner als 1 Tag sein -> default sind 90 Tage
-            $setDeleteTimeEntry     = (isset($setDeleteTimeEntry)
-                                        && !empty($setDeleteTimeEntry)
-                                        && is_numeric($setDeleteTimeEntry)
-                                        && is_int((int)$setDeleteTimeEntry / 86400)
-                                        && $setDeleteTimeEntry >= 86400) ? $setDeleteTimeEntry : 7776000;
-
-            // Zeit darf nicht größer als 180 Tag sein -> default sind 90 Tage
-            $setDeleteTimeEntry     = (isset($setDeleteTimeEntry)
-                                        && !empty($setDeleteTimeEntry)
-                                        && is_numeric($setDeleteTimeEntry)
-                                        && is_int((int)$setDeleteTimeEntry / 86400)
-                                        && $setDeleteTimeEntry <= 15552000) ? $setDeleteTimeEntry : 7776000;
+            // Zeit darf nicht größer als 180 Tag sein -> default sind 60 Tage
+            $setDeleteTimeEntry     = kps_min_max_default_range(absint($postVars['kpsDeleteTimeEntry']) * 24 * 60 * 60, 86400, 15552000, 7776000);
 
             // Wartende Einträge
-            $setDeleteTimeNoEntry = floor(absint($postVars['kpsDeleteTimeNoEntry'])) * 24 * 60 * 60;
-
             // Zeit darf nicht kleiner als 30 Tage sein -> default sind 60 Tage
-            $setDeleteTimeNoEntry   = (isset($setDeleteTimeNoEntry)
-                                        && !empty($setDeleteTimeNoEntry)
-                                        && is_numeric($setDeleteTimeNoEntry)
-                                        && is_int((int)$setDeleteTimeNoEntry / 86400)
-                                        && $setDeleteTimeNoEntry >= 2592000) ? $setDeleteTimeNoEntry : 5184000;
-
             // Zeit darf nicht größer als 180 Tag sein -> default sind 60 Tage
-            $setDeleteTimeNoEntry   = (isset($setDeleteTimeNoEntry)
-                                        && !empty($setDeleteTimeNoEntry)
-                                        && is_numeric($setDeleteTimeNoEntry)
-                                        && is_int((int)$setDeleteTimeNoEntry / 86400)
-                                        && $setDeleteTimeNoEntry <= 15552000) ? $setDeleteTimeNoEntry : 5184000;
+            $setDeleteTimeNoEntry   = kps_min_max_default_range(absint($postVars['kpsDeleteTimeNoEntry']) * 24 * 60 * 60, 2592000, 15552000, 5184000);
 
             // Wortzahl escapen -> default ist 1 Wort
             $setFormWordCount =     (isset($postVars['kpsFormWordCount'])
@@ -1432,10 +1272,6 @@ function kps_BasicSettings()
         }
     }
 
-    // UNIX-Timestamp in Tage umrechnen
-    $checkedDeleteTimeEntry     = get_option('kps_deleteEntryTime', false) / 24 / 60 / 60;
-    $checkedDeleteTimeNoEntry   = get_option('kps_deleteNoEntryTime', false) / 24 / 60 / 60;
-
     echo '
             <div class="kps_container" style="width: 33%"><h5>
 ' . esc_html(__('The deletion times specify when a "shared entry" or a "waiting entry" is deleted from the system (database).
@@ -1446,11 +1282,11 @@ In the textarea the minimum number of words to be written by the author is deter
                         <tbody>
                             <tr>
                                 <td width="50%" style="text-align: right;"><label for="kpsDeleteTimeEntry">' . esc_html(__('Released entries', 'kps')) . '</label></td>
-                                <td width="50%" style="text-align: left;"><input type="number" name="kpsDeleteTimeEntry" id="kpsDeleteTimeEntry" class="form_num" value="' . $checkedDeleteTimeEntry . '" min="1" max="180" aria-required="true" required="required" /> ' . esc_html(_n('day', 'days', $checkedDeleteTimeEntry , 'kps')) . '</td>
+                                <td width="50%" style="text-align: left;"><input type="number" name="kpsDeleteTimeEntry" id="kpsDeleteTimeEntry" class="form_num" value="' . get_option('kps_deleteEntryTime', false) / 24 / 60 / 60 . '" min="1" max="180" aria-required="true" required="required" /> ' . esc_html(_n('day', 'days', $checkedDeleteTimeEntry , 'kps')) . '</td>
                             </tr>
                             <tr>
                                 <td width="50%" style="text-align: right;"><label for="kpsDeleteTimeNoEntry">' . esc_html(__('Waiting entries', 'kps')) . '</label></td>
-                                <td width="50%" style="text-align: left;"><input type="number" name="kpsDeleteTimeNoEntry" id="kpsDeleteTimeNoEntry" class="form_num" value="' . $checkedDeleteTimeNoEntry . '" min="30" max="180" aria-required="true" required="required" /> ' . esc_html(_n('day', 'days', $checkedDeleteTimeNoEntry , 'kps')) . '</td>
+                                <td width="50%" style="text-align: left;"><input type="number" name="kpsDeleteTimeNoEntry" id="kpsDeleteTimeNoEntry" class="form_num" value="' . get_option('kps_deleteNoEntryTime', false) / 24 / 60 / 60 . '" min="30" max="180" aria-required="true" required="required" /> ' . esc_html(_n('day', 'days', $checkedDeleteTimeNoEntry , 'kps')) . '</td>
                             </tr>
                             <tr>
                                 <td width="50%" style="text-align: right;"><label for="kpsFormWordCount">' . esc_html(__('Form textarea', 'kps')) . '</label></td>
@@ -1593,8 +1429,6 @@ function kps_EmailSettings()
 
     // Hole EmailCC Einstellungen
     $checked = kps_unserialize(get_option('kps_mailFromCC', false));
-    $checkedEmailCC = esc_attr($checked['kpsEmailCC']);
-    $checkedEmailReport = esc_attr($checked['kpsEmailReport']);
     $checkedEmailInformation = ($checked['kpsEmailInformation'] === 'true') ? 'checked' : '';
 
     echo '
@@ -1611,11 +1445,11 @@ Administrator. Additional information about the activities can be retrieved.', '
                             </tr>
                             <tr>
                                 <td><label for="kpsEmailCC">' . esc_html(__('Email copy', 'kps')) . '</label></td>
-                                <td><input type="email" name="kpsEmailCC" id="kpsEmailCC" autocomplete="off" class="form_field" value="' . $checkedEmailCC . '"  /></td>
+                                <td><input type="email" name="kpsEmailCC" id="kpsEmailCC" autocomplete="off" class="form_field" value="' . esc_attr($checked['kpsEmailCC']) . '"  /></td>
                             </tr>
                             <tr>
                                 <td><label for="kpsEmailReport">' . esc_html(__('Report-Email', 'kps')) . '</label></td>
-                                <td><input type="email" name="kpsEmailReport" id="kpsEmailReport" autocomplete="off" class="form_field" value="' . $checkedEmailReport . '"  /></td>
+                                <td><input type="email" name="kpsEmailReport" id="kpsEmailReport" autocomplete="off" class="form_field" value="' . esc_attr($checked['kpsEmailReport']) . '"  /></td>
                             </tr>
                            <tr>
                                 <td><label class="labelCheckbox" for="kpsEmailInformation">' . esc_html(__('Information', 'kps')) . '</label></td>
