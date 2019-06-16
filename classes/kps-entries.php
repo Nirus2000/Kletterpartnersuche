@@ -415,7 +415,7 @@ class kps_entry_read
             // Für Freigabe-Email, wenn Autor noch nicht freigegeben hat.
             if ($unlockDateTime === 0)
             {
-                $this->_emailUnlockDateTime = esc_html(__('Wait for release from the Author', 'kps'));
+                $this->_emailUnlockDateTime = esc_html__('Wait for release from the Author', 'kps');
             }
             else
             {
@@ -520,22 +520,22 @@ class kps_entry_read
             switch ($authorSearchfor)
             {
                 case '0':
-                    $alt    = esc_html(__('Hall', 'kps'));
+                    $alt    = esc_html__('Hall', 'kps');
                     $pic    = "hall_" . $iconPak . ".png";
                     $widget = "hall_" . $widgetIconPak . ".png";
                 break;
                 case '1':
-                    $alt    = esc_html(__('Climbing', 'kps'));
+                    $alt    = esc_html__('Climbing', 'kps');
                     $pic    = "nature_" . $iconPak . ".png";
                     $widget = "nature_" . $widgetIconPak . ".png";
                 break;
                 case '2':
-                    $alt    = esc_html(__('Travels', 'kps'));
+                    $alt    = esc_html__('Travels', 'kps');
                     $pic    = "travel_" . $iconPak . ".png";
                     $widget = "travel_" . $widgetIconPak . ".png";
                 break;
                 case '3':
-                    $alt    = esc_html(__('Walking/Trekking', 'kps'));
+                    $alt    = esc_html__('Walking/Trekking', 'kps');
                     $pic    = "trekking_" . $iconPak . ".png";
                     $widget = "trekking_" . $widgetIconPak . ".png";
                 break;
@@ -546,8 +546,8 @@ class kps_entry_read
             }
 
             $this->_authorSearchfor_raw     = $alt;
-            $this->_authorSearchforWidget   = '<img class="kps-icon-pak" src="' . KPS_RELATIV . '/frontend/gfx/' . $pic . '" alt="' . $alt . '" title="' . $alt . '" />';
-            $this->_authorSearchfor         = '<img class="kps-icon-pak" src="' . KPS_RELATIV . '/frontend/gfx/' . $pic . '" alt="' . $alt . '" title="' . $alt . '" />';
+            $this->_authorSearchforWidget   = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $pic . '" alt="' . $alt . '" title="' . $alt . '" />';
+            $this->_authorSearchfor         = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $pic . '" alt="' . $alt . '" title="' . $alt . '" />';
         }
     }
 
@@ -561,12 +561,12 @@ class kps_entry_read
             switch ($authorRule)
             {
                 case '0':
-                    $alt    = esc_html(__('Unique', 'kps'));
+                    $alt    = esc_html__('Unique', 'kps');
                     $pic    = "onetime_" . $iconPak . ".png";
                     $widget = "onetime_" . $widgetIconPak . ".png";
                 break;
                 case '1':
-                    $alt    = esc_html(__('Regularly', 'kps'));
+                    $alt    = esc_html__('Regularly', 'kps');
                     $pic    = "moretime_" . $iconPak . ".png";
                     $widget = "moretime_" . $widgetIconPak . ".png";
                 break;
@@ -577,8 +577,8 @@ class kps_entry_read
             }
 
             $this->_authorRule_raw      = $alt;
-            $this->_authorRuleWidget    = '<img class="kps-icon-pak" src="' . KPS_RELATIV . '/frontend/gfx/' . $pic . '" alt="' . $alt . '" title="' . $alt . '" />';
-            $this->_authorRule          = '<img class="kps-icon-pak" src="' . KPS_RELATIV . '/frontend/gfx/' . $pic . '" alt="' . $alt . '" title="' . $alt . '" />';
+            $this->_authorRuleWidget    = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $pic . '" alt="' . $alt . '" title="' . $alt . '" />';
+            $this->_authorRule          = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $pic . '" alt="' . $alt . '" title="' . $alt . '" />';
         }
     }
 
@@ -592,17 +592,17 @@ class kps_entry_read
             switch ($yourRule)
             {
                 case '0':
-                    $alt    = esc_html(__('Single person', 'kps'));
+                    $alt    = esc_html__('Single person', 'kps');
                     $pic    = "goalone_" . $iconPak . ".png";
                     $widget = "goalone_" . $widgetIconPak . ".png";
                 break;
                 case '1':
-                    $alt    = esc_html(__('Family', 'kps'));
+                    $alt    = esc_html__('Family', 'kps');
                     $pic    = "family_" . $iconPak . ".png";
                     $widget = "family_" . $widgetIconPak . ".png";
                 break;
                 case '2':
-                    $alt    = esc_html(__('Club/Group', 'kps'));
+                    $alt    = esc_html__('Club/Group', 'kps');
                     $pic    = "comeclub_" . $iconPak . ".png";
                     $widget = "comeclub_" . $widgetIconPak . ".png";
                 break;
@@ -613,8 +613,8 @@ class kps_entry_read
             }
 
             $this->_yourRule_raw    = $alt;
-            $this->_yourRuleWidget  = '<img class="kps-icon-pak" src="' . KPS_RELATIV . '/frontend/gfx/' . $pic . '" alt="' . $alt . '" title="' . $alt . '" />';
-            $this->_yourRule        = '<img class="kps-icon-pak" src="' . KPS_RELATIV . '/frontend/gfx/' . $pic . '" alt="' . $alt . '" title="' . $alt . '" />';
+            $this->_yourRuleWidget  = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $pic . '" alt="' . $alt . '" title="' . $alt . '" />';
+            $this->_yourRule        = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $pic . '" alt="' . $alt . '" title="' . $alt . '" />';
         }
     }
 

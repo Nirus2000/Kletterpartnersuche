@@ -118,29 +118,29 @@ function kps_report($reportId = '0')
         {
             // Messagebox Ausgabe
             $messageboxContent = '
-            <div style="text-align: center;">' . esc_html(__('We will process your message as soon as possible!', 'kps')) . '</div>
+            <div style="text-align: center;">' . esc_html__('We will process your message as soon as possible!', 'kps') . '</div>
             ';
-            $output = kps_messagebox(esc_html(__('Entry reported', 'kps')) , $messageboxContent);
+            $output = kps_messagebox(esc_html__('Entry reported', 'kps') , $messageboxContent);
         }
         elseif ($report->show_isReport() === false && $report->show_isFound() === false)
         {
             // Messagebox Ausgabe
             $messageboxContent = '
-            <div style="text-align: center; color: red">' . esc_html(__('The entry has been deleted!', 'kps')) . '</div>
+            <div style="text-align: center; color: red">' . esc_html__('The entry has been deleted!', 'kps') . '</div>
             ';
 
             // Klasse meldet Eintrag nicht vorhanden
-            $output = kps_messagebox(esc_html(__('Error! Entry not available!', 'kps')) , $messageboxContent);
+            $output = kps_messagebox(esc_html__('Error! Entry not available!', 'kps') , $messageboxContent);
         }
         else
         {
             // Messagebox Ausgabe
             $messageboxContent = '
-            <div style="text-align: center; color: red">' . esc_html(__('Please contact the administrator if the problem reappears!', 'kps')) . '</div>
+            <div style="text-align: center; color: red">' . esc_html__('Please contact the administrator if the problem reappears!', 'kps') . '</div>
             ';
 
             // Klasse meldet Fehler
-            $output = kps_messagebox(esc_html(__('Error! Entry could not be reported!', 'kps')) , $messageboxContent);
+            $output = kps_messagebox(esc_html__('Error! Entry could not be reported!', 'kps') , $messageboxContent);
         }
     }
     elseif (($verification == false
@@ -153,20 +153,20 @@ function kps_report($reportId = '0')
     {
             if ($captchaIsActivated === 'true' && $captchaValid === false)
             {
-                $captchaFail =  '<li>' . esc_html(__('Google reCaptcha has not been confirmed!', 'kps')) . '</li>';
+                $captchaFail =  '<li>' . esc_html__('Google reCaptcha has not been confirmed!', 'kps') . '</li>';
             }
 
             // Messagebox Ausgabe
             $messageboxContent = '
             <ul>
-                <li>' . esc_html(__('No message reason was selected!', 'kps')) . '</li>
-                <li>' . esc_html(__('The Entry-ID is wrong!', 'kps')) . '</li>
+                <li>' . esc_html__('No message reason was selected!', 'kps') . '</li>
+                <li>' . esc_html__('The Entry-ID is wrong!', 'kps') . '</li>
                 ' . $captchaFail . '
-                <li>' . esc_html(__('Please contact the administrator if the problem reappears!', 'kps')) . '</li>
+                <li>' . esc_html__('Please contact the administrator if the problem reappears!', 'kps') . '</li>
             </ul>';
 
             // Verifizierung falsch
-            $output = kps_messagebox(esc_html(__('Error! Entry could not be reported!', 'kps')) , $messageboxContent);
+            $output = kps_messagebox(esc_html__('Error! Entry could not be reported!', 'kps') , $messageboxContent);
 
             // Meldeformular
             $output .= kps_reportbox($token, $reportId, $captchaIsActivated, $captchaSiteKey);

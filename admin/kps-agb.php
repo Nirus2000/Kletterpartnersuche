@@ -47,20 +47,20 @@ function kps_agb()
     // Zugriffsrechte prüfen
     if (function_exists('current_user_can') && !current_user_can('manage_privacy_options'))
     {
-        die(esc_html(__('Access denied!', 'kps')));
+        die(esc_html__('Access denied!', 'kps'));
     }
 
     kps_admin_enqueue();
 
     // Metabox erstellen
-    add_meta_box('kps_agb_setting', esc_html(__('Terms of Service', 'kps')) , 'kps_agb_setting', 'kps_agb', 'left');
-    add_meta_box('kps_dsgvo_setting', esc_html(__('General Data Protection Regulation', 'kps')) , 'kps_dsgvo_setting', 'kps_agb', 'right');
+    add_meta_box('kps_agb_setting', esc_html__('Terms of Service', 'kps') , 'kps_agb_setting', 'kps_agb', 'left');
+    add_meta_box('kps_dsgvo_setting', esc_html__('General Data Protection Regulation', 'kps') , 'kps_dsgvo_setting', 'kps_agb', 'right');
 
 ?>
       <div id="kps" class="wrap kps">
             <div>
                 <h3>
-                    <?php echo esc_html(__('Climbing-Partner-Search', 'kps')); ?> - <?php echo esc_html(__('Overview', 'kps')); ?>
+                    <?php echo esc_html__('Climbing-Partner-Search', 'kps'); ?> - <?php echo esc_html__('Overview', 'kps'); ?>
                </h3>
             </div>
             <div id="dashboard-widgets-wrap">
@@ -113,7 +113,7 @@ function kps_agb_setting()
         {
             // True --> Update DB
             update_option('kps_agb', $setAGBPage, 'yes');
-            $saved = esc_html(__('Saved', 'kps'));
+            $saved = esc_html__('Saved', 'kps');
         }
     }
 
@@ -126,12 +126,12 @@ function kps_agb_setting()
     echo '
             <div>
                 <h5>
-' . esc_html(__('The General Terms and Conditions (GTC) are contractual clauses that standardize
+' . esc_html__('The General Terms and Conditions (GTC) are contractual clauses that standardize
 and regulate mass contracts. They are unilaterally provided by a contracting party
 and therefore require some control to prevent their misuse. We recommend this
 to explain to the user (author) that the contact details, which the user (author), passes to the requester
 (User) are left without the control, checking and verification of the site operator or the
-Requester. Here you can assign your own terms and conditions in the form.', 'kps')) . '
+Requester. Here you can assign your own terms and conditions in the form.', 'kps') . '
                 </h5>
                 <form class="form" action="' . KPS_ADMIN_URL . '/agb.php" method="post">
                     <table class="table">
@@ -142,7 +142,7 @@ Requester. Here you can assign your own terms and conditions in the form.', 'kps
                             		array(
                             			'name'              => 'kpsFormPageAGB',
                                         'class'             => $errorAGBpage,
-                            			'show_option_none'  => '--- ' . esc_html(__('Selection', 'kps')) . ' ---',
+                            			'show_option_none'  => '--- ' . esc_html__('Selection', 'kps') . ' ---',
                             			'option_none_value' => '0',
                             			'selected'          => $checkedAGBPage,
                             			'post_status'       => array( 'publish' ),
@@ -159,7 +159,7 @@ Requester. Here you can assign your own terms and conditions in the form.', 'kps
                             <tr>
                                 <td style="text-align: center;">
                                     <input type="hidden" id="kpsFormAGBToken" name="kpsFormAGBToken" value="' . $token . '" />
-                                    <input class="button-primary" type="submit" name="submitFormAGB" value="' . esc_html(__('Save', 'kps')) . '" />
+                                    <input class="button-primary" type="submit" name="submitFormAGB" value="' . esc_html__('Save', 'kps') . '" />
                                 </td>
                             </tr>
                         </tbody>
@@ -209,7 +209,7 @@ function kps_dsgvo_setting()
         {
             // True --> Update DB
             update_option('kps_dsgvo', $setDSGVOPage, 'yes');
-            $saved = esc_html(__('Saved', 'kps'));
+            $saved = esc_html__('Saved', 'kps');
         }
     }
 
@@ -221,11 +221,11 @@ function kps_dsgvo_setting()
 
     echo '
             <div><h5>
-' . esc_html(__('GPDR is the common abbreviation for the General Data Protection Regulation.
+' . esc_html__('GPDR is the common abbreviation for the General Data Protection Regulation.
 With this the EU (European Union) wants create a single legal framework for the processing and
 storage of personal data. In this plugin, Personal data can be processed, stored and retrieved
-without checking and verification. Here you can assign your own GPDR to the form.', 'kps')) .
-                '&#160;(<a href="https://de.wikipedia.org/wiki/Datenschutz-Grundverordnung" target="_blank">' . esc_html(__('GDPR', 'kps')) . '</a>)</h5>
+without checking and verification. Here you can assign your own GPDR to the form.', 'kps') .
+                '&#160;(<a href="https://de.wikipedia.org/wiki/Datenschutz-Grundverordnung" target="_blank">' . esc_html__('GDPR', 'kps') . '</a>)</h5>
                 <form class="form" action="' . KPS_ADMIN_URL . '/agb.php" method="post">
                     <table class="table">
                         <tbody>
@@ -235,7 +235,7 @@ without checking and verification. Here you can assign your own GPDR to the form
                             		array(
                             			'name'              => 'kpsFormPageDSGVO',
                                         'class'             => $errorDSGVOpage,
-                            			'show_option_none'  => '--- ' . esc_html(__('Selection', 'kps')) . ' ---',
+                            			'show_option_none'  => '--- ' . esc_html__('Selection', 'kps') . ' ---',
                             			'option_none_value' => '0',
                             			'selected'          => $checkedDSGVOPage,
                             			'post_status'       => array( 'publish' ),
@@ -252,7 +252,7 @@ without checking and verification. Here you can assign your own GPDR to the form
                             <tr>
                                 <td style="text-align: center;">
                                     <input type="hidden" id="kpsDSGVOToken" name="kpsFormDSGVOToken" value="' . $token . '" />
-                                    <input class="button-primary" type="submit" name="submitFormDSGVO" value="' . esc_html(__('Save', 'kps')) . '!" />
+                                    <input class="button-primary" type="submit" name="submitFormDSGVO" value="' . esc_html__('Save', 'kps') . '!" />
                                 </td>
                             </tr>
                         </tbody>

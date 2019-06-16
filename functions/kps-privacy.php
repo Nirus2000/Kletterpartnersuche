@@ -45,7 +45,7 @@ if (strpos($_SERVER['PHP_SELF'], basename(__FILE__)))
  */
 function kps_PrivacyErasre($erasers) {
   $erasers['Climbing-Partner-Search'] =    array(
-                                            'eraser_friendly_name' => esc_html(__('Climbing-Partner-Search')),
+                                            'eraser_friendly_name' => esc_html__('Climbing-Partner-Search', 'kps'),
                                             'callback'             => 'kps_PrivacyErasure',
   );
   return $erasers;
@@ -86,7 +86,7 @@ function kps_PrivacyErasure($authorEmail) {
         return array(
         'items_removed'  => true,
         'items_retained' => true,
-        'messages'       => esc_html(__( 'No entries or requirements found in the Climbing-Partner-Search!')),
+        'messages'       => esc_html__('No entries or requirements found in the Climbing-Partner-Search!', 'kps'),
         'done'           => true
         );
     }
@@ -97,12 +97,12 @@ function kps_PrivacyErasure($authorEmail) {
         foreach ($resultEntries as $entries)
         {
             $wpdb->query("DELETE FROM " . KPS_TABLE_ENTRIES . " WHERE authorEmail = '" . $authorEmail . "'");
-            $messages[] = esc_html(__('Climbing-Partner-Search')) . ':&#160;' . esc_html(__('Entry deleted')) . '&#160;ID:&#160;' . $entries->id;
+            $messages[] = esc_html__('Climbing-Partner-Search', 'kps') . ':&#160;' . esc_html__('Entry deleted', 'kps') . '&#160;ID:&#160;' . $entries->id;
         }
     }
     else
     {
-        $messages[] = esc_html(__('Climbing-Partner-Search')) . ':&#160;' . esc_html(__('No entries found!'));
+        $messages[] = esc_html__('Climbing-Partner-Search', 'kps') . ':&#160;' . esc_html__('No entries found!', 'kps');
     }
 
     // Löschen der Anfragen die nicht versendet wurden
@@ -113,18 +113,18 @@ function kps_PrivacyErasure($authorEmail) {
             if ($verifications->sendData === '0')
             {
                 $wpdb->query("DELETE FROM " . KPS_TABLE_REQUIREMENT . " WHERE userEmail = '" . $authorEmail . "'");
-                $messages[] = esc_html(__('Climbing-Partner-Search')) . ':&#160;' . esc_html(__('Request deleted')) . '&#160;ID:&#160;' . $verifications->id;
+                $messages[] = esc_html__('Climbing-Partner-Search', 'kps') . ':&#160;' . esc_html__('Request deleted', 'kps') . '&#160;ID:&#160;' . $verifications->id;
             }
             else
             {
                 // Löschen nicht möglich
-                $messages[] = esc_html(__('Climbing-Partner-Search')) . ':&#160;' . esc_html(__('Delete not possible! You have obtained contact information of another author.'));
+                $messages[] = esc_html__('Climbing-Partner-Search', 'kps') . ':&#160;' . esc_html__('Delete not possible! You have obtained contact information of another author.', 'kps');
             }
         }
     }
     else
     {
-        $message[] = esc_html(__('Climbing-Partner-Search')) . ':&#160;' . esc_html(__('No requirements found under this entry!'));
+        $message[] = esc_html__('Climbing-Partner-Search', 'kps') . ':&#160;' . esc_html__('No requirements found under this entry!', 'kps');
     }
 
     $done = count($entries) + count($resultVerifications) < $number;
@@ -142,7 +142,7 @@ function kps_PrivacyErasure($authorEmail) {
  */
 function register_kps_Data_exporter($exporters) {
     $exporters['Climbing-Partner-Search'] =  array(
-                                        'exporter_friendly_name'    => esc_html(__('Climbing-Partner-Search')),
+                                        'exporter_friendly_name'    => esc_html__('Climbing-Partner-Search', 'kps'),
                                         'callback'                  => 'kps_PrivacyExporter',
     );
     return $exporters;
@@ -167,21 +167,21 @@ function kps_PrivacyExporter($authorEmail) {
         );
     }
 
-    $entryInformationsToExport = array( 'authorId'          => esc_html(__('User-Id', 'kps')),
-                                        'authorName'        => esc_html(__('Name', 'kps')),
-                                        'authorEmail'       => esc_html(__('Email', 'kps')),
-                                        'formOptions'       => esc_html(__('Additional contact options', 'kps')),
-                                        'authorIp'          => esc_html(__('IP-Adress', 'kps')),
-                                        'authorHost'        => esc_html(__('Host', 'kps')),
-                                        'setDateTime'       => esc_html(__('Created', 'kps')),
-                                        'unlockDateTime'    => esc_html(__('Released', 'kps')),
-                                        'deleteDateTime'    => esc_html(__('Delete Time', 'kps')),
-                                        'authorSearchfor'   => esc_html(__('I am looking for', 'kps')),
-                                        'authorRule'        => esc_html(__('Kind of search', 'kps')),
-                                        'yourRule'          => esc_html(__('I am', 'kps')),
-                                        'content'           => esc_html(__('Entry', 'kps')),
-                                        'url'               => esc_html(__('URL', 'kps')),
-                                        'verifications'     => esc_html(__('Contact details shipped', 'kps'))
+    $entryInformationsToExport = array( 'authorId'          => esc_html__('User-Id', 'kps'),
+                                        'authorName'        => esc_html__('Name', 'kps'),
+                                        'authorEmail'       => esc_html__('Email', 'kps'),
+                                        'formOptions'       => esc_html__('Additional contact options', 'kps'),
+                                        'authorIp'          => esc_html__('IP-Adress', 'kps'),
+                                        'authorHost'        => esc_html__('Host', 'kps'),
+                                        'setDateTime'       => esc_html__('Created', 'kps'),
+                                        'unlockDateTime'    => esc_html__('Released', 'kps'),
+                                        'deleteDateTime'    => esc_html__('Delete Time', 'kps'),
+                                        'authorSearchfor'   => esc_html__('I am looking for', 'kps'),
+                                        'authorRule'        => esc_html__('Kind of search', 'kps'),
+                                        'yourRule'          => esc_html__('I am', 'kps'),
+                                        'content'           => esc_html__('Entry', 'kps'),
+                                        'url'               => esc_html__('URL', 'kps'),
+                                        'verifications'     => esc_html__('Contact details shipped', 'kps')
 	);
 
     // Datenabfrage zu Einträgen
@@ -260,7 +260,7 @@ function kps_PrivacyExporter($authorEmail) {
                         }
                         else
                         {
-                            $value = esc_html(__('This entry is not visible!', 'kps'));
+                            $value = esc_html__('This entry is not visible!', 'kps');
                         }
                		break;
                 	case 'verifications':
@@ -274,7 +274,7 @@ function kps_PrivacyExporter($authorEmail) {
                         }
                         else
                         {
-                            $value = esc_html(__('No personal-data sent!', 'kps'));
+                            $value = esc_html__('No personal-data sent!', 'kps');
                         }
                		break;
                 }
@@ -288,7 +288,7 @@ function kps_PrivacyExporter($authorEmail) {
             // Export-Array
             $dataToExport[] = array(
             	'group_id'    => 'kps',
-            	'group_label' => esc_html(__('Climbing-Partner-Search entries', 'kps')),
+            	'group_label' => esc_html__('Climbing-Partner-Search entries', 'kps'),
             	'item_id'     => "kps-entry-{$entryId}",
             	'data'        => $entryDataToExport,
             );

@@ -81,6 +81,7 @@ class kps_entry_write
                 $_authorFacebook,           // Facebook
                 $_authorInstagram,          // instagram
                 $_authorContactData,        // Autor zusatzliche Kontaktdaten
+                $_authorMailContent,        // Autoren-Eintrag
                 $_isNotFound,               // Eintrag gefunden
                 $_isInsertDB,               // Eintrag in Datenbank geschrieben
                 $_usernameNotExist,         // Autorename existiert als registierter User
@@ -134,6 +135,7 @@ class kps_entry_write
         $this->_userSettings            = (array)kps_unserialize(get_option('kps_userSettings', false));
         $this->_outputSettings          = (array)kps_unserialize(get_option('kps_output', false));
         $this->_authorContactData       = (array)'';
+        $this->_authorMailContent       = (string)'';
         $this->_isNotFound              = false;
         $this->_insertDB                = false;
         $this->_isInsertDB              = (int)0;
@@ -849,9 +851,9 @@ class kps_entry_write
 
         if ($authorMailSettings === false )
         {
-            $authorMailSubject  = esc_html(__('Activation', 'kps'));
+            $authorMailSubject  = esc_html__('Activation', 'kps');
             $auhorMailContent   =
-esc_html(__('You have just posted a new entry on %blogname%.
+esc_html__('You have just posted a new entry on %blogname%.
 
 To be able to publish it, you have to confirm it via the link
 below and enter your email address. If you do not release this
@@ -885,7 +887,7 @@ Many Thanks!
 Your team
 %blogname%
 %blogurl%
-%blogemail%', 'kps'));
+%blogemail%', 'kps');
         }
         else
         {
@@ -931,7 +933,7 @@ Your team
             '%linkdelete%'          => $deletelink,
             '%erasepassword%'       => $deletePassword,
             '%setdate%'             => $setDateTime,
-            '%unlockdatetime%'      => esc_html(__('Wait for release from the Author', 'kps')),
+            '%unlockdatetime%'      => esc_html__('Wait for release from the Author', 'kps'),
             '%erasedatetime%'       => $deleteDateTime
         );
 
@@ -939,7 +941,7 @@ Your team
 
         // Email versenden
         $headers = 'From: ' . get_bloginfo('name'). ' <' .  esc_attr(get_option('kps_MailFrom', false)) . '>';
-        $this->_activationEmailIsSend = wp_mail( esc_attr($this->_authorEmail), $authorMailSubject, $auhorMailContent, $headers);
+        $this->_activationEmailIsSend = wp_mail(esc_attr($this->_authorEmail), $authorMailSubject, $auhorMailContent, $headers);
 
         return $this->_activationEmailIsSend; // Rückgabe des Wertes
     }
@@ -951,18 +953,24 @@ Your team
     {
         global $wpdb;
 
-        $adminActivationSubject = esc_html(__('Release required', 'kps')) . ': ' . get_bloginfo('name');
-        $adminActivationMessage = esc_html(__('A new entry in the Climbing-Partner-Search is available and requires your approval!', 'kps'));
+        $adminActivationSubject = esc_html__('Release required', 'kps') . ': ' . get_bloginfo('name');
+        $adminActivationMessage = esc_html__('A new entry in the Climbing-Partner-Search is available and requires your approval!', 'kps');
         $adminActivationMessage .= '
 
-' . KPS_ADMIN_URL . '/entries.php&edit_id=' . $wpdb->insert_id . '
+' . esc_html__('Entry', 'kps') . ':
+*******************
+' . $this->_authorEntry . '
+
+' . esc_html__('Release link', 'kps') . '
+*******************
+' . KPS_ADMIN_URL . '/entries.php&show=' . $wpdb->insert_id . '
 
 ' . get_bloginfo('name') . '
 ' . get_bloginfo('wpurl');
 
         // Email versenden
         $headers = 'From: ' . get_bloginfo('name'). ' <' .  esc_attr(get_option('kps_MailFrom', false)) . '>';
-        $this->_adminActivationIsSend = wp_mail( esc_attr(get_option('kps_MailFrom', false)), $adminActivationSubject, $adminActivationMessage, $headers);
+        $this->_adminActivationIsSend = wp_mail(esc_attr(get_option('kps_MailFrom', false)), $adminActivationSubject, $adminActivationMessage, $headers);
 
         return $this->_adminActivationIsSend; // Rückgabe des Wertes
     }
@@ -972,8 +980,8 @@ Your team
      */
     public function sendEmailCopy()
     {
-        $emailCopySubject = esc_html(__('New entry', 'kps')) . ': ' . get_bloginfo('name');
-        $emailCopyMessage = esc_html(__('There is a new entry in the Climbing-Partner-Search!', 'kps'));
+        $emailCopySubject = esc_html__('New entry', 'kps') . ': ' . get_bloginfo('name');
+        $emailCopyMessage = esc_html__('There is a new entry in the Climbing-Partner-Search!', 'kps');
         $emailCopyMessage .= '
 
 ' . get_bloginfo('name') . '
@@ -981,7 +989,7 @@ Your team
 
         // Email versenden
         $headers = 'From: ' . get_bloginfo('name'). ' <' .  esc_attr(get_option('kps_MailFrom', false)) . '>';
-        $this->_emailCopyIsSend = wp_mail( esc_attr($this->_emailCopyCC['kpsEmailCC']), $emailCopySubject, $emailCopyMessage, $headers);
+        $this->_emailCopyIsSend = wp_mail(esc_attr($this->_emailCopyCC['kpsEmailCC']), $emailCopySubject, $emailCopyMessage, $headers);
 
         return $this->_emailCopyIsSend; // Rückgabe des Wertes
     }

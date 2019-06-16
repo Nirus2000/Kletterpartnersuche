@@ -180,44 +180,44 @@ class kps_reporting
     public function sendEmail($id)
     {
         // Email vorbereiten
-        $reportSubject = esc_html(__('Entry reported', 'kps')) . ': ' . get_bloginfo('name');;
+        $reportSubject = esc_html__('Entry reported', 'kps') . ': ' . get_bloginfo('name');;
 
         if ($this->_sendReportAuto === true)
         {
-            $reportContent = esc_html(__('An entry was blocked by the automatic lock!', 'kps'));
+            $reportContent = esc_html__('An entry was blocked by the automatic lock!', 'kps');
         }
         elseif ($this->_sendReportComplet === true)
         {
-            $reportContent = esc_html(__('The total amount of messages for the entry has been reached!', 'kps'));
+            $reportContent = esc_html__('The total amount of messages for the entry has been reached!', 'kps');
         }
         else
         {
-            $reportContent = esc_html(__('An entry was reported!', 'kps'));
+            $reportContent = esc_html__('An entry was reported!', 'kps');
         }
 
         $reportContent .= '
 
-' . esc_html(__('Reason', 'kps')) . ': ' . $this->_reportReason . '
-' . esc_html(__('Timestamp', 'kps')) . ': ' . date_i18n(get_option('date_format'), current_time('timestamp')) .' @ '. date_i18n(get_option('time_format'), current_time('timestamp')) . '
+' . esc_html__('Reason', 'kps') . ': ' . $this->_reportReason . '
+' . esc_html__('Timestamp', 'kps') . ': ' . date_i18n(get_option('date_format'), current_time('timestamp')) .' @ '. date_i18n(get_option('time_format'), current_time('timestamp')) . '
 
-' . esc_html(__('Edit-Link', 'kps')) . ':
+' . esc_html__('Edit-Link', 'kps') . ':
 **************************
 ' . KPS_ADMIN_URL . '/entries.php&edit_id=' . $id . '
 
-' . esc_html(__('System data', 'kps')) . '
+' . esc_html__('System data', 'kps') . '
 **************************
 ID: ' . $id . '
-'. esc_html(__('Created on', 'kps')) . ': ' . $this->_setDateTime . '
-'. esc_html(__('Released on', 'kps')) . ': ' . $this->_unlockDateTime . '
-'. esc_html(__('Delete Time', 'kps')) . ': ' . $this->_deleteDateTime . '
+'. esc_html__('Created on', 'kps') . ': ' . $this->_setDateTime . '
+'. esc_html__('Released on', 'kps') . ': ' . $this->_unlockDateTime . '
+'. esc_html__('Delete Time', 'kps') . ': ' . $this->_deleteDateTime . '
 
-'. esc_html(__('Spam/Advertising', 'kps')) . ': ' . $this->_reportCount['spam'] . '
-'. esc_html(__('Inappropriate/Violence', 'kps')) . ': ' . $this->_reportCount['unreasonable'] . '
-'. esc_html(__('Double entry', 'kps')) . ': ' . $this->_reportCount['double'] . '
-'. esc_html(__('Personality rights', 'kps')) . ': ' . $this->_reportCount['privacy'] . '
-'. esc_html(__('Others', 'kps')) . ': ' . $this->_reportCount['others'] . '
+'. esc_html__('Spam/Advertising', 'kps') . ': ' . $this->_reportCount['spam'] . '
+'. esc_html__('Inappropriate/Violence', 'kps') . ': ' . $this->_reportCount['unreasonable'] . '
+'. esc_html__('Double entry', 'kps') . ': ' . $this->_reportCount['double'] . '
+'. esc_html__('Personality rights', 'kps') . ': ' . $this->_reportCount['privacy'] . '
+'. esc_html__('Others', 'kps') . ': ' . $this->_reportCount['others'] . '
 
-' . esc_html(__('Entry', 'kps')) . '
+' . esc_html__('Entry', 'kps') . '
 **************************
 ' . $this->_authorContent . '
 
@@ -263,31 +263,31 @@ ID: ' . $id . '
             {
                 case '0':
                     $dbReport['spam']           = $dbReport['spam'] + 1;
-                    $reportReason               = esc_html(__('Spam/Advertising', 'kps'));
+                    $reportReason               = esc_html__('Spam/Advertising', 'kps');
                     $sendReport                 = ($dbReport['spam'] >= $reportSettings['kpsReportSpam']) ? true : false;
                     $sendReportAuto             = ($dbReport['spam'] >= $reportSettings['kpsAutoReportSpam']) ? true : false;
                 break;
                 case '1':
                     $dbReport['unreasonable']   = $dbReport['unreasonable'] + 1;
-                    $reportReason               = esc_html(__('Inappropriate/Violence', 'kps'));
+                    $reportReason               = esc_html__('Inappropriate/Violence', 'kps');
                     $sendReport                 = ($dbReport['unreasonable'] >= $reportSettings['kpsReportUnreasonable']) ? true : false;
                     $sendReportAuto             = ($dbReport['unreasonable'] >= $reportSettings['kpsAutoReportUnreasonable']) ? true : false;
                 break;
                 case '2':
                     $dbReport['double']         = $dbReport['double'] + 1;
-                    $reportReason               = esc_html(__('Double entry', 'kps'));
+                    $reportReason               = esc_html__('Double entry', 'kps');
                     $sendReport                 = ($dbReport['double'] >= $reportSettings['kpsReportDouble']) ? true : false;
                     $sendReportAuto             = ($dbReport['double'] >= $reportSettings['kpsAutoReportDouble']) ? true : false;
                 break;
                 case '3':
                     $dbReport['privacy']        = $dbReport['privacy'] + 1;
-                    $reportReason               = esc_html(__('Personality rights', 'kps'));
+                    $reportReason               = esc_html__('Personality rights', 'kps');
                     $sendReport                 = ($dbReport['privacy'] >= $reportSettings['kpsReportPrivacy']) ? true : false;
                     $sendReportAuto             = ($dbReport['privacy'] >= $reportSettings['kpsAutoReportPrivacy']) ? true : false;
                 break;
                 case '4':
                     $dbReport['others']         = $dbReport['others'] + 1;
-                    $reportReason               = esc_html(__('Others', 'kps'));
+                    $reportReason               = esc_html__('Others', 'kps');
                     $sendReport                 = ($dbReport['others'] >= $reportSettings['kpsReportOthers']) ? true : false;
                     $sendReportAuto             = ($dbReport['others'] >= $reportSettings['kpsAutoReportOthers']) ? true : false;
                 break;

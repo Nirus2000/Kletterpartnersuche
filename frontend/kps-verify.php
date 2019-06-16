@@ -124,11 +124,11 @@ function kps_verifyId($kps_data = '0')
         // Wordpress Registieren
         $output .= '<div>
                         <div style="text-align: center;">
-                            <h6>' . esc_html(__('You need to register to require contact details!', 'kps')) . '</h6>
+                            <h6>' . esc_html__('You need to register to require contact details!', 'kps') . '</h6>
                         </div>
                         <div style="text-align: center;">
-                            <a href="' . esc_url(wp_login_url(get_permalink())) . '">' . esc_html(__('Login', 'kps')) . '</a>&#160;&#124;&#160;
-                            <a href="' . esc_url(wp_registration_url()) . '">' . esc_html(__('Registration', 'kps')) . '</a>
+                            <a href="' . esc_url(wp_login_url(get_permalink())) . '">' . esc_html__('Login', 'kps') . '</a>&#160;&#124;&#160;
+                            <a href="' . esc_url(wp_registration_url()) . '">' . esc_html__('Registration', 'kps') . '</a>
                         </div>
                     </div>';
     }
@@ -152,31 +152,31 @@ function kps_verifyId($kps_data = '0')
                 // Messagebox Ausgabe
                 $messageboxContent = '
                 <ul>
-                    <li>' . esc_html(__('If you have not received any email from us, it may also be in your junk folder!', 'kps')) . '</li>
-                    <li>' . esc_html(__('Please contact the administrator if the problem reappears!', 'kps')) . '</li>
+                    <li>' . esc_html__('If you have not received any email from us, it may also be in your junk folder!', 'kps') . '</li>
+                    <li>' . esc_html__('Please contact the administrator if the problem reappears!', 'kps') . '</li>
                 </ul>';
 
-                $output = kps_messagebox(esc_html(__('Verification sent!', 'kps')), $messageboxContent);
+                $output = kps_messagebox(esc_html__('Verification sent!', 'kps'), $messageboxContent);
             }
             elseif ($verify->show_isSend() === false && $verify->show_isFound() === false)
             {
                 // Messagebox Ausgabe
                 $messageboxContent = '
-                <div style="text-align: center; color: red">' . esc_html(__('The entry has been deleted!', 'kps')) . '</div>
+                <div style="text-align: center; color: red">' . esc_html__('The entry has been deleted!', 'kps') . '</div>
                 ';
 
                 // Klasse meldet Eintrag nicht vorhanden
-                $output = kps_messagebox(esc_html(__('Error! Entry not available!', 'kps')) , $messageboxContent);
+                $output = kps_messagebox(esc_html__('Error! Entry not available!', 'kps') , $messageboxContent);
             }
             elseif ($verify->show_isSend() === false && $verify->show_isInsertDB() === false )
             {
                 // Messagebox Ausgabe
                 $messageboxContent = '
-                <div style="text-align: center; color: red">' . esc_html(__('Please contact the administrator if the problem reappears!', 'kps')) . '!</div>
+                <div style="text-align: center; color: red">' . esc_html__('Please contact the administrator if the problem reappears!', 'kps') . '!</div>
                 ';
 
                 // Eintrag ist schon in Datenbank verhanden
-                $output = kps_messagebox(esc_html(__('Error! Database connection disturbed!', 'kps')) , $messageboxContent);
+                $output = kps_messagebox(esc_html__('Error! Database connection disturbed!', 'kps') , $messageboxContent);
 
                 $formClass .= ' kps-hide-form ';
             }
@@ -184,11 +184,11 @@ function kps_verifyId($kps_data = '0')
             {
                 // Messagebox Ausgabe
                 $messageboxContent = '
-                <div style="text-align: center; color: red">' . esc_html(__('Please contact the administrator if the problem reappears!','kps')) . '</div>
+                <div style="text-align: center; color: red">' . esc_html__('Please contact the administrator if the problem reappears!','kps') . '</div>
                 ';
 
                 // Klasse meldet Fehler
-                $output = kps_messagebox(esc_html(__('Error! Verification-Email could not be sent!', 'kps')), $messageboxContent);
+                $output = kps_messagebox(esc_html__('Error! Verification-Email could not be sent!', 'kps'), $messageboxContent);
             }
 
         }
@@ -199,20 +199,20 @@ function kps_verifyId($kps_data = '0')
         {
             if ($captchaIsActivated === 'true' && $captchaValid === false)
             {
-                $captchaFail =  '<li>' . esc_html(__('Google reCaptcha has not been confirmed!', 'kps')) . '</li>';
+                $captchaFail =  '<li>' . esc_html__('Google reCaptcha has not been confirmed!', 'kps') . '</li>';
             }
 
             // Messagebox Ausgabe
             $messageboxContent = '
             <ul>
-                <li>' . esc_html(__('The data can only be retrieved once!', 'kps')) . '</li>
-                <li>' . esc_html(__('The Requirement-ID is wrong!', 'kps')) . '</li>
+                <li>' . esc_html__('The data can only be retrieved once!', 'kps') . '</li>
+                <li>' . esc_html__('The Requirement-ID is wrong!', 'kps') . '</li>
                 ' . $captchaFail . '
-                <li>' . esc_html(__('Please contact the administrator if the problem reappears!', 'kps')) . '</li>
+                <li>' . esc_html__('Please contact the administrator if the problem reappears!', 'kps') . '</li>
             </ul>';
 
             // Verifizierungfehler
-            $output = kps_messagebox(esc_html(__('Error! Verification-Email could not be sent!', 'kps')), $messageboxContent);
+            $output = kps_messagebox(esc_html__('Error! Verification-Email could not be sent!', 'kps'), $messageboxContent);
 
             // Anforderungsformular
             $output .= kps_verifybox($token, $kps_data, $setUserEmail, $inputFieldDisabled, $captchaIsActivated, $captchaSiteKey);

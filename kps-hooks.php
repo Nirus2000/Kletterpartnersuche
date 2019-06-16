@@ -69,8 +69,8 @@ function kps_adminmenu()
 
     // Ausgabe, was fehlt -> AGB oder DSGVO
     if ($noAGB && $noDSGVO) { $noAGBDSGVOInfo = '&#167;'; }
-    elseif ($noAGB && !$noDSGVO) { $noAGBDSGVOInfo = esc_html(__( 'GTC', 'kps' )); }
-    elseif (!$noAGB && $noDSGVO) { $noAGBDSGVOInfo = esc_html(__( 'GDPR', 'kps' )); }
+    elseif ($noAGB && !$noDSGVO) { $noAGBDSGVOInfo = esc_html__( 'GTC', 'kps'); }
+    elseif (!$noAGB && $noDSGVO) { $noAGBDSGVOInfo = esc_html__( 'GDPR', 'kps'); }
     else { $noAGBDSGVOInfo = 0; }
 
     // Ausgabe gemeldete Einträge
@@ -80,7 +80,7 @@ function kps_adminmenu()
     $isAutoLock     = ($isAutoLock > 0) ? "<span class='update-plugins count-{$isReport}' style='background-color: #f1da36; color: black;'><span class='theme-count'>" . $isReport. "</span></span>" : '';
 
     // Hauptnavigation laden
-    add_menu_page(esc_html(__('Climbing-Partner', 'kps')) , esc_html(__('Climbing-Partner', 'kps')) .
+    add_menu_page(esc_html__('Climbing-Partner', 'kps') , esc_html__('Climbing-Partner', 'kps') .
     "<span class='update-plugins count-{$updatePluginCount}'><span class='theme-count'>" . $updatePluginCount. "</span></span>" . "",
     'moderate_comments',
     KPS_FOLDER . '/kps.php',
@@ -88,12 +88,12 @@ function kps_adminmenu()
     'dashicons-groups');
 
     // Subnavigation laden
-    add_submenu_page(KPS_FOLDER . '/kps.php', esc_html(__('Settings', 'kps')) , esc_html(__('Settings', 'kps')) , 'manage_options', KPS_FOLDER . '/settings.php', 'kps_Settings');
-    add_submenu_page(KPS_FOLDER . '/kps.php', esc_html(__('GTC / GDPR', 'kps')) , esc_html(__('GTC / GDPR', 'kps')) . "<span class='update-plugins count-{$noAGBDSGVOInfo}'><span class='theme-count'>" . $noAGBDSGVOInfo . "</span></span>", 'manage_privacy_options', KPS_FOLDER . '/kps-privacy.php', 'kps_Privacy');
-    add_submenu_page(KPS_FOLDER . '/kps.php', esc_html(__('Email Templates', 'kps')) , esc_html(__('Email Templates', 'kps')) , 'manage_options', KPS_FOLDER . '/email.php', 'kps_EmailSetting');
-    add_submenu_page(KPS_FOLDER . '/kps.php', esc_html(__('Design', 'kps')) , esc_html(__('Design', 'kps')) , 'manage_options', KPS_FOLDER . '/design.php', 'kps_DesignSettings');
-    add_submenu_page(KPS_FOLDER . '/kps.php', esc_html(__('Entries', 'kps')) , esc_html(__('Entries', 'kps')) . "<span class='update-plugins count-{$openEntry}'><span class='theme-count'>" . $openEntry . "</span></span>" . $isAutoLock . $isReportBubble , 'moderate_comments', KPS_FOLDER . '/entries.php', 'kps_entries');
-    add_submenu_page(KPS_FOLDER . '/kps.php', esc_html(__('Uninstallation', 'kps')) ,esc_html( __('Uninstallation', 'kps')) , 'administrator', KPS_FOLDER . '/uninstall.php', 'kps_uninstall');
+    add_submenu_page(KPS_FOLDER . '/kps.php', esc_html__('Settings', 'kps') , esc_html__('Settings', 'kps') , 'manage_options', KPS_FOLDER . '/settings.php', 'kps_Settings');
+    add_submenu_page(KPS_FOLDER . '/kps.php', esc_html__('GTC / GDPR', 'kps') , esc_html__('GTC / GDPR', 'kps') . "<span class='update-plugins count-{$noAGBDSGVOInfo}'><span class='theme-count'>" . $noAGBDSGVOInfo . "</span></span>", 'manage_privacy_options', KPS_FOLDER . '/kps-privacy.php', 'kps_Privacy');
+    add_submenu_page(KPS_FOLDER . '/kps.php', esc_html__('Email Templates', 'kps') , esc_html__('Email Templates', 'kps') , 'manage_options', KPS_FOLDER . '/email.php', 'kps_EmailSetting');
+    add_submenu_page(KPS_FOLDER . '/kps.php', esc_html__('Design', 'kps') , esc_html__('Design', 'kps') , 'manage_options', KPS_FOLDER . '/design.php', 'kps_DesignSettings');
+    add_submenu_page(KPS_FOLDER . '/kps.php', esc_html__('Entries', 'kps') , esc_html__('Entries', 'kps') . "<span class='update-plugins count-{$openEntry}'><span class='theme-count'>" . $openEntry . "</span></span>" . $isAutoLock . $isReportBubble , 'moderate_comments', KPS_FOLDER . '/entries.php', 'kps_entries');
+    add_submenu_page(KPS_FOLDER . '/kps.php', esc_html__('Uninstallation', 'kps') ,esc_html__('Uninstallation', 'kps') , 'administrator', KPS_FOLDER . '/uninstall.php', 'kps_uninstall');
 }
 add_action('admin_menu', 'kps_adminmenu');
 
@@ -133,11 +133,11 @@ function kps_register_settings()
     if (function_exists('wp_add_privacy_policy_content'))
     {
     	$DSGVOSection = sprintf(
-        '<p>' . esc_html(__( 'If you use the climbing partner search form and leave an entry, your entered data will automatically be saved in our database. This can be retrieved depending on settings by the site operator. On request, stored data can be send to the email address of the requester. We may also store your IP, host name and other system information to improve spam detection.', 'kps' )) . '</p>' .
-        '<p>' . esc_html(__( 'Entries that have been released are displayed visibly for a minimum of 1 day and automatically deleted after a maximum of 180 days.', 'kps' )) . '</p>' .
-        '<p>' . esc_html(__( 'Entries that have not been released will be stored for a minimum of 30 days and automatically deleted after a maximum of 180 days.', 'kps' )) . '</p>');
+        '<p>' . esc_html__( 'If you use the climbing partner search form and leave an entry, your entered data will automatically be saved in our database. This can be retrieved depending on settings by the site operator. On request, stored data can be send to the email address of the requester. We may also store your IP, host name and other system information to improve spam detection.', 'kps') . '</p>' .
+        '<p>' . esc_html__( 'Entries that have been released are displayed visibly for a minimum of 1 day and automatically deleted after a maximum of 180 days.', 'kps') . '</p>' .
+        '<p>' . esc_html__( 'Entries that have not been released will be stored for a minimum of 30 days and automatically deleted after a maximum of 180 days.', 'kps') . '</p>');
 
-    	wp_add_privacy_policy_content(esc_html(__('Climbing-Partner-Search', 'kps')), wp_kses_post(wpautop($DSGVOSection, false)));
+    	wp_add_privacy_policy_content(esc_html__('Climbing-Partner-Search', 'kps'), wp_kses_post(wpautop($DSGVOSection, false)));
     }
 }
 add_action('admin_init', 'kps_register_settings');
@@ -200,7 +200,7 @@ function kps_links($links, $file)
 {
     if ($file == plugin_basename(dirname(__FILE__) . '/kps.php'))
     {
-        $links[] = '<a href="' . admin_url('admin.php?page=kletterpartner-suche/settings.php') . '">' . esc_html(__('Settings', 'kps')) . '</a>';
+        $links[] = '<a href="' . admin_url('admin.php?page=kletterpartner-suche/settings.php') . '">' . esc_html__('Settings', 'kps') . '</a>';
     }
     return $links;
 }

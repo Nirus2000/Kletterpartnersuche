@@ -211,14 +211,14 @@ function kps_frontend_form($shortCodeValues)
             // Messagebox
             $messageboxContent = '
             <ul>
-                <li>' . esc_html(__('You should receive an Activation-Email in the next few minutes!', 'kps')) . '</li>
-                <li>' . esc_html(__('If you have not received any email from us, it may also be in your junk folder!', 'kps')) . '</li>
-                <li>' . esc_html(__('It could be that the entry only becomes visible after we have approved it!', 'kps')) . '</li>
-                <li>' . esc_html(__('We reserve the right to edit, delete or not publish entries!', 'kps')) . '</li>
+                <li>' . esc_html__('You should receive an Activation-Email in the next few minutes!', 'kps') . '</li>
+                <li>' . esc_html__('If you have not received any email from us, it may also be in your junk folder!', 'kps') . '</li>
+                <li>' . esc_html__('It could be that the entry only becomes visible after we have approved it!', 'kps') . '</li>
+                <li>' . esc_html__('We reserve the right to edit, delete or not publish entries!', 'kps') . '</li>
             </ul>';
 
             // Einschreiben erfolgreich?
-            $outputmessage = kps_messagebox(esc_html(__('Many Thanks! Your entry will now be checked!', 'kps')) , $messageboxContent);
+            $outputmessage = kps_messagebox(esc_html__('Many Thanks! Your entry will now be checked!', 'kps') , $messageboxContent);
 
             // Eintrag erfolgreich
             $formPass = true;
@@ -239,12 +239,12 @@ function kps_frontend_form($shortCodeValues)
     {
         // Messagebox Ausgabe
         $messageboxContent = '
-        <div style="text-align: center; color: red">' . esc_html(__('The form was processed too fast. Always with tranquillity!', 'kps')) . '</div>
-        <div style="text-align: center; color: red">' . esc_html(__('The Form has been reset!', 'kps')) . '</div>
+        <div style="text-align: center; color: red">' . esc_html__('The form was processed too fast. Always with tranquillity!', 'kps') . '</div>
+        <div style="text-align: center; color: red">' . esc_html__('The Form has been reset!', 'kps') . '</div>
         ';
 
         // Eintrag ist schon in Datenbank verhanden
-        $spammessage = kps_messagebox(esc_html(__('Error! Spam-Block was triggered!', 'kps')) , $messageboxContent);
+        $spammessage = kps_messagebox(esc_html__('Error! Spam-Block was triggered!', 'kps') , $messageboxContent);
 
         // Formular schließen
         $formErrors = true;
@@ -297,9 +297,9 @@ function kps_frontend_form($shortCodeValues)
                                         <div class="kps-divTableCell kps-nobr"></div>
                                         <div class="kps-divTableCell"><label for="kps_acceptedAGBDSGVO">
                                             <input type="checkbox" name="kps_acceptedAGBDSGVO" id="kps_acceptedAGBDSGVO" class="' . $errorAuthorAGBDSGVO . '" value="1" ' . $checkedAcceptedAGBDSGVO . ' />
-                                            ' . esc_html(__('Yes, I accept', 'kps')) . '&#160;
-                                            <a href="' . esc_url(get_post_permalink(get_option('kps_agb'))) . '" target="_blank">' . esc_html(__('GTC', 'kps')) . '</a>&#160;
-                                            ' . esc_html(__('and the', 'kps')) . '&#160;<a href="' . esc_url(get_post_permalink(get_option('kps_dsgvo'))) . '" target="_blank">' . esc_html(__('GDPR', 'kps')) . '</a>.
+                                            ' . esc_html__('Yes, I accept', 'kps') . '&#160;
+                                            <a href="' . esc_url(get_post_permalink(get_option('kps_agb'))) . '" target="_blank">' . esc_html__('GTC', 'kps') . '</a>&#160;
+                                            ' . esc_html__('and the', 'kps') . '&#160;<a href="' . esc_url(get_post_permalink(get_option('kps_dsgvo'))) . '" target="_blank">' . esc_html__('GDPR', 'kps') . '</a>.
                                             ' . '</label>
                                         </div>
                                     </div>
@@ -319,8 +319,8 @@ function kps_frontend_form($shortCodeValues)
                                         <div class="kps-divTableCell kps-nobr"></div>
                                         <div class="kps-divTableCell"><label for="kps_acceptedAGBDSGVO">
                                             <input type="checkbox" name="kps_acceptedAGBDSGVO" id="kps_acceptedAGBDSGVO" class="' . $errorAuthorAGBDSGVO . '" value="1" ' . $checkedAcceptedAGBDSGVO . ' />
-                                            ' . esc_html(__('Yes, I accept', 'kps')) . '&#160;
-                                            <a href="' . esc_url(get_post_permalink(get_option('kps_agb'))) . '" target="_blank">' . esc_html(__('GTC', 'kps')) . '</a>.
+                                            ' . esc_html__('Yes, I accept', 'kps') . '&#160;
+                                            <a href="' . esc_url(get_post_permalink(get_option('kps_agb'))) . '" target="_blank">' . esc_html__('GTC', 'kps') . '</a>.
                                             ' . '</label>
                                         </div>
                                     </div>
@@ -340,8 +340,8 @@ function kps_frontend_form($shortCodeValues)
                                         <div class="kps-divTableCell kps-nobr"></div>
                                         <div class="kps-divTableCell"><label for="kps_acceptedAGBDSGVO">
                                             <input type="checkbox" name="kps_acceptedAGBDSGVO" id="kps_acceptedAGBDSGVO" class="' . $errorAuthorAGBDSGVO . '" value="1" ' . $checkedAcceptedAGBDSGVO . ' />
-                                            ' . esc_html(__('Yes, I accept', 'kps')) . '&#160;
-                                            <a href="' . esc_url(get_post_permalink(get_option('kps_dsgvo'))) . '" target="_blank">' . esc_html(__('GDPR', 'kps')) . '</a>.
+                                            ' . esc_html__('Yes, I accept', 'kps') . '&#160;
+                                            <a href="' . esc_url(get_post_permalink(get_option('kps_dsgvo'))) . '" target="_blank">' . esc_html__('GDPR', 'kps') . '</a>.
                                             ' . '</label>
                                         </div>
                                     </div>
@@ -356,11 +356,11 @@ function kps_frontend_form($shortCodeValues)
         // Wordpress Registieren
         $output .= '<div>
                         <div style="text-align: center;">
-                            <h6>' . esc_html(__('You must be logged in to leave an entry!', 'kps')) . '.</h6>
+                            <h6>' . esc_html__('You must be logged in to leave an entry!', 'kps') . '.</h6>
                         </div>
                         <div style="text-align: center;">
-                            <a href="' . esc_url(wp_login_url(get_permalink())) . '">' . esc_html(__('Login', 'kps')) . '</a>&#160;&#124;&#160;
-                            <a href="' . esc_url(wp_registration_url()) . '">' . esc_html(__('Registration', 'kps')) . '</a>
+                            <a href="' . esc_url(wp_login_url(get_permalink())) . '">' . esc_html__('Login', 'kps') . '</a>&#160;&#124;&#160;
+                            <a href="' . esc_url(wp_registration_url()) . '">' . esc_html__('Registration', 'kps') . '</a>
                         </div>
                     </div>';
     }
@@ -382,7 +382,7 @@ function kps_frontend_form($shortCodeValues)
                 // Button Standard-Text durch Custom ersetzen
                 if ($shortCodeValues['button-text'] === '')
                 {
-                    $buttonText = esc_html(__('Write an entry', 'kps'));
+                    $buttonText = esc_html__('Write an entry', 'kps');
                 }
                 else
                 {
@@ -390,7 +390,7 @@ function kps_frontend_form($shortCodeValues)
 
                     if (empty($buttonText) OR $buttonText == "")
                     {
-                        $buttonText = esc_html(__('Write an entry', 'kps'));
+                        $buttonText = esc_html__('Write an entry', 'kps');
                     }
                 }
 
@@ -439,32 +439,32 @@ function kps_frontend_form($shortCodeValues)
             // Datenbankverbindung gestört
             if ($errorIsNotDB === true)
             {
-                $entryNotWritten = '<li>' . esc_html(__('Error! Database connection disturbed!', 'kps')) . '</li>';
-                $entryNotWritten .= '<li>' . esc_html(__('Please contact the administrator if the problem reappears!', 'kps')) . '</li>';
+                $entryNotWritten = '<li>' . esc_html__('Error! Database connection disturbed!', 'kps') . '</li>';
+                $entryNotWritten .= '<li>' . esc_html__('Please contact the administrator if the problem reappears!', 'kps') . '</li>';
             }
 
             // Eintrag vorhanden
             if ($errorIsFound === true)
             {
-                $entryIsFound = '<li>' . esc_html(__('There is already an entry of you with the same intentions!', 'kps')) . '</li>';
+                $entryIsFound = '<li>' . esc_html__('There is already an entry of you with the same intentions!', 'kps') . '</li>';
             }
 
             // Username existiert als registierter User
             if (!empty($errorAuthorName))
             {
-                $userNameExist = '<li>' . esc_html(__('The entered name is already taken. Please choose another!', 'kps')) . '</li>';
+                $userNameExist = '<li>' . esc_html__('The entered name is already taken. Please choose another!', 'kps') . '</li>';
             }
 
             // Email-Adresse existiert als registierter User
             if (!empty($errorAuthorEmail))
             {
-                $entyToShort = '<li>' . esc_html(__('The entered email address already exists. Please choose another!', 'kps')) . '</li>';
+                $entyToShort = '<li>' . esc_html__('The entered email address already exists. Please choose another!', 'kps') . '</li>';
             }
 
             // Mindestwortanzahl nicht erreicht
             if (!empty($errorAuthorEntry))
             {
-                $entyToShort = '<li>' . esc_html(__('Your entry is too short. The minimum number of words is', 'kps')) . ':&#160;<b>' . get_option('kps_formWordCount', false) . '</b></li>';
+                $entyToShort = '<li>' . esc_html__('Your entry is too short. The minimum number of words is', 'kps') . ':&#160;<b>' . get_option('kps_formWordCount', false) . '</b></li>';
             }
 
             // AGB's und DSGVO
@@ -473,32 +473,32 @@ function kps_frontend_form($shortCodeValues)
                 // Wenn AGB's und DSGVO gesetzt sind
                 if ($checkedUserSettings['kpsUserPrivacyAGB'] === 'true' && $checkedUserSettings['kpsUserPrivacyDSGVO'] === 'true')
                 {
-                    $userNotAcceptAGBDSGVO = '<li>' . esc_html(__('Please accept the Terms and Conditions and GDPR!', 'kps')) . '</li>';
+                    $userNotAcceptAGBDSGVO = '<li>' . esc_html__('Please accept the Terms and Conditions and GDPR!', 'kps') . '</li>';
                 }
 
                 // Wenn nur AGB's gesetzt ist
                 if ($checkedUserSettings['kpsUserPrivacyAGB'] === 'true' && $checkedUserSettings['kpsUserPrivacyDSGVO'] === 'false')
                 {
-                    $userNotAcceptAGBDSGVO = '<li>' . esc_html(__('Please accept the Terms and Conditions!', 'kps')) . '</li>';
+                    $userNotAcceptAGBDSGVO = '<li>' . esc_html__('Please accept the Terms and Conditions!', 'kps') . '</li>';
                 }
 
                 // Wenn nur DSGVO gesetzt ist
                 if ($checkedUserSettings['kpsUserPrivacyAGB'] === 'false' && $checkedUserSettings['kpsUserPrivacyDSGVO'] === 'true')
                 {
-                    $userNotAcceptAGBDSGVO = '<li>' . esc_html(__('Please accept the GDPR!', 'kps')) . '</li>';
+                    $userNotAcceptAGBDSGVO = '<li>' . esc_html__('Please accept the GDPR!', 'kps') . '</li>';
                 }
             }
 
             // Captcha-Fehler
             if (!empty($errorCaptcha))
             {
-                $captchaFail = '<li>' . esc_html(__('Google reCaptcha has not been confirmed!', 'kps')) . '</li>';
+                $captchaFail = '<li>' . esc_html__('Google reCaptcha has not been confirmed!', 'kps') . '</li>';
             }
 
             // Messagebox
             if ($entryIsFound === true OR $entryNotWritten === true)
             {
-                $fillTheForm = '<li>' . esc_html(__('Please ensure you have completed every field in the form!', 'kps')) . '</li>';
+                $fillTheForm = '<li>' . esc_html__('Please ensure you have completed every field in the form!', 'kps') . '</li>';
             }
             $messageboxContent = '
             <ul>
@@ -512,7 +512,7 @@ function kps_frontend_form($shortCodeValues)
                 ' . $captchaFail . '
             </ul>';
 
-            $outputmessage = kps_messagebox(esc_html(__('Error! Form is incorrect!', 'kps')) , $messageboxContent);
+            $outputmessage = kps_messagebox(esc_html__('Error! Form is incorrect!', 'kps') , $messageboxContent);
         }
 
         // Toggeln vom Formular, außer wenn Formularfehler ist
@@ -524,7 +524,7 @@ function kps_frontend_form($shortCodeValues)
             }
             else
             {
-                $hidebutton = '<button type="button" class="kps-closeFrom"><span class="screen-reader-text">' . esc_html(__('Close form', 'kps')) . '</span></button>';
+                $hidebutton = '<button type="button" class="kps-closeFrom"><span class="screen-reader-text">' . esc_html__('Close form', 'kps') . '</span></button>';
             }
     	}
 
@@ -542,50 +542,50 @@ function kps_frontend_form($shortCodeValues)
                             <div class="kps-divTable">
                                 <div class="kps-divTableBody">
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorName">' . esc_html(__('Name', 'kps')) . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
-                                        <div class="kps-divTableCell"><input class="form form_field ' . $errorAuthorName . '" ' . $inputFieldDisabled . ' id="kps_authorName" name="kps_authorName" value="' . $setUserName . '" placeholder="' . esc_html(__('First name, name or nickname', 'kps')) . '" size="245" maxlength="245" aria-required="true" required="required" type="text"></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorName">' . esc_html__('Name', 'kps') . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
+                                        <div class="kps-divTableCell"><input class="form form_field ' . $errorAuthorName . '" ' . $inputFieldDisabled . ' id="kps_authorName" name="kps_authorName" value="' . $setUserName . '" placeholder="' . esc_html__('First name, name or nickname', 'kps') . '" size="245" maxlength="245" aria-required="true" required="required" type="text"></div>
                                     </div>
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorSearchfor">' . esc_html(__('I am looking for', 'kps')) . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorSearchfor">' . esc_html__('I am looking for', 'kps') . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
                                         <div class="kps-divTableCell kps-nobr">
                                             <div class="kps-option ' . $errorAuthorSearchfor . '">
-                                                <input id="kps_authorSearchfor0" name="kps_authorSearchfor" value="0" aria-required="true" required="required" type="radio" ' . $authorSearchfor0 . '><label style="display: inline-block;" for="kps_authorSearchfor0">&#160;' . esc_html(__('Hall', 'kps')) . '</label>&#160;&#160;
-                                                <input id="kps_authorSearchfor1" name="kps_authorSearchfor" value="1" aria-required="true" required="required" type="radio" ' . $authorSearchfor1 . '><label style="display: inline-block;" for="kps_authorSearchfor1">&#160;' . esc_html(__('Climbing', 'kps')) . '</label>&#160;&#160;
-                                                <input id="kps_authorSearchfor3" name="kps_authorSearchfor" value="3" aria-required="true" required="required" type="radio" ' . $authorSearchfor3 . '><label style="display: inline-block;" for="kps_authorSearchfor3">&#160;' . esc_html(__('Walking', 'kps')) . '</label>&#160;&#160;
-                                                <input id="kps_authorSearchfor2" name="kps_authorSearchfor" value="2" aria-required="true" required="required" type="radio" ' . $authorSearchfor2 . '><label style="display: inline-block;" for="kps_authorSearchfor2">&#160;' . esc_html(__('Travels', 'kps')) . '</label>
+                                                <input id="kps_authorSearchfor0" name="kps_authorSearchfor" value="0" aria-required="true" required="required" type="radio" ' . $authorSearchfor0 . '><label style="display: inline-block;" for="kps_authorSearchfor0">&#160;' . esc_html__('Hall', 'kps') . '</label>&#160;&#160;
+                                                <input id="kps_authorSearchfor1" name="kps_authorSearchfor" value="1" aria-required="true" required="required" type="radio" ' . $authorSearchfor1 . '><label style="display: inline-block;" for="kps_authorSearchfor1">&#160;' . esc_html__('Climbing', 'kps') . '</label>&#160;&#160;
+                                                <input id="kps_authorSearchfor3" name="kps_authorSearchfor" value="3" aria-required="true" required="required" type="radio" ' . $authorSearchfor3 . '><label style="display: inline-block;" for="kps_authorSearchfor3">&#160;' . esc_html__('Walking', 'kps') . '</label>&#160;&#160;
+                                                <input id="kps_authorSearchfor2" name="kps_authorSearchfor" value="2" aria-required="true" required="required" type="radio" ' . $authorSearchfor2 . '><label style="display: inline-block;" for="kps_authorSearchfor2">&#160;' . esc_html__('Travels', 'kps') . '</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorRule">' . esc_html(__('Kind of search', 'kps')) . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorRule">' . esc_html__('Kind of search', 'kps') . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
                                         <div class="kps-divTableCell">
                                             <div class="kps-option ' . $errorAuthorRule . '">
-                                                <input id="kps_authorRule0" name="kps_authorRule" value="0" aria-required="true" required="required" type="radio" ' . $authorRule0 . '><label style="display: inline-block;" for="kps_authorRule0">&#160;' . esc_html(__('Unique', 'kps')) . '</label>&#160;&#160;
-                                                <input id="kps_authorRule1" name="kps_authorRule" value="1" aria-required="true" required="required" type="radio" ' . $authorRule1 . '><label style="display: inline-block;" for="kps_authorRule1">&#160;' . esc_html(__('Regularly', 'kps')) . '</label>
+                                                <input id="kps_authorRule0" name="kps_authorRule" value="0" aria-required="true" required="required" type="radio" ' . $authorRule0 . '><label style="display: inline-block;" for="kps_authorRule0">&#160;' . esc_html__('Unique', 'kps') . '</label>&#160;&#160;
+                                                <input id="kps_authorRule1" name="kps_authorRule" value="1" aria-required="true" required="required" type="radio" ' . $authorRule1 . '><label style="display: inline-block;" for="kps_authorRule1">&#160;' . esc_html__('Regularly', 'kps') . '</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_yourRule">' . esc_html(__('I am', 'kps')) . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_yourRule">' . esc_html__('I am', 'kps') . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
                                         <div class="kps-divTableCell">
                                             <div class="kps-option ' . $errorYourRule . '">
-                                                <input id="kps_yourRule0" name="kps_yourRule" value="0" aria-required="true" required="required" type="radio" ' . $yourRule0 . '><label style="display: inline-block;" for="kps_yourRule0">&#160;' . esc_html(__('Single person', 'kps')) . '</label>&#160;&#160;
-                                                <input id="kps_yourRule1" name="kps_yourRule" value="1" aria-required="true" required="required" type="radio" ' . $yourRule1 . '><label style="display: inline-block;" for="kps_yourRule1">&#160;' . esc_html(__('Family', 'kps')) . '</label>&#160;&#160;
-                                                <input id="kps_yourRule2" name="kps_yourRule" value="2" aria-required="true" required="required" type="radio" ' . $yourRule2 . '><label style="display: inline-block;" for="kps_yourRule2">&#160;' . esc_html(__('Club/Group', 'kps')) . '</label>
+                                                <input id="kps_yourRule0" name="kps_yourRule" value="0" aria-required="true" required="required" type="radio" ' . $yourRule0 . '><label style="display: inline-block;" for="kps_yourRule0">&#160;' . esc_html__('Single person', 'kps') . '</label>&#160;&#160;
+                                                <input id="kps_yourRule1" name="kps_yourRule" value="1" aria-required="true" required="required" type="radio" ' . $yourRule1 . '><label style="display: inline-block;" for="kps_yourRule1">&#160;' . esc_html__('Family', 'kps') . '</label>&#160;&#160;
+                                                <input id="kps_yourRule2" name="kps_yourRule" value="2" aria-required="true" required="required" type="radio" ' . $yourRule2 . '><label style="display: inline-block;" for="kps_yourRule2">&#160;' . esc_html__('Club/Group', 'kps') . '</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr" style="vertical-align: top;"><label for="kps_authorEntry">' . esc_html(__('Entry', 'kps')) . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
+                                        <div class="kps-divTableCell kps-nobr" style="vertical-align: top;"><label for="kps_authorEntry">' . esc_html__('Entry', 'kps') . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
                                         <div class="kps-divTableCell"><textarea class="kps-textarea ' . $errorAuthorEntry . '" id="kps_authorEntry" name="kps_authorEntry" cols="45" rows="8" maxlength="65525" aria-required="true" required="required">' . $authorEntry . '</textarea></div>
                                     </div>
                                     <div class="kps-divTableRow">
                                         <div class="kps-divTableCell kps-nobr"></div>
-                                        <div class="kps-divTableCell"><u>' . esc_html(__('How would you like to be contacted?', 'kps')) . '</u></div>
+                                        <div class="kps-divTableCell"><u>' . esc_html__('How would you like to be contacted?', 'kps') . '</u></div>
                                     </div>
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorEmail"><i class="far fa-envelope-open"></i>&#160;' . esc_html(__('Email', 'kps')) . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
-                                        <div class="kps-divTableCell"><input class="form_field ' . $errorAuthorEmail . '" ' . $inputFieldDisabled . ' id="kps_authorEmail" name="kps_authorEmail" value="' . $setUserEmail . '" placeholder="' . esc_html(__('Email', 'kps')) . '" minlength="6" size="245" maxlength="245" aria-required="true" required="required" type="' . $html5TypEmail . '"></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorEmail"><i class="far fa-envelope-open"></i>&#160;' . esc_html__('Email', 'kps') . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
+                                        <div class="kps-divTableCell"><input class="form_field ' . $errorAuthorEmail . '" ' . $inputFieldDisabled . ' id="kps_authorEmail" name="kps_authorEmail" value="' . $setUserEmail . '" placeholder="' . esc_html__('Email', 'kps') . '" minlength="6" size="245" maxlength="245" aria-required="true" required="required" type="' . $html5TypEmail . '"></div>
                                     </div>
                     ';
 
@@ -594,8 +594,8 @@ function kps_frontend_form($shortCodeValues)
         {
             $output .= '
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorTelephone"><i class="fas fa-phone-volume"></i>&#160;' . esc_html(__('Telephone', 'kps')) . '</label></div>
-                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorTelephone" name="kps_authorTelephone" value="' . $setAuthorTelephone . '" placeholder="' . esc_html(__('0351/123456', 'kps')) . '" size="60" maxlength="60" type="' . $html5TypTele . '"></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorTelephone"><i class="fas fa-phone-volume"></i>&#160;' . esc_html__('Telephone', 'kps') . '</label></div>
+                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorTelephone" name="kps_authorTelephone" value="' . $setAuthorTelephone . '" placeholder="' . esc_html__('0351/123456', 'kps') . '" size="60" maxlength="60" type="' . $html5TypTele . '"></div>
                                     </div>
                         ';
         }
@@ -605,8 +605,8 @@ function kps_frontend_form($shortCodeValues)
         {
             $output .= '
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorMobile"><i class="fas fa-mobile-alt"></i>&#160;' . esc_html(__('Mobile Phone', 'kps')) . '</label></div>
-                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorMobile" name="kps_authorMobile" value="' . $setAuthorMobile . '" placeholder="' . esc_html(__('0170/123456', 'kps')) . '" size="60" maxlength="60" type="' . $html5TypTele . '"></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorMobile"><i class="fas fa-mobile-alt"></i>&#160;' . esc_html__('Mobile Phone', 'kps') . '</label></div>
+                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorMobile" name="kps_authorMobile" value="' . $setAuthorMobile . '" placeholder="' . esc_html__('0170/123456', 'kps') . '" size="60" maxlength="60" type="' . $html5TypTele . '"></div>
                                     </div>
                         ';
         }
@@ -616,8 +616,8 @@ function kps_frontend_form($shortCodeValues)
         {
             $output .= '
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorFacebookMessenger"><i class="fab fa-facebook-messenger"></i>&#160;' . esc_html(__('Facebook', 'kps')) . '</label></div>
-                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorFacebookMessenger" name="kps_authorFacebookMessenger" value="' . $setAuthorFacebookMessenger . '" placeholder="' . esc_html(__('https://m.me/[Login-Name][.xyz]', 'kps')) . '" minlength="6" size="245" maxlength="245" type="' . $html5TypUrl . '"></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorFacebookMessenger"><i class="fab fa-facebook-messenger"></i>&#160;' . esc_html__('Facebook', 'kps') . '</label></div>
+                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorFacebookMessenger" name="kps_authorFacebookMessenger" value="' . $setAuthorFacebookMessenger . '" placeholder="' . esc_html__('https://m.me/[Login-Name][.xyz]', 'kps') . '" minlength="6" size="245" maxlength="245" type="' . $html5TypUrl . '"></div>
                                     </div>
                         ';
         }
@@ -627,8 +627,8 @@ function kps_frontend_form($shortCodeValues)
         {
             $output .= '
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorHoccer"><i class="far fa-comments"></i>&#160;' . esc_html(__('Hoccer', 'kps')) . '</label></div>
-                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorHoccer" name="kps_authorHoccer" value="' . $setAuthorHoccer . '" placeholder="' . esc_html(__('Email', 'kps')) . '" minlength="6" size="245" maxlength="245" type="' . $html5TypEmail . '"></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorHoccer"><i class="far fa-comments"></i>&#160;' . esc_html__('Hoccer', 'kps') . '</label></div>
+                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorHoccer" name="kps_authorHoccer" value="' . $setAuthorHoccer . '" placeholder="' . esc_html__('Email', 'kps') . '" minlength="6" size="245" maxlength="245" type="' . $html5TypEmail . '"></div>
                                     </div>
                         ';
         }
@@ -638,8 +638,8 @@ function kps_frontend_form($shortCodeValues)
         {
             $output .= '
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorSignal"><i class="fas fa-signal"></i>&#160;' . esc_html(__('Signal', 'kps')) . '</label></div>
-                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorSignal" name="kps_authorSignal" value="' . $setAuthorSignal . '" placeholder="' . esc_html(__('0170/123456', 'kps')) . '" size="60" maxlength="60" type="' . $html5TypTele . '"></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorSignal"><i class="fas fa-signal"></i>&#160;' . esc_html__('Signal', 'kps') . '</label></div>
+                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorSignal" name="kps_authorSignal" value="' . $setAuthorSignal . '" placeholder="' . esc_html__('0170/123456', 'kps') . '" size="60" maxlength="60" type="' . $html5TypTele . '"></div>
                                     </div>
                         ';
         }
@@ -649,8 +649,8 @@ function kps_frontend_form($shortCodeValues)
         {
             $output .= '
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorSkype"><i class="fab fa-skype"></i>&#160;' . esc_html(__('Skype', 'kps')) . '</label></div>
-                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorSkype" name="kps_authorSkype" value="' . $setAuthorSkype . '" placeholder="' . esc_html(__('Email, mobile number or Skype username', 'kps')) . '" size="245" maxlength="245" type="text"></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorSkype"><i class="fab fa-skype"></i>&#160;' . esc_html__('Skype', 'kps') . '</label></div>
+                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorSkype" name="kps_authorSkype" value="' . $setAuthorSkype . '" placeholder="' . esc_html__('Email, mobile number or Skype username', 'kps') . '" size="245" maxlength="245" type="text"></div>
                                     </div>
                         ';
         }
@@ -660,8 +660,8 @@ function kps_frontend_form($shortCodeValues)
         {
             $output .= '
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorTelegram"><i class="fab fa-telegram-plane"></i>&#160;' . esc_html(__('Telegram', 'kps')) . '</label></div>
-                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorTelegram" name="kps_authorTelegram" value="' . $setAuthorTelegram . '" placeholder="' . esc_html(__('0170/123456', 'kps')) . '" size="60" maxlength="60" type="' . $html5TypTele . '"></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorTelegram"><i class="fab fa-telegram-plane"></i>&#160;' . esc_html__('Telegram', 'kps') . '</label></div>
+                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorTelegram" name="kps_authorTelegram" value="' . $setAuthorTelegram . '" placeholder="' . esc_html__('0170/123456', 'kps') . '" size="60" maxlength="60" type="' . $html5TypTele . '"></div>
                                     </div>
                         ';
         }
@@ -671,8 +671,8 @@ function kps_frontend_form($shortCodeValues)
         {
             $output .= '
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorThreema"><i class="far fa-comment-alt"></i>&#160;' . esc_html(__('Threema', 'kps')) . '</label></div>
-                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorThreema" name="kps_authorThreema" value="' . $setAuthorThreema . '" placeholder="' . esc_html(__('Threema-ID', 'kps')) . '" size="60" maxlength="8" type="text"></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorThreema"><i class="far fa-comment-alt"></i>&#160;' . esc_html__('Threema', 'kps') . '</label></div>
+                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorThreema" name="kps_authorThreema" value="' . $setAuthorThreema . '" placeholder="' . esc_html__('Threema-ID', 'kps') . '" size="60" maxlength="8" type="text"></div>
                                     </div>
                         ';
         }
@@ -682,8 +682,8 @@ function kps_frontend_form($shortCodeValues)
         {
             $output .= '
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorViper"><i class="fab fa-viber"></i>&#160;' . esc_html(__('Viper', 'kps')) . '</label></div>
-                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorViper" name="kps_authorViper" value="' . $setAuthorViper . '" placeholder="' . esc_html(__('0170/123456', 'kps')) . '" size="60" maxlength="60" type="' . $html5TypTele . '"></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorViper"><i class="fab fa-viber"></i>&#160;' . esc_html__('Viper', 'kps') . '</label></div>
+                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorViper" name="kps_authorViper" value="' . $setAuthorViper . '" placeholder="' . esc_html__('0170/123456', 'kps') . '" size="60" maxlength="60" type="' . $html5TypTele . '"></div>
                                     </div>
                         ';
         }
@@ -693,8 +693,8 @@ function kps_frontend_form($shortCodeValues)
         {
             $output .= '
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorWhatsapp"><i class="fab fa-whatsapp"></i>&#160;' . esc_html(__('Whatsapp', 'kps')) . '</label></div>
-                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorWhatsapp" name="kps_authorWhatsapp" value="' . $setAuthorWhatsapp . '" placeholder="' . esc_html(__('0170/123456', 'kps')) . '" size="60" maxlength="60" type="' . $html5TypTele . '"></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorWhatsapp"><i class="fab fa-whatsapp"></i>&#160;' . esc_html__('Whatsapp', 'kps') . '</label></div>
+                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorWhatsapp" name="kps_authorWhatsapp" value="' . $setAuthorWhatsapp . '" placeholder="' . esc_html__('0170/123456', 'kps') . '" size="60" maxlength="60" type="' . $html5TypTele . '"></div>
                                     </div>
                         ';
         }
@@ -704,8 +704,8 @@ function kps_frontend_form($shortCodeValues)
         {
             $output .= '
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorWire"><i class="far fa-comment-dots"></i>&#160;' . esc_html(__('Wire', 'kps')) . '</label></div>
-                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorWire" name="kps_authorWire" value="' . $setAuthorWire . '"placeholder="' . esc_html(__('Email or mobile number', 'kps')) . '" size="245" maxlength="245" type="text"></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorWire"><i class="far fa-comment-dots"></i>&#160;' . esc_html__('Wire', 'kps') . '</label></div>
+                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorWire" name="kps_authorWire" value="' . $setAuthorWire . '"placeholder="' . esc_html__('Email or mobile number', 'kps') . '" size="245" maxlength="245" type="text"></div>
                                     </div>
                         ';
         }
@@ -715,8 +715,8 @@ function kps_frontend_form($shortCodeValues)
         {
             $output .= '
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorWebsite"><i class="fas fa-globe-asia"></i>&#160;' . esc_html(__('Website', 'kps')) . '</label></div>
-                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorWebsite" name="kps_authorWebsite" value="' . $setAuthorWebsite . '" placeholder="' . esc_html(__('https://www.your-website.com', 'kps')) . '" size="245" maxlength="245" type="' . $html5TypUrl . '"></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorWebsite"><i class="fas fa-globe-asia"></i>&#160;' . esc_html__('Website', 'kps') . '</label></div>
+                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorWebsite" name="kps_authorWebsite" value="' . $setAuthorWebsite . '" placeholder="' . esc_html__('https://www.your-website.com', 'kps') . '" size="245" maxlength="245" type="' . $html5TypUrl . '"></div>
                                     </div>
                         ';
         }
@@ -726,8 +726,8 @@ function kps_frontend_form($shortCodeValues)
         {
             $output .= '
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorFacebook"><i class="fab fa-facebook"></i>&#160;' . esc_html(__('Facebook', 'kps')) . '</label></div>
-                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorFacebook" name="kps_authorFacebook" value="' . $setAuthorFacebook . '" placeholder="' . esc_html(__('https://facebook.com/[Login-Name][.xyz]', 'kps')) . '" size="245" maxlength="245" type="' . $html5TypUrl . '"></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorFacebook"><i class="fab fa-facebook"></i>&#160;' . esc_html__('Facebook', 'kps') . '</label></div>
+                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorFacebook" name="kps_authorFacebook" value="' . $setAuthorFacebook . '" placeholder="' . esc_html__('https://facebook.com/[Login-Name][.xyz]', 'kps') . '" size="245" maxlength="245" type="' . $html5TypUrl . '"></div>
                                     </div>
                         ';
         }
@@ -737,8 +737,8 @@ function kps_frontend_form($shortCodeValues)
         {
             $output .= '
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorInstagram"><i class="fab fa-instagram"></i>&#160;' . esc_html(__('Instagram', 'kps')) . '</label></div>
-                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorInstagram" name="kps_authorInstagram" value="' . $setAuthorInstagram . '" placeholder="' . esc_html(__('https://instagram.com/[Login-Name]', 'kps')) . '" size="245" maxlength="245" type="' . $html5TypUrl . '"></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorInstagram"><i class="fab fa-instagram"></i>&#160;' . esc_html__('Instagram', 'kps') . '</label></div>
+                                        <div class="kps-divTableCell"><input class="form_field" id="kps_authorInstagram" name="kps_authorInstagram" value="' . $setAuthorInstagram . '" placeholder="' . esc_html__('https://instagram.com/[Login-Name]', 'kps') . '" size="245" maxlength="245" type="' . $html5TypUrl . '"></div>
                                     </div>
                         ';
         }
@@ -780,7 +780,7 @@ function kps_frontend_form($shortCodeValues)
                                         <div class="kps-divTableCell">
                                             <input type="hidden" id="kps_AuthorId" name="kps_authorId" value="' . $setUserId . '" />
                                             <input type="hidden" id="kps_AuthorMadeEntryToken" name="kps_AuthorMadeEntryToken" value="' . $token . '" />
-                                            <input class="submit" type="submit" name="submit" value="' . esc_html(__('Send', 'kps')) . '">
+                                            <input class="submit" type="submit" name="submit" value="' . esc_html__('Send', 'kps') . '">
                                         </div>
                                     </div>
                                 </div>
@@ -789,11 +789,11 @@ function kps_frontend_form($shortCodeValues)
                         <div class="kps-br"></div>
                         <div class="kps-form-info" style="display: inline-block; margin: 0; padding: 0; line-height: 1.2em;">
                             <ul>
-                                <li><sup><span class="kps-required">*</span></sup>&#160;' . esc_html(__('Required fields', 'kps')) . '</li>
-                                <li>' . esc_html(__('As a registered user, the registered login / display name and the corresponding email address are automatically used. This can not be changed!', 'kps')) . '</li>
-                                <li>' . esc_html(__('All contact details, except those that may be publicly accessible in the user profile, are not published, but can only be accessed!', 'kps')) . '</li>
-                                <li>' . esc_html(__('It could be that the entry only becomes visible after we have approved it!', 'kps')) . '</li>
-                                <li>' . esc_html(__('We reserve the right to edit, delete or not publish entries!', 'kps')) . '</li>
+                                <li><sup><span class="kps-required">*</span></sup>&#160;' . esc_html__('Required fields', 'kps') . '</li>
+                                <li>' . esc_html__('As a registered user, the registered login / display name and the corresponding email address are automatically used. This can not be changed!', 'kps') . '</li>
+                                <li>' . esc_html__('All contact details, except those that may be publicly accessible in the user profile, are not published, but can only be accessed!', 'kps') . '</li>
+                                <li>' . esc_html__('It could be that the entry only becomes visible after we have approved it!', 'kps') . '</li>
+                                <li>' . esc_html__('We reserve the right to edit, delete or not publish entries!', 'kps') . '</li>
                             </ul>
                         </div>
                         </form>';

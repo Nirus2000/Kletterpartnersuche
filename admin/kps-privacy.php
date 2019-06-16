@@ -47,7 +47,7 @@ function kps_Privacy()
     // Zugriffsrechte prüfen
     if (function_exists('current_user_can') && !current_user_can('manage_privacy_options'))
     {
-        die(esc_html(__('Access denied!', 'kps')));
+        die(esc_html__('Access denied!', 'kps'));
     }
 
     // Javascript einladen
@@ -64,7 +64,7 @@ function kps_Privacy()
       <div id="kps" class="wrap kps">
             <div>
                 <h3>
-                    <?php echo esc_html(__('Climbing-Partner-Search', 'kps')); ?> - <?php echo esc_html(__('Overview', 'kps')); ?>
+                    <?php echo esc_html__('Climbing-Partner-Search', 'kps'); ?> - <?php echo esc_html__('Overview', 'kps'); ?>
                </h3>
             </div>
 
@@ -131,7 +131,7 @@ function kps_AgbSetting()
                 update_option('kps_agb', $setAGBPage, 'yes');
                 echo '
                 <div class="notice notice-success is-dismissible">
-                	<p><strong>' . esc_html(__('Saved', 'kps')) . ':&#160;' . esc_html(__('Terms of Service', 'kps')) . '</strong></p>
+                	<p><strong>' . esc_html__('Saved', 'kps') . ':&#160;' . esc_html__('Terms of Service', 'kps') . '</strong></p>
                 	<button type="button" class="notice-dismiss">
                 		<span class="screen-reader-text">Dismiss this notice.</span>
                 	</button>
@@ -141,7 +141,7 @@ function kps_AgbSetting()
                 {
                     echo '
                     <div class="notice notice-warning is-dismissible">
-                    	<p><strong>' . esc_html(__('Warning', 'kps')) . ':&#160;' . esc_html(__('No terms and conditions selected', 'kps')) . '</strong></p>
+                    	<p><strong>' . esc_html__('Warning', 'kps') . ':&#160;' . esc_html__('No terms and conditions selected', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -154,7 +154,7 @@ function kps_AgbSetting()
         {
             echo '
             <div class="notice notice-error is-dismissible">
-            	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . esc_html(__('Token invalid', 'kps')) . '</strong></p>
+            	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
             	<button type="button" class="notice-dismiss">
             		<span class="screen-reader-text">Dismiss this notice.</span>
             	</button>
@@ -166,12 +166,12 @@ function kps_AgbSetting()
     echo '
             <div class="kps_container" style="width: 50%">
                 <h5>
-' . esc_html(__('The General Terms and Conditions (GTC) are contractual clauses that standardize
+' . esc_html__('The General Terms and Conditions (GTC) are contractual clauses that standardize
 and regulate mass contracts. They are unilaterally provided by a contracting party
 and therefore require some control to prevent their misuse. We recommend this
 to explain to the user (author) that the contact details, which the user (author), passes to the requester
 (User) are left without the control, checking and verification of the site operator or the
-Requester. Here you can assign your own terms and conditions in the form.', 'kps')) . '
+Requester. Here you can assign your own terms and conditions in the form.', 'kps') . '
                 </h5>
                 <form class="form" action="" method="post">
                     <table class="table">
@@ -182,7 +182,7 @@ Requester. Here you can assign your own terms and conditions in the form.', 'kps
                             		array(
                             			'name'              => 'kpsAGB',
                                         'class'             => '',
-                            			'show_option_none'  => '--- ' . esc_html(__('Selection', 'kps')) . ' ---',
+                            			'show_option_none'  => '--- ' . esc_html__('Selection', 'kps') . ' ---',
                             			'option_none_value' => '0',
                             			'selected'          => get_option('kps_agb', false),
                             			'post_status'       => array( 'publish' ),
@@ -197,7 +197,7 @@ Requester. Here you can assign your own terms and conditions in the form.', 'kps
                                 <td style="text-align: center;">
                                     <input type="hidden" id="kps_tab" name="kps_tab" value="kps_AgbSetting" />
                                     <input type="hidden" id="AGBToken" name="AGBToken" value="' . $token . '" />
-                                    <input class="button-primary" type="submit" name="submitAGB" value="' . esc_html(__('Save', 'kps')) . '" />
+                                    <input class="button-primary" type="submit" name="submitAGB" value="' . esc_html__('Save', 'kps') . '" />
                                 </td>
                             </tr>
                         </tbody>
@@ -248,7 +248,7 @@ function kps_DsgvoSetting()
                 update_option('kps_dsgvo', $setDSGVOPage, 'yes');
                 echo '
                 <div class="notice notice-success is-dismissible">
-                	<p><strong>' . esc_html(__('Saved', 'kps')) . ':&#160;' . esc_html(__('General Data Protection Regulation', 'kps')) . '</strong></p>
+                	<p><strong>' . esc_html__('Saved', 'kps') . ':&#160;' . esc_html__('General Data Protection Regulation', 'kps') . '</strong></p>
                 	<button type="button" class="notice-dismiss">
                 		<span class="screen-reader-text">Dismiss this notice.</span>
                 	</button>
@@ -258,7 +258,7 @@ function kps_DsgvoSetting()
                 {
                     echo '
                     <div class="notice notice-warning is-dismissible">
-                    	<p><strong>' . esc_html(__('Warning', 'kps')) . ':&#160;' . esc_html(__('No General-Data-Protection-Regulation selected', 'kps')) . '</strong></p>
+                    	<p><strong>' . esc_html__('Warning', 'kps') . ':&#160;' . esc_html__('No General-Data-Protection-Regulation selected', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -271,7 +271,7 @@ function kps_DsgvoSetting()
         {
             echo '
             <div class="notice notice-error is-dismissible">
-            	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . esc_html(__('Token invalid', 'kps')) . '</strong></p>
+            	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
             	<button type="button" class="notice-dismiss">
             		<span class="screen-reader-text">Dismiss this notice.</span>
             	</button>
@@ -282,11 +282,11 @@ function kps_DsgvoSetting()
 
     echo '
             <div class="kps_container" style="width: 50%"><h5>
-' . esc_html(__('GPDR is the common abbreviation for the General Data Protection Regulation.
+' . esc_html__('GPDR is the common abbreviation for the General Data Protection Regulation.
 With this the EU (European Union) wants create a single legal framework for the processing and
 storage of personal data. In this plugin, Personal data can be processed, stored and retrieved
-without checking and verification. Here you can assign your own GPDR to the form.', 'kps')) .
-                '&#160;(<a href="https://de.wikipedia.org/wiki/Datenschutz-Grundverordnung" target="_blank">' . esc_html(__('GDPR', 'kps')) . '</a>)</h5>
+without checking and verification. Here you can assign your own GPDR to the form.', 'kps') .
+                '&#160;(<a href="https://de.wikipedia.org/wiki/Datenschutz-Grundverordnung" target="_blank">' . esc_html__('GDPR', 'kps') . '</a>)</h5>
                 <form class="form" action="" method="post">
                     <table class="table">
                         <tbody>
@@ -296,7 +296,7 @@ without checking and verification. Here you can assign your own GPDR to the form
                             		array(
                             			'name'              => 'kpsDSGVO',
                                         'class'             => '',
-                            			'show_option_none'  => '--- ' . esc_html(__('Selection', 'kps')) . ' ---',
+                            			'show_option_none'  => '--- ' . esc_html__('Selection', 'kps') . ' ---',
                             			'option_none_value' => '0',
                             			'selected'          => get_option('kps_dsgvo', false),
                             			'post_status'       => array( 'publish' ),
@@ -311,7 +311,7 @@ without checking and verification. Here you can assign your own GPDR to the form
                                 <td style="text-align: center;">
                                     <input type="hidden" id="kps_tab" name="kps_tab" value="kps_DsgvoSetting" />
                                     <input type="hidden" id="DSGVOToken" name="DSGVOToken" value="' . $token . '" />
-                                    <input class="button-primary" type="submit" name="submitDSGVO" value="' . esc_html(__('Save', 'kps')) . '!" />
+                                    <input class="button-primary" type="submit" name="submitDSGVO" value="' . esc_html__('Save', 'kps') . '!" />
                                 </td>
                             </tr>
                         </tbody>

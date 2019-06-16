@@ -51,9 +51,9 @@ class Kletterpartner_Suche extends WP_Widget {
     {
 		$widgetOptions = array(
     			             'classname'     => 'kps-widget',
-    			             'description'   => esc_html(__('Shows the last entries in the Climbing-Partner-Search.', 'kps')),
+    			             'description'   => esc_html__('Shows the last entries in the Climbing-Partner-Search.', 'kps'),
         );
-        parent::__construct( 'Climbing-Partner-Search', esc_html(__('Climbing-Partner-Search', 'kps')).':', $widgetOptions );
+        parent::__construct( 'Climbing-Partner-Search', esc_html__('Climbing-Partner-Search', 'kps').':', $widgetOptions );
         $this->alt_option_name = 'kps';
     }
 
@@ -69,9 +69,9 @@ class Kletterpartner_Suche extends WP_Widget {
 
         //  Importiert Variablen eines Arrays in die aktuelle Symboltabelle
         extract($args);
-        $defaultValues = array( 'title'         =>  esc_html(__('Climbing-Partner-Search', 'kps')),
+        $defaultValues = array( 'title'         =>  esc_html__('Climbing-Partner-Search', 'kps'),
                                 'showEntries'   =>  3,
-                                'linktext'      =>  esc_html(__('Read more...', 'kps'))
+                                'linktext'      =>  esc_html__('Read more...', 'kps')
         );
 
         $title          = esc_html($instance['title']);
@@ -141,7 +141,7 @@ class Kletterpartner_Suche extends WP_Widget {
         else
         {
             // Keine Einträge vorhanden
-            $output .= esc_html(__('No entries available!', 'kps'));
+            $output .= esc_html__('No entries available!', 'kps');
         }
 
         // HTML5
@@ -190,9 +190,9 @@ class Kletterpartner_Suche extends WP_Widget {
         echo "</pre>";
         */
 
-        $defaultValues = array( 'title'         =>  esc_html(__('Climbing-Partner-Search', 'kps')),
+        $defaultValues = array( 'title'         =>  esc_html__('Climbing-Partner-Search', 'kps'),
                                 'showEntries'   =>  3,
-                                'linkText'      =>  esc_html(__('Read more...', 'kps'))
+                                'linkText'      =>  esc_html__('Read more...', 'kps')
         );
 
         // Defaultwerte ersetzen, falls geändert
@@ -203,9 +203,9 @@ class Kletterpartner_Suche extends WP_Widget {
         $linkText       = esc_html($instance['linkText']);
 
         echo '
-                    <label for="' . $this->get_field_name('title') . '">' . esc_html(__('Title', 'kps')) . ':</label><br />
+                    <label for="' . $this->get_field_name('title') . '">' . esc_html__('Title', 'kps') . ':</label><br />
                     <input id="' . $this->get_field_name('title') . '" value="' . $title . '" name="' . $this->get_field_name('title') . '" type="text" /><br />
-                    <label for="' . $this->get_field_name('showEntries'). '">' . esc_html(__('Number of entries', 'kps')) . ':</label><br />
+                    <label for="' . $this->get_field_name('showEntries'). '">' . esc_html__('Number of entries', 'kps') . ':</label><br />
     				<select id="' . $this->get_field_name('showEntries'). '" name="' . $this->get_field_name('showEntries'). '">';
 
                     for ($i = 1; $i <= 25; $i++)
@@ -221,7 +221,7 @@ class Kletterpartner_Suche extends WP_Widget {
 					}
         echo    '
     				</select><br />
-                    <label for="' . $this->get_field_name('linkText') . '">' . esc_html(__('Linktext', 'kps')) . ':</label><br />
+                    <label for="' . $this->get_field_name('linkText') . '">' . esc_html__('Linktext', 'kps') . ':</label><br />
                     <input id="' . $this->get_field_name('linkText') . '" value="' . $linkText . '" name="' . $this->get_field_name('linkText') . '" type="text" /><br />
                 ';
     }

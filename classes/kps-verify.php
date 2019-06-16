@@ -128,8 +128,8 @@ class kps_verify
 
         if ($verifyMailSettings === false)
         {
-            $verifySubject = esc_html(__('Verification', 'kps'));
-            $verifyContent = esc_html(__('You want the contact details for the following entry.
+            $verifySubject = esc_html__('Verification', 'kps');
+            $verifyContent = esc_html__('You want the contact details for the following entry.
 
 To retrieve the contact information, click on the link and enter the password.
 The request key is valid for 24 hours!
@@ -147,7 +147,7 @@ Many Thanks!
 Your team
 %blogname%
 %blogurl%
-%blogemail%', 'kps'));
+%blogemail%', 'kps');
         }
         else
         {

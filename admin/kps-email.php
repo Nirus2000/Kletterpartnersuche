@@ -47,7 +47,7 @@ function kps_EmailSetting()
     // Zugriffsrechte prüfen
     if (function_exists('current_user_can') && !current_user_can('manage_options'))
     {
-        die(esc_html(__('Access denied!', 'kps')));
+        die(esc_html__('Access denied!', 'kps'));
     }
 
     // Javascript einladen
@@ -64,7 +64,7 @@ function kps_EmailSetting()
       <div id="kps" class="wrap kps">
             <div>
                 <h3>
-                    <?php echo esc_html(__('Climbing-Partner-Search', 'kps')); ?> - <?php echo esc_html(__('Overview', 'kps')); ?>
+                    <?php echo esc_html__('Climbing-Partner-Search', 'kps'); ?> - <?php echo esc_html__('Overview', 'kps'); ?>
                </h3>
 
             <h2 class="nav-tab-wrapper kps_nav_tab_wrapper">
@@ -137,35 +137,35 @@ function kps_UnlockEmail()
             // Fehlermeldungen
             if (empty($setMailSettings['kpsUnlockSubject']))
             {
-                $error[] = esc_html(__('Email subject is missing', 'kps'));
+                $error[] = esc_html__('Email subject is missing', 'kps');
             }
             if (empty($setMailSettings['kpsUnlockContent']))
             {
-                $error[] = esc_html(__('Content is missing', 'kps'));
+                $error[] = esc_html__('Content is missing', 'kps');
             }
             if (strpos($setMailSettings['kpsUnlockContent'], '%linkactivation%') !== false )
             {
-                $error[] = esc_html(__('Shorttag %linkactivation% not allowed', 'kps'));
+                $error[] = esc_html__('Shorttag %linkactivation% not allowed', 'kps');
             }
             if (strpos($setMailSettings['kpsUnlockContent'], '%linkdelete%') !== false )
             {
-                $error[] = esc_html(__('Shorttag %linkdelete% not allowed', 'kps'));
+                $error[] = esc_html__('Shorttag %linkdelete% not allowed', 'kps');
             }
             if (strpos($setMailSettings['kpsUnlockContent'], '%erasepassword%') !== false )
             {
-                $error[] = esc_html(__('Shorttag %erasepassword% not allowed', 'kps'));
+                $error[] = esc_html__('Shorttag %erasepassword% not allowed', 'kps');
             }
             if (strpos($setMailSettings['kpsUnlockContent'], '%linkreg%') !== false )
             {
-                $error[] = esc_html(__('Shorttag %linkreg% not allowed', 'kps'));
+                $error[] = esc_html__('Shorttag %linkreg% not allowed', 'kps');
             }
             if (strpos($setMailSettings['kpsUnlockContent'], '%regpassword%') !== false )
             {
-                $error[] = esc_html(__('Shorttag %regpassword% not allowed', 'kps'));
+                $error[] = esc_html__('Shorttag %regpassword% not allowed', 'kps');
             }
             if (!is_array($setMailSettings))
             {
-                $error[] = esc_html(__('Error validating the data', 'kps'));
+                $error[] = esc_html__('Error validating the data', 'kps');
             }
 
             // Email-Content aktualisieren
@@ -187,7 +187,7 @@ function kps_UnlockEmail()
                     update_option('kps_adminUnlockMailSettings', $setMailSettings);
                     echo '
                     <div class="notice notice-success is-dismissible">
-                    	<p><strong>' . esc_html(__('Saved', 'kps')) . ':&#160;' . esc_html(__('Unlocked', 'kps')) . '</strong></p>
+                    	<p><strong>' . esc_html__('Saved', 'kps') . ':&#160;' . esc_html__('Unlocked', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -198,7 +198,7 @@ function kps_UnlockEmail()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . esc_html(__('Error serializing the data', 'kps')) . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Error serializing the data', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -212,7 +212,7 @@ function kps_UnlockEmail()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . $error[$key] . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . $error[$key] . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -225,7 +225,7 @@ function kps_UnlockEmail()
         {
             echo '
             <div class="notice notice-error is-dismissible">
-            	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . esc_html(__('Token invalid', 'kps')) . '</strong></p>
+            	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
             	<button type="button" class="notice-dismiss">
             		<span class="screen-reader-text">Dismiss this notice.</span>
             	</button>
@@ -238,11 +238,11 @@ function kps_UnlockEmail()
 
     if ($checkedMailSettings === false )
     {
-        $checkedUnlockSubject   = esc_html(__('Unlocked', 'kps'));
+        $checkedUnlockSubject   = esc_html__('Unlocked', 'kps');
         $checkedUnlockContent   =
-esc_html(__('Your entry has just been unlocked!
+esc_html__('Your entry has just been unlocked!
 
-The deletion time for this entry was set to%erasedatetime%.
+The deletion time for this entry was set to %erasedatetime%.
 
 Your entry:
 *******************
@@ -262,7 +262,7 @@ Many Thanks!
 Your team
 %blogname%.
 %blogurl%
-%blogemail%', 'kps'));
+%blogemail%', 'kps');
     }
     else
     {
@@ -305,7 +305,7 @@ Your team
                                 <table class="table">
                                     <tbody>
                                         <tr>
-                                            <td><label for="kpsUnlockSubject"><b>' . esc_html(__('Email subject', 'kps')) . '</b></label></td>
+                                            <td><label for="kpsUnlockSubject"><b>' . esc_html__('Email subject', 'kps') . '</b></label></td>
                                         </tr>
                                         <tr>
                                             <td><input type="text" name="kpsUnlockSubject" id="kpsUnlockSubject" autocomplete="off" class="form_field" value="' . $checkedUnlockSubject . '" /></td>
@@ -323,7 +323,7 @@ Your team
                                             <td  style="text-align: center;">
                                                 <input type="hidden" id="kps_tab" name="kps_tab" value="kps_UnlockEmail" />
                                                 <input type="hidden" id="kpsUnlockToken" name="kpsUnlockToken" value="' . $token . '" />
-                                                <input class="button-primary" type="submit" name="submitUnlock" value="' . esc_html(__('Save', 'kps')) . '" />
+                                                <input class="button-primary" type="submit" name="submitUnlock" value="' . esc_html__('Save', 'kps') . '" />
                                             </td>
                                         </tr>
                                     </tbody>
@@ -337,8 +337,8 @@ Your team
                                         <td colspan="2" class="kps-br"></td>
                                     </tr>
                                     <tr>
-                                        <td><b>' . esc_html(__('General Shorttags', 'kps')) . '</b></td>
-                                        <td><b>' . esc_html(__('Result', 'kps')) . '</b></td>
+                                        <td><b>' . esc_html__('General Shorttags', 'kps') . '</b></td>
+                                        <td><b>' . esc_html__('Result', 'kps') . '</b></td>
                                     </tr>
                                     <tr>
                                         <td>%blogname%</td>
@@ -354,35 +354,35 @@ Your team
                                     </tr>
                                     <tr>
                                         <td>%authorname%</td>
-                                        <td>' . esc_html(__('Author Name', 'kps')) . '</td>
+                                        <td>' . esc_html__('Author Name', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td>%authoremail%</td>
-                                        <td>' . esc_html(__('Author Email', 'kps')) . '</td>
+                                        <td>' . esc_html__('Author Email', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td>%authorcontactdata%</td>
-                                        <td>' . esc_html(__('Author contact details', 'kps')) . '</td>
+                                        <td>' . esc_html__('Author contact details', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td>%entrycontent%</td>
-                                        <td>' . esc_html(__('Entry', 'kps')) . '</td>
+                                        <td>' . esc_html__('Entry', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td>%authorcontactdata%</td>
-                                        <td>' . esc_html(__('Author contact details', 'kps')) . '</td>
+                                        <td>' . esc_html__('Author contact details', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td>%setdate%</td>
-                                        <td>' . $exampleSetTime . "&#160(". esc_html(__('Created', 'kps')) . ')</td>
+                                        <td>' . $exampleSetTime . "&#160(". esc_html__('Created', 'kps') . ')</td>
                                     </tr>
                                     <tr>
                                         <td>%erasedatetime%</td>
-                                        <td>' . $exampleDeleteTime . "&#160(". esc_html(__('Delete Time', 'kps')) . ')</td>
+                                        <td>' . $exampleDeleteTime . "&#160(". esc_html__('Delete Time', 'kps') . ')</td>
                                     </tr>
                                     <tr>
                                         <td>%unlockdatetime%</td>
-                                        <td>' . $exampleUnlockTime . "&#160(". esc_html(__('Released', 'kps')) . ')</td>
+                                        <td>' . $exampleUnlockTime . "&#160(". esc_html__('Released', 'kps') . ')</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -427,47 +427,47 @@ function kps_ContactDataEmail()
             // Fehlermeldungen
             if (empty($setMailSettings['kpsContactDataSubject']))
             {
-                $error[] = esc_html(__('Email subject is missing', 'kps'));
+                $error[] = esc_html__('Email subject is missing', 'kps');
             }
             if (empty($setMailSettings['kpsContactDataContent']))
             {
-                $error[] = esc_html(__('Content is missing', 'kps'));
+                $error[] = esc_html__('Content is missing', 'kps');
             }
             if (strpos($setMailSettings['kpsContactDataContent'], '%authorname%') === false )
             {
-                $error[] = esc_html(__('Shorttag %authorname% missing', 'kps'));
+                $error[] = esc_html__('Shorttag %authorname% missing', 'kps');
             }
             if (strpos($setMailSettings['kpsContactDataContent'], '%authoremail%') === false )
             {
-                $error[] = esc_html(__('Shorttag %authoremail% missing', 'kps'));
+                $error[] = esc_html__('Shorttag %authoremail% missing', 'kps');
             }
             if (strpos($setMailSettings['kpsContactDataContent'], '%authorcontactdata%') === false )
             {
-                $error[] = esc_html(__('Shorttag %authorcontactdata% missing', 'kps'));
+                $error[] = esc_html__('Shorttag %authorcontactdata% missing', 'kps');
             }
             if (strpos($setMailSettings['kpsContactDataContent'], '%linkactivation%') !== false )
             {
-                $error[] = esc_html(__('Shorttag %linkactivation% not allowed', 'kps'));
+                $error[] = esc_html__('Shorttag %linkactivation% not allowed', 'kps');
             }
             if (strpos($setMailSettings['kpsContactDataContent'], '%linkdelete%') !== false )
             {
-                $error[] = esc_html(__('Shorttag %linkdelete% not allowed', 'kps'));
+                $error[] = esc_html__('Shorttag %linkdelete% not allowed', 'kps');
             }
             if (strpos($setMailSettings['kpsContactDataContent'], '%erasepassword%') !== false )
             {
-                $error[] = esc_html(__('Shorttag %erasepassword% not allowed', 'kps'));
+                $error[] = esc_html__('Shorttag %erasepassword% not allowed', 'kps');
             }
             if (strpos($setMailSettings['kpsContactDataContent'], '%linkreg%') !== false )
             {
-                $error[] = esc_html(__('Shorttag %linkreg% not allowed', 'kps'));
+                $error[] = esc_html__('Shorttag %linkreg% not allowed', 'kps');
             }
             if (strpos($setMailSettings['kpsContactDataContent'], '%regpassword%') !== false )
             {
-                $error[] = esc_html(__('Shorttag %regpassword% not allowed', 'kps'));
+                $error[] = esc_html__('Shorttag %regpassword% not allowed', 'kps');
             }
             if (!is_array($setMailSettings))
             {
-                $error[] = esc_html(__('Error validating the data', 'kps'));
+                $error[] = esc_html__('Error validating the data', 'kps');
             }
 
             // Email-Content aktualisieren
@@ -492,7 +492,7 @@ function kps_ContactDataEmail()
                     update_option('kps_userMailSettings', $setMailSettings);
                     echo '
                     <div class="notice notice-success is-dismissible">
-                    	<p><strong>' . esc_html(__('Saved', 'kps')) . ':&#160;' . esc_html(__('Contact details', 'kps')) . '</strong></p>
+                    	<p><strong>' . esc_html__('Saved', 'kps') . ':&#160;' . esc_html__('Contact details', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -503,7 +503,7 @@ function kps_ContactDataEmail()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . esc_html(__('Error serializing the data', 'kps')) . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Error serializing the data', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -517,7 +517,7 @@ function kps_ContactDataEmail()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . $error[$key] . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . $error[$key] . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -530,7 +530,7 @@ function kps_ContactDataEmail()
         {
             echo '
             <div class="notice notice-error is-dismissible">
-            	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . esc_html(__('Token invalid', 'kps')) . '</strong></p>
+            	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
             	<button type="button" class="notice-dismiss">
             		<span class="screen-reader-text">Dismiss this notice.</span>
             	</button>
@@ -544,9 +544,9 @@ function kps_ContactDataEmail()
 
     if ($checkedMailSettings === false )
     {
-        $checkedContactDataSubject = esc_html(__('Contact details', 'kps'));
+        $checkedContactDataSubject = esc_html__('Contact details', 'kps');
         $checkedContactDataContent =
-esc_html(__('You have requested the contact details for the following entry.
+esc_html__('You have requested the contact details for the following entry.
 
 Entry:
 *******************
@@ -566,7 +566,7 @@ Have fun. Bergheil!
 Your team
 %blogname%
 %blogurl%
-%blogemail%', 'kps'));
+%blogemail%', 'kps');
     }
     else
     {
@@ -609,7 +609,7 @@ Your team
                                 <table class="table">
                                     <tbody>
                                         <tr>
-                                            <td><label for="kpsContactDataSubject"><b>' . esc_html(__('Email subject', 'kps')) . '</b></label></td>
+                                            <td><label for="kpsContactDataSubject"><b>' . esc_html__('Email subject', 'kps') . '</b></label></td>
                                         </tr>
                                         <tr>
                                             <td><input type="text" name="kpsContactDataSubject" id="kpsContactDataSubject" autocomplete="off" class="form_field" value="' . $checkedContactDataSubject . '" /></td>
@@ -627,7 +627,7 @@ Your team
                                             <td  style="text-align: center;">
                                                 <input type="hidden" id="kps_tab" name="kps_tab" value="kps_ContactDataEmail" />
                                                 <input type="hidden" id="kpsContactDataToken" name="kpsContactDataToken" value="' . $token . '" />
-                                                <input class="button-primary" type="submit" name="submitContactData" value="' . esc_html(__('Save', 'kps')) . '">
+                                                <input class="button-primary" type="submit" name="submitContactData" value="' . esc_html__('Save', 'kps') . '">
                                             </td>
                                         </tr>
                                     </tbody>
@@ -641,27 +641,27 @@ Your team
                                         <td colspan="2" class="kps-br"></td>
                                     </tr>
                                     <tr>
-                                        <td><b>' . esc_html(__('Duty-Shorttags', 'kps')) . '</td>
-                                        <td><b>' . esc_html(__('Result', 'kps')) . '</b></td>
+                                        <td><b>' . esc_html__('Duty-Shorttags', 'kps') . '</td>
+                                        <td><b>' . esc_html__('Result', 'kps') . '</b></td>
                                     </tr>
                                     <tr>
                                         <td>%authorname%</td>
-                                        <td>' . esc_html(__('Author Name', 'kps')) . '</td>
+                                        <td>' . esc_html__('Author Name', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td>%authoremail%</td>
-                                        <td>' . esc_html(__('Author Email', 'kps')) . '</td>
+                                        <td>' . esc_html__('Author Email', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td>%authorcontactdata%</td>
-                                        <td>' . esc_html(__('Author contact details', 'kps')) . '</td>
+                                        <td>' . esc_html__('Author contact details', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" class="kps-br"></td>
                                     </tr>
                                     <tr>
-                                        <td><b>' . esc_html(__('General Shorttags', 'kps')) . '</b></td>
-                                        <td><b>' . esc_html(__('Result', 'kps')) . '</b></td>
+                                        <td><b>' . esc_html__('General Shorttags', 'kps') . '</b></td>
+                                        <td><b>' . esc_html__('Result', 'kps') . '</b></td>
                                     </tr>
                                     <tr>
                                         <td>%blogname%</td>
@@ -677,19 +677,19 @@ Your team
                                     </tr>
                                     <tr>
                                         <td>%entrycontent%</td>
-                                        <td>' . esc_html(__('Entry', 'kps')) . '</td>
+                                        <td>' . esc_html__('Entry', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td>%setdate%</td>
-                                        <td>' . $exampleSetTime . "&#160(". esc_html(__('Created', 'kps')) . ')</td>
+                                        <td>' . $exampleSetTime . "&#160(". esc_html__('Created', 'kps') . ')</td>
                                     </tr>
                                     <tr>
                                         <td>%erasedatetime%</td>
-                                        <td>' . $exampleDeleteTime . "&#160(". esc_html(__('Delete Time', 'kps')) . ')</td>
+                                        <td>' . $exampleDeleteTime . "&#160(". esc_html__('Delete Time', 'kps') . ')</td>
                                     </tr>
                                     <tr>
                                         <td>%unlockdatetime%</td>
-                                        <td>' . $exampleUnlockTime . "&#160(". esc_html(__('Released', 'kps')) . ')</td>
+                                        <td>' . $exampleUnlockTime . "&#160(". esc_html__('Released', 'kps') . ')</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -734,47 +734,47 @@ function kps_VerificationEmail()
             // Fehlermeldungen
             if (empty($setMailSettings['kpsVerifictionSubject']))
             {
-                $error[] = esc_html(__('Email subject is missing', 'kps'));
+                $error[] = esc_html__('Email subject is missing', 'kps');
             }
             if (empty($setMailSettings['kpsVerifictionContent']))
             {
-                $error[] = esc_html(__('Content is missing', 'kps'));
+                $error[] = esc_html__('Content is missing', 'kps');
             }
             if (strpos($setMailSettings['kpsContactDataContent'], '%authorname%') !== false )
             {
-                $error[] = esc_html(__('Shorttag %authorname% not allowed', 'kps'));
+                $error[] = esc_html__('Shorttag %authorname% not allowed', 'kps');
             }
             if (strpos($setMailSettings['kpsContactDataContent'], '%authoremail%') !== false )
             {
-                $error[] = esc_html(__('Shorttag %authoremail% nicht not allowed', 'kps'));
+                $error[] = esc_html__('Shorttag %authoremail% nicht not allowed', 'kps');
             }
             if (strpos($setMailSettings['kpsVerifictionContent'], '%authorcontactdata%') !== false )
             {
-                $error[] = esc_html(__('Shorttag %authorcontactdata% not allowed', 'kps'));
+                $error[] = esc_html__('Shorttag %authorcontactdata% not allowed', 'kps');
             }
             if (strpos($setMailSettings['kpsVerifictionContent'], '%linkactivation%') !== false )
             {
-                $error[] = esc_html(__('Shorttag %linkactivation% not allowed', 'kps'));
+                $error[] = esc_html__('Shorttag %linkactivation% not allowed', 'kps');
             }
             if (strpos($setMailSettings['kpsVerifictionContent'], '%linkdelete%') !== false )
             {
-                $error[] = esc_html(__('Shorttag %linkdelete% not allowed', 'kps'));
+                $error[] = esc_html__('Shorttag %linkdelete% not allowed', 'kps');
             }
             if (strpos($setMailSettings['kpsVerifictionContent'], '%erasepassword%') !== false )
             {
-                $error[] = esc_html(__('Shorttag %erasepassword% not allowed', 'kps'));
+                $error[] = esc_html__('Shorttag %erasepassword% not allowed', 'kps');
             }
             if (strpos($setMailSettings['kpsVerifictionContent'], '%linkreg%') === false )
             {
-                $error[] = esc_html(__('Shorttag %linkreg% missing', 'kps'));
+                $error[] = esc_html__('Shorttag %linkreg% missing', 'kps');
             }
             if (strpos($setMailSettings['kpsVerifictionContent'], '%regpassword%') === false )
             {
-                $error[] = esc_html(__('Shorttag %regpassword% missing', 'kps'));
+                $error[] = esc_html__('Shorttag %regpassword% missing', 'kps');
             }
             if (!is_array($setMailSettings))
             {
-                $error[] = esc_html(__('Error validating the data', 'kps'));
+                $error[] = esc_html__('Error validating the data', 'kps');
             }
 
             // Email-Content aktualisieren
@@ -799,7 +799,7 @@ function kps_VerificationEmail()
                     update_option('kps_userMailContactSettings', $setMailSettings);
                     echo '
                     <div class="notice notice-success is-dismissible">
-                    	<p><strong>' . esc_html(__('Saved', 'kps')) . ':&#160;' . esc_html(__('Request contact information', 'kps')) . '</strong></p>
+                    	<p><strong>' . esc_html__('Saved', 'kps') . ':&#160;' . esc_html__('Request contact information', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -810,7 +810,7 @@ function kps_VerificationEmail()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . esc_html(__('Error serializing the data', 'kps')) . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Error serializing the data', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -824,7 +824,7 @@ function kps_VerificationEmail()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . $error[$key] . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . $error[$key] . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -837,7 +837,7 @@ function kps_VerificationEmail()
         {
             echo '
             <div class="notice notice-error is-dismissible">
-            	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . esc_html(__('Token invalid', 'kps')) . '</strong></p>
+            	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
             	<button type="button" class="notice-dismiss">
             		<span class="screen-reader-text">Dismiss this notice.</span>
             	</button>
@@ -851,9 +851,9 @@ function kps_VerificationEmail()
 
     if ($checkedMailSettings === false )
     {
-        $checkedVerifictionSubject = esc_html(__('Request contact information', 'kps'));
+        $checkedVerifictionSubject = esc_html__('Request contact information', 'kps');
         $checkedVerifictionContent =
-esc_html(__('You want the contact details for the following entry.
+esc_html__('You want the contact details for the following entry.
 
 To retrieve the contact information, click on the link and enter the password.
 The request key is valid for 24 hours!
@@ -871,7 +871,7 @@ Many Thanks!
 Your team
 %blogname%
 %blogurl%
-%blogemail%', 'kps'));
+%blogemail%', 'kps');
     }
     else
     {
@@ -914,7 +914,7 @@ Your team
                                 <table class="table">
                                     <tbody>
                                         <tr>
-                                            <td><label for="kpsVerifictionSubject"><b>' . esc_html(__('Email subject', 'kps')) . '</b></label></td>
+                                            <td><label for="kpsVerifictionSubject"><b>' . esc_html__('Email subject', 'kps') . '</b></label></td>
                                         </tr>
                                         <tr>
                                             <td><input type="text" name="kpsVerifictionSubject" id="kpsVerifictionSubject" autocomplete="off" class="form_field" value="' . $checkedVerifictionSubject . '" /></td>
@@ -932,7 +932,7 @@ Your team
                                             <td  style="text-align: center;">
                                                 <input type="hidden" id="kps_tab" name="kps_tab" value="kps_VerificationEmail" />
                                                 <input type="hidden" id="kpsVerifictionToken" name="kpsVerifictionToken" value="' . $token . '" />
-                                                <input class="button-primary" type="submit" name="submitVerifiction" value="' . esc_html(__('Save', 'kps')) . '" />
+                                                <input class="button-primary" type="submit" name="submitVerifiction" value="' . esc_html__('Save', 'kps') . '" />
                                             </td>
                                         </tr>
                                     </tbody>
@@ -946,23 +946,23 @@ Your team
                                         <td colspan="2" class="kps-br"></td>
                                     </tr>
                                     <tr>
-                                        <td><b>' . esc_html(__('Duty-Shorttags', 'kps')) . '</td>
-                                        <td><b>' . esc_html(__('Result', 'kps')) . '</b></td>
+                                        <td><b>' . esc_html__('Duty-Shorttags', 'kps') . '</td>
+                                        <td><b>' . esc_html__('Result', 'kps') . '</b></td>
                                     </tr>
                                     <tr>
                                         <td>%linkreg%</td>
-                                        <td>' . esc_html(__('Requirement-Link', 'kps')) . '</td>
+                                        <td>' . esc_html__('Requirement-Link', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td>%regpassword%</td>
-                                        <td>' . esc_html(__('Password', 'kps')) . '</td>
+                                        <td>' . esc_html__('Password', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" class="kps-br"></td>
                                     </tr>
                                     <tr>
-                                        <td><b>' . esc_html(__('General Shorttags', 'kps')) . '</b></td>
-                                        <td><b>' . esc_html(__('Result', 'kps')) . '</b></td>
+                                        <td><b>' . esc_html__('General Shorttags', 'kps') . '</b></td>
+                                        <td><b>' . esc_html__('Result', 'kps') . '</b></td>
                                     </tr>
                                     <tr>
                                         <td>%blogname%</td>
@@ -978,19 +978,19 @@ Your team
                                     </tr>
                                     <tr>
                                         <td>%entrycontent%</td>
-                                        <td>' . esc_html(__('Entry', 'kps')) . '</td>
+                                        <td>' . esc_html__('Entry', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td>%setdate%</td>
-                                        <td>' . $exampleSetTime . "&#160(". esc_html(__('Created', 'kps')) . ')</td>
+                                        <td>' . $exampleSetTime . "&#160(". esc_html__('Created', 'kps') . ')</td>
                                     </tr>
                                     <tr>
                                         <td>%erasedatetime%</td>
-                                        <td>' . $exampleDeleteTime . "&#160(". esc_html(__('Delete Time', 'kps')) . ')</td>
+                                        <td>' . $exampleDeleteTime . "&#160(". esc_html__('Delete Time', 'kps') . ')</td>
                                     </tr>
                                     <tr>
                                         <td>%unlockdatetime%</td>
-                                        <td>' . $exampleUnlockTime . "&#160(". esc_html(__('Released', 'kps')) . ')</td>
+                                        <td>' . $exampleUnlockTime . "&#160(". esc_html__('Released', 'kps') . ')</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1035,35 +1035,35 @@ function kps_ActivationEmail()
             // Fehlermeldungen
             if (empty($setMailSettings['kpsActivationSubject']))
             {
-                $error[] = esc_html(__('Email subject is missing', 'kps'));
+                $error[] = esc_html__('Email subject is missing', 'kps');
             }
             if (empty($setMailSettings['kpsActivationContent']))
             {
-                $error[] = esc_html(__('Content is missing', 'kps'));
+                $error[] = esc_html__('Content is missing', 'kps');
             }
             if (strpos($setMailSettings['kpsActivationContent'], '%linkactivation%') === false )
             {
-                $error[] = esc_html(__('Shorttag %linkactivation% missing', 'kps'));
+                $error[] = esc_html__('Shorttag %linkactivation% missing', 'kps');
             }
             if (strpos($setMailSettings['kpsActivationContent'], '%linkdelete%') === false )
             {
-                $error[] = esc_html(__('Shorttag %linkdelete% missing', 'kps'));
+                $error[] = esc_html__('Shorttag %linkdelete% missing', 'kps');
             }
             if (strpos($setMailSettings['kpsActivationContent'], '%erasepassword%') === false )
             {
-                $error[] = esc_html(__('Shorttag %erasepassword% missing', 'kps'));
+                $error[] = esc_html__('Shorttag %erasepassword% missing', 'kps');
             }
             if (strpos($setMailSettings['kpsActivationContent'], '%linkreg%') !== false )
             {
-                $error[] = esc_html(__('Shorttag %linkreg% not allowed', 'kps'));
+                $error[] = esc_html__('Shorttag %linkreg% not allowed', 'kps');
             }
             if (strpos($setMailSettings['kpsActivationContent'], '%regpassword%') !== false )
             {
-                $error[] = esc_html(__('Shorttag %regpassword% not allowed', 'kps'));
+                $error[] = esc_html__('Shorttag %regpassword% not allowed', 'kps');
             }
             if (!is_array($setMailSettings))
             {
-                $error[] = esc_html(__('Error validating the data', 'kps'));
+                $error[] = esc_html__('Error validating the data', 'kps');
             }
 
             // Email-Content aktualisieren
@@ -1085,7 +1085,7 @@ function kps_ActivationEmail()
                     update_option('kps_authorMailSettings', $setMailSettings);
                     echo '
                     <div class="notice notice-success is-dismissible">
-                    	<p><strong>' . esc_html(__('Saved', 'kps')) . ':&#160;' . esc_html(__('Activation', 'kps')) . '</strong></p>
+                    	<p><strong>' . esc_html__('Saved', 'kps') . ':&#160;' . esc_html__('Activation', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -1096,7 +1096,7 @@ function kps_ActivationEmail()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . esc_html(__('Error serializing the data', 'kps')) . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Error serializing the data', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -1110,7 +1110,7 @@ function kps_ActivationEmail()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . $error[$key] . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . $error[$key] . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -1123,7 +1123,7 @@ function kps_ActivationEmail()
         {
             echo '
             <div class="notice notice-error is-dismissible">
-            	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . esc_html(__('Token invalid', 'kps')) . '</strong></p>
+            	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
             	<button type="button" class="notice-dismiss">
             		<span class="screen-reader-text">Dismiss this notice.</span>
             	</button>
@@ -1137,9 +1137,9 @@ function kps_ActivationEmail()
 
     if ($checkedMailSettings === false )
     {
-        $checkedActivationSubject   = esc_html(__('Activation', 'kps'));
+        $checkedActivationSubject   = esc_html__('Activation', 'kps');
         $checkedActivationContent   =
-esc_html(__('You have just posted a new entry on %blogname%.
+esc_html__('You have just posted a new entry on %blogname%.
 
 To be able to publish it, you have to confirm it via the link
 below and enter your email address. If you do not release this
@@ -1173,7 +1173,7 @@ Many Thanks!
 Your team
 %blogname%
 %blogurl%
-%blogemail%', 'kps'));
+%blogemail%', 'kps');
     }
     else
     {
@@ -1216,7 +1216,7 @@ Your team
                                 <table class="table">
                                     <tbody>
                                         <tr>
-                                            <td><label for="kpsActivationSubject"><b>' . esc_html(__('Email subject', 'kps')) . '</b></label></td>
+                                            <td><label for="kpsActivationSubject"><b>' . esc_html__('Email subject', 'kps') . '</b></label></td>
                                         </tr>
                                         <tr>
                                             <td><input type="text" name="kpsActivationSubject" id="kpsActivationSubject" autocomplete="off" class="form_field" value="' . $checkedActivationSubject . '" /></td>
@@ -1234,7 +1234,7 @@ Your team
                                             <td style="text-align: center;">
                                                 <input type="hidden" id="kps_tab" name="kps_tab" value="kps_ActivationEmail" />
                                                 <input type="hidden" id="kpsActivationToken" name="kpsActivationToken" value="' . $token . '" />
-                                                <input class="button-primary" type="submit" name="submitActivation" value="' . esc_html(__('Save', 'kps')) . '" />
+                                                <input class="button-primary" type="submit" name="submitActivation" value="' . esc_html__('Save', 'kps') . '" />
                                             </td>
                                         </tr>
                                     </tbody>
@@ -1248,27 +1248,27 @@ Your team
                                         <td colspan="2" class="kps-br"></td>
                                     </tr>
                                     <tr>
-                                        <td><b>' . esc_html(__('Duty-Shorttags', 'kps')) . '</b></td>
-                                        <td><b>' . esc_html(__('Result', 'kps')) . '</b></td>
+                                        <td><b>' . esc_html__('Duty-Shorttags', 'kps') . '</b></td>
+                                        <td><b>' . esc_html__('Result', 'kps') . '</b></td>
                                     </tr>
                                     <tr>
                                         <td>%linkactivation%</td>
-                                        <td>' . esc_html(__('Activation-Link', 'kps')) . '</td>
+                                        <td>' . esc_html__('Activation-Link', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td>%linkdelete%</td>
-                                        <td>' . esc_html(__('Delete-Link', 'kps')) . '</td>
+                                        <td>' . esc_html__('Delete-Link', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td>%erasepassword%</td>
-                                        <td>' . esc_html(__('Password', 'kps')) . '</td>
+                                        <td>' . esc_html__('Password', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" class="kps-br"></td>
                                     </tr>
                                     <tr>
-                                        <td><b>' . esc_html(__('General Shorttags', 'kps')) . '</b></td>
-                                        <td><b>' . esc_html(__('Result', 'kps')) . '</b></td>
+                                        <td><b>' . esc_html__('General Shorttags', 'kps') . '</b></td>
+                                        <td><b>' . esc_html__('Result', 'kps') . '</b></td>
                                     </tr>
                                     <tr>
                                         <td>%blogname%</td>
@@ -1284,31 +1284,31 @@ Your team
                                     </tr>
                                     <tr>
                                         <td>%authorname%</td>
-                                        <td>' . esc_html(__('Author Name', 'kps')) . '</td>
+                                        <td>' . esc_html__('Author Name', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td>%authoremail%</td>
-                                        <td>' . esc_html(__('Author Email', 'kps')) . '</td>
+                                        <td>' . esc_html__('Author Email', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td>%authorcontactdata%</td>
-                                        <td>' . esc_html(__('Author contact details', 'kps')) . '</td>
+                                        <td>' . esc_html__('Author contact details', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td>%entrycontent%</td>
-                                        <td>' . esc_html(__('Entry', 'kps')) . '</td>
+                                        <td>' . esc_html__('Entry', 'kps') . '</td>
                                     </tr>
                                     <tr>
                                         <td>%setdate%</td>
-                                        <td>' . $exampleSetTime . "&#160(". esc_html(__('Created', 'kps')) . ')</td>
+                                        <td>' . $exampleSetTime . "&#160(". esc_html__('Created', 'kps') . ')</td>
                                     </tr>
                                     <tr>
                                         <td>%erasedatetime%</td>
-                                        <td>' . $exampleDeleteTime . "&#160(". esc_html(__('Delete Time', 'kps')) . ')</td>
+                                        <td>' . $exampleDeleteTime . "&#160(". esc_html__('Delete Time', 'kps') . ')</td>
                                     </tr>
                                     <tr>
                                         <td>%unlockdatetime%</td>
-                                        <td>' . $exampleUnlockTime . "&#160(". esc_html(__('Released', 'kps')) . ')</td>
+                                        <td>' . $exampleUnlockTime . "&#160(". esc_html__('Released', 'kps') . ')</td>
                                     </tr>
                                 </tbody>
                             </table>

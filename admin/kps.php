@@ -47,7 +47,7 @@ function kps_welcome() {
     // Zugriffsrechte prüfen
     if (function_exists('current_user_can') && !current_user_can('moderate_comments'))
     {
-        die(esc_html(__('Access denied!', 'kps')));
+        die(esc_html__('Access denied!', 'kps'));
     }
 
     // Javascript einladen
@@ -57,19 +57,19 @@ function kps_welcome() {
     if ( !function_exists( 'mail' ) ) {
         // Email-Funktion deaktiviert
         $noMailinPhpDetect = true;
-        add_meta_box( 'kps_adminNoMailInPhp', esc_html(__('Error! Mail()-Function!', 'kps')), 'kps_admin_overview_nomailinphp', 'kps_welcome', 'left' );
+        add_meta_box( 'kps_adminNoMailInPhp', esc_html__('Error! Mail()-Function!', 'kps'), 'kps_admin_overview_nomailinphp', 'kps_welcome', 'left' );
     }
-    add_meta_box( 'kps_adminEntries', esc_html(__('Overview', 'kps')), 'kps_admin_overview_entries', 'kps_welcome', 'left' );
-    add_meta_box( 'kps_adminSettings', esc_html(__('Settings-Overview (short)', 'kps')), 'kps_admin_overview_setting', 'kps_welcome', 'left' );
-    add_meta_box( 'kps_adminCopyright', esc_html(__('Copyright', 'kps')), 'kps_admin_overview_copyright', 'kps_welcome', 'left' );
-    add_meta_box( 'kps_adminManuel', esc_html(__('Manual', 'kps')), 'kps_admin_overview_manuel', 'kps_welcome', 'normal' );
-    add_meta_box( 'kps_adminProoved', esc_html(__('Checked', 'kps')), 'kps_admin_overview_prooved', 'kps_welcome', 'normal' );
-    add_meta_box( 'kps_adminStatistics', esc_html(__('Statistics', 'kps')), 'kps_admin_overview_statistics', 'kps_welcome', 'right' );
+    add_meta_box( 'kps_adminEntries', esc_html__('Overview', 'kps'), 'kps_admin_overview_entries', 'kps_welcome', 'left' );
+    add_meta_box( 'kps_adminSettings', esc_html__('Settings-Overview (short)', 'kps'), 'kps_admin_overview_setting', 'kps_welcome', 'left' );
+    add_meta_box( 'kps_adminCopyright', esc_html__('Copyright', 'kps'), 'kps_admin_overview_copyright', 'kps_welcome', 'left' );
+    add_meta_box( 'kps_adminManuel', esc_html__('Manual', 'kps'), 'kps_admin_overview_manuel', 'kps_welcome', 'normal' );
+    add_meta_box( 'kps_adminProoved', esc_html__('Checked', 'kps'), 'kps_admin_overview_prooved', 'kps_welcome', 'normal' );
+    add_meta_box( 'kps_adminStatistics', esc_html__('Statistics', 'kps'), 'kps_admin_overview_statistics', 'kps_welcome', 'right' );
 ?>
       <div id="kps" class="wrap kps">
             <div>
                 <h3>
-                    <?php echo esc_html(__('Climbing-Partner-Search', 'kps')); ?> - <?php  echo esc_html(__('Overview', 'kps')); ?>
+                    <?php echo esc_html__('Climbing-Partner-Search', 'kps'); ?> - <?php  echo esc_html__('Overview', 'kps'); ?>
               </h3>
             </div>
 
@@ -91,9 +91,9 @@ function kps_welcome() {
 function kps_admin_overview_nomailinphp() {
     echo '
             <div><font color="red"><b>' .
-esc_html(__('The function mail () is used to send emails and is not active in your PHP configuration.
+esc_html__('The function mail () is used to send emails and is not active in your PHP configuration.
 You can install a Wordpress plugin that uses SMTP instead of the mail () function, or you can contact your provider,
-that he unlocks this feature.', 'kps')) .
+that he unlocks this feature.', 'kps') .
             '<b></font></div>
         ';
 }
@@ -170,70 +170,70 @@ function kps_admin_overview_setting() {
                 <table class="table">
                     <tbody>
                         <tr class="' . $errorAGBpage . '">
-                            <td>' . esc_html(__('GTC', 'kps')) . '</td>
+                            <td>' . esc_html__('GTC', 'kps') . '</td>
                             <td><span>' . $isUserPrivacyAGB . '</span></td>
                         </tr>
                         <tr class="' . $errorDSGVOpage . '">
-                            <td>' . esc_html(__('GDPR', 'kps')) . '</td>
+                            <td>' . esc_html__('GDPR', 'kps') . '</td>
                             <td><span>' . $isUserPrivacyDSGVO . '</span></td>
                         </tr>
                         <tr>
                             <td colspan="2" class="hr"></td>
                         </tr>
                         <tr>
-                            <td>' . esc_html(__('Released entries', 'kps')) . '</td>
+                            <td>' . esc_html__('Released entries', 'kps') . '</td>
                             <td><b>' . $delete_entry_time . '</b> ' . esc_html(_n('delete day', 'delete days', get_option('kps_formWordCount', false) , 'kps')) . '</td>
                         </tr>
                         <tr>
-                            <td>' . esc_html(__('Waiting entries', 'kps')) . '</td>
+                            <td>' . esc_html__('Waiting entries', 'kps') . '</td>
                             <td><b>' . $delete_noentry_time . '</b> ' . esc_html(_n('delete day', 'delete days', get_option('kps_formWordCount', false) , 'kps')) . '</td>
                         </tr>
                         <tr>
-                            <td>' . esc_html(__('Form textarea', 'kps')) . '</td>
+                            <td>' . esc_html__('Form textarea', 'kps') . '</td>
                             <td><b>' . get_option('kps_formWordCount', false) . '</b> ' . esc_html(_n('word', 'words', get_option('kps_formWordCount', false) , 'kps')) . '</td>
                         </tr>
                         <tr>
                             <td colspan="2" class="hr"></td>
                         </tr>
                         <tr>
-                            <td>' . esc_html(__('Automatic-Lock after', 'kps')) . '</td>
+                            <td>' . esc_html__('Automatic-Lock after', 'kps') . '</td>
                             <td><b>' . $adminSendReportAfter . '</b> ' . esc_html(_n('report', 'reports', $adminSendReportAfter , 'kps')) . '</td>
                         </tr>
                         <tr>
-                            <td>' . esc_html(__('Lock active', 'kps')) . '</td>
+                            <td>' . esc_html__('Lock active', 'kps') . '</td>
                             <td><b>' . $reportIsActivated . '</b></td>
                         </tr>
                         <tr>
                             <td colspan="2" class="hr"></td>
                         </tr>
                         <tr>
-                            <td>' . esc_html(__('Email', 'kps')) . '</td>
+                            <td>' . esc_html__('Email', 'kps') . '</td>
                             <td><b>' . get_option('kps_mailFrom', false) . '</b></td>
                         </tr>
                         <tr>
-                            <td>' . esc_html(__('Email copy', 'kps')) . '</td>
+                            <td>' . esc_html__('Email copy', 'kps') . '</td>
                             <td><b>' . esc_attr($emailCC['kpsEmailCC']) . '</b></td>
                         </tr>
                         <tr>
-                            <td>' . esc_html(__('Report-Email', 'kps')) . '</td>
+                            <td>' . esc_html__('Report-Email', 'kps') . '</td>
                             <td><b>' . esc_attr($emailCC['kpsEmailReport']) . '</b></td>
                         </tr>
                         <tr>
                             <td colspan="2" class="hr"></td>
                         </tr>
                         <tr>
-                            <td>' . esc_html(__('Backend', 'kps')) . '</td>
+                            <td>' . esc_html__('Backend', 'kps') . '</td>
                             <td><b>' . get_option('kps_backendPagination', false) . '</b> ' . esc_html(_n('entry per page', 'entries per page', get_option('kps_backendPagination', false) , 'kps')) . '</td>
                         </tr>
                         <tr>
-                            <td>' . esc_html(__('Frontend', 'kps')) . '</td>
+                            <td>' . esc_html__('Frontend', 'kps') . '</td>
                             <td><b>' . get_option('kps_frontendPagination', false) . '</b> ' . esc_html(_n('entry per page', 'entries per page', get_option('kps_frontendPagination', false) , 'kps')) . '</td>
                         </tr>
                         <tr>
                             <td colspan="2" class="hr"></td>
                         </tr>
                         <tr class="' . $errorCaptcha . '">
-                            <td>' . esc_html(__('Google reCaptcha', 'kps')) . '</td>
+                            <td>' . esc_html__('Google reCaptcha', 'kps') . '</td>
                             <td><span>' . $isCaptchaActivated . '</span></td>
                         </tr>
                     </tbody>
@@ -263,23 +263,23 @@ function kps_admin_overview_statistics() {
                 <table class="table">
                     <tbody>
                         <tr>
-                            <td><b>' . esc_html(__('Submitted searches', 'kps')) . '</b></td>
+                            <td><b>' . esc_html__('Submitted searches', 'kps') . '</b></td>
                             <td>' . $kpsCounterAllEntrys . ' ' . esc_html(_n('Entry', 'Entries', $kpsCounterAllEntrys, 'kps')) . '</td>
                         </tr>
                         <tr>
-                            <td><b>' . esc_html(__('Activated entries', 'kps')) . '</b></td>
+                            <td><b>' . esc_html__('Activated entries', 'kps') . '</b></td>
                             <td>' . $kpsCounterActivatedEntrys . ' ' . esc_html(_n('Activation', 'Activations', $kpsCounterActivatedEntrys, 'kps')) . '</td>
                         </tr>
                         <tr>
-                            <td><b>' . esc_html(__('Reqirement contact details', 'kps')) . '</b></td>
+                            <td><b>' . esc_html__('Reqirement contact details', 'kps') . '</b></td>
                             <td>' . $kpsCounterVerfifications . ' ' . esc_html(_n('Verification', 'Verifications', $kpsCounterVerfifications, 'kps')) . '</td>
                         </tr>
                         <tr>
-                            <td><b>' . esc_html(__('Sent contact information', 'kps')) . '</b></td>
+                            <td><b>' . esc_html__('Sent contact information', 'kps') . '</b></td>
                             <td>' . $kpsCounterSendRequirements . ' ' . esc_html(_n('Request', 'Requests', $kpsCounterSendRequirements, 'kps')) . '</td>
                         </tr>
                         <tr>
-                            <td><b>' . esc_html(__('Manually deleted entries', 'kps')) . '</b></td>
+                            <td><b>' . esc_html__('Manually deleted entries', 'kps') . '</b></td>
                             <td>' . $kpsCounterDeleteEntrys . ' ' . esc_html(_n('Entry', 'Entries', $kpsCounterDeleteEntrys, 'kps')) . '</td>
                         </tr>
                     </tbody>
@@ -315,11 +315,11 @@ function kps_admin_overview_entries() {
                                 FROM " . KPS_TABLE_ENTRIES, OBJECT );
 
     // Übersetzung Single, Plural, Null
-    $translationAllEntries        = ( $countAction->allEntries != 0 ) ? esc_html(_n('open entry', 'open entries', $countAction->allEntries, 'kps')) : esc_html(__('open entries', 'kps'));
-    $translationIsLocked          = ( $countAction->isLocked != 0 ) ? esc_html(_n('entry blocked by author', 'entries blocked by author', $countAction->isLocked, 'kps')) : esc_html(__('entries blocked by author', 'kps'));
-    $translationIsUnlock          = ( $countAction->isUnLocked != 0 ) ? esc_html(_n('entry released by author', 'entries released by author', $countAction->isUnLocked, 'kps')) : esc_html(__('entries released by author', 'kps'));
-    $translationIsLockedByAdmin   = ( $countAction->isLockedByAdmin != 0 ) ? esc_html(_n('entry blocked by admin', 'entries blocked by admin', $countAction->isLockedByAdmin, 'kps')) : esc_html(__('entries blocked by admin', 'kps' ));
-    $translationIsUnLockedByAdmin = ( $countAction->isUnLockedByAdmin != 0 ) ? esc_html(_n('entry released by admin', 'entries released by admin', $countAction->isUnLockedByAdmin, 'kps')) : esc_html(__('entries released by admin', 'kps' ));
+    $translationAllEntries        = ( $countAction->allEntries != 0 ) ? esc_html(_n('open entry', 'open entries', $countAction->allEntries, 'kps')) : esc_html__('open entries', 'kps');
+    $translationIsLocked          = ( $countAction->isLocked != 0 ) ? esc_html(_n('entry blocked by author', 'entries blocked by author', $countAction->isLocked, 'kps')) : esc_html__('entries blocked by author', 'kps');
+    $translationIsUnlock          = ( $countAction->isUnLocked != 0 ) ? esc_html(_n('entry released by author', 'entries released by author', $countAction->isUnLocked, 'kps')) : esc_html__('entries released by author', 'kps');
+    $translationIsLockedByAdmin   = ( $countAction->isLockedByAdmin != 0 ) ? esc_html(_n('entry blocked by admin', 'entries blocked by admin', $countAction->isLockedByAdmin, 'kps')) : esc_html__('entries blocked by admin', 'kps');
+    $translationIsUnLockedByAdmin = ( $countAction->isUnLockedByAdmin != 0 ) ? esc_html(_n('entry released by admin', 'entries released by admin', $countAction->isUnLockedByAdmin, 'kps')) : esc_html__('entries released by admin', 'kps');
 
     echo '
             <div>
@@ -365,20 +365,20 @@ function kps_admin_overview_manuel() {
                 <table class="table">
                     <tbody>
                         <tr>
-                            <td>' . esc_html(__('So easy to implement via shortcut', 'kps')) . '!</td>
+                            <td>' . esc_html__('So easy to implement via shortcut', 'kps') . '!</td>
                         </tr>
                         <tr>
                             <td>
                                 <ul class="ul-square">
-                                    <li>' . esc_html(__('Create a new page', 'kps' )) . '</li>
-                                    <li>' . esc_html(__('Give the page a name', 'kps' )) . '</li>
-                                    <li>' . esc_html(__('Write in the page context', 'kps')) . ' <input type="text" name="kps-shortcode" size="15" readonly="readonly" value="[kps-shortcode]" id="kps-shortcode" /></li>
-                                    <li>' . esc_html(__('Publish this page', 'kps')) . '</li>
-                                    <li>' . esc_html(__('Go to the main menu under Design -> Menus and add a page to a menu', 'kps')) . '</li>
+                                    <li>' . esc_html__('Create a new page', 'kps') . '</li>
+                                    <li>' . esc_html__('Give the page a name', 'kps') . '</li>
+                                    <li>' . esc_html__('Write in the page context', 'kps') . ' <input type="text" name="kps-shortcode" size="15" readonly="readonly" value="[kps-shortcode]" id="kps-shortcode" /></li>
+                                    <li>' . esc_html__('Publish this page', 'kps') . '</li>
+                                    <li>' . esc_html__('Go to the main menu under Design -> Menus and add a page to a menu', 'kps') . '</li>
                                     <ul class="ul-square">
-                                        <li>' . esc_html(__('Alternatively, you can create a new menu and add the page there', 'kps')) . '</li>
+                                        <li>' . esc_html__('Alternatively, you can create a new menu and add the page there', 'kps') . '</li>
                                     </ul>
-                                    <li>' . esc_html(__('Save, Publish and Done!', 'kps')) . '</li>
+                                    <li>' . esc_html__('Save, Publish and Done!', 'kps') . '</li>
                                 </ul>
                             </td>
                         </tr>
@@ -386,7 +386,7 @@ function kps_admin_overview_manuel() {
                             <td class="hr"></td>
                         </tr>
                         <tr>
-                            <td>' . esc_html(__('Of course, you can also implement the shortcode in a post.', 'kps')) . '</td>
+                            <td>' . esc_html__('Of course, you can also implement the shortcode in a post.', 'kps') . '</td>
                         </tr>
                     </tbody>
                 </table>
@@ -404,37 +404,37 @@ function kps_admin_overview_copyright() {
                 <table class="table">
                     <tbody>
                         <tr>
-                            <td><i class="fas fa-medkit"></i>&#160;' . esc_html(__('Support', 'kps')) . '</td>
-                            <td><a href="https://wordpress.org/support/plugin/kletterpartner-suche" target="_blank">' . esc_html(__('Support-Forum', 'kps')) . '</a></td>
+                            <td><i class="fas fa-medkit"></i>&#160;' . esc_html__('Support', 'kps') . '</td>
+                            <td><a href="https://wordpress.org/support/plugin/kletterpartner-suche" target="_blank">' . esc_html__('Support-Forum', 'kps') . '</a></td>
                         </tr>
                         <tr>
-                            <td><i class="fab fa-github"></i>&#160;' . esc_html(__('GitHub', 'kps')) . '</td>
-                            <td><a href="https://github.com/Nirus2000/Kletterpartnersuche" target="_blank">' . esc_html(__('GitHub', 'kps')) . '</a></td>
+                            <td><i class="fab fa-github"></i>&#160;' . esc_html__('GitHub', 'kps') . '</td>
+                            <td><a href="https://github.com/Nirus2000/Kletterpartnersuche" target="_blank">' . esc_html__('GitHub', 'kps') . '</a></td>
                         </tr>
                         <tr>
                             <td colspan="2" class="hr"></td>
                         </tr>
                         <tr>
-                            <td><i class="fas fa-code-branch"></i>&#160;' . esc_html(__('Version', 'kps')) . '</td>
+                            <td><i class="fas fa-code-branch"></i>&#160;' . esc_html__('Version', 'kps') . '</td>
                             <td>' . get_option('kps_version') . '</td>
                         </tr>
                         <tr>
-                            <td><i class="far fa-copyright"></i>&#160;' . esc_html(__('Copyright', 'kps')) . '</td>
+                            <td><i class="far fa-copyright"></i>&#160;' . esc_html__('Copyright', 'kps') . '</td>
                             <td>Alexander Ott</td>
                         </tr>
                         <tr>
                             <td colspan="2" class="hr"></td>
                         </tr>
                         <tr>
-                            <td><i class="far fa-user"></i>&#160;' . esc_html(__('SBB-Membership-Number', 'kps')) . '</td>
+                            <td><i class="far fa-user"></i>&#160;' . esc_html__('SBB-Membership-Number', 'kps') . '</td>
                             <td>320/00/245813</td>
                         </tr>
                         <tr>
-                            <td><i class="far fa-envelope"></i>&#160;' . esc_html(__('Email', 'kps')) . '</td>
+                            <td><i class="far fa-envelope"></i>&#160;' . esc_html__('Email', 'kps') . '</td>
                             <td>kps@nirus-online.de</td>
                         </tr>
                         <tr>
-                            <td><i class="fas fa-globe"></i>&#160;' . esc_html(__('Internet', 'kps')) . '</td>
+                            <td><i class="fas fa-globe"></i>&#160;' . esc_html__('Internet', 'kps') . '</td>
                             <td>http://www.nirus-online.de</td>
                         </tr>
                     </tbody>
@@ -452,18 +452,18 @@ function kps_admin_overview_prooved( ) {
                 <table class="table">
                     <tbody>
                         <tr>
-                            <td><img src="' . KPS_RELATIV . "/admin/gfx/html5.png" . '" alt="' . esc_html(__('HTML5', 'kps')) . '" title="' . esc_html(__('HTML5', 'kps')) . '"/></td>
-                            <td><img src="' . KPS_RELATIV . "/admin/gfx/valid-html401-blue.png" . '" alt="' . esc_html(__('W3C401', 'kps')) . '" title="' . esc_html(__('W3C401', 'kps')) . '"/></td>
+                            <td><img src="' . KPS_RELATIV_ADMIN . "/gfx/html5.png" . '" alt="' . esc_html__('HTML5', 'kps') . '" title="' . esc_html__('HTML5', 'kps') . '"/></td>
+                            <td><img src="' . KPS_RELATIV_ADMIN . "/gfx/valid-html401-blue.png" . '" alt="' . esc_html__('W3C401', 'kps') . '" title="' . esc_html__('W3C401', 'kps') . '"/></td>
                         </tr>
                         <tr>
-                            <td><img src="' . KPS_RELATIV . "/admin/gfx/mysql.png" . '" alt="' . esc_html(__('Mysql', 'kps')) . '" title="' . esc_html(__('Mysql', 'kps')) . '"/></td>
-                            <td><img src="' . KPS_RELATIV . "/admin/gfx/php7.png" . '" alt="' . esc_html(__('PHP', 'kps')) . '" title="' . esc_html(__('PHP', 'kps')) . '"/></td>
+                            <td><img src="' . KPS_RELATIV_ADMIN . "/gfx/mysql.png" . '" alt="' . esc_html__('Mysql', 'kps') . '" title="' . esc_html__('Mysql', 'kps') . '"/></td>
+                            <td><img src="' . KPS_RELATIV_ADMIN . "/gfx/php7.png" . '" alt="' . esc_html__('PHP', 'kps') . '" title="' . esc_html__('PHP', 'kps') . '"/></td>
                         </tr>
                         <tr>
-                            <td colspan="2"><img src="' . KPS_RELATIV . "/admin/gfx/jquery.png" . '" alt="' . esc_html(__('JQuery', 'kps')) . '" title="' . esc_html(__('JQuery', 'kps')) . '"/></td>
+                            <td colspan="2"><img src="' . KPS_RELATIV_ADMIN . "/gfx/jquery.png" . '" alt="' . esc_html__('JQuery', 'kps') . '" title="' . esc_html__('JQuery', 'kps') . '"/></td>
                         </tr>
                         <tr>
-                            <td colspan="2"><img src="' . KPS_RELATIV . "/admin/gfx/invisible_badge.png" . '" alt="' . esc_html(__('Google reCaptcha', 'kps')) . '" title="' . esc_html(__('Google reCaptcha', 'kps')) . '"/></td>
+                            <td colspan="2"><img src="' . KPS_RELATIV_ADMIN . "/gfx/invisible_badge.png" . '" alt="' . esc_html__('Google reCaptcha', 'kps') . '" title="' . esc_html__('Google reCaptcha', 'kps') . '"/></td>
                         </tr>
                     </tbody>
                 </table>

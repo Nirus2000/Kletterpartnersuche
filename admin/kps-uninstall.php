@@ -49,14 +49,14 @@ function kps_uninstall()
     // Zugriffsrechte prüfen
     if (function_exists('current_user_can') && !current_user_can('administrator'))
     {
-        die(esc_html(__('Access denied!', 'kps')));
+        die(esc_html__('Access denied!', 'kps'));
     }
 
     // Javascript einladen
     kps_admin_enqueue();
 
     // Metabox erstellen
-    add_meta_box('kps_admin_uninstalling', esc_html(__('Uninstallation', 'kps')) , 'kps_admin_uninstalling', 'kps_uninstall', 'normal');
+    add_meta_box('kps_admin_uninstalling', esc_html__('Uninstallation', 'kps') , 'kps_admin_uninstalling', 'kps_uninstall', 'normal');
 
     // Post-Variabeln festlegen die akzeptiert werden
     $postList = array(
@@ -79,7 +79,7 @@ function kps_uninstall()
 
                             <div class="wrap kps">
                                 <div>
-                                    <h3><?php echo esc_html(__('Climbing-Partner-Search', 'kps')); ?> - <?php echo esc_html(__('Uninstallation', 'kps')); ?></h3>
+                                    <h3><?php echo esc_html__('Climbing-Partner-Search', 'kps'); ?> - <?php echo esc_html__('Uninstallation', 'kps'); ?></h3>
                                 </div>
                                 <script>
                                      setTimeout(
@@ -91,8 +91,8 @@ function kps_uninstall()
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <p>...<?php echo esc_html(__('all entries have been deleted', 'kps')); ?>.</p>
-                                                <p>...<?php echo esc_html(__('Plugin has been disabled.', 'kps')); ?></p>
+                                                <p>...<?php echo esc_html__('all entries have been deleted', 'kps'); ?>.</p>
+                                                <p>...<?php echo esc_html__('Plugin has been disabled.', 'kps'); ?></p>
                                             </td>
                                         </tr>
                                         <tr>
@@ -100,7 +100,7 @@ function kps_uninstall()
                                         </tr>
                                         <tr>
                                             <td>
-                                                <p><?php echo esc_html(__('Uninstall completed. All database entries and settings have been removed.', 'kps')); ?></p>
+                                                <p><?php echo esc_html__('Uninstall completed. All database entries and settings have been removed.', 'kps'); ?></p>
                                             </td>
                                         </tr>
                                         <tr>
@@ -108,7 +108,7 @@ function kps_uninstall()
                                         </tr>
                                         <tr>
                                             <td>
-                                                <p><?php echo esc_html(__('You will be redirected in 10 seconds', 'kps')); ?>...</p>
+                                                <p><?php echo esc_html__('You will be redirected in 10 seconds', 'kps'); ?>...</p>
                                             </td>
                                         </tr>
                                         <tr>
@@ -116,8 +116,8 @@ function kps_uninstall()
                                         </tr>
                                         <tr>
                                             <td>
-                                                <?php echo esc_html(__('You will now be automatically redirected to the main page of the dashboard.', 'kps')); ?>
-                                               <a href="<?php echo admin_url('/index.php'); ?>"> <?php echo esc_html(__('Dashboard', 'kps')); ?>
+                                                <?php echo esc_html__('You will now be automatically redirected to the main page of the dashboard.', 'kps'); ?>
+                                               <a href="<?php echo admin_url('/index.php'); ?>"> <?php echo esc_html__('Dashboard', 'kps'); ?>
                                                </a>
                                             </td>
                                         </tr>
@@ -132,7 +132,7 @@ function kps_uninstall()
 ?>
        <div class="wrap">
             <div>
-                <h3><?php echo esc_html(__('Climbing-Partner-Search', 'kps')); ?> - <?php echo esc_html(__('Uninstallation', 'kps')); ?>
+                <h3><?php echo esc_html__('Climbing-Partner-Search', 'kps'); ?> - <?php echo esc_html__('Uninstallation', 'kps'); ?>
                </h3>
             </div>
             <div id="dashboard-widgets-wrap" class="kps">
@@ -158,19 +158,19 @@ function kps_admin_uninstalling()
                 <table class="table_list">
                     <tbody>
                         <tr>
-                            <td colspan="2">' . esc_html(__('If you proceed with uninstall you delete all entries in the database, as well as the settings!', 'kps')) . '</td>
+                            <td colspan="2">' . esc_html__('If you proceed with uninstall you delete all entries in the database, as well as the settings!', 'kps') . '</td>
                         </tr>
                         <tr>
-                            <td colspan="2">' . esc_html(__('This can not be undone. The process is final.', 'kps')) . '</td>
+                            <td colspan="2">' . esc_html__('This can not be undone. The process is final.', 'kps') . '</td>
                         </tr>
                         <tr>
                             <td colspan="2">&#160;</td>
                         </tr>
                         <tr>
-                            <td>' . esc_html(__('Confirm!', 'kps')) . '</td>
+                            <td>' . esc_html__('Confirm!', 'kps') . '</td>
                             <td>
                                 <input type="checkbox" name="kpsUninstallConfirmed" id="kpsUninstallConfirmed" />
-                                <label for="kpsUninstallConfirmed">' . esc_html(__('Yes, I am absolutely sure. Go ahead!', 'kps')) . '</label>
+                                <label for="kpsUninstallConfirmed">' . esc_html__('Yes, I am absolutely sure. Go ahead!', 'kps') . '</label>
                             </td>
                         </tr>
                         <tr>
@@ -179,7 +179,7 @@ function kps_admin_uninstalling()
                         <tr>
                             <td colspan="2" style="text-align: center;">
                                 <input type="hidden" id="kpsUninstallToken" name="kpsUninstallToken" value="' . $token . '" />
-                                <input class="button" type="submit" name="kpsUninstall" id="kpsUninstall" disabled value="' . esc_html(__('Yes, uninstall!', 'kps')) . '" />
+                                <input class="button" type="submit" name="kpsUninstall" id="kpsUninstall" disabled value="' . esc_html__('Yes, uninstall!', 'kps') . '" />
                             </td>
                         </tr>
                     </tbody>
@@ -196,7 +196,7 @@ function kps_uninstallproceed()
     // Zugriffsrechte prüfen
     if (function_exists('current_user_can') && !current_user_can('administrator'))
     {
-        die(esc_html(__('Access denied!', 'kps')));
+        die(esc_html__('Access denied!', 'kps'));
     }
 
     global $wpdb;

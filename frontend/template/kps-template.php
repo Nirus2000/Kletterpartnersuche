@@ -67,7 +67,7 @@ if (!function_exists( 'kps_reportbox')) {
                                     <div class="kps-divTableRow">
                                         <div class="kps-divTableCell">
                                             <div class="kps-message" style="text-align: center;">
-                                                <div class="kps-message" style="text-align: center;"><b>' . esc_html(__('Report an entry', 'kps')) . '!</b></div>
+                                                <div class="kps-message" style="text-align: center;"><b>' . esc_html__('Report an entry', 'kps') . '!</b></div>
                                             </div>
                                         </div>
                                     </div>
@@ -77,23 +77,23 @@ if (!function_exists( 'kps_reportbox')) {
                                             	<div class="kps-divTableBody">
                                             		<div class="kps-divTableRow">
                                             			<div class="kps-divTableCell" style="text-align: right; width: 40%;"><input id="kps_reportEntry0" name="kps_reportEntryChoice" value="0" type="radio"><label for="kps_reportEntry0"></div>
-                                            			<div class="kps-divTableCell" style="text-align: left; width: 60%;"><label for="kps_reportEntry0">&#160;' . esc_html(__('Spam/Advertising', 'kps')) . '</label></div>
+                                            			<div class="kps-divTableCell" style="text-align: left; width: 60%;"><label for="kps_reportEntry0">&#160;' . esc_html__('Spam/Advertising', 'kps') . '</label></div>
                                             		</div>
                                             		<div class="kps-divTableRow">
                                             			<div class="kps-divTableCell" style="text-align: right; width: 40%;"><input id="kps_reportEntry1" name="kps_reportEntryChoice" value="1" type="radio"><label for="kps_reportEntry1"></div>
-                                            			<div class="kps-divTableCell" style="text-align: left; width: 60%;"><label for="kps_reportEntry1">&#160;' . esc_html(__('Inappropriate/Violence', 'kps')) . '</label></div>
+                                            			<div class="kps-divTableCell" style="text-align: left; width: 60%;"><label for="kps_reportEntry1">&#160;' . esc_html__('Inappropriate/Violence', 'kps') . '</label></div>
                                             		</div>
                                             		<div class="kps-divTableRow">
                                             			<div class="kps-divTableCell" style="text-align: right; width: 40%;"><input id="kps_reportEntry2" name="kps_reportEntryChoice" value="2" type="radio"><label for="kps_reportEntry2"></div>
-                                            			<div class="kps-divTableCell" style="text-align: left; width: 60%;"><label for="kps_reportEntry2">&#160;' . esc_html(__('Double entry', 'kps')) . '</label></div>
+                                            			<div class="kps-divTableCell" style="text-align: left; width: 60%;"><label for="kps_reportEntry2">&#160;' . esc_html__('Double entry', 'kps') . '</label></div>
                                             		</div>
                                             		<div class="kps-divTableRow">
                                             			<div class="kps-divTableCell" style="text-align: right; width: 40%;"><input id="kps_reportEntry3" name="kps_reportEntryChoice" value="3" type="radio"><label for="kps_reportEntry3"></div>
-                                            			<div class="kps-divTableCell" style="text-align: left; width: 60%;"><label for="kps_reportEntry3">&#160;' . esc_html(__('Personality rights', 'kps')) . '</label></div>
+                                            			<div class="kps-divTableCell" style="text-align: left; width: 60%;"><label for="kps_reportEntry3">&#160;' . esc_html__('Personality rights', 'kps') . '</label></div>
                                             		</div>
                                             		<div class="kps-divTableRow">
                                             			<div class="kps-divTableCell" style="text-align: right; width: 40%;"><input id="kps_reportEntry4" name="kps_reportEntryChoice" value="4" type="radio"><label for="kps_reportEntry4"></div>
-                                            			<div class="kps-divTableCell" style="text-align: left; width: 60%;"><label for="kps_reportEntry4">&#160;' . esc_html(__('Others', 'kps')) . '</label></div>
+                                            			<div class="kps-divTableCell" style="text-align: left; width: 60%;"><label for="kps_reportEntry4">&#160;' . esc_html__('Others', 'kps') . '</label></div>
                                             		</div>
                                             	</div>
                                             </div>
@@ -119,7 +119,7 @@ if (!function_exists( 'kps_reportbox')) {
                                             <div class="kps-message" style="text-align: center;">
                                                 <input type="hidden" id="kps_report" name="kps_report" value="' . $reportId . '" />
                                                 <input type="hidden" id="kps_ReportEntryToken" name="kps_ReportEntryToken" value="' . $token . '" />
-                                                <input class="submit" type="submit" name="submit" value="' . esc_html(__('Report an entry', 'kps')) . '!">
+                                                <input class="submit" type="submit" name="submit" value="' . esc_html__('Report an entry', 'kps') . '!">
                                             </div>
                                         </div>
                                     </div>
@@ -169,7 +169,7 @@ if ( !function_exists( 'kps_requirementbox' ) ) {
                                     <div class="kps-divTableRow">
                                         <div class="kps-divTableCell">
                                             <div class="kps-message" style="text-align: center;">
-                                                <div class="kps-message" style="text-align: center;"><b>' . esc_html(__('Send contact information', 'kps')) . '</b></div>
+                                                <div class="kps-message" style="text-align: center;"><b>' . esc_html__('Send contact information', 'kps') . '</b></div>
                                             </div>
                                         </div>
                                     </div>
@@ -179,7 +179,7 @@ if ( !function_exists( 'kps_requirementbox' ) ) {
                                     <div class="kps-divTableRow">
                                         <div class="kps-divTableCell">
                                             <div class="kps-message" style="text-align: center;">
-                                                <label for="kps_RequirementPassword">' . esc_html(__('Password', 'kps')) . '</label>
+                                                <label for="kps_RequirementPassword">' . esc_html__('Password', 'kps') . '</label>
                                             </div>
                                         </div>
                                     </div>
@@ -187,7 +187,7 @@ if ( !function_exists( 'kps_requirementbox' ) ) {
                                         <div class="kps-divTableCell">
                                             <div class="kps-message" style="text-align: center;">
                                                 <label for="kps_RequirementPassword"></label>
-                                                <input class="form_field" style="text-align: center;" id="kps_RequirementPassword" name="kps_RequirementPassword" placeholder="' . esc_html(__('Password', 'kps')) . '" size="30" aria-required="true" required="required" type="text">
+                                                <input class="form_field" style="text-align: center;" id="kps_RequirementPassword" name="kps_RequirementPassword" placeholder="' . esc_html__('Password', 'kps') . '" size="30" aria-required="true" required="required" type="text">
                                             </div>
                                         </div>
                                     </div>';
@@ -213,7 +213,7 @@ if ( !function_exists( 'kps_requirementbox' ) ) {
                                             <div class="kps-message" style="text-align: center;">
                                                 <input type="hidden" id="kps_require" name="kps_require" value="' . $kps_require . '" />
                                                 <input type="hidden" id="kps_RequirementToken" name="kps_RequirementToken" value="' . $token . '" />
-                                                <input class="submit" type="submit" name="submit" value="' . esc_html(__('Requirement', 'kps')) . '!">
+                                                <input class="submit" type="submit" name="submit" value="' . esc_html__('Requirement', 'kps') . '!">
                                             </div>
                                         </div>
                                     </div>
@@ -260,7 +260,7 @@ if ( !function_exists( 'kps_verifybox' ) ) {
                                     <div class="kps-divTableRow">
                                         <div class="kps-divTableCell">
                                             <div class="kps-message" style="text-align: center;">
-                                                <div class="kps-message" style="text-align: center;"><b>' . esc_html(__('Request contact information', 'kps')) . '!</b></div>
+                                                <div class="kps-message" style="text-align: center;"><b>' . esc_html__('Request contact information', 'kps') . '!</b></div>
                                             </div>
                                         </div>
                                     </div>
@@ -270,14 +270,14 @@ if ( !function_exists( 'kps_verifybox' ) ) {
                                     <div class="kps-divTableRow">
                                         <div class="kps-divTableCell">
                                             <div class="kps-message" style="text-align: center;">
-                                                <label for="kps_VerifyEmail">' . esc_html(__('Email', 'kps')) . '</label>
+                                                <label for="kps_VerifyEmail">' . esc_html__('Email', 'kps') . '</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="kps-divTableRow">
                                         <div class="kps-divTableCell">
                                             <div class="kps-message" style="text-align: center;">
-                                                <input class="form_field" style="text-align: center;" ' . $inputFieldDisabled . ' id="kps_VerifyEmail" name="kps_VerifyEmail" size="5" maxlength="245" value="' . $setUserEmail . '" placeholder="' . esc_html(__('Email', 'kps')) . '" aria-required="true" required="required" type="' . $html5TypEmail . '">
+                                                <input class="form_field" style="text-align: center;" ' . $inputFieldDisabled . ' id="kps_VerifyEmail" name="kps_VerifyEmail" size="5" maxlength="245" value="' . $setUserEmail . '" placeholder="' . esc_html__('Email', 'kps') . '" aria-required="true" required="required" type="' . $html5TypEmail . '">
                                             </div>
                                         </div>
                                     </div>';
@@ -303,7 +303,7 @@ if ( !function_exists( 'kps_verifybox' ) ) {
                                             <div class="kps-message" style="text-align: center;">
                                                 <input type="hidden" id="kps_data" name="kps_data" value="' . $kps_data . '" />
                                                 <input type="hidden" id="kps_VerifyToken" name="kps_VerifyToken" value="' . $token . '" />
-                                                <input class="submit" type="submit" name="submit" value="' . esc_html(__('Requirement', 'kps')) . '!">
+                                                <input class="submit" type="submit" name="submit" value="' . esc_html__('Requirement', 'kps') . '!">
                                             </div>
                                         </div>
                                     </div>
@@ -355,7 +355,7 @@ if ( !function_exists( 'kps_activationbox' ) ) {
                                     <div class="kps-divTableRow">
                                         <div class="kps-divTableCell">
                                             <div class="kps-message" style="text-align: center;">
-                                                <div class="kps-message" style="text-align: center;"><b>' . esc_html(__('Activate entry', 'kps')) . '</b></div>
+                                                <div class="kps-message" style="text-align: center;"><b>' . esc_html__('Activate entry', 'kps') . '</b></div>
                                             </div>
                                         </div>
                                     </div>
@@ -363,7 +363,7 @@ if ( !function_exists( 'kps_activationbox' ) ) {
                                         <div class="kps-divTableCell">
                                             <div class="kps-message" style="text-align: center;">
                                                 <label for="kps_AuthorEmail"></label>
-                                                <input class="form_field" style="text-align: center;" id="kps_AuthorEmail" name="kps_AuthorEmail" placeholder="' . esc_html(__('Email', 'kps')) . '" minlength="6" size="245" maxlength="245" aria-required="true" required="required" type="' . $html5TypEmail . '">
+                                                <input class="form_field" style="text-align: center;" id="kps_AuthorEmail" name="kps_AuthorEmail" placeholder="' . esc_html__('Email', 'kps') . '" minlength="6" size="245" maxlength="245" aria-required="true" required="required" type="' . $html5TypEmail . '">
                                             </div>
                                         </div>
                                     </div>';
@@ -389,7 +389,7 @@ if ( !function_exists( 'kps_activationbox' ) ) {
                                             <div class="kps-message" style="text-align: center;">
                                                 <input type="hidden" id="kps_akey" name="kps_akey" value="' . $activationCode . '" />
                                                 <input type="hidden" id="kps_ActivationToken" name="kps_ActivationToken" value="' . $token . '" />
-                                                <input class="submit" type="submit" name="submit" value="' . esc_html(__('Activate entry', 'kps')) . '!">
+                                                <input class="submit" type="submit" name="submit" value="' . esc_html__('Activate entry', 'kps') . '!">
                                             </div>
                                         </div>
                                     </div>
@@ -439,7 +439,7 @@ if ( !function_exists( 'kps_deletebox' ) ) {
                                     <div class="kps-divTableRow">
                                         <div class="kps-divTableCell">
                                             <div class="kps-message" style="text-align: center;">
-                                                <div class="kps-message" style="text-align: center;"><b>' . esc_html(__('Delete entry', 'kps')) . '</b></div>
+                                                <div class="kps-message" style="text-align: center;"><b>' . esc_html__('Delete entry', 'kps') . '</b></div>
                                             </div>
                                         </div>
                                     </div>
@@ -447,7 +447,7 @@ if ( !function_exists( 'kps_deletebox' ) ) {
                                         <div class="kps-divTableCell">
                                             <div class="kps-message" style="text-align: center;">
                                                 <label for="kps_DeletePassword"></label>
-                                                <input class="form_field" style="text-align: center;" id="kps_DeletePassword" name="kps_DeletePassword" placeholder="' . esc_html(__('Password', 'kps')) . '" size="30" aria-required="true" required="required" type="text">
+                                                <input class="form_field" style="text-align: center;" id="kps_DeletePassword" name="kps_DeletePassword" placeholder="' . esc_html__('Password', 'kps') . '" size="30" aria-required="true" required="required" type="text">
                                             </div>
                                         </div>
                                     </div>';
@@ -473,7 +473,7 @@ if ( !function_exists( 'kps_deletebox' ) ) {
                                             <div class="kps-message" style="text-align: center;">
                                                 <input type="hidden" id="kps_dkey" name="kps_dkey" value="' . $activationHash . '" />
                                                 <input type="hidden" id="kps_DeleteToken" name="kps_DeleteToken" value="' . $token . '" />
-                                                <input class="submit" type="submit" name="submit" value="' . esc_html(__('Delete entry', 'kps')) . '!">
+                                                <input class="submit" type="submit" name="submit" value="' . esc_html__('Delete entry', 'kps') . '!">
                                             </div>
                                         </div>
                                     </div>
@@ -552,17 +552,17 @@ if ( !function_exists( 'kps_template' ) ) {
         // Eintrag melden
         if ($entry->show_allowedReport() === true)
         {
-            $userReport = '<a class="kps-entry-moderate" href="' . $pageUrl . '&kps_report=' . $entry->show_id() . '" title="' . esc_html(__('Report an entry', 'kps')) . '">' . esc_html(__('Report an entry', 'kps')) . '</a><span>&#160;&#160;</span>';
+            $userReport = '<a class="kps-entry-moderate" href="' . $pageUrl . '&kps_report=' . $entry->show_id() . '" title="' . esc_html__('Report an entry', 'kps') . '">' . esc_html__('Report an entry', 'kps') . '</a><span>&#160;&#160;</span>';
         }
 
         // Anforderung der Kontaktdaten
-        $requirement = '<a class="kps-entry-moderate" href="' . $pageUrl . '&kps_data=' . $entry->show_id() . '" title="' . esc_html(__('Request contact information', 'kps' )) . '">' . esc_html(__('Request contact information', 'kps')) . '</a><span>&#160;&#160;</span>';
+        $requirement = '<a class="kps-entry-moderate" href="' . $pageUrl . '&kps_data=' . $entry->show_id() . '" title="' . esc_html__('Request contact information', 'kps') . '">' . esc_html__('Request contact information', 'kps') . '</a><span>&#160;&#160;</span>';
 
         // Sofortbearbeitung für Moderatoren
         if (function_exists('current_user_can') && current_user_can('moderate_comments'))
         {
             // Ausgabe Bearbeitung
-            $moderate = '<a class="kps-entry-moderate" href="' . KPS_ADMIN_URL . '/entries.php&edit_id=' . $entry->show_id() . '" title="' . esc_html(__('Edit', 'kps')) . '">' . esc_html(__('Edit', 'kps')) . '</a>';
+            $moderate = '<a class="kps-entry-moderate" href="' . KPS_ADMIN_URL . '/entries.php&edit_id=' . $entry->show_id() . '" title="' . esc_html__('Edit', 'kps') . '">' . esc_html__('Edit', 'kps') . '</a>';
         }
 
         if ($entry->show_isFound() === true)

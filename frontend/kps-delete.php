@@ -116,30 +116,30 @@ function kps_deletecode($deleteCode = '0')
         {
             // Messagebox Ausgabe
             $messageboxContent = '
-            <div style="text-align: center;">' . esc_html(__('Many Thanks! Until next time!', 'kps')) . '</div>
+            <div style="text-align: center;">' . esc_html__('Many Thanks! Until next time!', 'kps') . '</div>
             ';
 
-            $output = kps_messagebox(esc_html(__('Entry has been deleted!', 'kps')) , $messageboxContent);
+            $output = kps_messagebox(esc_html__('Entry has been deleted!', 'kps') , $messageboxContent);
         }
         elseif ($deleteCode->show_isDelete() === false && $deleteCode->show_isFound() === false)
         {
             // Messagebox Ausgabe
             $messageboxContent = '
-            <div style="text-align: center; color: red">' . esc_html(__('Delete-key unknow!', 'kps')) . '</div>
+            <div style="text-align: center; color: red">' . esc_html__('Delete-key unknow!', 'kps') . '</div>
             ';
 
             // Klasse meldet Fehler
-            $output = kps_messagebox(esc_html(__('Entry could not be deleted!', 'kps')) , $messageboxContent);
+            $output = kps_messagebox(esc_html__('Entry could not be deleted!', 'kps') , $messageboxContent);
         }
         else
         {
             // Messagebox Ausgabe
             $messageboxContent = '
-            <div style="text-align: center; color: red">' . esc_html(__('Please contact the administrator if the problem reappears!', 'kps')) . '</div>
+            <div style="text-align: center; color: red">' . esc_html__('Please contact the administrator if the problem reappears!', 'kps') . '</div>
             ';
 
             // Klasse meldet Fehler
-            $output = kps_messagebox(esc_html(__('Entry could not be deleted!', 'kps')) , $messageboxContent);
+            $output = kps_messagebox(esc_html__('Entry could not be deleted!', 'kps') , $messageboxContent);
         }
     }
     elseif (($verification == false
@@ -152,19 +152,19 @@ function kps_deletecode($deleteCode = '0')
     {
             if ($captchaIsActivated === 'true' && $captchaValid === false)
             {
-                $captchaFail =  '<li>' . esc_html(__('Google reCaptcha has not been confirmed!', 'kps')) . '</li>';
+                $captchaFail =  '<li>' . esc_html__('Google reCaptcha has not been confirmed!', 'kps') . '</li>';
             }
 
             // Messagebox Ausgabe
             $messageboxContent = '
             <ul>
-                <li>' . esc_html(__('The password you entered is incorrect. Make sure you pay attention to upper and lower case!', 'kps')) . '</li>
+                <li>' . esc_html__('The password you entered is incorrect. Make sure you pay attention to upper and lower case!', 'kps') . '</li>
                 ' . $captchaFail . '
-                <li>' . esc_html(__('Please contact the administrator if the problem reappears!', 'kps')) . '</li>
+                <li>' . esc_html__('Please contact the administrator if the problem reappears!', 'kps') . '</li>
             </ul>';
 
             // Verifizierung falsch
-            $output = kps_messagebox(esc_html(__('Entry could not be deleted!', 'kps')) , $messageboxContent);
+            $output = kps_messagebox(esc_html__('Entry could not be deleted!', 'kps') , $messageboxContent);
 
             // Löschformular
             $output .= kps_deletebox($token, $deleteCode, $captchaIsActivated, $captchaSiteKey);

@@ -207,9 +207,9 @@ class kps_requirement
 
         if ($userMailSettings === false )
         {
-            $userMailSubject    = esc_html(__('Requirement', 'kps'));
+            $userMailSubject    = esc_html__('Requirement', 'kps');
             $userMailContent    =
-esc_html(__('You have requested the contact details for the following entry.
+esc_html__('You have requested the contact details for the following entry.
 
 Entry:
 *******************
@@ -229,7 +229,7 @@ Have fun. Bergheil!
 Your team
 %blogname%
 %blogurl%
-%blogemail%', 'kps'));
+%blogemail%', 'kps');
         }
         else
         {

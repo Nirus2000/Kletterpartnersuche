@@ -120,41 +120,41 @@ function kps_activationcode($activationCode = '0')
         {
             // Messagebox Ausgabe
             $messageboxContent = '
-            <div style="text-align: center;">' . esc_html(__('It could be that the entry only becomes visible after we have approved it!', 'kps')) . '</div>
+            <div style="text-align: center;">' . esc_html__('It could be that the entry only becomes visible after we have approved it!', 'kps') . '</div>
             ';
 
-            $output .= kps_messagebox(esc_html(__('Entry has been unlocked!', 'kps')) , $messageboxContent);
+            $output .= kps_messagebox(esc_html__('Entry has been unlocked!', 'kps') , $messageboxContent);
         }
         elseif ($activationCode->show_isFound() === false)
         {
             // Messagebox Ausgabe
             $messageboxContent = '
-            <div style="text-align: center; color: red">' . esc_html(__('Activation-Key unknown!', 'kps')) . '</div>
+            <div style="text-align: center; color: red">' . esc_html__('Activation-Key unknown!', 'kps') . '</div>
             ';
 
             // Klasse meldet Fehler
-            $output = kps_messagebox(esc_html(__('Error! Entry could not be unlocked!', 'kps')) , $messageboxContent);
+            $output = kps_messagebox(esc_html__('Error! Entry could not be unlocked!', 'kps') , $messageboxContent);
         }
         elseif ($activationCode->show_isActivated() === true && $activationCode->show_isChecked() === false)
         {
             // Messagebox Ausgabe
             $messageboxContent = '
             <ul>
-                <li>' . esc_html(__('It could be that the entry only becomes visible after we have approved it!', 'kps')) . '</li>
+                <li>' . esc_html__('It could be that the entry only becomes visible after we have approved it!', 'kps') . '</li>
             </ul>';
 
             // Klasse meldet Fehler
-            $output = kps_messagebox(esc_html(__('Note! Entry has already been activated!', 'kps')) , $messageboxContent);
+            $output = kps_messagebox(esc_html__('Note! Entry has already been activated!', 'kps') , $messageboxContent);
         }
         else
         {
             // Messagebox Ausgabe
             $messageboxContent = '
-            <div style="text-align: center; color: red">' . esc_html(__('Please contact the administrator if the problem reappears!', 'kps')) . '</div>
+            <div style="text-align: center; color: red">' . esc_html__('Please contact the administrator if the problem reappears!', 'kps') . '</div>
             ';
 
             // Klasse meldet Fehler
-            $output = kps_messagebox(esc_html(__('Error! Entry could not be unlocked!', 'kps')) , $messageboxContent);
+            $output = kps_messagebox(esc_html__('Error! Entry could not be unlocked!', 'kps') , $messageboxContent);
         }
     }
     elseif (($verification == false
@@ -166,21 +166,21 @@ function kps_activationcode($activationCode = '0')
     {
             if ($captchaIsActivated === 'true' && $captchaValid === false)
             {
-                $captchaFail =  '<li>' . esc_html(__('Google reCaptcha has not been confirmed!', 'kps')) . '</li>';
+                $captchaFail =  '<li>' . esc_html__('Google reCaptcha has not been confirmed!', 'kps') . '</li>';
             }
 
             // Messagebox Ausgabe
             $messageboxContent = '
             <ul>
-                <li>' . esc_html(__('It could be that the email has a wrong syntax!', 'kps')) . '</li>
-                <li>' . esc_html(__('It could be that there is no activation code under the entered email address!', 'kps')) . '</li>
-                <li>' . esc_html(__('It could be that the Activation-Code was not accepted!', 'kps')) . '</li>
+                <li>' . esc_html__('It could be that the email has a wrong syntax!', 'kps') . '</li>
+                <li>' . esc_html__('It could be that there is no activation code under the entered email address!', 'kps') . '</li>
+                <li>' . esc_html__('It could be that the Activation-Code was not accepted!', 'kps') . '</li>
                 ' . $captchaFail . '
-                <li>' . esc_html(__('Please contact the administrator if the problem reappears!', 'kps')) . '</li>
+                <li>' . esc_html__('Please contact the administrator if the problem reappears!', 'kps') . '</li>
             </ul>';
 
             // Verifizierung falsch
-            $output = kps_messagebox(esc_html(__('Error! Entry could not be unlocked!', 'kps')) , $messageboxContent);
+            $output = kps_messagebox(esc_html__('Error! Entry could not be unlocked!', 'kps') , $messageboxContent);
 
             // Löschformular
             $output .= kps_activationbox($token, $activationCode, $authorEmail, $captchaIsActivated, $captchaSiteKey);

@@ -125,7 +125,7 @@ function kps_install()
 
         // FormularOptionen
         $formOptions = serialize(array(
-            'kpsFormOptionTelephone'            => 'false',
+            'kpsFormOptionTelephone'            => 'true',
             'kpsFormOptionMobile'               => 'false',
             'kpsFormOptionWhatsapp'             => 'false',
             'kpsFormOptionSignal'               => 'false',
@@ -136,7 +136,7 @@ function kps_install()
             'kpsFormOptionWire'                 => 'false',
             'kpsFormOptionHoccer'               => 'false',
             'kpsFormOptionSkype'                => 'false',
-            'kpsFormOptionWebsite'              => 'false',
+            'kpsFormOptionWebsite'              => 'true',
             'kpsFormOptionFacebook'             => 'false',
             'kpsFormOptionInstagram'            => 'false'
         ));

@@ -111,11 +111,11 @@ function kps_requirement($kps_require = '0')
         // Wordpress Registieren
         $output .= '<div>
                         <div style="text-align: center;">
-                            <h6>' . esc_html(__('You must be logged in to get contact details!', 'kps')) . '</h6>
+                            <h6>' . esc_html__('You must be logged in to get contact details!', 'kps') . '</h6>
                         </div>
                         <div style="text-align: center;">
-                            <a href="' . esc_url(wp_login_url(get_permalink())) . '">' . esc_html(__('Login', 'kps')) . '</a>&#160;&#124;&#160;
-                            <a href="' . esc_url(wp_registration_url()) . '">' . esc_html(__('Registration', 'kps')) . '</a>
+                            <a href="' . esc_url(wp_login_url(get_permalink())) . '">' . esc_html__('Login', 'kps') . '</a>&#160;&#124;&#160;
+                            <a href="' . esc_url(wp_registration_url()) . '">' . esc_html__('Registration', 'kps') . '</a>
                         </div>
                     </div>';
     }
@@ -137,62 +137,62 @@ function kps_requirement($kps_require = '0')
             {
                 // Messagebox Ausgabe
                 $messageboxContent = '
-                <div style="text-align: center;">' . esc_html(__('Thank you!', 'kps')) . '</div>
+                <div style="text-align: center;">' . esc_html__('Thank you!', 'kps') . '</div>
                 ';
 
-                $output = kps_messagebox(esc_html(__('Contact data sent!', 'kps')) , $messageboxContent);
+                $output = kps_messagebox(esc_html__('Contact data sent!', 'kps') , $messageboxContent);
             }
             elseif ($requirement->show_isSend() === false && $requirement->show_isFound() === false)
             {
                 // Messagebox Ausgabe
                 $messageboxContent = '
-                <div style="text-align: center; color: red">' . esc_html(__('The entry has been deleted!', 'kps')) . '</div>
+                <div style="text-align: center; color: red">' . esc_html__('The entry has been deleted!', 'kps') . '</div>
                 ';
 
                 // Klasse meldet Eintrag nicht vorhanden
-                $output = kps_messagebox(esc_html(__('Error! Entry not available!', 'kps')) , $messageboxContent);
+                $output = kps_messagebox(esc_html__('Error! Entry not available!', 'kps') , $messageboxContent);
             }
             elseif ($requirement->show_isSend() === false && $requirement->show_isClosed() === true)
             {
                 // Messagebox Ausgabe
                 $messageboxContent = '
-                <div style="text-align: center; color: red">' . esc_html(__('The data can only be retrieved once!', 'kps')) . '</div>
+                <div style="text-align: center; color: red">' . esc_html__('The data can only be retrieved once!', 'kps') . '</div>
                 ';
 
                 // Klasse meldet keine Verifizierung
-                $output = kps_messagebox(esc_html(__('Error! Requirement!', 'kps')) , $messageboxContent);
+                $output = kps_messagebox(esc_html__('Error! Requirement!', 'kps') , $messageboxContent);
             }
             elseif ($requirement->show_isSend() === false && $requirement->show_isExpire() === true)
             {
                 // Messagebox Ausgabe
                 $messageboxContent = '
-                <div style="text-align: center; color: red">' . esc_html(__('The Requirement-Key has expired! Call the contact data again!', 'kps')) . '</div>
+                <div style="text-align: center; color: red">' . esc_html__('The Requirement-Key has expired! Call the contact data again!', 'kps') . '</div>
                 ';
 
                 // Klasse meldet keine Verifizierung
-                $output = kps_messagebox(esc_html(__('Error! Requirement!', 'kps')) , $messageboxContent);
+                $output = kps_messagebox(esc_html__('Error! Requirement!', 'kps') , $messageboxContent);
             }
             elseif ($requirement->show_isSend() === false && $requirement->show_isVerify() === false)
             {
                 // Messagebox Ausgabe
                 $messageboxContent = '
                 <ul>
-                    <li>' . esc_html(__('The password you entered is incorrect. Make sure you pay attention to upper and lower case!', 'kps')) . '</li>
-                    <li>' . esc_html(__('Please contact the administrator if the problem reappears!', 'kps')) . '</li>
+                    <li>' . esc_html__('The password you entered is incorrect. Make sure you pay attention to upper and lower case!', 'kps') . '</li>
+                    <li>' . esc_html__('Please contact the administrator if the problem reappears!', 'kps') . '</li>
                 </ul>';
 
                 // Klasse meldet keine Verifizierung
-                $output = kps_messagebox(esc_html(__('Error! Requirement-Key!', 'kps')) , $messageboxContent);
+                $output = kps_messagebox(esc_html__('Error! Requirement-Key!', 'kps') , $messageboxContent);
             }
             else
             {
                 // Messagebox Ausgabe
                 $messageboxContent = '
-                <div style="text-align: center; color: red">' . esc_html(__('Please contact the administrator if the problem reappears!', 'kps')) . '</div>
+                <div style="text-align: center; color: red">' . esc_html__('Please contact the administrator if the problem reappears!', 'kps') . '</div>
                 ';
 
                 // Klasse meldet Fehler
-                $output = kps_messagebox(esc_html(__('Error! Contact details could not be sent!', 'kps')) , $messageboxContent);
+                $output = kps_messagebox(esc_html__('Error! Contact details could not be sent!', 'kps') , $messageboxContent);
             }
 
         }
@@ -202,20 +202,20 @@ function kps_requirement($kps_require = '0')
         {
             if ($captchaIsActivated === 'true' && $captchaValid === false)
             {
-                $captchaFail =  '<li>' . esc_html(__('Google reCaptcha has not been confirmed!', 'kps')) . '</li>';
+                $captchaFail =  '<li>' . esc_html__('Google reCaptcha has not been confirmed!', 'kps') . '</li>';
             }
 
             // Messagebox Ausgabe
             $messageboxContent = '
             <ul>
-                <li>' . esc_html(__('The password is invalid!', 'kps')) . '</li>
-                <li>' . esc_html(__('The Requirement-ID is wrong!', 'kps')) . '</li>
+                <li>' . esc_html__('The password is invalid!', 'kps') . '</li>
+                <li>' . esc_html__('The Requirement-ID is wrong!', 'kps') . '</li>
                 ' . $captchaFail . '
-                <li>' . esc_html(__('Please contact the administrator if the problem reappears!', 'kps')) . '</li>
+                <li>' . esc_html__('Please contact the administrator if the problem reappears!', 'kps') . '</li>
             </ul>';
 
             // Verifizierung oder Email falsch
-            $output = kps_messagebox(esc_html(__('Error! Contact details could not be sent!', 'kps')) , $messageboxContent);
+            $output = kps_messagebox(esc_html__('Error! Contact details could not be sent!', 'kps') , $messageboxContent);
 
             // Anforderungsformular
             $output .= kps_requirementbox($token, $kps_require, $captchaIsActivated, $captchaSiteKey);

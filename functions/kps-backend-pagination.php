@@ -107,7 +107,7 @@ function kps_pagination_backend($totalPages, $getPage, $lastPage, $previosPage, 
                     if ($counter == $getPage)
                     {
                         $output .= '<span class="page-numbers current">' . $counter . '</span> ';
-                        $output .= '<span>' . esc_html(__('of', 'kps')) . '<span> ' . $totalPages . '</span> ';
+                        $output .= '<span>' . esc_html__('of', 'kps') . '<span> ' . $totalPages . '</span> ';
                     }
                     else
                     {

@@ -58,59 +58,59 @@ if (!function_exists('kps_contact_informations'))
             {
                 if( $key == 'authorTelephone')
                 {
-                    $data .= esc_html(__('Telephone', 'kps')) . ": " . $value . " \r\n";
+                    $data .= esc_html__('Telephone', 'kps') . ": " . $value . " \r\n";
                 }
                 elseif( $key == 'authorMobile')
                 {
-                    $data .= esc_html(__('Mobile Phone', 'kps')) . ": " . $value . " \r\n";
+                    $data .= esc_html__('Mobile Phone', 'kps') . ": " . $value . " \r\n";
                 }
                 elseif( $key == 'authorSignal')
                 {
-                    $data .= esc_html(__('Signal-Messenger', 'kps')) . ": " . $value . " \r\n";
+                    $data .= esc_html__('Signal-Messenger', 'kps') . ": " . $value . " \r\n";
                 }
                 elseif( $key == 'authorViper')
                 {
-                    $data .= esc_html(__('Viper-Messenger', 'kps')) . ": " . $value . " \r\n";
+                    $data .= esc_html__('Viper-Messenger', 'kps') . ": " . $value . " \r\n";
                 }
                 elseif( $key == 'authorTelegram')
                 {
-                    $data .= esc_html(__('Telegram-Messenger', 'kps')) . ": " . $value . " \r\n";
+                    $data .= esc_html__('Telegram-Messenger', 'kps') . ": " . $value . " \r\n";
                 }
                 elseif( $key == 'authorThreema')
                 {
-                    $data .= esc_html(__('Threema-Messenger', 'kps')) . ": " . $value . " \r\n";
+                    $data .= esc_html__('Threema-Messenger', 'kps') . ": " . $value . " \r\n";
                 }
                 elseif( $key == 'authorWhatsapp')
                 {
-                    $data .= esc_html(__('Whatsapp-Messenger', 'kps')) . ": " . $value . " \r\n";
+                    $data .= esc_html__('Whatsapp-Messenger', 'kps') . ": " . $value . " \r\n";
                 }
                 elseif( $key == 'authorHoccer')
                 {
-                    $data .= esc_html(__('Hoccer-Messenger', 'kps')) . ": " . $value . " \r\n";
+                    $data .= esc_html__('Hoccer-Messenger', 'kps') . ": " . $value . " \r\n";
                 }
                 elseif( $key == 'authorWire')
                 {
-                    $data .= esc_html(__('Wire-Messenger', 'kps')) . ": " . $value . " \r\n";
+                    $data .= esc_html__('Wire-Messenger', 'kps') . ": " . $value . " \r\n";
                 }
                 elseif( $key == 'authorSkype')
                 {
-                    $data .= esc_html(__('Skype-Messenger', 'kps')) . ": " . $value . " \r\n";
+                    $data .= esc_html__('Skype-Messenger', 'kps') . ": " . $value . " \r\n";
                 }
                 elseif( $key == 'authorFacebookMessenger')
                 {
-                    $data .= esc_html(__('Facebook-Messenger', 'kps')) . ": " . $value . " \r\n";
+                    $data .= esc_html__('Facebook-Messenger', 'kps') . ": " . $value . " \r\n";
                 }
                 elseif( $key == 'authorWebsite')
                 {
-                    $data .= esc_html(__('Website', 'kps')) . ": " . $value . " \r\n";
+                    $data .= esc_html__('Website', 'kps') . ": " . $value . " \r\n";
                 }
                 elseif( $key == 'authorFacebook')
                 {
-                    $data .= esc_html(__('Facebook', 'kps')) . ": " . $value . " \r\n";
+                    $data .= esc_html__('Facebook', 'kps') . ": " . $value . " \r\n";
                 }
                 elseif( $key == 'authorInstagram')
                 {
-                    $data .= esc_html(__('Instagram', 'kps')) . ": " . $value . " \r\n";
+                    $data .= esc_html__('Instagram', 'kps') . ": " . $value . " \r\n";
                 }
                 else
                 {

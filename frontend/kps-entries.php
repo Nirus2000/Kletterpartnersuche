@@ -166,7 +166,7 @@ function kps_frontend_entries($kps_paged = '1')
             $output .= '<article>';
         }
 
-        $output .= '<div style="text-align: center;">' . esc_html(__('No entries available!', 'kps')) . '</div>';
+        $output .= '<div style="text-align: center;">' . esc_html__('No entries available!', 'kps') . '</div>';
 
         // HTML5
         if ($html5)
@@ -203,17 +203,17 @@ function kps_frontend_entries($kps_paged = '1')
                     <div class="kps-divTable">
                     	<div class="kps-divTableBody">
                     		<div class="kps-divTableRow">
-                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV . '/frontend/gfx/hall_' . $legendIconPak . '.png"" alt="' . esc_html(__('Hall', 'kps')) . '" title="' . esc_html(__('Hall', 'kps')) . '" />&#160;' . esc_html(__('Hall', 'kps')) .'</div>
-                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV . '/frontend/gfx/nature_' . $legendIconPak . '.png"" alt="' . esc_html(__('Climbing', 'kps')) . '" title="' . esc_html(__('Climbing', 'kps')) . '" />&#160;' . esc_html(__('Climbing', 'kps')) .'</div>
-                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV . '/frontend/gfx/trekking_' . $legendIconPak . '.png"" alt="' . esc_html(__('Walking/Trekking', 'kps')) . '" title="' . esc_html(__('Walking/Trekking', 'kps')) . '" />&#160;' . esc_html(__('Walking/Trekking', 'kps')) .'</div>
-                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV . '/frontend/gfx/travel_' . $legendIconPak . '.png"" alt="' . esc_html(__('Travels', 'kps')) . '" title="' . esc_html(__('Travels', 'kps')) . '" />&#160;' . esc_html(__('Travels', 'kps')) .'</div>
-                                <div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV . '/frontend/gfx/onetime_' . $legendIconPak . '.png"" alt="' . esc_html(__('Unique', 'kps')) . '" title="' . esc_html(__('Unique', 'kps')) . '" />&#160;' . esc_html(__('Unique', 'kps')) .'</div>
+                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV_FRONTEND_GFX . '/hall_' . $legendIconPak . '.png"" alt="' . esc_html__('Hall', 'kps') . '" title="' . esc_html__('Hall', 'kps') . '" />&#160;' . esc_html__('Hall', 'kps') .'</div>
+                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV_FRONTEND_GFX . '/nature_' . $legendIconPak . '.png"" alt="' . esc_html__('Climbing', 'kps') . '" title="' . esc_html__('Climbing', 'kps') . '" />&#160;' . esc_html__('Climbing', 'kps') .'</div>
+                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV_FRONTEND_GFX . '/trekking_' . $legendIconPak . '.png"" alt="' . esc_html__('Walking/Trekking', 'kps') . '" title="' . esc_html__('Walking/Trekking', 'kps') . '" />&#160;' . esc_html__('Walking/Trekking', 'kps') .'</div>
+                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV_FRONTEND_GFX . '/travel_' . $legendIconPak . '.png"" alt="' . esc_html__('Travels', 'kps') . '" title="' . esc_html__('Travels', 'kps') . '" />&#160;' . esc_html__('Travels', 'kps') .'</div>
+                                <div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV_FRONTEND_GFX . '/onetime_' . $legendIconPak . '.png"" alt="' . esc_html__('Unique', 'kps') . '" title="' . esc_html__('Unique', 'kps') . '" />&#160;' . esc_html__('Unique', 'kps') .'</div>
                     		</div>
                     		<div class="kps-divTableRow">
-                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV . '/frontend/gfx/moretime_' . $legendIconPak . '.png"" alt="' . esc_html(__('Regularly', 'kps')) . '" title="' . esc_html(__('Regularly', 'kps')) . '" />&#160;' . esc_html(__('Regularly', 'kps')) .'</div>
-                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV . '/frontend/gfx/goalone_' . $legendIconPak . '.png"" alt="' . esc_html(__('Single person', 'kps')) . '" title="' . esc_html(__('Single person', 'kps')) . '" />&#160;' . esc_html(__('Single person', 'kps')) .'</div>
-                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV . '/frontend/gfx/family_' . $legendIconPak . '.png"" alt="' . esc_html(__('Family', 'kps')) . '" title="' . esc_html(__('Family', 'kps')) . '" />&#160;' . esc_html(__('Family', 'kps')) .'</div>
-                                <div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV . '/frontend/gfx/comeclub_' . $legendIconPak . '.png"" alt="' . esc_html(__('Club/Group', 'kps')) . '" title="' . esc_html(__('Club/Group', 'kps')) . '" />&#160;' . esc_html(__('Club/Group', 'kps')) .'</div>
+                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV_FRONTEND_GFX . '/moretime_' . $legendIconPak . '.png"" alt="' . esc_html__('Regularly', 'kps') . '" title="' . esc_html__('Regularly', 'kps') . '" />&#160;' . esc_html__('Regularly', 'kps') .'</div>
+                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV_FRONTEND_GFX . '/goalone_' . $legendIconPak . '.png"" alt="' . esc_html__('Single person', 'kps') . '" title="' . esc_html__('Single person', 'kps') . '" />&#160;' . esc_html__('Single person', 'kps') .'</div>
+                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV_FRONTEND_GFX . '/family_' . $legendIconPak . '.png"" alt="' . esc_html__('Family', 'kps') . '" title="' . esc_html__('Family', 'kps') . '" />&#160;' . esc_html__('Family', 'kps') .'</div>
+                                <div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV_FRONTEND_GFX . '/comeclub_' . $legendIconPak . '.png"" alt="' . esc_html__('Club/Group', 'kps') . '" title="' . esc_html__('Club/Group', 'kps') . '" />&#160;' . esc_html__('Club/Group', 'kps') .'</div>
                                 <div class="kps-divTableCell kps-legend"></div>
                     		</div>
                     	</div>

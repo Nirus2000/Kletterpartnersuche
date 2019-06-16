@@ -47,7 +47,7 @@ function kps_DesignSettings()
     // Zugriffsrechte prüfen
     if (function_exists('current_user_can') && !current_user_can('manage_options'))
     {
-        die(esc_html(__('Access denied!', 'kps')));
+        die(esc_html__('Access denied!', 'kps'));
     }
 
     // Javascript einladen
@@ -64,7 +64,7 @@ function kps_DesignSettings()
       <div id="kps" class="wrap kps">
             <div>
                 <h3>
-                    <?php echo esc_html(__('Climbing-Partner-Search', 'kps')); ?> - <?php echo esc_html(__('Overview', 'kps')); ?>
+                    <?php echo esc_html__('Climbing-Partner-Search', 'kps'); ?> - <?php echo esc_html__('Overview', 'kps'); ?>
                </h3>
 
             <h2 class="nav-tab-wrapper kps_nav_tab_wrapper">
@@ -180,7 +180,7 @@ function kps_Icons()
             if (!isset($setIcon)
                 OR !is_int($setIcon))
             {
-                $error[] = esc_html(__('No icons selected', 'kps'));
+                $error[] = esc_html__('No icons selected', 'kps');
             }
 
             // Icons aktualisieren
@@ -190,7 +190,7 @@ function kps_Icons()
                 update_option('kps_icon', $setIcon);
                 echo '
                 <div class="notice notice-success is-dismissible">
-                	<p><strong>' . esc_html(__('Saved', 'kps')) . ':&#160;' . esc_html(__('Icons', 'kps')) . '</strong></p>
+                	<p><strong>' . esc_html__('Saved', 'kps') . ':&#160;' . esc_html__('Icons', 'kps') . '</strong></p>
                 	<button type="button" class="notice-dismiss">
                 		<span class="screen-reader-text">Dismiss this notice.</span>
                 	</button>
@@ -203,7 +203,7 @@ function kps_Icons()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . $error[$key] . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . $error[$key] . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -216,7 +216,7 @@ function kps_Icons()
         {
             echo '
             <div class="notice notice-error is-dismissible">
-            	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . esc_html(__('Token invalid', 'kps')) . '</strong></p>
+            	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
             	<button type="button" class="notice-dismiss">
             		<span class="screen-reader-text">Dismiss this notice.</span>
             	</button>
@@ -246,162 +246,162 @@ function kps_Icons()
                                 <table class="table" style="border-spacing: 20px;">
                                 	<tbody>
                                         <tr>
-                                            <td colspan="11" style="text-align: center"><b>' . esc_html(__('No transparency', 'kps')) . '</b></td>
+                                            <td colspan="11" style="text-align: center"><b>' . esc_html__('No transparency', 'kps') . '</b></td>
                                         </tr>
                                 		<tr>
                                 			<td></td>
                                             <td></td>
-                                            <td><b>' . esc_html(__('Hall', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Climbing', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Walking/Trekking', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Travels', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Unique', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Regularly', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Single person', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Family', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Club/Group', 'kps')) . '</b></td>
+                                            <td><b>' . esc_html__('Hall', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Climbing', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Walking/Trekking', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Travels', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Unique', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Regularly', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Single person', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Family', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Club/Group', 'kps') . '</b></td>
                                 		</tr>
                                 		<tr>
                                 			<td><input id="kps_icon45" name="kpsIconChoise" value="0" aria-required="true" required="required" type="radio" ' . $checkedIcon45 . '><label for="kps_icon45"></label></td>
                                             <td class="kps-vert-text"><b>45x45</b></td>
-                                            <td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/hall_45.png" alt="' . esc_html(__('Hall', 'kps')) . '" title="' . esc_html(__('Hall', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/nature_45.png" alt="' . esc_html(__('Climbing', 'kps')) . '" title="' . esc_html(__('Climbing', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/trekking_45.png" alt="' . esc_html(__('Walking/Trekking', 'kps')) . '" title="' . esc_html(__('Walking/Trekking', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/travel_45.png" alt="' . esc_html(__('Travels', 'kps')) . '" title="' . esc_html(__('Travels', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/onetime_45.png" alt="' . esc_html(__('Unique', 'kps')) . '" title="' . esc_html(__('Unique', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/moretime_45.png" alt="' . esc_html(__('Regularly', 'kps')) . '" title="' . esc_html(__('Regularly', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/goalone_45.png" alt="' . esc_html(__('Single person', 'kps')) . '" title="' . esc_html(__('Single person', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/family_45.png" alt="' . esc_html(__('Family', 'kps')) . '" title="' . esc_html(__('Family', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/comeclub_45.png" alt="' . esc_html(__('Club/Group', 'kps')) . '" title="' . esc_html(__('Club/Group', 'kps')) . '" /></td>
+                                            <td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/hall_45.png" alt="' . esc_html__('Hall', 'kps') . '" title="' . esc_html__('Hall', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/nature_45.png" alt="' . esc_html__('Climbing', 'kps') . '" title="' . esc_html__('Climbing', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/trekking_45.png" alt="' . esc_html__('Walking/Trekking', 'kps') . '" title="' . esc_html__('Walking/Trekking', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/travel_45.png" alt="' . esc_html__('Travels', 'kps') . '" title="' . esc_html__('Travels', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/onetime_45.png" alt="' . esc_html__('Unique', 'kps') . '" title="' . esc_html__('Unique', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/moretime_45.png" alt="' . esc_html__('Regularly', 'kps') . '" title="' . esc_html__('Regularly', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/goalone_45.png" alt="' . esc_html__('Single person', 'kps') . '" title="' . esc_html__('Single person', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/family_45.png" alt="' . esc_html__('Family', 'kps') . '" title="' . esc_html__('Family', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/comeclub_45.png" alt="' . esc_html__('Club/Group', 'kps') . '" title="' . esc_html__('Club/Group', 'kps') . '" /></td>
                                 		</tr>
                                 		<tr>
                                             <td><input id="kps_icon40" name="kpsIconChoise" value="1" aria-required="true" required="required" type="radio" ' . $checkedIcon40 . '><label for="kps_icon40"></label></td>
                                             <td class="kps-vert-text"><b>40x40</b></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/hall_40.png" alt="' . esc_html(__('Hall', 'kps')) . '" title="' . esc_html(__('Hall', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/nature_40.png" alt="' . esc_html(__('Climbing', 'kps')) . '" title="' . esc_html(__('Climbing', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/trekking_40.png" alt="' . esc_html(__('Walking/Trekking', 'kps')) . '" title="' . esc_html(__('Walking/Trekking', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/travel_40.png" alt="' . esc_html(__('Travels', 'kps')) . '" title="' . esc_html(__('Travels', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/onetime_40.png" alt="' . esc_html(__('Unique', 'kps')) . '" title="' . esc_html(__('Unique', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/moretime_40.png" alt="' . esc_html(__('Regularly', 'kps')) . '" title="' . esc_html(__('Regularly', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/goalone_40.png" alt="' . esc_html(__('Single person', 'kps')) . '" title="' . esc_html(__('Single person', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/family_40.png" alt="' . esc_html(__('Family', 'kps')) . '" title="' . esc_html(__('Family', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/comeclub_40.png" alt="' . esc_html(__('Club/Group', 'kps')) . '" title="' . esc_html(__('Club/Group', 'kps')) . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/hall_40.png" alt="' . esc_html__('Hall', 'kps') . '" title="' . esc_html__('Hall', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/nature_40.png" alt="' . esc_html__('Climbing', 'kps') . '" title="' . esc_html__('Climbing', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/trekking_40.png" alt="' . esc_html__('Walking/Trekking', 'kps') . '" title="' . esc_html__('Walking/Trekking', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/travel_40.png" alt="' . esc_html__('Travels', 'kps') . '" title="' . esc_html__('Travels', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/onetime_40.png" alt="' . esc_html__('Unique', 'kps') . '" title="' . esc_html__('Unique', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/moretime_40.png" alt="' . esc_html__('Regularly', 'kps') . '" title="' . esc_html__('Regularly', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/goalone_40.png" alt="' . esc_html__('Single person', 'kps') . '" title="' . esc_html__('Single person', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/family_40.png" alt="' . esc_html__('Family', 'kps') . '" title="' . esc_html__('Family', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/comeclub_40.png" alt="' . esc_html__('Club/Group', 'kps') . '" title="' . esc_html__('Club/Group', 'kps') . '" /></td>
                                 		</tr>
                                 		<tr>
                                             <td><input id="kps_icon35" name="kpsIconChoise" value="2" aria-required="true" required="required" type="radio" ' . $checkedIcon35 . '><label for="kps_icon35"></label></td>
                                             <td class="kps-vert-text"><b>35x35</b></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/hall_35.png" alt="' . esc_html(__('Hall', 'kps')) . '" title="' . esc_html(__('Hall', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/nature_35.png" alt="' . esc_html(__('Climbing', 'kps')) . '" title="' . esc_html(__('Climbing', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/trekking_35.png" alt="' . esc_html(__('Walking/Trekking', 'kps')) . '" title="' . esc_html(__('Walking/Trekking', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/travel_35.png" alt="' . esc_html(__('Travels', 'kps')) . '" title="' . esc_html(__('Travels', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/onetime_35.png" alt="' . esc_html(__('Unique', 'kps')) . '" title="' . esc_html(__('Unique', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/moretime_35.png" alt="' . esc_html(__('Regularly', 'kps')) . '" title="' . esc_html(__('Regularly', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/goalone_35.png" alt="' . esc_html(__('Single person', 'kps')) . '" title="' . esc_html(__('Single person', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/family_35.png" alt="' . esc_html(__('Family', 'kps')) . '" title="' . esc_html(__('Family', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/comeclub_35.png" alt="' . esc_html(__('Club/Group', 'kps')) . '" title="' . esc_html(__('Club/Group', 'kps')) . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/hall_35.png" alt="' . esc_html__('Hall', 'kps') . '" title="' . esc_html__('Hall', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/nature_35.png" alt="' . esc_html__('Climbing', 'kps') . '" title="' . esc_html__('Climbing', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/trekking_35.png" alt="' . esc_html__('Walking/Trekking', 'kps') . '" title="' . esc_html__('Walking/Trekking', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/travel_35.png" alt="' . esc_html__('Travels', 'kps') . '" title="' . esc_html__('Travels', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/onetime_35.png" alt="' . esc_html__('Unique', 'kps') . '" title="' . esc_html__('Unique', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/moretime_35.png" alt="' . esc_html__('Regularly', 'kps') . '" title="' . esc_html__('Regularly', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/goalone_35.png" alt="' . esc_html__('Single person', 'kps') . '" title="' . esc_html__('Single person', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/family_35.png" alt="' . esc_html__('Family', 'kps') . '" title="' . esc_html__('Family', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/comeclub_35.png" alt="' . esc_html__('Club/Group', 'kps') . '" title="' . esc_html__('Club/Group', 'kps') . '" /></td>
                                 		</tr>
                                 		<tr>
                                             <td><input id="kps_icon30" name="kpsIconChoise" value="3" aria-required="true" required="required" type="radio" ' . $checkedIcon30 . '><label for="kps_icon30"></label></td>
                                             <td class="kps-vert-text"><b>30x30</b></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/hall_30.png" alt="' . esc_html(__('Hall', 'kps')) . '" title="' . esc_html(__('Hall', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/nature_30.png" alt="' . esc_html(__('Climbing', 'kps')) . '" title="' . esc_html(__('Climbing', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/trekking_30.png" alt="' . esc_html(__('Walking/Trekking', 'kps')) . '" title="' . esc_html(__('Walking/Trekking', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/travel_30.png" alt="' . esc_html(__('Travels', 'kps')) . '" title="' . esc_html(__('Travels', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/onetime_30.png" alt="' . esc_html(__('Unique', 'kps')) . '" title="' . esc_html(__('Unique', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/moretime_30.png" alt="' . esc_html(__('Regularly', 'kps')) . '" title="' . esc_html(__('Regularly', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/goalone_30.png" alt="' . esc_html(__('Single person', 'kps')) . '" title="' . esc_html(__('Single person', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/family_30.png" alt="' . esc_html(__('Family', 'kps')) . '" title="' . esc_html(__('Family', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/comeclub_30.png" alt="' . esc_html(__('Club/Group', 'kps')) . '" title="' . esc_html(__('Club/Group', 'kps')) . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/hall_30.png" alt="' . esc_html__('Hall', 'kps') . '" title="' . esc_html__('Hall', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/nature_30.png" alt="' . esc_html__('Climbing', 'kps') . '" title="' . esc_html__('Climbing', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/trekking_30.png" alt="' . esc_html__('Walking/Trekking', 'kps') . '" title="' . esc_html__('Walking/Trekking', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/travel_30.png" alt="' . esc_html__('Travels', 'kps') . '" title="' . esc_html__('Travels', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/onetime_30.png" alt="' . esc_html__('Unique', 'kps') . '" title="' . esc_html__('Unique', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/moretime_30.png" alt="' . esc_html__('Regularly', 'kps') . '" title="' . esc_html__('Regularly', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/goalone_30.png" alt="' . esc_html__('Single person', 'kps') . '" title="' . esc_html__('Single person', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/family_30.png" alt="' . esc_html__('Family', 'kps') . '" title="' . esc_html__('Family', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/comeclub_30.png" alt="' . esc_html__('Club/Group', 'kps') . '" title="' . esc_html__('Club/Group', 'kps') . '" /></td>
                                 		</tr>
                                 		<tr>
                                             <td><input id="kps_icon25" name="kpsIconChoise" value="4" aria-required="true" required="required" type="radio" ' . $checkedIcon25 . '><label for="kps_icon25"></label></td>
                                             <td class="kps-vert-text"><b>25x25</b></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/hall_25.png" alt="' . esc_html(__('Hall', 'kps')) . '" title="' . esc_html(__('Hall', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/nature_25.png" alt="' . esc_html(__('Climbing', 'kps')) . '" title="' . esc_html(__('Climbing', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/trekking_25.png" alt="' . esc_html(__('Walking/Trekking', 'kps')) . '" title="' . esc_html(__('Walking/Trekking', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/travel_25.png" alt="' . esc_html(__('Travels', 'kps')) . '" title="' . esc_html(__('Travels', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/onetime_25.png" alt="' . esc_html(__('Unique', 'kps')) . '" title="' . esc_html(__('Unique', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/moretime_25.png" alt="' . esc_html(__('Regularly', 'kps')) . '" title="' . esc_html(__('Regularly', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/goalone_25.png" alt="' . esc_html(__('Single person', 'kps')) . '" title="' . esc_html(__('Single person', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/family_25.png" alt="' . esc_html(__('Family', 'kps')) . '" title="' . esc_html(__('Family', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/comeclub_25.png" alt="' . esc_html(__('Club/Group', 'kps')) . '" title="' . esc_html(__('Club/Group', 'kps')) . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/hall_25.png" alt="' . esc_html__('Hall', 'kps') . '" title="' . esc_html__('Hall', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/nature_25.png" alt="' . esc_html__('Climbing', 'kps') . '" title="' . esc_html__('Climbing', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/trekking_25.png" alt="' . esc_html__('Walking/Trekking', 'kps') . '" title="' . esc_html__('Walking/Trekking', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/travel_25.png" alt="' . esc_html__('Travels', 'kps') . '" title="' . esc_html__('Travels', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/onetime_25.png" alt="' . esc_html__('Unique', 'kps') . '" title="' . esc_html__('Unique', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/moretime_25.png" alt="' . esc_html__('Regularly', 'kps') . '" title="' . esc_html__('Regularly', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/goalone_25.png" alt="' . esc_html__('Single person', 'kps') . '" title="' . esc_html__('Single person', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/family_25.png" alt="' . esc_html__('Family', 'kps') . '" title="' . esc_html__('Family', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/comeclub_25.png" alt="' . esc_html__('Club/Group', 'kps') . '" title="' . esc_html__('Club/Group', 'kps') . '" /></td>
                                 		</tr>
                                         <tr>
                                             <td colspan="11" class="hr"></td>
                                         </tr>
                                         <tr>
-                                            <td colspan="11" style="text-align: center"><b>' . esc_html(__('Transparency', 'kps')) . '</b></td>
+                                            <td colspan="11" style="text-align: center"><b>' . esc_html__('Transparency', 'kps') . '</b></td>
                                         </tr>
                                 		<tr>
                                 			<td><input id="kps_icon45_t" name="kpsIconChoise" value="5" aria-required="true" required="required" type="radio" ' . $checkedIcon45_t . '><label for="kps_icon45_t"></label></td>
                                             <td class="kps-vert-text"><b>45x45</b></td>
-                                            <td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/hall_45_t.png" alt="' . esc_html(__('Hall', 'kps')) . '" title="' . esc_html(__('Hall', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/nature_45_t.png" alt="' . esc_html(__('Climbing', 'kps')) . '" title="' . esc_html(__('Climbing', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/trekking_45_t.png" alt="' . esc_html(__('Walking/Trekking', 'kps')) . '" title="' . esc_html(__('Walking/Trekking', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/travel_45_t.png" alt="' . esc_html(__('Travels', 'kps')) . '" title="' . esc_html(__('Travels', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/onetime_45_t.png" alt="' . esc_html(__('Unique', 'kps')) . '" title="' . esc_html(__('Unique', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/moretime_45_t.png" alt="' . esc_html(__('Regularly', 'kps')) . '" title="' . esc_html(__('Regularly', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/goalone_45_t.png" alt="' . esc_html(__('Single person', 'kps')) . '" title="' . esc_html(__('Single person', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/family_45_t.png" alt="' . esc_html(__('Family', 'kps')) . '" title="' . esc_html(__('Family', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/comeclub_45_t.png" alt="' . esc_html(__('Club/Group', 'kps')) . '" title="' . esc_html(__('Club/Group', 'kps')) . '" /></td>
+                                            <td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/hall_45_t.png" alt="' . esc_html__('Hall', 'kps') . '" title="' . esc_html__('Hall', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/nature_45_t.png" alt="' . esc_html__('Climbing', 'kps') . '" title="' . esc_html__('Climbing', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/trekking_45_t.png" alt="' . esc_html__('Walking/Trekking', 'kps') . '" title="' . esc_html__('Walking/Trekking', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/travel_45_t.png" alt="' . esc_html__('Travels', 'kps') . '" title="' . esc_html__('Travels', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/onetime_45_t.png" alt="' . esc_html__('Unique', 'kps') . '" title="' . esc_html__('Unique', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/moretime_45_t.png" alt="' . esc_html__('Regularly', 'kps') . '" title="' . esc_html__('Regularly', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/goalone_45_t.png" alt="' . esc_html__('Single person', 'kps') . '" title="' . esc_html__('Single person', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/family_45_t.png" alt="' . esc_html__('Family', 'kps') . '" title="' . esc_html__('Family', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/comeclub_45_t.png" alt="' . esc_html__('Club/Group', 'kps') . '" title="' . esc_html__('Club/Group', 'kps') . '" /></td>
                                 		</tr>
                                 		<tr>
                                             <td><input id="kps_icon40_t" name="kpsIconChoise" value="6" aria-required="true" required="required" type="radio" ' . $checkedIcon40_t . '><label for="kps_icon40_t"></label></td>
                                             <td class="kps-vert-text"><b>40x40</b></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/hall_40_t.png" alt="' . esc_html(__('Hall', 'kps')) . '" title="' . esc_html(__('Hall', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/nature_40_t.png" alt="' . esc_html(__('Climbing', 'kps')) . '" title="' . esc_html(__('Climbing', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/trekking_40_t.png" alt="' . esc_html(__('Walking/Trekking', 'kps')) . '" title="' . esc_html(__('Walking/Trekking', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/travel_40_t.png" alt="' . esc_html(__('Travels', 'kps')) . '" title="' . esc_html(__('Travels', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/onetime_40_t.png" alt="' . esc_html(__('Unique', 'kps')) . '" title="' . esc_html(__('Unique', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/moretime_40_t.png" alt="' . esc_html(__('Regularly', 'kps')) . '" title="' . esc_html(__('Regularly', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/goalone_40_t.png" alt="' . esc_html(__('Single person', 'kps')) . '" title="' . esc_html(__('Single person', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/family_40_t.png" alt="' . esc_html(__('Family', 'kps')) . '" title="' . esc_html(__('Family', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/comeclub_40_t.png" alt="' . esc_html(__('Club/Group', 'kps')) . '" title="' . esc_html(__('Club/Group', 'kps')) . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/hall_40_t.png" alt="' . esc_html__('Hall', 'kps') . '" title="' . esc_html__('Hall', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/nature_40_t.png" alt="' . esc_html__('Climbing', 'kps') . '" title="' . esc_html__('Climbing', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/trekking_40_t.png" alt="' . esc_html__('Walking/Trekking', 'kps') . '" title="' . esc_html__('Walking/Trekking', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/travel_40_t.png" alt="' . esc_html__('Travels', 'kps') . '" title="' . esc_html__('Travels', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/onetime_40_t.png" alt="' . esc_html__('Unique', 'kps') . '" title="' . esc_html__('Unique', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/moretime_40_t.png" alt="' . esc_html__('Regularly', 'kps') . '" title="' . esc_html__('Regularly', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/goalone_40_t.png" alt="' . esc_html__('Single person', 'kps') . '" title="' . esc_html__('Single person', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/family_40_t.png" alt="' . esc_html__('Family', 'kps') . '" title="' . esc_html__('Family', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/comeclub_40_t.png" alt="' . esc_html__('Club/Group', 'kps') . '" title="' . esc_html__('Club/Group', 'kps') . '" /></td>
                                 		</tr>
                                 		<tr>
                                             <td><input id="kps_icon35_t" name="kpsIconChoise" value="7" aria-required="true" required="required" type="radio" ' . $checkedIcon35_t . '><label for="kps_icon35_t"></label></td>
                                             <td class="kps-vert-text"><b>35x35</b></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/hall_35_t.png" alt="' . esc_html(__('Hall', 'kps')) . '" title="' . esc_html(__('Hall', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/nature_35_t.png" alt="' . esc_html(__('Climbing', 'kps')) . '" title="' . esc_html(__('Climbing', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/trekking_35_t.png" alt="' . esc_html(__('Walking/Trekking', 'kps')) . '" title="' . esc_html(__('Walking/Trekking', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/travel_35_t.png" alt="' . esc_html(__('Travels', 'kps')) . '" title="' . esc_html(__('Travels', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/onetime_35_t.png" alt="' . esc_html(__('Unique', 'kps')) . '" title="' . esc_html(__('Unique', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/moretime_35_t.png" alt="' . esc_html(__('Regularly', 'kps')) . '" title="' . esc_html(__('Regularly', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/goalone_35_t.png" alt="' . esc_html(__('Single person', 'kps')) . '" title="' . esc_html(__('Single person', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/family_35_t.png" alt="' . esc_html(__('Family', 'kps')) . '" title="' . esc_html(__('Family', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/comeclub_35_t.png" alt="' . esc_html(__('Club/Group', 'kps')) . '" title="' . esc_html(__('Club/Group', 'kps')) . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/hall_35_t.png" alt="' . esc_html__('Hall', 'kps') . '" title="' . esc_html__('Hall', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/nature_35_t.png" alt="' . esc_html__('Climbing', 'kps') . '" title="' . esc_html__('Climbing', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/trekking_35_t.png" alt="' . esc_html__('Walking/Trekking', 'kps') . '" title="' . esc_html__('Walking/Trekking', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/travel_35_t.png" alt="' . esc_html__('Travels', 'kps') . '" title="' . esc_html__('Travels', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/onetime_35_t.png" alt="' . esc_html__('Unique', 'kps') . '" title="' . esc_html__('Unique', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/moretime_35_t.png" alt="' . esc_html__('Regularly', 'kps') . '" title="' . esc_html__('Regularly', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/goalone_35_t.png" alt="' . esc_html__('Single person', 'kps') . '" title="' . esc_html__('Single person', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/family_35_t.png" alt="' . esc_html__('Family', 'kps') . '" title="' . esc_html__('Family', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/comeclub_35_t.png" alt="' . esc_html__('Club/Group', 'kps') . '" title="' . esc_html__('Club/Group', 'kps') . '" /></td>
                                 		</tr>
                                 		<tr>
                                             <td><input id="kps_icon30_t" name="kpsIconChoise" value="8" aria-required="true" required="required" type="radio" ' . $checkedIcon30_t . '><label for="kps_icon30_t"></label></td>
                                             <td class="kps-vert-text"><b>30x30</b></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/hall_30_t.png" alt="' . esc_html(__('Hall', 'kps')) . '" title="' . esc_html(__('Hall', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/nature_30_t.png" alt="' . esc_html(__('Climbing', 'kps')) . '" title="' . esc_html(__('Climbing', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/trekking_30_t.png" alt="' . esc_html(__('Walking/Trekking', 'kps')) . '" title="' . esc_html(__('Walking/Trekking', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/travel_30_t.png" alt="' . esc_html(__('Travels', 'kps')) . '" title="' . esc_html(__('Travels', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/onetime_30_t.png" alt="' . esc_html(__('Unique', 'kps')) . '" title="' . esc_html(__('Unique', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/moretime_30_t.png" alt="' . esc_html(__('Regularly', 'kps')) . '" title="' . esc_html(__('Regularly', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/goalone_30_t.png" alt="' . esc_html(__('Single person', 'kps')) . '" title="' . esc_html(__('Single person', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/family_30_t.png" alt="' . esc_html(__('Family', 'kps')) . '" title="' . esc_html(__('Family', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/comeclub_30_t.png" alt="' . esc_html(__('Club/Group', 'kps')) . '" title="' . esc_html(__('Club/Group', 'kps')) . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/hall_30_t.png" alt="' . esc_html__('Hall', 'kps') . '" title="' . esc_html__('Hall', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/nature_30_t.png" alt="' . esc_html__('Climbing', 'kps') . '" title="' . esc_html__('Climbing', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/trekking_30_t.png" alt="' . esc_html__('Walking/Trekking', 'kps') . '" title="' . esc_html__('Walking/Trekking', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/travel_30_t.png" alt="' . esc_html__('Travels', 'kps') . '" title="' . esc_html__('Travels', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/onetime_30_t.png" alt="' . esc_html__('Unique', 'kps') . '" title="' . esc_html__('Unique', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/moretime_30_t.png" alt="' . esc_html__('Regularly', 'kps') . '" title="' . esc_html__('Regularly', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/goalone_30_t.png" alt="' . esc_html__('Single person', 'kps') . '" title="' . esc_html__('Single person', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/family_30_t.png" alt="' . esc_html__('Family', 'kps') . '" title="' . esc_html__('Family', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/comeclub_30_t.png" alt="' . esc_html__('Club/Group', 'kps') . '" title="' . esc_html__('Club/Group', 'kps') . '" /></td>
                                 		</tr>
                                 		<tr>
                                             <td><input id="kps_icon25_t" name="kpsIconChoise" value="9" aria-required="true" required="required" type="radio" ' . $checkedIcon25_t . '><label for="kps_icon25_t"></label></td>
                                             <td class="kps-vert-text"><b>25x25</b></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/hall_25_t.png" alt="' . esc_html(__('Hall', 'kps')) . '" title="' . esc_html(__('Hall', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/nature_25_t.png" alt="' . esc_html(__('Climbing', 'kps')) . '" title="' . esc_html(__('Climbing', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/trekking_25_t.png" alt="' . esc_html(__('Walking/Trekking', 'kps')) . '" title="' . esc_html(__('Walking/Trekking', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/travel_25_t.png" alt="' . esc_html(__('Travels', 'kps')) . '" title="' . esc_html(__('Travels', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/onetime_25_t.png" alt="' . esc_html(__('Unique', 'kps')) . '" title="' . esc_html(__('Unique', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/moretime_25_t.png" alt="' . esc_html(__('Regularly', 'kps')) . '" title="' . esc_html(__('Regularly', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/goalone_25_t.png" alt="' . esc_html(__('Single person', 'kps')) . '" title="' . esc_html(__('Single person', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/family_25_t.png" alt="' . esc_html(__('Family', 'kps')) . '" title="' . esc_html(__('Family', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/comeclub_25_t.png" alt="' . esc_html(__('Club/Group', 'kps')) . '" title="' . esc_html(__('Club/Group', 'kps')) . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/hall_25_t.png" alt="' . esc_html__('Hall', 'kps') . '" title="' . esc_html__('Hall', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/nature_25_t.png" alt="' . esc_html__('Climbing', 'kps') . '" title="' . esc_html__('Climbing', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/trekking_25_t.png" alt="' . esc_html__('Walking/Trekking', 'kps') . '" title="' . esc_html__('Walking/Trekking', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/travel_25_t.png" alt="' . esc_html__('Travels', 'kps') . '" title="' . esc_html__('Travels', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/onetime_25_t.png" alt="' . esc_html__('Unique', 'kps') . '" title="' . esc_html__('Unique', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/moretime_25_t.png" alt="' . esc_html__('Regularly', 'kps') . '" title="' . esc_html__('Regularly', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/goalone_25_t.png" alt="' . esc_html__('Single person', 'kps') . '" title="' . esc_html__('Single person', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/family_25_t.png" alt="' . esc_html__('Family', 'kps') . '" title="' . esc_html__('Family', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/comeclub_25_t.png" alt="' . esc_html__('Club/Group', 'kps') . '" title="' . esc_html__('Club/Group', 'kps') . '" /></td>
                                 		</tr>
                                 		<tr>
                                             <td colspan="11" style="text-align: center">
                                                 <input type="hidden" id="kps_tab" name="kps_tab" value="kps_Icons" />
                                                 <input type="hidden" id="kpsIconToken" name="kpsIconToken" value="' . $token . '" />
-                                                <input class="button-primary" type="submit" name="submitIcon" value="' . esc_html(__('Save', 'kps')) . '">
+                                                <input class="button-primary" type="submit" name="submitIcon" value="' . esc_html__('Save', 'kps') . '">
                                             </td>
                                 		</tr>
                                 	</tbody>
@@ -452,7 +452,7 @@ function kps_Output()
             // Fehlermeldungen
             if (!is_array($setOutput))
             {
-                $error[] = esc_html(__('Error validating the data', 'kps'));
+                $error[] = esc_html__('Error validating the data', 'kps');
             }
 
             // Captcha aktualisieren
@@ -468,7 +468,7 @@ function kps_Output()
                     update_option('kps_output', $setOutput);
                     echo '
                     <div class="notice notice-success is-dismissible">
-                    	<p><strong>' . esc_html(__('Saved', 'kps')) . ':&#160;' .  esc_html(__('Output', 'kps')) . '</strong></p>
+                    	<p><strong>' . esc_html__('Saved', 'kps') . ':&#160;' .  esc_html__('Output', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -479,7 +479,7 @@ function kps_Output()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . esc_html(__('Error serializing the data', 'kps')) . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Error serializing the data', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -493,7 +493,7 @@ function kps_Output()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . $error[$key] . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . $error[$key] . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -506,7 +506,7 @@ function kps_Output()
         {
             echo '
             <div class="notice notice-error is-dismissible">
-            	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . esc_html(__('Token invalid', 'kps')) . '</strong></p>
+            	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
             	<button type="button" class="notice-dismiss">
             		<span class="screen-reader-text">Dismiss this notice.</span>
             	</button>
@@ -531,19 +531,19 @@ function kps_Output()
                                 <table class="table" style="border-spacing: 20px;">
                                 	<tbody>
                                         <tr>
-                                            <td><label class="labelCheckbox" for="kpsUnlockTime">' . esc_html(__('Show time in entry', 'kps')) . '</label></td>
+                                            <td><label class="labelCheckbox" for="kpsUnlockTime">' . esc_html__('Show time in entry', 'kps') . '</label></td>
                                             <td><input type="checkbox" name="kpsUnlockTime" id="kpsUnlockTime" value="1" ' . $checkedUnlockTime . ' /></td>
                                         </tr>
                                         <tr>
-                                            <td><label class="labelCheckbox" for="kpsEmailSetTime">' . esc_html(__('Show time in Activation-Email', 'kps')) . '</label></td>
+                                            <td><label class="labelCheckbox" for="kpsEmailSetTime">' . esc_html__('Show time in Activation-Email', 'kps') . '</label></td>
                                             <td><input type="checkbox" name="kpsEmailSetTime" id="kpsEmailSetTime" value="1" ' . $checkedEmailSetTime . ' /></td>
                                         </tr>
                                         <tr>
-                                            <td><label class="labelCheckbox" for="kpsEmailUnlockTime">' . esc_html(__('Show time in Unlock-Email', 'kps')) . '</label></td>
+                                            <td><label class="labelCheckbox" for="kpsEmailUnlockTime">' . esc_html__('Show time in Unlock-Email', 'kps') . '</label></td>
                                             <td><input type="checkbox" name="kpsEmailUnlockTime" id="kpsEmailUnlockTime" value="1" ' . $checkedEmailUnlockTime . ' /></td>
                                         </tr>
                                         <tr>
-                                            <td><label class="labelCheckbox" for="kpsEmailDeleteTime">' . esc_html(__('Show time in Delete-Email', 'kps')) . '</label></td>
+                                            <td><label class="labelCheckbox" for="kpsEmailDeleteTime">' . esc_html__('Show time in Delete-Email', 'kps') . '</label></td>
                                             <td><input type="checkbox" name="kpsEmailDeleteTime" id="kpsEmailDeleteTime" value="1" ' . $checkedEmailDeleteTime . ' /></td>
                                         </tr>
                                         <tr>
@@ -553,7 +553,7 @@ function kps_Output()
                                             <td colspan="2" style="text-align: center">
                                                 <input type="hidden" id="kps_tab" name="kps_tab" value="kps_Output" />
                                                 <input type="hidden" id="kpsOutputToken" name="kpsOutputToken" value="' . $token . '" />
-                                                <input class="button-primary" type="submit" name="submitOutput" value="' . esc_html(__('Save', 'kps')) . '">
+                                                <input class="button-primary" type="submit" name="submitOutput" value="' . esc_html__('Save', 'kps') . '">
                                             </td>
                                 		</tr>
                                 	</tbody>
@@ -616,11 +616,11 @@ function kps_Legend()
             if (!isset($setLegend['kpsLegendIconPak'])
                 OR !is_int($setLegend['kpsLegendIconPak']))
             {
-                $error[] = esc_html(__('No legend-icons selected', 'kps'));
+                $error[] = esc_html__('No legend-icons selected', 'kps');
             }
             if (!is_array($setLegend))
             {
-                $error[] = esc_html(__('Error validating the data', 'kps'));
+                $error[] = esc_html__('Error validating the data', 'kps');
             }
 
             // Captcha aktualisieren
@@ -636,7 +636,7 @@ function kps_Legend()
                     update_option('kps_legend', $setLegend);
                     echo '
                     <div class="notice notice-success is-dismissible">
-                    	<p><strong>' . esc_html(__('Saved', 'kps')) . ':&#160;' .  esc_html(__('Legend', 'kps')) . '</strong></p>
+                    	<p><strong>' . esc_html__('Saved', 'kps') . ':&#160;' .  esc_html__('Legend', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -647,7 +647,7 @@ function kps_Legend()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . esc_html(__('Error serializing the data', 'kps')) . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Error serializing the data', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -661,7 +661,7 @@ function kps_Legend()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . $error[$key] . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . $error[$key] . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -674,7 +674,7 @@ function kps_Legend()
         {
             echo '
             <div class="notice notice-error is-dismissible">
-            	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . esc_html(__('Token invalid', 'kps')) . '</strong></p>
+            	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
             	<button type="button" class="notice-dismiss">
             		<span class="screen-reader-text">Dismiss this notice.</span>
             	</button>
@@ -698,66 +698,66 @@ function kps_Legend()
                                 <table class="table" style="border-spacing: 20px;">
                                 	<tbody>
                                         <tr>
-                                            <td colspan="11" style="text-align: center"><b>' . esc_html(__('No transparency', 'kps')) . '</b></td>
+                                            <td colspan="11" style="text-align: center"><b>' . esc_html__('No transparency', 'kps') . '</b></td>
                                         </tr>
                                 		<tr>
                                 			<td></td>
                                             <td></td>
-                                            <td><b>' . esc_html(__('Hall', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Climbing', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Walking/Trekking', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Travels', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Unique', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Regularly', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Single person', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Family', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Club/Group', 'kps')) . '</b></td>
+                                            <td><b>' . esc_html__('Hall', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Climbing', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Walking/Trekking', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Travels', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Unique', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Regularly', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Single person', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Family', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Club/Group', 'kps') . '</b></td>
                                 		</tr>
                                 		<tr>
                                             <td><input id="kps_legend25" name="kpsLegendIconPak" value="0" aria-required="true" required="required" type="radio" ' . $checkedLegend25 . '><label for="kps_legend25"></label></td>
                                             <td class="kps-vert-text"><b>25x25</b></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/hall_25.png" alt="' . esc_html(__('Hall', 'kps')) . '" title="' . esc_html(__('Hall', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/nature_25.png" alt="' . esc_html(__('Climbing', 'kps')) . '" title="' . esc_html(__('Climbing', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/trekking_25.png" alt="' . esc_html(__('Walking/Trekking', 'kps')) . '" title="' . esc_html(__('Walking/Trekking', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/travel_25.png" alt="' . esc_html(__('Travels', 'kps')) . '" title="' . esc_html(__('Travels', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/onetime_25.png" alt="' . esc_html(__('Unique', 'kps')) . '" title="' . esc_html(__('Unique', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/moretime_25.png" alt="' . esc_html(__('Regularly', 'kps')) . '" title="' . esc_html(__('Regularly', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/goalone_25.png" alt="' . esc_html(__('Single person', 'kps')) . '" title="' . esc_html(__('Single person', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/family_25.png" alt="' . esc_html(__('Family', 'kps')) . '" title="' . esc_html(__('Family', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/comeclub_25.png" alt="' . esc_html(__('Club/Group', 'kps')) . '" title="' . esc_html(__('Club/Group', 'kps')) . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/hall_25.png" alt="' . esc_html__('Hall', 'kps') . '" title="' . esc_html__('Hall', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/nature_25.png" alt="' . esc_html__('Climbing', 'kps') . '" title="' . esc_html__('Climbing', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/trekking_25.png" alt="' . esc_html__('Walking/Trekking', 'kps') . '" title="' . esc_html__('Walking/Trekking', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/travel_25.png" alt="' . esc_html__('Travels', 'kps') . '" title="' . esc_html__('Travels', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/onetime_25.png" alt="' . esc_html__('Unique', 'kps') . '" title="' . esc_html__('Unique', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/moretime_25.png" alt="' . esc_html__('Regularly', 'kps') . '" title="' . esc_html__('Regularly', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/goalone_25.png" alt="' . esc_html__('Single person', 'kps') . '" title="' . esc_html__('Single person', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/family_25.png" alt="' . esc_html__('Family', 'kps') . '" title="' . esc_html__('Family', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/comeclub_25.png" alt="' . esc_html__('Club/Group', 'kps') . '" title="' . esc_html__('Club/Group', 'kps') . '" /></td>
                                 		</tr>
                                         <tr>
                                             <td colspan="11" class="hr"></td>
                                         </tr>
                                         <tr>
-                                            <td colspan="11" style="text-align: center"><b>' . esc_html(__('Transparency', 'kps')) . '</b></td>
+                                            <td colspan="11" style="text-align: center"><b>' . esc_html__('Transparency', 'kps') . '</b></td>
                                         </tr>
                                 		<tr>
                                             <td><input id="kps_legend25_t" name="kpsLegendIconPak" value="1" aria-required="true" required="required" type="radio" ' . $checkedLegend25_t . '><label for="kps_legend25_t"></label></td>
                                             <td class="kps-vert-text"><b>25x25</b></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/hall_25_t.png" alt="' . esc_html(__('Hall', 'kps')) . '" title="' . esc_html(__('Hall', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/nature_25_t.png" alt="' . esc_html(__('Climbing', 'kps')) . '" title="' . esc_html(__('Climbing', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/trekking_25_t.png" alt="' . esc_html(__('Walking/Trekking', 'kps')) . '" title="' . esc_html(__('Walking/Trekking', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/travel_25_t.png" alt="' . esc_html(__('Travels', 'kps')) . '" title="' . esc_html(__('Travels', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/onetime_25_t.png" alt="' . esc_html(__('Unique', 'kps')) . '" title="' . esc_html(__('Unique', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/moretime_25_t.png" alt="' . esc_html(__('Regularly', 'kps')) . '" title="' . esc_html(__('Regularly', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/goalone_25_t.png" alt="' . esc_html(__('Single person', 'kps')) . '" title="' . esc_html(__('Single person', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/family_25_t.png" alt="' . esc_html(__('Family', 'kps')) . '" title="' . esc_html(__('Family', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/comeclub_25_t.png" alt="' . esc_html(__('Club/Group', 'kps')) . '" title="' . esc_html(__('Club/Group', 'kps')) . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/hall_25_t.png" alt="' . esc_html__('Hall', 'kps') . '" title="' . esc_html__('Hall', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/nature_25_t.png" alt="' . esc_html__('Climbing', 'kps') . '" title="' . esc_html__('Climbing', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/trekking_25_t.png" alt="' . esc_html__('Walking/Trekking', 'kps') . '" title="' . esc_html__('Walking/Trekking', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/travel_25_t.png" alt="' . esc_html__('Travels', 'kps') . '" title="' . esc_html__('Travels', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/onetime_25_t.png" alt="' . esc_html__('Unique', 'kps') . '" title="' . esc_html__('Unique', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/moretime_25_t.png" alt="' . esc_html__('Regularly', 'kps') . '" title="' . esc_html__('Regularly', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/goalone_25_t.png" alt="' . esc_html__('Single person', 'kps') . '" title="' . esc_html__('Single person', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/family_25_t.png" alt="' . esc_html__('Family', 'kps') . '" title="' . esc_html__('Family', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/comeclub_25_t.png" alt="' . esc_html__('Club/Group', 'kps') . '" title="' . esc_html__('Club/Group', 'kps') . '" /></td>
                                 		</tr>
                                         <tr>
                                             <td colspan="11" class="hr"></td>
                                         </tr>
                                         <tr>
                                             <td><input type="checkbox" name="kpsLegendActivated" id="kpsLegendActivated" value="1" ' . $checkedLegendActivated . ' /></td>
-                                            <td colspan="3"><label class="labelCheckbox" for="kpsLegendActivated">' . esc_html(__('Legend activate', 'kps')) . '</label></td>
+                                            <td colspan="3"><label class="labelCheckbox" for="kpsLegendActivated">' . esc_html__('Legend activate', 'kps') . '</label></td>
                                             <td colspan="7"></td>
                                         </tr>
                                 		<tr>
                                             <td colspan="11" style="text-align: center">
                                                 <input type="hidden" id="kps_tab" name="kps_tab" value="kps_Legend" />
                                                 <input type="hidden" id="kpsLegendToken" name="kpsLegendToken" value="' . $token . '" />
-                                                <input class="button-primary" type="submit" name="submitLegend" value="' . esc_html(__('Save', 'kps')) . '">
+                                                <input class="button-primary" type="submit" name="submitLegend" value="' . esc_html__('Save', 'kps') . '">
                                             </td>
                                 		</tr>
                                 	</tbody>
@@ -816,11 +816,11 @@ function kps_Widget()
             if (!isset($setWidget['kpsWidgetIconPak'])
                 OR !is_int($setWidget['kpsWidgetIconPak']))
             {
-                $error[] = esc_html(__('No widget-icons selected', 'kps'));
+                $error[] = esc_html__('No widget-icons selected', 'kps');
             }
             if (!is_array($setWidget))
             {
-                $error[] = esc_html(__('Error validating the data', 'kps'));
+                $error[] = esc_html__('Error validating the data', 'kps');
             }
 
             // Captcha aktualisieren
@@ -836,7 +836,7 @@ function kps_Widget()
                     update_option('kps_widget', $setWidget);
                     echo '
                     <div class="notice notice-success is-dismissible">
-                    	<p><strong>' . esc_html(__('Saved', 'kps')) . ':&#160;' . esc_html(__('Widget', 'kps')) . '</strong></p>
+                    	<p><strong>' . esc_html__('Saved', 'kps') . ':&#160;' . esc_html__('Widget', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -847,7 +847,7 @@ function kps_Widget()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . esc_html(__('Error serializing the data', 'kps')) . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Error serializing the data', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -861,7 +861,7 @@ function kps_Widget()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . $error[$key] . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . $error[$key] . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -874,7 +874,7 @@ function kps_Widget()
         {
             echo '
             <div class="notice notice-error is-dismissible">
-            	<p><strong>' . esc_html(__('Error!', 'kps')) . ':&#160;' . esc_html(__('Token invalid', 'kps')) . '</strong></p>
+            	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
             	<button type="button" class="notice-dismiss">
             		<span class="screen-reader-text">Dismiss this notice.</span>
             	</button>
@@ -897,52 +897,52 @@ function kps_Widget()
                                 <table class="table" style="border-spacing: 20px;">
                                 	<tbody>
                                         <tr>
-                                            <td colspan="11" style="text-align: center"><b>' . esc_html(__('No transparency', 'kps')) . '</b></td>
+                                            <td colspan="11" style="text-align: center"><b>' . esc_html__('No transparency', 'kps') . '</b></td>
                                         </tr>
                                 		<tr>
                                 			<td></td>
                                             <td></td>
-                                            <td><b>' . esc_html(__('Hall', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Climbing', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Walking/Trekking', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Travels', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Unique', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Regularly', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Single person', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Family', 'kps')) . '</b></td>
-                                			<td><b>' . esc_html(__('Club/Group', 'kps')) . '</b></td>
+                                            <td><b>' . esc_html__('Hall', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Climbing', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Walking/Trekking', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Travels', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Unique', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Regularly', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Single person', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Family', 'kps') . '</b></td>
+                                			<td><b>' . esc_html__('Club/Group', 'kps') . '</b></td>
                                 		</tr>
                                 		<tr>
                                             <td><input id="kps_widget25" name="kpsWidgetIconPak" value="0" aria-required="true" required="required" type="radio" ' . $checkedWidget25 . '><label for="kps_widget25"></label></td>
                                             <td class="kps-vert-text"><b>25x25</b></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/hall_25.png" alt="' . esc_html(__('Hall', 'kps')) . '" title="' . esc_html(__('Hall', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/nature_25.png" alt="' . esc_html(__('Climbing', 'kps')) . '" title="' . esc_html(__('Climbing', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/trekking_25.png" alt="' . esc_html(__('Walking/Trekking', 'kps')) . '" title="' . esc_html(__('Walking/Trekking', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/travel_25.png" alt="' . esc_html(__('Travels', 'kps')) . '" title="' . esc_html(__('Travels', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/onetime_25.png" alt="' . esc_html(__('Unique', 'kps')) . '" title="' . esc_html(__('Unique', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/moretime_25.png" alt="' . esc_html(__('Regularly', 'kps')) . '" title="' . esc_html(__('Regularly', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/goalone_25.png" alt="' . esc_html(__('Single person', 'kps')) . '" title="' . esc_html(__('Single person', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/family_25.png" alt="' . esc_html(__('Family', 'kps')) . '" title="' . esc_html(__('Family', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/comeclub_25.png" alt="' . esc_html(__('Club/Group', 'kps')) . '" title="' . esc_html(__('Club/Group', 'kps')) . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/hall_25.png" alt="' . esc_html__('Hall', 'kps') . '" title="' . esc_html__('Hall', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/nature_25.png" alt="' . esc_html__('Climbing', 'kps') . '" title="' . esc_html__('Climbing', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/trekking_25.png" alt="' . esc_html__('Walking/Trekking', 'kps') . '" title="' . esc_html__('Walking/Trekking', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/travel_25.png" alt="' . esc_html__('Travels', 'kps') . '" title="' . esc_html__('Travels', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/onetime_25.png" alt="' . esc_html__('Unique', 'kps') . '" title="' . esc_html__('Unique', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/moretime_25.png" alt="' . esc_html__('Regularly', 'kps') . '" title="' . esc_html__('Regularly', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/goalone_25.png" alt="' . esc_html__('Single person', 'kps') . '" title="' . esc_html__('Single person', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/family_25.png" alt="' . esc_html__('Family', 'kps') . '" title="' . esc_html__('Family', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/comeclub_25.png" alt="' . esc_html__('Club/Group', 'kps') . '" title="' . esc_html__('Club/Group', 'kps') . '" /></td>
                                 		</tr>
                                         <tr>
                                             <td colspan="11" class="hr"></td>
                                         </tr>
                                         <tr>
-                                            <td colspan="11" style="text-align: center"><b>' . esc_html(__('Transparency', 'kps')) . '</b></td>
+                                            <td colspan="11" style="text-align: center"><b>' . esc_html__('Transparency', 'kps') . '</b></td>
                                         </tr>
                                 		<tr>
                                             <td><input id="kps_widget25_t" name="kpsWidgetIconPak" value="1" aria-required="true" required="required" type="radio" ' . $checkedWidget25_t . '><label for="kps_widget25_t"></label></td>
                                             <td class="kps-vert-text"><b>25x25</b></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/hall_25_t.png" alt="' . esc_html(__('Hall', 'kps')) . '" title="' . esc_html(__('Hall', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/nature_25_t.png" alt="' . esc_html(__('Climbing', 'kps')) . '" title="' . esc_html(__('Climbing', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/trekking_25_t.png" alt="' . esc_html(__('Walking/Trekking', 'kps')) . '" title="' . esc_html(__('Walking/Trekking', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/travel_25_t.png" alt="' . esc_html(__('Travels', 'kps')) . '" title="' . esc_html(__('Travels', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/onetime_25_t.png" alt="' . esc_html(__('Unique', 'kps')) . '" title="' . esc_html(__('Unique', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/moretime_25_t.png" alt="' . esc_html(__('Regularly', 'kps')) . '" title="' . esc_html(__('Regularly', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/goalone_25_t.png" alt="' . esc_html(__('Single person', 'kps')) . '" title="' . esc_html(__('Single person', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/family_25_t.png" alt="' . esc_html(__('Family', 'kps')) . '" title="' . esc_html(__('Family', 'kps')) . '" /></td>
-                                			<td style="text-align: center"><img src="' . KPS_RELATIV . '/frontend/gfx/comeclub_25_t.png" alt="' . esc_html(__('Club/Group', 'kps')) . '" title="' . esc_html(__('Club/Group', 'kps')) . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/hall_25_t.png" alt="' . esc_html__('Hall', 'kps') . '" title="' . esc_html__('Hall', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/nature_25_t.png" alt="' . esc_html__('Climbing', 'kps') . '" title="' . esc_html__('Climbing', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/trekking_25_t.png" alt="' . esc_html__('Walking/Trekking', 'kps') . '" title="' . esc_html__('Walking/Trekking', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/travel_25_t.png" alt="' . esc_html__('Travels', 'kps') . '" title="' . esc_html__('Travels', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/onetime_25_t.png" alt="' . esc_html__('Unique', 'kps') . '" title="' . esc_html__('Unique', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/moretime_25_t.png" alt="' . esc_html__('Regularly', 'kps') . '" title="' . esc_html__('Regularly', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/goalone_25_t.png" alt="' . esc_html__('Single person', 'kps') . '" title="' . esc_html__('Single person', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/family_25_t.png" alt="' . esc_html__('Family', 'kps') . '" title="' . esc_html__('Family', 'kps') . '" /></td>
+                                			<td style="text-align: center"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/comeclub_25_t.png" alt="' . esc_html__('Club/Group', 'kps') . '" title="' . esc_html__('Club/Group', 'kps') . '" /></td>
                                 		</tr>
                                         <tr>
                                             <td colspan="11" class="hr"></td>
@@ -951,7 +951,7 @@ function kps_Widget()
                                             <td colspan="11" style="text-align: center">
                                                 <input type="hidden" id="kps_tab" name="kps_tab" value="kps_Widget" />
                                                 <input type="hidden" id="kpsWidgetToken" name="kpsWidgetToken" value="' . $token . '" />
-                                                <input class="button-primary" type="submit" name="submitWidget" value="' . esc_html(__('Save', 'kps')) . '">
+                                                <input class="button-primary" type="submit" name="submitWidget" value="' . esc_html__('Save', 'kps') . '">
                                             </td>
                                 		</tr>
                                 	</tbody>
@@ -977,24 +977,24 @@ function kps_Shortcodes()
                                 <table class="table" style="border-spacing: 20px;">
                                 	<tbody>
                                         <tr>
-                                            <td><b>' . esc_html(__('Standard', 'kps')) . '</b></td>
+                                            <td><b>' . esc_html__('Standard', 'kps') . '</b></td>
                                             <td><input type="text" name="kps-shortcode" size="50" readonly="readonly" value="[kps-shortcode]" /></td>
-                                            <td>' . esc_html(__('Standard-Edition', 'kps')) . '</td>
+                                            <td>' . esc_html__('Standard-Edition', 'kps') . '</td>
                                         </tr>
                                         <tr>
-                                            <td><b>' . esc_html(__('Form', 'kps')) . '</b></td>
+                                            <td><b>' . esc_html__('Form', 'kps') . '</b></td>
                                             <td><input type="text" name="kps-shortcode" size="50" readonly="readonly" value="[kps-shortcode show-form-only=“true“]" /></td>
-                                            <td>' . esc_html(__('Only the form will be displayed without entries.', 'kps')) . '</td>
+                                            <td>' . esc_html__('Only the form will be displayed without entries.', 'kps') . '</td>
                                         </tr>
                                         <tr>
-                                            <td><b>' . esc_html(__('Entries', 'kps')) . '</b></td>
+                                            <td><b>' . esc_html__('Entries', 'kps') . '</b></td>
                                             <td><input type="text" name="kps-shortcode" size="50" readonly="readonly" value="[kps-shortcode button-write=“false“]" /></td>
-                                            <td>' . esc_html(__('Only the entries are displayed without form and form button.', 'kps')) . '</td>
+                                            <td>' . esc_html__('Only the entries are displayed without form and form button.', 'kps') . '</td>
                                         </tr>
                                         <tr>
-                                            <td><b>' . esc_html(__('Button Name', 'kps')) . '</b></td>
-                                            <td><input type="text" name="kps-shortcode" size="50" readonly="readonly" value="[kps-shortcode button-text=“' . esc_html(__('Write an entry', 'kps')) . '“]" /></td>
-                                            <td>' . esc_html(__('Change button name in the form.', 'kps')) . '</td>
+                                            <td><b>' . esc_html__('Button Name', 'kps') . '</b></td>
+                                            <td><input type="text" name="kps-shortcode" size="50" readonly="readonly" value="[kps-shortcode button-text=“' . esc_html__('Write an entry', 'kps') . '“]" /></td>
+                                            <td>' . esc_html__('Change button name in the form.', 'kps') . '</td>
                                         </tr>
                                 	</tbody>
                                 </table>
