@@ -74,11 +74,11 @@ class Kletterpartner_Suche extends WP_Widget {
                                 'linktext'      =>  esc_html__('Read more...', 'kps')
         );
 
+        $instance = wp_parse_args((array)$instance, $defaultValues);
+
         $title          = esc_html($instance['title']);
         $showEntries    = (int)$instance['showEntries'];
         $linkText       = esc_html($instance['linkText']);
-
-        $instance = wp_parse_args((array)$instance, $defaultValues);
 
         // Alle Einträge pro Seite aus Datenbank holen
         $results = $wpdb->get_results("SELECT * FROM " . KPS_TABLE_ENTRIES . "
@@ -119,7 +119,6 @@ class Kletterpartner_Suche extends WP_Widget {
                             		<div class="kps-widget-divTableRow">
                             			<div class="kps-widget-divTableCell kps-widget">' .
                                         $entry->show_authorName_raw() . '&#160;-&#160;' . $entry->show_unlockDateTimeWidget()
-
                                         . '</div>
                             		</div>
                             		<div class="kps-widget-divTableRow">
@@ -136,7 +135,7 @@ class Kletterpartner_Suche extends WP_Widget {
             }
 
             // Link zum weiterlesen
-            $output .= '<a href="' .  esc_url(get_post_permalink(kps_PermalinksWithShortCode()[0])) . '" title="' . $linkText . '">' . $linkText . '</a>';
+            $output .= '<a href="' .  esc_url(get_post_permalink(kps_PermalinksWithShortCode()[0])) . '" class="kps-more" title="' . $linkText . '">' . $linkText . '</a>';
         }
         else
         {
@@ -180,16 +179,6 @@ class Kletterpartner_Suche extends WP_Widget {
      */
     function form($instance)
     {
-        /*
-        echo "<pre>";
-        print_r($this);
-        echo "</pre>";
-
-        echo "<pre>";
-        print_r($instance);
-        echo "</pre>";
-        */
-
         $defaultValues = array( 'title'         =>  esc_html__('Climbing-Partner-Search', 'kps'),
                                 'showEntries'   =>  3,
                                 'linkText'      =>  esc_html__('Read more...', 'kps')

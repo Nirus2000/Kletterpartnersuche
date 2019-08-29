@@ -142,7 +142,7 @@ class kps_activation
 
             // Gesamtzähler für Statistik
             $countKPSCounter = kps_unserialize(get_option('kps_kpsCounter', false));
-            foreach ($countKPSCounter as $key => $value)
+            foreach ($countKPSCounter AS $key => $value)
             {
                 if ($key == 'kpsAllActivatedEntrys') { $countKPSCounter[$key]++; }
             }

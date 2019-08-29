@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kletterpartner-Suche\n"
-"POT-Creation-Date: 2019-06-16 13:31+0200\n"
-"PO-Revision-Date: 2019-06-16 13:31+0200\n"
+"POT-Creation-Date: 2019-08-29 18:56+0200\n"
+"PO-Revision-Date: 2019-08-29 18:56+0200\n"
 "Last-Translator: Alexander Ott <kps@nirus-online.de>\n"
 "Language-Team: Alexander Ott\n"
 "Language: de_DE\n"
@@ -32,14 +32,14 @@ msgid "General Data Protection Regulation"
 msgstr "Datenschutz-Grundverordnung"
 
 #: admin/kps-agb.php:63 admin/kps-design.php:67 admin/kps-email.php:67
-#: admin/kps-entries.php:605 admin/kps-privacy.php:67 admin/kps-settings.php:67
+#: admin/kps-entries.php:563 admin/kps-privacy.php:67 admin/kps-settings.php:67
 #: admin/kps-uninstall.php:82 admin/kps-uninstall.php:135 admin/kps.php:72
 #: frontend/kps-widget.php:56 frontend/kps-widget.php:72
-#: frontend/kps-widget.php:193 functions/kps-privacy.php:48
+#: frontend/kps-widget.php:182 functions/kps-privacy.php:48
 #: functions/kps-privacy.php:100 functions/kps-privacy.php:105
 #: functions/kps-privacy.php:116 functions/kps-privacy.php:121
 #: functions/kps-privacy.php:127 functions/kps-privacy.php:145
-#: kps-hooks.php:140
+#: kps-hooks.php:138
 msgid "Climbing-Partner-Search"
 msgstr "Kletterpartner-Suche"
 
@@ -49,17 +49,16 @@ msgstr "Kletterpartner-Suche"
 msgid "Overview"
 msgstr "Übersicht"
 
-#: admin/kps-agb.php:116 admin/kps-agb.php:212 admin/kps-design.php:193
-#: admin/kps-design.php:471 admin/kps-design.php:639 admin/kps-design.php:839
-#: admin/kps-email.php:190 admin/kps-email.php:495 admin/kps-email.php:802
-#: admin/kps-email.php:1088 admin/kps-entries.php:225 admin/kps-entries.php:428
-#: admin/kps-entries.php:441 admin/kps-entries.php:454
-#: admin/kps-entries.php:467 admin/kps-entries.php:480
-#: admin/kps-privacy.php:134 admin/kps-privacy.php:251
-#: admin/kps-settings.php:211 admin/kps-settings.php:411
-#: admin/kps-settings.php:682 admin/kps-settings.php:963
-#: admin/kps-settings.php:1100 admin/kps-settings.php:1243
-#: admin/kps-settings.php:1383
+#: admin/kps-agb.php:116 admin/kps-agb.php:212 admin/kps-design.php:147
+#: admin/kps-design.php:316 admin/kps-email.php:190 admin/kps-email.php:495
+#: admin/kps-email.php:802 admin/kps-email.php:1088 admin/kps-entries.php:200
+#: admin/kps-entries.php:386 admin/kps-entries.php:399
+#: admin/kps-entries.php:412 admin/kps-entries.php:425
+#: admin/kps-entries.php:438 admin/kps-privacy.php:134
+#: admin/kps-privacy.php:251 admin/kps-settings.php:211
+#: admin/kps-settings.php:411 admin/kps-settings.php:682
+#: admin/kps-settings.php:963 admin/kps-settings.php:1100
+#: admin/kps-settings.php:1243 admin/kps-settings.php:1383
 msgid "Saved"
 msgstr "Gespeichert"
 
@@ -94,14 +93,13 @@ msgstr ""
 msgid "Selection"
 msgstr "Auswahl"
 
-#: admin/kps-agb.php:162 admin/kps-agb.php:255 admin/kps-design.php:404
-#: admin/kps-design.php:556 admin/kps-design.php:760 admin/kps-design.php:954
-#: admin/kps-email.php:326 admin/kps-email.php:630 admin/kps-email.php:935
-#: admin/kps-email.php:1237 admin/kps-privacy.php:200 admin/kps-privacy.php:314
-#: admin/kps-settings.php:340 admin/kps-settings.php:539
-#: admin/kps-settings.php:912 admin/kps-settings.php:1017
-#: admin/kps-settings.php:1178 admin/kps-settings.php:1302
-#: admin/kps-settings.php:1465
+#: admin/kps-agb.php:162 admin/kps-agb.php:255 admin/kps-design.php:247
+#: admin/kps-design.php:406 admin/kps-email.php:326 admin/kps-email.php:630
+#: admin/kps-email.php:935 admin/kps-email.php:1237 admin/kps-privacy.php:200
+#: admin/kps-privacy.php:314 admin/kps-settings.php:340
+#: admin/kps-settings.php:539 admin/kps-settings.php:912
+#: admin/kps-settings.php:1017 admin/kps-settings.php:1178
+#: admin/kps-settings.php:1302 admin/kps-settings.php:1465
 msgid "Save"
 msgstr "Speichern"
 
@@ -132,166 +130,103 @@ msgstr "DSGVO"
 msgid "Shortcodes"
 msgstr "Shortcodes"
 
-#: admin/kps-design.php:76 admin/kps-design.php:193
+#: admin/kps-design.php:76 admin/kps-design.php:147
 msgid "Icons"
 msgstr "Icons"
 
-#: admin/kps-design.php:79 admin/kps-design.php:639
-msgid "Legend"
-msgstr "Legende"
-
-#: admin/kps-design.php:82 admin/kps-design.php:471
+#: admin/kps-design.php:79 admin/kps-design.php:316
 msgid "Output"
 msgstr "Ausgaben"
 
-#: admin/kps-design.php:85 admin/kps-design.php:839
-msgid "Widget"
-msgstr "Widget"
-
-#: admin/kps-design.php:183
+#: admin/kps-design.php:137
 msgid "No icons selected"
 msgstr "Keine Icons ausgewählt"
 
-#: admin/kps-design.php:206 admin/kps-design.php:219 admin/kps-design.php:482
-#: admin/kps-design.php:496 admin/kps-design.php:509 admin/kps-design.php:650
-#: admin/kps-design.php:664 admin/kps-design.php:677 admin/kps-design.php:850
-#: admin/kps-design.php:864 admin/kps-design.php:877 admin/kps-email.php:201
+#: admin/kps-design.php:160 admin/kps-design.php:173 admin/kps-design.php:327
+#: admin/kps-design.php:341 admin/kps-design.php:354 admin/kps-email.php:201
 #: admin/kps-email.php:215 admin/kps-email.php:228 admin/kps-email.php:506
 #: admin/kps-email.php:520 admin/kps-email.php:533 admin/kps-email.php:813
 #: admin/kps-email.php:827 admin/kps-email.php:840 admin/kps-email.php:1099
-#: admin/kps-email.php:1113 admin/kps-email.php:1126 admin/kps-privacy.php:157
-#: admin/kps-privacy.php:274 admin/kps-settings.php:222
-#: admin/kps-settings.php:234 admin/kps-settings.php:246
-#: admin/kps-settings.php:422 admin/kps-settings.php:434
-#: admin/kps-settings.php:446 admin/kps-settings.php:693
-#: admin/kps-settings.php:707 admin/kps-settings.php:720
-#: admin/kps-settings.php:974 admin/kps-settings.php:986
-#: admin/kps-settings.php:1111 admin/kps-settings.php:1125
-#: admin/kps-settings.php:1138 admin/kps-settings.php:1254
-#: admin/kps-settings.php:1266 admin/kps-settings.php:1394
-#: admin/kps-settings.php:1408 admin/kps-settings.php:1421
+#: admin/kps-email.php:1113 admin/kps-email.php:1126 admin/kps-entries.php:226
+#: admin/kps-privacy.php:157 admin/kps-privacy.php:274
+#: admin/kps-settings.php:222 admin/kps-settings.php:234
+#: admin/kps-settings.php:246 admin/kps-settings.php:422
+#: admin/kps-settings.php:434 admin/kps-settings.php:446
+#: admin/kps-settings.php:693 admin/kps-settings.php:707
+#: admin/kps-settings.php:720 admin/kps-settings.php:974
+#: admin/kps-settings.php:986 admin/kps-settings.php:1111
+#: admin/kps-settings.php:1125 admin/kps-settings.php:1138
+#: admin/kps-settings.php:1254 admin/kps-settings.php:1266
+#: admin/kps-settings.php:1394 admin/kps-settings.php:1408
+#: admin/kps-settings.php:1421
 msgid "Error!"
 msgstr "Fehler!"
 
-#: admin/kps-design.php:219 admin/kps-design.php:509 admin/kps-design.php:677
-#: admin/kps-design.php:877 admin/kps-email.php:228 admin/kps-email.php:533
-#: admin/kps-email.php:840 admin/kps-email.php:1126 admin/kps-privacy.php:157
-#: admin/kps-privacy.php:274 admin/kps-settings.php:246
-#: admin/kps-settings.php:446 admin/kps-settings.php:720
-#: admin/kps-settings.php:986 admin/kps-settings.php:1138
-#: admin/kps-settings.php:1266 admin/kps-settings.php:1421
+#: admin/kps-design.php:173 admin/kps-design.php:354 admin/kps-email.php:228
+#: admin/kps-email.php:533 admin/kps-email.php:840 admin/kps-email.php:1126
+#: admin/kps-privacy.php:157 admin/kps-privacy.php:274
+#: admin/kps-settings.php:246 admin/kps-settings.php:446
+#: admin/kps-settings.php:720 admin/kps-settings.php:986
+#: admin/kps-settings.php:1138 admin/kps-settings.php:1266
+#: admin/kps-settings.php:1421
 msgid "Token invalid"
 msgstr "Token ungültig"
 
-#: admin/kps-design.php:249 admin/kps-design.php:701 admin/kps-design.php:900
-msgid "No transparency"
-msgstr "Keine Transparenz"
-
-#: admin/kps-design.php:254 admin/kps-design.php:267 admin/kps-design.php:280
-#: admin/kps-design.php:293 admin/kps-design.php:306 admin/kps-design.php:319
-#: admin/kps-design.php:338 admin/kps-design.php:351 admin/kps-design.php:364
-#: admin/kps-design.php:377 admin/kps-design.php:390 admin/kps-design.php:706
-#: admin/kps-design.php:719 admin/kps-design.php:738 admin/kps-design.php:905
-#: admin/kps-design.php:918 admin/kps-design.php:937
-#: classes/kps-entries.php:523 frontend/kps-entries.php:206
+#: admin/kps-design.php:196 admin/kps-design.php:223
+#: classes/kps-entries.php:489 frontend/kps-entries.php:209
 #: frontend/kps-form.php:552
 msgid "Hall"
 msgstr "Halle"
 
-#: admin/kps-design.php:255 admin/kps-design.php:268 admin/kps-design.php:281
-#: admin/kps-design.php:294 admin/kps-design.php:307 admin/kps-design.php:320
-#: admin/kps-design.php:339 admin/kps-design.php:352 admin/kps-design.php:365
-#: admin/kps-design.php:378 admin/kps-design.php:391 admin/kps-design.php:707
-#: admin/kps-design.php:720 admin/kps-design.php:739 admin/kps-design.php:906
-#: admin/kps-design.php:919 admin/kps-design.php:938
-#: classes/kps-entries.php:528 frontend/kps-entries.php:207
+#: admin/kps-design.php:197 admin/kps-design.php:224
+#: classes/kps-entries.php:493 frontend/kps-entries.php:210
 #: frontend/kps-form.php:553
 msgid "Climbing"
 msgstr "Klettern"
 
-#: admin/kps-design.php:256 admin/kps-design.php:269 admin/kps-design.php:282
-#: admin/kps-design.php:295 admin/kps-design.php:308 admin/kps-design.php:321
-#: admin/kps-design.php:340 admin/kps-design.php:353 admin/kps-design.php:366
-#: admin/kps-design.php:379 admin/kps-design.php:392 admin/kps-design.php:708
-#: admin/kps-design.php:721 admin/kps-design.php:740 admin/kps-design.php:907
-#: admin/kps-design.php:920 admin/kps-design.php:939
-#: classes/kps-entries.php:538 frontend/kps-entries.php:208
+#: admin/kps-design.php:198 admin/kps-design.php:225
+#: classes/kps-entries.php:501 frontend/kps-entries.php:211
 msgid "Walking/Trekking"
 msgstr "Wandern/Trekking"
 
-#: admin/kps-design.php:257 admin/kps-design.php:270 admin/kps-design.php:283
-#: admin/kps-design.php:296 admin/kps-design.php:309 admin/kps-design.php:322
-#: admin/kps-design.php:341 admin/kps-design.php:354 admin/kps-design.php:367
-#: admin/kps-design.php:380 admin/kps-design.php:393 admin/kps-design.php:709
-#: admin/kps-design.php:722 admin/kps-design.php:741 admin/kps-design.php:908
-#: admin/kps-design.php:921 admin/kps-design.php:940
-#: classes/kps-entries.php:533 frontend/kps-entries.php:209
+#: admin/kps-design.php:199 admin/kps-design.php:226
+#: classes/kps-entries.php:497 frontend/kps-entries.php:212
 #: frontend/kps-form.php:555
 msgid "Travels"
 msgstr "Reisen"
 
-#: admin/kps-design.php:258 admin/kps-design.php:271 admin/kps-design.php:284
-#: admin/kps-design.php:297 admin/kps-design.php:310 admin/kps-design.php:323
-#: admin/kps-design.php:342 admin/kps-design.php:355 admin/kps-design.php:368
-#: admin/kps-design.php:381 admin/kps-design.php:394 admin/kps-design.php:710
-#: admin/kps-design.php:723 admin/kps-design.php:742 admin/kps-design.php:909
-#: admin/kps-design.php:922 admin/kps-design.php:941
-#: classes/kps-entries.php:564 frontend/kps-entries.php:210
+#: admin/kps-design.php:200 admin/kps-design.php:227
+#: classes/kps-entries.php:525 frontend/kps-entries.php:213
 #: frontend/kps-form.php:563
 msgid "Unique"
 msgstr "Einmalig"
 
-#: admin/kps-design.php:259 admin/kps-design.php:272 admin/kps-design.php:285
-#: admin/kps-design.php:298 admin/kps-design.php:311 admin/kps-design.php:324
-#: admin/kps-design.php:343 admin/kps-design.php:356 admin/kps-design.php:369
-#: admin/kps-design.php:382 admin/kps-design.php:395 admin/kps-design.php:711
-#: admin/kps-design.php:724 admin/kps-design.php:743 admin/kps-design.php:910
-#: admin/kps-design.php:923 admin/kps-design.php:942
-#: classes/kps-entries.php:569 frontend/kps-entries.php:213
+#: admin/kps-design.php:201 admin/kps-design.php:228
+#: classes/kps-entries.php:529 frontend/kps-entries.php:216
 #: frontend/kps-form.php:564
 msgid "Regularly"
 msgstr "Regelmäßig"
 
-#: admin/kps-design.php:260 admin/kps-design.php:273 admin/kps-design.php:286
-#: admin/kps-design.php:299 admin/kps-design.php:312 admin/kps-design.php:325
-#: admin/kps-design.php:344 admin/kps-design.php:357 admin/kps-design.php:370
-#: admin/kps-design.php:383 admin/kps-design.php:396 admin/kps-design.php:712
-#: admin/kps-design.php:725 admin/kps-design.php:744 admin/kps-design.php:911
-#: admin/kps-design.php:924 admin/kps-design.php:943
-#: classes/kps-entries.php:595 frontend/kps-entries.php:214
+#: admin/kps-design.php:202 admin/kps-design.php:229
+#: classes/kps-entries.php:553 frontend/kps-entries.php:217
 #: frontend/kps-form.php:572
 msgid "Single person"
 msgstr "Einzelperson"
 
-#: admin/kps-design.php:261 admin/kps-design.php:274 admin/kps-design.php:287
-#: admin/kps-design.php:300 admin/kps-design.php:313 admin/kps-design.php:326
-#: admin/kps-design.php:345 admin/kps-design.php:358 admin/kps-design.php:371
-#: admin/kps-design.php:384 admin/kps-design.php:397 admin/kps-design.php:713
-#: admin/kps-design.php:726 admin/kps-design.php:745 admin/kps-design.php:912
-#: admin/kps-design.php:925 admin/kps-design.php:944
-#: classes/kps-entries.php:600 frontend/kps-entries.php:215
+#: admin/kps-design.php:203 admin/kps-design.php:230
+#: classes/kps-entries.php:557 frontend/kps-entries.php:218
 #: frontend/kps-form.php:573
 msgid "Family"
 msgstr "Familie"
 
-#: admin/kps-design.php:262 admin/kps-design.php:275 admin/kps-design.php:288
-#: admin/kps-design.php:301 admin/kps-design.php:314 admin/kps-design.php:327
-#: admin/kps-design.php:346 admin/kps-design.php:359 admin/kps-design.php:372
-#: admin/kps-design.php:385 admin/kps-design.php:398 admin/kps-design.php:714
-#: admin/kps-design.php:727 admin/kps-design.php:746 admin/kps-design.php:913
-#: admin/kps-design.php:926 admin/kps-design.php:945
-#: classes/kps-entries.php:605 frontend/kps-entries.php:216
+#: admin/kps-design.php:204 admin/kps-design.php:231
+#: classes/kps-entries.php:561 frontend/kps-entries.php:219
 #: frontend/kps-form.php:574
 msgid "Club/Group"
 msgstr "Club/Gruppe"
 
-#: admin/kps-design.php:333 admin/kps-design.php:733 admin/kps-design.php:932
-msgid "Transparency"
-msgstr "Transparenz"
-
-#: admin/kps-design.php:455 admin/kps-design.php:623 admin/kps-design.php:823
-#: admin/kps-email.php:168 admin/kps-email.php:470 admin/kps-email.php:777
-#: admin/kps-email.php:1066 admin/kps-settings.php:234
+#: admin/kps-design.php:300 admin/kps-email.php:168 admin/kps-email.php:470
+#: admin/kps-email.php:777 admin/kps-email.php:1066 admin/kps-settings.php:234
 #: admin/kps-settings.php:434 admin/kps-settings.php:666
 #: admin/kps-settings.php:693 admin/kps-settings.php:974
 #: admin/kps-settings.php:1083 admin/kps-settings.php:1111
@@ -299,80 +234,71 @@ msgstr "Transparenz"
 msgid "Error validating the data"
 msgstr "Fehler beim validieren der Daten"
 
-#: admin/kps-design.php:482 admin/kps-design.php:650 admin/kps-design.php:850
-#: admin/kps-email.php:201 admin/kps-email.php:506 admin/kps-email.php:813
-#: admin/kps-email.php:1099 admin/kps-settings.php:222
+#: admin/kps-design.php:327 admin/kps-email.php:201 admin/kps-email.php:506
+#: admin/kps-email.php:813 admin/kps-email.php:1099 admin/kps-settings.php:222
 #: admin/kps-settings.php:422 admin/kps-settings.php:1394
 msgid "Error serializing the data"
 msgstr "Fehler beim serialieren der Daten"
 
-#: admin/kps-design.php:534
+#: admin/kps-design.php:380
 msgid "Show time in entry"
 msgstr "Uhrzeit im Eintrag anzeigen"
 
-#: admin/kps-design.php:538
+#: admin/kps-design.php:384
 msgid "Show time in Activation-Email"
 msgstr "Uhrzeit für Aktivierung in der Email anzeigen"
 
-#: admin/kps-design.php:542
+#: admin/kps-design.php:388
 msgid "Show time in Unlock-Email"
 msgstr "Uhrzeit für Freigegeben in der Email anzeigen"
 
-#: admin/kps-design.php:546
+#: admin/kps-design.php:392
 msgid "Show time in Delete-Email"
 msgstr "Uhrzeit für Löschen in der Email anzeigen"
 
-#: admin/kps-design.php:619
-msgid "No legend-icons selected"
-msgstr "Keine Legenden-Icons ausgewählt"
-
-#: admin/kps-design.php:753
+#: admin/kps-design.php:396
 msgid "Legend activate"
 msgstr "Legende aktivieren"
 
-#: admin/kps-design.php:819
-msgid "No widget-icons selected"
-msgstr "Keine Widget-Icons ausgewählt"
-
-#: admin/kps-design.php:980
+#: admin/kps-design.php:433
 msgid "Standard"
 msgstr "Standard"
 
-#: admin/kps-design.php:982
+#: admin/kps-design.php:435
 msgid "Standard-Edition"
 msgstr "Standard-Edition"
 
-#: admin/kps-design.php:985
+#: admin/kps-design.php:438
 msgid "Form"
 msgstr "Formular"
 
-#: admin/kps-design.php:987
+#: admin/kps-design.php:440
 msgid "Only the form will be displayed without entries."
 msgstr "Es wird nur das Formular angezeigt ohne vorhandene Einträge."
 
-#: admin/kps-design.php:990 admin/kps-entries.php:605 kps-hooks.php:95
+#: admin/kps-design.php:443 admin/kps-entries.php:563 kps-hooks.php:95
 msgid "Entries"
 msgstr "Einträge"
 
-#: admin/kps-design.php:992
+#: admin/kps-design.php:445
 msgid "Only the entries are displayed without form and form button."
 msgstr ""
 "Es werden nur die Einträge angezeigt ohne Formular und Formular-Button."
 
-#: admin/kps-design.php:995
+#: admin/kps-design.php:448
 msgid "Button Name"
 msgstr "Button Name"
 
-#: admin/kps-design.php:996 frontend/kps-form.php:385 frontend/kps-form.php:393
+#: admin/kps-design.php:449 frontend/kps-form.php:385 frontend/kps-form.php:393
 msgid "Write an entry"
 msgstr "Eintrag schreiben"
 
-#: admin/kps-design.php:997
+#: admin/kps-design.php:450
 msgid "Change button name in the form."
 msgstr "Ändert den Namen des Formular Buttons."
 
 #: admin/kps-email.php:72 admin/kps-email.php:1088 admin/kps-email.php:1140
-#: admin/kps.php:271 classes/kps-write.php:854
+#: admin/kps.php:271 functions/kps-mail-contents.php:92
 msgid "Activation"
 msgid_plural "Activations"
 msgstr[0] "Aktivierung"
@@ -422,7 +348,7 @@ msgstr "Shorttag %linkreg% nicht erlaubt"
 msgid "Shorttag %regpassword% not allowed"
 msgstr "Shorttag %regpassword% nicht erlaubt"
 
-#: admin/kps-email.php:243 admin/kps-entries.php:168 admin/kps-entries.php:350
+#: admin/kps-email.php:243 functions/kps-mail-contents.php:50
 msgid ""
 "Your entry has just been unlocked!\n"
 "\n"
@@ -502,9 +428,9 @@ msgid "Author contact details"
 msgstr "Autor Kontaktdaten"
 
 #: admin/kps-email.php:369 admin/kps-email.php:680 admin/kps-email.php:981
-#: admin/kps-email.php:1299 admin/kps-entries.php:854 admin/kps-entries.php:948
+#: admin/kps-email.php:1299 admin/kps-entries.php:812 admin/kps-entries.php:908
 #: admin/kps.php:267 admin/kps.php:283 classes/kps-reporting.php:220
-#: classes/kps-write.php:962 frontend/kps-form.php:579
+#: classes/kps-write.php:921 frontend/kps-form.php:579
 #: functions/kps-privacy.php:182
 msgid "Entry"
 msgid_plural "Entries"
@@ -512,20 +438,20 @@ msgstr[0] "Eintrag"
 msgstr[1] "Einträge"
 
 #: admin/kps-email.php:377 admin/kps-email.php:684 admin/kps-email.php:985
-#: admin/kps-email.php:1303 admin/kps-entries.php:855 admin/kps-entries.php:949
+#: admin/kps-email.php:1303 admin/kps-entries.php:813 admin/kps-entries.php:909
 #: functions/kps-privacy.php:176
 msgid "Created"
 msgstr "Erstellt"
 
 #: admin/kps-email.php:381 admin/kps-email.php:688 admin/kps-email.php:989
-#: admin/kps-email.php:1307 admin/kps-entries.php:857 admin/kps-entries.php:951
+#: admin/kps-email.php:1307 admin/kps-entries.php:815 admin/kps-entries.php:911
 #: classes/kps-reporting.php:212 functions/kps-privacy.php:178
 msgid "Delete Time"
 msgstr "Löschzeitpunkt"
 
 #: admin/kps-email.php:385 admin/kps-email.php:692 admin/kps-email.php:993
-#: admin/kps-email.php:1311 admin/kps-entries.php:856 admin/kps-entries.php:950
-#: admin/kps-entries.php:978 functions/kps-privacy.php:177
+#: admin/kps-email.php:1311 admin/kps-entries.php:814 admin/kps-entries.php:910
+#: admin/kps-entries.php:938 functions/kps-privacy.php:177
 msgid "Released"
 msgstr "Freigegeben"
 
@@ -541,7 +467,7 @@ msgstr "Shorttag %authoremail% fehlt"
 msgid "Shorttag %authorcontactdata% missing"
 msgstr "Shorttag %authorcontactdata% fehlt"
 
-#: admin/kps-email.php:549 classes/kps-requirement.php:212
+#: admin/kps-email.php:549 functions/kps-mail-contents.php:148
 msgid ""
 "You have requested the contact details for the following entry.\n"
 "\n"
@@ -611,7 +537,7 @@ msgstr "Shorttag %linkreg% fehlt"
 msgid "Shorttag %regpassword% missing"
 msgstr "Shorttag %regpassword% fehlt"
 
-#: admin/kps-email.php:856 classes/kps-verify.php:132
+#: admin/kps-email.php:856 functions/kps-mail-contents.php:189
 msgid ""
 "You want the contact details for the following entry.\n"
 "\n"
@@ -678,7 +604,7 @@ msgstr "Shorttag %linkdelete% fehlt"
 msgid "Shorttag %erasepassword% missing"
 msgstr "Shorttag %erasepassword% fehlt"
 
-#: admin/kps-email.php:1142 classes/kps-write.php:856
+#: admin/kps-email.php:1142 functions/kps-mail-contents.php:93
 msgid ""
 "You have just posted a new entry on %blogname%.\n"
 "\n"
@@ -760,177 +686,177 @@ msgstr "Aktivierungs-Link"
 msgid "Delete-Link"
 msgstr "Lösch-Link"
 
-#: admin/kps-entries.php:166 admin/kps-entries.php:348
-msgid "Entry unlocked"
-msgstr "Eintrag freigeschaltet"
-
-#: admin/kps-entries.php:225 admin/kps-entries.php:441
-#: admin/kps-entries.php:859 admin/kps-entries.php:953
+#: admin/kps-entries.php:200 admin/kps-entries.php:399
+#: admin/kps-entries.php:817 admin/kps-entries.php:913
 msgid "Release (Admin)"
 msgstr "Freigabe (Admin)"
 
-#: admin/kps-entries.php:236 frontend/kps-activation.php:147
+#: admin/kps-entries.php:213 frontend/kps-activation.php:147
 msgid "Note! Entry has already been activated!"
 msgstr "Hinweis! Eintrag wurde schon aktiviert!"
 
-#: admin/kps-entries.php:428 admin/kps-entries.php:836
-#: admin/kps-entries.php:967
+#: admin/kps-entries.php:226 functions/kps-privacy.php:105
+msgid "No entries found!"
+msgstr "Keine Einträge gefunden!"
+
+#: admin/kps-entries.php:386 admin/kps-entries.php:794
+#: admin/kps-entries.php:927
 msgid "Lock (Admin)"
 msgstr "Sperren (Admin)"
 
-#: admin/kps-entries.php:454 admin/kps-entries.php:833
-#: admin/kps-entries.php:964
+#: admin/kps-entries.php:412 admin/kps-entries.php:791
+#: admin/kps-entries.php:924
 msgid "Lock (Author)"
 msgstr "Sperren (Autor)"
 
-#: admin/kps-entries.php:467 admin/kps-entries.php:835
+#: admin/kps-entries.php:425 admin/kps-entries.php:793
 msgid "Reset Report (Admin)"
 msgstr "Reset Meldung (Admin)"
 
-#: admin/kps-entries.php:480 admin/kps-entries.php:837
-#: admin/kps-entries.php:968
+#: admin/kps-entries.php:438 admin/kps-entries.php:795
+#: admin/kps-entries.php:928
 msgid "Delete"
 msgstr "Löschen"
 
-#: admin/kps-entries.php:596 functions/kps-backend-pagination.php:110
+#: admin/kps-entries.php:554 functions/kps-backend-pagination.php:110
 #: functions/kps-frontend-pagination.php:109
 msgid "of"
 msgstr "von"
 
-#: admin/kps-entries.php:622 admin/kps-entries.php:627
+#: admin/kps-entries.php:580 admin/kps-entries.php:585
 msgid "All"
 msgstr "Alle"
 
-#: admin/kps-entries.php:645 admin/kps.php:318
+#: admin/kps-entries.php:603 admin/kps.php:318
 msgid "open entry"
 msgid_plural "open entries"
 msgstr[0] "offener Eintrag"
 msgstr[1] "offene Einträge"
 
-#: admin/kps-entries.php:651 admin/kps.php:318
+#: admin/kps-entries.php:609 admin/kps.php:318
 msgid "open entries"
 msgstr "offene Einträge"
 
-#: admin/kps-entries.php:669 admin/kps-entries.php:675
+#: admin/kps-entries.php:627 admin/kps-entries.php:633
 msgid "locked by Admin"
 msgid_plural "locked by Admin"
 msgstr[0] "gesperrt durch Admin"
 msgstr[1] "gesperrte durch Admin"
 
-#: admin/kps-entries.php:693 admin/kps-entries.php:699
+#: admin/kps-entries.php:651 admin/kps-entries.php:657
 msgid "released by Admin"
 msgid_plural "released by Admin"
 msgstr[0] "freigegeben durch Admin"
 msgstr[1] "freigegebene durch Admin"
 
-#: admin/kps-entries.php:717 admin/kps-entries.php:723
+#: admin/kps-entries.php:675 admin/kps-entries.php:681
 msgid "locked by Author"
 msgid_plural "locked by Author"
 msgstr[0] "gesperrt durch Autor"
 msgstr[1] "gesperrte durch Autor"
 
-#: admin/kps-entries.php:741 admin/kps-entries.php:747
+#: admin/kps-entries.php:699 admin/kps-entries.php:705
 msgid "released by Author"
 msgid_plural "released by Author"
 msgstr[0] "freigegeben durch Autor"
 msgstr[1] "freigegebene durch Autor"
 
-#: admin/kps-entries.php:765 admin/kps-entries.php:771
+#: admin/kps-entries.php:723 admin/kps-entries.php:729
 msgid "entry with report"
 msgid_plural "entries with report"
 msgstr[0] "Eintrag mit Meldung"
 msgstr[1] "Einträge mit Meldung"
 
-#: admin/kps-entries.php:789 admin/kps-entries.php:795
-#: admin/kps-entries.php:981
+#: admin/kps-entries.php:747 admin/kps-entries.php:753
+#: admin/kps-entries.php:941
 msgid "Auto-Lock"
 msgstr "Auto-Sperre"
 
-#: admin/kps-entries.php:816 admin/kps-entries.php:822
+#: admin/kps-entries.php:774 admin/kps-entries.php:780
 msgid "expired"
 msgstr "Abgelaufen"
 
-#: admin/kps-entries.php:834 admin/kps-entries.php:965
+#: admin/kps-entries.php:792 admin/kps-entries.php:925
 msgid "Approval (Admin)"
 msgstr "Freigeben (Admin)"
 
-#: admin/kps-entries.php:840 admin/kps-entries.php:971
+#: admin/kps-entries.php:798 admin/kps-entries.php:931
 msgid "Execute"
 msgstr "Ausführen"
 
-#: admin/kps-entries.php:852 admin/kps-entries.php:946
+#: admin/kps-entries.php:810 admin/kps-entries.php:906
 msgid "ID"
 msgstr "ID"
 
-#: admin/kps-entries.php:853 admin/kps-entries.php:947
+#: admin/kps-entries.php:811 admin/kps-entries.php:907
 msgid "Author"
 msgstr "Autor"
 
-#: admin/kps-entries.php:858 admin/kps-entries.php:952
-#: admin/kps-entries.php:980
+#: admin/kps-entries.php:816 admin/kps-entries.php:912
+#: admin/kps-entries.php:940
 msgid "Reports"
 msgstr "Meldungen"
 
-#: admin/kps-entries.php:860 admin/kps-entries.php:954
+#: admin/kps-entries.php:818 admin/kps-entries.php:914
 msgid "Release (Author)"
 msgstr "Freigabe (Autor)"
 
-#: admin/kps-entries.php:883 functions/kps-privacy.php:174
+#: admin/kps-entries.php:841 functions/kps-privacy.php:174
 msgid "IP-Adress"
 msgstr "IP-Adresse"
 
-#: admin/kps-entries.php:884 functions/kps-privacy.php:175
+#: admin/kps-entries.php:842 functions/kps-privacy.php:175
 msgid "Host"
 msgstr "Host"
 
-#: admin/kps-entries.php:885
+#: admin/kps-entries.php:843
 msgid "Activation-Key"
 msgstr "Aktivierungs-Schlüssel"
 
-#: admin/kps-entries.php:886
+#: admin/kps-entries.php:844
 msgid "Delete-Key"
 msgstr "Lösch-Schlüssel"
 
-#: admin/kps-entries.php:903 admin/kps-settings.php:275
+#: admin/kps-entries.php:864 admin/kps-settings.php:275
 #: classes/kps-reporting.php:214 classes/kps-reporting.php:266
 #: frontend/template/kps-template.php:80
 msgid "Spam/Advertising"
 msgstr "Werbung/Spam"
 
-#: admin/kps-entries.php:904 admin/kps-settings.php:286
+#: admin/kps-entries.php:865 admin/kps-settings.php:286
 #: classes/kps-reporting.php:215 classes/kps-reporting.php:272
 #: frontend/template/kps-template.php:84
 msgid "Inappropriate/Violence"
 msgstr "Unangemessen/Gewalt"
 
-#: admin/kps-entries.php:905 admin/kps-settings.php:297
+#: admin/kps-entries.php:866 admin/kps-settings.php:297
 #: classes/kps-reporting.php:216 classes/kps-reporting.php:278
 #: frontend/template/kps-template.php:88
 msgid "Double entry"
 msgstr "Doppelter Eintrag"
 
-#: admin/kps-entries.php:906 admin/kps-settings.php:308
+#: admin/kps-entries.php:867 admin/kps-settings.php:308
 #: classes/kps-reporting.php:217 classes/kps-reporting.php:284
 #: frontend/template/kps-template.php:92
 msgid "Personality rights"
 msgstr "Persönlichkeitsrechte"
 
-#: admin/kps-entries.php:907 admin/kps-settings.php:319
+#: admin/kps-entries.php:868 admin/kps-settings.php:319
 #: classes/kps-reporting.php:218 classes/kps-reporting.php:290
 #: frontend/template/kps-template.php:96
 msgid "Others"
 msgstr "Sonstiges"
 
-#: admin/kps-entries.php:932 frontend/kps-entries.php:169
-#: frontend/kps-widget.php:144
+#: admin/kps-entries.php:892 frontend/kps-entries.php:169
+#: frontend/kps-widget.php:143
 msgid "No entries available!"
 msgstr "Keine Einträge vorhanden!"
 
-#: admin/kps-entries.php:966
+#: admin/kps-entries.php:926
 msgid "Reset Reports (Admin)"
 msgstr "Reset Meldungen (Admin)"
 
-#: admin/kps-entries.php:979
+#: admin/kps-entries.php:939
 msgid "Blocked"
 msgstr "Gesperrt"
 
@@ -1032,12 +958,12 @@ msgid "Direct Contact"
 msgstr "Direkter Kontakt"
 
 #: admin/kps-settings.php:482 frontend/kps-form.php:608
-#: functions/kps-functions.php:65
+#: functions/kps-functions.php:112
 msgid "Mobile Phone"
 msgstr "Mobiltelefon"
 
 #: admin/kps-settings.php:484 frontend/kps-form.php:597
-#: functions/kps-functions.php:61
+#: functions/kps-functions.php:108
 msgid "Telephone"
 msgstr "Telefon"
 
@@ -1045,7 +971,7 @@ msgstr "Telefon"
 msgid "Messenger-Services"
 msgstr "Messengerdienste"
 
-#: admin/kps-settings.php:496 functions/kps-functions.php:101
+#: admin/kps-settings.php:496 functions/kps-functions.php:148
 msgid "Facebook-Messenger"
 msgstr "Facebook-Messenger"
 
@@ -1086,17 +1012,17 @@ msgid "Web- / Profilpages"
 msgstr "Web-/ Profilseiten"
 
 #: admin/kps-settings.php:526 frontend/kps-form.php:619
-#: frontend/kps-form.php:729 functions/kps-functions.php:109
+#: frontend/kps-form.php:729 functions/kps-functions.php:156
 msgid "Facebook"
 msgstr "Facebook"
 
 #: admin/kps-settings.php:528 frontend/kps-form.php:740
-#: functions/kps-functions.php:113
+#: functions/kps-functions.php:160
 msgid "Instagram"
 msgstr "Instagram"
 
 #: admin/kps-settings.php:530 frontend/kps-form.php:718
-#: functions/kps-functions.php:105
+#: functions/kps-functions.php:152
 msgid "Website"
 msgstr "Webseite"
 
@@ -1474,7 +1400,7 @@ msgstr "Aktivierte Einträge"
 msgid "Reqirement contact details"
 msgstr "Angeforderten Kontaktdaten"
 
-#: admin/kps.php:275 classes/kps-verify.php:131
+#: admin/kps.php:275 functions/kps-mail-contents.php:188
 msgid "Verification"
 msgid_plural "Verifications"
 msgstr[0] "Verifizierung"
@@ -1618,7 +1544,7 @@ msgstr "PHP"
 msgid "JQuery"
 msgstr "JQuery"
 
-#: classes/kps-entries.php:418 classes/kps-write.php:936
+#: classes/kps-entries.php:416 classes/kps-write.php:897
 msgid "Wait for release from the Author"
 msgstr "Warte auf Freigabe vom Autor"
 
@@ -1662,16 +1588,11 @@ msgstr "Erstellt am"
 msgid "Released on"
 msgstr "Freigegeben am"
 
-#: classes/kps-requirement.php:210 frontend/template/kps-template.php:216
-#: frontend/template/kps-template.php:306
-msgid "Requirement"
-msgstr "Anforderung"
-
-#: classes/kps-write.php:958
+#: classes/kps-write.php:917
 msgid "Release required"
 msgstr "Freigabe erforderlich"
 
-#: classes/kps-write.php:959
+#: classes/kps-write.php:918
 msgid ""
 "A new entry in the Climbing-Partner-Search is available and requires your "
 "approval!"
@@ -1679,15 +1600,15 @@ msgstr ""
 "Ein neuer Eintrag in der Kletterpartner-Suche ist vorhanden und erfordert "
 "Ihre Freigabe!"
 
-#: classes/kps-write.php:966
+#: classes/kps-write.php:925
 msgid "Release link"
 msgstr "Freigabe Link"
 
-#: classes/kps-write.php:985
+#: classes/kps-write.php:944
 msgid "New entry"
 msgstr "Neuer Eintrag"
 
-#: classes/kps-write.php:986
+#: classes/kps-write.php:945
 msgid "There is a new entry in the Climbing-Partner-Search!"
 msgstr "Es gibt einen neuen Eintrag in der Kletterpartner-Suche!"
 
@@ -2049,19 +1970,19 @@ msgstr "Fehler! Verifzierungs-Email konnte nicht versendet werden!"
 msgid "Shows the last entries in the Climbing-Partner-Search."
 msgstr "Zeigt die letzten Einträge in der Kletterpartner-Suche."
 
-#: frontend/kps-widget.php:74 frontend/kps-widget.php:195
+#: frontend/kps-widget.php:74 frontend/kps-widget.php:184
 msgid "Read more..."
 msgstr "Mehr lesen..."
 
-#: frontend/kps-widget.php:206
+#: frontend/kps-widget.php:195
 msgid "Title"
 msgstr "Titel"
 
-#: frontend/kps-widget.php:208
+#: frontend/kps-widget.php:197
 msgid "Number of entries"
 msgstr "Anzahl der Einträge"
 
-#: frontend/kps-widget.php:224
+#: frontend/kps-widget.php:213
 msgid "Linktext"
 msgstr "Linktext"
 
@@ -2073,6 +1994,11 @@ msgstr "Eintrag melden"
 #: frontend/template/kps-template.php:172
 msgid "Send contact information"
 msgstr "Kontaktdaten versenden"
+
+#: frontend/template/kps-template.php:216
+#: frontend/template/kps-template.php:306 functions/kps-mail-contents.php:147
+msgid "Requirement"
+msgstr "Anforderung"
 
 #: frontend/template/kps-template.php:358
 #: frontend/template/kps-template.php:392
@@ -2088,37 +2014,41 @@ msgstr "Eintrag löschen"
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: functions/kps-functions.php:69
+#: functions/kps-functions.php:116
 msgid "Signal-Messenger"
 msgstr "Signal-Messenger"
 
-#: functions/kps-functions.php:73
+#: functions/kps-functions.php:120
 msgid "Viper-Messenger"
 msgstr "Viper-Messenger"
 
-#: functions/kps-functions.php:77
+#: functions/kps-functions.php:124
 msgid "Telegram-Messenger"
 msgstr "Telegram-Messenger"
 
-#: functions/kps-functions.php:81
+#: functions/kps-functions.php:128
 msgid "Threema-Messenger"
 msgstr "Threema-Messenger"
 
-#: functions/kps-functions.php:85
+#: functions/kps-functions.php:132
 msgid "Whatsapp-Messenger"
 msgstr "Whatsapp-Messenger"
 
-#: functions/kps-functions.php:89
+#: functions/kps-functions.php:136
 msgid "Hoccer-Messenger"
 msgstr "Hoccer-Messenger"
 
-#: functions/kps-functions.php:93
+#: functions/kps-functions.php:140
 msgid "Wire-Messenger"
 msgstr "Wire-Messenger"
 
-#: functions/kps-functions.php:97
+#: functions/kps-functions.php:144
 msgid "Skype-Messenger"
 msgstr "Skype-Messenger"
+
+#: functions/kps-mail-contents.php:49
+msgid "Entry unlocked"
+msgstr "Eintrag freigeschaltet"
 
 #: functions/kps-privacy.php:89
 msgid "No entries or requirements found in the Climbing-Partner-Search!"
@@ -2128,10 +2058,6 @@ msgstr ""
 #: functions/kps-privacy.php:100
 msgid "Entry deleted"
 msgstr "Eintrag gelöscht"
-
-#: functions/kps-privacy.php:105
-msgid "No entries found!"
-msgstr "Keine Einträge gefunden!"
 
 #: functions/kps-privacy.php:116
 msgid "Request deleted"
@@ -2180,7 +2106,7 @@ msgstr "Kletterpartner-Suche Einträge"
 msgid "Climbing-Partner"
 msgstr "Kletterpartner"
 
-#: kps-hooks.php:91 kps-hooks.php:203
+#: kps-hooks.php:91 kps-hooks.php:201
 msgid "Settings"
 msgstr "Einstellungen"
 
@@ -2196,7 +2122,7 @@ msgstr "Email-Vorlagen"
 msgid "Design"
 msgstr "Design"
 
-#: kps-hooks.php:136
+#: kps-hooks.php:134
 msgid ""
 "If you use the climbing partner search form and leave an entry, your entered "
 "data will automatically be saved in our database. This can be retrieved "
@@ -2212,7 +2138,7 @@ msgstr ""
 "Ihre IP, den Hostnamen und andere Systemdaten, um die Spam-Erkennung zu "
 "verbessern."
 
-#: kps-hooks.php:137
+#: kps-hooks.php:135
 msgid ""
 "Entries that have been released are displayed visibly for a minimum of 1 day "
 "and automatically deleted after a maximum of 180 days."
@@ -2220,13 +2146,31 @@ msgstr ""
 "Einträge, welche freigegeben wurden, werden minimal 1 Tag sichtbar angezeigt "
 "und nach maximal 180 Tagen automatisch gelöscht."
 
-#: kps-hooks.php:138
+#: kps-hooks.php:136
 msgid ""
 "Entries that have not been released will be stored for a minimum of 30 days "
 "and automatically deleted after a maximum of 180 days."
 msgstr ""
 "Einträge, welche nicht freigegeben wurden, werden minimal 30 Tage "
 "gespeichert und nach maximal 180 Tagen automatisch, gelöscht."
+
+#~ msgid "Legend"
+#~ msgstr "Legende"
+
+#~ msgid "Widget"
+#~ msgstr "Widget"
+
+#~ msgid "No transparency"
+#~ msgstr "Keine Transparenz"
+
+#~ msgid "Transparency"
+#~ msgstr "Transparenz"
+
+#~ msgid "No legend-icons selected"
+#~ msgstr "Keine Legenden-Icons ausgewählt"
+
+#~ msgid "No widget-icons selected"
+#~ msgstr "Keine Widget-Icons ausgewählt"
 
 #~ msgid ""
 #~ "Your entry has just been unlocked!\n"

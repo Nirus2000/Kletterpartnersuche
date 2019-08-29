@@ -44,6 +44,53 @@ if (strpos($_SERVER['PHP_SELF'], basename(__FILE__)))
  * Prüft die zusätzlichen Kontaktinformationen, falls vorhanden
  * Key => Übersetzung
  */
+if (!function_exists('kps_iconPak'))
+{
+    function kps_iconPak() {
+        // Hole Icon-Pak
+        $iconPak = get_option('kps_icon', false);
+
+        // Icons Schwarz
+        if ($iconPak === '0') { $iconPak = array('color' => 'black', 'size' => '55'); }
+        elseif ($iconPak === '1') { $iconPak = array('color' => 'black', 'size' => '50'); }
+        elseif ($iconPak === '2') { $iconPak = array('color' => 'black', 'size' => '45'); }
+        elseif ($iconPak === '3') { $iconPak = array('color' => 'black', 'size' => '40'); }
+        elseif ($iconPak === '4') { $iconPak = array('color' => 'black', 'size' => '35'); }
+        // Icons Blau
+        elseif ($iconPak === '5') { $iconPak = array('color' => 'blue', 'size' => '55'); }
+        elseif ($iconPak === '6') { $iconPak = array('color' => 'blue', 'size' => '50'); }
+        elseif ($iconPak === '7') { $iconPak = array('color' => 'blue', 'size' => '45'); }
+        elseif ($iconPak === '8') { $iconPak = array('color' => 'blue', 'size' => '40'); }
+        elseif ($iconPak === '9') { $iconPak = array('color' => 'blue', 'size' => '35'); }
+        // Icons Orange
+        elseif ($iconPak === '10') { $iconPak = array('color' => 'orange', 'size' => '55'); }
+        elseif ($iconPak === '11') { $iconPak = array('color' => 'orange', 'size' => '50'); }
+        elseif ($iconPak === '12') { $iconPak = array('color' => 'orange', 'size' => '45'); }
+        elseif ($iconPak === '13') { $iconPak = array('color' => 'orange', 'size' => '40'); }
+        elseif ($iconPak === '14') { $iconPak = array('color' => 'orange', 'size' => '35'); }
+        // Icons Grün
+        elseif ($iconPak === '15') { $iconPak = array('color' => 'green', 'size' => '55'); }
+        elseif ($iconPak === '16') { $iconPak = array('color' => 'green', 'size' => '50'); }
+        elseif ($iconPak === '17') { $iconPak = array('color' => 'green', 'size' => '45'); }
+        elseif ($iconPak === '18') { $iconPak = array('color' => 'green', 'size' => '40'); }
+        elseif ($iconPak === '19') { $iconPak = array('color' => 'green', 'size' => '35'); }
+        // Icons Gelb
+        elseif ($iconPak === '20') { $iconPak = array('color' => 'yellow', 'size' => '55'); }
+        elseif ($iconPak === '21') { $iconPak = array('color' => 'yellow', 'size' => '50'); }
+        elseif ($iconPak === '22') { $iconPak = array('color' => 'yellow', 'size' => '45'); }
+        elseif ($iconPak === '23') { $iconPak = array('color' => 'yellow', 'size' => '40'); }
+        elseif ($iconPak === '24') { $iconPak = array('color' => 'yellow', 'size' => '35'); }
+        // default
+        else { $iconPak = array('color' => 'green', 'size' => '45'); }
+
+        return $iconPak;
+    }
+}
+/**
+ * Funktion zusätzliche Kontaktinformationen
+ * Prüft die zusätzlichen Kontaktinformationen, falls vorhanden
+ * Key => Übersetzung
+ */
 if (!function_exists('kps_contact_informations'))
 {
     function kps_contact_informations($string = '') {

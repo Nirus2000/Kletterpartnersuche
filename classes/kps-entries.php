@@ -124,6 +124,7 @@ class kps_entry_read
         $this->_reportCount             = (string)'';
         $this->_lockedAutoReport        = false;
         $this->_isReported              = false;
+        $iconPak                        = array();
 
         // Lösche abgelaufene Einträge
         $this->delete_expire_entrys();
@@ -139,17 +140,14 @@ class kps_entry_read
         }
         else
         {
-            // Hole Widget-Pak
-            $widgetIconPak = $this->get_widgetIconPak();
-
             // Hole Icon-Pak
-            $iconPak = $this->get_iconPak();
+            $iconPak = kps_iconPak();
 
             // Report erlauben
             $this->get_allowedReport($this->_userSettings['kpsUserReport']);
 
             // Hole Eintrag
-            $this->get_entry($this->_id, $iconPak, $widgetIconPak);
+            $this->get_entry($this->_id, $iconPak);
         }
     }
 
@@ -197,7 +195,7 @@ class kps_entry_read
     /**
      * Datensatz aus Datenbank laden
      */
-    public function get_entry($id = 0, $iconPak = 0, $widgetIconPak = '25')
+    public function get_entry($id = 0, $iconPak = array())
     {
         global $wpdb;
 
@@ -211,9 +209,9 @@ class kps_entry_read
             $this->get_setDateTime($data->setDateTime);
             $this->get_unlockDateTime($data->unlockDateTime);
             $this->get_deleteDateTime($data->deleteDateTime);
-            $this->get_authorSearchfor($data->authorSearchfor, $iconPak, $widgetIconPak);
-            $this->get_authorRule($data->authorRule, $iconPak, $widgetIconPak);
-            $this->get_yourRule($data->yourRule, $iconPak, $widgetIconPak);
+            $this->get_authorSearchfor($data->authorSearchfor, $iconPak);
+            $this->get_authorRule($data->authorRule, $iconPak);
+            $this->get_yourRule($data->yourRule, $iconPak);
             $this->get_isLocked($data->isLocked);
             $this->get_isLockedByAdmin($data->isLockedByAdmin);
             $this->get_lockedAutoReport($data->lockedAutoReport);
@@ -479,41 +477,9 @@ class kps_entry_read
     }
 
     /**
-     * Icon-Pak
-     */
-    public function get_iconPak()
-    {
-        // Hole Icon-Pak
-        $iconPak = get_option('kps_icon', false);
-
-        if ($iconPak === '0') { $iconPak = '45';}
-        elseif ($iconPak === '1') { $iconPak = '40'; }
-        elseif ($iconPak === '2') { $iconPak = '35'; }
-        elseif ($iconPak === '3') { $iconPak = '30'; }
-        elseif ($iconPak === '4') { $iconPak = '25'; }
-        elseif ($iconPak === '5') { $iconPak = '45_t';}
-        elseif ($iconPak === '6') { $iconPak = '40_t'; }
-        elseif ($iconPak === '7') { $iconPak = '35_t'; }
-        elseif ($iconPak === '8') { $iconPak = '30_t'; }
-        elseif ($iconPak === '9') { $iconPak = '25_t'; }
-        return $iconPak;
-    }
-
-    /**
-     * Widget-Pak
-     */
-    public function get_widgetIconPak()
-    {
-        // Hole Widget-Pak
-        $widgetSettings     = kps_unserialize(get_option('kps_widget', false));
-        $widgetIconPak      = ($widgetSettings['kpsWidgetIconPak'] === '0') ? '25' : '25_t';
-        return $widgetIconPak;
-    }
-
-    /**
      * Autoren-Suche
      */
-    public function get_authorSearchfor($authorSearchfor = NULL, $iconPak = 0, $widgetIconPak = '25')
+    public function get_authorSearchfor($authorSearchfor = NULL, $iconPak = array('color' => 'green', 'size' => '45'))
     {
         if (is_numeric($authorSearchfor))
         {
@@ -521,40 +487,35 @@ class kps_entry_read
             {
                 case '0':
                     $alt    = esc_html__('Hall', 'kps');
-                    $pic    = "hall_" . $iconPak . ".png";
-                    $widget = "hall_" . $widgetIconPak . ".png";
+                    $pic    = "hall.svg";
                 break;
                 case '1':
                     $alt    = esc_html__('Climbing', 'kps');
-                    $pic    = "nature_" . $iconPak . ".png";
-                    $widget = "nature_" . $widgetIconPak . ".png";
+                    $pic    = "nature.svg";
                 break;
                 case '2':
                     $alt    = esc_html__('Travels', 'kps');
-                    $pic    = "travel_" . $iconPak . ".png";
-                    $widget = "travel_" . $widgetIconPak . ".png";
+                    $pic    = "travel.svg";
                 break;
                 case '3':
                     $alt    = esc_html__('Walking/Trekking', 'kps');
-                    $pic    = "trekking_" . $iconPak . ".png";
-                    $widget = "trekking_" . $widgetIconPak . ".png";
+                    $pic    = "trekking.svg";
                 break;
                 default:
                     $alt    = '';
                     $pic    = '';
-                    $widget = '';
             }
 
             $this->_authorSearchfor_raw     = $alt;
-            $this->_authorSearchforWidget   = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $pic . '" alt="' . $alt . '" title="' . $alt . '" />';
-            $this->_authorSearchfor         = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $pic . '" alt="' . $alt . '" title="' . $alt . '" />';
+            $this->_authorSearchforWidget   = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $iconPak['color'] . '/' . $pic . '" width="30" height="30" alt="' . $alt . '" title="' . $alt . '" />';
+            $this->_authorSearchfor         = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $iconPak['color'] . '/' . $pic . '" width="' . $iconPak['size'] . '" height="' . $iconPak['size'] . '" alt="' . $alt . '" title="' . $alt . '" />';
         }
     }
 
     /**
      * Autoren-Regel
      */
-    public function get_authorRule($authorRule = NULL, $iconPak = 0, $widgetIconPak = '25')
+    public function get_authorRule($authorRule = NULL, $iconPak = array('color' => 'green', 'size' => '45'))
     {
         if (is_numeric($authorRule))
         {
@@ -562,30 +523,27 @@ class kps_entry_read
             {
                 case '0':
                     $alt    = esc_html__('Unique', 'kps');
-                    $pic    = "onetime_" . $iconPak . ".png";
-                    $widget = "onetime_" . $widgetIconPak . ".png";
+                    $pic    = "onetime.svg";
                 break;
                 case '1':
                     $alt    = esc_html__('Regularly', 'kps');
-                    $pic    = "moretime_" . $iconPak . ".png";
-                    $widget = "moretime_" . $widgetIconPak . ".png";
+                    $pic    = "moretime.svg";
                 break;
                 default:
                     $alt    = '';
                     $pic    = '';
-                    $widget = '';
             }
 
             $this->_authorRule_raw      = $alt;
-            $this->_authorRuleWidget    = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $pic . '" alt="' . $alt . '" title="' . $alt . '" />';
-            $this->_authorRule          = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $pic . '" alt="' . $alt . '" title="' . $alt . '" />';
+            $this->_authorRuleWidget    = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $iconPak['color'] . '/' . $pic . '" width="30" height="30" alt="' . $alt . '" title="' . $alt . '" />';
+            $this->_authorRule          = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $iconPak['color'] . '/' . $pic . '" width="' . $iconPak['size'] . '" height="' . $iconPak['size'] . '" alt="' . $alt . '" title="' . $alt . '" />';
         }
     }
 
     /**
      * User-Regel
      */
-    public function get_yourRule($yourRule = NULL, $iconPak = 0, $widgetIconPak = '25')
+    public function get_yourRule($yourRule = NULL, $iconPak = array('color' => 'green', 'size' => '45'))
     {
         if (is_numeric($yourRule))
         {
@@ -593,28 +551,24 @@ class kps_entry_read
             {
                 case '0':
                     $alt    = esc_html__('Single person', 'kps');
-                    $pic    = "goalone_" . $iconPak . ".png";
-                    $widget = "goalone_" . $widgetIconPak . ".png";
+                    $pic    = "goalone.svg";
                 break;
                 case '1':
                     $alt    = esc_html__('Family', 'kps');
-                    $pic    = "family_" . $iconPak . ".png";
-                    $widget = "family_" . $widgetIconPak . ".png";
+                    $pic    = "family.svg";
                 break;
                 case '2':
                     $alt    = esc_html__('Club/Group', 'kps');
-                    $pic    = "comeclub_" . $iconPak . ".png";
-                    $widget = "comeclub_" . $widgetIconPak . ".png";
+                    $pic    = "comeclub.svg";
                 break;
                 default:
                     $alt    = '';
                     $pic    = '';
-                    $widget = '';
             }
 
             $this->_yourRule_raw    = $alt;
-            $this->_yourRuleWidget  = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $pic . '" alt="' . $alt . '" title="' . $alt . '" />';
-            $this->_yourRule        = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $pic . '" alt="' . $alt . '" title="' . $alt . '" />';
+            $this->_yourRuleWidget  = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $iconPak['color'] . '/' . $pic . '" width="30" height="30" alt="' . $alt . '" title="' . $alt . '" />';
+            $this->_yourRule        = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $iconPak['color'] . '/' . $pic . '" width="' . $iconPak['size'] . '" height="' . $iconPak['size'] . '" alt="' . $alt . '" title="' . $alt . '" />';
         }
     }
 

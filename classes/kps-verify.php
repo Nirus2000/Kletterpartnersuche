@@ -125,35 +125,7 @@ class kps_verify
     {
         // Hole Email-Vorlagen Einstellungen
         $verifyMailSettings = kps_unserialize(get_option('kps_userMailContactSettings', false));
-
-        if ($verifyMailSettings === false)
-        {
-            $verifySubject = esc_html__('Verification', 'kps');
-            $verifyContent = esc_html__('You want the contact details for the following entry.
-
-To retrieve the contact information, click on the link and enter the password.
-The request key is valid for 24 hours!
-
-Request link:
-*******************
-Password: %regpassword%
-%linkreg%
-
-Entry:
-*******************
-%entrycontent%
-
-Many Thanks!
-Your team
-%blogname%
-%blogurl%
-%blogemail%', 'kps');
-        }
-        else
-        {
-            $verifySubject = esc_attr($verifyMailSettings['kpsVerifictionSubject']);
-            $verifyContent = esc_attr($verifyMailSettings['kpsVerifictionContent']);
-        }
+        $verifyMail = kps_mailcontent_verify($verifyMailSettings);
 
         // Shorttags
         $reglink        = esc_url_raw($pageUrl . '&kps_require=' . $id);
@@ -171,13 +143,13 @@ Your team
             '%unlockdatetime%'  => $this->_unlockDateTime,
             '%erasedatetime%'   => $this->_deleteDateTime);
 
-        $verifyContent = str_replace(array_keys($postShorttags), $postShorttags, $verifyContent);
+        $verifyMail['Content'] = str_replace(array_keys($postShorttags), $postShorttags, $verifyMail['Content']);
 
         // Email versenden
         $headers = 'From: ' . get_bloginfo('name'). ' <' .  esc_attr(get_option('kps_MailFrom', false)) . '>';
-        $this->_isSend = wp_mail(esc_attr($email), $verifySubject, $verifyContent, $headers);
+        $this->_isSend = wp_mail(esc_attr($email), $verifyMail['Subject'], $verifyMail['Content'], $headers);
 
-        return true; // Rückgabe des Wertes
+        return $this->_isSend; // Rückgabe des Wertes
     }
 
     /**
@@ -243,7 +215,7 @@ Your team
 
             // Gesamtzähler für Statistik
             $countKPSCounter = kps_unserialize(get_option('kps_kpsCounter', false));
-            foreach ($countKPSCounter as $key => $value)
+            foreach ($countKPSCounter AS $key => $value)
             {
                 if ($key == 'kpsAllVerfifications') { $countKPSCounter[$key]++; }
             }
@@ -261,18 +233,15 @@ Your team
     public function show_isFound()
     {
         return $this->_isFound; // Rückgabe des Wertes
-
     }
 
     public function show_isInsertDB()
     {
         return $this->_isInsertDB; // Rückgabe des Wertes
-
     }
 
     public function show_isSend()
     {
         return $this->_isSend; // Rückgabe des Wertes
-
     }
 }

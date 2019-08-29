@@ -141,7 +141,10 @@
   content: "&#160;";
   margin: 2em;
   display: block;
-  font-size: 20%;
+  font-size: 10%;
+}
+.kps-more {
+    font-size: 80%;
 }
 
 /* ====== Tabelle Widget ======  */
@@ -383,7 +386,7 @@
 /* ====== Legende ======  */
 #kps .kps-legend {
     letter-spacing: 1px;
-    font-size: 50%;
+    font-size: 70%;
     vertical-align: middle;
 }
 

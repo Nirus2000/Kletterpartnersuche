@@ -227,20 +227,20 @@ ID: ' . $id . '
 
         // Email versenden
         $headers = 'From: ' . get_bloginfo('name'). ' <' .  esc_attr(get_option('kps_MailFrom', false)) . '>';
-        $this->_isSend = wp_mail( esc_attr($this->_emailCopyCC['kpsEmailReport']), $reportSubject, $reportContent, $headers);
+        $this->_isSend = wp_mail(esc_attr($this->_emailCopyCC['kpsEmailReport']), $reportSubject, $reportContent, $headers);
 
         // Email versenden Auto-Sperre
         if ($this->_lockedAutoReport === false && $this->_sendReportAuto === true)
         {
-            $this->_isSendReportAuto = wp_mail( esc_attr($this->_emailCopyCC['kpsEmailReport']), $reportSubject, $reportContent, $headers);
+            $this->_isSendReportAuto = wp_mail(esc_attr($this->_emailCopyCC['kpsEmailReport']), $reportSubject, $reportContent, $headers);
 
             if(($this->_emailCopyCC['kpsEmailReport'] != get_option('kps_mailFrom', false)) && $this->_sendReportAuto === true)
             {
-                $this->_isSendReportAdmin = wp_mail( esc_attr(get_option('kps_mailFrom', false)), $reportSubject, $reportContent, $headers);
+                $this->_isSendReportAdmin = wp_mail(esc_attr(get_option('kps_mailFrom', false)), $reportSubject, $reportContent, $headers);
             }
         }
 
-        return true; // Rückgabe des Wertes
+        return $this->_isSendReportAuto; // Rückgabe des Wertes
     }
 
     /**
@@ -348,16 +348,15 @@ ID: ' . $id . '
         // Report Counter updaten
         if (is_serialized($report) == true)
         {
-            $this->_isReport = $wpdb->update(KPS_TABLE_ENTRIES, array(  'reportCount' => $report
+            $this->_isReport = $wpdb->update(KPS_TABLE_ENTRIES, array('reportCount' => $report
                                                                 ),
-                                                                array(  'id' => $id
+                                                                array('id' => $id
                                                                 ),
-                                                                array(  '%s'
+                                                                array('%s'
                                                                 )
             );
 
-            $this->_isReport = true;
-            return true; // Rückgabe des Wertes
+            return $this->_isReport; // Rückgabe des Wertes
         }
 
         return false; // Rückgabe des Wertes
@@ -370,7 +369,7 @@ ID: ' . $id . '
     {
         global $wpdb;
 
-        $this->_isReported = $wpdb->update(KPS_TABLE_ENTRIES,   array( 'isReported' => 1
+        $this->_isReported = $wpdb->update(KPS_TABLE_ENTRIES,   array('isReported' => 1
                                                                 ),
                                                                 array('id' => $id
                                                                 ),

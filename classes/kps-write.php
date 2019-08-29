@@ -313,7 +313,7 @@ class kps_entry_write
                 'deleteHash'        => $deleteHash,
                 'hash'              => $hash,
                 'content'           => $this->_authorEntry,
-                'setDateTime'       => time() ,
+                'setDateTime'       => time(),
                 'unlockDateTime'    => 0,
                 'deleteDateTime'    => time() + get_option('kps_deleteNoEntryTime', false),
                 'authorSearchfor'   => $this->_authorSearchfor,
@@ -357,7 +357,7 @@ class kps_entry_write
 
             // Gesamtzähler für Statistik
             $countKPSCounter = kps_unserialize(get_option('kps_kpsCounter', false));
-            foreach ($countKPSCounter as $key => $value)
+            foreach ($countKPSCounter AS $key => $value)
             {
                 if ($key == 'kpsAllEntrys') { $countKPSCounter[$key]++; }
             }
@@ -562,7 +562,7 @@ class kps_entry_write
         $this->_authorEntry = kps_sanitize_textarea($authorEntry);
 
         // Wörter zählen
-        $textAreaWordCount = trim( strip_tags( $this->_authorEntry ) );
+        $textAreaWordCount = trim(strip_tags($this->_authorEntry));
         $textAreaWordCount = substr_count($textAreaWordCount, ' ');
 
         // Vergleich, ob die Anzahl der geschriebenen Wörter größer/gleich
@@ -668,7 +668,6 @@ class kps_entry_write
     {
         if (!empty($string))
         {
-
             // Charset Telephone oder Mobilenummern
             $validChars = "<^((\\+|00)[1-9]\\d{0,3}|0 ?[1-9]|\\(00? ?[1-9][\\d ]*\\))[\\d\\-/ ]*$>";
 
@@ -847,53 +846,8 @@ class kps_entry_write
     public function sendActivation($deletePassword = '', $activationHash = '', $deleteHash = '', $pageUrl= '')
     {
         // Hole Email-Vorlagen Einstellungen
-        $authorMailSettings = kps_unserialize(get_option('kps_authorMailSettings', false));
-
-        if ($authorMailSettings === false )
-        {
-            $authorMailSubject  = esc_html__('Activation', 'kps');
-            $auhorMailContent   =
-esc_html__('You have just posted a new entry on %blogname%.
-
-To be able to publish it, you have to confirm it via the link
-below and enter your email address. If you do not release this
-post, it will be deleted automatically on %erasedatetime% from
-our database.
-
-Activate entry:
-*******************
-%linkaactivation%
-
-Delete entry:
-*******************
-Password: %erasepassword%
-%linkdelete%
-
-Your entry:
-*******************
-Entry written on: %setdate%
-Entry released on: %unlockdatetime%
-Entry will be deleted on: %erasedatetime%
-
-%entrycontent%
-
-Your contact details:
-*******************
-Name: %authorname%
-Email: %authoremail%
-%authorcontactdata%
-
-Many Thanks!
-Your team
-%blogname%
-%blogurl%
-%blogemail%', 'kps');
-        }
-        else
-        {
-            $authorMailSubject  = esc_attr($authorMailSettings['kpsActivationSubject']);
-            $auhorMailContent   = esc_attr($authorMailSettings['kpsActivationContent']);
-        }
+        $writeMailSettings = kps_unserialize(get_option('kps_authorMailSettings', false));
+        $writeMail = kps_mailcontent_write($writeMailSettings);
 
         // zusätzliche Kontaktdaten
         $authorContactData = kps_contact_informations($this->_authorContactData);
@@ -902,21 +856,28 @@ Your team
         $activationLink = esc_url_raw($pageUrl . '&kps_akey=' . $activationHash);
         $deletelink     = esc_url_raw($pageUrl . '&kps_dkey=' . $deleteHash);
 
-        // Zeit
+        /*
+         * Zeit
+         * Unterscheidet nach Einstellung ob mit oder ohne Uhrzeit.
+        */
         if ($this->_outputSettings['kpsEmailDeleteTime'] === 'true')
         {
+            // TT.MM.YYYY HH:MM:SS
             $deleteDateTime = date_i18n(get_option('date_format'), time() + get_option('kps_deleteNoEntryTime', false)) . ', ' . date_i18n(get_option('time_format'), time() + get_option('kps_deleteNoEntryTime', false));
         }
         else
         {
+            // TT.MM.YYYY
             $deleteDateTime = date_i18n(get_option('date_format'), time() + get_option('kps_deleteNoEntryTime', false));
         }
         if ($this->_outputSettings['kpsEmailSetTime'] === 'true')
         {
+            // TT.MM.YYYY HH:MM:SS
             $setDateTime = date_i18n(get_option('date_format'), time()) . ', ' . date_i18n(get_option('time_format'), time());
         }
         else
         {
+            // TT.MM.YYYY
             $setDateTime = date_i18n(get_option('date_format'), time());
         }
 
@@ -937,11 +898,11 @@ Your team
             '%erasedatetime%'       => $deleteDateTime
         );
 
-        $auhorMailContent = str_replace(array_keys($postShorttags) , $postShorttags, $auhorMailContent);
+        $writeMail['Content'] = str_replace(array_keys($postShorttags), $postShorttags, $writeMail['Content']);
 
         // Email versenden
         $headers = 'From: ' . get_bloginfo('name'). ' <' .  esc_attr(get_option('kps_MailFrom', false)) . '>';
-        $this->_activationEmailIsSend = wp_mail(esc_attr($this->_authorEmail), $authorMailSubject, $auhorMailContent, $headers);
+        $this->_activationEmailIsSend = wp_mail(esc_attr(get_option('kps_MailFrom', false)), $writeMail['Subject'], $writeMail['Content'], $headers);
 
         return $this->_activationEmailIsSend; // Rückgabe des Wertes
     }

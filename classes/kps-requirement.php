@@ -198,44 +198,13 @@ class kps_requirement
     }
 
     /**
-     * Emailversenden
+     * Email versenden
      */
     public function sendEmail($email = '', $authorContactData = array())
     {
         // Hole Email-Vorlage an Autor
-        $userMailSettings = kps_unserialize(get_option('kps_userMailSettings', false));
-
-        if ($userMailSettings === false )
-        {
-            $userMailSubject    = esc_html__('Requirement', 'kps');
-            $userMailContent    =
-esc_html__('You have requested the contact details for the following entry.
-
-Entry:
-*******************
-Entry written on: %setdate%
-Entry released on: %unlockdatetime%
-Entry will be deleted on: %erasedatetime%
-
-%entrycontent%
-
-The contact details are:
-************************
-Name: %authorname%
-Email: %authoremail%
-%authorcontactdata%
-
-Have fun. Bergheil!
-Your team
-%blogname%
-%blogurl%
-%blogemail%', 'kps');
-        }
-        else
-        {
-            $userMailSubject    = esc_attr($userMailSettings['kpsContactDataSubject']);
-            $userMailContent    = esc_attr($userMailSettings['kpsContactDataContent']);
-        }
+        $requirementMailSettings = kps_unserialize(get_option('kps_userMailSettings', false));
+        $requirementMail = kps_mailcontent_requirement($requirementMailSettings);
 
         // zusätzliche Kontaktdaten
         $authorContactData = kps_contact_informations($authorContactData);
@@ -254,19 +223,21 @@ Your team
             '%erasedatetime%'       => $this->_deleteDateTime
         );
 
-        $userMailContent = str_replace(array_keys($postShorttags) , $postShorttags, $userMailContent);
+        $requirementMail['Content'] = str_replace(array_keys($postShorttags) , $postShorttags, $requirementMail['Content']);
 
         // Email versenden
         $headers = 'From: ' . get_bloginfo('name'). ' <' .  esc_attr(get_option('kps_MailFrom', false)) . '>';
-        $this->_isSend = wp_mail( $email, $userMailSubject, $userMailContent, $headers);
+        $this->_isSend = wp_mail( $email, $requirementMail['Subject'], $requirementMail['Content'], $headers);
 
         // Gesamtzähler für Statistik
         $countKPSCounter = kps_unserialize(get_option('kps_kpsCounter', false));
-        foreach ($countKPSCounter as $key => $value)
+        foreach ($countKPSCounter AS $key => $value)
         {
             if ($key == 'kpsAllSendRequirements') { $countKPSCounter[$key]++; }
         }
         update_option('kps_kpsCounter', serialize($countKPSCounter));
+
+        return $this->_isSend; // Rückgabe des Wertes
     }
 
     /**

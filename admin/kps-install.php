@@ -171,18 +171,8 @@ function kps_install()
             'kpsAutoReportOthers'               => 50
         ));
 
-        // Legende anzeigen
-        $legend = serialize(array(
-            'kpsLegendActivated'                => 'true',
-            'kpsLegendIconPak'                  => 1
-        ));
-
-        // Widget anzeigen
-        $widget = serialize(array(
-            'kpsWidgetIconPak'                  => 0
-        ));
-
         // KPS-Counter
+        // TODO: Reset Counter in Adminbereich
         $kpsCounter = serialize(array(
             'kpsAllEntrys'                      => 0,
             'kpsAllActivatedEntrys'             => 0,
@@ -196,7 +186,8 @@ function kps_install()
             'kpsUnlockTime'                     => 'false',
             'kpsEmailSetTime'                   => 'true',
             'kpsEmailUnlockTime'                => 'true',
-            'kpsEmailDeleteTime'                => 'true'
+            'kpsEmailDeleteTime'                => 'true',
+            'kpsLegendActivated'                => 'false'
         ));
 
         // Einstellungen speichern in der Options-Tabelle
@@ -215,9 +206,7 @@ function kps_install()
         add_option('kps_agb', 0);                                       // AGB-Seite
         add_option('kps_dsgvo', 0);                                     // DSGVO-Seite
         add_option('kps_report', $report);                              // Einträge melden
-        add_option('kps_icon', 3);                                      // FormOptions Icon-Pak
-        add_option('kps_legend', $legend);                              // Legende
-        add_option('kps_widget', $widget);                              // Widget
+        add_option('kps_icon', 17);                                     // FormOptions / Widget IconPak
         add_option('kps_kpsCounter', $kpsCounter);                      // KPS-Counter
         add_option('kps_output', $output);                              // Ausgabeneinstellungen
     }
@@ -323,6 +312,41 @@ function kps_upgrade()
         ));
 
         update_option('kps_formOptions', $setFormOption);
+    }
+
+    if (version_compare($current_version, '2.1', '<'))
+    {
+        // Legende-Optionen auslegen
+        $legend             = kps_unserialize(get_option('kps_legend'));
+        $legendActivated    = ($legend['kpsLegendActivated'] === 'true') ? true : false;
+
+        // Output-Optionen updaten
+        $output = kps_unserialize(get_option('kps_output'));
+
+        $setOutput['kpsUnlockTime']                         = $output['kpsUnlockTime'];
+        $setOutput['kpsEmailSetTime']                       = $output['kpsEmailSetTime'];
+        $setOutput['kpsEmailUnlockTime']                    = $output['kpsEmailUnlockTime'];
+        $setOutput['kpsEmailDeleteTime']                    = $output['kpsEmailDeleteTime'];
+        $setOutput['kpsLegendActivated']                    = $legendActivated;
+
+
+        $setOutput = serialize(array(
+                                    $setOutput
+        ));
+
+        update_option('kps_output', $setOutput);
+
+        // IconPak updaten
+        update_option('kps_icon', 17);
+
+        // Lösche Option Legende
+        delete_option('kps_legend');
+
+        // Lösche Option Widget
+        delete_option('kps_widget');
+
+        // Version updaten
+        update_option('kps_version', KPS_VER);
     }
 
     // Version updaten

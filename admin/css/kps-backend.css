@@ -123,10 +123,9 @@
 #kps .tr_list, .td_list {
     padding: 4px 4px 4px 4px;
     border-bottom: 1px solid #3C3C3C;
-    vertical-align: top;
 }
 
-#kps .tr_list_child:nth-child(even) {
+#kps .tr_list:nth-child(even) {
     background-color: rgba(221, 221, 221, 1);
 }
 

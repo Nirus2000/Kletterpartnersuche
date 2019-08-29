@@ -125,8 +125,6 @@ function kps_register_settings()
     register_setting('kps_options', 'kps_dsgvo', 'intval');                     // int
     register_setting('kps_options', 'kps_report', 'strval');                    // array
     register_setting('kps_options', 'kps_icon', 'intval');                      // int
-    register_setting('kps_options', 'kps_legend', 'strval');                    // array
-    register_setting('kps_options', 'kps_widget', 'strval');                    // array
     register_setting('kps_options', 'kps_kpsCounter', 'strval');                // array
     register_setting('kps_options', 'kps_output', 'strval');                    // array
 

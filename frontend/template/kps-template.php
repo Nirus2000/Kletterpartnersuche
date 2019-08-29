@@ -34,7 +34,7 @@
  */
 
 // Kein direkten Zugriff erlauben
-if (strpos($_SERVER[ 'PHP_SELF' ], basename(__FILE__)))
+if (strpos($_SERVER['PHP_SELF'], basename(__FILE__)))
 {
     die('No direct calls allowed!');
 }

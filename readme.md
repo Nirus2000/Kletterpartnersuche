@@ -3,8 +3,8 @@ Contributors: Nirus
 Tags: Klettern, Climb, Wandern, Walking, Trekking, Climbing, Climbpartner, Walkingpartner, Tekkingpartner, Kletterpartner, Wanderpartner
 Requires at least: 4.9.8
 Requires PHP: 5.2.4
-Tested up to: 5.2.1
-Stable tag: 2.0
+Tested up to: 5.2.2
+Stable tag: 2.1
 License: GPL Version 3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -120,157 +120,20 @@ Bugfix and extension of the plugin...
 
 ## Changelog
 
+= v. 2.1 =
+*[29.08.2019]*
+* Add: Some IconPak
+* Add: Design->Output Legend activation
+* Upd: Optimize source code
+* Upd: IconPak
+* Fix: Widget
+* Del: Design->Legend Settings
+* Del: Design->Widget Settings
+
 = v. 2.0 =
 *[16.06.2019]*
 * Add: Activation link for administrator
 * Upd: Optimize source code
 
-= v. 1.9 =
-*[24.04.2019]*
-* Add: Form option Messenger Threema
-* Upd: Optimize source code
-* Upd: Some checks of variables
-* Upd: Pagination Backend
-* Upd: Pagination Frontend
-* Upd: FontAwesome to 5.8.1
-* Fix: Form escape
-
-= v. 1.81 =
-*[12.04.2019]*
-* Fix: PHP requirements
-* Upd: PHP requirements to 5.2.4
-
-= v. 1.8 =
-*[10.04.2019]*
-* Add: Shorttag for change form button text
-* Fix: Pagination admin panel
-* Fix: Install update function
-* Fix: Install
-* Fix: Direct link in Menue->Plugins
-* Fix: Released time translation in admin panel
-* Fix: Form escape
-* Upd: Translation de_DE
-* Upd: Translation de_DE_formal
-* Upd: Translation en_US
-
-= v. 1.72 =
-*[19.02.2019]*
-* Upd: GPL Version 3.0
-* Upd: Readme file
-* Upd: Translation de_DE
-* Upd: Translation de_DE_formal
-* Upd: Translation en_US
-
-= v. 1.71 =
-*[18.02.2019]*
-* Upd: Readme file
-* Upd: Translation de_DE
-* Upd: Translation de_DE_formal
-
-= v. 1.7 =
-*[16.02.2019]*
-
-* Add: Design Time format in date output
-* Fix: CSS-Style entry button
-* Fix: Setting e-mail address
-* Fix: Shorttag examples in e-mail templates
-* Fix: Activation email release time
-* Fix: Translation (Singular/Plural)
-* Fix: Missing/false translation
-* Fix: Form Close-SVG
-* Fix: E-mail header information
-* Fix: E-mail copy information
-* Upd: Checkbox Background-Color
-* Upd: FontAwesome to 5.7.2
-* Upd: DashIcon in form
-* Upd: Glotpress source code translation in english
-
-= v. 1.6 =
-*[21.11.2018]*
-
-* Add: Design Shortcode overview
-* Add: GitHub URL
-* Fix: Setting overview (short)
-* Fix: Required fields in form
-* Fix: Verification
-* Fix: Install
-* Fix: Database
-* Upd: FAQs
-
-= v. 1.5 =
-*[20.11.2018]*
-
-* Fix: Distance option fields
-* Fix: Readme file
-
-= v. 1.4 =
-*[14.10.2018]*
-
-* Add: DashIcon in form
-* Add: Form option Messenger Viper
-* Add: Form option Messenger Signal
-* Add: Form option Messenger Telegram
-* Add: Form option Messenger Whatsapp
-* Add: Form option Messenger Facebook
-* Add: Form option Messenger Hoccer
-* Add: Form option Messenger Skype
-* Add: Form option Messenger Wire
-* Add: Form option Website
-* Fix: Widget no entry
-* Fix: Form error entry existing
-* Fix: Form error entry insert in database
-* Fix: Javascript loading in header
-* Fix: HTML5 Input-Type "tel"
-* Fix: Send e-mail, if entry was released
-* Fix: Legend
-
-= v. 1.3 =
-*[11.10.2018]*
-
-* Add: Widget
-* Add: Export for personal data
-* Add: Erasure for personal data
-* Fix: Additional information via e-mail
-* Fix: Form option
-* Upd: GTC / GDPR status
-* Upd: Activation
-* Del: Form option Google+ (Closed Aug. 2019)
-
-
-= v. 1.2 =
-*[05.10.2018]*
-
-* Add: Quicklaunch "locked by message"
-* Add: Quicklaunch "Auto-Lock"
-* Add: Reports are logged
-* Add: Settings -> Reports
-* Add: Reporting
-* Add: Design
-* Add: Icon-Pak
-* Add: Legend
-* Add: Legende-Pak
-* Add: Design
-* Add: Tabs in the Settings
-* Fix: Link "Edit" for moderators
-* Fix: Show Author-IP
-* Fix: Form checkbox "GTC/GDPR"
-* Fix: Test checkbox "GTC/GDPR"
-* Fix: Shorttage %linkactivation%
-* Fix: Shorttage %linkdelete%
-* Fix: Form errors
-* Fix: Small translation errors
-* Upd: Complet redesign in the admin panel
-* Upd: div. Variablen umbenannt
-* Upd: CSS
-
-
-= v. 1.1 =
-*[27.09.2018]*
-
-* Fix: Permissions in the admin panel
-* Fix: Page makeup options labels in the form
-* Fix: Uninstall only by role adminnistrator
-
-
-= v. 1.0 =
-* 1st Release
+= v. > 2.0 =
+* Look in the file readme_v1.txt

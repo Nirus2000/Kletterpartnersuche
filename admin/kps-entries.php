@@ -168,39 +168,7 @@ function kps_entries($id = '')
                     */
                     if ($userSettings['kpsUserRequireAdminUnlock'] === 'true')
                     {
-                        if ($adminUnlockMailSettings === false )
-                        {
-                            $adminUnlockMailSubject = esc_html__('Entry unlocked', 'kps');
-                            $adminUnlockMailContent =
-esc_html__('Your entry has just been unlocked!
-
-The deletion time for this entry was set to %erasedatetime%.
-
-Your entry:
-*******************
-Entry written on: %setdate%
-Entry released on: %unlockdatetime%
-Entry will be deleted on: %erasedatetime%
-
-%entrycontent%
-
-Your contact details:
-*******************
-Name: %authorname%
-Email: %authoremail%
-%authorcontactdata%
-
-Many Thanks!
-Your team
-%blogname%.
-%blogurl%
-%blogemail%', 'kps');
-                        }
-                        else
-                        {
-                            $adminUnlockMailSubject = esc_attr($adminUnlockMailSettings['kpsAuthorMailSubject']);
-                            $adminUnlockMailContent = esc_attr($adminUnlockMailSettings['kpsAuthorMailContent']);
-                        }
+                        $adminUnlockMail = kps_mailcontent_adminUnlock($adminUnlockMailSettings);
 
                         // zusätzliche Kontaktdaten
                         $authorContactData = kps_contact_informations($entry->show_authorContactData());
@@ -219,11 +187,11 @@ Your team
                             '%erasedatetime%'       => $entry->show_emailDeleteDateTime()
                         );
 
-                        $adminUnlockMailContent = str_replace(array_keys($postShorttags) , $postShorttags, $adminUnlockMailContent);
+                        $adminUnlockMail['Content'] = str_replace(array_keys($postShorttags), $postShorttags, $adminUnlockMail['Content']);
 
                         // Email versenden
                         $headers = 'From: ' . get_bloginfo('name'). ' <' .  esc_attr(get_option('kps_MailFrom', false)) . '>';
-                        wp_mail( esc_attr(get_option('kps_MailFrom', false)), $adminUnlockMailSubject, $adminUnlockMailContent, $headers);
+                        wp_mail(esc_attr(get_option('kps_MailFrom', false)), $adminUnlockMail['Subject'], $adminUnlockMail['Content'], $headers);
                     }
                 }
                 echo '
@@ -365,39 +333,7 @@ Your team
                             */
                             if ($userSettings['kpsUserRequireAdminUnlock'] === 'true')
                             {
-                                if ($adminUnlockMailSettings === false )
-                                {
-                                    $adminUnlockMailSubject = esc_html__('Entry unlocked', 'kps');
-                                    $adminUnlockMailContent =
-esc_html__('Your entry has just been unlocked!
-
-The deletion time for this entry was set to %erasedatetime%.
-
-Your entry:
-*******************
-Entry written on: %setdate%
-Entry released on: %unlockdatetime%
-Entry will be deleted on: %erasedatetime%
-
-%entrycontent%
-
-Your contact details:
-*******************
-Name: %authorname%
-Email: %authoremail%
-%authorcontactdata%
-
-Many Thanks!
-Your team
-%blogname%.
-%blogurl%
-%blogemail%', 'kps');
-                                }
-                                else
-                                {
-                                    $adminUnlockMailSubject = esc_attr($adminUnlockMailSettings['kpsAuthorMailSubject']);
-                                    $adminUnlockMailContent = esc_attr($adminUnlockMailSettings['kpsAuthorMailContent']);
-                                }
+                                $adminUnlockMail = kps_mailcontent_adminUnlock($adminUnlockMailSettings);
 
                                 // zusätzliche Kontaktdaten
                                 $authorContactData = kps_contact_informations($entry->show_authorContactData());
@@ -416,11 +352,11 @@ Your team
                                     '%erasedatetime%'       => $entry->show_emailDeleteDateTime()
                                 );
 
-                                $adminUnlockMailContent = str_replace(array_keys($postShorttags) , $postShorttags, $adminUnlockMailContent);
+                                $adminUnlockMail['Content'] = str_replace(array_keys($postShorttags), $postShorttags, $adminUnlockMail['Content']);
 
                                 // Email versenden
                                 $headers = 'From: ' . get_bloginfo('name'). ' <' .  esc_attr(get_option('kps_MailFrom', false)) . '>';
-                                wp_mail( esc_attr(get_option('kps_MailFrom', false)), $adminUnlockMailSubject, $adminUnlockMailContent, $headers);
+                                wp_mail(esc_attr(get_option('kps_MailFrom', false)), $adminUnlockMail['Subject'], $adminUnlockMail['Content'], $headers);
                             }
                         }
                     }
@@ -892,13 +828,13 @@ Your team
             // Klasse instanzieren
             $read = new kps_entry_read($resultItem->id, $userSettings);
 ?>
-                                  <tr class="tr_child">
+                                  <tr class="tr_list">
                                         <td class="td_list" style="text-align: center;">
                                             <label for="kpsCheck[]"></label>
                                             <input name="kpsCheck[]" id="kpsCheck<?php echo $resultItem->id; ?>" type="checkbox" value="<?php echo $resultItem->id; ?>" />
                                         </td>
                                         <td class="td_list" style="text-align: center;"><?php echo $resultItem->id; ?></td>
-                                        <td class="td_list">
+                                        <td class="td_list" style="vertical-align: top;">
                                             <?php
                                                 echo $read->show_authorName() . ' (' . $read->show_authorId(). ')<br />' . $read->show_authorEmail();
                                                 echo '
@@ -909,7 +845,7 @@ Your team
                                                 ';
                                             ?>
                                         </td>
-                                        <td class="td_list" style="width: 30%;">
+                                        <td class="td_list" style="width: 30%; vertical-align: top;">
                                             <?php
                                             echo '
                                                 <div style="text-align: left;">' . $read->show_authorSearchfor() . '&#160;' . $read->show_authorRule() . '&#160;' . $read->show_yourRule() . '<div>
@@ -918,10 +854,10 @@ Your team
                                             ';
                                             ?>
                                           </td>
-                                        <td class="td_list" style="text-align: center;"><?php echo $read->show_setDateTime(); ?></td>
-                                        <td class="td_list" style="text-align: center;"><?php echo $read->show_unlockDateTime(); ?></td>
-                                        <td class="td_list" style="text-align: center;"><?php echo $read->show_deleteDateTime(); ?></td>
-                                        <td class="td_list" style="text-align: center;">
+                                        <td class="td_list" style="text-align: center; vertical-align: top;"><?php echo $read->show_setDateTime(); ?></td>
+                                        <td class="td_list" style="text-align: center; vertical-align: top;"><?php echo $read->show_unlockDateTime(); ?></td>
+                                        <td class="td_list" style="text-align: center; vertical-align: top;"><?php echo $read->show_deleteDateTime(); ?></td>
+                                        <td class="td_list" style="text-align: center; vertical-align: top;">
                                             <?php
                                                 $reports = kps_unserialize($read->show_reportCount());
                                                 echo '
