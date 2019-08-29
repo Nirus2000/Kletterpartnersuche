@@ -41,10 +41,21 @@ if (strpos($_SERVER['PHP_SELF'], basename(__FILE__)))
 
 /**
  * Sprachdatei laden für Frontend und Backend
+ * Auf Updates prüfen
  */
 function kps_load_lang()
 {
     load_plugin_textdomain('kps', false, KPS_FOLDER . '/lang');
+
+    $current_version = get_option('kps_version');
+    if ($current_version == false)
+    {
+        kps_install();
+    }
+    elseif ($current_version != KPS_VER)
+    {
+        kps_upgrade();
+    }
 }
 add_action('plugins_loaded', 'kps_load_lang');
 
