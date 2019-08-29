@@ -344,9 +344,6 @@ function kps_upgrade()
 
         // Lösche Option Widget
         delete_option('kps_widget');
-
-        // Version updaten
-        update_option('kps_version', KPS_VER);
     }
 
     // Version updaten
