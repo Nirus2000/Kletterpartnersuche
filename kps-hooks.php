@@ -47,6 +47,7 @@ function kps_load_lang()
 {
     load_plugin_textdomain('kps', false, KPS_FOLDER . '/lang');
 
+    // Version holen und vergleichen
     $current_version = get_option('kps_version');
     if ($current_version == false)
     {

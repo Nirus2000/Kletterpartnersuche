@@ -4,7 +4,7 @@ Tags: Klettern, Climb, Wandern, Walking, Trekking, Climbing, Climbpartner, Walki
 Requires at least: 4.9.8
 Requires PHP: 5.2.4
 Tested up to: 5.2.2
-Stable tag: 2.1
+Stable tag: 2.1.1
 License: GPL Version 3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -120,22 +120,4 @@ Bugfix and extension of the plugin...
 
 == Changelog ==
 
-= v. 2.1 =
-*[29.08.2019]*
-* Add: Some IconPak
-* Add: Design->Output Legend activation
-* Upd: Optimize source code
-* Upd: IconPak
-* Upd: Clear readme.txt
-* Upd: Clear readme.md
-* Fix: Widget
-* Del: Design->Legend Settings
-* Del: Design->Widget Settings
-
-= v. 2.0 =
-*[16.06.2019]*
-* Add: Activation link for administrator
-* Upd: Optimize source code
-
-= v. > 2.0 =
-* Look in the file readme_v1.txt
+Look at changelog.txt

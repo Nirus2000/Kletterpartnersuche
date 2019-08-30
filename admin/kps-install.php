@@ -316,7 +316,7 @@ function kps_upgrade()
 
     if (version_compare($current_version, '2.1', '<'))
     {
-        // Legende-Optionen auslegen
+        // Legende-Optionen auslesen
         $legend             = kps_unserialize(get_option('kps_legend'));
         $legendActivated    = ($legend['kpsLegendActivated'] === 'true') ? true : false;
 
@@ -328,7 +328,6 @@ function kps_upgrade()
         $setOutput['kpsEmailUnlockTime']                    = $output['kpsEmailUnlockTime'];
         $setOutput['kpsEmailDeleteTime']                    = $output['kpsEmailDeleteTime'];
         $setOutput['kpsLegendActivated']                    = $legendActivated;
-
 
         $setOutput = serialize(array(
                                     $setOutput
