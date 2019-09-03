@@ -160,9 +160,9 @@ class kps_entry_read
     }
 
     /**
-     * Lösche abgelaufene Anforderungen
-     * wenn Eintrag nicht mehr vorhanden ist
-     * Dies dient zu DSGVO für die Anfrage, wohin
+     * Lösche abgelaufene Anforderungen, wenn
+     * Eintrag nicht mehr vorhanden ist
+     * Dies dient für die DSGVO zur Anfrage, wohin
      * die Kontaktdaten versendet wurden
      */
     private function delete_expire_verifications()

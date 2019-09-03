@@ -40,9 +40,7 @@ if (strpos($_SERVER['PHP_SELF'], basename(__FILE__)))
 }
 
 /**
- * Funktion zusätzliche Kontaktinformationen
- * Prüft die zusätzlichen Kontaktinformationen, falls vorhanden
- * Key => Übersetzung
+ * Funktion IconPak
  */
 if (!function_exists('kps_iconPak'))
 {

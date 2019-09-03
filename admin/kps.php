@@ -243,8 +243,13 @@ function kps_admin_overview_setting() {
 }
 
 /**
- * Funktion Einträge
- * Übersicht der Einträge
+ * Funktion Statistik
+ * -> alle Einträge
+ * -> aktivierte Einträge
+ * -> verifizierte Einträge
+ * -> versendete Einträge
+ * -> Anforderungen
+ * -> gelöschte Einträge
  */
 function kps_admin_overview_statistics() {
 
@@ -424,10 +429,6 @@ function kps_admin_overview_copyright() {
                         </tr>
                         <tr>
                             <td colspan="2" class="hr"></td>
-                        </tr>
-                        <tr>
-                            <td><i class="far fa-user"></i>&#160;' . esc_html__('SBB-Membership-Number', 'kps') . '</td>
-                            <td>320/00/245813</td>
                         </tr>
                         <tr>
                             <td><i class="far fa-envelope"></i>&#160;' . esc_html__('Email', 'kps') . '</td>

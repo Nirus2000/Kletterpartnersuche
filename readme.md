@@ -4,7 +4,7 @@ Tags: Klettern, Climb, Wandern, Walking, Trekking, Climbing, Climbpartner, Walki
 Requires at least: 4.9.8
 Requires PHP: 5.2.4
 Tested up to: 5.2.2
-Stable tag: 2.1.1
+Stable tag: 2.2.0
 License: GPL Version 3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -119,5 +119,35 @@ The "Climbing-Partner-Search" connects climbing, hiking, tracking and sports fan
 Bugfix and extension of the plugin...
 
 ## Changelog
+
+= v. 2.2.0 =
+*[03.09.2019]*
+* Upd: Optimize source code
+
+= v. 2.1.1 =
+*[30.08.2019]*
+* Upd: readme.txt
+* Upd. readme.md
+* Fix: Install
+* Add: changelog.txt
+
+= v. 2.1 =
+*[29.08.2019]*
+* Add: Some IconPak
+* Add: Design->Output Legend activation
+* Upd: Optimize source code
+* Upd: IconPak
+* Upd: Clear readme.txt
+* Upd: Clear readme.md
+* Fix: Widget
+* Del: Design->Legend Settings
+* Del: Design->Widget Settings
+
+= v. 2.0 =
+*[16.06.2019]*
+* Add: Activation link for administrator
+* Upd: Optimize source code
+
+= v.1.0 to 1.9 =
 
 Look at changelog.txt

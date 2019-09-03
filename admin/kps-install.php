@@ -172,7 +172,6 @@ function kps_install()
         ));
 
         // KPS-Counter
-        // TODO: Reset Counter in Adminbereich
         $kpsCounter = serialize(array(
             'kpsAllEntrys'                      => 0,
             'kpsAllActivatedEntrys'             => 0,

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kletterpartner-Suche\n"
-"POT-Creation-Date: 2019-08-29 18:55+0200\n"
-"PO-Revision-Date: 2019-08-29 18:56+0200\n"
+"POT-Creation-Date: 2019-09-01 08:40+0200\n"
+"PO-Revision-Date: 2019-09-01 08:41+0200\n"
 "Last-Translator: Alexander Ott <kps@nirus-online.de>\n"
 "Language-Team: Alexander Ott\n"
 "Language: de_DE\n"
@@ -39,7 +39,7 @@ msgstr "Datenschutz-Grundverordnung"
 #: functions/kps-privacy.php:100 functions/kps-privacy.php:105
 #: functions/kps-privacy.php:116 functions/kps-privacy.php:121
 #: functions/kps-privacy.php:127 functions/kps-privacy.php:145
-#: kps-hooks.php:138
+#: kps-hooks.php:150
 msgid "Climbing-Partner-Search"
 msgstr "Kletterpartner-Suche"
 
@@ -122,7 +122,7 @@ msgstr ""
 "Hier können Sie Ihre DSGVO dem Formular zuweisen."
 
 #: admin/kps-agb.php:228 admin/kps-privacy.php:289 admin/kps.php:177
-#: frontend/kps-form.php:302 frontend/kps-form.php:344 kps-hooks.php:73
+#: frontend/kps-form.php:302 frontend/kps-form.php:344 kps-hooks.php:85
 msgid "GDPR"
 msgstr "DSGVO"
 
@@ -276,7 +276,7 @@ msgstr "Formular"
 msgid "Only the form will be displayed without entries."
 msgstr "Es wird nur das Formular angezeigt ohne vorhandene Einträge."
 
-#: admin/kps-design.php:443 admin/kps-entries.php:563 kps-hooks.php:95
+#: admin/kps-design.php:443 admin/kps-entries.php:563 kps-hooks.php:107
 msgid "Entries"
 msgstr "Einträge"
 
@@ -298,7 +298,7 @@ msgid "Change button name in the form."
 msgstr "Ändert den Namen des Formular Buttons."
 
 #: admin/kps-email.php:72 admin/kps-email.php:1088 admin/kps-email.php:1140
-#: admin/kps.php:271 functions/kps-mail-contents.php:92
+#: admin/kps.php:276 functions/kps-mail-contents.php:92
 msgid "Activation"
 msgid_plural "Activations"
 msgstr[0] "Aktivierung"
@@ -429,7 +429,7 @@ msgstr "Autor Kontaktdaten"
 
 #: admin/kps-email.php:369 admin/kps-email.php:680 admin/kps-email.php:981
 #: admin/kps-email.php:1299 admin/kps-entries.php:812 admin/kps-entries.php:908
-#: admin/kps.php:267 admin/kps.php:283 classes/kps-reporting.php:220
+#: admin/kps.php:272 admin/kps.php:288 classes/kps-reporting.php:220
 #: classes/kps-write.php:921 frontend/kps-form.php:579
 #: functions/kps-privacy.php:182
 msgid "Entry"
@@ -727,13 +727,13 @@ msgstr "von"
 msgid "All"
 msgstr "Alle"
 
-#: admin/kps-entries.php:603 admin/kps.php:318
+#: admin/kps-entries.php:603 admin/kps.php:323
 msgid "open entry"
 msgid_plural "open entries"
 msgstr[0] "offener Eintrag"
 msgstr[1] "offene Einträge"
 
-#: admin/kps-entries.php:609 admin/kps.php:318
+#: admin/kps-entries.php:609 admin/kps.php:323
 msgid "open entries"
 msgstr "offene Einträge"
 
@@ -958,12 +958,12 @@ msgid "Direct Contact"
 msgstr "Direkter Kontakt"
 
 #: admin/kps-settings.php:482 frontend/kps-form.php:608
-#: functions/kps-functions.php:112
+#: functions/kps-functions.php:110
 msgid "Mobile Phone"
 msgstr "Mobiltelefon"
 
 #: admin/kps-settings.php:484 frontend/kps-form.php:597
-#: functions/kps-functions.php:108
+#: functions/kps-functions.php:106
 msgid "Telephone"
 msgstr "Telefon"
 
@@ -971,7 +971,7 @@ msgstr "Telefon"
 msgid "Messenger-Services"
 msgstr "Messengerdienste"
 
-#: admin/kps-settings.php:496 functions/kps-functions.php:148
+#: admin/kps-settings.php:496 functions/kps-functions.php:146
 msgid "Facebook-Messenger"
 msgstr "Facebook-Messenger"
 
@@ -1012,17 +1012,17 @@ msgid "Web- / Profilpages"
 msgstr "Web-/ Profilseiten"
 
 #: admin/kps-settings.php:526 frontend/kps-form.php:619
-#: frontend/kps-form.php:729 functions/kps-functions.php:156
+#: frontend/kps-form.php:729 functions/kps-functions.php:154
 msgid "Facebook"
 msgstr "Facebook"
 
 #: admin/kps-settings.php:528 frontend/kps-form.php:740
-#: functions/kps-functions.php:160
+#: functions/kps-functions.php:158
 msgid "Instagram"
 msgstr "Instagram"
 
 #: admin/kps-settings.php:530 frontend/kps-form.php:718
-#: functions/kps-functions.php:152
+#: functions/kps-functions.php:150
 msgid "Website"
 msgstr "Webseite"
 
@@ -1245,7 +1245,7 @@ msgstr ""
 "Administrator freigegeben werden müssen. Es können zusätzliche Information "
 "zu den Aktivitäten abgerufen werden."
 
-#: admin/kps-settings.php:1443 admin/kps.php:210 admin/kps.php:433
+#: admin/kps-settings.php:1443 admin/kps.php:210 admin/kps.php:434
 #: frontend/kps-form.php:587 frontend/kps-form.php:588
 #: frontend/kps-form.php:631 frontend/template/kps-template.php:273
 #: frontend/template/kps-template.php:280
@@ -1266,7 +1266,7 @@ msgid "Information"
 msgstr "Information"
 
 #: admin/kps-uninstall.php:59 admin/kps-uninstall.php:82
-#: admin/kps-uninstall.php:135 kps-hooks.php:96
+#: admin/kps-uninstall.php:135 kps-hooks.php:108
 msgid "Uninstallation"
 msgstr "Deinstallation"
 
@@ -1331,7 +1331,7 @@ msgstr "Fehler! Mail()-Funktion!"
 msgid "Settings-Overview (short)"
 msgstr "Einstellungsübersicht (kurz)"
 
-#: admin/kps.php:64 admin/kps.php:422
+#: admin/kps.php:64 admin/kps.php:427
 msgid "Copyright"
 msgstr "Copyright"
 
@@ -1362,7 +1362,7 @@ msgstr ""
 "dass er diese Funktion freischaltet."
 
 #: admin/kps.php:173 frontend/kps-form.php:301 frontend/kps-form.php:323
-#: kps-hooks.php:72
+#: kps-hooks.php:84
 msgid "GTC"
 msgstr "AGBs"
 
@@ -1384,162 +1384,158 @@ msgstr "Backend"
 msgid "Frontend"
 msgstr "Frontend"
 
-#: admin/kps.php:236 admin/kps.php:466
+#: admin/kps.php:236 admin/kps.php:467
 msgid "Google reCaptcha"
 msgstr "Google reCaptcha"
 
-#: admin/kps.php:266
+#: admin/kps.php:271
 msgid "Submitted searches"
 msgstr "Eingereichte suchen"
 
-#: admin/kps.php:270
+#: admin/kps.php:275
 msgid "Activated entries"
 msgstr "Aktivierte Einträge"
 
-#: admin/kps.php:274
+#: admin/kps.php:279
 msgid "Reqirement contact details"
 msgstr "Angeforderten Kontaktdaten"
 
-#: admin/kps.php:275 functions/kps-mail-contents.php:188
+#: admin/kps.php:280 functions/kps-mail-contents.php:188
 msgid "Verification"
 msgid_plural "Verifications"
 msgstr[0] "Verifizierung"
 msgstr[1] "Verifizierungen"
 
-#: admin/kps.php:278
+#: admin/kps.php:283
 msgid "Sent contact information"
 msgstr "Versendete Kontaktdaten"
 
-#: admin/kps.php:279
+#: admin/kps.php:284
 msgid "Request"
 msgid_plural "Requests"
 msgstr[0] "Anfrage"
 msgstr[1] "Anfragen"
 
-#: admin/kps.php:282
+#: admin/kps.php:287
 msgid "Manually deleted entries"
 msgstr "Manuell gelöschte Einträge"
 
-#: admin/kps.php:319
+#: admin/kps.php:324
 msgid "entry blocked by author"
 msgid_plural "entries blocked by author"
 msgstr[0] "Eintrag gesperrt durch Autor"
 msgstr[1] "Einträge gesperrt durch Autor"
 
-#: admin/kps.php:319
+#: admin/kps.php:324
 msgid "entries blocked by author"
 msgstr "Einträge gesperrte durch Autor"
 
-#: admin/kps.php:320
+#: admin/kps.php:325
 msgid "entry released by author"
 msgid_plural "entries released by author"
 msgstr[0] "Eintrag freigegeben durch Autor"
 msgstr[1] "Einträge freigegeben durch Autor"
 
-#: admin/kps.php:320
+#: admin/kps.php:325
 msgid "entries released by author"
 msgstr "Einträge freigegeben durch Admin"
 
-#: admin/kps.php:321
+#: admin/kps.php:326
 msgid "entry blocked by admin"
 msgid_plural "entries blocked by admin"
 msgstr[0] "Eintrag gesperrt durch Admin"
 msgstr[1] "Einträge gesperrt durch Admin"
 
-#: admin/kps.php:321
+#: admin/kps.php:326
 msgid "entries blocked by admin"
 msgstr "Einträge gesperrt durch Admin"
 
-#: admin/kps.php:322
+#: admin/kps.php:327
 msgid "entry released by admin"
 msgid_plural "entries released by admin"
 msgstr[0] "Eintrag freigegeben durch Admin"
 msgstr[1] "Einträge freigegeben durch Admin"
 
-#: admin/kps.php:322
+#: admin/kps.php:327
 msgid "entries released by admin"
 msgstr "Einträge freigegeben durch Admin"
 
-#: admin/kps.php:368
+#: admin/kps.php:373
 msgid "So easy to implement via shortcut"
 msgstr "So einfach per Shortcut implementieren"
 
-#: admin/kps.php:373
+#: admin/kps.php:378
 msgid "Create a new page"
 msgstr "Erstelle eine neue Seite"
 
-#: admin/kps.php:374
+#: admin/kps.php:379
 msgid "Give the page a name"
 msgstr "Gib der Seite einen Namen"
 
-#: admin/kps.php:375
+#: admin/kps.php:380
 msgid "Write in the page context"
 msgstr "Schreibe in den Seitenkontex"
 
-#: admin/kps.php:376
+#: admin/kps.php:381
 msgid "Publish this page"
 msgstr "Veröffentliche diese Seite"
 
-#: admin/kps.php:377
+#: admin/kps.php:382
 msgid "Go to the main menu under Design -> Menus and add a page to a menu"
 msgstr ""
 "Geh im Hauptmenü unter Design->Menüs und füge die Seite einem Menü hinzu"
 
-#: admin/kps.php:379
+#: admin/kps.php:384
 msgid "Alternatively, you can create a new menu and add the page there"
 msgstr ""
 "Alternativ kannst du ein neues Menü erstellen und die Seite dort hinzufügen"
 
-#: admin/kps.php:381
+#: admin/kps.php:386
 msgid "Save, Publish and Done!"
 msgstr "Speichern, Veröffentlichen und Fertig!"
 
-#: admin/kps.php:389
+#: admin/kps.php:394
 msgid "Of course, you can also implement the shortcode in a post."
 msgstr ""
 "Natürlich kannst du den Shortcode auch in einem Beitrag implementieren."
 
-#: admin/kps.php:407
+#: admin/kps.php:412
 msgid "Support"
 msgstr "Support"
 
-#: admin/kps.php:408
+#: admin/kps.php:413
 msgid "Support-Forum"
 msgstr "Support-Forum"
 
-#: admin/kps.php:411 admin/kps.php:412
+#: admin/kps.php:416 admin/kps.php:417
 msgid "GitHub"
 msgstr "GitHub"
 
-#: admin/kps.php:418
+#: admin/kps.php:423
 msgid "Version"
 msgstr "Version"
 
-#: admin/kps.php:429
-msgid "SBB-Membership-Number"
-msgstr "SBB-Mitgliedsnummer"
-
-#: admin/kps.php:437
+#: admin/kps.php:438
 msgid "Internet"
 msgstr "Internet"
 
-#: admin/kps.php:455
+#: admin/kps.php:456
 msgid "HTML5"
 msgstr "HTML5"
 
-#: admin/kps.php:456
+#: admin/kps.php:457
 msgid "W3C401"
 msgstr "W3C401"
 
-#: admin/kps.php:459
+#: admin/kps.php:460
 msgid "Mysql"
 msgstr "Mysql"
 
-#: admin/kps.php:460
+#: admin/kps.php:461
 msgid "PHP"
 msgstr "PHP"
 
-#: admin/kps.php:463
+#: admin/kps.php:464
 msgid "JQuery"
 msgstr "JQuery"
 
@@ -2010,35 +2006,35 @@ msgstr "Eintrag löschen"
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: functions/kps-functions.php:116
+#: functions/kps-functions.php:114
 msgid "Signal-Messenger"
 msgstr "Signal-Messenger"
 
-#: functions/kps-functions.php:120
+#: functions/kps-functions.php:118
 msgid "Viper-Messenger"
 msgstr "Viper-Messenger"
 
-#: functions/kps-functions.php:124
+#: functions/kps-functions.php:122
 msgid "Telegram-Messenger"
 msgstr "Telegram-Messenger"
 
-#: functions/kps-functions.php:128
+#: functions/kps-functions.php:126
 msgid "Threema-Messenger"
 msgstr "Threema-Messenger"
 
-#: functions/kps-functions.php:132
+#: functions/kps-functions.php:130
 msgid "Whatsapp-Messenger"
 msgstr "Whatsapp-Messenger"
 
-#: functions/kps-functions.php:136
+#: functions/kps-functions.php:134
 msgid "Hoccer-Messenger"
 msgstr "Hoccer-Messenger"
 
-#: functions/kps-functions.php:140
+#: functions/kps-functions.php:138
 msgid "Wire-Messenger"
 msgstr "Wire-Messenger"
 
-#: functions/kps-functions.php:144
+#: functions/kps-functions.php:142
 msgid "Skype-Messenger"
 msgstr "Skype-Messenger"
 
@@ -2097,27 +2093,27 @@ msgstr "Keine personenbezogenen Daten versendet!"
 msgid "Climbing-Partner-Search entries"
 msgstr "Kletterpartner-Suche Einträge"
 
-#: kps-hooks.php:83
+#: kps-hooks.php:95
 msgid "Climbing-Partner"
 msgstr "Kletterpartner"
 
-#: kps-hooks.php:91 kps-hooks.php:201
+#: kps-hooks.php:103 kps-hooks.php:213
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: kps-hooks.php:92
+#: kps-hooks.php:104
 msgid "GTC / GDPR"
 msgstr "AGB / DSGVO"
 
-#: kps-hooks.php:93
+#: kps-hooks.php:105
 msgid "Email Templates"
 msgstr "Email-Vorlagen"
 
-#: kps-hooks.php:94
+#: kps-hooks.php:106
 msgid "Design"
 msgstr "Design"
 
-#: kps-hooks.php:134
+#: kps-hooks.php:146
 msgid ""
 "If you use the climbing partner search form and leave an entry, your entered "
 "data will automatically be saved in our database. This can be retrieved "
@@ -2133,7 +2129,7 @@ msgstr ""
 "Ihre IP, den Hostnamen und andere Systemdaten, um die Spam-Erkennung zu "
 "verbessern."
 
-#: kps-hooks.php:135
+#: kps-hooks.php:147
 msgid ""
 "Entries that have been released are displayed visibly for a minimum of 1 day "
 "and automatically deleted after a maximum of 180 days."
@@ -2141,147 +2137,10 @@ msgstr ""
 "Einträge, welche freigegeben wurden, werden minimal 1 Tag sichtbar angezeigt "
 "und nach maximal 180 Tagen automatisch gelöscht."
 
-#: kps-hooks.php:136
+#: kps-hooks.php:148
 msgid ""
 "Entries that have not been released will be stored for a minimum of 30 days "
 "and automatically deleted after a maximum of 180 days."
 msgstr ""
 "Einträge, welche nicht freigegeben wurden, werden minimal 30 Tage "
 "gespeichert und nach maximal 180 Tagen automatisch, gelöscht."
-
-#~ msgid "Legend"
-#~ msgstr "Legende"
-
-#~ msgid "Widget"
-#~ msgstr "Widget"
-
-#~ msgid "No legend-icons selected"
-#~ msgstr "Keine Legenden-Icons ausgewählt"
-
-#~ msgid "No widget-icons selected"
-#~ msgstr "Keine Widget-Icons ausgewählt"
-
-#~ msgid "No transparency"
-#~ msgstr "Keine Transparenz"
-
-#~ msgid "Transparency"
-#~ msgstr "Transparenz"
-
-#~ msgid "Size"
-#~ msgstr "Größe"
-
-#, fuzzy
-#~| msgid "Note! Entry has already been activated!"
-#~ msgid "Entry has already been released."
-#~ msgstr "Hinweis! Eintrag wurde schon aktiviert!"
-
-#~ msgid ""
-#~ "Your entry has just been unlocked!\n"
-#~ "\n"
-#~ "The deletion time for this entry was set to%erasedatetime%.\n"
-#~ "\n"
-#~ "Your entry:\n"
-#~ "*******************\n"
-#~ "Entry written on: %setdate%\n"
-#~ "Entry released on: %unlockdatetime%\n"
-#~ "Entry will be deleted on: %erasedatetime%\n"
-#~ "\n"
-#~ "%entrycontent%\n"
-#~ "\n"
-#~ "Your contact details:\n"
-#~ "*******************\n"
-#~ "Name: %authorname%\n"
-#~ "Email: %authoremail%\n"
-#~ "%authorcontactdata%\n"
-#~ "\n"
-#~ "Many Thanks!\n"
-#~ "Your team\n"
-#~ "%blogname%.\n"
-#~ "%blogurl%\n"
-#~ "%blogemail%"
-#~ msgstr ""
-#~ "Ihr Eintrag wurde soeben freigeschaltet!\n"
-#~ "\n"
-#~ "Der Löschzeitpunkt für diesen Eintrag wurde auf %erasedatetime% gesetzt.\n"
-#~ "\n"
-#~ "Dein Eintrag:\n"
-#~ "*******************\n"
-#~ "Eintrag geschrieben am: %setdate%\n"
-#~ "Eintrag freigegeben am: %unlockdatetime%\n"
-#~ "Eintrag wird gelöscht am: %erasedatetime%\n"
-#~ "\n"
-#~ "%entrycontent%\n"
-#~ "\n"
-#~ "Deine Kontaktdaten:\n"
-#~ "*******************\n"
-#~ "Name: %authorname%\n"
-#~ "Email: %authoremail%\n"
-#~ "%authorcontactdata%\n"
-#~ "\n"
-#~ "Vielen Dank!\n"
-#~ "Eurer Team\n"
-#~ "%blogname%\n"
-#~ "%blogurl%\n"
-#~ "%blogemail%"
-
-#~ msgid "Please complete the form completely!"
-#~ msgstr "Bitte fülle das Formular vollständig aus!"
-
-#~ msgid "Terms and Conditions and GDPR was not accepted!"
-#~ msgstr "Allgemeine Geschäftsbedingungen und DSGVO wurde nicht akzeptiert!"
-
-#~ msgid "Terms and conditions was not accepted!"
-#~ msgstr "Allgemeine Geschäftsbedingungen wurde nicht akzeptiert!"
-
-#~ msgid "General Data Protection Regulation was not accepted!"
-#~ msgstr "Datenschutz-Grundverordnung wurde nicht akzeptiert!"
-
-#~ msgid "In the next few minutes, you should receive an Activation-Email!"
-#~ msgstr ""
-#~ "In den nächsten Minuten solltest du eine Aktivierungs-Email erhalten!"
-
-#~ msgid "Acknowledge!"
-#~ msgstr "Bestätigen!"
-
-#, fuzzy
-#~| msgid ""
-#~| "The General Terms and Conditions (GTC) are contractual clauses that "
-#~| "standardize\n"
-#~| "and concretisation of mass contracts. They are unilaterally provided by "
-#~| "a contracting party\n"
-#~| "and therefore require some control to prevent their misuse. We recommend "
-#~| "this\n"
-#~| "to explain to the user (author) that the contact data, which the user "
-#~| "(author), the requester\n"
-#~| "(User) leaves without the control, verification and verification of the "
-#~| "site operator or the\n"
-#~| "Requester happens. Here you can assign your terms and conditions in the "
-#~| "form."
-#~ msgid ""
-#~ "\n"
-#~ "The General Terms and Conditions (GTC) are contractual clauses that "
-#~ "standardize\n"
-#~ "and regulate mass contracts. They are unilaterally provided by a "
-#~ "contracting party\n"
-#~ "and therefore require some control to prevent their misuse. We recommend "
-#~ "this\n"
-#~ "to explain to the user (author) that the contact details, which the user "
-#~ "(author), passes to the requester\n"
-#~ "(User) are left without the control, checking and verification of the "
-#~ "site operator or the\n"
-#~ "Requester. Here you can assign your own terms and conditions in the form."
-#~ msgstr ""
-#~ "Die Allgemeine Geschäftsbedingungen (AGB) sind vertragliche Klauseln, die "
-#~ "zur Standardisierung\n"
-#~ "und Konkretisierung von Massenverträgen dienen. Sie werden von einer "
-#~ "Vertragspartei einseitig gestellt\n"
-#~ "und bedürfen daher einer bestimmter Kontrolle, um ihren Missbrauch zu "
-#~ "verhindern. Wir empfehlen dies\n"
-#~ "um dem Nutzer (Autor) zu erläutern, dass die Kontaktdaten, welche der "
-#~ "Nutzer (Autor), dem Anforderer\n"
-#~ "(User) hinterlässt, ohne die Kontrolle, Prüfung und Verifizierung des "
-#~ "Seitenbetreibers oder des\n"
-#~ "Anforderers geschieht. Hier können Sie Ihre AGBs im Formular zuweisen."
-
-#~ msgid "Titel"
-#~ msgstr "Titel"
