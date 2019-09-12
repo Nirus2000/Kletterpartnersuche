@@ -902,7 +902,7 @@ class kps_entry_write
 
         // Email versenden
         $headers = 'From: ' . get_bloginfo('name'). ' <' .  esc_attr(get_option('kps_MailFrom', false)) . '>';
-        $this->_activationEmailIsSend = wp_mail(esc_attr(get_option('kps_MailFrom', false)), $writeMail['Subject'], $writeMail['Content'], $headers);
+        $this->_activationEmailIsSend = wp_mail(esc_attr($this->_authorEmail), $writeMail['Subject'], $writeMail['Content'], $headers);
 
         return $this->_activationEmailIsSend; // Rückgabe des Wertes
     }

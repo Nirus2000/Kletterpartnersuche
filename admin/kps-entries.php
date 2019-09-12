@@ -191,7 +191,7 @@ function kps_entries($id = '')
 
                         // Email versenden
                         $headers = 'From: ' . get_bloginfo('name'). ' <' .  esc_attr(get_option('kps_MailFrom', false)) . '>';
-                        wp_mail(esc_attr(get_option('kps_MailFrom', false)), $adminUnlockMail['Subject'], $adminUnlockMail['Content'], $headers);
+                        wp_mail(esc_attr($entry->show_authorEmail_raw()), $adminUnlockMail['Subject'], $adminUnlockMail['Content'], $headers);
                     }
                 }
                 echo '
@@ -356,7 +356,7 @@ function kps_entries($id = '')
 
                                 // Email versenden
                                 $headers = 'From: ' . get_bloginfo('name'). ' <' .  esc_attr(get_option('kps_MailFrom', false)) . '>';
-                                wp_mail(esc_attr(get_option('kps_MailFrom', false)), $adminUnlockMail['Subject'], $adminUnlockMail['Content'], $headers);
+                                wp_mail(esc_attr($entry->show_authorEmail_raw()), $adminUnlockMail['Subject'], $adminUnlockMail['Content'], $headers);
                             }
                         }
                     }
