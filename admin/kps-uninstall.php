@@ -36,7 +36,7 @@
 // Kein direkten Zugriff erlauben
 if (strpos($_SERVER['PHP_SELF'], basename(__FILE__)))
 {
-    die('No direct calls allowed!');
+    wp_die(__('No direct calls allowed!'));
 }
 
 /**
@@ -49,7 +49,7 @@ function kps_uninstall()
     // Zugriffsrechte prüfen
     if (function_exists('current_user_can') && !current_user_can('administrator'))
     {
-        die(esc_html__('Access denied!', 'kps'));
+        wp_die(esc_html__('Access denied!', 'kps'));
     }
 
     // Javascript einladen
@@ -196,7 +196,7 @@ function kps_uninstallproceed()
     // Zugriffsrechte prüfen
     if (function_exists('current_user_can') && !current_user_can('administrator'))
     {
-        die(esc_html__('Access denied!', 'kps'));
+        wp_die(esc_html__('Access denied!', 'kps'));
     }
 
     global $wpdb;

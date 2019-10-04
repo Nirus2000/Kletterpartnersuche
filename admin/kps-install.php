@@ -36,7 +36,7 @@
 // Kein direkten Zugriff erlauben
 if (strpos($_SERVER['PHP_SELF'], basename(__FILE__)))
 {
-    die('No direct calls allowed!');
+    wp_die(__('No direct calls allowed!'));
 }
 
 /**
@@ -211,7 +211,7 @@ function kps_install()
     }
     else
     {
-        die('Databases already exist. Installation aborted. Contact your administrator!');
+        wp_die(__('Databases already exist. Installation aborted. Contact your administrator!'));
     }
 }
 
@@ -228,7 +228,7 @@ function kps_upgrade()
 
     if (version_compare($current_version, '1.1', '<'))
     {
-        die('This version is discontinued. Please uninstall and delete this plugin. A new version is available!');
+        wp_die(__('This version is discontinued. Please uninstall and delete this plugin. A new version is available!'));
         exit;
     }
 

@@ -36,7 +36,7 @@
 // Kein direkten Zugriff erlauben
 if (strpos($_SERVER['PHP_SELF'], basename(__FILE__)))
 {
-    die('No direct calls allowed!');
+    wp_die(__('No direct calls allowed!'));
 }
 
 /**
@@ -47,7 +47,7 @@ function kps_Privacy()
     // Zugriffsrechte prüfen
     if (function_exists('current_user_can') && !current_user_can('manage_privacy_options'))
     {
-        die(esc_html__('Access denied!', 'kps'));
+        wp_die(esc_html__('Access denied!', 'kps'));
     }
 
     // Javascript einladen

@@ -36,7 +36,7 @@
 // Kein direkten Zugriff erlauben
 if (strpos($_SERVER['PHP_SELF'], basename(__FILE__)))
 {
-    die('No direct calls allowed!');
+    wp_die(__('No direct calls allowed!'));
 }
 
 /**
@@ -47,7 +47,7 @@ function kps_EmailSetting()
     // Zugriffsrechte prüfen
     if (function_exists('current_user_can') && !current_user_can('manage_options'))
     {
-        die(esc_html__('Access denied!', 'kps'));
+        wp_die(esc_html__('Access denied!', 'kps'));
     }
 
     // Javascript einladen
@@ -374,15 +374,15 @@ Your team
                                     </tr>
                                     <tr>
                                         <td>%setdate%</td>
-                                        <td>' . $exampleSetTime . "&#160(". esc_html__('Created', 'kps') . ')</td>
+                                        <td>' . $exampleSetTime . "&#160;(". esc_html__('Created', 'kps') . ')</td>
                                     </tr>
                                     <tr>
                                         <td>%erasedatetime%</td>
-                                        <td>' . $exampleDeleteTime . "&#160(". esc_html__('Delete Time', 'kps') . ')</td>
+                                        <td>' . $exampleDeleteTime . "&#160;(". esc_html__('Delete Time', 'kps') . ')</td>
                                     </tr>
                                     <tr>
                                         <td>%unlockdatetime%</td>
-                                        <td>' . $exampleUnlockTime . "&#160(". esc_html__('Released', 'kps') . ')</td>
+                                        <td>' . $exampleUnlockTime . "&#160;(". esc_html__('Released', 'kps') . ')</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -641,7 +641,7 @@ Your team
                                         <td colspan="2" class="kps-br"></td>
                                     </tr>
                                     <tr>
-                                        <td><b>' . esc_html__('Duty-Shorttags', 'kps') . '</td>
+                                        <td><b>' . esc_html__('Duty-Shorttags', 'kps') . '</b></td>
                                         <td><b>' . esc_html__('Result', 'kps') . '</b></td>
                                     </tr>
                                     <tr>
@@ -681,15 +681,15 @@ Your team
                                     </tr>
                                     <tr>
                                         <td>%setdate%</td>
-                                        <td>' . $exampleSetTime . "&#160(". esc_html__('Created', 'kps') . ')</td>
+                                        <td>' . $exampleSetTime . "&#160;(". esc_html__('Created', 'kps') . ')</td>
                                     </tr>
                                     <tr>
                                         <td>%erasedatetime%</td>
-                                        <td>' . $exampleDeleteTime . "&#160(". esc_html__('Delete Time', 'kps') . ')</td>
+                                        <td>' . $exampleDeleteTime . "&#160;(". esc_html__('Delete Time', 'kps') . ')</td>
                                     </tr>
                                     <tr>
                                         <td>%unlockdatetime%</td>
-                                        <td>' . $exampleUnlockTime . "&#160(". esc_html__('Released', 'kps') . ')</td>
+                                        <td>' . $exampleUnlockTime . "&#160;(". esc_html__('Released', 'kps') . ')</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -946,7 +946,7 @@ Your team
                                         <td colspan="2" class="kps-br"></td>
                                     </tr>
                                     <tr>
-                                        <td><b>' . esc_html__('Duty-Shorttags', 'kps') . '</td>
+                                        <td><b>' . esc_html__('Duty-Shorttags', 'kps') . '</b></td>
                                         <td><b>' . esc_html__('Result', 'kps') . '</b></td>
                                     </tr>
                                     <tr>
@@ -982,15 +982,15 @@ Your team
                                     </tr>
                                     <tr>
                                         <td>%setdate%</td>
-                                        <td>' . $exampleSetTime . "&#160(". esc_html__('Created', 'kps') . ')</td>
+                                        <td>' . $exampleSetTime . "&#160;(". esc_html__('Created', 'kps') . ')</td>
                                     </tr>
                                     <tr>
                                         <td>%erasedatetime%</td>
-                                        <td>' . $exampleDeleteTime . "&#160(". esc_html__('Delete Time', 'kps') . ')</td>
+                                        <td>' . $exampleDeleteTime . "&#160;(". esc_html__('Delete Time', 'kps') . ')</td>
                                     </tr>
                                     <tr>
                                         <td>%unlockdatetime%</td>
-                                        <td>' . $exampleUnlockTime . "&#160(". esc_html__('Released', 'kps') . ')</td>
+                                        <td>' . $exampleUnlockTime . "&#160;(". esc_html__('Released', 'kps') . ')</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1300,15 +1300,15 @@ Your team
                                     </tr>
                                     <tr>
                                         <td>%setdate%</td>
-                                        <td>' . $exampleSetTime . "&#160(". esc_html__('Created', 'kps') . ')</td>
+                                        <td>' . $exampleSetTime . "&#160;(". esc_html__('Created', 'kps') . ')</td>
                                     </tr>
                                     <tr>
                                         <td>%erasedatetime%</td>
-                                        <td>' . $exampleDeleteTime . "&#160(". esc_html__('Delete Time', 'kps') . ')</td>
+                                        <td>' . $exampleDeleteTime . "&#160;(". esc_html__('Delete Time', 'kps') . ')</td>
                                     </tr>
                                     <tr>
                                         <td>%unlockdatetime%</td>
-                                        <td>' . $exampleUnlockTime . "&#160(". esc_html__('Released', 'kps') . ')</td>
+                                        <td>' . $exampleUnlockTime . "&#160;(". esc_html__('Released', 'kps') . ')</td>
                                     </tr>
                                 </tbody>
                             </table>

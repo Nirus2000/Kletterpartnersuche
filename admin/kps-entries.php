@@ -36,7 +36,7 @@
 // Kein direkten Zugriff erlauben
 if (strpos($_SERVER['PHP_SELF'], basename(__FILE__)))
 {
-    die('No direct calls allowed!');
+    wp_die(__('No direct calls allowed!'));
 }
 
 /**
@@ -47,7 +47,7 @@ function kps_entries($id = '')
     // Zugriffsrechte prüfen
     if (function_exists('current_user_can') && !current_user_can('moderate_comments'))
     {
-        die(esc_html__('Access denied!', 'kps'));
+        wp_die(esc_html__('Access denied!', 'kps'));
     }
 
     // Javascript einladen
@@ -573,7 +573,7 @@ function kps_entries($id = '')
                             <?php
                             if ($show == 'all')
                             {
-                                echo 'class="current"';
+                                echo ' class="current"';
                             }
                             ?>
                             >
@@ -595,7 +595,7 @@ function kps_entries($id = '')
                             <?php
                             if ($show == 'isopen')
                             {
-                                echo 'class="current"';
+                                echo ' class="current"';
                             }
                             ?>
                             >
@@ -619,7 +619,7 @@ function kps_entries($id = '')
                             <?php
                             if ($show == 'islockedbyadmin')
                             {
-                                echo 'class="current"';
+                                echo ' class="current"';
                             }
                             ?>
                             >
@@ -643,7 +643,7 @@ function kps_entries($id = '')
                             <?php
                             if ($show == 'isunlockbyadmin')
                             {
-                                echo 'class="current"';
+                                echo ' class="current"';
                             }
                             ?>
                             >
@@ -667,7 +667,7 @@ function kps_entries($id = '')
                             <?php
                             if ($show == 'islock')
                             {
-                                echo 'class="current"';
+                                echo ' class="current"';
                             }
                             ?>
                             >
@@ -691,7 +691,7 @@ function kps_entries($id = '')
                             <?php
                             if ($show == 'isunlock')
                             {
-                                echo 'class="current"';
+                                echo ' class="current"';
                             }
                             ?>
                             >
@@ -715,7 +715,7 @@ function kps_entries($id = '')
                             <?php
                             if ($show == 'isreported')
                             {
-                                echo 'class="current"';
+                                echo ' class="current"';
                             }
                             ?>
                             >
@@ -739,7 +739,7 @@ function kps_entries($id = '')
                             <?php
                             if ($show == 'autoReport')
                             {
-                                echo 'class="current"';
+                                echo ' class="current"';
                             }
                             ?>
                             >
@@ -766,7 +766,7 @@ function kps_entries($id = '')
                             <?php
                             if ($show == 'expired')
                             {
-                                echo 'class="current"';
+                                echo ' class="current"';
                             }
                             ?>
                             >
