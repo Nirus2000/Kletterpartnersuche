@@ -33,6 +33,12 @@
  * Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
  */
 
+// Kein direkten Zugriff erlauben
+if (strpos($_SERVER['PHP_SELF'], basename(__FILE__)))
+{
+    wp_die(__('No direct calls allowed!'));
+}
+
 /**
  * Report-Class
  */
