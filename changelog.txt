@@ -1,3 +1,11 @@
+= v. 2.3.0 =
+*[13.10.2019]*
+* Add: Choose form options
+* Add: Design->Translations
+* Fix: IconPaks Orange
+* Fix: Autor Avatar
+* Fix: Email templates
+
 = v. 2.2.3 =
 *[04.10.2019]*
 * Fix: Some small HTML bugs

@@ -846,8 +846,8 @@ class kps_entry_write
     public function sendActivation($deletePassword = '', $activationHash = '', $deleteHash = '', $pageUrl= '')
     {
         // Hole Email-Vorlagen Einstellungen
-        $writeMailSettings = kps_unserialize(get_option('kps_authorMailSettings', false));
-        $writeMail = kps_mailcontent_write($writeMailSettings);
+        $writeMailSettings  = kps_unserialize(get_option('kps_authorMailSettings', false));
+        $writeMail          = kps_mailcontent_activation($writeMailSettings);
 
         // zusätzliche Kontaktdaten
         $authorContactData = kps_contact_informations($this->_authorContactData);

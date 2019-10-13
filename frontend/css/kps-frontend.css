@@ -73,6 +73,11 @@
 	background: none;
 	color: #72777C;
 	cursor: pointer;
+    display: inline-block;
+    speak: none;
+    height: 14px;
+    text-align: center;
+    width: 13px;
 }
 
 #kps button.kps-closeFrom:before {

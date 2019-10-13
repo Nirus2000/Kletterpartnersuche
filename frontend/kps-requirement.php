@@ -48,7 +48,7 @@ function kps_requirement($kps_require = '0')
     $token = wp_create_nonce('kpsRequirementToken');
 
     // Hole Usereinstellungen
-    $checkedUserSettings = kps_unserialize(get_option('kps_userSettings', false));
+    $kpsUserSettings = kps_unserialize(get_option('kps_userSettings', false));
 
     // Hole Formulareinstellungen für Captcha
     $captchaIsActivated = get_option('kps_captcha', false);
@@ -106,7 +106,7 @@ function kps_requirement($kps_require = '0')
 
     // Wenn Option Registierungspflicht
     if (is_user_logged_in() !== true
-        && $checkedUserSettings['kpsUserRequirementRegistration'] === 'true')
+        && $kpsUserSettings['kpsUserRequirementRegistration'] === 'true')
     {
         // Wordpress Registieren
         $output .= '<div>

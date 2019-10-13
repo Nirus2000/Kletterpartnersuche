@@ -154,7 +154,7 @@ function kps_AgbSetting()
         {
             echo '
             <div class="notice notice-error is-dismissible">
-            	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
+            	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
             	<button type="button" class="notice-dismiss">
             		<span class="screen-reader-text">Dismiss this notice.</span>
             	</button>
@@ -173,36 +173,37 @@ to explain to the user (author) that the contact details, which the user (author
 (User) are left without the control, checking and verification of the site operator or the
 Requester. Here you can assign your own terms and conditions in the form.', 'kps') . '
                 </h5>
-                <form class="form" action="" method="post">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td style="text-align: center;">';
-                                wp_dropdown_pages(
-                            		array(
-                            			'name'              => 'kpsAGB',
-                                        'class'             => '',
-                            			'show_option_none'  => '--- ' . esc_html__('Selection', 'kps') . ' ---',
-                            			'option_none_value' => '0',
-                            			'selected'          => get_option('kps_agb', false),
-                            			'post_status'       => array( 'publish' ),
-                            		)
-                            	);
-    echo '                      </td>
-                            </tr>
-                            <tr>
-                                <td class="kps-br"></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">
-                                    <input type="hidden" id="kps_tab" name="kps_tab" value="kps_AgbSetting" />
-                                    <input type="hidden" id="AGBToken" name="AGBToken" value="' . $token . '" />
-                                    <input class="button-primary" type="submit" name="submitAGB" value="' . esc_html__('Save', 'kps') . '" />
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </form>
+                <table class="table" cellpadding="2" cellspacing="2">
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;">';
+                            wp_dropdown_pages(
+                        		array(
+                        			'name'              => 'kpsAGB',
+                                    'class'             => '',
+                        			'show_option_none'  => '--- ' . esc_html__('Selection', 'kps') . ' ---',
+                        			'option_none_value' => '0',
+                        			'selected'          => get_option('kps_agb', false),
+                        			'post_status'       => array( 'publish' ),
+                        		)
+                        	);
+    echo '                  </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="kps-br"></td>
+                        </tr>
+                        <tr>
+                            <td class="hr"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <input type="hidden" id="kps_tab" name="kps_tab" value="kps_AgbSetting" />
+                                <input type="hidden" id="AGBToken" name="AGBToken" value="' . $token . '" />
+                                <input class="button-primary" type="submit" name="submitAGB" value="' . esc_html__('Save', 'kps') . '" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         ';
 }
@@ -271,7 +272,7 @@ function kps_DsgvoSetting()
         {
             echo '
             <div class="notice notice-error is-dismissible">
-            	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
+            	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
             	<button type="button" class="notice-dismiss">
             		<span class="screen-reader-text">Dismiss this notice.</span>
             	</button>
@@ -286,37 +287,39 @@ function kps_DsgvoSetting()
 With this the EU (European Union) wants create a single legal framework for the processing and
 storage of personal data. In this plugin, Personal data can be processed, stored and retrieved
 without checking and verification. Here you can assign your own GPDR to the form.', 'kps') .
-                '&#160;(<a href="https://de.wikipedia.org/wiki/Datenschutz-Grundverordnung" target="_blank">' . esc_html__('GDPR', 'kps') . '</a>)</h5>
-                <form class="form" action="" method="post">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td style="text-align: center;">';
-                                wp_dropdown_pages(
-                            		array(
-                            			'name'              => 'kpsDSGVO',
-                                        'class'             => '',
-                            			'show_option_none'  => '--- ' . esc_html__('Selection', 'kps') . ' ---',
-                            			'option_none_value' => '0',
-                            			'selected'          => get_option('kps_dsgvo', false),
-                            			'post_status'       => array( 'publish' ),
-                            		)
-                            	);
-    echo '                      </td>
-                            </tr>
-                            <tr>
-                                <td class="kps-br"></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">
-                                    <input type="hidden" id="kps_tab" name="kps_tab" value="kps_DsgvoSetting" />
-                                    <input type="hidden" id="DSGVOToken" name="DSGVOToken" value="' . $token . '" />
-                                    <input class="button-primary" type="submit" name="submitDSGVO" value="' . esc_html__('Save', 'kps') . '!" />
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </form>
+                '&#160;(<a href="https://de.wikipedia.org/wiki/Datenschutz-Grundverordnung" target="_blank">' . esc_html__('GDPR', 'kps') . '</a>)
+                </h5>
+                <table class="table" cellpadding="2" cellspacing="2">
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;">';
+                            wp_dropdown_pages(
+                        		array(
+                        			'name'              => 'kpsDSGVO',
+                                    'class'             => '',
+                        			'show_option_none'  => '--- ' . esc_html__('Selection', 'kps') . ' ---',
+                        			'option_none_value' => '0',
+                        			'selected'          => get_option('kps_dsgvo', false),
+                        			'post_status'       => array( 'publish' ),
+                        		)
+                        	);
+    echo '                  </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="kps-br"></td>
+                        </tr>
+                        <tr>
+                            <td class="hr"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <input type="hidden" id="kps_tab" name="kps_tab" value="kps_DsgvoSetting" />
+                                <input type="hidden" id="DSGVOToken" name="DSGVOToken" value="' . $token . '" />
+                                <input class="button-primary" type="submit" name="submitDSGVO" value="' . esc_html__('Save', 'kps') . '!" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         ';
 }

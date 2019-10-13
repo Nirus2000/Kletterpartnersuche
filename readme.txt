@@ -4,7 +4,7 @@ Tags: Klettern, Climb, Wandern, Walking, Trekking, Climbing, Climbpartner, Walki
 Requires at least: 4.9.8
 Requires PHP: 5.2.4
 Tested up to: 5.2.3
-Stable tag: 2.2.3
+Stable tag: 2.3.0
 License: GPL Version 3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -98,6 +98,8 @@ If you send me an e-mail, I will not answer.
 7. Simple integration of the GTC or GDPR
 8. Settings for the email templates
 9. Settings for different icons, widget and other things
+10. Settings for translations of the form
+11. Overview of entries in the admin panel
 
 == Description ==
 
@@ -119,6 +121,14 @@ The "Climbing-Partner-Search" connects climbing, hiking, tracking and sports fan
 Bugfix and extension of the plugin...
 
 == Changelog ==
+
+= v. 2.3.0 =
+*[13.10.2019]*
+* Add: Choose form options
+* Add: Design->Translations
+* Fix: IconPaks Orange
+* Fix: Autor Avatar
+* Fix: Email templates
 
 = v. 2.2.3 =
 *[04.10.2019]*

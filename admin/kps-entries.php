@@ -557,388 +557,390 @@ function kps_entries($id = '')
                         ';
     }
 ?>
-  <div id="kps">
+    <div id="kps">
         <form class="form" id="kpsShowEntries" name="kpsShowEntries" action="" method="post">
            <div>
                 <h3><?php echo esc_html__('Climbing-Partner-Search', 'kps'); ?> - <?php echo esc_html__('Entries', 'kps'); ?></h3>
             </div>
-            <div>
-                <ul class="subsubsub">
-                    <li>
-                        <?php
-                        if ($countAction->allEntries > 0)
-                        {
-                            ?>
-                            <a href='admin.php?page=<?php echo KPS_FOLDER; ?>/entries.php&amp;show=all'
+            <div class=" kps_container">
+                <div>
+                    <ul class="subsubsub">
+                        <li>
                             <?php
-                            if ($show == 'all')
+                            if ($countAction->allEntries > 0)
                             {
-                                echo ' class="current"';
+                                ?>
+                                <a href='admin.php?page=<?php echo KPS_FOLDER; ?>/entries.php&amp;show=all'
+                                <?php
+                                if ($show == 'all')
+                                {
+                                    echo ' class="current"';
+                                }
+                                ?>
+                                >
+                                <?php echo esc_html__('All', 'kps'); ?><span>&#160;(<?php echo $countAction->allEntries; ?>)</a>&#160;&#124;</span>
+                                <?php
+                            }
+                            else
+                            {
+                                echo esc_html__('All', 'kps') . "<span>&#160;&#124;</span>";
                             }
                             ?>
-                            >
-                            <?php echo esc_html__('All', 'kps'); ?><span>&#160;(<?php echo $countAction->allEntries; ?>)</a>&#160;&#124;</span>
+                        </li>
+                        <li>
                             <?php
-                        }
-                        else
-                        {
-                            echo esc_html__('All', 'kps') . "<span>&#160;&#124;</span>";
-                        }
-                        ?>
-                    </li>
-                    <li>
-                        <?php
-                        if ($countAction->isLockedBoth > 0)
-                        {
-                            ?>
-                            <a href='admin.php?page=<?php echo KPS_FOLDER;?>/entries.php&amp;show=isopen'
-                            <?php
-                            if ($show == 'isopen')
+                            if ($countAction->isLockedBoth > 0)
                             {
-                                echo ' class="current"';
+                                ?>
+                                <a href='admin.php?page=<?php echo KPS_FOLDER;?>/entries.php&amp;show=isopen'
+                                <?php
+                                if ($show == 'isopen')
+                                {
+                                    echo ' class="current"';
+                                }
+                                ?>
+                                >
+                                <?php
+                                    echo esc_html(_n('open entry', 'open entries', $countAction->isLockedBoth, 'kps'));
+                                ?> <span>(<?php echo $countAction->isLockedBoth; ?>)</a>&#160;&#124;</span>
+                                <?php
+                            }
+                            else
+                            {
+                                echo esc_html__('open entries', 'kps') . "<span>&#160;&#124;&#160;</span>";
                             }
                             ?>
-                            >
+                        </li>
+                        <li>
                             <?php
-                                echo esc_html(_n('open entry', 'open entries', $countAction->isLockedBoth, 'kps'));
-                            ?> <span>(<?php echo $countAction->isLockedBoth; ?>)</a>&#160;&#124;</span>
-                            <?php
-                        }
-                        else
-                        {
-                            echo esc_html__('open entries', 'kps') . "<span>&#160;&#124;&#160;</span>";
-                        }
-                        ?>
-                    </li>
-                    <li>
-                        <?php
-                        if ($countAction->isLockedByAdmin > 0)
-                        {
-                            ?>
-                            <a href='admin.php?page=<?php echo KPS_FOLDER; ?>/entries.php&amp;show=islockedbyadmin'
-                            <?php
-                            if ($show == 'islockedbyadmin')
+                            if ($countAction->isLockedByAdmin > 0)
                             {
-                                echo ' class="current"';
+                                ?>
+                                <a href='admin.php?page=<?php echo KPS_FOLDER; ?>/entries.php&amp;show=islockedbyadmin'
+                                <?php
+                                if ($show == 'islockedbyadmin')
+                                {
+                                    echo ' class="current"';
+                                }
+                                ?>
+                                >
+                                <?php
+                                    echo esc_html(_n('locked by Admin', 'locked by Admin', $countAction->isLockedByAdmin, 'kps'));
+                                ?> <span>(<?php echo $countAction->isLockedByAdmin; ?>)</a>&#160;&#124;</span>
+                                <?php
+                            }
+                            else
+                            {
+                                echo esc_html__('locked by Admin', 'kps') . "<span>&#160;&#124;&#160;</span>";
                             }
                             ?>
-                            >
+                        </li>
+                        <li>
                             <?php
-                                echo esc_html(_n('locked by Admin', 'locked by Admin', $countAction->isLockedByAdmin, 'kps'));
-                            ?> <span>(<?php echo $countAction->isLockedByAdmin; ?>)</a>&#160;&#124;</span>
-                            <?php
-                        }
-                        else
-                        {
-                            echo esc_html__('locked by Admin', 'kps') . "<span>&#160;&#124;&#160;</span>";
-                        }
-                        ?>
-                    </li>
-                    <li>
-                        <?php
-                        if ($countAction->isUnLockedByAdmin > 0)
-                        {
-                            ?>
-                            <a href='admin.php?page=<?php echo KPS_FOLDER; ?>/entries.php&amp;show=isunlockbyadmin'
-                            <?php
-                            if ($show == 'isunlockbyadmin')
+                            if ($countAction->isUnLockedByAdmin > 0)
                             {
-                                echo ' class="current"';
+                                ?>
+                                <a href='admin.php?page=<?php echo KPS_FOLDER; ?>/entries.php&amp;show=isunlockbyadmin'
+                                <?php
+                                if ($show == 'isunlockbyadmin')
+                                {
+                                    echo ' class="current"';
+                                }
+                                ?>
+                                >
+                                <?php
+                                    echo esc_html(_n('released by Admin', 'released by Admin', $countAction->isUnLockedByAdmin, 'kps'));
+                                ?> <span>(<?php echo $countAction->isUnLockedByAdmin; ?>)</a>&#160;&#124;</span>
+                                <?php
+                            }
+                            else
+                            {
+                                echo esc_html__('released by Admin', 'kps') . "<span>&#160;&#124;&#160;</span>";
                             }
                             ?>
-                            >
+                        </li>
+                        <li>
                             <?php
-                                echo esc_html(_n('released by Admin', 'released by Admin', $countAction->isUnLockedByAdmin, 'kps'));
-                            ?> <span>(<?php echo $countAction->isUnLockedByAdmin; ?>)</a>&#160;&#124;</span>
-                            <?php
-                        }
-                        else
-                        {
-                            echo esc_html__('released by Admin', 'kps') . "<span>&#160;&#124;&#160;</span>";
-                        }
-                        ?>
-                    </li>
-                    <li>
-                        <?php
-                        if ($countAction->isLocked > 0)
-                        {
-                            ?>
-                            <a href='admin.php?page=<?php echo KPS_FOLDER; ?>/entries.php&amp;show=islocked'
-                            <?php
-                            if ($show == 'islock')
+                            if ($countAction->isLocked > 0)
                             {
-                                echo ' class="current"';
+                                ?>
+                                <a href='admin.php?page=<?php echo KPS_FOLDER; ?>/entries.php&amp;show=islocked'
+                                <?php
+                                if ($show == 'islock')
+                                {
+                                    echo ' class="current"';
+                                }
+                                ?>
+                                >
+                                <?php
+                                    echo esc_html(_n('locked by Author', 'locked by Author', $countAction->isLocked, 'kps'));
+                                ?> <span>(<?php echo $countAction->isLocked; ?>)</a>&#160;&#124;</span>
+                                <?php
+                            }
+                            else
+                            {
+                                echo esc_html__('locked by Author', 'kps') . "<span>&#160;&#124;&#160;</span>";
                             }
                             ?>
-                            >
+                        </li>
+                        <li>
                             <?php
-                                echo esc_html(_n('locked by Author', 'locked by Author', $countAction->isLocked, 'kps'));
-                            ?> <span>(<?php echo $countAction->isLocked; ?>)</a>&#160;&#124;</span>
-                            <?php
-                        }
-                        else
-                        {
-                            echo esc_html__('locked by Author', 'kps') . "<span>&#160;&#124;&#160;</span>";
-                        }
-                        ?>
-                    </li>
-                    <li>
-                        <?php
-                        if ($countAction->isUnLocked > 0)
-                        {
-                            ?>
-                            <a href='admin.php?page=<?php echo KPS_FOLDER; ?>/entries.php&amp;show=isunlocked'
-                            <?php
-                            if ($show == 'isunlock')
+                            if ($countAction->isUnLocked > 0)
                             {
-                                echo ' class="current"';
+                                ?>
+                                <a href='admin.php?page=<?php echo KPS_FOLDER; ?>/entries.php&amp;show=isunlocked'
+                                <?php
+                                if ($show == 'isunlock')
+                                {
+                                    echo ' class="current"';
+                                }
+                                ?>
+                                >
+                                <?php
+                                    echo esc_html(_n('released by Author', 'released by Author', $countAction->isUnLocked, 'kps'));
+                                ?> <span>(<?php echo $countAction->isUnLocked; ?>)</a>&#160;&#124;</span>
+                                <?php
+                            }
+                            else
+                            {
+                                echo esc_html__('released by Author', 'kps') . "<span>&#160;&#124;&#160;</span>";
                             }
                             ?>
-                            >
+                        </li>
+                        <li>
                             <?php
-                                echo esc_html(_n('released by Author', 'released by Author', $countAction->isUnLocked, 'kps'));
-                            ?> <span>(<?php echo $countAction->isUnLocked; ?>)</a>&#160;&#124;</span>
-                            <?php
-                        }
-                        else
-                        {
-                            echo esc_html__('released by Author', 'kps') . "<span>&#160;&#124;&#160;</span>";
-                        }
-                        ?>
-                    </li>
-                    <li>
-                        <?php
-                        if ($countAction->isReported > 0)
-                        {
-                            ?>
-                            <a href='admin.php?page=<?php echo KPS_FOLDER; ?>/entries.php&amp;show=isreported'
-                            <?php
-                            if ($show == 'isreported')
+                            if ($countAction->isReported > 0)
                             {
-                                echo ' class="current"';
+                                ?>
+                                <a href='admin.php?page=<?php echo KPS_FOLDER; ?>/entries.php&amp;show=isreported'
+                                <?php
+                                if ($show == 'isreported')
+                                {
+                                    echo ' class="current"';
+                                }
+                                ?>
+                                >
+                                <?php
+                                    echo esc_html(_n('entry with report', 'entries with report', $countAction->isReported, 'kps'));
+                                ?> <span>(<?php echo $countAction->isReported; ?>)</a>&#160;&#124;</span>
+                                <?php
+                            }
+                            else
+                            {
+                                echo esc_html__('entry with report', 'kps') . "<span>&#160;&#124;&#160;</span>";
                             }
                             ?>
-                            >
+                        </li>
+                        <li>
                             <?php
-                                echo esc_html(_n('entry with report', 'entries with report', $countAction->isReported, 'kps'));
-                            ?> <span>(<?php echo $countAction->isReported; ?>)</a>&#160;&#124;</span>
-                            <?php
-                        }
-                        else
-                        {
-                            echo esc_html__('entry with report', 'kps') . "<span>&#160;&#124;&#160;</span>";
-                        }
-                        ?>
-                    </li>
-                    <li>
-                        <?php
-                        if ($countAction->lockedAutoReport > 0)
-                        {
-                            ?>
-                            <a href='admin.php?page=<?php echo KPS_FOLDER; ?>/entries.php&amp;show=autoReport'
-                            <?php
-                            if ($show == 'autoReport')
+                            if ($countAction->lockedAutoReport > 0)
                             {
-                                echo ' class="current"';
+                                ?>
+                                <a href='admin.php?page=<?php echo KPS_FOLDER; ?>/entries.php&amp;show=autoReport'
+                                <?php
+                                if ($show == 'autoReport')
+                                {
+                                    echo ' class="current"';
+                                }
+                                ?>
+                                >
+                                <?php
+                                    echo esc_html__('Auto-Lock', 'kps');
+                                ?> <span>(<?php echo $countAction->lockedAutoReport; ?>)</a>&#160;&#124;</span>
+                                <?php
+                            }
+                            else
+                            {
+                                echo esc_html__('Auto-Lock', 'kps') . "<span>&#160;&#124;&#160;</span>";
                             }
                             ?>
-                            >
+                        </li>
+                        <li>
                             <?php
-                                echo esc_html__('Auto-Lock', 'kps');
-                            ?> <span>(<?php echo $countAction->lockedAutoReport; ?>)</a>&#160;&#124;</span>
-                            <?php
-                        }
-                        else
-                        {
-                            echo esc_html__('Auto-Lock', 'kps') . "<span>&#160;&#124;&#160;</span>";
-                        }
-                        ?>
-                    </li>
-                    <li>
-                        <?php
-                        if ($countAction->deleteDateTime > 0)
-                        {
-                            ?>
-                            <a href='admin.php?page=
-                            <?php
-                                echo KPS_FOLDER;
-                            ?>/entries.php&amp;show=expired'
-                            <?php
-                            if ($show == 'expired')
+                            if ($countAction->deleteDateTime > 0)
                             {
-                                echo ' class="current"';
+                                ?>
+                                <a href='admin.php?page=
+                                <?php
+                                    echo KPS_FOLDER;
+                                ?>/entries.php&amp;show=expired'
+                                <?php
+                                if ($show == 'expired')
+                                {
+                                    echo ' class="current"';
+                                }
+                                ?>
+                                >
+                                <?php
+                                    echo esc_html__('expired', 'kps');
+                                ?> <span>(<?php echo $countAction->deleteDateTime; ?>)</span></a>
+                                <?php
                             }
-                            ?>
-                            >
-                            <?php
+                            else
+                            {
                                 echo esc_html__('expired', 'kps');
-                            ?> <span>(<?php echo $countAction->deleteDateTime; ?>)</span></a>
-                            <?php
-                        }
-                        else
-                        {
-                            echo esc_html__('expired', 'kps');
-                        }
-                        ?>
-                  </li>
-                </ul>
-            </div>
-            <div class="tablenav">
-                <div class="alignleft actions">
-                    <label for="kpsAction"></label>
-                    <select name="kpsAction" id="kpsActionTop">
-                        <option label=" "></option>
-                        <option value="lock"><?php echo esc_html__('Lock (Author)', 'kps'); ?></option>
-                        <option value="unlockbyadmin"><?php echo esc_html__('Approval (Admin)', 'kps'); ?></option>
-                        <option value="reset"><?php echo esc_html__('Reset Report (Admin)', 'kps'); ?></option>>
-                        <option value="lockbyadmin"><?php echo esc_html__('Lock (Admin)', 'kps'); ?></option>
-                        <option value="delete"><?php echo esc_html__('Delete', 'kps'); ?></option>
-                    </select>
-                    <input type="hidden" id="kpsActionToken" name="kpsActionToken" value="<?php echo $token; ?>" />
-                    <input value="<?php echo esc_html__('Execute', 'kps'); ?>" name="kpsAdminDoIt" id="kpsAdminDoIt" class="button action" type="submit" />
+                            }
+                            ?>
+                      </li>
+                    </ul>
                 </div>
-                <?php echo $pagination; ?>
-            </div>
-            <div>
-                <table class="table_list">
-                    <thead>
-                        <tr>
-                            <th class="th_list_top" scope="col">
-                                <label for="kpsCheckAllTop"></label>
-                                <input name="kpsCheckAllTop" id="kpsCheckAllTop" type="checkbox"/>
-                            </th>
-                            <th class="th_list_top" scope="col"><?php echo esc_html__('ID', 'kps'); ?></th>
-                            <th class="th_list_top" scope="col"><?php echo esc_html__('Author', 'kps'); ?></th>
-                            <th class="th_list_top" scope="col"><?php echo esc_html__('Entry', 'kps'); ?></th>
-                            <th class="th_list_top" scope="col"><?php echo esc_html__('Created', 'kps'); ?></th>
-                            <th class="th_list_top" scope="col"><?php echo esc_html__('Released', 'kps'); ?></th>
-                            <th class="th_list_top" scope="col"><?php echo esc_html__('Delete Time', 'kps'); ?></th>
-                            <th class="th_list_top" scope="col"><?php echo esc_html__('Reports', 'kps'); ?></th>
-                            <th class="th_list_top" scope="col"><?php echo esc_html__('Release (Admin)', 'kps'); ?></th>
-                            <th class="th_list_top" scope="col"><?php echo esc_html__('Release (Author)', 'kps'); ?></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-    // Foreach-Schleife für die Auflistung aller Einträge
-    if (is_array($results) && count($results) > 0)
-    {
-        foreach ($results AS $resultItem)
+                <div class="tablenav">
+                    <div class="alignleft actions">
+                        <label for="kpsAction"></label>
+                        <select name="kpsAction" id="kpsActionTop">
+                            <option label=" "></option>
+                            <option value="lock"><?php echo esc_html__('Lock (Author)', 'kps'); ?></option>
+                            <option value="unlockbyadmin"><?php echo esc_html__('Approval (Admin)', 'kps'); ?></option>
+                            <option value="reset"><?php echo esc_html__('Reset Report (Admin)', 'kps'); ?></option>>
+                            <option value="lockbyadmin"><?php echo esc_html__('Lock (Admin)', 'kps'); ?></option>
+                            <option value="delete"><?php echo esc_html__('Delete', 'kps'); ?></option>
+                        </select>
+                        <input type="hidden" id="kpsActionToken" name="kpsActionToken" value="<?php echo $token; ?>" />
+                        <input value="<?php echo esc_html__('Execute', 'kps'); ?>" name="kpsAdminDoIt" id="kpsAdminDoIt" class="button action" type="submit" />
+                    </div>
+                    <?php echo $pagination; ?>
+                </div>
+                <div>
+                    <table class="table_list">
+                        <thead>
+                            <tr>
+                                <th class="th_list_top" scope="col">
+                                    <label for="kpsCheckAllTop"></label>
+                                    <input name="kpsCheckAllTop" id="kpsCheckAllTop" type="checkbox"/>
+                                </th>
+                                <th class="th_list_top" scope="col"><?php echo esc_html__('ID', 'kps'); ?></th>
+                                <th class="th_list_top" scope="col"><?php echo esc_html__('Author', 'kps'); ?></th>
+                                <th class="th_list_top" scope="col"><?php echo esc_html__('Entry', 'kps'); ?></th>
+                                <th class="th_list_top" scope="col"><?php echo esc_html__('Created', 'kps'); ?></th>
+                                <th class="th_list_top" scope="col"><?php echo esc_html__('Released', 'kps'); ?></th>
+                                <th class="th_list_top" scope="col"><?php echo esc_html__('Delete Time', 'kps'); ?></th>
+                                <th class="th_list_top" scope="col"><?php echo esc_html__('Reports', 'kps'); ?></th>
+                                <th class="th_list_top" scope="col"><?php echo esc_html__('Release (Admin)', 'kps'); ?></th>
+                                <th class="th_list_top" scope="col"><?php echo esc_html__('Release (Author)', 'kps'); ?></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+        // Foreach-Schleife für die Auflistung aller Einträge
+        if (is_array($results) && count($results) > 0)
         {
-            // Klasse instanzieren
-            $read = new kps_entry_read($resultItem->id, $userSettings);
-?>
-                                  <tr class="tr_list">
-                                        <td class="td_list" style="text-align: center;">
-                                            <label for="kpsCheck[]"></label>
-                                            <input name="kpsCheck[]" id="kpsCheck<?php echo $resultItem->id; ?>" type="checkbox" value="<?php echo $resultItem->id; ?>" />
-                                        </td>
-                                        <td class="td_list" style="text-align: center;"><?php echo $resultItem->id; ?></td>
-                                        <td class="td_list" style="vertical-align: top;">
-                                            <?php
-                                                echo $read->show_authorName() . ' (' . $read->show_authorId(). ')<br />' . $read->show_authorEmail();
+            foreach ($results AS $resultItem)
+            {
+                // Klasse instanzieren
+                $read = new kps_entry_read($resultItem->id, $userSettings);
+        ?>
+                                      <tr class="tr_list">
+                                            <td class="td_list" style="text-align: center;">
+                                                <label for="kpsCheck[]"></label>
+                                                <input name="kpsCheck[]" id="kpsCheck<?php echo $resultItem->id; ?>" type="checkbox" value="<?php echo $resultItem->id; ?>" />
+                                            </td>
+                                            <td class="td_list" style="text-align: center;"><?php echo $resultItem->id; ?></td>
+                                            <td class="td_list" style="vertical-align: top;">
+                                                <?php
+                                                    echo $read->show_authorName() . ' (' . $read->show_authorId(). ')<br />' . $read->show_authorEmail();
+                                                    echo '
+                                                        <div style="text-align: left;"><b>' . esc_html__('IP-Adress', 'kps') . ':</b>&#160;' . nl2br($read->show_authorIp()) . '</div>
+                                                        <div style="text-align: left;"><b>' . esc_html__('Host', 'kps') . ':</b>&#160;' . nl2br($read->show_authorHost()) . '</div>
+                                                        <div style="text-align: left;"><b>' . esc_html__('Activation-Key', 'kps') . ':</b>&#160;' . kps_getFirstChars($read->show_activationcode(), 5) . '[...]' . kps_getLastChars($read->show_activationcode(), 5) . '</div>
+                                                        <div style="text-align: left;"><b>' . esc_html__('Delete-Key', 'kps') . ':</b>&#160;' . kps_getFirstChars($read->show_deletecode(), 5) . '[...]' . kps_getLastChars($read->show_deletecode(), 5) . '</div>
+                                                    ';
+                                                ?>
+                                            </td>
+                                            <td class="td_list" style="width: 30%; vertical-align: top;">
+                                                <?php
                                                 echo '
-                                                    <div style="text-align: left;"><b>' . esc_html__('IP-Adress', 'kps') . ':</b>&#160;' . nl2br($read->show_authorIp()) . '</div>
-                                                    <div style="text-align: left;"><b>' . esc_html__('Host', 'kps') . ':</b>&#160;' . nl2br($read->show_authorHost()) . '</div>
-                                                    <div style="text-align: left;"><b>' . esc_html__('Activation-Key', 'kps') . ':</b>&#160;' . kps_getFirstChars($read->show_activationcode(), 5) . '[...]' . kps_getLastChars($read->show_activationcode(), 5) . '</div>
-                                                    <div style="text-align: left;"><b>' . esc_html__('Delete-Key', 'kps') . ':</b>&#160;' . kps_getFirstChars($read->show_deletecode(), 5) . '[...]' . kps_getLastChars($read->show_deletecode(), 5) . '</div>
+                                                    <div style="text-align: left;">' . $read->show_authorSearchfor() . '&#160;' . $read->show_authorRule() . '&#160;' . $read->show_yourRule() . '<div>
+                                                    <div class="kps-br"></div>
+                                                    <div style="text-align: left;">' . nl2br($read->show_authorContent()) . '</div>
                                                 ';
-                                            ?>
-                                        </td>
-                                        <td class="td_list" style="width: 30%; vertical-align: top;">
-                                            <?php
-                                            echo '
-                                                <div style="text-align: left;">' . $read->show_authorSearchfor() . '&#160;' . $read->show_authorRule() . '&#160;' . $read->show_yourRule() . '<div>
-                                                <div class="kps-br"></div>
-                                                <div style="text-align: left;">' . nl2br($read->show_authorContent()) . '</div>
-                                            ';
-                                            ?>
-                                          </td>
-                                        <td class="td_list" style="text-align: center; vertical-align: top;"><?php echo $read->show_setDateTime(); ?></td>
-                                        <td class="td_list" style="text-align: center; vertical-align: top;"><?php echo $read->show_unlockDateTime(); ?></td>
-                                        <td class="td_list" style="text-align: center; vertical-align: top;"><?php echo $read->show_deleteDateTime(); ?></td>
-                                        <td class="td_list" style="text-align: center; vertical-align: top;">
-                                            <?php
-                                                $reports = kps_unserialize($read->show_reportCount());
-                                                echo '
-                                                    <div style="text-align: left;"><b>' . esc_html__('Spam/Advertising', 'kps') . ':</b>&#160;' . $reports['spam'] . '</div>
-                                                    <div style="text-align: left;"><b>' . esc_html__('Inappropriate/Violence', 'kps') . ':</b>&#160;' . $reports['unreasonable'] . '</div>
-                                                    <div style="text-align: left;"><b>' . esc_html__('Double entry', 'kps') . ':</b>&#160;' . $reports['double'] . '</div>
-                                                    <div style="text-align: left;"><b>' . esc_html__('Personality rights', 'kps') . ':</b>&#160;' . $reports['privacy'] . '</div>
-                                                    <div style="text-align: left;"><b>' . esc_html__('Others', 'kps') . ':</b>&#160;' . $reports['others'] . '</div>
-                                                ';
-                                            ?>
-                                        </td>
-                                        <td class="td_list" style="text-align: center;"><span>
-                                            <?php
-                                                echo ($read->show_isLockedByAdmin() === true) ? '<span class="dashicons dashicons-yes"></span>' : '<span class="dashicons dashicons-no-alt"></span>';
-                                                echo ($read->show_isReported() === true) ? '<span class="dashicons dashicons-warning"></span>' : '';
-                                                echo ($read->show_lockedAutoReport() === true) ? '<span class="dashicons dashicons-admin-network"></span>' : '';
-                                            ?>
-                                        </span></td>
-                                        <td class="td_list" style="text-align: center;"><span>
-                                            <?php
-                                                echo ($read->show_isLocked() === true) ? '<span class="dashicons dashicons-yes"></span>' : '<span class="dashicons dashicons-no-alt"></span>';
-                                            ?>
-                                        </span></td>
-                                    </tr>
+                                                ?>
+                                              </td>
+                                            <td class="td_list" style="text-align: center; vertical-align: top;"><?php echo $read->show_setDateTime(); ?></td>
+                                            <td class="td_list" style="text-align: center; vertical-align: top;"><?php echo $read->show_unlockDateTime(); ?></td>
+                                            <td class="td_list" style="text-align: center; vertical-align: top;"><?php echo $read->show_deleteDateTime(); ?></td>
+                                            <td class="td_list" style="text-align: center; vertical-align: top;">
+                                                <?php
+                                                    $reports = kps_unserialize($read->show_reportCount());
+                                                    echo '
+                                                        <div style="text-align: left;"><b>' . esc_html__('Spam/Advertising', 'kps') . ':</b>&#160;' . $reports['spam'] . '</div>
+                                                        <div style="text-align: left;"><b>' . esc_html__('Inappropriate/Violence', 'kps') . ':</b>&#160;' . $reports['unreasonable'] . '</div>
+                                                        <div style="text-align: left;"><b>' . esc_html__('Double entry', 'kps') . ':</b>&#160;' . $reports['double'] . '</div>
+                                                        <div style="text-align: left;"><b>' . esc_html__('Personality rights', 'kps') . ':</b>&#160;' . $reports['privacy'] . '</div>
+                                                        <div style="text-align: left;"><b>' . esc_html__('Others', 'kps') . ':</b>&#160;' . $reports['others'] . '</div>
+                                                    ';
+                                                ?>
+                                            </td>
+                                            <td class="td_list" style="text-align: center;"><span>
+                                                <?php
+                                                    echo ($read->show_isLockedByAdmin() === true) ? '<span class="dashicons dashicons-yes"></span>' : '<span class="dashicons dashicons-no-alt"></span>';
+                                                    echo ($read->show_isReported() === true) ? '<span class="dashicons dashicons-warning"></span>' : '';
+                                                    echo ($read->show_lockedAutoReport() === true) ? '<span class="dashicons dashicons-admin-network"></span>' : '';
+                                                ?>
+                                            </span></td>
+                                            <td class="td_list" style="text-align: center;"><span>
+                                                <?php
+                                                    echo ($read->show_isLocked() === true) ? '<span class="dashicons dashicons-yes"></span>' : '<span class="dashicons dashicons-no-alt"></span>';
+                                                ?>
+                                            </span></td>
+                                        </tr>
+                                    <?php
+            }
+        }
+        else
+        {
+        ?>
+                              <tr>
+                                    <td colspan="10" style="text-align: center;"><strong><?php echo esc_html__('No entries available!', 'kps'); ?></strong></td>
+                                </tr>
                                 <?php
         }
-    }
-    else
-    {
-?>
-                          <tr>
-                                <td colspan="10" style="text-align: center;"><strong><?php echo esc_html__('No entries available!', 'kps'); ?></strong></td>
+
+        ?>
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th class="th_list_bottom" scope="col">
+                                    <label for="kpsCheckAllBottom"></label>
+                                    <input name="kpsCheckAllBottom" id="kpsCheckAllBottom" type="checkbox"/>
+                                </th>
+                                <th class="th_list_bottom" scope="col"><?php echo esc_html__('ID', 'kps'); ?></th>
+                                <th class="th_list_bottom" scope="col"><?php echo esc_html__('Author', 'kps'); ?></th>
+                                <th class="th_list_bottom" scope="col"><?php echo esc_html__('Entry', 'kps'); ?></th>
+                                <th class="th_list_bottom" scope="col"><?php echo esc_html__('Created', 'kps'); ?></th>
+                                <th class="th_list_bottom" scope="col"><?php echo esc_html__('Released', 'kps'); ?></th>
+                                <th class="th_list_bottom" scope="col"><?php echo esc_html__('Delete Time', 'kps'); ?></th>
+                                <th class="th_list_bottom" scope="col"><?php echo esc_html__('Reports', 'kps'); ?></th>
+                                <th class="th_list_bottom" scope="col"><?php echo esc_html__('Release (Admin)', 'kps'); ?></th>
+                                <th class="th_list_bottom" scope="col"><?php echo esc_html__('Release (Author)', 'kps'); ?></th>
                             </tr>
-                            <?php
-    }
-
-?>
-
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th class="th_list_bottom" scope="col">
-                                <label for="kpsCheckAllBottom"></label>
-                                <input name="kpsCheckAllBottom" id="kpsCheckAllBottom" type="checkbox"/>
-                            </th>
-                            <th class="th_list_bottom" scope="col"><?php echo esc_html__('ID', 'kps'); ?></th>
-                            <th class="th_list_bottom" scope="col"><?php echo esc_html__('Author', 'kps'); ?></th>
-                            <th class="th_list_bottom" scope="col"><?php echo esc_html__('Entry', 'kps'); ?></th>
-                            <th class="th_list_bottom" scope="col"><?php echo esc_html__('Created', 'kps'); ?></th>
-                            <th class="th_list_bottom" scope="col"><?php echo esc_html__('Released', 'kps'); ?></th>
-                            <th class="th_list_bottom" scope="col"><?php echo esc_html__('Delete Time', 'kps'); ?></th>
-                            <th class="th_list_bottom" scope="col"><?php echo esc_html__('Reports', 'kps'); ?></th>
-                            <th class="th_list_bottom" scope="col"><?php echo esc_html__('Release (Admin)', 'kps'); ?></th>
-                            <th class="th_list_bottom" scope="col"><?php echo esc_html__('Release (Author)', 'kps'); ?></th>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-            <div class="tablenav">
-                <div class="alignleft actions">
-                    <label for="kpsAction"></label>
-                    <select name="kpsAction" id="kpsActionBottom">
-                        <option label=" "></option>
-                        <option value="lock"><?php echo esc_html__('Lock (Author)', 'kps'); ?></option>
-                        <option value="unlockbyadmin"><?php echo esc_html__('Approval (Admin)', 'kps'); ?></option>
-                        <option value="reset"><?php echo esc_html__('Reset Reports (Admin)', 'kps'); ?></option>
-                        <option value="lockbyadmin"><?php echo esc_html__('Lock (Admin)', 'kps'); ?></option>
-                        <option value="delete"><?php echo esc_html__('Delete', 'kps'); ?></option>
-                    </select>
-                    <input type="hidden" id="kpsActionToken" name="kpsActionToken" value="<?php echo $token; ?>" />
-                    <input value="<?php echo __('Execute', 'kps'); ?>" name="kpsAdminDoIt" id="kpsAdminDoIt" class="button action" type="submit" />
+                        </tfoot>
+                    </table>
                 </div>
-                <?php echo $pagination; ?>
+                <div class="tablenav">
+                    <div class="alignleft actions">
+                        <label for="kpsAction"></label>
+                        <select name="kpsAction" id="kpsActionBottom">
+                            <option label=" "></option>
+                            <option value="lock"><?php echo esc_html__('Lock (Author)', 'kps'); ?></option>
+                            <option value="unlockbyadmin"><?php echo esc_html__('Approval (Admin)', 'kps'); ?></option>
+                            <option value="reset"><?php echo esc_html__('Reset Reports (Admin)', 'kps'); ?></option>
+                            <option value="lockbyadmin"><?php echo esc_html__('Lock (Admin)', 'kps'); ?></option>
+                            <option value="delete"><?php echo esc_html__('Delete', 'kps'); ?></option>
+                        </select>
+                        <input type="hidden" id="kpsActionToken" name="kpsActionToken" value="<?php echo $token; ?>" />
+                        <input value="<?php echo __('Execute', 'kps'); ?>" name="kpsAdminDoIt" id="kpsAdminDoIt" class="button action" type="submit" />
+                    </div>
+                    <?php echo $pagination; ?>
+                </div>
+            </form>
+            <div class="kps-br"></div>
+            <div class="kps-form-info" style="text-align: center;">
+                <span class="dashicons dashicons-yes"></span><?php echo esc_html__('Released', 'kps'); ?>&#160;&#124;
+                <span class="dashicons dashicons-no-alt"></span><?php echo esc_html__('Blocked', 'kps'); ?>&#160;&#124;
+                <span class="dashicons dashicons-warning"></span><?php echo esc_html__('Reports', 'kps'); ?>&#160;&#124;
+                <span class="dashicons dashicons-admin-network"></span><?php echo esc_html__('Auto-Lock', 'kps'); ?>
             </div>
-        </form>
-        <div class="kps-br"></div>
-        <div class="kps-form-info" style="text-align: center;">
-            <span class="dashicons dashicons-yes"></span><?php echo esc_html__('Released', 'kps'); ?>&#160;&#124;
-            <span class="dashicons dashicons-no-alt"></span><?php echo esc_html__('Blocked', 'kps'); ?>&#160;&#124;
-            <span class="dashicons dashicons-warning"></span><?php echo esc_html__('Reports', 'kps'); ?>&#160;&#124;
-            <span class="dashicons dashicons-admin-network"></span><?php echo esc_html__('Auto-Lock', 'kps'); ?>
         </div>
     </div>
 <?php

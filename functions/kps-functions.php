@@ -40,6 +40,74 @@ if (strpos($_SERVER['PHP_SELF'], basename(__FILE__)))
 }
 
 /**
+ * Funktion Formular Optionen Übersetzungen
+ */
+if (!function_exists('kps_getFormTranslation'))
+{
+    function kps_getFormTranslation($translation) {
+
+        $translations = kps_unserialize(get_option('kps_translations', false));
+
+        if ($translations !== false)
+        {
+            $translation = (array_key_exists($translation, $translations)) ? $translations[$translation] : esc_html__($translation, 'kps');
+
+            return $translation;
+        }
+        else
+        {
+            return esc_html__($translation, 'kps');
+        }
+    }
+}
+
+/**
+ * Funktion Icons einzeln ausgeben
+ */
+if (!function_exists('kps_getSingleIcon'))
+{
+    function kps_getSingleIcon($iconChoose) {
+
+        $icon = kps_iconPak();
+
+        switch ($iconChoose)
+        {
+            case 'hall':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/hall.svg" width="35" height="35" alt="' . kps_getFormTranslation('Hall') . '" title="' . kps_getFormTranslation('Hall') . '" />';
+            break;
+            case 'climbing':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/nature.svg" width="35" height="35" alt="' . kps_getFormTranslation('Climbing') . '" title="' . kps_getFormTranslation('Climbing') . '" />';
+            break;
+            case 'walking':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/travel.svg" width="35" height="35" alt="' . kps_getFormTranslation('Travels') . '" title="' . kps_getFormTranslation('Travels') . '" />';
+            break;
+            case 'tracking':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/trekking.svg" width="35" height="35" alt="' . kps_getFormTranslation('Walking') . '" title="' . kps_getFormTranslation('Walking') . '" />';
+            break;
+            case 'unique':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/onetime.svg" width="35" height="35" alt="' . kps_getFormTranslation('Unique') . '" title="' . kps_getFormTranslation('Unique') . '" />';
+            break;
+            case 'regularly':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/moretime.svg" width="35" height="35" alt="' . kps_getFormTranslation('Regularly') . '" title="' . kps_getFormTranslation('Regularly') . '" />';
+            break;
+            case 'goalone':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/goalone.svg" width="35" height="35" alt="' . kps_getFormTranslation('Single person') . '" title="' . kps_getFormTranslation('Single person') . '" />';
+            break;
+            case 'family':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/family.svg" width="35" height="35" alt="' . kps_getFormTranslation('Family') . '" title="' . kps_getFormTranslation('Family') . '" />';
+            break;
+            case 'comeclub':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/comeclub.svg" width="35" height="35" alt="' . kps_getFormTranslation('Club/Group') . '" title="' . kps_getFormTranslation('Club/Group') . '" />';
+            break;
+            default:
+
+        }
+
+        return $icon;
+    }
+}
+
+/**
  * Funktion IconPak
  */
 if (!function_exists('kps_iconPak'))

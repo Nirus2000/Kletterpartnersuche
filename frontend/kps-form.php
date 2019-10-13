@@ -77,7 +77,7 @@ function kps_frontend_form($shortCodeValues)
     $formOptions = kps_unserialize(get_option('kps_formOptions', false));
 
     // Hole Usereinstellungen
-    $checkedUserSettings = kps_unserialize(get_option('kps_userSettings', false));
+    $kpsUserSettings = kps_unserialize(get_option('kps_userSettings', false));
 
     // Hole Formulareinstellungen für Captcha
     $captchaIsActivated = get_option('kps_captcha', false);
@@ -281,8 +281,8 @@ function kps_frontend_form($shortCodeValues)
     $setAuthorInstagram         = (isset($write->_authorInstagram) && !empty($write->_authorInstagram)) ? $write->_authorInstagram : '';
 
     // Wenn AGB's und DSGVO gesetzt sind
-    if ($checkedUserSettings['kpsUserPrivacyAGB'] === 'true'
-        && $checkedUserSettings['kpsUserPrivacyDSGVO'] === 'true'
+    if ($kpsUserSettings['kpsUserPrivacyAGB'] === 'true'
+        && $kpsUserSettings['kpsUserPrivacyDSGVO'] === 'true'
         && get_option('kps_agb') > 0
         && get_post_status(get_option('kps_agb')) !== false
         && get_post_status(get_option('kps_agb')) == 'publish'
@@ -296,9 +296,9 @@ function kps_frontend_form($shortCodeValues)
                                     <div class="kps-divTableRow">
                                         <div class="kps-divTableCell kps-nobr"></div>
                                         <div class="kps-divTableCell"><label for="kps_acceptedAGBDSGVO">
-                                            <input type="checkbox" name="kps_acceptedAGBDSGVO" id="kps_acceptedAGBDSGVO" class="' . $errorAuthorAGBDSGVO . '" value="1" ' . $checkedAcceptedAGBDSGVO . ' />
-                                            ' . esc_html__('Yes, I accept', 'kps') . '&#160;
-                                            <a href="' . esc_url(get_post_permalink(get_option('kps_agb'))) . '" target="_blank">' . esc_html__('GTC', 'kps') . '</a>&#160;
+                                            <input type="checkbox" name="kps_acceptedAGBDSGVO" id="kps_acceptedAGBDSGVO" class="' . $errorAuthorAGBDSGVO . '" value="1" ' . $kpsAcceptedAGBDSGVO . ' />
+                                            ' . esc_html__('Yes, I accept the', 'kps') . '
+                                            <a href="' . esc_url(get_post_permalink(get_option('kps_agb'))) . '" target="_blank">' . esc_html__('GTC', 'kps') . '</a>
                                             ' . esc_html__('and the', 'kps') . '&#160;<a href="' . esc_url(get_post_permalink(get_option('kps_dsgvo'))) . '" target="_blank">' . esc_html__('GDPR', 'kps') . '</a>.
                                             ' . '</label>
                                         </div>
@@ -307,8 +307,8 @@ function kps_frontend_form($shortCodeValues)
     }
 
     // Wenn nur AGB's gesetzt ist
-    if ($checkedUserSettings['kpsUserPrivacyAGB'] === 'true'
-        && $checkedUserSettings['kpsUserPrivacyDSGVO'] === 'false'
+    if ($kpsUserSettings['kpsUserPrivacyAGB'] === 'true'
+        && $kpsUserSettings['kpsUserPrivacyDSGVO'] === 'false'
         && get_option('kps_agb') > 0
         && get_post_status(get_option('kps_agb')) !== false
         && get_post_status(get_option('kps_agb')) == 'publish'
@@ -318,8 +318,8 @@ function kps_frontend_form($shortCodeValues)
                                     <div class="kps-divTableRow">
                                         <div class="kps-divTableCell kps-nobr"></div>
                                         <div class="kps-divTableCell"><label for="kps_acceptedAGBDSGVO">
-                                            <input type="checkbox" name="kps_acceptedAGBDSGVO" id="kps_acceptedAGBDSGVO" class="' . $errorAuthorAGBDSGVO . '" value="1" ' . $checkedAcceptedAGBDSGVO . ' />
-                                            ' . esc_html__('Yes, I accept', 'kps') . '&#160;
+                                            <input type="checkbox" name="kps_acceptedAGBDSGVO" id="kps_acceptedAGBDSGVO" class="' . $errorAuthorAGBDSGVO . '" value="1" ' . $kpsAcceptedAGBDSGVO . ' />
+                                            ' . esc_html__('Yes, I accept the', 'kps') . '
                                             <a href="' . esc_url(get_post_permalink(get_option('kps_agb'))) . '" target="_blank">' . esc_html__('GTC', 'kps') . '</a>.
                                             ' . '</label>
                                         </div>
@@ -328,8 +328,8 @@ function kps_frontend_form($shortCodeValues)
     }
 
     // Wenn nur DSGVO gesetzt ist
-    if ($checkedUserSettings['kpsUserPrivacyAGB'] === 'false'
-        && $checkedUserSettings['kpsUserPrivacyDSGVO'] === 'true'
+    if ($kpsUserSettings['kpsUserPrivacyAGB'] === 'false'
+        && $kpsUserSettings['kpsUserPrivacyDSGVO'] === 'true'
         && get_option('kps_dsgvo') > 0
         && get_post_status(get_option('kps_dsgvo')) !== false
         && get_post_status(get_option('kps_dsgvo')) == 'publish'
@@ -339,8 +339,8 @@ function kps_frontend_form($shortCodeValues)
                                     <div class="kps-divTableRow">
                                         <div class="kps-divTableCell kps-nobr"></div>
                                         <div class="kps-divTableCell"><label for="kps_acceptedAGBDSGVO">
-                                            <input type="checkbox" name="kps_acceptedAGBDSGVO" id="kps_acceptedAGBDSGVO" class="' . $errorAuthorAGBDSGVO . '" value="1" ' . $checkedAcceptedAGBDSGVO . ' />
-                                            ' . esc_html__('Yes, I accept', 'kps') . '&#160;
+                                            <input type="checkbox" name="kps_acceptedAGBDSGVO" id="kps_acceptedAGBDSGVO" class="' . $errorAuthorAGBDSGVO . '" value="1" ' . $kpsAcceptedAGBDSGVO . ' />
+                                            ' . esc_html__('Yes, I accept the', 'kps') . '
                                             <a href="' . esc_url(get_post_permalink(get_option('kps_dsgvo'))) . '" target="_blank">' . esc_html__('GDPR', 'kps') . '</a>.
                                             ' . '</label>
                                         </div>
@@ -350,7 +350,7 @@ function kps_frontend_form($shortCodeValues)
 
     // Wenn Option Registierungspflicht
     if (is_user_logged_in() !== true
-        && $checkedUserSettings['kpsUserRequireRegistration'] === 'true'
+        && $kpsUserSettings['kpsUserRequireRegistration'] === 'true'
         && get_option( 'users_can_register' ) != false)
     {
         // Wordpress Registieren
@@ -431,7 +431,7 @@ function kps_frontend_form($shortCodeValues)
 
             if (isset($write->_authorEntry )) { $authorEntry = $write->_authorEntry;} else { $authorEntry = '';}
 
-            if (isset($write->_acceptedAGBDSGVO) && ($write->_acceptedAGBDSGVO) === true ) { $checkedAcceptedAGBDSGVO = 'checked';} else { $checkedAcceptedAGBDSGVO = '';}
+            if (isset($write->_acceptedAGBDSGVO) && ($write->_acceptedAGBDSGVO) === true ) { $kpsAcceptedAGBDSGVO = 'checked';} else { $kpsAcceptedAGBDSGVO = '';}
 
             /**
              * Meldungen ausgeben
@@ -471,19 +471,19 @@ function kps_frontend_form($shortCodeValues)
             if (!empty($errorAuthorAGBDSGVO))
             {
                 // Wenn AGB's und DSGVO gesetzt sind
-                if ($checkedUserSettings['kpsUserPrivacyAGB'] === 'true' && $checkedUserSettings['kpsUserPrivacyDSGVO'] === 'true')
+                if ($kpsUserSettings['kpsUserPrivacyAGB'] === 'true' && $kpsUserSettings['kpsUserPrivacyDSGVO'] === 'true')
                 {
                     $userNotAcceptAGBDSGVO = '<li>' . esc_html__('Please accept the Terms and Conditions and GDPR!', 'kps') . '</li>';
                 }
 
                 // Wenn nur AGB's gesetzt ist
-                if ($checkedUserSettings['kpsUserPrivacyAGB'] === 'true' && $checkedUserSettings['kpsUserPrivacyDSGVO'] === 'false')
+                if ($kpsUserSettings['kpsUserPrivacyAGB'] === 'true' && $kpsUserSettings['kpsUserPrivacyDSGVO'] === 'false')
                 {
                     $userNotAcceptAGBDSGVO = '<li>' . esc_html__('Please accept the Terms and Conditions!', 'kps') . '</li>';
                 }
 
                 // Wenn nur DSGVO gesetzt ist
-                if ($checkedUserSettings['kpsUserPrivacyAGB'] === 'false' && $checkedUserSettings['kpsUserPrivacyDSGVO'] === 'true')
+                if ($kpsUserSettings['kpsUserPrivacyAGB'] === 'false' && $kpsUserSettings['kpsUserPrivacyDSGVO'] === 'true')
                 {
                     $userNotAcceptAGBDSGVO = '<li>' . esc_html__('Please accept the GDPR!', 'kps') . '</li>';
                 }
@@ -546,32 +546,64 @@ function kps_frontend_form($shortCodeValues)
                                         <div class="kps-divTableCell"><input class="form form_field ' . $errorAuthorName . '" ' . $inputFieldDisabled . ' id="kps_authorName" name="kps_authorName" value="' . $setUserName . '" placeholder="' . esc_html__('First name, name or nickname', 'kps') . '" size="245" maxlength="245" aria-required="true" required="required" type="text"></div>
                                     </div>
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorSearchfor">' . esc_html__('I am looking for', 'kps') . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
+                                        <div class="kps-divTableCell kps-nobr" style="vertical-align: top;"><label for="kps_authorSearchfor">' . esc_html__('I am looking for', 'kps') . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
                                         <div class="kps-divTableCell kps-nobr">
                                             <div class="kps-option ' . $errorAuthorSearchfor . '">
-                                                <input id="kps_authorSearchfor0" name="kps_authorSearchfor" value="0" aria-required="true" required="required" type="radio" ' . $authorSearchfor0 . '><label style="display: inline-block;" for="kps_authorSearchfor0">&#160;' . esc_html__('Hall', 'kps') . '</label>&#160;&#160;
-                                                <input id="kps_authorSearchfor1" name="kps_authorSearchfor" value="1" aria-required="true" required="required" type="radio" ' . $authorSearchfor1 . '><label style="display: inline-block;" for="kps_authorSearchfor1">&#160;' . esc_html__('Climbing', 'kps') . '</label>&#160;&#160;
-                                                <input id="kps_authorSearchfor3" name="kps_authorSearchfor" value="3" aria-required="true" required="required" type="radio" ' . $authorSearchfor3 . '><label style="display: inline-block;" for="kps_authorSearchfor3">&#160;' . esc_html__('Walking', 'kps') . '</label>&#160;&#160;
-                                                <input id="kps_authorSearchfor2" name="kps_authorSearchfor" value="2" aria-required="true" required="required" type="radio" ' . $authorSearchfor2 . '><label style="display: inline-block;" for="kps_authorSearchfor2">&#160;' . esc_html__('Travels', 'kps') . '</label>
+                    ';
+                                                // Wenn "Halle" aktiviert ist
+                                                if ($formOptions['kpsFormOptionHall'] === 'true')
+                                                {
+                                                    $output .= '<input id="kps_authorSearchfor0" name="kps_authorSearchfor" value="0" aria-required="true" required="required" type="radio" ' . $authorSearchfor0 . '><label style="display: inline-block;" for="kps_authorSearchfor0">&#160;' . kps_getFormTranslation('Hall') . '</label><br />';
+                                                }
+                                                // Wenn "Klettern" aktiviert ist
+                                                if ($formOptions['kpsFormOptionClimbing'] === 'true')
+                                                {
+                                                    $output .= '<input id="kps_authorSearchfor1" name="kps_authorSearchfor" value="1" aria-required="true" required="required" type="radio" ' . $authorSearchfor1 . '><label style="display: inline-block;" for="kps_authorSearchfor1">&#160;' . kps_getFormTranslation('Climbing') . '</label><br />';
+                                                }
+                                                // Wenn "Wandern" aktiviert ist
+                                                if ($formOptions['kpsFormOptionWalkiing'] === 'true')
+                                                {
+                                                    $output .= '<input id="kps_authorSearchfor3" name="kps_authorSearchfor" value="3" aria-required="true" required="required" type="radio" ' . $authorSearchfor3 . '><label style="display: inline-block;" for="kps_authorSearchfor3">&#160;' . kps_getFormTranslation('Walking') . '</label><br />';
+                                                }
+                                                // Wenn "Reisen" aktiviert ist
+                                                if ($formOptions['kpsFormOptionTravels'] === 'true')
+                                                {
+                                                    $output .= '<input id="kps_authorSearchfor2" name="kps_authorSearchfor" value="2" aria-required="true" required="required" type="radio" ' . $authorSearchfor2 . '><label style="display: inline-block;" for="kps_authorSearchfor2">&#160;' . kps_getFormTranslation('Travels') . '</label>';
+                                                }
+        $output .= '
                                             </div>
                                         </div>
                                     </div>
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorRule">' . esc_html__('Kind of search', 'kps') . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
+                                        <div class="kps-divTableCell kps-nobr" style="vertical-align: top;"><label for="kps_authorRule">' . esc_html__('Kind of search', 'kps') . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
                                         <div class="kps-divTableCell">
                                             <div class="kps-option ' . $errorAuthorRule . '">
-                                                <input id="kps_authorRule0" name="kps_authorRule" value="0" aria-required="true" required="required" type="radio" ' . $authorRule0 . '><label style="display: inline-block;" for="kps_authorRule0">&#160;' . esc_html__('Unique', 'kps') . '</label>&#160;&#160;
-                                                <input id="kps_authorRule1" name="kps_authorRule" value="1" aria-required="true" required="required" type="radio" ' . $authorRule1 . '><label style="display: inline-block;" for="kps_authorRule1">&#160;' . esc_html__('Regularly', 'kps') . '</label>
+                                                <input id="kps_authorRule0" name="kps_authorRule" value="0" aria-required="true" required="required" type="radio" ' . $authorRule0 . '><label style="display: inline-block;" for="kps_authorRule0">&#160;' . kps_getFormTranslation('Unique') . '</label><br />
+                                                <input id="kps_authorRule1" name="kps_authorRule" value="1" aria-required="true" required="required" type="radio" ' . $authorRule1 . '><label style="display: inline-block;" for="kps_authorRule1">&#160;' . kps_getFormTranslation('Regularly') . '</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_yourRule">' . esc_html__('I am', 'kps') . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
+                                        <div class="kps-divTableCell kps-nobr" style="vertical-align: top;"><label for="kps_yourRule">' . esc_html__('I am', 'kps') . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
                                         <div class="kps-divTableCell">
                                             <div class="kps-option ' . $errorYourRule . '">
-                                                <input id="kps_yourRule0" name="kps_yourRule" value="0" aria-required="true" required="required" type="radio" ' . $yourRule0 . '><label style="display: inline-block;" for="kps_yourRule0">&#160;' . esc_html__('Single person', 'kps') . '</label>&#160;&#160;
-                                                <input id="kps_yourRule1" name="kps_yourRule" value="1" aria-required="true" required="required" type="radio" ' . $yourRule1 . '><label style="display: inline-block;" for="kps_yourRule1">&#160;' . esc_html__('Family', 'kps') . '</label>&#160;&#160;
-                                                <input id="kps_yourRule2" name="kps_yourRule" value="2" aria-required="true" required="required" type="radio" ' . $yourRule2 . '><label style="display: inline-block;" for="kps_yourRule2">&#160;' . esc_html__('Club/Group', 'kps') . '</label>
+                    ';
+                                                // Wenn "Einzelperson" aktiviert ist
+                                                if ($formOptions['kpsFormOptionSinglePerson'] === 'true')
+                                                {
+                                                    $output .= '<input id="kps_yourRule0" name="kps_yourRule" value="0" aria-required="true" required="required" type="radio" ' . $yourRule0 . '><label style="display: inline-block;" for="kps_yourRule0">&#160;' . kps_getFormTranslation('Single person') . '</label><br />';
+                                                }
+                                                // Wenn "Familie" aktiviert ist
+                                                if ($formOptions['kpsFormOptionFamily'] === 'true')
+                                                {
+                                                    $output .= '<input id="kps_yourRule1" name="kps_yourRule" value="1" aria-required="true" required="required" type="radio" ' . $yourRule1 . '><label style="display: inline-block;" for="kps_yourRule1">&#160;' . kps_getFormTranslation('Family') . '</label><br />';
+                                                }
+                                                // Wenn "Club/Gruppe" aktiviert ist
+                                                if ($formOptions['kpsFormOptionClubGroup'] === 'true')
+                                                {
+                                                    $output .= '<input id="kps_yourRule2" name="kps_yourRule" value="2" aria-required="true" required="required" type="radio" ' . $yourRule2 . '><label style="display: inline-block;" for="kps_yourRule2">&#160;' . kps_getFormTranslation('Club/Group') . '</label>';
+                                                }
+        $output .= '
                                             </div>
                                         </div>
                                     </div>
@@ -589,7 +621,7 @@ function kps_frontend_form($shortCodeValues)
                                     </div>
                     ';
 
-        // Wenn Festnetz aktiviert ist
+        // Wenn "Festnetz" aktiviert ist
         if ($formOptions['kpsFormOptionTelephone'] === 'true')
         {
             $output .= '
@@ -600,7 +632,7 @@ function kps_frontend_form($shortCodeValues)
                         ';
         }
 
-        // Wenn Mobil aktiviert ist
+        // Wenn "Mobil" aktiviert ist
         if ($formOptions['kpsFormOptionMobile'] === 'true')
         {
             $output .= '
@@ -611,7 +643,7 @@ function kps_frontend_form($shortCodeValues)
                         ';
         }
 
-        // Wenn Facebook Messenger aktiviert ist
+        // Wenn "Facebook Messenger" aktiviert ist
         if ($formOptions['kpsFormOptionFacebookMessenger'] === 'true')
         {
             $output .= '
@@ -622,7 +654,7 @@ function kps_frontend_form($shortCodeValues)
                         ';
         }
 
-        // Wenn Hoccer aktiviert ist
+        // Wenn "Hoccer" aktiviert ist
         if ($formOptions['kpsFormOptionHoccer'] === 'true')
         {
             $output .= '
@@ -633,7 +665,7 @@ function kps_frontend_form($shortCodeValues)
                         ';
         }
 
-        // Wenn Signal aktiviert ist
+        // Wenn "Signal" aktiviert ist
         if ($formOptions['kpsFormOptionSignal'] === 'true')
         {
             $output .= '
@@ -644,7 +676,7 @@ function kps_frontend_form($shortCodeValues)
                         ';
         }
 
-        // Wenn Skype aktiviert ist
+        // Wenn "Skype" aktiviert ist
         if ($formOptions['kpsFormOptionSkype'] === 'true')
         {
             $output .= '
@@ -655,7 +687,7 @@ function kps_frontend_form($shortCodeValues)
                         ';
         }
 
-        // Wenn Telegram aktiviert ist
+        // Wenn "Telegram" aktiviert ist
         if ($formOptions['kpsFormOptionTelegram'] === 'true')
         {
             $output .= '
@@ -666,7 +698,7 @@ function kps_frontend_form($shortCodeValues)
                         ';
         }
 
-        // Wenn Threema aktiviert ist
+        // Wenn "Threema" aktiviert ist
         if ($formOptions['kpsFormOptionThreema'] === 'true')
         {
             $output .= '
@@ -677,7 +709,7 @@ function kps_frontend_form($shortCodeValues)
                         ';
         }
 
-        // Wenn Viper aktiviert ist
+        // Wenn "Viper" aktiviert ist
         if ($formOptions['kpsFormOptionViper'] === 'true')
         {
             $output .= '
@@ -688,7 +720,7 @@ function kps_frontend_form($shortCodeValues)
                         ';
         }
 
-        // Wenn Whatsapp aktiviert ist
+        // Wenn "Whatsapp" aktiviert ist
         if ($formOptions['kpsFormOptionWhatsapp'] === 'true')
         {
             $output .= '
@@ -699,7 +731,7 @@ function kps_frontend_form($shortCodeValues)
                         ';
         }
 
-        // Wenn Wire aktiviert ist
+        // Wenn "Wire" aktiviert ist
         if ($formOptions['kpsFormOptionWire'] === 'true')
         {
             $output .= '
@@ -710,7 +742,7 @@ function kps_frontend_form($shortCodeValues)
                         ';
         }
 
-        // Wenn Autor-Web aktiviert ist
+        // Wenn "Autor-Web" aktiviert ist
         if ($formOptions['kpsFormOptionWebsite'] === 'true')
         {
             $output .= '
@@ -721,7 +753,7 @@ function kps_frontend_form($shortCodeValues)
                         ';
         }
 
-        // Wenn Facebook aktiviert ist
+        // Wenn "Facebook" aktiviert ist
         if ($formOptions['kpsFormOptionFacebook'] === 'true')
         {
             $output .= '
@@ -732,7 +764,7 @@ function kps_frontend_form($shortCodeValues)
                         ';
         }
 
-        // Wenn Instagram aktiviert ist
+        // Wenn "Instagram" aktiviert ist
         if ($formOptions['kpsFormOptionInstagram'] === 'true')
         {
             $output .= '
@@ -743,7 +775,7 @@ function kps_frontend_form($shortCodeValues)
                         ';
         }
 
-        // Wenn Captcha aktiviert ist
+        // Wenn "Captcha" aktiviert ist
         if ($captchaIsActivated === 'true')
         {
             $output .= '
@@ -757,8 +789,8 @@ function kps_frontend_form($shortCodeValues)
                         ';
         }
 
-        // Wenn AGB's und/oder DSGVO aktiv
-        if ($checkedUserSettings['kpsUserPrivacyAGB'] === 'true' OR $checkedUserSettings['kpsUserPrivacyDSGVO'] === 'true')
+        // Wenn "AGB's und/oder DSGVO" aktiv
+        if ($kpsUserSettings['kpsUserPrivacyAGB'] === 'true' OR $kpsUserSettings['kpsUserPrivacyDSGVO'] === 'true')
         {
             $output .= $formCheckboxAGBDSGVO;
         }
@@ -766,11 +798,8 @@ function kps_frontend_form($shortCodeValues)
             $output .= '
                                     <div class="kps-br"></div>
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell" style="visibility:hidden; display: none !important;">
-                                            <label for="kps_spamtimer1"></label>
-                                            <label for="kps_spamtimer2"></label>
-                                        </div>
-                                        <div class="kps-divTableCell" style="visibility:hidden; display: none !important;">
+                                        <div class="kps-divTableCell" style="visibility: hidden; display: none !important;"></div>
+                                        <div class="kps-divTableCell" style="visibility: hidden; display: none !important;">
                                             <input type="hidden" value="' . $timestamp . '" type="text" id="kps_spamtimer1" name="kps_spamtimer1" />
                             				<input type="hidden" value="' . $timestamp . '" type="text" id="kps_spamtimer2" name="kps_spamtimer2" />
                                         </div>

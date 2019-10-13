@@ -85,7 +85,7 @@ Your team
 /**
  * Email Vorlage Aktivierung Eintrag
  */
-function kps_mailcontent_write($mailContentExist = false) {
+function kps_mailcontent_activation($mailContentExist = false) {
 
     if ($mailContentExist === false)
     {

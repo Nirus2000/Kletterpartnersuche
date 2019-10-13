@@ -1,8 +1,10 @@
+# Translation of Plugins - Kletterpartner-Suche - Stable (latest release) in English (Australia)
+# This file is distributed under the same license as the Plugins - Kletterpartner-Suche - Stable (latest release) package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Kletterpartner-Suche\n"
-"POT-Creation-Date: 2019-10-13 09:47+0200\n"
-"PO-Revision-Date: 2019-10-13 09:47+0200\n"
+"POT-Creation-Date: 2019-10-13 09:56+0200\n"
+"PO-Revision-Date: 2019-10-13 09:56+0200\n"
 "Last-Translator: Alexander Ott <kps@nirus-online.de>\n"
 "Language-Team: Alexander Ott\n"
 "Language: de_DE\n"
@@ -33,13 +35,13 @@ msgstr ""
 #: functions/kps-mail-contents.php:39 functions/kps-privacy.php:39
 #: kps-hooks.php:39
 msgid "No direct calls allowed!"
-msgstr "Kein direkter Zugriff erlaubt!"
+msgstr "No direct calls allowed!"
 
 #: admin/kps-design.php:50 admin/kps-email.php:50 admin/kps-entries.php:50
 #: admin/kps-privacy.php:50 admin/kps-settings.php:50
 #: admin/kps-uninstall.php:52 admin/kps-uninstall.php:199 admin/kps.php:51
 msgid "Access denied!"
-msgstr "Zugriff verweigert!"
+msgstr "Access denied!"
 
 #: admin/kps-design.php:67 admin/kps-email.php:67 admin/kps-entries.php:563
 #: admin/kps-privacy.php:67 admin/kps-settings.php:67
@@ -51,12 +53,12 @@ msgstr "Zugriff verweigert!"
 #: functions/kps-privacy.php:127 functions/kps-privacy.php:145
 #: kps-hooks.php:151
 msgid "Climbing-Partner-Search"
-msgstr "Kletterpartner-Suche"
+msgstr "Climbing-Partner-Search"
 
 #: admin/kps-design.php:67 admin/kps-email.php:67 admin/kps-privacy.php:67
 #: admin/kps-settings.php:67 admin/kps.php:63 admin/kps.php:73
 msgid "Overview"
-msgstr "Übersicht"
+msgstr "Overview"
 
 #: admin/kps-design.php:73
 msgid "Shortcodes"
@@ -68,15 +70,16 @@ msgstr "Icons"
 
 #: admin/kps-design.php:79 admin/kps-design.php:332
 msgid "Output"
-msgstr "Ausgaben"
+msgstr "Output"
 
 #: admin/kps-design.php:82 admin/kps-design.php:561 admin/kps-design.php:617
+#| msgid "Uninstallation"
 msgid "Translations"
-msgstr "Übersetzungen"
+msgstr "Translations"
 
 #: admin/kps-design.php:150
 msgid "No icons selected"
-msgstr "Keine Icons ausgewählt"
+msgstr "No icons selected"
 
 #: admin/kps-design.php:160 admin/kps-design.php:332 admin/kps-design.php:561
 #: admin/kps-email.php:190 admin/kps-email.php:460 admin/kps-email.php:734
@@ -89,7 +92,7 @@ msgstr "Keine Icons ausgewählt"
 #: admin/kps-settings.php:1204 admin/kps-settings.php:1348
 #: admin/kps-settings.php:1489
 msgid "Saved"
-msgstr "Gespeichert"
+msgstr "Saved"
 
 #: admin/kps-design.php:173 admin/kps-design.php:186 admin/kps-design.php:343
 #: admin/kps-design.php:357 admin/kps-design.php:370 admin/kps-design.php:572
@@ -110,7 +113,7 @@ msgstr "Gespeichert"
 #: admin/kps-settings.php:1371 admin/kps-settings.php:1500
 #: admin/kps-settings.php:1514 admin/kps-settings.php:1527
 msgid "Error!"
-msgstr "Fehler!"
+msgstr "Error!"
 
 #: admin/kps-design.php:186 admin/kps-design.php:370 admin/kps-design.php:599
 #: admin/kps-email.php:228 admin/kps-email.php:498 admin/kps-email.php:772
@@ -120,7 +123,7 @@ msgstr "Fehler!"
 #: admin/kps-settings.php:1242 admin/kps-settings.php:1371
 #: admin/kps-settings.php:1527
 msgid "Token invalid"
-msgstr "Token ungültig"
+msgstr "Token invalid"
 
 #: admin/kps-design.php:263 admin/kps-design.php:425 admin/kps-design.php:680
 #: admin/kps-email.php:292 admin/kps-email.php:563 admin/kps-email.php:837
@@ -130,7 +133,7 @@ msgstr "Token ungültig"
 #: admin/kps-settings.php:1284 admin/kps-settings.php:1409
 #: admin/kps-settings.php:1573
 msgid "Save"
-msgstr "Speichern"
+msgstr "Save"
 
 #: admin/kps-design.php:316 admin/kps-design.php:545 admin/kps-email.php:168
 #: admin/kps-email.php:435 admin/kps-email.php:709 admin/kps-email.php:967
@@ -140,34 +143,34 @@ msgstr "Speichern"
 #: admin/kps-settings.php:1215 admin/kps-settings.php:1359
 #: admin/kps-settings.php:1470
 msgid "Error validating the data"
-msgstr "Fehler beim validieren der Daten"
+msgstr "Error validating the data"
 
 #: admin/kps-design.php:343 admin/kps-design.php:572 admin/kps-email.php:201
 #: admin/kps-email.php:471 admin/kps-email.php:745 admin/kps-email.php:1000
 #: admin/kps-settings.php:222 admin/kps-settings.php:466
 #: admin/kps-settings.php:1500
 msgid "Error serializing the data"
-msgstr "Fehler beim serialieren der Daten"
+msgstr "Error serialising the data"
 
 #: admin/kps-design.php:397
 msgid "Show time in entry"
-msgstr "Uhrzeit im Eintrag anzeigen"
+msgstr "Show time in entry"
 
 #: admin/kps-design.php:401
 msgid "Show time in Activation-Email"
-msgstr "Uhrzeit für Aktivierung in der Email anzeigen"
+msgstr "Show time in Activation-Email"
 
 #: admin/kps-design.php:405
 msgid "Show time in Unlock-Email"
-msgstr "Uhrzeit für Freigegeben in der Email anzeigen"
+msgstr "Show time in Unlock-Email"
 
 #: admin/kps-design.php:409
 msgid "Show time in Delete-Email"
-msgstr "Uhrzeit für Löschen in der Email anzeigen"
+msgstr "Show time in Delete-Email"
 
 #: admin/kps-design.php:413
 msgid "Legend activate"
-msgstr "Legende aktivieren"
+msgstr "Legend activate"
 
 #: admin/kps-design.php:452
 msgid "Standard"
@@ -179,20 +182,19 @@ msgstr "Standard-Edition"
 
 #: admin/kps-design.php:457
 msgid "Form"
-msgstr "Formular"
+msgstr "Form"
 
 #: admin/kps-design.php:459
 msgid "Only the form will be displayed without entries."
-msgstr "Es wird nur das Formular angezeigt ohne vorhandene Einträge."
+msgstr "Only the form will be displayed without entries."
 
 #: admin/kps-design.php:462 admin/kps-entries.php:563 kps-hooks.php:107
 msgid "Entries"
-msgstr "Einträge"
+msgstr "Entries"
 
 #: admin/kps-design.php:464
 msgid "Only the entries are displayed without form and form button."
-msgstr ""
-"Es werden nur die Einträge angezeigt ohne Formular und Formular-Button."
+msgstr "Only the entries are displayed without form and form button."
 
 #: admin/kps-design.php:467
 msgid "Button Name"
@@ -200,156 +202,157 @@ msgstr "Button Name"
 
 #: admin/kps-design.php:468 frontend/kps-form.php:385 frontend/kps-form.php:393
 msgid "Write an entry"
-msgstr "Eintrag schreiben"
+msgstr "Write an entry"
 
 #: admin/kps-design.php:469
 msgid "Change button name in the form."
-msgstr "Ändert den Namen des Formular Buttons."
+msgstr "Change button name in the form."
 
 #: admin/kps-design.php:529 admin/kps-email.php:144 admin/kps-email.php:399
 #: admin/kps-email.php:673 admin/kps-email.php:943
 msgid "Content is missing"
-msgstr "Inhalt fehlt"
+msgstr "Content is missing"
 
 #: admin/kps-design.php:534
 msgid "is to short"
-msgstr "ist zu kurz"
+msgstr "is to short"
 
 #: admin/kps-design.php:538
 msgid "is to long"
-msgstr "ist zu lang"
+msgstr "is to long"
 
 #: admin/kps-design.php:620 admin/kps-settings.php:530
 #: frontend/kps-form.php:549 functions/kps-privacy.php:179
 msgid "I am looking for"
-msgstr "Ich suche für"
+msgstr "I am looking for"
 
 #: admin/kps-design.php:624 admin/kps-design.php:628 admin/kps-design.php:632
 #: admin/kps-design.php:636 admin/kps-design.php:646 admin/kps-design.php:650
 #: admin/kps-design.php:660 admin/kps-design.php:664 admin/kps-design.php:668
+#| msgid "Default-Settings"
 msgid "Default"
-msgstr "Standard"
+msgstr "Default"
 
 #: admin/kps-design.php:624
 msgid "Hall"
-msgstr "Halle"
+msgstr "Hall"
 
 #: admin/kps-design.php:628
 msgid "Climbing"
-msgstr "Klettern"
+msgstr "Climbing"
 
 #: admin/kps-design.php:632
 msgid "Travels"
-msgstr "Reisen"
+msgstr "Travels"
 
 #: admin/kps-design.php:636
 msgid "Walking"
-msgstr "Wandern"
+msgstr "Walking"
 
 #: admin/kps-design.php:642 frontend/kps-form.php:578
 #: functions/kps-privacy.php:180
 msgid "Kind of search"
-msgstr "Art der Suche"
+msgstr "Kind of search"
 
 #: admin/kps-design.php:646
 msgid "Unique"
-msgstr "Einmalig"
+msgstr "Unique"
 
 #: admin/kps-design.php:650
 msgid "Regularly"
-msgstr "Regelmäßig"
+msgstr "Regularly"
 
 #: admin/kps-design.php:656 admin/kps-settings.php:546
 #: frontend/kps-form.php:587 functions/kps-privacy.php:181
 msgid "I am"
-msgstr "Ich bin"
+msgstr "I am"
 
 #: admin/kps-design.php:660
 msgid "Single person"
-msgstr "Einzelperson"
+msgstr "Single person"
 
 #: admin/kps-design.php:664
 msgid "Family"
-msgstr "Familie"
+msgstr "Family"
 
 #: admin/kps-design.php:668
 msgid "Club/Group"
-msgstr "Club/Gruppe"
+msgstr "Club/Group"
 
 #: admin/kps-email.php:72 admin/kps-email.php:989 admin/kps.php:277
 #: functions/kps-mail-contents.php:92
 msgid "Activation"
 msgid_plural "Activations"
-msgstr[0] "Aktivierung"
-msgstr[1] "Aktivierungen"
+msgstr[0] "Activation"
+msgstr[1] ""
 
 #: admin/kps-email.php:75 admin/kps-email.php:190
 msgid "Unlocked"
-msgstr "Freigeschaltet"
+msgstr "Unlocked"
 
 #: admin/kps-email.php:78 admin/kps-email.php:734
 #: frontend/template/kps-template.php:263
 #: frontend/template/kps-template.php:559
 msgid "Request contact information"
-msgstr "Kontaktdaten anfordern"
+msgstr "Request contact information"
 
 #: admin/kps-email.php:81 admin/kps-email.php:460
 msgid "Contact details"
-msgstr "Kontaktdaten"
+msgstr "Contact details"
 
 #: admin/kps-email.php:140 admin/kps-email.php:395 admin/kps-email.php:669
 #: admin/kps-email.php:939
 msgid "Email subject is missing"
-msgstr "Email-Betreff fehlt"
+msgstr "Email subject is missing"
 
 #: admin/kps-email.php:148 admin/kps-email.php:415 admin/kps-email.php:689
 msgid "Shorttag %linkactivation% not allowed"
-msgstr "Shorttag %linkactivation% nicht erlaubt"
+msgstr "Shorttag %linkactivation% not allowed"
 
 #: admin/kps-email.php:152 admin/kps-email.php:419 admin/kps-email.php:693
 msgid "Shorttag %linkdelete% not allowed"
-msgstr "Shorttag %linkdelete% nicht erlaubt"
+msgstr "Shorttag %linkdelete% not allowed"
 
 #: admin/kps-email.php:156 admin/kps-email.php:423 admin/kps-email.php:697
 msgid "Shorttag %erasepassword% not allowed"
-msgstr "Shorttag %erasepassword% nicht erlaubt"
+msgstr "Shorttag %erasepassword% not allowed"
 
 #: admin/kps-email.php:160 admin/kps-email.php:427 admin/kps-email.php:959
 msgid "Shorttag %linkreg% not allowed"
-msgstr "Shorttag %linkreg% nicht erlaubt"
+msgstr "Shorttag %linkreg% not allowed"
 
 #: admin/kps-email.php:164 admin/kps-email.php:431 admin/kps-email.php:963
 msgid "Shorttag %regpassword% not allowed"
-msgstr "Shorttag %regpassword% nicht erlaubt"
+msgstr "Shorttag %regpassword% not allowed"
 
 #: admin/kps-email.php:274 admin/kps-email.php:545 admin/kps-email.php:819
 #: admin/kps-email.php:1074
 msgid "Email subject"
-msgstr "Email-Betreff"
+msgstr "Email subject"
 
 #: admin/kps-email.php:305 admin/kps-email.php:595 admin/kps-email.php:865
 #: admin/kps-email.php:1124
 msgid "General Shorttags"
-msgstr "Allgemeine Shorttags"
+msgstr "General Shorttags"
 
 #: admin/kps-email.php:306 admin/kps-email.php:577 admin/kps-email.php:596
 #: admin/kps-email.php:851 admin/kps-email.php:866 admin/kps-email.php:1106
 #: admin/kps-email.php:1125
 msgid "Result"
-msgstr "Ergebnis"
+msgstr "Result"
 
 #: admin/kps-email.php:322 admin/kps-email.php:581 admin/kps-email.php:1141
 msgid "Author Name"
-msgstr "Autor Name"
+msgstr "Author Name"
 
 #: admin/kps-email.php:326 admin/kps-email.php:585 admin/kps-email.php:1145
 msgid "Author Email"
-msgstr "Autor Email"
+msgstr "Author Email"
 
 #: admin/kps-email.php:330 admin/kps-email.php:338 admin/kps-email.php:589
 #: admin/kps-email.php:1149
 msgid "Author contact details"
-msgstr "Autor Kontaktdaten"
+msgstr "Author contact details"
 
 #: admin/kps-email.php:334 admin/kps-email.php:612 admin/kps-email.php:882
 #: admin/kps-email.php:1153 admin/kps-entries.php:813 admin/kps-entries.php:909
@@ -358,191 +361,191 @@ msgstr "Autor Kontaktdaten"
 #: functions/kps-privacy.php:182
 msgid "Entry"
 msgid_plural "Entries"
-msgstr[0] "Eintrag"
-msgstr[1] "Einträge"
+msgstr[0] "Entry"
+msgstr[1] "Entries"
 
 #: admin/kps-email.php:342 admin/kps-email.php:616 admin/kps-email.php:886
 #: admin/kps-email.php:1157 admin/kps-entries.php:814 admin/kps-entries.php:910
 #: functions/kps-privacy.php:176
 msgid "Created"
-msgstr "Erstellt"
+msgstr "Created"
 
 #: admin/kps-email.php:346 admin/kps-email.php:620 admin/kps-email.php:890
 #: admin/kps-email.php:1161 admin/kps-entries.php:816 admin/kps-entries.php:912
 #: classes/kps-reporting.php:218 functions/kps-privacy.php:178
 msgid "Delete Time"
-msgstr "Löschzeitpunkt"
+msgstr "Delete Time"
 
 #: admin/kps-email.php:350 admin/kps-email.php:624 admin/kps-email.php:894
 #: admin/kps-email.php:1165 admin/kps-entries.php:815 admin/kps-entries.php:911
 #: admin/kps-entries.php:939 functions/kps-privacy.php:177
 msgid "Released"
-msgstr "Freigegeben"
+msgstr "Released"
 
 #: admin/kps-email.php:403
 msgid "Shorttag %authorname% missing"
-msgstr "Shorttag %authorname% fehlt"
+msgstr "Shorttag %authorname% missing"
 
 #: admin/kps-email.php:407
 msgid "Shorttag %authoremail% missing"
-msgstr "Shorttag %authoremail% fehlt"
+msgstr "Shorttag %authoremail% missing"
 
 #: admin/kps-email.php:411
 msgid "Shorttag %authorcontactdata% missing"
-msgstr "Shorttag %authorcontactdata% fehlt"
+msgstr "Shorttag %authorcontactdata% missing"
 
 #: admin/kps-email.php:576 admin/kps-email.php:850 admin/kps-email.php:1105
 msgid "Duty-Shorttags"
-msgstr "Pflicht-Shorttags"
+msgstr "Duty-Shorttags"
 
 #: admin/kps-email.php:677
 msgid "Shorttag %authorname% not allowed"
-msgstr "Shorttag %authorname% nicht erlaubt"
+msgstr "Shorttag %authorname% not allowed"
 
 #: admin/kps-email.php:681
 msgid "Shorttag %authoremail% nicht not allowed"
-msgstr "Shorttag %authoremail% nicht erlaubt"
+msgstr "Shorttag %authoremail% nicht not allowed"
 
 #: admin/kps-email.php:685
 msgid "Shorttag %authorcontactdata% not allowed"
-msgstr "Shorttag %authorcontactdata% nicht erlaubt"
+msgstr "Shorttag %authorcontactdata% not allowed"
 
 #: admin/kps-email.php:701
 msgid "Shorttag %linkreg% missing"
-msgstr "Shorttag %linkreg% fehlt"
+msgstr "Shorttag %linkreg% missing"
 
 #: admin/kps-email.php:705
 msgid "Shorttag %regpassword% missing"
-msgstr "Shorttag %regpassword% fehlt"
+msgstr "Shorttag %regpassword% missing"
 
 #: admin/kps-email.php:855
 msgid "Requirement-Link"
-msgstr "Anforderungs-Link"
+msgstr "Requirement-Link"
 
 #: admin/kps-email.php:859 admin/kps-email.php:1118
 #: frontend/template/kps-template.php:182
 #: frontend/template/kps-template.php:190
 #: frontend/template/kps-template.php:450
 msgid "Password"
-msgstr "Passwort"
+msgstr "Password"
 
 #: admin/kps-email.php:947
 msgid "Shorttag %linkactivation% missing"
-msgstr "Shorttag %linkactivation% fehlt"
+msgstr "Shorttag %linkactivation% missing"
 
 #: admin/kps-email.php:951
 msgid "Shorttag %linkdelete% missing"
-msgstr "Shorttag %linkdelete% fehlt"
+msgstr "Shorttag %linkdelete% missing"
 
 #: admin/kps-email.php:955
 msgid "Shorttag %erasepassword% missing"
-msgstr "Shorttag %erasepassword% fehlt"
+msgstr "Shorttag %erasepassword% missing"
 
 #: admin/kps-email.php:1110
 msgid "Activation-Link"
-msgstr "Aktivierungs-Link"
+msgstr "Activation-Link"
 
 #: admin/kps-email.php:1114
 msgid "Delete-Link"
-msgstr "Lösch-Link"
+msgstr "Delete-Link"
 
 #: admin/kps-entries.php:200 admin/kps-entries.php:399
 #: admin/kps-entries.php:818 admin/kps-entries.php:914
 msgid "Release (Admin)"
-msgstr "Freigabe (Admin)"
+msgstr "Release (Admin)"
 
 #: admin/kps-entries.php:213 frontend/kps-activation.php:147
 msgid "Note! Entry has already been activated!"
-msgstr "Hinweis! Eintrag wurde schon aktiviert!"
+msgstr "Note! Entry has already been activated!"
 
 #: admin/kps-entries.php:226 functions/kps-privacy.php:105
 msgid "No entries found!"
-msgstr "Keine Einträge gefunden!"
+msgstr "No entries found!"
 
 #: admin/kps-entries.php:386 admin/kps-entries.php:795
 #: admin/kps-entries.php:928
 msgid "Lock (Admin)"
-msgstr "Sperren (Admin)"
+msgstr "Lock (Admin)"
 
 #: admin/kps-entries.php:412 admin/kps-entries.php:792
 #: admin/kps-entries.php:925
 msgid "Lock (Author)"
-msgstr "Sperren (Autor)"
+msgstr "Lock (Author)"
 
 #: admin/kps-entries.php:425 admin/kps-entries.php:794
 msgid "Reset Report (Admin)"
-msgstr "Reset Meldung (Admin)"
+msgstr "Reset Report (Admin)"
 
 #: admin/kps-entries.php:438 admin/kps-entries.php:796
 #: admin/kps-entries.php:929
 msgid "Delete"
-msgstr "Löschen"
+msgstr "Delete"
 
 #: admin/kps-entries.php:554 functions/kps-backend-pagination.php:110
 #: functions/kps-frontend-pagination.php:109
 msgid "of"
-msgstr "von"
+msgstr "of"
 
 #: admin/kps-entries.php:581 admin/kps-entries.php:586
 msgid "All"
-msgstr "Alle"
+msgstr "All"
 
 #: admin/kps-entries.php:604 admin/kps.php:324
 msgid "open entry"
 msgid_plural "open entries"
-msgstr[0] "offener Eintrag"
-msgstr[1] "offene Einträge"
+msgstr[0] "open entry"
+msgstr[1] "open entries"
 
 #: admin/kps-entries.php:610 admin/kps.php:324
 msgid "open entries"
-msgstr "offene Einträge"
+msgstr "open entries"
 
 #: admin/kps-entries.php:628 admin/kps-entries.php:634
 msgid "locked by Admin"
 msgid_plural "locked by Admin"
-msgstr[0] "gesperrt durch Admin"
-msgstr[1] "gesperrte durch Admin"
+msgstr[0] "locked by Admin"
+msgstr[1] "locked by Admin"
 
 #: admin/kps-entries.php:652 admin/kps-entries.php:658
 msgid "released by Admin"
 msgid_plural "released by Admin"
-msgstr[0] "freigegeben durch Admin"
-msgstr[1] "freigegebene durch Admin"
+msgstr[0] "released by Admin"
+msgstr[1] "released by Admin"
 
 #: admin/kps-entries.php:676 admin/kps-entries.php:682
 msgid "locked by Author"
 msgid_plural "locked by Author"
-msgstr[0] "gesperrt durch Autor"
-msgstr[1] "gesperrte durch Autor"
+msgstr[0] "locked by Author"
+msgstr[1] "locked by Author"
 
 #: admin/kps-entries.php:700 admin/kps-entries.php:706
 msgid "released by Author"
 msgid_plural "released by Author"
-msgstr[0] "freigegeben durch Autor"
-msgstr[1] "freigegebene durch Autor"
+msgstr[0] "released by Author"
+msgstr[1] "released by Author"
 
 #: admin/kps-entries.php:724 admin/kps-entries.php:730
 msgid "entry with report"
 msgid_plural "entries with report"
-msgstr[0] "Eintrag mit Meldung"
-msgstr[1] "Einträge mit Meldung"
+msgstr[0] "entry with report"
+msgstr[1] "entries with report"
 
 #: admin/kps-entries.php:748 admin/kps-entries.php:754
 #: admin/kps-entries.php:942
 msgid "Auto-Lock"
-msgstr "Auto-Sperre"
+msgstr "Auto-Lock"
 
 #: admin/kps-entries.php:775 admin/kps-entries.php:781
 msgid "expired"
-msgstr "Abgelaufen"
+msgstr "expired"
 
 #: admin/kps-entries.php:793 admin/kps-entries.php:926
 msgid "Approval (Admin)"
-msgstr "Freigeben (Admin)"
+msgstr "Approval (Admin)"
 
 #: admin/kps-entries.php:799 admin/kps-entries.php:932
 msgid "Execute"
-msgstr "Ausführen"
+msgstr "Execute"
 
 #: admin/kps-entries.php:811 admin/kps-entries.php:907
 msgid "ID"
@@ -550,20 +553,20 @@ msgstr "ID"
 
 #: admin/kps-entries.php:812 admin/kps-entries.php:908
 msgid "Author"
-msgstr "Autor"
+msgstr "Author"
 
 #: admin/kps-entries.php:817 admin/kps-entries.php:913
 #: admin/kps-entries.php:941
 msgid "Reports"
-msgstr "Meldungen"
+msgstr "Reports"
 
 #: admin/kps-entries.php:819 admin/kps-entries.php:915
 msgid "Release (Author)"
-msgstr "Freigabe (Autor)"
+msgstr "Release (Author)"
 
 #: admin/kps-entries.php:842 functions/kps-privacy.php:174
 msgid "IP-Adress"
-msgstr "IP-Adresse"
+msgstr "IP-Adress"
 
 #: admin/kps-entries.php:843 functions/kps-privacy.php:175
 msgid "Host"
@@ -571,86 +574,85 @@ msgstr "Host"
 
 #: admin/kps-entries.php:844
 msgid "Activation-Key"
-msgstr "Aktivierungs-Schlüssel"
+msgstr "Activation-Key"
 
 #: admin/kps-entries.php:845
 msgid "Delete-Key"
-msgstr "Lösch-Schlüssel"
+msgstr "Delete-Key"
 
 #: admin/kps-entries.php:865 admin/kps-settings.php:273
 #: classes/kps-reporting.php:220 classes/kps-reporting.php:272
 #: frontend/template/kps-template.php:80
 msgid "Spam/Advertising"
-msgstr "Werbung/Spam"
+msgstr "Spam/Advertising"
 
 #: admin/kps-entries.php:866 admin/kps-settings.php:279
 #: classes/kps-reporting.php:221 classes/kps-reporting.php:278
 #: frontend/template/kps-template.php:84
 msgid "Inappropriate/Violence"
-msgstr "Unangemessen/Gewalt"
+msgstr "Inappropriate/Violence"
 
 #: admin/kps-entries.php:867 admin/kps-settings.php:285
 #: classes/kps-reporting.php:222 classes/kps-reporting.php:284
 #: frontend/template/kps-template.php:88
 msgid "Double entry"
-msgstr "Doppelter Eintrag"
+msgstr "Double entry"
 
 #: admin/kps-entries.php:868 admin/kps-settings.php:291
 #: classes/kps-reporting.php:223 classes/kps-reporting.php:290
 #: frontend/template/kps-template.php:92
 msgid "Personality rights"
-msgstr "Persönlichkeitsrechte"
+msgstr "Personality rights"
 
 #: admin/kps-entries.php:869 admin/kps-settings.php:297
 #: classes/kps-reporting.php:224 classes/kps-reporting.php:296
 #: frontend/template/kps-template.php:96
 msgid "Others"
-msgstr "Sonstiges"
+msgstr "Others"
 
 #: admin/kps-entries.php:893 frontend/kps-entries.php:169
 #: frontend/kps-widget.php:143
 msgid "No entries available!"
-msgstr "Keine Einträge vorhanden!"
+msgstr "No entries available!"
 
 #: admin/kps-entries.php:927
 msgid "Reset Reports (Admin)"
-msgstr "Reset Meldungen (Admin)"
+msgstr "Reset Reports (Admin)"
 
 #: admin/kps-entries.php:940
 msgid "Blocked"
-msgstr "Gesperrt"
+msgstr "Blocked"
 
 #: admin/kps-install.php:222
 msgid ""
 "Databases already exist. Installation aborted. Contact your administrator!"
 msgstr ""
-"Datenbank existiert bereits. Installation abgebrochen. Kontaktieren Sie "
-"Ihren Administrator!"
+"Databases already exist. Installation aborted. Contact your administrator!"
 
 #: admin/kps-install.php:239
 msgid ""
 "This version is discontinued. Please uninstall and delete this plugin. A new "
 "version is available!"
 msgstr ""
-"Diese Version wird nicht mehr unterstützt. Bitte deinstallieren und lösche "
-"das Plugin. Eine neue Version ist verfügbar!"
+"This version is discontinued. Please uninstall and delete this plugin. A new "
+"version is available!"
 
 #: admin/kps-privacy.php:73 admin/kps-privacy.php:134
 msgid "Terms of Service"
-msgstr "Allgemeine Geschäftsbedingungen"
+msgstr "Terms of Service"
 
 #: admin/kps-privacy.php:76 admin/kps-privacy.php:252
 msgid "General Data Protection Regulation"
-msgstr "Datenschutz-Grundverordnung"
+msgstr "General Data Protection Regulation"
 
 #: admin/kps-privacy.php:144 admin/kps-privacy.php:262
 #: admin/kps-settings.php:1177
 msgid "Warning"
-msgstr "Warnung"
+msgstr "Warning"
 
 #: admin/kps-privacy.php:144
 msgid "No terms and conditions selected"
-msgstr "Keine Allgemeine Geschäftsbedingungen ausgewählt"
+msgstr "No terms and conditions selected"
 
 #: admin/kps-privacy.php:169
 msgid ""
@@ -666,25 +668,25 @@ msgid ""
 "operator or the\n"
 "Requester. Here you can assign your own terms and conditions in the form."
 msgstr ""
-"Die Allgemeine Geschäftsbedingungen (AGB) sind vertragliche Klauseln, die "
-"zur Standardisierung\n"
-"und Konkretisierung von Massenverträgen dienen. Sie werden von einer "
-"Vertragspartei einseitig gestellt\n"
-"und bedürfen daher einer bestimmter Kontrolle, um ihren Missbrauch zu "
-"verhindern. Wir empfehlen dies\n"
-"um dem Nutzer (Autor) zu erläutern, dass die Kontaktdaten, welche der Nutzer "
-"(Autor), dem Anforderer\n"
-"(User) hinterlässt, ohne die Kontrolle, Prüfung und Verifizierung des "
-"Seitenbetreibers oder des\n"
-"Anforderers geschieht. Hier können Sie Ihre AGBs im Formular zuweisen."
+"The General Terms and Conditions (GTC) are contractual clauses that "
+"standardise\n"
+"and regulate mass contracts. They are unilaterally provided by a contracting "
+"party\n"
+"and therefore require some control to prevent their misuse. We recommend "
+"this\n"
+"to explain to the user (author) that the contact details, which the user "
+"(author), passes to the requester\n"
+"(User) are left without the control, checking and verification of the site "
+"operator or the\n"
+"Requester. Here you can assign your own terms and conditions in the form."
 
 #: admin/kps-privacy.php:184 admin/kps-privacy.php:300
 msgid "Selection"
-msgstr "Auswahl"
+msgstr "Selection"
 
 #: admin/kps-privacy.php:262
 msgid "No General-Data-Protection-Regulation selected"
-msgstr "Keine Datenschutz-Grundverordnung ausgewählt"
+msgstr "No General-Data-Protection-Regulation selected"
 
 #: admin/kps-privacy.php:286
 msgid ""
@@ -696,46 +698,46 @@ msgid ""
 "without checking and verification. Here you can assign your own GPDR to the "
 "form."
 msgstr ""
-"DSGVO ist die geläufige Abkürzung für die Datenschutz-Grundverordnung. Damit "
-"möchte die EU (Europäische Union)\n"
-"einen einheitlichen Rechtsrahmen für die Verarbeitung und Speicherung "
-"personenbezogener Daten schaffen. In diesem Plugin, werden\n"
-"personenbezogener Daten verarbeitet, gespeichert und können ohne Prüfung und "
-"Verifizierung abgerufen werden.\n"
-"Hier können Sie Ihre DSGVO dem Formular zuweisen."
+"GPDR is the common abbreviation for the General Data Protection Regulation.\n"
+"With this the EU (European Union) wants create a single legal framework for "
+"the processing and\n"
+"storage of personal data. In this plugin, Personal data can be processed, "
+"stored and retrieved\n"
+"without checking and verification. Here you can assign your own GPDR to the "
+"form."
 
 #: admin/kps-privacy.php:290 admin/kps.php:178 frontend/kps-form.php:302
 #: frontend/kps-form.php:344 kps-hooks.php:85
 msgid "GDPR"
-msgstr "DSGVO"
+msgstr "GDPR"
 
 #: admin/kps-settings.php:56
 msgid "Entries / Page"
-msgstr "Einträge / Seite"
+msgstr "Entries / Page"
 
 #: admin/kps-settings.php:72 admin/kps-settings.php:1348
 msgid "Default-Settings"
-msgstr "Grundeinstellung"
+msgstr "Default-Settings"
 
 #: admin/kps-settings.php:75 admin/kps-settings.php:784
 msgid "Usersettings"
-msgstr "Benutzereinstellung"
+msgstr "User settings"
 
 #: admin/kps-settings.php:78 admin/kps-settings.php:211
 msgid "Reporting"
-msgstr "Berichte"
+msgstr "Reporting"
 
 #: admin/kps-settings.php:81 admin/kps-settings.php:1489
 msgid "Email notification"
-msgstr "Emailbenachrichtigung"
+msgstr "Email notification"
 
 #: admin/kps-settings.php:84 admin/kps-settings.php:1204
 msgid "Spam-Protection"
-msgstr "Spam-Schutz"
+msgstr "Spam-Protection"
 
 #: admin/kps-settings.php:87 admin/kps-settings.php:444
 msgid "Form options"
-msgstr "Formular-Optionen"
+msgstr "Form options"
 
 #: admin/kps-settings.php:90 admin/kps-settings.php:1066
 msgid "Navigation"
@@ -749,16 +751,15 @@ msgid ""
 "between 1-499 messages. The range up to the automatic lock is between 2-500 "
 "messages."
 msgstr ""
-"Einstellung der Anzahl der Meldungen pro Eintrag, bis der Administrator "
-"informiert wird.\n"
-"Die Autosperre greift, sobald die Anzahl erreicht ist. Die Range bis zur "
-"Benachrichtigung liegt zwischen 1-499\n"
-"Meldungen. Die Range bis zur Automatischen Sperre liegt zwischen 2-500 "
-"Meldungen."
+"Set the number of messages per entry until the administrator is informed.\n"
+"The automatic lock kicks in as soon as the number is reached. The range to "
+"the notification is\n"
+"between 1-499 messages. The range up to the automatic lock is between 2-500 "
+"messages."
 
 #: admin/kps-settings.php:267
 msgid "Total Message-Reporting"
-msgstr "Gesamtmeldungen melden nach"
+msgstr "Total Message-Reporting"
 
 #: admin/kps-settings.php:268 admin/kps-settings.php:274
 #: admin/kps-settings.php:276 admin/kps-settings.php:280
@@ -768,52 +769,52 @@ msgstr "Gesamtmeldungen melden nach"
 #: admin/kps-settings.php:300 admin/kps.php:201
 msgid "report"
 msgid_plural "reports"
-msgstr[0] "Meldung"
-msgstr[1] "Meldungen"
+msgstr[0] "report"
+msgstr[1] "reports"
 
 #: admin/kps-settings.php:275 admin/kps-settings.php:281
 #: admin/kps-settings.php:287 admin/kps-settings.php:293
 #: admin/kps-settings.php:299 admin/kps.php:200
 msgid "Automatic-Lock after"
-msgstr "Automatische Sperre nach"
+msgstr "Automatic-Lock after"
 
 #: admin/kps-settings.php:303
 msgid "Automatic-Lock enable"
-msgstr "Automatische Sperren aktivieren"
+msgstr "Automatic-Lock enable"
 
 #: admin/kps-settings.php:455
 msgid "Two search options must be selected"
-msgstr "Es müssen zwei Suchoptionen ausgewählt werden"
+msgstr "Two search options must be selected"
 
 #: admin/kps-settings.php:526
 msgid "Setting the input options for the form."
-msgstr "Einstellung der Eingabemöglichkeiten für das Formular."
+msgstr "Setting the input options for the form."
 
 #: admin/kps-settings.php:565
 msgid ""
 "Setting the input options, which information the author, the requestor, "
 "makes available for contacting."
 msgstr ""
-"Einstellung der Eingabemöglichkeiten, welche Informationen der Autor, dem "
-"Anforderer, zur Kontaktaufnahme zur Verfügung stellt."
+"Setting the input options, which information the author, the requestor, "
+"makes available for contacting."
 
 #: admin/kps-settings.php:568
 msgid "Direct Contact"
-msgstr "Direkter Kontakt"
+msgstr "Direct Contact"
 
 #: admin/kps-settings.php:572 frontend/kps-form.php:640
 #: functions/kps-functions.php:178
 msgid "Mobile Phone"
-msgstr "Mobiltelefon"
+msgstr "Mobile Phone"
 
 #: admin/kps-settings.php:574 frontend/kps-form.php:629
 #: functions/kps-functions.php:174
 msgid "Telephone"
-msgstr "Telefon"
+msgstr "Telephone"
 
 #: admin/kps-settings.php:584
 msgid "Messenger-Services"
-msgstr "Messengerdienste"
+msgstr "Messenger-Services"
 
 #: admin/kps-settings.php:588 functions/kps-functions.php:214
 msgid "Facebook-Messenger"
@@ -853,7 +854,7 @@ msgstr "Viper"
 
 #: admin/kps-settings.php:620
 msgid "Web- / Profilpages"
-msgstr "Web-/ Profilseiten"
+msgstr "Web- / Profile pages"
 
 #: admin/kps-settings.php:624 frontend/kps-form.php:651
 #: frontend/kps-form.php:761 functions/kps-functions.php:222
@@ -868,115 +869,115 @@ msgstr "Instagram"
 #: admin/kps-settings.php:628 frontend/kps-form.php:750
 #: functions/kps-functions.php:218
 msgid "Website"
-msgstr "Webseite"
+msgstr "Website"
 
 #: admin/kps-settings.php:847 admin/kps-settings.php:854
 msgid "Disabled in Wordpress"
-msgstr "Deaktiviert im Wordpress"
+msgstr "Disabled in WordPress"
 
 #: admin/kps-settings.php:867
 msgid "GTC in draft status"
-msgstr "AGBs im Entwurfs-Status"
+msgstr "GTC in draft status"
 
 #: admin/kps-settings.php:872
 msgid "GTC in privat status"
-msgstr "AGBs im Privat-Status"
+msgstr "GTC in privat status"
 
 #: admin/kps-settings.php:877
 msgid "GTC in pending status"
-msgstr "AGBs im Muster-Status"
+msgstr "GTC in pending status"
 
 #: admin/kps-settings.php:882
 msgid "GTC without content"
-msgstr "AGBs ohne Inhalt"
+msgstr "GTC without content"
 
 #: admin/kps-settings.php:887
 msgid "GTC in revision"
-msgstr "AGBs in Revision"
+msgstr "GTC in revision"
 
 #: admin/kps-settings.php:892
 msgid "GTC in trash"
-msgstr "AGBs im Papierkorb"
+msgstr "GTC in trash"
 
 #: admin/kps-settings.php:897
 msgid "GTC with password"
-msgstr "AGBs mit Passwort"
+msgstr "GTC with password"
 
 #: admin/kps-settings.php:901 admin/kps-settings.php:907
 msgid "GTC not seclected"
-msgstr "AGBs nicht gesetzt"
+msgstr "GTC not seclected"
 
 #: admin/kps-settings.php:922
 msgid "GDPR in draft status"
-msgstr "DSGVO im Entwurfs-Status"
+msgstr "GDPR in draft status"
 
 #: admin/kps-settings.php:927
 msgid "GDPR in private status"
-msgstr "DSGVO im Privat-Status"
+msgstr "GDPR in private status"
 
 #: admin/kps-settings.php:932
 msgid "GDPR in the sample status"
-msgstr "DSGVO im Muster-Status"
+msgstr "GDPR in the sample status"
 
 #: admin/kps-settings.php:937
 msgid "GDPR without content"
-msgstr "DSGVO ohne Inhalt"
+msgstr "GDPR without content"
 
 #: admin/kps-settings.php:942
 msgid "GDPR in revision"
-msgstr "DSGVO in Revision"
+msgstr "GDPR in revision"
 
 #: admin/kps-settings.php:947
 msgid "GDPR in trash"
-msgstr "DSGVO im Papierkorb"
+msgstr "GDPR in trash"
 
 #: admin/kps-settings.php:952
 msgid "GDPR with password"
-msgstr "DSGVO im Privat-Status"
+msgstr "GDPR with password"
 
 #: admin/kps-settings.php:956 admin/kps-settings.php:962
 msgid "GDPR not set"
-msgstr "DSGVO nicht gesetzt"
+msgstr "GDPR not set"
 
 #: admin/kps-settings.php:967
 msgid "Settings for the form and the output itself."
-msgstr "Einstellungen zum Formular und der Ausgabe selbst."
+msgstr "Settings for the form and the output itself."
 
 #: admin/kps-settings.php:972
 msgid "Author must be registration"
-msgstr "Autor muss sich registieren"
+msgstr "Author must be registration"
 
 #: admin/kps-settings.php:976
 msgid "Requester must register"
-msgstr "Anforderer muss sich registrieren"
+msgstr "Requester must register"
 
 #: admin/kps-settings.php:980
 msgid "Register to report entries"
-msgstr "Registrieren um Einträge zu melden"
+msgstr "Register to report entries"
 
 #: admin/kps-settings.php:984
 msgid "Unlock entries by admin"
-msgstr "Einträge durch Admin freischalten"
+msgstr "Unlock entries by admin"
 
 #: admin/kps-settings.php:988
 msgid "Can report entries"
-msgstr "Einträge melden können"
+msgstr "Can report entries"
 
 #: admin/kps-settings.php:992
 msgid "Author must accept terms and conditions"
-msgstr "Autor muss AGBs akzeptieren"
+msgstr "Author must accept terms and conditions"
 
 #: admin/kps-settings.php:996
 msgid "Author must accept GDPR"
-msgstr "Autor muss DSGVO akzeptieren"
+msgstr "Author must accept GDPR"
 
 #: admin/kps-settings.php:1000
 msgid "Link to the user profile (register authors)"
-msgstr "Link zum User-Profil (registriere Autoren)"
+msgstr "Link to the user profile (register authors)"
 
 #: admin/kps-settings.php:1004
 msgid "View author avatar (registered authors)"
-msgstr "Autoren-Avatar anzeigen (registierte Autoren)"
+msgstr "View author avatar (registered authors)"
 
 #: admin/kps-settings.php:1100
 msgid ""
@@ -984,28 +985,28 @@ msgid ""
 "as well as in the output (frontend). The range can be set between 1-99 "
 "entries per page."
 msgstr ""
-"Einstellung der Anzahl der Einträge pro Seite im Administrationsbereich, \n"
-"als auch in der Ausgabe (Frontend). Die Range kann eingestellt werden "
-"zwischen 1-99 Einträgen pro Seite."
+"Setting the number of entries per page in the administration area,\n"
+"as well as in the output (front end). The range can be set between 1-99 "
+"entries per page."
 
 #: admin/kps-settings.php:1105
 msgid "Adminpanel"
-msgstr "Administrationsbereich"
+msgstr "Admin panel"
 
 #: admin/kps-settings.php:1106 admin/kps-settings.php:1110 admin/kps.php:227
 #: admin/kps.php:231
 msgid "entry per page"
 msgid_plural "entries per page"
-msgstr[0] "Eintrag pro Seite"
-msgstr[1] "Einträge pro Seite"
+msgstr[0] "entry per page"
+msgstr[1] "entries per page"
 
 #: admin/kps-settings.php:1109
 msgid "Output frontend"
-msgstr "Ausgabe Frontend"
+msgstr "Output front end"
 
 #: admin/kps-settings.php:1177
 msgid "No spam protection possible"
-msgstr "Kein Spamschutz möglich"
+msgstr "No spam protection possible"
 
 #: admin/kps-settings.php:1257
 msgid ""
@@ -1014,10 +1015,10 @@ msgid ""
 "for communication between your website and Google. Keep the key secret. You "
 "can sign in under:"
 msgstr ""
-"Gib hier die Google-reCaptcha Keys ein. Der Site-Key wird für den Robot "
-"genutzt. Der Secret-Key wird verwendet\n"
-"für die Kommunikation zwischen deiner Website und Google. Halte den "
-"Schlüssel geheim. Anmelden kannst du dich unter:"
+"Enter the Google reCaptcha Keys here. The site key is used for the robot. "
+"The secret key will be used\n"
+"for communication between your website and Google. Keep the key secret. You "
+"can sign in under:"
 
 #: admin/kps-settings.php:1263
 msgid "Site-Key"
@@ -1029,7 +1030,7 @@ msgstr "Secret-Key"
 
 #: admin/kps-settings.php:1271
 msgid "Google reCaptcha enable"
-msgstr "Google reCaptcha aktivieren"
+msgstr "Google reCaptcha enable"
 
 #: admin/kps-settings.php:1382
 msgid ""
@@ -1040,40 +1041,40 @@ msgid ""
 "In the textarea the minimum number of words to be written by the author is "
 "determined."
 msgstr ""
-"Die Löschzeiten geben vor, wann ein \"freigegebener Eintrag\" oder ein "
-"\"Wartender Eintrag\" aus dem System (Datenbank) gelöscht wird.\n"
-"Die Range für freigegebene Einträge liegt zwischen 1-180 Tagen. Die Range "
-"für wartende Einträge liegt zwischen 30-180 Tagen.\n"
-"In der Textarea wird die mindestanzahl der Wörter, welche der Autor "
-"schreiben soll, festgelegt."
+"The deletion times specify when a \"shared entry\" or a \"waiting entry\" is "
+"deleted from the system (database).\n"
+"The range for released entries is between 1-180 days. The range for waiting "
+"entries is between 30-180 days.\n"
+"In the textarea the minimum number of words to be written by the author is "
+"determined."
 
 #: admin/kps-settings.php:1388 admin/kps.php:185
 msgid "Released entries"
-msgstr "Freigegebene Einträge"
+msgstr "Released entries"
 
 #: admin/kps-settings.php:1389 admin/kps-settings.php:1393
 msgid "day"
 msgid_plural "days"
-msgstr[0] "Tag"
-msgstr[1] "Tage"
+msgstr[0] "day"
+msgstr[1] "days"
 
 #: admin/kps-settings.php:1392 admin/kps.php:189
 msgid "Waiting entries"
-msgstr "Wartende Einträge"
+msgstr "Waiting entries"
 
 #: admin/kps-settings.php:1396 admin/kps.php:193
 msgid "Form textarea"
-msgstr "Formular Textarea"
+msgstr "Form textarea"
 
 #: admin/kps-settings.php:1397 admin/kps.php:194
 msgid "word"
 msgid_plural "words"
-msgstr[0] "Wort"
-msgstr[1] "Wörter"
+msgstr[0] "word"
+msgstr[1] "words"
 
 #: admin/kps-settings.php:1466
 msgid "Email was set to default"
-msgstr "Email-Adresse wurde auf Grundeinstellung gestellt"
+msgstr "Email was set to default"
 
 #: admin/kps-settings.php:1542
 msgid ""
@@ -1082,12 +1083,10 @@ msgid ""
 "used when the entries must be released  by the\n"
 "Administrator. Additional information about the activities can be retrieved."
 msgstr ""
-"Die Email-Adressen sind eine optionale Eingabe. Wenn keine Email-Adresse "
-"eingegeben wird,\n"
-"nutzt das Script die im Board gesetzte Email-Adresse. Desweiteren wird diese "
-"genutzt, wenn die Einträge durch den\n"
-"Administrator freigegeben werden müssen. Es können zusätzliche Information "
-"zu den Aktivitäten abgerufen werden."
+"The email addresses are an optional input. If no email address is entered,\n"
+"the script uses the email address set in the board. Furthermore, this is "
+"used when the entries must be released  by the\n"
+"Administrator. Additional information about the activities can be retrieved."
 
 #: admin/kps-settings.php:1548 admin/kps.php:211 admin/kps.php:435
 #: frontend/kps-form.php:619 frontend/kps-form.php:620
@@ -1099,7 +1098,7 @@ msgstr "Email"
 
 #: admin/kps-settings.php:1552 admin/kps.php:215
 msgid "Email copy"
-msgstr "Email-Kopie"
+msgstr "Email copy"
 
 #: admin/kps-settings.php:1556 admin/kps.php:219
 msgid "Report-Email"
@@ -1112,32 +1111,31 @@ msgstr "Information"
 #: admin/kps-uninstall.php:59 admin/kps-uninstall.php:82
 #: admin/kps-uninstall.php:135 kps-hooks.php:108
 msgid "Uninstallation"
-msgstr "Deinstallation"
+msgstr "Uninstallation"
 
 #: admin/kps-uninstall.php:94
 msgid "all entries have been deleted"
-msgstr "alle Einträge wurden gelöscht"
+msgstr "All entries have been deleted"
 
 #: admin/kps-uninstall.php:95
 msgid "Plugin has been disabled."
-msgstr "Plugin wurde deaktiviert."
+msgstr "Plugin has been disabled."
 
 #: admin/kps-uninstall.php:103
 msgid ""
 "Uninstall completed. All database entries and settings have been removed."
 msgstr ""
-"Deinstallation abgeschlossen. Alle Datenbankeinträge und Einstellungen "
-"wurden entfernt."
+"Uninstall completed. All database entries and settings have been removed."
 
 #: admin/kps-uninstall.php:111
 msgid "You will be redirected in 10 seconds"
-msgstr "Sie werden in 10 Sekunden weitergeleitet"
+msgstr "You will be redirected in 10 seconds"
 
 #: admin/kps-uninstall.php:119
 msgid ""
 "You will now be automatically redirected to the main page of the dashboard."
 msgstr ""
-"Sie werden nun auf die Hauptseite des Dashboards automatisch weitergeleitet."
+"You will now be automatically redirected to the main page of the dashboard."
 
 #: admin/kps-uninstall.php:120
 msgid "Dashboard"
@@ -1148,32 +1146,32 @@ msgid ""
 "If you proceed with uninstall you delete all entries in the database, as "
 "well as the settings!"
 msgstr ""
-"Mit der Deinstallation löschen Sie alle Einträge in der Datenbank, sowie die "
-"Einstellungen!"
+"If you proceed with uninstall you delete all entries in the database, as "
+"well as the settings!"
 
 #: admin/kps-uninstall.php:164
 msgid "This can not be undone. The process is final."
-msgstr "Dies kann nicht rückgängig gemacht werden. Der Prozess ist entgültig."
+msgstr "This cannot be undone. The process is final."
 
 #: admin/kps-uninstall.php:170
 msgid "Confirm!"
-msgstr "Bestätigen!"
+msgstr "Confirm!"
 
 #: admin/kps-uninstall.php:173
 msgid "Yes, I am absolutely sure. Go ahead!"
-msgstr "Ja, ich bin mir absolut sicher. Ausführen!"
+msgstr "Yes, I am absolutely sure. Go ahead!"
 
 #: admin/kps-uninstall.php:182
 msgid "Yes, uninstall!"
-msgstr "Ja, deinstallieren!"
+msgstr "Yes, uninstall!"
 
 #: admin/kps.php:61
 msgid "Error! Mail()-Function!"
-msgstr "Fehler! Mail()-Funktion!"
+msgstr "Error! Mail()-Function!"
 
 #: admin/kps.php:64
 msgid "Settings-Overview (short)"
-msgstr "Einstellungsübersicht (kurz)"
+msgstr "Settings-Overview (short)"
 
 #: admin/kps.php:65 admin/kps.php:428
 msgid "Copyright"
@@ -1181,15 +1179,15 @@ msgstr "Copyright"
 
 #: admin/kps.php:66
 msgid "Manual"
-msgstr "Anleitung"
+msgstr "Manual"
 
 #: admin/kps.php:67
 msgid "Checked"
-msgstr "Geprüft"
+msgstr "Checked"
 
 #: admin/kps.php:68
 msgid "Statistics"
-msgstr "Statistik"
+msgstr "Statistics"
 
 #: admin/kps.php:95
 msgid ""
@@ -1199,26 +1197,26 @@ msgid ""
 "function, or you can contact your provider,\n"
 "that he unlocks this feature."
 msgstr ""
-"Die Funktion mail() wird benötigt um Emails zu versenden und ist nicht aktiv "
-"geschalten in deiner PHP Konfiguration.\n"
-"Du kannst ein Wordpress-Plugin installieren, welches SMTP statt der mail()-"
-"Funktion nutzt, oder du kontaktierst deinen Provider,\n"
-"dass er diese Funktion freischaltet."
+"The function mail() is used to send emails and is not active in your PHP "
+"configuration.\n"
+"You can install a WordPress plugin that uses SMTP instead of the mail() "
+"function, or you can contact your provider,\n"
+"who can unlock this feature."
 
 #: admin/kps.php:174 frontend/kps-form.php:301 frontend/kps-form.php:323
 #: kps-hooks.php:84
 msgid "GTC"
-msgstr "AGBs"
+msgstr "GTC"
 
 #: admin/kps.php:186 admin/kps.php:190
 msgid "delete day"
 msgid_plural "delete days"
-msgstr[0] "Tag löschen"
-msgstr[1] "Tagen löschen"
+msgstr[0] "delete day"
+msgstr[1] "delete days"
 
 #: admin/kps.php:204
 msgid "Lock active"
-msgstr "Sperre aktiv"
+msgstr "Lock active"
 
 #: admin/kps.php:226
 msgid "Backend"
@@ -1234,114 +1232,111 @@ msgstr "Google reCaptcha"
 
 #: admin/kps.php:272
 msgid "Submitted searches"
-msgstr "Eingereichte suchen"
+msgstr "Submitted searches"
 
 #: admin/kps.php:276
 msgid "Activated entries"
-msgstr "Aktivierte Einträge"
+msgstr "Activated entries"
 
 #: admin/kps.php:280
 msgid "Reqirement contact details"
-msgstr "Angeforderten Kontaktdaten"
+msgstr "Reqirement contact details"
 
 #: admin/kps.php:281 functions/kps-mail-contents.php:188
 msgid "Verification"
 msgid_plural "Verifications"
-msgstr[0] "Verifizierung"
-msgstr[1] "Verifizierungen"
+msgstr[0] "Verification"
+msgstr[1] "Verifications"
 
 #: admin/kps.php:284
 msgid "Sent contact information"
-msgstr "Versendete Kontaktdaten"
+msgstr "Sent contact information"
 
 #: admin/kps.php:285
 msgid "Request"
 msgid_plural "Requests"
-msgstr[0] "Anfrage"
-msgstr[1] "Anfragen"
+msgstr[0] "Request"
+msgstr[1] "Requests"
 
 #: admin/kps.php:288
 msgid "Manually deleted entries"
-msgstr "Manuell gelöschte Einträge"
+msgstr "Manually deleted entries"
 
 #: admin/kps.php:325
 msgid "entry blocked by author"
 msgid_plural "entries blocked by author"
-msgstr[0] "Eintrag gesperrt durch Autor"
-msgstr[1] "Einträge gesperrt durch Autor"
+msgstr[0] "entry blocked by author"
+msgstr[1] "entries blocked by author"
 
 #: admin/kps.php:325
 msgid "entries blocked by author"
-msgstr "Einträge gesperrte durch Autor"
+msgstr "entries blocked by author"
 
 #: admin/kps.php:326
 msgid "entry released by author"
 msgid_plural "entries released by author"
-msgstr[0] "Eintrag freigegeben durch Autor"
-msgstr[1] "Einträge freigegeben durch Autor"
+msgstr[0] "entry released by author"
+msgstr[1] "entries released by author"
 
 #: admin/kps.php:326
 msgid "entries released by author"
-msgstr "Einträge freigegeben durch Admin"
+msgstr "entries released by author"
 
 #: admin/kps.php:327
 msgid "entry blocked by admin"
 msgid_plural "entries blocked by admin"
-msgstr[0] "Eintrag gesperrt durch Admin"
-msgstr[1] "Einträge gesperrt durch Admin"
+msgstr[0] "entry blocked by admin"
+msgstr[1] "entries blocked by admin"
 
 #: admin/kps.php:327
 msgid "entries blocked by admin"
-msgstr "Einträge gesperrt durch Admin"
+msgstr "entries blocked by admin"
 
 #: admin/kps.php:328
 msgid "entry released by admin"
 msgid_plural "entries released by admin"
-msgstr[0] "Eintrag freigegeben durch Admin"
-msgstr[1] "Einträge freigegeben durch Admin"
+msgstr[0] "entry released by admin"
+msgstr[1] "entries released by admin"
 
 #: admin/kps.php:328
 msgid "entries released by admin"
-msgstr "Einträge freigegeben durch Admin"
+msgstr "entries released by admin"
 
 #: admin/kps.php:374
 msgid "So easy to implement via shortcut"
-msgstr "So einfach per Shortcut implementieren"
+msgstr "So easy to implement via shortcut"
 
 #: admin/kps.php:379
 msgid "Create a new page"
-msgstr "Erstelle eine neue Seite"
+msgstr "Create a new page"
 
 #: admin/kps.php:380
 msgid "Give the page a name"
-msgstr "Gib der Seite einen Namen"
+msgstr "Give the page a name"
 
 #: admin/kps.php:381
 msgid "Write in the page context"
-msgstr "Schreibe in den Seitenkontex"
+msgstr "Write in the page context"
 
 #: admin/kps.php:382
 msgid "Publish this page"
-msgstr "Veröffentliche diese Seite"
+msgstr "Publish this page"
 
 #: admin/kps.php:383
 msgid "Go to the main menu under Design -> Menus and add a page to a menu"
-msgstr ""
-"Geh im Hauptmenü unter Design->Menüs und füge die Seite einem Menü hinzu"
+msgstr "Go to the main menu under Design -> Menus and add a page to a menu"
 
 #: admin/kps.php:385
 msgid "Alternatively, you can create a new menu and add the page there"
-msgstr ""
-"Alternativ kannst du ein neues Menü erstellen und die Seite dort hinzufügen"
+msgstr "Alternatively, you can create a new menu and add the page there"
 
 #: admin/kps.php:387
 msgid "Save, Publish and Done!"
-msgstr "Speichern, Veröffentlichen und Fertig!"
+msgstr "Save, Publish and Done!"
 
 #: admin/kps.php:395
 msgid "Of course, you can also implement the shortcode in a post."
-msgstr ""
-"Natürlich kannst du den Shortcode auch in einem Beitrag implementieren."
+msgstr "Of course, you can also implement the shortcode in a post."
 
 #: admin/kps.php:413
 msgid "Support"
@@ -1373,7 +1368,7 @@ msgstr "W3C401"
 
 #: admin/kps.php:461
 msgid "Mysql"
-msgstr "Mysql"
+msgstr "MySQL"
 
 #: admin/kps.php:462
 msgid "PHP"
@@ -1385,92 +1380,91 @@ msgstr "JQuery"
 
 #: classes/kps-entries.php:416 classes/kps-write.php:897
 msgid "Wait for release from the Author"
-msgstr "Warte auf Freigabe vom Autor"
+msgstr "Wait for release from the Author"
 
 #: classes/kps-reporting.php:189 frontend/kps-report.php:123
 msgid "Entry reported"
-msgstr "Eintrag gemeldet"
+msgstr "Entry reported"
 
 #: classes/kps-reporting.php:193
 msgid "An entry was blocked by the automatic lock!"
-msgstr "Es wurde ein Eintrag durch die automatische Sperre gesperrt!"
+msgstr "An entry was blocked by the automatic lock!"
 
 #: classes/kps-reporting.php:197
 msgid "The total amount of messages for the entry has been reached!"
-msgstr "Es wurde die Gesamtmenge an Meldungen für den Eintrag erreicht!"
+msgstr "The total amount of messages for the entry has been reached!"
 
 #: classes/kps-reporting.php:201
 msgid "An entry was reported!"
-msgstr "Es wurde ein Eintrag gemeldet!"
+msgstr "An entry was reported!"
 
 #: classes/kps-reporting.php:206
 msgid "Reason"
-msgstr "Grund"
+msgstr "Reason"
 
 #: classes/kps-reporting.php:207
 msgid "Timestamp"
-msgstr "Zeitstempel"
+msgstr "Timestamp"
 
 #: classes/kps-reporting.php:209
 msgid "Edit-Link"
-msgstr "Bearbeitungs-Link"
+msgstr "Edit-Link"
 
 #: classes/kps-reporting.php:213
 msgid "System data"
-msgstr "Systemdaten"
+msgstr "System data"
 
 #: classes/kps-reporting.php:216
 msgid "Created on"
-msgstr "Erstellt am"
+msgstr "Created on"
 
 #: classes/kps-reporting.php:217
 msgid "Released on"
-msgstr "Freigegeben am"
+msgstr "Released on"
 
 #: classes/kps-write.php:917
 msgid "Release required"
-msgstr "Freigabe erforderlich"
+msgstr "Release required"
 
 #: classes/kps-write.php:918
 msgid ""
 "A new entry in the Climbing-Partner-Search is available and requires your "
 "approval!"
 msgstr ""
-"Ein neuer Eintrag in der Kletterpartner-Suche ist vorhanden und erfordert "
-"deine Freigabe!"
+"A new entry in the Climbing-Partner-Search is available and requires your "
+"approval!"
 
 #: classes/kps-write.php:925
 msgid "Release link"
-msgstr "Freigabe Link"
+msgstr "Release link"
 
 #: classes/kps-write.php:944
 msgid "New entry"
-msgstr "Neuer Eintrag"
+msgstr "New entry"
 
 #: classes/kps-write.php:945
 msgid "There is a new entry in the Climbing-Partner-Search!"
-msgstr "Es gibt einen neuen Eintrag in der Kletterpartner-Suche!"
+msgstr "There is a new entry in the Climbing-Partner-Search!"
 
 #: frontend/kps-activation.php:123 frontend/kps-activation.php:143
 #: frontend/kps-form.php:216 frontend/kps-form.php:824
 msgid ""
 "It could be that the entry only becomes visible after we have approved it!"
 msgstr ""
-"Es könnte sein, dass der Eintrag erst sichtbar wird, nachdem wir diesen "
-"geprüft haben!"
+"It could be that the entry only becomes visible after we have approved it!"
 
 #: frontend/kps-activation.php:126
 msgid "Entry has been unlocked!"
-msgstr "Eintrag wurde freigeschaltet!"
+msgstr "Entry has been unlocked!"
 
 #: frontend/kps-activation.php:132
 msgid "Activation-Key unknown!"
-msgstr "Aktivierungs-Schlüssel unbekannt!"
+msgstr "Activation-Key unknown!"
 
 #: frontend/kps-activation.php:136 frontend/kps-activation.php:157
 #: frontend/kps-activation.php:183
 msgid "Error! Entry could not be unlocked!"
-msgstr "Fehler! Eintrag konnte nicht freigeschaltet werden!"
+msgstr "Error! Entry could not be unlocked!"
 
 #: frontend/kps-activation.php:153 frontend/kps-activation.php:179
 #: frontend/kps-delete.php:138 frontend/kps-delete.php:163
@@ -1480,101 +1474,98 @@ msgstr "Fehler! Eintrag konnte nicht freigeschaltet werden!"
 #: frontend/kps-verify.php:156 frontend/kps-verify.php:175
 #: frontend/kps-verify.php:187 frontend/kps-verify.php:211
 msgid "Please contact the administrator if the problem reappears!"
-msgstr ""
-"Bitte kontaktiere den Administrator, falls das Problem erneut erscheint!"
+msgstr "Please contact the administrator if the problem reappears!"
 
 #: frontend/kps-activation.php:169 frontend/kps-delete.php:155
 #: frontend/kps-form.php:495 frontend/kps-report.php:156
 #: frontend/kps-requirement.php:205 frontend/kps-verify.php:202
 msgid "Google reCaptcha has not been confirmed!"
-msgstr "Google reCaptcha wurde nicht bestätigt!"
+msgstr "Google reCaptcha has not been confirmed!"
 
 #: frontend/kps-activation.php:175
 msgid "It could be that the email has a wrong syntax!"
-msgstr "Es könnte sein, dass die Email-Adresse einen falschen Syntax hat!"
+msgstr "It could be that the email has a wrong syntax!"
 
 #: frontend/kps-activation.php:176
 msgid ""
 "It could be that there is no activation code under the entered email address!"
 msgstr ""
-"Es könnte sein, dass sich unter der eingegebenen E-Mail-Adresse kein "
-"Aktivierungs-Code befindet!"
+"It could be that there is no activation code under the entered email address!"
 
 #: frontend/kps-activation.php:177
 msgid "It could be that the Activation-Code was not accepted!"
-msgstr "Es könnte sein, dass der Aktivierungs-Code nicht akzeptiert wurde!"
+msgstr "It could be that the Activation-Code was not accepted!"
 
 #: frontend/kps-delete.php:119
 msgid "Many Thanks! Until next time!"
-msgstr "Vielen Dank! Bis zum nächsten mal!"
+msgstr "Many Thanks! Until next time!"
 
 #: frontend/kps-delete.php:122
 msgid "Entry has been deleted!"
-msgstr "Eintrag wurde gelöscht!"
+msgstr "Entry has been deleted!"
 
 #: frontend/kps-delete.php:128
 msgid "Delete-key unknow!"
-msgstr "Lösch-Schlüssel unbekannt!"
+msgstr "Delete-key unknow!"
 
 #: frontend/kps-delete.php:132 frontend/kps-delete.php:142
 #: frontend/kps-delete.php:167
 msgid "Entry could not be deleted!"
-msgstr "Eintrag konnte nicht gelöscht werden!"
+msgstr "Entry could not be deleted!"
 
 #: frontend/kps-delete.php:161 frontend/kps-requirement.php:180
 msgid ""
 "The password you entered is incorrect. Make sure you pay attention to upper "
 "and lower case!"
 msgstr ""
-"Du hast dein Passwort falsch eingegeben. Achten bitte auf Groß-/ und "
-"Kleinschreibung!"
+"The password you entered is incorrect. Make sure you pay attention to upper "
+"and lower case!"
 
 #: frontend/kps-form.php:214
 msgid "You should receive an Activation-Email in the next few minutes!"
-msgstr "In den nächsten Minuten solltest du eine Aktivierungs-Email erhalten!"
+msgstr "You should receive an Activation-Email in the next few minutes!"
 
 #: frontend/kps-form.php:215 frontend/kps-verify.php:155
 msgid ""
 "If you have not received any email from us, it may also be in your junk "
 "folder!"
 msgstr ""
-"Solltest du keine Email von uns erhalten haben, so kann diese auch in deinem "
-"Spamfilter (Spam-Ordner) hängen geblieben sein!"
+"If you have not received any email from us, it may also be in your junk "
+"folder!"
 
 #: frontend/kps-form.php:217 frontend/kps-form.php:825
 msgid "We reserve the right to edit, delete or not publish entries!"
-msgstr ""
-"Wir behalten uns das Recht vor, Einträge zu bearbeiten, zu löschen oder "
-"Einträge nicht zu veröffentlichen!"
+msgstr "We reserve the right to edit, delete or not publish entries!"
 
 #: frontend/kps-form.php:221
 msgid "Many Thanks! Your entry will now be checked!"
-msgstr "Vielen Dank! Dein Eintrag wird nun geprüft!"
+msgstr "Many Thanks! Your entry will now be checked!"
 
 #: frontend/kps-form.php:242
 msgid "The form was processed too fast. Always with tranquillity!"
-msgstr "Das Formular wurde zu scnell abgearbeitet. Immer mit der Ruhe!"
+msgstr "The form was processed too fast. Always with tranquillity!"
 
 #: frontend/kps-form.php:243
 msgid "The Form has been reset!"
-msgstr "Das Formular wurde zurück gesetzt!"
+msgstr "The Form has been reset!"
 
 #: frontend/kps-form.php:247
 msgid "Error! Spam-Block was triggered!"
-msgstr "Fehler! Spam-Sperre wurde ausgelöst!"
+msgstr "Error! Spam-Block was triggered!"
 
 #: frontend/kps-form.php:300 frontend/kps-form.php:322
 #: frontend/kps-form.php:343
+#| msgid "Yes, I accept"
 msgid "Yes, I accept the"
-msgstr "Ja, ich akzeptiere die"
+msgstr "Yes, I accept the"
 
 #: frontend/kps-form.php:302
 msgid "and the"
-msgstr "und die"
+msgstr "and the"
 
 #: frontend/kps-form.php:359
 msgid "You must be logged in to leave an entry!"
-msgstr "Du musst eingeloggt sein, um einen Eintrag zu hinterlassen!"
+msgstr "You must be logged in to leave an entry!"
 
 #: frontend/kps-form.php:362 frontend/kps-requirement.php:117
 #: frontend/kps-verify.php:130
@@ -1584,53 +1575,51 @@ msgstr "Login"
 #: frontend/kps-form.php:363 frontend/kps-requirement.php:118
 #: frontend/kps-verify.php:131
 msgid "Registration"
-msgstr "Registrierung"
+msgstr "Registration"
 
 #: frontend/kps-form.php:442 frontend/kps-verify.php:179
 msgid "Error! Database connection disturbed!"
-msgstr "Fehler! Datenbankverbindung gestört!"
+msgstr "Error! Database connection disturbed!"
 
 #: frontend/kps-form.php:449
 msgid "There is already an entry of you with the same intentions!"
-msgstr "Es ist schon ein Eintrag von dir mit den selben Intensionen vorhanden!"
+msgstr "There is already an entry of you with the same intentions!"
 
 #: frontend/kps-form.php:455
 msgid "The entered name is already taken. Please choose another!"
-msgstr "Der eingegebene Name ist schon vergeben. Bitte wähle einen anderen!"
+msgstr "The entered name is already taken. Please choose another!"
 
 #: frontend/kps-form.php:461
 msgid "The entered email address already exists. Please choose another!"
-msgstr ""
-"Die eingegebene Email-Adresse existiert bereits. Bitte wähle eine andere!"
+msgstr "The entered email address already exists. Please choose another!"
 
 #: frontend/kps-form.php:467
 msgid "Your entry is too short. The minimum number of words is"
-msgstr "Dein Eintrag ist zu kurz. Die mindestanzahl an Wörtern beträgt"
+msgstr "Your entry is too short. The minimum number of words is"
 
 #: frontend/kps-form.php:476
 msgid "Please accept the Terms and Conditions and GDPR!"
-msgstr ""
-"Bitte akzeptieren Sie die Allgemeinen Geschäftsbedingungen und die DSGVO!"
+msgstr "Please accept the Terms and Conditions and GDPR!"
 
 #: frontend/kps-form.php:482
 msgid "Please accept the Terms and Conditions!"
-msgstr "Bitte akzeptiere die Allgemeinen Geschäftsbedingungen!"
+msgstr "Please accept the Terms and Conditions!"
 
 #: frontend/kps-form.php:488
 msgid "Please accept the GDPR!"
-msgstr "Bitte akzeptieren Sie die DSGVO!"
+msgstr "Please accept the GDPR!"
 
 #: frontend/kps-form.php:501
 msgid "Please ensure you have completed every field in the form!"
-msgstr "Bitte fülle das Formular vollständig aus!"
+msgstr "Please ensure you have completed every field in the form!"
 
 #: frontend/kps-form.php:515
 msgid "Error! Form is incorrect!"
-msgstr "Fehler! Formular ist fehlerhaft!"
+msgstr "Error! Form is incorrect!"
 
 #: frontend/kps-form.php:527
 msgid "Close form"
-msgstr "Formular schließen"
+msgstr "Close form"
 
 #: frontend/kps-form.php:545 functions/kps-privacy.php:171
 msgid "Name"
@@ -1638,11 +1627,11 @@ msgstr "Name"
 
 #: frontend/kps-form.php:546
 msgid "First name, name or nickname"
-msgstr "Vorname, Name oder Spitzname"
+msgstr "First name, name or nickname"
 
 #: frontend/kps-form.php:616
 msgid "How would you like to be contacted?"
-msgstr "Wie möchtest du kontaktiert werden?"
+msgstr "How would you like to be contacted?"
 
 #: frontend/kps-form.php:630
 msgid "0351/123456"
@@ -1660,7 +1649,7 @@ msgstr "https://m.me/[Login-Name][.xyz]"
 
 #: frontend/kps-form.php:685
 msgid "Email, mobile number or Skype username"
-msgstr "Email, Mobiltelefon oder Skype-Username"
+msgstr "Email, mobile number or Skype username"
 
 #: frontend/kps-form.php:707
 msgid "Threema-ID"
@@ -1668,11 +1657,11 @@ msgstr "Threema-ID"
 
 #: frontend/kps-form.php:740
 msgid "Email or mobile number"
-msgstr "Email oder Mobiltelefon"
+msgstr "Email or mobile number"
 
 #: frontend/kps-form.php:751
 msgid "https://www.your-website.com"
-msgstr "https://www.deine-Webseite.de"
+msgstr "https://www.your-website.com/"
 
 #: frontend/kps-form.php:762
 msgid "https://facebook.com/[Login-Name][.xyz]"
@@ -1684,123 +1673,121 @@ msgstr "https://instagram.com/[Login-Name]"
 
 #: frontend/kps-form.php:812
 msgid "Send"
-msgstr "Senden"
+msgstr "Send"
 
 #: frontend/kps-form.php:821
 msgid "Required fields"
-msgstr "Pflichtfelder"
+msgstr "Required fields"
 
 #: frontend/kps-form.php:822
 msgid ""
 "As a registered user, the registered login / display name and the "
 "corresponding email address are automatically used. This can not be changed!"
 msgstr ""
-"Als registierter Nutzer wird automatisch der registierte Login-/ Display-"
-"Name und die dazugehörige Email-Adresse eingesetzt. Dieser kann nicht "
-"geändert werden!"
+"As a registered user, the registered login / display name and the "
+"corresponding email address are automatically used. This can not be changed!"
 
 #: frontend/kps-form.php:823
 msgid ""
 "All contact details, except those that may be publicly accessible in the "
 "user profile, are not published, but can only be accessed!"
 msgstr ""
-"Alle Kontaktdaten, außer die ggf. im Benutzerprofil öffentlich zugänglich "
-"sind, werden nicht veröffentlicht, sondern können nur abgerufen werden!"
+"All contact details, except those that may be publicly accessible in the "
+"user profile, are not published, but can only be accessed!"
 
 #: frontend/kps-report.php:121
 msgid "We will process your message as soon as possible!"
-msgstr "Wir werden schnellstmöglich deine Meldung bearbeiten!"
+msgstr "We will process your message as soon as possible!"
 
 #: frontend/kps-report.php:129 frontend/kps-requirement.php:149
 #: frontend/kps-verify.php:165
 msgid "The entry has been deleted!"
-msgstr "Der Eintrag wurde gelöscht!"
+msgstr "The entry has been deleted!"
 
 #: frontend/kps-report.php:133 frontend/kps-requirement.php:153
 #: frontend/kps-verify.php:169
 msgid "Error! Entry not available!"
-msgstr "Fehler! Eintrag nicht vorhanden!"
+msgstr "Error! Entry not available!"
 
 #: frontend/kps-report.php:143 frontend/kps-report.php:169
 msgid "Error! Entry could not be reported!"
-msgstr "Fehler! Eintrag konnte nicht gemeldet werden!"
+msgstr "Error! Entry could not be reported!"
 
 #: frontend/kps-report.php:162
 msgid "No message reason was selected!"
-msgstr "Es wurde kein Meldungsgrund ausgewählt!"
+msgstr "No message reason was selected!"
 
 #: frontend/kps-report.php:163
 msgid "The Entry-ID is wrong!"
-msgstr "Die Eintrag-ID ist falsch!"
+msgstr "The Entry-ID is wrong!"
 
 #: frontend/kps-requirement.php:114
 msgid "You must be logged in to get contact details!"
-msgstr "Du musst eingeloggt sein, um Kontaktdaten abzurufen!"
+msgstr "You must be logged in to get contact details!"
 
 #: frontend/kps-requirement.php:140
 msgid "Thank you!"
-msgstr "Vielen Dank!"
+msgstr "Thank you!"
 
 #: frontend/kps-requirement.php:143
 msgid "Contact data sent!"
-msgstr "Kontaktdaten versendet!"
+msgstr "Contact data sent!"
 
 #: frontend/kps-requirement.php:159 frontend/kps-verify.php:208
 msgid "The data can only be retrieved once!"
-msgstr "Die Daten können nur einmalig abgerufen werden!"
+msgstr "The data can only be retrieved once!"
 
 #: frontend/kps-requirement.php:163 frontend/kps-requirement.php:173
 msgid "Error! Requirement!"
-msgstr "Fehler! Anforderung!"
+msgstr "Error! Requirement!"
 
 #: frontend/kps-requirement.php:169
 msgid "The Requirement-Key has expired! Call the contact data again!"
-msgstr ""
-"Der Anforderungs-Schlüssel ist abgelaufen! Rufe die Kontaktdaten erneut ab!"
+msgstr "The Requirement-Key has expired! Call the contact data again!"
 
 #: frontend/kps-requirement.php:185
 msgid "Error! Requirement-Key!"
-msgstr "Fehler! Anforderungsschlüssel!"
+msgstr "Error! Requirement-Key!"
 
 #: frontend/kps-requirement.php:195 frontend/kps-requirement.php:218
 msgid "Error! Contact details could not be sent!"
-msgstr "Fehler! Kontaktdaten konnten nicht versendet werden!"
+msgstr "Error! Contact details could not be sent!"
 
 #: frontend/kps-requirement.php:211
 msgid "The password is invalid!"
-msgstr "Das eingegebene Passwort ist ungültig!"
+msgstr "The password is invalid!"
 
 #: frontend/kps-requirement.php:212 frontend/kps-verify.php:209
 msgid "The Requirement-ID is wrong!"
-msgstr "Die Anforderungs-ID ist falsch!"
+msgstr "The Requirement-ID is wrong!"
 
 #: frontend/kps-verify.php:127
 msgid "You need to register to require contact details!"
-msgstr "Du musst dich registieren, um Kontaktdaten anzufordern!"
+msgstr "You need to register to require contact details!"
 
 #: frontend/kps-verify.php:159
 msgid "Verification sent!"
-msgstr "Verifzierung versendet!"
+msgstr "Verification sent!"
 
 #: frontend/kps-verify.php:191 frontend/kps-verify.php:215
 msgid "Error! Verification-Email could not be sent!"
-msgstr "Fehler! Verifzierungs-Email konnte nicht versendet werden!"
+msgstr "Error! Verification-Email could not be sent!"
 
 #: frontend/kps-widget.php:54
 msgid "Shows the last entries in the Climbing-Partner-Search."
-msgstr "Zeigt die letzten Einträge in der Kletterpartner-Suche."
+msgstr "Shows the last entries in the Climbing-Partner-Search."
 
 #: frontend/kps-widget.php:74 frontend/kps-widget.php:184
 msgid "Read more..."
-msgstr "Mehr lesen..."
+msgstr "Read more..."
 
 #: frontend/kps-widget.php:195
 msgid "Title"
-msgstr "Titel"
+msgstr "Title"
 
 #: frontend/kps-widget.php:197
 msgid "Number of entries"
-msgstr "Anzahl der Einträge"
+msgstr "Number of entries"
 
 #: frontend/kps-widget.php:213
 msgid "Linktext"
@@ -1809,30 +1796,30 @@ msgstr "Linktext"
 #: frontend/template/kps-template.php:70 frontend/template/kps-template.php:122
 #: frontend/template/kps-template.php:555
 msgid "Report an entry"
-msgstr "Eintrag melden"
+msgstr "Report an entry"
 
 #: frontend/template/kps-template.php:172
 msgid "Send contact information"
-msgstr "Kontaktdaten versenden"
+msgstr "Send contact information"
 
 #: frontend/template/kps-template.php:216
 #: frontend/template/kps-template.php:306 functions/kps-mail-contents.php:147
 msgid "Requirement"
-msgstr "Anforderung"
+msgstr "Requirement"
 
 #: frontend/template/kps-template.php:358
 #: frontend/template/kps-template.php:392
 msgid "Activate entry"
-msgstr "Eintrag aktivieren"
+msgstr "Activate entry"
 
 #: frontend/template/kps-template.php:442
 #: frontend/template/kps-template.php:476
 msgid "Delete entry"
-msgstr "Eintrag löschen"
+msgstr "Delete entry"
 
 #: frontend/template/kps-template.php:565
 msgid "Edit"
-msgstr "Bearbeiten"
+msgstr "Edit"
 
 #: functions/kps-functions.php:182
 msgid "Signal-Messenger"
@@ -1868,7 +1855,7 @@ msgstr "Skype-Messenger"
 
 #: functions/kps-mail-contents.php:49
 msgid "Entry unlocked"
-msgstr "Eintrag freigeschaltet"
+msgstr "Entry unlocked"
 
 #: functions/kps-mail-contents.php:50
 msgid ""
@@ -1896,27 +1883,27 @@ msgid ""
 "%blogurl%\n"
 "%blogemail%"
 msgstr ""
-"Ihr Eintrag wurde soeben freigeschaltet!\n"
+"Your entry has just been unlocked!\n"
 "\n"
-"Der Löschzeitpunkt für diesen Eintrag wurde auf %erasedatetime% gesetzt.\n"
+"The deletion time for this entry was set to %erasedatetime%.\n"
 "\n"
-"Dein Eintrag:\n"
+"Your entry:\n"
 "*******************\n"
-"Eintrag geschrieben am: %setdate%\n"
-"Eintrag freigegeben am: %unlockdatetime%\n"
-"Eintrag wird gelöscht am: %erasedatetime%\n"
+"Entry written on: %setdate%\n"
+"Entry released on: %unlockdatetime%\n"
+"Entry will be deleted on: %erasedatetime%\n"
 "\n"
 "%entrycontent%\n"
 "\n"
-"Deine Kontaktdaten:\n"
+"Your contact details:\n"
 "*******************\n"
 "Name: %authorname%\n"
 "Email: %authoremail%\n"
 "%authorcontactdata%\n"
 "\n"
-"Vielen Dank!\n"
-"Eurer Team\n"
-"%blogname%\n"
+"Many Thanks!\n"
+"Your team\n"
+"%blogname%.\n"
 "%blogurl%\n"
 "%blogemail%"
 
@@ -1958,38 +1945,38 @@ msgid ""
 "%blogurl%\n"
 "%blogemail%"
 msgstr ""
-"Sie haben gerade einen neuen Eintrag auf %blogname% gepostet.\n"
+"You have just posted a new entry on %blogname%.\n"
 "\n"
-"Damit dieser nun freigeschaltet werden kann, müssen Sie den\n"
-"Eintrag über folgenden Link bestätigten und Ihre Email-Adresse eingeben.\n"
-"Sollten Sie diesen Beitrag nicht freigeben, so wird dieser automatisch\n"
-"am %erasedatetime% aus unserer Datenbank gelöscht.\n"
+"To be able to publish it, you have to confirm it via the link\n"
+"below and enter your email address. If you do not release this\n"
+"post, it will be deleted automatically on %erasedatetime% from\n"
+"our database.\n"
 "\n"
-"Eintrag aktivieren:\n"
+"Activate entry:\n"
 "*******************\n"
-"%linkactivation%\n"
+"%linkaactivation%\n"
 "\n"
-"Eintrag löschen:\n"
+"Delete entry:\n"
 "*******************\n"
-"Passwort: %erasepassword%\n"
+"Password: %erasepassword%\n"
 "%linkdelete%\n"
 "\n"
-"Dein Eintrag:\n"
+"Your entry:\n"
 "*******************\n"
-"Eintrag geschrieben am: %setdate%\n"
-"Eintrag freigegeben am: %unlockdatetime%\n"
-"Eintrag wird gelöscht am: %erasedatetime%\n"
+"Entry written on: %setdate%\n"
+"Entry released on: %unlockdatetime%\n"
+"Entry will be deleted on: %erasedatetime%\n"
 "\n"
 "%entrycontent%\n"
 "\n"
-"Deine Kontaktdaten:\n"
+"Your contact details:\n"
 "*******************\n"
 "Name: %authorname%\n"
 "Email: %authoremail%\n"
 "%authorcontactdata%\n"
 "\n"
-"Vielen Dank!\n"
-"Eurer Team\n"
+"Many Thanks!\n"
+"Your team\n"
 "%blogname%\n"
 "%blogurl%\n"
 "%blogemail%"
@@ -2018,24 +2005,24 @@ msgid ""
 "%blogurl%\n"
 "%blogemail%"
 msgstr ""
-"Sie haben die Kontaktdaten für folgenden Eintrag angefordert.\n"
+"You have requested the contact details for the following entry.\n"
 "\n"
-"Eintrag:\n"
+"Entry:\n"
 "*******************\n"
-"Eintrag geschrieben am: %setdate%\n"
-"Eintrag freigegeben am: %unlockdatetime%\n"
-"Eintrag wird gelöscht am: %erasedatetime%\n"
+"Entry written on: %setdate%\n"
+"Entry released on: %unlockdatetime%\n"
+"Entry will be deleted on: %erasedatetime%\n"
 "\n"
 "%entrycontent%\n"
 "\n"
-"Die Kontaktdaten lauten:\n"
+"The contact details are:\n"
 "************************\n"
 "Name: %authorname%\n"
 "Email: %authoremail%\n"
 "%authorcontactdata%\n"
 "\n"
-"Wir wünschen Euch viel Spaß. Berg Heil!\n"
-"Eurer Team\n"
+"Have fun. Bergheil!\n"
+"Your team\n"
 "%blogname%\n"
 "%blogurl%\n"
 "%blogemail%"
@@ -2063,49 +2050,48 @@ msgid ""
 "%blogurl%\n"
 "%blogemail%"
 msgstr ""
-"Sie möchten die Kontaktdaten für folgenden Eintrag.\n"
+"You want the contact details for the following entry.\n"
 "\n"
-"Um die Kontaktdaten abrufen zu können, klicken Sie auf den Link und geben "
-"das Password ein.\n"
-"Der Anforderungsschlüssel ist 24 Stunden gültig!\n"
+"To retrieve the contact information, click on the link and enter the "
+"password.\n"
+"The request key is valid for 24 hours!\n"
 "\n"
-"Anforderungs-Link:\n"
+"Request link:\n"
 "*******************\n"
-"Passwort: %regpassword%\n"
+"Password: %regpassword%\n"
 "%linkreg%\n"
 "\n"
-"Eintrag:\n"
+"Entry:\n"
 "*******************\n"
 "%entrycontent%\n"
 "\n"
-"Vielen Dank!\n"
-"Eurer Team\n"
+"Many Thanks!\n"
+"Your team\n"
 "%blogname%\n"
 "%blogurl%\n"
 "%blogemail%"
 
 #: functions/kps-privacy.php:89
 msgid "No entries or requirements found in the Climbing-Partner-Search!"
-msgstr ""
-"Keine Einträge oder Anforderungen in der Kletterpartner-Suche gefunden!"
+msgstr "No entries or requirements found in the Climbing-Partner-Search!"
 
 #: functions/kps-privacy.php:100
 msgid "Entry deleted"
-msgstr "Eintrag gelöscht"
+msgstr "Entry deleted"
 
 #: functions/kps-privacy.php:116
 msgid "Request deleted"
-msgstr "Anforderung gelöscht"
+msgstr "Request deleted"
 
 #: functions/kps-privacy.php:121
 msgid ""
 "Delete not possible! You have obtained contact information of another author."
 msgstr ""
-"Löschen nicht möglich! Du hast Kontaktdaten eines anderen Autoren abgerufen."
+"Delete not possible! You have obtained contact information of another author."
 
 #: functions/kps-privacy.php:127
 msgid "No requirements found under this entry!"
-msgstr "Keine Anforderungen unter diesem Eintrag gefunden!"
+msgstr "No requirements found under this entry!"
 
 #: functions/kps-privacy.php:170
 msgid "User-Id"
@@ -2113,7 +2099,7 @@ msgstr "User-Id"
 
 #: functions/kps-privacy.php:173
 msgid "Additional contact options"
-msgstr "zusätzliche Kontaktmöglichkeiten"
+msgstr "Additional contact options"
 
 #: functions/kps-privacy.php:183
 msgid "URL"
@@ -2121,35 +2107,35 @@ msgstr "URL"
 
 #: functions/kps-privacy.php:184
 msgid "Contact details shipped"
-msgstr "Kontaktdaten versendet an"
+msgstr "Contact details shipped"
 
 #: functions/kps-privacy.php:263
 msgid "This entry is not visible!"
-msgstr "Dieser Eintrag ist nicht sichtbar!"
+msgstr "This entry is not visible!"
 
 #: functions/kps-privacy.php:277
 msgid "No personal-data sent!"
-msgstr "Keine personenbezogenen Daten versendet!"
+msgstr "No personal-data sent!"
 
 #: functions/kps-privacy.php:291
 msgid "Climbing-Partner-Search entries"
-msgstr "Kletterpartner-Suche Einträge"
+msgstr "Climbing-Partner-Search entries"
 
 #: kps-hooks.php:95
 msgid "Climbing-Partner"
-msgstr "Kletterpartner"
+msgstr "Climbing-Partner"
 
 #: kps-hooks.php:103 kps-hooks.php:214
 msgid "Settings"
-msgstr "Einstellungen"
+msgstr "Settings"
 
 #: kps-hooks.php:104
 msgid "GTC / GDPR"
-msgstr "AGB / DSGVO"
+msgstr "GTC / GDPR"
 
 #: kps-hooks.php:105
 msgid "Email Templates"
-msgstr "Email-Vorlagen"
+msgstr "Email Templates"
 
 #: kps-hooks.php:106
 msgid "Design"
@@ -2163,26 +2149,46 @@ msgid ""
 "send to the email address of the requester. We may also store your IP, host "
 "name and other system information to improve spam detection."
 msgstr ""
-"Wenn du das Kletterpartner-Suche Formular benutzen und einen Eintrag "
-"hinterlassen, speichern wir eingegebenen Daten in unserer Datenbank. Diese "
-"können je nachdem, wie der Seitenbetreiber dies eingestellt hat, abgerufen "
-"werden. Die gespeicherten Daten werden bei Abruf, automatisch, an die Email-"
-"Adresse des Anforderers versendet. Desweiteren speichern wir möglicherweise "
-"Ihre IP, den Hostnamen und andere Systemdaten, um die Spam-Erkennung zu "
-"verbessern."
+"If you use the climbing partner search form and leave an entry, your entered "
+"data will automatically be saved in our database. This can be retrieved "
+"depending on settings by the site operator. On request, stored data can be "
+"send to the email address of the requester. We may also store your IP, host "
+"name and other system information to improve spam detection."
 
 #: kps-hooks.php:148
 msgid ""
 "Entries that have been released are displayed visibly for a minimum of 1 day "
 "and automatically deleted after a maximum of 180 days."
 msgstr ""
-"Einträge, welche freigegeben wurden, werden minimal 1 Tag sichtbar angezeigt "
-"und nach maximal 180 Tagen automatisch gelöscht."
+"Entries that have been released are displayed visibly for a minimum of 1 day "
+"and automatically deleted after a maximum of 180 days."
 
 #: kps-hooks.php:149
 msgid ""
 "Entries that have not been released will be stored for a minimum of 30 days "
 "and automatically deleted after a maximum of 180 days."
 msgstr ""
-"Einträge, welche nicht freigegeben wurden, werden minimal 30 Tage "
-"gespeichert und nach maximal 180 Tagen automatisch, gelöscht."
+"Entries that have not been released will be stored for a minimum of 30 days "
+"and automatically deleted after a maximum of 180 days."
+
+#~ msgid "Walking/Trekking"
+#~ msgstr "Walking/Trekking"
+
+#~ msgid "https://wordpress.org/plugins/kletterpartner-suche/"
+#~ msgstr "https://en-au.wordpress.org/plugins/kletterpartner-suche/"
+
+#~ msgid "Alexander Ott"
+#~ msgstr "Alexander Ott"
+
+#~ msgid "http://nirus-online.de"
+#~ msgstr "http://nirus-online.de/"
+
+#~ msgid ""
+#~ "„Kletterpartner-Suche“ verbindet Kletter-, Wander-, Tracking- und "
+#~ "Sportfreunde miteinander."
+#~ msgstr ""
+#~ "The \"Climbing-Partner-Search\" connects climbing, hiking, tracking and "
+#~ "sports fans."
+
+#~ msgid "Kletterpartner-Suche"
+#~ msgstr "Climbing-Partner-Search"

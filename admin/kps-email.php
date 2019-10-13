@@ -198,7 +198,7 @@ function kps_UnlockEmail()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Error serializing the data', 'kps') . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('Error serializing the data', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -212,7 +212,7 @@ function kps_UnlockEmail()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . $error[$key] . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . $error[$key] . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -225,7 +225,7 @@ function kps_UnlockEmail()
         {
             echo '
             <div class="notice notice-error is-dismissible">
-            	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
+            	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
             	<button type="button" class="notice-dismiss">
             		<span class="screen-reader-text">Dismiss this notice.</span>
             	</button>
@@ -234,41 +234,8 @@ function kps_UnlockEmail()
         }
     }
     // Hole Email-Vorlagen Einstellungen
-    $checkedMailSettings = kps_unserialize(get_option('kps_adminUnlockMailSettings', false));
-
-    if ($checkedMailSettings === false )
-    {
-        $checkedUnlockSubject   = esc_html__('Unlocked', 'kps');
-        $checkedUnlockContent   =
-esc_html__('Your entry has just been unlocked!
-
-The deletion time for this entry was set to %erasedatetime%.
-
-Your entry:
-*******************
-Entry written on: %setdate%
-Entry released on: %unlockdatetime%
-Entry will be deleted on: %erasedatetime%
-
-%entrycontent%
-
-Your contact details:
-*******************
-Name: %authorname%
-Email: %authoremail%
-%authorcontactdata%
-
-Many Thanks!
-Your team
-%blogname%.
-%blogurl%
-%blogemail%', 'kps');
-    }
-    else
-    {
-        $checkedUnlockSubject   = esc_attr($checkedMailSettings['kpsUnlockSubject']);
-        $checkedUnlockContent   = esc_attr($checkedMailSettings['kpsUnlockContent']);
-    }
+    $writeMailSettings  = kps_unserialize(get_option('kps_adminUnlockMailSettings', false));
+    $writeMail          = kps_mailcontent_adminUnlock($writeMailSettings);
 
     // Zeit
     if (kps_unserialize(get_option( 'kps_output', false))['kpsEmailSetTime'] === 'true')
@@ -300,35 +267,33 @@ Your team
             <div class="kps-divTable kps_container">
             	<div class="kps-divTableBody">
             		<div class="kps-divTableRow">
-            			<div class="kps-divTableCell" style="width: 50%; vertical-align: top;">
-                            <form class="form" action="" method="post">
-                                <table class="table">
-                                    <tbody>
-                                        <tr>
-                                            <td><label for="kpsUnlockSubject"><b>' . esc_html__('Email subject', 'kps') . '</b></label></td>
-                                        </tr>
-                                        <tr>
-                                            <td><input type="text" name="kpsUnlockSubject" id="kpsUnlockSubject" autocomplete="off" class="form_field" value="' . $checkedUnlockSubject . '" /></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label for="kpsUnlockContent"></label>
-                                                <textarea name="kpsUnlockContent" id="kpsUnlockContent" class="textarea" aria-required="true" required="required">' . esc_textarea($checkedUnlockContent) . '</textarea>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="kps-br"></td>
-                                        </tr>
-                                        <tr>
-                                            <td  style="text-align: center;">
-                                                <input type="hidden" id="kps_tab" name="kps_tab" value="kps_UnlockEmail" />
-                                                <input type="hidden" id="kpsUnlockToken" name="kpsUnlockToken" value="' . $token . '" />
-                                                <input class="button-primary" type="submit" name="submitUnlock" value="' . esc_html__('Save', 'kps') . '" />
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </form>
+        			<div class="kps-divTableCell" style="width: 50%; vertical-align: top;">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td><label for="kpsUnlockSubject"><b>' . esc_html__('Email subject', 'kps') . '</b></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="kpsUnlockSubject" id="kpsUnlockSubject" autocomplete="off" class="form_field" value="' . $writeMail['Subject'] . '" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="kpsUnlockContent"></label>
+                                            <textarea name="kpsUnlockContent" id="kpsUnlockContent" class="textarea" aria-required="true" required="required">' . esc_textarea($writeMail['Content']) . '</textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kps-br"></td>
+                                    </tr>
+                                    <tr>
+                                        <td  style="text-align: center;">
+                                            <input type="hidden" id="kps_tab" name="kps_tab" value="kps_UnlockEmail" />
+                                            <input type="hidden" id="kpsUnlockToken" name="kpsUnlockToken" value="' . $token . '" />
+                                            <input class="button-primary" type="submit" name="submitUnlock" value="' . esc_html__('Save', 'kps') . '" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         <div class="kps-divTableCell" style="width: 50%; vertical-align: top;">
                             <table class="table">
@@ -503,7 +468,7 @@ function kps_ContactDataEmail()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Error serializing the data', 'kps') . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('Error serializing the data', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -517,7 +482,7 @@ function kps_ContactDataEmail()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . $error[$key] . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . $error[$key] . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -530,7 +495,7 @@ function kps_ContactDataEmail()
         {
             echo '
             <div class="notice notice-error is-dismissible">
-            	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
+            	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
             	<button type="button" class="notice-dismiss">
             		<span class="screen-reader-text">Dismiss this notice.</span>
             	</button>
@@ -540,39 +505,8 @@ function kps_ContactDataEmail()
     }
 
     // Hole Email-Vorlagen Einstellungen
-    $checkedMailSettings    = kps_unserialize(get_option('kps_userMailSettings', false));
-
-    if ($checkedMailSettings === false )
-    {
-        $checkedContactDataSubject = esc_html__('Contact details', 'kps');
-        $checkedContactDataContent =
-esc_html__('You have requested the contact details for the following entry.
-
-Entry:
-*******************
-Entry written on: %setdate%
-Entry released on: %unlockdatetime%
-Entry will be deleted on: %erasedatetime%
-
-%entrycontent%
-
-The contact details are:
-************************
-Name: %authorname%
-Email: %authoremail%
-%authorcontactdata%
-
-Have fun. Bergheil!
-Your team
-%blogname%
-%blogurl%
-%blogemail%', 'kps');
-    }
-    else
-    {
-        $checkedContactDataSubject = esc_attr($checkedMailSettings['kpsContactDataSubject']);
-        $checkedContactDataContent = esc_attr($checkedMailSettings['kpsContactDataContent']);
-    }
+    $writeMailSettings  = kps_unserialize(get_option('kps_userMailSettings', false));
+    $writeMail          = kps_mailcontent_requirement($writeMailSettings);
 
     // Zeit
     if (kps_unserialize(get_option('kps_output', false))['kpsEmailSetTime'] === 'true')
@@ -605,34 +539,32 @@ Your team
             	<div class="kps-divTableBody">
             		<div class="kps-divTableRow">
             			<div class="kps-divTableCell" style="width: 50%; vertical-align: top;">
-                            <form class="form" action="" method="post">
-                                <table class="table">
-                                    <tbody>
-                                        <tr>
-                                            <td><label for="kpsContactDataSubject"><b>' . esc_html__('Email subject', 'kps') . '</b></label></td>
-                                        </tr>
-                                        <tr>
-                                            <td><input type="text" name="kpsContactDataSubject" id="kpsContactDataSubject" autocomplete="off" class="form_field" value="' . $checkedContactDataSubject . '" /></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label for="kpsContactDataContent"></label>
-                                                <textarea name="kpsContactDataContent" id="kpsContactDataContent" class="textarea" aria-required="true" required="required">' . esc_textarea($checkedContactDataContent) . '</textarea>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="kps-br"></td>
-                                        </tr>
-                                        <tr>
-                                            <td  style="text-align: center;">
-                                                <input type="hidden" id="kps_tab" name="kps_tab" value="kps_ContactDataEmail" />
-                                                <input type="hidden" id="kpsContactDataToken" name="kpsContactDataToken" value="' . $token . '" />
-                                                <input class="button-primary" type="submit" name="submitContactData" value="' . esc_html__('Save', 'kps') . '">
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </form>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td><label for="kpsContactDataSubject"><b>' . esc_html__('Email subject', 'kps') . '</b></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="kpsContactDataSubject" id="kpsContactDataSubject" autocomplete="off" class="form_field" value="' . $writeMail['Subject'] . '" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="kpsContactDataContent"></label>
+                                            <textarea name="kpsContactDataContent" id="kpsContactDataContent" class="textarea" aria-required="true" required="required">' . esc_textarea($writeMail['Content']) . '</textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kps-br"></td>
+                                    </tr>
+                                    <tr>
+                                        <td  style="text-align: center;">
+                                            <input type="hidden" id="kps_tab" name="kps_tab" value="kps_ContactDataEmail" />
+                                            <input type="hidden" id="kpsContactDataToken" name="kpsContactDataToken" value="' . $token . '" />
+                                            <input class="button-primary" type="submit" name="submitContactData" value="' . esc_html__('Save', 'kps') . '">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         <div class="kps-divTableCell" style="width: 50%; vertical-align: top;">
                             <table class="table">
@@ -810,7 +742,7 @@ function kps_VerificationEmail()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Error serializing the data', 'kps') . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('Error serializing the data', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -824,7 +756,7 @@ function kps_VerificationEmail()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . $error[$key] . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . $error[$key] . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -837,7 +769,7 @@ function kps_VerificationEmail()
         {
             echo '
             <div class="notice notice-error is-dismissible">
-            	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
+            	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
             	<button type="button" class="notice-dismiss">
             		<span class="screen-reader-text">Dismiss this notice.</span>
             	</button>
@@ -847,37 +779,8 @@ function kps_VerificationEmail()
     }
 
     // Hole Email-Vorlagen Einstellungen
-    $checkedMailSettings    = kps_unserialize(get_option('kps_userMailContactSettings', false));
-
-    if ($checkedMailSettings === false )
-    {
-        $checkedVerifictionSubject = esc_html__('Request contact information', 'kps');
-        $checkedVerifictionContent =
-esc_html__('You want the contact details for the following entry.
-
-To retrieve the contact information, click on the link and enter the password.
-The request key is valid for 24 hours!
-
-Request link:
-*******************
-Password: %regpassword%
-%linkreg%
-
-Entry:
-*******************
-%entrycontent%
-
-Many Thanks!
-Your team
-%blogname%
-%blogurl%
-%blogemail%', 'kps');
-    }
-    else
-    {
-        $checkedVerifictionSubject = esc_attr($checkedMailSettings['kpsVerifictionSubject']);
-        $checkedVerifictionContent = esc_attr($checkedMailSettings['kpsVerifictionContent']);
-    }
+    $writeMailSettings  = kps_unserialize(get_option('kps_userMailContactSettings', false));
+    $writeMail          = kps_mailcontent_verify($writeMailSettings);
 
     // Zeit
     if (kps_unserialize(get_option( 'kps_output', false))['kpsEmailSetTime'] === 'true')
@@ -910,34 +813,32 @@ Your team
             	<div class="kps-divTableBody">
             		<div class="kps-divTableRow">
             			<div class="kps-divTableCell" style="width: 50%;">
-                            <form class="form" action="" method="post">
-                                <table class="table">
-                                    <tbody>
-                                        <tr>
-                                            <td><label for="kpsVerifictionSubject"><b>' . esc_html__('Email subject', 'kps') . '</b></label></td>
-                                        </tr>
-                                        <tr>
-                                            <td><input type="text" name="kpsVerifictionSubject" id="kpsVerifictionSubject" autocomplete="off" class="form_field" value="' . $checkedVerifictionSubject . '" /></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label for="kpsVerifictionContent"></label>
-                                                <textarea name="kpsVerifictionContent" id="kpsVerifictionContent" class="textarea" aria-required="true" required="required">' . esc_textarea($checkedVerifictionContent) . '</textarea>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="kps-br"></td>
-                                        </tr>
-                                        <tr>
-                                            <td  style="text-align: center;">
-                                                <input type="hidden" id="kps_tab" name="kps_tab" value="kps_VerificationEmail" />
-                                                <input type="hidden" id="kpsVerifictionToken" name="kpsVerifictionToken" value="' . $token . '" />
-                                                <input class="button-primary" type="submit" name="submitVerifiction" value="' . esc_html__('Save', 'kps') . '" />
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </form>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td><label for="kpsVerifictionSubject"><b>' . esc_html__('Email subject', 'kps') . '</b></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="kpsVerifictionSubject" id="kpsVerifictionSubject" autocomplete="off" class="form_field" value="' . $writeMail['Subject'] . '" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="kpsVerifictionContent"></label>
+                                            <textarea name="kpsVerifictionContent" id="kpsVerifictionContent" class="textarea" aria-required="true" required="required">' . esc_textarea($writeMail['Content']) . '</textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kps-br"></td>
+                                    </tr>
+                                    <tr>
+                                        <td  style="text-align: center;">
+                                            <input type="hidden" id="kps_tab" name="kps_tab" value="kps_VerificationEmail" />
+                                            <input type="hidden" id="kpsVerifictionToken" name="kpsVerifictionToken" value="' . $token . '" />
+                                            <input class="button-primary" type="submit" name="submitVerifiction" value="' . esc_html__('Save', 'kps') . '" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         <div class="kps-divTableCell" style="width: 50%; vertical-align: top;">
                             <table class="table">
@@ -1096,7 +997,7 @@ function kps_ActivationEmail()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Error serializing the data', 'kps') . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('Error serializing the data', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -1110,7 +1011,7 @@ function kps_ActivationEmail()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . $error[$key] . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . $error[$key] . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -1123,7 +1024,7 @@ function kps_ActivationEmail()
         {
             echo '
             <div class="notice notice-error is-dismissible">
-            	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
+            	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
             	<button type="button" class="notice-dismiss">
             		<span class="screen-reader-text">Dismiss this notice.</span>
             	</button>
@@ -1133,53 +1034,8 @@ function kps_ActivationEmail()
     }
 
     // Hole Email-Vorlagen Einstellungen
-    $checkedMailSettings = kps_unserialize(get_option('kps_authorMailSettings', false));
-
-    if ($checkedMailSettings === false )
-    {
-        $checkedActivationSubject   = esc_html__('Activation', 'kps');
-        $checkedActivationContent   =
-esc_html__('You have just posted a new entry on %blogname%.
-
-To be able to publish it, you have to confirm it via the link
-below and enter your email address. If you do not release this
-post, it will be deleted automatically on %erasedatetime% from
-our database.
-
-Activate entry:
-*******************
-%linkaactivation%
-
-Delete entry:
-*******************
-Password: %erasepassword%
-%linkdelete%
-
-Your entry:
-*******************
-Entry written on: %setdate%
-Entry released on: %unlockdatetime%
-Entry will be deleted on: %erasedatetime%
-
-%entrycontent%
-
-Your contact details:
-*******************
-Name: %authorname%
-Email: %authoremail%
-%authorcontactdata%
-
-Many Thanks!
-Your team
-%blogname%
-%blogurl%
-%blogemail%', 'kps');
-    }
-    else
-    {
-        $checkedActivationSubject   = esc_attr($checkedMailSettings['kpsActivationSubject']);
-        $checkedActivationContent   = esc_attr($checkedMailSettings['kpsActivationContent']);
-    }
+    $writeMailSettings  = kps_unserialize(get_option('kps_authorMailSettings', false));
+    $writeMail          = kps_mailcontent_activation($writeMailSettings);
 
     // Zeit
     if (kps_unserialize(get_option('kps_output', false))['kpsEmailSetTime'] === 'true')
@@ -1212,34 +1068,32 @@ Your team
             	<div class="kps-divTableBody">
             		<div class="kps-divTableRow">
             			<div class="kps-divTableCell" style="width: 50%; vertical-align: top;">
-                            <form class="form" action="" method="post">
-                                <table class="table">
-                                    <tbody>
-                                        <tr>
-                                            <td><label for="kpsActivationSubject"><b>' . esc_html__('Email subject', 'kps') . '</b></label></td>
-                                        </tr>
-                                        <tr>
-                                            <td><input type="text" name="kpsActivationSubject" id="kpsActivationSubject" autocomplete="off" class="form_field" value="' . $checkedActivationSubject . '" /></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label for="kpsActivationContent"></label>
-                                                <textarea name="kpsActivationContent" id="kpsActivationContent" class="textarea" data-autoresize aria-required="true" required="required">' . esc_textarea($checkedActivationContent) . '</textarea>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="kps-br"></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;">
-                                                <input type="hidden" id="kps_tab" name="kps_tab" value="kps_ActivationEmail" />
-                                                <input type="hidden" id="kpsActivationToken" name="kpsActivationToken" value="' . $token . '" />
-                                                <input class="button-primary" type="submit" name="submitActivation" value="' . esc_html__('Save', 'kps') . '" />
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </form>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td><label for="kpsActivationSubject"><b>' . esc_html__('Email subject', 'kps') . '</b></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="kpsActivationSubject" id="kpsActivationSubject" autocomplete="off" class="form_field" value="' . $writeMail['Subject'] . '" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="kpsActivationContent"></label>
+                                            <textarea name="kpsActivationContent" id="kpsActivationContent" class="textarea" data-autoresize aria-required="true" required="required">' . esc_textarea($writeMail['Content']) . '</textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kps-br"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center;">
+                                            <input type="hidden" id="kps_tab" name="kps_tab" value="kps_ActivationEmail" />
+                                            <input type="hidden" id="kpsActivationToken" name="kpsActivationToken" value="' . $token . '" />
+                                            <input class="button-primary" type="submit" name="submitActivation" value="' . esc_html__('Save', 'kps') . '" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         <div class="kps-divTableCell" style="width: 50%; vertical-align: top;">
                             <table class="table">

@@ -117,7 +117,7 @@ function kps_admin_overview_setting() {
     // Hole Report Einstellungen
     $report = kps_unserialize(get_option('kps_report', false));
     $adminSendReportAfter = $report['kpsAdminSendReportAfter'];
-    $reportIsActivated = ($report['kpsReportActivation'] === 'true') ? '<span class="dashicons dashicons-yes"></span>' : '<span class="dashicons dashicons-no-alt"></span>';
+    $reportIsActivated = ($report['kpsReportActivation'] === 'true') ? '<span class="dashicons dashicons-yes" style="color: green"></span>' : '<span class="dashicons dashicons-no-alt" style="color: red"></span>';
 
     // Hole Usereinstellungen
     $userSettings = kps_unserialize(get_option('kps_userSettings', false));
@@ -131,12 +131,12 @@ function kps_admin_overview_setting() {
 
     if ($isUserPrivacyAGB === true)
     {
-        $isUserPrivacyAGB   = '<span class="dashicons dashicons-yes"></span>';
+        $isUserPrivacyAGB   = '<span class="dashicons dashicons-yes" style="color: green"></span>';
         $errorAGBpage       = '';
     }
     else
     {
-        $isUserPrivacyAGB = '<span class="dashicons dashicons-no-alt"></span>';
+        $isUserPrivacyAGB = '<span class="dashicons  dashicons-no-alt" style="color: red"></span>';
         $errorAGBpage       = 'form_glowing';
 
     }
@@ -150,19 +150,19 @@ function kps_admin_overview_setting() {
 
     if ($isUserPrivacyDSGVO === true)
     {
-        $isUserPrivacyDSGVO = '<span class="dashicons dashicons-yes"></span>';
+        $isUserPrivacyDSGVO = '<span class="dashicons dashicons-yes" style="color: green"></span>';
         $errorDSGVOpage     = '';
     }
     else
     {
-        $isUserPrivacyDSGVO = '<span class="dashicons dashicons-no-alt"></span>';
+        $isUserPrivacyDSGVO = '<span class="dashicons dashicons-no-alt" style="color: red"></span>';
         $errorDSGVOpage     = 'form_glowing';
 
     }
 
     // Hole Captcha Einstellungen
     $captchaSiteKey     = get_option('kps_captcha', false);
-    $isCaptchaActivated = ($captchaSiteKey === 'true') ? '<span class="dashicons dashicons-yes"></span>' : '<span class="dashicons dashicons-no-alt"></span>';
+    $isCaptchaActivated = ($captchaSiteKey === 'true') ? '<span class="dashicons dashicons-yes" style="color: green"></span>' : '<span class="dashicons dashicons-no-alt" style="color: red"></span>';
     $errorCaptcha       = ($captchaSiteKey === 'true') ? '' : 'form_glowing';
 
     echo '

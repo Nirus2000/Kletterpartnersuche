@@ -78,10 +78,21 @@ function kps_DesignSettings()
     			<a href="" class="nav-tab <?php if ($kps_tab == 'kps_Output') { echo "nav-tab-active";} ?>" rel="kps_Output">
                     <div style="text-align: center;"><?php  esc_html_e('Output', 'kps'); ?></div>
                 </a>
+    			<a href="" class="nav-tab <?php if ($kps_tab == 'kps_Output') { echo "nav-tab-active";} ?>" rel="kps_Translations">
+                    <div style="text-align: center;"><?php  esc_html_e('Translations', 'kps'); ?></div>
+                </a>
     		</h2>
 
             <form name="kps_options" class="kps_options kps_Shortcodes <?php if ($kps_tab == 'kps_Shortcodes') { echo "active";} ?>" method="post" action="">
-                <?php kps_Shortcodes(); ?>
+                <?php
+                    kps_Shortcodes();
+                ?>
+    		</form>
+
+            <form name="kps_options" class="kps_options kps_Translations <?php if ($kps_tab == 'kps_Translations') { echo "active";} ?>" method="post" action="">
+                <?php
+                    kps_Translations();
+                ?>
     		</form>
 
             <form name="kps_options" class="kps_options kps_Icons <?php if ($kps_tab == 'kps_Icons') { echo "active";} ?>" method="post" action="">
@@ -91,7 +102,9 @@ function kps_DesignSettings()
     		</form>
 
             <form name="kps_options" class="kps_options kps_Output <?php if ($kps_tab == 'kps_Output') { echo "active";} ?>" method="post" action="">
-                <?php kps_Output(); ?>
+                <?php
+                    kps_Output();
+                ?>
     		</form>
             </div>
         </div>
@@ -157,7 +170,7 @@ function kps_Icons()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . $error[$key] . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . $error[$key] . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -170,7 +183,7 @@ function kps_Icons()
         {
             echo '
             <div class="notice notice-error is-dismissible">
-            	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
+            	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
             	<button type="button" class="notice-dismiss">
             		<span class="screen-reader-text">Dismiss this notice.</span>
             	</button>
@@ -180,55 +193,55 @@ function kps_Icons()
     }
 
     // Hole Icon-Pak Einstellungen
-    $checkedIcons = get_option('kps_icon', false);
+    $kpsIcons = get_option('kps_icon', false);
 
     echo '
-            <div class="kps-divTable kps_container" style="width: 60%;">
+            <div class="kps-divTable kps_container" style="width: 80%;">
             	<div class="kps-divTableBody">
             		<div class="kps-divTableRow">
-            			<div class="kps-divTableCell" style="width: 100%; vertical-align: top;">
+            			<div class="kps-divTableCell" style="width: 100%; vertical-align: top">
                             <form class="form" action="" method="post">
                                 <table class="table_list">
                                     <thead>
                                         <tr>
                                             <th class="th_list_top" scope="col"></th>
                                             <th class="th_list_top" scope="col"></th>
-                                            <th class="th_list_top" scope="col">' . esc_html__('Hall', 'kps') . '</th>
-                                            <th class="th_list_top" scope="col">' . esc_html__('Climbing', 'kps') . '</th>
-                                            <th class="th_list_top" scope="col">' . esc_html__('Walking/Trekking', 'kps') . '</th>
-                                            <th class="th_list_top" scope="col">' . esc_html__('Travels', 'kps') . '</th>
-                                            <th class="th_list_top" scope="col">' . esc_html__('Unique', 'kps') . '</th>
-                                            <th class="th_list_top" scope="col">' . esc_html__('Regularly', 'kps') . '</th>
-                                            <th class="th_list_top" scope="col">' . esc_html__('Single person', 'kps') . '</th>
-                                            <th class="th_list_top" scope="col">' . esc_html__('Family', 'kps') . '</th>
-                                            <th class="th_list_top" scope="col">' . esc_html__('Club/Group', 'kps') . '</th>
+                                            <th class="th_list_top" scope="col">' . kps_getFormTranslation('Hall') . '</th>
+                                            <th class="th_list_top" scope="col">' . kps_getFormTranslation('Climbing') . '</th>
+                                            <th class="th_list_top" scope="col">' . kps_getFormTranslation('Walking') . '</th>
+                                            <th class="th_list_top" scope="col">' . kps_getFormTranslation('Travels') . '</th>
+                                            <th class="th_list_top" scope="col">' . kps_getFormTranslation('Unique') . '</th>
+                                            <th class="th_list_top" scope="col">' . kps_getFormTranslation('Regularly') . '</th>
+                                            <th class="th_list_top" scope="col">' . kps_getFormTranslation('Single person') . '</th>
+                                            <th class="th_list_top" scope="col">' . kps_getFormTranslation('Family') . '</th>
+                                            <th class="th_list_top" scope="col">' . kps_getFormTranslation('Club/Group') . '</th>
                                         </tr>
                                     </thead>
                                 	<tbody>
         ';
 
         $fc = 0;
-        $colors = array( 1 => 'black', 2 => 'blue', 3 => 'red', 4 => 'green', 5 => 'yellow');
+        $colors = array( 1 => 'black', 2 => 'blue', 3 => 'orange', 4 => 'green', 5 => 'yellow');
 
         foreach ($colors AS $key => $color)
         {
             for ($i = 55; $i > 30; $i -= 5)
             {
-                $checked  = ($checkedIcons == $fc) ? 'checked' : '';
+                $checked  = ($kpsIcons == $fc) ? 'checked' : '';
 
                 echo '
                     <tr class="tr_list">
             			<td class="td_list" style="text-align: center;"><input id="kps_icon' . $i . '" name="kpsIconChoise" value="' . $fc . '" aria-required="true" required="required" type="radio" ' . $checked . '></td>
                         <td class="td_list kps-vert-text" style="text-align: center;"><b>' . $i . 'x' . $i . '</b></td>
-                        <td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/hall.svg" height="' . $i . '" alt="' . esc_html__('Hall', 'kps') . '" title="' . esc_html__('Hall', 'kps') . '" /></td>
-            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/nature.svg" height="' . $i . '" alt="' . esc_html__('Climbing', 'kps') . '" title="' . esc_html__('Climbing', 'kps') . '" /></td>
-            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/trekking.svg" height="' . $i . '" alt="' . esc_html__('Walking/Trekking', 'kps') . '" title="' . esc_html__('Walking/Trekking', 'kps') . '" /></td>
-            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/travel.svg" height="' . $i . '" alt="' . esc_html__('Travels', 'kps') . '" title="' . esc_html__('Travels', 'kps') . '" /></td>
-            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/onetime.svg" height="' . $i . '" alt="' . esc_html__('Unique', 'kps') . '" title="' . esc_html__('Unique', 'kps') . '" /></td>
-            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/moretime.svg" height="' . $i . '" alt="' . esc_html__('Regularly', 'kps') . '" title="' . esc_html__('Regularly', 'kps') . '" /></td>
-            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/goalone.svg" height="' . $i . '" alt="' . esc_html__('Single person', 'kps') . '" title="' . esc_html__('Single person', 'kps') . '" /></td>
-            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/family.svg" height="' . $i . '" alt="' . esc_html__('Family', 'kps') . '" title="' . esc_html__('Family', 'kps') . '" /></td>
-            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/comeclub.svg" height="' . $i . '" alt="' . esc_html__('Club/Group', 'kps') . '" title="' . esc_html__('Club/Group', 'kps') . '" /></td>
+                        <td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/hall.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Hall') . '" title="' . kps_getFormTranslation('Hall') . '" /></td>
+            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/nature.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Climbing') . '" title="' . kps_getFormTranslation('Climbing') . '" /></td>
+            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/trekking.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Walking') . '" title="' . kps_getFormTranslation('Walking') . '" /></td>
+            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/travel.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Travels') . '" title="' . kps_getFormTranslation('Travels') . '" /></td>
+            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/onetime.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Unique') . '" title="' . kps_getFormTranslation('Unique') . '" /></td>
+            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/moretime.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Regularly') . '" title="' . kps_getFormTranslation('Regularly') . '" /></td>
+            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/goalone.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Single person') . '" title="' . kps_getFormTranslation('Single person') . '" /></td>
+            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/family.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Family') . '" title="' . kps_getFormTranslation('Family') . '" /></td>
+            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/comeclub.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Club/Group') . '" title="' . kps_getFormTranslation('Club/Group') . '" /></td>
             		</tr>
                 ';
 
@@ -237,6 +250,9 @@ function kps_Icons()
         }
 
     echo '
+                                        <tr>
+                                            <td colspan="11" class="kps-br"></td>
+                                        </tr>
                                         <tr>
                                             <td colspan="11" class="hr"></td>
                                         </tr>
@@ -324,7 +340,7 @@ function kps_Output()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Error serializing the data', 'kps') . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('Error serializing the data', 'kps') . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -338,7 +354,7 @@ function kps_Output()
                 {
                     echo '
                     <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . $error[$key] . '</strong></p>
+                    	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . $error[$key] . '</strong></p>
                     	<button type="button" class="notice-dismiss">
                     		<span class="screen-reader-text">Dismiss this notice.</span>
                     	</button>
@@ -351,7 +367,7 @@ function kps_Output()
         {
             echo '
             <div class="notice notice-error is-dismissible">
-            	<p><strong>' . esc_html__('Error!', 'kps') . ':&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
+            	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
             	<button type="button" class="notice-dismiss">
             		<span class="screen-reader-text">Dismiss this notice.</span>
             	</button>
@@ -361,40 +377,43 @@ function kps_Output()
     }
 
     // Hole Output Einstellungen
-    $checkedOutput              = kps_unserialize(get_option('kps_output', false));
-    $checkedUnlockTime          = ($checkedOutput['kpsUnlockTime'] == 'true') ? 'checked' : '';
-    $checkedEmailSetTime        = ($checkedOutput['kpsEmailSetTime'] == 'true') ? 'checked' : '';
-    $checkedEmailUnlockTime     = ($checkedOutput['kpsEmailUnlockTime'] == 'true') ? 'checked' : '';
-    $checkedEmailDeleteTime     = ($checkedOutput['kpsEmailDeleteTime'] == 'true') ? 'checked' : '';
-    $checkedLegendActivated     = ($checkedOutput['kpsLegendActivated'] == 'true') ? 'checked' : '';
+    $kpsOutput              = kps_unserialize(get_option('kps_output', false));
+    $kpsUnlockTime          = ($kpsOutput['kpsUnlockTime'] == 'true') ? 'checked' : '';
+    $kpsEmailSetTime        = ($kpsOutput['kpsEmailSetTime'] == 'true') ? 'checked' : '';
+    $kpsEmailUnlockTime     = ($kpsOutput['kpsEmailUnlockTime'] == 'true') ? 'checked' : '';
+    $kpsEmailDeleteTime     = ($kpsOutput['kpsEmailDeleteTime'] == 'true') ? 'checked' : '';
+    $kpsLegendActivated     = ($kpsOutput['kpsLegendActivated'] == 'true') ? 'checked' : '';
 
     echo '
-            <div class="kps-divTable kps_container">
+            <div class="kps-divTable kps_container" style="width: 50%;">
             	<div class="kps-divTableBody">
             		<div class="kps-divTableRow">
             			<div class="kps-divTableCell" style="width: 100%; vertical-align: top;">
                             <form class="form" action="" method="post">
-                                <table class="table" style="border-spacing: 20px;">
+                                <table class="table" cellpadding="2" cellspacing="2">
                                 	<tbody>
                                         <tr>
+                                            <td width="25"><input type="checkbox" name="kpsUnlockTime" id="kpsUnlockTime" value="1" ' . $kpsUnlockTime . ' /></td>
                                             <td><label class="labelCheckbox" for="kpsUnlockTime">' . esc_html__('Show time in entry', 'kps') . '</label></td>
-                                            <td><input type="checkbox" name="kpsUnlockTime" id="kpsUnlockTime" value="1" ' . $checkedUnlockTime . ' /></td>
                                         </tr>
                                         <tr>
+                                            <td width="25"><input type="checkbox" name="kpsEmailSetTime" id="kpsEmailSetTime" value="1" ' . $kpsEmailSetTime . ' /></td>
                                             <td><label class="labelCheckbox" for="kpsEmailSetTime">' . esc_html__('Show time in Activation-Email', 'kps') . '</label></td>
-                                            <td><input type="checkbox" name="kpsEmailSetTime" id="kpsEmailSetTime" value="1" ' . $checkedEmailSetTime . ' /></td>
                                         </tr>
                                         <tr>
+                                            <td width="25"><input type="checkbox" name="kpsEmailUnlockTime" id="kpsEmailUnlockTime" value="1" ' . $kpsEmailUnlockTime . ' /></td>
                                             <td><label class="labelCheckbox" for="kpsEmailUnlockTime">' . esc_html__('Show time in Unlock-Email', 'kps') . '</label></td>
-                                            <td><input type="checkbox" name="kpsEmailUnlockTime" id="kpsEmailUnlockTime" value="1" ' . $checkedEmailUnlockTime . ' /></td>
                                         </tr>
                                         <tr>
+                                            <td width="25"><input type="checkbox" name="kpsEmailDeleteTime" id="kpsEmailDeleteTime" value="1" ' . $kpsEmailDeleteTime . ' /></td>
                                             <td><label class="labelCheckbox" for="kpsEmailDeleteTime">' . esc_html__('Show time in Delete-Email', 'kps') . '</label></td>
-                                            <td><input type="checkbox" name="kpsEmailDeleteTime" id="kpsEmailDeleteTime" value="1" ' . $checkedEmailDeleteTime . ' /></td>
                                         </tr>
                                         <tr>
+                                            <td width="25"><input type="checkbox" name="kpsLegendActivated" id="kpsLegendActivated" value="1" ' . $kpsLegendActivated . ' /></td>
                                             <td><label class="labelCheckbox" for="kpsLegendActivated">' . esc_html__('Legend activate', 'kps') . '</label></td>
-                                            <td><input type="checkbox" name="kpsLegendActivated" id="kpsLegendActivated" value="1" ' . $checkedLegendActivated . ' /></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="kps-br"></td>
                                         </tr>
                                         <tr>
                                             <td colspan="2" class="hr"></td>
@@ -451,6 +470,219 @@ function kps_Shortcodes()
                                         </tr>
                                 	</tbody>
                                 </table>
+                            </form>
+                        </div>
+            		</div>
+            	</div>
+            </div>
+        ';
+}
+
+/**
+ * Funktion Übersetzung
+ */
+function kps_Translations()
+{
+    $verification   = false;
+    $error          = array();
+
+    // Token erstellen
+    $token = wp_create_nonce('kpsTranslationsToken');
+
+    if (isset($_POST['submitTranslations']))
+    {
+        // Post-Variabeln festlegen die akzeptiert werden
+        $postList = array(
+            'kpsTranslationsHall',
+            'kpsTranslationsClimbing',
+            'kpsTranslationsWalking',
+            'kpsTranslationsTravels',
+            'kpsTranslationsUnique',
+            'kpsTranslationsRegularly',
+            'kpsTranslationsGoalone',
+            'kpsTranslationsFamily',
+            'kpsTranslationsComeClub',
+            'kpsTranslationsToken'
+        );
+        $postVars = kps_array_whitelist_assoc($_POST, $postList);
+
+        // Token verifizieren
+        $verification = wp_verify_nonce($postVars['kpsTranslationsToken'], 'kpsTranslationsToken');
+
+        // Verifizieren
+        if ($verification == true)
+        {
+            $setTranslations['Hall']            = sanitize_text_field($postVars['kpsTranslationsHall']);
+            $setTranslations['Climbing']        = sanitize_text_field($postVars['kpsTranslationsClimbing']);
+            $setTranslations['Walking']         = sanitize_text_field($postVars['kpsTranslationsWalking']);
+            $setTranslations['Travels']         = sanitize_text_field($postVars['kpsTranslationsTravels']);
+            $setTranslations['Unique']          = sanitize_text_field($postVars['kpsTranslationsUnique']);
+            $setTranslations['Regularly']       = sanitize_text_field($postVars['kpsTranslationsRegularly']);
+            $setTranslations['Single person']   = sanitize_text_field($postVars['kpsTranslationsGoalone']);
+            $setTranslations['Family']          = sanitize_text_field($postVars['kpsTranslationsFamily']);
+            $setTranslations['Club/Group']      = sanitize_text_field($postVars['kpsTranslationsComeClub']);
+
+            foreach( $setTranslations AS $key => $translationItem )
+            {
+                if (empty($translationItem))
+                {
+                    $error[] = $translationItem . '&#160;' . esc_html__('Content is missing', 'kps');
+                }
+
+                if (strlen($translationItem) < 5)
+                {
+                    $error[] = kps_getFormTranslation($key) . '&#160;' . esc_html__('is to short', 'kps');
+                }
+                if (strlen($translationItem) > 25)
+                {
+                    $error[] = kps_getFormTranslation($key) . '&#160;' . esc_html__('is to long', 'kps');
+                }
+            }
+
+            // Fehlermeldungen
+            if (!is_array($setTranslations))
+            {
+                $error[] = esc_html__('Error validating the data', 'kps');
+            }
+            // Captcha aktualisieren
+            if (is_array($setTranslations)
+                && !empty($setTranslations)
+                && empty($error))
+            {
+                // Serialisieren
+                $setTranslations = serialize($setTranslations);
+
+                // Serialieren True --> Update DB
+                if (is_serialized($setTranslations))
+                {
+                    update_option('kps_translations', $setTranslations);
+                    echo '
+                    <div class="notice notice-success is-dismissible">
+                    	<p><strong>' . esc_html__('Saved', 'kps') . ':&#160;' .  esc_html__('Translations', 'kps') . '</strong></p>
+                    	<button type="button" class="notice-dismiss">
+                    		<span class="screen-reader-text">Dismiss this notice.</span>
+                    	</button>
+                    </div>
+                    ';
+                }
+                else
+                {
+                    echo '
+                    <div class="notice notice-error is-dismissible">
+                    	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('Error serializing the data', 'kps') . '</strong></p>
+                    	<button type="button" class="notice-dismiss">
+                    		<span class="screen-reader-text">Dismiss this notice.</span>
+                    	</button>
+                    </div>
+                    ';
+                }
+            }
+            else
+            {
+                foreach ($error as $key => $errors)
+                {
+                    echo '
+                    <div class="notice notice-error is-dismissible">
+                    	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . $error[$key] . '</strong></p>
+                    	<button type="button" class="notice-dismiss">
+                    		<span class="screen-reader-text">Dismiss this notice.</span>
+                    	</button>
+                    </div>
+                    ';
+                }
+            }
+        }
+        else
+        {
+            echo '
+            <div class="notice notice-error is-dismissible">
+            	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('Token invalid', 'kps') . '</strong></p>
+            	<button type="button" class="notice-dismiss">
+            		<span class="screen-reader-text">Dismiss this notice.</span>
+            	</button>
+            </div>
+            ';
+        }
+    }
+
+    echo '
+            <div class="kps-divTable kps_container" style="width: 50%;">
+            	<div class="kps-divTableBody">
+            		<div class="kps-divTableRow">
+            			<div class="kps-divTableCell" style="width: 100%; vertical-align: top;">
+                            <form class="form" action="" method="post">
+                                <table class="table" cellpadding="2" cellspacing="2">
+                                	<tbody>
+                                        <tr>
+                                            <td colspan="2"><u>' . esc_html__('Translations', 'kps') . '</u></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><i>' . esc_html__('I am looking for', 'kps') . '</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="40"><label for="kpsTranslationsHall">' . kps_getSingleIcon('hall') . '</label></td>
+                                            <td><input type="text" name="kpsTranslationsHall" id="kpsTranslationsHall" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Hall')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Hall', 'kps') . '</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="40"><label for="kpsTranslationsClimbing">' . kps_getSingleIcon('climbing') . '</label></td>
+                                            <td><input type="text" name="kpsTranslationsClimbing" id="kpsTranslationsClimbing" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Climbing')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Climbing', 'kps') . '</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="40"><label for="kpsTranslationsWalking">' . kps_getSingleIcon('walking') . '</label></td>
+                                            <td><input type="text" name="kpsTranslationsWalking" id="kpsTranslationsWalking" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Walking')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Travels', 'kps') . '</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="40"><label for="kpsTranslationsTravels">' . kps_getSingleIcon('tracking') . '</label></td>
+                                            <td><input type="text" name="kpsTranslationsTravels" id="kpsTranslationsTravels" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Travels')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Walking', 'kps') . '</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="kps-br"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><i>' . esc_html__('Kind of search', 'kps') . '</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="40"><label for="kpsTranslationsUnique">' . kps_getSingleIcon('unique') . '</label></td>
+                                            <td><input type="text" name="kpsTranslationsUnique" id="kpsTranslationsUnique" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Unique')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Unique', 'kps') . '</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="40"><label for="kpsTranslationsRegularly">' . kps_getSingleIcon('regularly') . '</label></td>
+                                            <td><input type="text" name="kpsTranslationsRegularly" id="kpsTranslationsRegularly" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Regularly')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Regularly', 'kps') . '</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="kps-br"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><i>' . esc_html__('I am', 'kps') . '</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="40"><label for="kpsTranslationsGoalone">' . kps_getSingleIcon('goalone') . '</label></td>
+                                            <td><input type="text" name="kpsTranslationsGoalone" id="kpsTranslationsGoalone" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Single person')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Single person', 'kps') . '</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="40"><label for="kpsTranslationsFamily">' . kps_getSingleIcon('family') . '</label></td>
+                                            <td><input type="text" name="kpsTranslationsFamily" id="kpsTranslationsFamily" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Family')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Family', 'kps') . '</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="40"><label for="kpsTranslationsComeClub">' . kps_getSingleIcon('comeclub') . '</label></td>
+                                            <td><input type="text" name="kpsTranslationsComeClub" id="kpsTranslationsWalking" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Club/Group')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Club/Group', 'kps') . '</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="kps-br"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="hr"></td>
+                                        </tr>
+                                		<tr>
+                                            <td colspan="2" style="text-align: center">
+                                                <input type="hidden" id="kps_tab" name="kps_tab" value="kps_Translations" />
+                                                <input type="hidden" id="kpsTranslationsToken" name="kpsTranslationsToken" value="' . $token . '" />
+                                                <input class="button-primary" type="submit" name="submitTranslations" value="' . esc_html__('Save', 'kps') . '">
+                                            </td>
+                                		</tr>
+                                	</tbody>
+                                </table>
+
                             </form>
                         </div>
             		</div>

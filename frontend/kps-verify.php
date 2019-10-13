@@ -52,7 +52,7 @@ function kps_verifyId($kps_data = '0')
     $pageUrl = get_post_permalink();
 
     // Hole Usereinstellungen
-    $checkedUserSettings = kps_unserialize(get_option('kps_userSettings', false));
+    $kpsUserSettings = kps_unserialize(get_option('kps_userSettings', false));
 
     // Hole Formulareinstellungen für Captcha
     $captchaIsActivated = get_option('kps_captcha', false);
@@ -119,7 +119,7 @@ function kps_verifyId($kps_data = '0')
 
     // Wenn Option Registierungspflicht
     if (is_user_logged_in() !== true
-        && $checkedUserSettings['kpsUserRequirementRegistration'] === 'true')
+        && $kpsUserSettings['kpsUserRequirementRegistration'] === 'true')
     {
         // Wordpress Registieren
         $output .= '<div>

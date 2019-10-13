@@ -317,7 +317,7 @@ class kps_entry_read
         }
 
         // Avatar erlaubt?
-        if ($this->_userSettings['kpsUserAvatar'] === 'true' && get_option('show_avatars') === '1')
+        if ($this->_userSettings['kpsUserAvatar'] === 'true' && get_option('show_avatars') === '1' && $authorData !== false)
         {
             // Avatar holen
             $isAvatar = get_avatar($authorId, 32, '', $this->_authorName, array(
@@ -486,19 +486,19 @@ class kps_entry_read
             switch ($authorSearchfor)
             {
                 case '0':
-                    $alt    = esc_html__('Hall', 'kps');
+                    $alt    = kps_getFormTranslation('Hall');
                     $pic    = "hall.svg";
                 break;
                 case '1':
-                    $alt    = esc_html__('Climbing', 'kps');
+                    $alt    = kps_getFormTranslation('Climbing');
                     $pic    = "nature.svg";
                 break;
                 case '2':
-                    $alt    = esc_html__('Travels', 'kps');
+                    $alt    = kps_getFormTranslation('Travels');
                     $pic    = "travel.svg";
                 break;
                 case '3':
-                    $alt    = esc_html__('Walking/Trekking', 'kps');
+                    $alt    = kps_getFormTranslation('Walking/Trekking');
                     $pic    = "trekking.svg";
                 break;
                 default:
@@ -522,11 +522,11 @@ class kps_entry_read
             switch ($authorRule)
             {
                 case '0':
-                    $alt    = esc_html__('Unique', 'kps');
+                    $alt    = kps_getFormTranslation('Unique');
                     $pic    = "onetime.svg";
                 break;
                 case '1':
-                    $alt    = esc_html__('Regularly', 'kps');
+                    $alt    = kps_getFormTranslation('Regularly');
                     $pic    = "moretime.svg";
                 break;
                 default:
@@ -550,15 +550,15 @@ class kps_entry_read
             switch ($yourRule)
             {
                 case '0':
-                    $alt    = esc_html__('Single person', 'kps');
+                    $alt    = kps_getFormTranslation('Single person');
                     $pic    = "goalone.svg";
                 break;
                 case '1':
-                    $alt    = esc_html__('Family', 'kps');
+                    $alt    = kps_getFormTranslation('Family');
                     $pic    = "family.svg";
                 break;
                 case '2':
-                    $alt    = esc_html__('Club/Group', 'kps');
+                    $alt    = kps_getFormTranslation('Club/Group');
                     $pic    = "comeclub.svg";
                 break;
                 default:
