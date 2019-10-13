@@ -364,18 +364,18 @@ function kps_upgrade()
         $setFormOption['kpsFormOptionSinglePerson']         = 'true';
         $setFormOption['kpsFormOptionFamily']               = 'true';
         $setFormOption['kpsFormOptionClubGroup']            = 'true';
-        $setFormOption['kpsFormOptionTelephone']            = $formOptions['kpsFormOptionTelephone'];
-        $setFormOption['kpsFormOptionMobile']               = $formOptions['kpsFormOptionMobile'];
-        $setFormOption['kpsFormOptionWhatsapp']             = $formOptions['kpsFormOptionWhatsapp'];
-        $setFormOption['kpsFormOptionSignal']               = $formOptions['kpsFormOptionSignal'];
+        $setFormOption['kpsFormOptionTelephone']            = 'true';
+        $setFormOption['kpsFormOptionMobile']               = 'true';
+        $setFormOption['kpsFormOptionWhatsapp']             = 'true';;
+        $setFormOption['kpsFormOptionSignal']               = 'true';;
         $setFormOption['kpsFormOptionViper']                = $formOptions['kpsFormOptionViper'];
-        $setFormOption['kpsFormOptionTelegram']             = $formOptions['kpsFormOptionTelegram'];
-        $setFormOption['kpsFormOptionThreema']              = $formOptions['kpsFormOptionThreema'];
+        $setFormOption['kpsFormOptionTelegram']             = 'true';;
+        $setFormOption['kpsFormOptionThreema']              = 'true';;
         $setFormOption['kpsFormOptionFacebookMessenger']    = $formOptions['kpsFormOptionFacebookMessenger'];
         $setFormOption['kpsFormOptionWire']                 = $formOptions['kpsFormOptionWire'];
         $setFormOption['kpsFormOptionHoccer']               = $formOptions['kpsFormOptionHoccer'];
         $setFormOption['kpsFormOptionSkype']                = $formOptions['kpsFormOptionSkype'];
-        $setFormOption['kpsFormOptionWebsite']              = $formOptions['kpsFormOptionWebsite'];
+        $setFormOption['kpsFormOptionWebsite']              = 'true';
         $setFormOption['kpsFormOptionInstagram']            = $formOptions['kpsFormOptionInstagram'];
         $setFormOption['kpsFormOptionFacebook']             = $formOptions['kpsFormOptionFacebook'];
 
