@@ -384,6 +384,9 @@ function kps_upgrade()
         ));
 
         update_option('kps_formOptions', $setFormOption);
+
+        // Übersetzungen
+        add_option('kps_translations', '');                             // Übersetzungen
     }
 
     // Version updaten
