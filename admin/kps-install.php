@@ -346,46 +346,9 @@ function kps_upgrade()
         delete_option('kps_widget');
     }
 
-    if (version_compare($current_version, '2.3.0', '<'))
-    {
-        // Formular-Optionen updaten
-        $formOptions = kps_unserialize(get_option('kps_formOptions'));
-
-        $setFormOption['kpsFormOptionHall']                 = 'true';
-        $setFormOption['kpsFormOptionClimbing']             = 'true';
-        $setFormOption['kpsFormOptionWalkiing']             = 'true';
-        $setFormOption['kpsFormOptionTravels']              = 'true';
-        $setFormOption['kpsFormOptionSinglePerson']         = 'true';
-        $setFormOption['kpsFormOptionFamily']               = 'true';
-        $setFormOption['kpsFormOptionClubGroup']            = 'true';
-        $setFormOption['kpsFormOptionTelephone']            = 'true';
-        $setFormOption['kpsFormOptionMobile']               = 'true';
-        $setFormOption['kpsFormOptionWhatsapp']             = 'true';
-        $setFormOption['kpsFormOptionSignal']               = 'true';
-        $setFormOption['kpsFormOptionViper']                = $formOptions['kpsFormOptionViper'];
-        $setFormOption['kpsFormOptionTelegram']             = 'true';
-        $setFormOption['kpsFormOptionThreema']              = 'true';
-        $setFormOption['kpsFormOptionFacebookMessenger']    = $formOptions['kpsFormOptionFacebookMessenger'];
-        $setFormOption['kpsFormOptionWire']                 = $formOptions['kpsFormOptionWire'];
-        $setFormOption['kpsFormOptionHoccer']               = $formOptions['kpsFormOptionHoccer'];
-        $setFormOption['kpsFormOptionSkype']                = $formOptions['kpsFormOptionSkype'];
-        $setFormOption['kpsFormOptionWebsite']              = 'true';
-        $setFormOption['kpsFormOptionInstagram']            = $formOptions['kpsFormOptionInstagram'];
-        $setFormOption['kpsFormOptionFacebook']             = $formOptions['kpsFormOptionFacebook'];
-
-        $setFormOption = serialize($setFormOption);
-
-        update_option('kps_formOptions', $setFormOption);
-
-        // Übersetzungen
-        add_option('kps_translations', '');                             // Übersetzungen
-    }
-
     if (version_compare($current_version, '2.3.1', '<'))
     {
         // Formular-Optionen updaten
-        $formOptions = kps_unserialize(get_option('kps_formOptions'));
-
         $setFormOption['kpsFormOptionHall']                 = 'true';
         $setFormOption['kpsFormOptionClimbing']             = 'true';
         $setFormOption['kpsFormOptionWalkiing']             = 'true';
@@ -411,6 +374,9 @@ function kps_upgrade()
         $setFormOption = serialize($setFormOption);
 
         update_option('kps_formOptions', $setFormOption);
+
+        // Übersetzungen
+        add_option('kps_translations', '');                             // Übersetzungen
     }
 
     // Version updaten
