@@ -1,3 +1,7 @@
+= v. 2.3.1 =
+*[14.10.2019]*
+* Fix: Install
+
 = v. 2.3.0 =
 *[13.10.2019]*
 * Add: Choose form options

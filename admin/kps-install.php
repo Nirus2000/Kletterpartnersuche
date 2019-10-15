@@ -275,9 +275,7 @@ function kps_upgrade()
         $setFormOption['kpsFormOptionInstagram']            = $formOptions['kpsFormOptionInstagram'];
         $setFormOption['kpsFormOptionFacebook']             = $formOptions['kpsFormOptionFacebook'];
 
-        $setFormOption = serialize(array(
-                                        $setFormOption
-        ));
+        $setFormOption = serialize($setFormOption);
 
         update_option('kps_formOptions', $setFormOption);
     }
@@ -314,9 +312,7 @@ function kps_upgrade()
         $setFormOption['kpsFormOptionInstagram']            = $formOptions['kpsFormOptionInstagram'];
         $setFormOption['kpsFormOptionFacebook']             = $formOptions['kpsFormOptionFacebook'];
 
-        $setFormOption = serialize(array(
-                                        $setFormOption
-        ));
+        $setFormOption = serialize($setFormOption);
 
         update_option('kps_formOptions', $setFormOption);
     }
@@ -336,9 +332,7 @@ function kps_upgrade()
         $setOutput['kpsEmailDeleteTime']                    = $output['kpsEmailDeleteTime'];
         $setOutput['kpsLegendActivated']                    = $legendActivated;
 
-        $setOutput = serialize(array(
-                                    $setOutput
-        ));
+        $setOutput = serialize($setOutput);
 
         update_option('kps_output', $setOutput);
 
@@ -366,11 +360,11 @@ function kps_upgrade()
         $setFormOption['kpsFormOptionClubGroup']            = 'true';
         $setFormOption['kpsFormOptionTelephone']            = 'true';
         $setFormOption['kpsFormOptionMobile']               = 'true';
-        $setFormOption['kpsFormOptionWhatsapp']             = 'true';;
-        $setFormOption['kpsFormOptionSignal']               = 'true';;
+        $setFormOption['kpsFormOptionWhatsapp']             = 'true';
+        $setFormOption['kpsFormOptionSignal']               = 'true';
         $setFormOption['kpsFormOptionViper']                = $formOptions['kpsFormOptionViper'];
-        $setFormOption['kpsFormOptionTelegram']             = 'true';;
-        $setFormOption['kpsFormOptionThreema']              = 'true';;
+        $setFormOption['kpsFormOptionTelegram']             = 'true';
+        $setFormOption['kpsFormOptionThreema']              = 'true';
         $setFormOption['kpsFormOptionFacebookMessenger']    = $formOptions['kpsFormOptionFacebookMessenger'];
         $setFormOption['kpsFormOptionWire']                 = $formOptions['kpsFormOptionWire'];
         $setFormOption['kpsFormOptionHoccer']               = $formOptions['kpsFormOptionHoccer'];
@@ -379,14 +373,44 @@ function kps_upgrade()
         $setFormOption['kpsFormOptionInstagram']            = $formOptions['kpsFormOptionInstagram'];
         $setFormOption['kpsFormOptionFacebook']             = $formOptions['kpsFormOptionFacebook'];
 
-        $setFormOption = serialize(array(
-                                        $setFormOption
-        ));
+        $setFormOption = serialize($setFormOption);
 
         update_option('kps_formOptions', $setFormOption);
 
         // Übersetzungen
         add_option('kps_translations', '');                             // Übersetzungen
+    }
+
+    if (version_compare($current_version, '2.3.1', '<'))
+    {
+        // Formular-Optionen updaten
+        $formOptions = kps_unserialize(get_option('kps_formOptions'));
+
+        $setFormOption['kpsFormOptionHall']                 = 'true';
+        $setFormOption['kpsFormOptionClimbing']             = 'true';
+        $setFormOption['kpsFormOptionWalkiing']             = 'true';
+        $setFormOption['kpsFormOptionTravels']              = 'true';
+        $setFormOption['kpsFormOptionSinglePerson']         = 'true';
+        $setFormOption['kpsFormOptionFamily']               = 'true';
+        $setFormOption['kpsFormOptionClubGroup']            = 'true';
+        $setFormOption['kpsFormOptionTelephone']            = 'true';
+        $setFormOption['kpsFormOptionMobile']               = 'true';
+        $setFormOption['kpsFormOptionWhatsapp']             = 'true';
+        $setFormOption['kpsFormOptionSignal']               = 'true';
+        $setFormOption['kpsFormOptionViper']                = 'false';
+        $setFormOption['kpsFormOptionTelegram']             = 'true';
+        $setFormOption['kpsFormOptionThreema']              = 'true';
+        $setFormOption['kpsFormOptionFacebookMessenger']    = 'false';
+        $setFormOption['kpsFormOptionWire']                 = 'false';
+        $setFormOption['kpsFormOptionHoccer']               = 'false';
+        $setFormOption['kpsFormOptionSkype']                = 'false';
+        $setFormOption['kpsFormOptionWebsite']              = 'true';
+        $setFormOption['kpsFormOptionInstagram']            = 'false';
+        $setFormOption['kpsFormOptionFacebook']             = 'false';
+
+        $setFormOption = serialize($setFormOption);
+
+        update_option('kps_formOptions', $setFormOption);
     }
 
     // Version updaten
