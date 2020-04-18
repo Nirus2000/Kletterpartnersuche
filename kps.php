@@ -4,7 +4,7 @@ Plugin Name: Kletterpartner-Suche
 Plugin URI: https://wordpress.org/plugins/kletterpartner-suche/
 Description: „Kletterpartner-Suche“ verbindet Kletter-, Wander-, Tracking- und Sportfreunde miteinander.
 Version: 2.4.0
-Requires at least: 5.4.0
+Requires at least: 4.9.8
 Requires PHP: 5.2.4
 Author: Alexander Ott
 Author URI: http://nirus-online.de
