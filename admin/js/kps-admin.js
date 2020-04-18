@@ -2,7 +2,7 @@
  * JavaScript für KPS
  *
  * @author 		Alexander Ott
- * @copyright 	2018-2019
+ * @copyright 	2018-2020
  * @email 		kps@nirus-online.de
  *
  * All rights reserved
@@ -103,6 +103,7 @@ jQuery(document)
 
 /*
  * Toggeln ( hide / show)
+ * Toggeln ( form elements)
  */
 jQuery(document)
     .ready(function ($) {
@@ -120,7 +121,11 @@ jQuery(document)
             	return false;
             });
 
-        // Uninstall
+        // Reset Statisik
+        jQuery("input#kpsResetStatisticsConfirmed")
+            .prop("checked", false); // Checkbox ist nicht aktiv (Initialisierung)
+
+        // Deinstallation
         jQuery("input#kpsUninstallConfirmed")
             .prop("checked", false); // Checkbox ist nicht aktiv (Initialisierung)
 
@@ -138,6 +143,23 @@ jQuery(document)
                     jQuery("#kpsUninstall")
                         .removeClass('button-primary');
                     jQuery("#kpsUninstall")
+                        .attr('disabled', true);
+                }
+            });
+
+        jQuery("input#kpsResetStatisticsConfirmed")
+            .change(function () {
+                var checked = jQuery("input#kpsResetStatisticsConfirmed")
+                    .prop('checked');
+                if (checked === true) {
+                    jQuery("#kpsResetStatistics")
+                        .addClass('button-primary');
+                    jQuery("#kpsResetStatistics")
+                        .removeAttr('disabled');
+                } else {
+                    jQuery("#kpsResetStatistics")
+                        .removeClass('button-primary');
+                    jQuery("#kpsResetStatistics")
                         .attr('disabled', true);
                 }
             });

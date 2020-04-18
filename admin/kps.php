@@ -1,7 +1,7 @@
 <?php
 /**
  * @author        Alexander Ott
- * @copyright     2018-2019
+ * @copyright     2018-2020
  * @email         kps@nirus-online.de
  *
  * All rights reserved
@@ -62,10 +62,10 @@ function kps_welcome() {
     }
     add_meta_box( 'kps_adminEntries', esc_html__('Overview', 'kps'), 'kps_admin_overview_entries', 'kps_welcome', 'left' );
     add_meta_box( 'kps_adminSettings', esc_html__('Settings-Overview (short)', 'kps'), 'kps_admin_overview_setting', 'kps_welcome', 'left' );
-    add_meta_box( 'kps_adminCopyright', esc_html__('Copyright', 'kps'), 'kps_admin_overview_copyright', 'kps_welcome', 'left' );
     add_meta_box( 'kps_adminManuel', esc_html__('Manual', 'kps'), 'kps_admin_overview_manuel', 'kps_welcome', 'normal' );
     add_meta_box( 'kps_adminProoved', esc_html__('Checked', 'kps'), 'kps_admin_overview_prooved', 'kps_welcome', 'normal' );
     add_meta_box( 'kps_adminStatistics', esc_html__('Statistics', 'kps'), 'kps_admin_overview_statistics', 'kps_welcome', 'right' );
+    add_meta_box( 'kps_adminCopyright', esc_html__('Copyright', 'kps'), 'kps_admin_overview_copyright', 'kps_welcome', 'right' );
 ?>
       <div id="kps" class="wrap kps">
             <div>
@@ -254,6 +254,38 @@ function kps_admin_overview_setting() {
  */
 function kps_admin_overview_statistics() {
 
+    $verification   = false;
+
+    // Token erstellen
+    $token = wp_create_nonce('kpsResetStatisticsToken');
+
+    if (isset($_POST['kpsResetStatistics']))
+    {
+        // Post-Variabeln festlegen die akzeptiert werden
+        $postList = array(
+            'kpsResetStatisticsToken'
+        );
+        $postVars = kps_array_whitelist_assoc($_POST, $postList);
+
+        // Token verifizieren
+        $verification = wp_verify_nonce($postVars['kpsResetStatisticsToken'], 'kpsResetStatisticsToken');
+
+        // Statistik zurücksetzen
+        if ($verification == true)
+        {
+            // KPS-Counter
+            $kpsCounter = serialize(array(
+                'kpsAllEntrys'                      => 0,
+                'kpsAllActivatedEntrys'             => 0,
+                'kpsAllVerfifications'              => 0,
+                'kpsAllSendRequirements'            => 0,
+                'kpsAllDeleteEntrys'                => 0
+            ));
+
+            update_option('kps_kpsCounter', $kpsCounter);   // KPS-Counter
+        }
+    }
+
     // Gesamtzähler für Statistik
     $kpsCounter                 = kps_unserialize(get_option('kps_kpsCounter', false));
     $kpsCounterAllEntrys        = ($kpsCounter['kpsAllEntrys'] === NULL) ? 0 : $kpsCounter['kpsAllEntrys'];
@@ -262,34 +294,49 @@ function kps_admin_overview_statistics() {
     $kpsCounterSendRequirements = ($kpsCounter['kpsAllSendRequirements'] === NULL) ? 0 : $kpsCounter['kpsAllSendRequirements'];
     $kpsCounterDeleteEntrys     = ($kpsCounter['kpsAllDeleteEntrys'] === NULL) ? 0 : $kpsCounter['kpsAllDeleteEntrys'];
 
-
-
     echo '
             <div>
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <td><b>' . esc_html__('Submitted searches', 'kps') . '</b></td>
-                            <td>' . $kpsCounterAllEntrys . ' ' . esc_html(_n('Entry', 'Entries', $kpsCounterAllEntrys, 'kps')) . '</td>
-                        </tr>
-                        <tr>
-                            <td><b>' . esc_html__('Activated entries', 'kps') . '</b></td>
-                            <td>' . $kpsCounterActivatedEntrys . ' ' . esc_html(_n('Activation', 'Activations', $kpsCounterActivatedEntrys, 'kps')) . '</td>
-                        </tr>
-                        <tr>
-                            <td><b>' . esc_html__('Reqirement contact details', 'kps') . '</b></td>
-                            <td>' . $kpsCounterVerfifications . ' ' . esc_html(_n('Verification', 'Verifications', $kpsCounterVerfifications, 'kps')) . '</td>
-                        </tr>
-                        <tr>
-                            <td><b>' . esc_html__('Sent contact information', 'kps') . '</b></td>
-                            <td>' . $kpsCounterSendRequirements . ' ' . esc_html(_n('Request', 'Requests', $kpsCounterSendRequirements, 'kps')) . '</td>
-                        </tr>
-                        <tr>
-                            <td><b>' . esc_html__('Manually deleted entries', 'kps') . '</b></td>
-                            <td>' . $kpsCounterDeleteEntrys . ' ' . esc_html(_n('Entry', 'Entries', $kpsCounterDeleteEntrys, 'kps')) . '</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <form name="kpsResetStatistics" method="post" action="">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td><b>' . esc_html__('Submitted searches', 'kps') . '</b></td>
+                                <td>' . $kpsCounterAllEntrys . ' ' . esc_html(_n('Entry', 'Entries', $kpsCounterAllEntrys, 'kps')) . '</td>
+                            </tr>
+                            <tr>
+                                <td><b>' . esc_html__('Activated entries', 'kps') . '</b></td>
+                                <td>' . $kpsCounterActivatedEntrys . ' ' . esc_html(_n('Activation', 'Activations', $kpsCounterActivatedEntrys, 'kps')) . '</td>
+                            </tr>
+                            <tr>
+                                <td><b>' . esc_html__('Reqirement contact details', 'kps') . '</b></td>
+                                <td>' . $kpsCounterVerfifications . ' ' . esc_html(_n('Verification', 'Verifications', $kpsCounterVerfifications, 'kps')) . '</td>
+                            </tr>
+                            <tr>
+                                <td><b>' . esc_html__('Sent contact information', 'kps') . '</b></td>
+                                <td>' . $kpsCounterSendRequirements . ' ' . esc_html(_n('Request', 'Requests', $kpsCounterSendRequirements, 'kps')) . '</td>
+                            </tr>
+                            <tr>
+                                <td><b>' . esc_html__('Manually deleted entries', 'kps') . '</b></td>
+                                <td>' . $kpsCounterDeleteEntrys . ' ' . esc_html(_n('Entry', 'Entries', $kpsCounterDeleteEntrys, 'kps')) . '</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="hr"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input type="checkbox" name="kpsResetStatisticsConfirmed" id="kpsResetStatisticsConfirmed" />
+                                    <label class="labelCheckbox" for="kpsResetStatisticsConfirmed">' . esc_html__('Reset statistics?', 'kps') . '</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input type="hidden" id="kpsResetStatisticsToken" name="kpsResetStatisticsToken" value="' . $token . '" />
+                                    <input class="button" type="submit" name="kpsResetStatistics" id="kpsResetStatistics" disabled value="' . esc_html__('Yes, reset statistics.', 'kps') . '" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
             </div>
         ';
 }
@@ -410,7 +457,19 @@ function kps_admin_overview_copyright() {
                 <table class="table">
                     <tbody>
                         <tr>
-                            <td><i class="fas fa-medkit"></i>&#160;' . esc_html__('Support', 'kps') . '</td>
+                            <td><i class="fab fa-wordpress-simple"></i>&#160;' . esc_html__('WordPress', 'kps') . '</td>
+                            <td><a href="https://de.wordpress.org/plugins/kletterpartner-suche/" target="_blank">' . esc_html__('Climbing-Partner-Search', 'kps') . '</a></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-code-branch"></i>&#160;' . esc_html__('Version', 'kps') . '</td>
+                            <td>' . get_option('kps_version') . '</td>
+                        </tr>
+                        <tr>
+                            <td><i class="far fa-copyright"></i>&#160;' . esc_html__('Copyright', 'kps') . '</td>
+                            <td>2018 - '. date("Y") . '</td>
+                        </tr>
+                        <tr>
+                            <td><i class="far fa-question-circle"></i>&#160;' . esc_html__('Support', 'kps') . '</td>
                             <td><a href="https://wordpress.org/support/plugin/kletterpartner-suche" target="_blank">' . esc_html__('Support-Forum', 'kps') . '</a></td>
                         </tr>
                         <tr>
@@ -421,23 +480,16 @@ function kps_admin_overview_copyright() {
                             <td colspan="2" class="hr"></td>
                         </tr>
                         <tr>
-                            <td><i class="fas fa-code-branch"></i>&#160;' . esc_html__('Version', 'kps') . '</td>
-                            <td>' . get_option('kps_version') . '</td>
-                        </tr>
-                        <tr>
-                            <td><i class="far fa-copyright"></i>&#160;' . esc_html__('Copyright', 'kps') . '</td>
+                            <td><i class="fas fa-at"></i>&#160;' . esc_html__('Author', 'kps') . '</td>
                             <td>Alexander Ott</td>
                         </tr>
                         <tr>
-                            <td colspan="2" class="hr"></td>
-                        </tr>
-                        <tr>
                             <td><i class="far fa-envelope"></i>&#160;' . esc_html__('Email', 'kps') . '</td>
-                            <td>kps@nirus-online.de</td>
+                            <td><a href="mailto:kps@nirus-online.d?subject='. esc_html__('Climbing-Partner-Search', 'kps') . ' - ' . KPS_VER . '">kps@nirus-online.de</a></td>
                         </tr>
                         <tr>
                             <td><i class="fas fa-globe"></i>&#160;' . esc_html__('Internet', 'kps') . '</td>
-                            <td>http://www.nirus-online.de</td>
+                            <td><a href="http://www.nirus-online.de" target="_blank">http://www.nirus-online.de</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -462,10 +514,8 @@ function kps_admin_overview_prooved( ) {
                             <td><img src="' . KPS_RELATIV_ADMIN . "/gfx/php7.png" . '" alt="' . esc_html__('PHP', 'kps') . '" title="' . esc_html__('PHP', 'kps') . '"/></td>
                         </tr>
                         <tr>
-                            <td colspan="2"><img src="' . KPS_RELATIV_ADMIN . "/gfx/jquery.png" . '" alt="' . esc_html__('JQuery', 'kps') . '" title="' . esc_html__('JQuery', 'kps') . '"/></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><img src="' . KPS_RELATIV_ADMIN . "/gfx/invisible_badge.png" . '" alt="' . esc_html__('Google reCaptcha', 'kps') . '" title="' . esc_html__('Google reCaptcha', 'kps') . '"/></td>
+                            <td><img src="' . KPS_RELATIV_ADMIN . "/gfx/jquery.png" . '" alt="' . esc_html__('JQuery', 'kps') . '" title="' . esc_html__('JQuery', 'kps') . '"/></td>
+                            <td><img src="' . KPS_RELATIV_ADMIN . "/gfx/invisible_badge.png" . '" alt="' . esc_html__('Google reCaptcha', 'kps') . '" title="' . esc_html__('Google reCaptcha', 'kps') . '"/></td>
                         </tr>
                     </tbody>
                 </table>

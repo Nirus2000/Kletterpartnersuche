@@ -1,7 +1,7 @@
 <?php
 /**
  * @author        Alexander Ott
- * @copyright     2018-2019
+ * @copyright     2018-2020
  * @email         kps@nirus-online.de
  *
  * All rights reserved
@@ -54,10 +54,6 @@ class kps_entry_write
                 $_authorEmailCheck,         // Email prüfen
                 $_authorEntry,              // Autor Eintrag
                 $_authorSearchfor,          // Autor "Sucht für"
-                $_authorSearchfor0,         // Formularoption
-                $_authorSearchfor1,         // Formularoption
-                $_authorSearchfor2,         // Formularoption
-                $_authorSearchfor3,         // Formularoption
                 $_authorRule,               // Autor "Art der Suche"
                 $_authorRule0,              // Formularoption
                 $_authorRule1,              // Formularoption
@@ -106,11 +102,7 @@ class kps_entry_write
         $this->_authorEmail             = (string)'';
         $this->_authorEmailCheck        = (string)'false';
         $this->_authorEntry             = (string)'';
-        $this->_authorSearchfor         = NULL;
-        $this->_authorSearchfor0        = (string)'';
-        $this->_authorSearchfor1        = (string)'';
-        $this->_authorSearchfor2        = (string)'';
-        $this->_authorSearchfor3        = (string)'';
+        $this->_authorSearchfor         = (int)absint($write['kps_authorSearchfor']);
         $this->_authorRule              = NULL;
         $this->_authorRule0             = (string)'';
         $this->_authorRule1             = (string)'';
@@ -155,9 +147,6 @@ class kps_entry_write
 
         // Autor Eintrag escapen und Wortlimit prüfen
         $this->get_authorEntry($write['kps_authorEntry']);
-
-        // Autor "Sucht für" escapen
-        $this->get_authorSearchfor($write['kps_authorSearchfor']);
 
         // Autor "Art der Suche" escapen
         $this->get_authorRule($write['kps_authorRule']);
@@ -573,38 +562,6 @@ class kps_entry_write
         else
         {
             $this->_wordCount = false; // Rückgabe des Wertes
-        }
-    }
-
-    /**
-     * Autor "Sucht für"
-     */
-    public function get_authorSearchfor($authorSearchfor = NULL)
-    {
-        // Positiv-Numerisch
-        $this->_authorSearchfor = absint($authorSearchfor);
-
-        // Fallunterscheidung
-        switch ($this->_authorSearchfor)
-        {
-            case '0':
-                $this->_authorSearchfor0    = 'checked';
-            break;
-            case '1':
-                $this->_authorSearchfor1    = 'checked';
-            break;
-            case '2':
-                $this->_authorSearchfor2    = 'checked';
-            break;
-            case '3':
-                $this->_authorSearchfor3    = 'checked';
-            break;
-            default:
-                $this->_authorSearchfor     = NULL;
-                $this->_authorSearchfor0    = '';
-                $this->_authorSearchfor1    = '';
-                $this->_authorSearchfor2    = '';
-                $this->_authorSearchfor3    = '';
         }
     }
 

@@ -1,7 +1,7 @@
 <?php
 /**
  * @author        Alexander Ott
- * @copyright     2018-2019
+ * @copyright     2018-2020
  * @email         kps@nirus-online.de
  *
  * All rights reserved
@@ -51,14 +51,20 @@ function kps_frontend_entries($kps_paged = '1')
 
     // Hole Legenden Einstellungen
     $legendSettings     = kps_unserialize(get_option('kps_output', false));
-    $legendActivated    = ($legendSettings['kpsLegendActivated'] === 'true') ? true : false;
-
+    $legendActivated    = ($legendSettings['kpsLegendActivated'] === 'true') ? 'true' : 'false';
 
     // Hole die derzeitige Seite
     $getPage = (isset($kps_paged) && is_numeric(absint($kps_paged)) && $kps_paged != 0) ? floor(absint($kps_paged)) : 1;
 
     // Hole Maximalanzahl der Einträge pro Seite
     $maxEntriesPerPage = get_option('kps_frontendPagination', false);
+
+    // Hole Legende
+    $legendShow = kps_getFormLegend();
+    $divRows = 3;   //Spaltenanzahl
+    $empty = '';    //Füllzeichen für leere Zellen
+    $i = 0;         // While-Schleife für Icons
+    $z = 0;         // Zähler für Zeilen
 
     // Paginagtion erstellen
     $totalEntriesCount  = $wpdb->get_results("SELECT * FROM " . KPS_TABLE_ENTRIES . " WHERE isLockedByAdmin = 1 AND isLocked = 1 AND lockedAutoReport = 0 AND deleteDateTime < NOW() ", object);
@@ -197,30 +203,48 @@ function kps_frontend_entries($kps_paged = '1')
         $output .= '<div class="page-navigation">' . $pagination . '</div>';
     }
 
-    if ($legendActivated === true && count($results) > 0)
+    // Legende
+    if ($legendActivated === 'true' && count($results) > 0)
     {
-        // Hole IconPak
-        $iconPak = kps_iconPak();
-
         $output .=  '
                     <div class="kps-divTable">
                     	<div class="kps-divTableBody">
-                    		<div class="kps-divTableRow">
-                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $iconPak['color'] . '/hall.svg" width="25" height="25" alt="' . kps_getFormTranslation('Hall') . '" title="' . kps_getFormTranslation('Hall') . '" />&#160;' . kps_getFormTranslation('Hall') .'</div>
-                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $iconPak['color'] . '/nature.svg" width="25" height="25" alt="' . kps_getFormTranslation('Climbing') . '" title="' . kps_getFormTranslation('Climbing') . '" />&#160;' . kps_getFormTranslation('Climbing') .'</div>
-                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $iconPak['color'] . '/trekking.svg" width="25" height="25" alt="' . kps_getFormTranslation('Walking') . '" title="' . kps_getFormTranslation('Walking') . '" />&#160;' . kps_getFormTranslation('Walking') .'</div>
-                            </div>
-                            <div class="kps-divTableRow">
-                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $iconPak['color'] . '/travel.svg" width="25" height="25" alt="' . kps_getFormTranslation('Travels') . '" title="' . kps_getFormTranslation('Travels') . '" />&#160;' . kps_getFormTranslation('Travels') .'</div>
-                                <div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $iconPak['color'] . '/onetime.svg" width="25" height="25" alt="' . kps_getFormTranslation('Unique') . '" title="' . kps_getFormTranslation('Unique') . '" />&#160;' . kps_getFormTranslation('Unique') .'</div>
-                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $iconPak['color'] . '/moretime.svg" width="25" height="25" alt="' . kps_getFormTranslation('Regularly') . '" title="' . kps_getFormTranslation('Regularly') . '" />&#160;' . kps_getFormTranslation('Regularly') .'</div>
-                    		</div>
-                    		<div class="kps-divTableRow">
-                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $iconPak['color'] . '/goalone.svg" width="25" height="25" alt="' . kps_getFormTranslation('Single person') . '" title="' . kps_getFormTranslation('Single person') . '" />&#160;' . kps_getFormTranslation('Single person') .'</div>
-                    			<div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $iconPak['color'] . '/family.svg" width="25" height="25" alt="' . kps_getFormTranslation('Family') . '" title="' . kps_getFormTranslation('Family') . '" />&#160;' . kps_getFormTranslation('Family') .'</div>
-                                <div class="kps-divTableCell kps-legend"><img class="kps-legend" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $iconPak['color'] . '/comeclub.svg" width="25" height="25" alt="' . kps_getFormTranslation('Club/Group') . '" title="' . kps_getFormTranslation('Club/Group') . '" />&#160;' . kps_getFormTranslation('Club/Group') .'</div>
-                                <div class="kps-divTableCell kps-legend"></div>
-                    		</div>
+                    ';
+
+        while($i < count($legendShow))
+        {
+            if ( kps_getSingleIcon($legendShow[$i])[2] === true)
+            {
+                // Tabellenzeile beginnen
+                if ($z % $divRows == 0)
+                {
+                    $output .= '<div class="kps-divTableRow">';
+                }
+
+                // Zellen erstellen und mit Daten füllen
+                $output .= '<div class="kps-divTableCell kps-legend">' . kps_getSingleIcon($legendShow[$i])[0] . '&#160;' . kps_getSingleIcon($legendShow[$i])[1] . '</div>';
+
+                $z++;
+
+                // Zeile nach vorgegebener Spaltenzahl beenden
+                if ($z % $divRows == 0)
+                {
+                    $output .= '</div>';
+                }
+            }
+
+            $i++;
+        }
+
+
+        // Tabelle mit Zellen auffüllen und letzte Tabellenzeile korrekt abschliessen
+        if ($z % $divRows != 0)
+        {
+            $output .= (str_repeat('<div></div>', $divRows - (bcmod($z, $divRows))));
+            $output .= '</div>';
+        }
+
+        $output .=  '
                     	</div>
                     </div>
                     ';

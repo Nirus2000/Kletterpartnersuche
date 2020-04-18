@@ -1,7 +1,7 @@
 <?php
 /**
  * @author        Alexander Ott
- * @copyright     2018-2019
+ * @copyright     2018-2020
  * @email         kps@nirus-online.de
  *
  * All rights reserved
@@ -209,6 +209,11 @@ function kps_Icons()
                                             <th class="th_list_top" scope="col">' . kps_getFormTranslation('Hall') . '</th>
                                             <th class="th_list_top" scope="col">' . kps_getFormTranslation('Climbing') . '</th>
                                             <th class="th_list_top" scope="col">' . kps_getFormTranslation('Walking') . '</th>
+                                            <th class="th_list_top" scope="col">' . kps_getFormTranslation('Alpine tours') . '</th>
+                                            <th class="th_list_top" scope="col">' . kps_getFormTranslation('Kayak') . '</th>
+                                            <th class="th_list_top" scope="col">' . kps_getFormTranslation('Ferratas') . '</th>
+                                            <th class="th_list_top" scope="col">' . kps_getFormTranslation('Mountain bike') . '</th>
+                                            <th class="th_list_top" scope="col">' . kps_getFormTranslation('Winter sports') . '</th>
                                             <th class="th_list_top" scope="col">' . kps_getFormTranslation('Travels') . '</th>
                                             <th class="th_list_top" scope="col">' . kps_getFormTranslation('Unique') . '</th>
                                             <th class="th_list_top" scope="col">' . kps_getFormTranslation('Regularly') . '</th>
@@ -236,6 +241,11 @@ function kps_Icons()
                         <td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/hall.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Hall') . '" title="' . kps_getFormTranslation('Hall') . '" /></td>
             			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/nature.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Climbing') . '" title="' . kps_getFormTranslation('Climbing') . '" /></td>
             			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/trekking.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Walking') . '" title="' . kps_getFormTranslation('Walking') . '" /></td>
+            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/alpine.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Alpine tours') . '" title="' . kps_getFormTranslation('Alpine tours') . '" /></td>
+            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/kayak.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Kayak') . '" title="' . kps_getFormTranslation('Kayak') . '" /></td>
+            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/ferratas.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Ferratas') . '" title="' . kps_getFormTranslation('Ferratas') . '" /></td>
+            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/mountainbike.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Mountain bike') . '" title="' . kps_getFormTranslation('Mountain bike') . '" /></td>
+            			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/wintersports.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Winter sports') . '" title="' . kps_getFormTranslation('Winter sports') . '" /></td>
             			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/travel.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Travels') . '" title="' . kps_getFormTranslation('Travels') . '" /></td>
             			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/onetime.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Unique') . '" title="' . kps_getFormTranslation('Unique') . '" /></td>
             			<td class="td_list" style="text-align: center;"><img src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $color . '/moretime.svg" height="' . $i . '" alt="' . kps_getFormTranslation('Regularly') . '" title="' . kps_getFormTranslation('Regularly') . '" /></td>
@@ -251,13 +261,13 @@ function kps_Icons()
 
     echo '
                                         <tr>
-                                            <td colspan="11" class="kps-br"></td>
+                                            <td colspan="16" class="kps-br"></td>
                                         </tr>
                                         <tr>
-                                            <td colspan="11" class="hr"></td>
+                                            <td colspan="16" class="hr"></td>
                                         </tr>
                                         <tr>
-                                            <td colspan="11" style="text-align: center">
+                                            <td colspan="16" style="text-align: center">
                                                 <input type="hidden" id="kps_tab" name="kps_tab" value="kps_Icons" />
                                                 <input type="hidden" id="kpsIconToken" name="kpsIconToken" value="' . $token . '" />
                                                 <input class="button-primary" type="submit" name="submitIcon" value="' . esc_html__('Save', 'kps') . '">
@@ -489,6 +499,32 @@ function kps_Translations()
     // Token erstellen
     $token = wp_create_nonce('kpsTranslationsToken');
 
+    if (isset($_POST['submitResetTranslations']))
+    {
+        // Post-Variabeln festlegen die akzeptiert werden
+        $postList = array(
+            'kpsTranslationsToken'
+        );
+        $postVars = kps_array_whitelist_assoc($_POST, $postList);
+
+        // Token verifizieren
+        $verification = wp_verify_nonce($postVars['kpsTranslationsToken'], 'kpsTranslationsToken');
+
+        // Statistik zurücksetzen
+        if ($verification == true)
+        {
+            update_option('kps_translations', '');
+            echo '
+            <div class="notice notice-success is-dismissible">
+            	<p><strong>' . esc_html__('Reset', 'kps') . ':&#160;' .  esc_html__('Translations', 'kps') . '</strong></p>
+            	<button type="button" class="notice-dismiss">
+            		<span class="screen-reader-text">Dismiss this notice.</span>
+            	</button>
+            </div>
+            ';
+        }
+    }
+
     if (isset($_POST['submitTranslations']))
     {
         // Post-Variabeln festlegen die akzeptiert werden
@@ -496,6 +532,11 @@ function kps_Translations()
             'kpsTranslationsHall',
             'kpsTranslationsClimbing',
             'kpsTranslationsWalking',
+            'kpsTranslationsAlpineTours',
+            'kpsTranslationsKayak',
+            'kpsTranslationsFerratas',
+            'kpsTranslationsMountainBike',
+            'kpsTranslationsWinterSports',
             'kpsTranslationsTravels',
             'kpsTranslationsUnique',
             'kpsTranslationsRegularly',
@@ -515,6 +556,11 @@ function kps_Translations()
             $setTranslations['Hall']            = sanitize_text_field($postVars['kpsTranslationsHall']);
             $setTranslations['Climbing']        = sanitize_text_field($postVars['kpsTranslationsClimbing']);
             $setTranslations['Walking']         = sanitize_text_field($postVars['kpsTranslationsWalking']);
+            $setTranslations['Alpine Tours']    = sanitize_text_field($postVars['kpsTranslationsAlpineTours']);
+            $setTranslations['Kayak']           = sanitize_text_field($postVars['kpsTranslationsKayak']);
+            $setTranslations['Ferratas']        = sanitize_text_field($postVars['kpsTranslationsFerratas']);
+            $setTranslations['Mountain bike']   = sanitize_text_field($postVars['kpsTranslationsMountainBike']);
+            $setTranslations['Winter Sports']   = sanitize_text_field($postVars['kpsTranslationsWinterSports']);
             $setTranslations['Travels']         = sanitize_text_field($postVars['kpsTranslationsTravels']);
             $setTranslations['Unique']          = sanitize_text_field($postVars['kpsTranslationsUnique']);
             $setTranslations['Regularly']       = sanitize_text_field($postVars['kpsTranslationsRegularly']);
@@ -620,20 +666,40 @@ function kps_Translations()
                                             <td colspan="2"><i>' . esc_html__('I am looking for', 'kps') . '</i></td>
                                         </tr>
                                         <tr>
-                                            <td width="40"><label for="kpsTranslationsHall">' . kps_getSingleIcon('hall') . '</label></td>
+                                            <td width="40"><label for="kpsTranslationsHall">' . kps_getSingleIcon('kpsFormOptionHall')[0] . '</label></td>
                                             <td><input type="text" name="kpsTranslationsHall" id="kpsTranslationsHall" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Hall')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Hall', 'kps') . '</i></td>
                                         </tr>
                                         <tr>
-                                            <td width="40"><label for="kpsTranslationsClimbing">' . kps_getSingleIcon('climbing') . '</label></td>
+                                            <td width="40"><label for="kpsTranslationsClimbing">' . kps_getSingleIcon('kpsFormOptionClimbing')[0] . '</label></td>
                                             <td><input type="text" name="kpsTranslationsClimbing" id="kpsTranslationsClimbing" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Climbing')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Climbing', 'kps') . '</i></td>
                                         </tr>
                                         <tr>
-                                            <td width="40"><label for="kpsTranslationsWalking">' . kps_getSingleIcon('walking') . '</label></td>
-                                            <td><input type="text" name="kpsTranslationsWalking" id="kpsTranslationsWalking" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Walking')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Travels', 'kps') . '</i></td>
+                                            <td width="40"><label for="kpsTranslationsWalking">' . kps_getSingleIcon('kpsFormOptionWalking')[0] . '</label></td>
+                                            <td><input type="text" name="kpsTranslationsWalking" id="kpsTranslationsWalking" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Walking')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Walking', 'kps') . '</i></td>
                                         </tr>
                                         <tr>
-                                            <td width="40"><label for="kpsTranslationsTravels">' . kps_getSingleIcon('tracking') . '</label></td>
-                                            <td><input type="text" name="kpsTranslationsTravels" id="kpsTranslationsTravels" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Travels')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Walking', 'kps') . '</i></td>
+                                            <td width="40"><label for="kpsTranslationsAlpineTours">' . kps_getSingleIcon('kpsFormOptionAlpineTours')[0] . '</label></td>
+                                            <td><input type="text" name="kpsTranslationsAlpineTours" id="kpsTranslationsAlpineTours" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Alpine tours')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Alpine tours', 'kps') . '</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="40"><label for="kpsTranslationsKayak">' . kps_getSingleIcon('kpsFormOptionKayak')[0] . '</label></td>
+                                            <td><input type="text" name="kpsTranslationsKayak" id="kpsTranslationsKayak" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Kayak')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Kayak', 'kps') . '</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="40"><label for="kpsTranslationsFerratas">' . kps_getSingleIcon('kpsFormOptionFerratas')[0] . '</label></td>
+                                            <td><input type="text" name="kpsTranslationsFerratas" id="kpsTranslationsFerratas" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Ferratas')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Ferratas', 'kps') . '</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="40"><label for="kpsTranslationsMountainBike">' . kps_getSingleIcon('kpsFormOptionMountainBike')[0] . '</label></td>
+                                            <td><input type="text" name="kpsTranslationsMountainBike" id="kpsTranslationsMountainBike" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Mountain bike')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Mountain bike', 'kps') . '</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="40"><label for="kpsTranslationsWinterSports">' . kps_getSingleIcon('kpsFormOptionWinterSports')[0] . '</label></td>
+                                            <td><input type="text" name="kpsTranslationsWinterSports" id="kpsTranslationsWinterSports" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Winter sports')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Winter sports', 'kps') . '</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="40"><label for="kpsTranslationsTravels">' . kps_getSingleIcon('kpsFormOptionTravels')[0] . '</label></td>
+                                            <td><input type="text" name="kpsTranslationsTravels" id="kpsTranslationsTravels" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Travels')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Travels', 'kps') . '</i></td>
                                         </tr>
                                         <tr>
                                             <td colspan="2" class="kps-br"></td>
@@ -642,11 +708,11 @@ function kps_Translations()
                                             <td colspan="2"><i>' . esc_html__('Kind of search', 'kps') . '</i></td>
                                         </tr>
                                         <tr>
-                                            <td width="40"><label for="kpsTranslationsUnique">' . kps_getSingleIcon('unique') . '</label></td>
+                                            <td width="40"><label for="kpsTranslationsUnique">' . kps_getSingleIcon('kpsFormOptionOneTime')[0] . '</label></td>
                                             <td><input type="text" name="kpsTranslationsUnique" id="kpsTranslationsUnique" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Unique')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Unique', 'kps') . '</i></td>
                                         </tr>
                                         <tr>
-                                            <td width="40"><label for="kpsTranslationsRegularly">' . kps_getSingleIcon('regularly') . '</label></td>
+                                            <td width="40"><label for="kpsTranslationsRegularly">' . kps_getSingleIcon('kpsFormOptionMoreTime')[0] . '</label></td>
                                             <td><input type="text" name="kpsTranslationsRegularly" id="kpsTranslationsRegularly" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Regularly')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Regularly', 'kps') . '</i></td>
                                         </tr>
                                         <tr>
@@ -656,15 +722,15 @@ function kps_Translations()
                                             <td colspan="2"><i>' . esc_html__('I am', 'kps') . '</i></td>
                                         </tr>
                                         <tr>
-                                            <td width="40"><label for="kpsTranslationsGoalone">' . kps_getSingleIcon('goalone') . '</label></td>
+                                            <td width="40"><label for="kpsTranslationsGoalone">' . kps_getSingleIcon('kpsFormOptionSinglePerson')[0] . '</label></td>
                                             <td><input type="text" name="kpsTranslationsGoalone" id="kpsTranslationsGoalone" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Single person')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Single person', 'kps') . '</i></td>
                                         </tr>
                                         <tr>
-                                            <td width="40"><label for="kpsTranslationsFamily">' . kps_getSingleIcon('family') . '</label></td>
+                                            <td width="40"><label for="kpsTranslationsFamily">' . kps_getSingleIcon('kpsFormOptionFamily')[0] . '</label></td>
                                             <td><input type="text" name="kpsTranslationsFamily" id="kpsTranslationsFamily" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Family')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Family', 'kps') . '</i></td>
                                         </tr>
                                         <tr>
-                                            <td width="40"><label for="kpsTranslationsComeClub">' . kps_getSingleIcon('comeclub') . '</label></td>
+                                            <td width="40"><label for="kpsTranslationsComeClub">' . kps_getSingleIcon('kpsFormOptionClubGroup')[0] . '</label></td>
                                             <td><input type="text" name="kpsTranslationsComeClub" id="kpsTranslationsWalking" class="form_field" aria-required="true" required="required" value="' . esc_attr(kps_getFormTranslation('Club/Group')) . '" minlength="5" maxlength="25" />&#160;<i>' . esc_html__('Default', 'kps') . ':&#160;' . esc_html__('Club/Group', 'kps') . '</i></td>
                                         </tr>
                                         <tr>
@@ -678,6 +744,7 @@ function kps_Translations()
                                                 <input type="hidden" id="kps_tab" name="kps_tab" value="kps_Translations" />
                                                 <input type="hidden" id="kpsTranslationsToken" name="kpsTranslationsToken" value="' . $token . '" />
                                                 <input class="button-primary" type="submit" name="submitTranslations" value="' . esc_html__('Save', 'kps') . '">
+                                                <input class="button-primary" type="submit" name="submitResetTranslations" id="submitResetTranslations" value="' . esc_html__('Reset', 'kps') . '" />
                                             </td>
                                 		</tr>
                                 	</tbody>

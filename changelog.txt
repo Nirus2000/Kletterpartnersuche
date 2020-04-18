@@ -1,3 +1,11 @@
+= v. 2.4.0 =
+*[15.11.2019]*
+* Upd: Translation de_DE
+* Upd: Translation de_DE_formal
+* Upd: FontAwesome to 5.11.2
+* Upd: readme.txt
+* Upd. readme.md
+
 = v. 2.3.1 =
 *[14.10.2019]*
 * Fix: Install

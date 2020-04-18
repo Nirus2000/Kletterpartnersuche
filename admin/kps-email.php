@@ -1,7 +1,7 @@
 <?php
 /**
  * @author        Alexander Ott
- * @copyright     2018-2019
+ * @copyright     2018-2020
  * @email         kps@nirus-online.de
  *
  * All rights reserved
@@ -113,6 +113,33 @@ function kps_UnlockEmail()
 
     // Token erstellen
     $token = wp_create_nonce('kpsUnlockToken');
+
+    if (isset($_POST['submitReset']))
+    {
+        // Post-Variabeln festlegen die akzeptiert werden
+        $postList = array(
+            'kpsUnlockToken'
+        );
+        $postVars = kps_array_whitelist_assoc($_POST, $postList);
+
+        // Token verifizieren
+        $verification = wp_verify_nonce($postVars['kpsUnlockToken'], 'kpsUnlockToken');
+
+        // Verifizieren
+        if ($verification == true)
+        {
+            delete_option('kps_adminUnlockMailSettings');
+
+            echo '
+            <div class="notice notice-success is-dismissible">
+            	<p><strong>' . esc_html__('Reset', 'kps') . ':&#160;' . esc_html__('Unlocked', 'kps') . '</strong></p>
+            	<button type="button" class="notice-dismiss">
+            		<span class="screen-reader-text">Dismiss this notice.</span>
+            	</button>
+            </div>
+            ';
+        }
+    }
 
     if (isset($_POST['submitUnlock']))
     {
@@ -290,6 +317,7 @@ function kps_UnlockEmail()
                                             <input type="hidden" id="kps_tab" name="kps_tab" value="kps_UnlockEmail" />
                                             <input type="hidden" id="kpsUnlockToken" name="kpsUnlockToken" value="' . $token . '" />
                                             <input class="button-primary" type="submit" name="submitUnlock" value="' . esc_html__('Save', 'kps') . '" />
+                                            <input class="button-primary" type="submit" name="submitReset" value="' . esc_html__('Reset', 'kps') . '">
                                         </td>
                                     </tr>
                                 </tbody>
@@ -368,6 +396,33 @@ function kps_ContactDataEmail()
 
     // Token erstellen
     $token = wp_create_nonce('kpsContactDataToken');
+
+    if (isset($_POST['submitReset']))
+    {
+        // Post-Variabeln festlegen die akzeptiert werden
+        $postList = array(
+            'kpsContactDataToken'
+        );
+        $postVars = kps_array_whitelist_assoc($_POST, $postList);
+
+        // Token verifizieren
+        $verification = wp_verify_nonce($postVars['kpsContactDataToken'], 'kpsContactDataToken');
+
+        // Verifizieren
+        if ($verification == true)
+        {
+            delete_option('kps_userMailSettings');
+
+            echo '
+            <div class="notice notice-success is-dismissible">
+            	<p><strong>' . esc_html__('Reset', 'kps') . ':&#160;' . esc_html__('Request contact information', 'kps') . '</strong></p>
+            	<button type="button" class="notice-dismiss">
+            		<span class="screen-reader-text">Dismiss this notice.</span>
+            	</button>
+            </div>
+            ';
+        }
+    }
 
     if (isset($_POST['submitContactData']))
     {
@@ -561,6 +616,7 @@ function kps_ContactDataEmail()
                                             <input type="hidden" id="kps_tab" name="kps_tab" value="kps_ContactDataEmail" />
                                             <input type="hidden" id="kpsContactDataToken" name="kpsContactDataToken" value="' . $token . '" />
                                             <input class="button-primary" type="submit" name="submitContactData" value="' . esc_html__('Save', 'kps') . '">
+                                            <input class="button-primary" type="submit" name="submitReset" value="' . esc_html__('Reset', 'kps') . '">
                                         </td>
                                     </tr>
                                 </tbody>
@@ -642,6 +698,33 @@ function kps_VerificationEmail()
 
     // Token erstellen
     $token = wp_create_nonce('kpsVerifictionToken');
+
+    if (isset($_POST['submitReset']))
+    {
+        // Post-Variabeln festlegen die akzeptiert werden
+        $postList = array(
+            'kpsVerifictionToken'
+        );
+        $postVars = kps_array_whitelist_assoc($_POST, $postList);
+
+        // Token verifizieren
+        $verification = wp_verify_nonce($postVars['kpsVerifictionToken'], 'kpsVerifictionToken');
+
+        // Verifizieren
+        if ($verification == true)
+        {
+            delete_option('kps_userMailContactSettings');
+
+            echo '
+            <div class="notice notice-success is-dismissible">
+            	<p><strong>' . esc_html__('Reset', 'kps') . ':&#160;' . esc_html__('Verification', 'kps') . '</strong></p>
+            	<button type="button" class="notice-dismiss">
+            		<span class="screen-reader-text">Dismiss this notice.</span>
+            	</button>
+            </div>
+            ';
+        }
+    }
 
     if (isset($_POST['submitVerifiction']))
     {
@@ -835,6 +918,7 @@ function kps_VerificationEmail()
                                             <input type="hidden" id="kps_tab" name="kps_tab" value="kps_VerificationEmail" />
                                             <input type="hidden" id="kpsVerifictionToken" name="kpsVerifictionToken" value="' . $token . '" />
                                             <input class="button-primary" type="submit" name="submitVerifiction" value="' . esc_html__('Save', 'kps') . '" />
+                                            <input class="button-primary" type="submit" name="submitReset" value="' . esc_html__('Reset', 'kps') . '">
                                         </td>
                                     </tr>
                                 </tbody>
@@ -912,6 +996,33 @@ function kps_ActivationEmail()
 
     // Token erstellen
     $token = wp_create_nonce('kpsActivationToken');
+
+    if (isset($_POST['submitReset']))
+    {
+        // Post-Variabeln festlegen die akzeptiert werden
+        $postList = array(
+            'kpsActivationToken'
+        );
+        $postVars = kps_array_whitelist_assoc($_POST, $postList);
+
+        // Token verifizieren
+        $verification = wp_verify_nonce($postVars['kpsActivationToken'], 'kpsActivationToken');
+
+        // Verifizieren
+        if ($verification == true)
+        {
+            delete_option('kps_authorMailSettings');
+
+            echo '
+            <div class="notice notice-success is-dismissible">
+            	<p><strong>' . esc_html__('Reset', 'kps') . ':&#160;' . esc_html__('Activation', 'kps') . '</strong></p>
+            	<button type="button" class="notice-dismiss">
+            		<span class="screen-reader-text">Dismiss this notice.</span>
+            	</button>
+            </div>
+            ';
+        }
+    }
 
     if (isset($_POST['submitActivation']))
     {
@@ -1090,6 +1201,7 @@ function kps_ActivationEmail()
                                             <input type="hidden" id="kps_tab" name="kps_tab" value="kps_ActivationEmail" />
                                             <input type="hidden" id="kpsActivationToken" name="kpsActivationToken" value="' . $token . '" />
                                             <input class="button-primary" type="submit" name="submitActivation" value="' . esc_html__('Save', 'kps') . '" />
+                                            <input class="button-primary" type="submit" name="submitReset" value="' . esc_html__('Reset', 'kps') . '">
                                         </td>
                                     </tr>
                                 </tbody>

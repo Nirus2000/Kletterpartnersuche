@@ -1,7 +1,7 @@
 <?php
 /**
  * @author        Alexander Ott
- * @copyright     2018-2019
+ * @copyright     2018-2020
  * @email         kps@nirus-online.de
  *
  * All rights reserved
@@ -127,18 +127,25 @@ function kps_install()
         $formOptions = serialize(array(
             'kpsFormOptionHall'                 => 'true',
             'kpsFormOptionClimbing'             => 'true',
-            'kpsFormOptionWalkiing'             => 'true',
+            'kpsFormOptionWalking'              => 'true',
+            'kpsFormOptionAlpineTours'          => 'true',
+            'kpsFormOptionKayak'                => 'true',
+            'kpsFormOptionFerratas'             => 'true',
+            'kpsFormOptionMountainBike'         => 'true',
+            'kpsFormOptionWinterSports'         => 'true',
             'kpsFormOptionTravels'              => 'true',
+            'kpsFormOptionOneTime'              => 'true',
+            'kpsFormOptionMoreTime'             => 'true',
             'kpsFormOptionSinglePerson'         => 'true',
             'kpsFormOptionFamily'               => 'true',
             'kpsFormOptionClubGroup'            => 'true',
             'kpsFormOptionTelephone'            => 'true',
-            'kpsFormOptionMobile'               => 'false',
-            'kpsFormOptionWhatsapp'             => 'false',
-            'kpsFormOptionSignal'               => 'false',
+            'kpsFormOptionMobile'               => 'true',
+            'kpsFormOptionWhatsapp'             => 'true',
+            'kpsFormOptionSignal'               => 'true',
             'kpsFormOptionViper'                => 'false',
-            'kpsFormOptionTelegram'             => 'false',
-            'kpsFormOptionThreema'              => 'false',
+            'kpsFormOptionTelegram'             => 'true',
+            'kpsFormOptionThreema'              => 'true',
             'kpsFormOptionFacebookMessenger'    => 'false',
             'kpsFormOptionWire'                 => 'false',
             'kpsFormOptionHoccer'               => 'false',
@@ -193,7 +200,7 @@ function kps_install()
             'kpsEmailSetTime'                   => 'true',
             'kpsEmailUnlockTime'                => 'true',
             'kpsEmailDeleteTime'                => 'true',
-            'kpsLegendActivated'                => 'false'
+            'kpsLegendActivated'                => 'true'
         ));
 
         // Einstellungen speichern in der Options-Tabelle
@@ -253,6 +260,7 @@ function kps_upgrade()
             'kpsWidgetIconPak'  => 0
         ));
 
+        // Widget updaten
         update_option('kps_widget', $widget, 'yes');
     }
 
@@ -277,6 +285,7 @@ function kps_upgrade()
 
         $setFormOption = serialize($setFormOption);
 
+        // Formularoptionen updaten
         update_option('kps_formOptions', $setFormOption);
     }
 
@@ -289,6 +298,7 @@ function kps_upgrade()
             'kpsEmailDeleteTime'                            => 'true'
         ));
 
+        // Erstelle Ausgabe
         add_option('kps_output', $output);
     }
 
@@ -314,6 +324,7 @@ function kps_upgrade()
 
         $setFormOption = serialize($setFormOption);
 
+        // Formularoptionen updaten
         update_option('kps_formOptions', $setFormOption);
     }
 
@@ -321,7 +332,7 @@ function kps_upgrade()
     {
         // Legende-Optionen auslesen
         $legend             = kps_unserialize(get_option('kps_legend'));
-        $legendActivated    = ($legend['kpsLegendActivated'] === 'true') ? true : false;
+        $legendActivated    = ($legend['kpsLegendActivated'] === 'true') ? 'true' : 'false';
 
         // Output-Optionen updaten
         $output = kps_unserialize(get_option('kps_output'));
@@ -334,6 +345,7 @@ function kps_upgrade()
 
         $setOutput = serialize($setOutput);
 
+        // Formularoptionen updaten
         update_option('kps_output', $setOutput);
 
         // IconPak updaten
@@ -351,7 +363,7 @@ function kps_upgrade()
         // Formular-Optionen updaten
         $setFormOption['kpsFormOptionHall']                 = 'true';
         $setFormOption['kpsFormOptionClimbing']             = 'true';
-        $setFormOption['kpsFormOptionWalkiing']             = 'true';
+        $setFormOption['kpsFormOptionWalking']              = 'true';
         $setFormOption['kpsFormOptionTravels']              = 'true';
         $setFormOption['kpsFormOptionSinglePerson']         = 'true';
         $setFormOption['kpsFormOptionFamily']               = 'true';
@@ -373,10 +385,58 @@ function kps_upgrade()
 
         $setFormOption = serialize($setFormOption);
 
+        // Formularoptionen updaten
         update_option('kps_formOptions', $setFormOption);
 
-        // Übersetzungen
+        // Erstelle Übersetzungen
         add_option('kps_translations', '');                             // Übersetzungen
+    }
+
+    if (version_compare($current_version, '2.4.0', '<'))
+    {
+
+        // Formular-Optionen updaten
+        $formOptions = kps_unserialize(get_option('kps_formOptions'));
+
+        // Formular-Optionen updaten
+        $setFormOption['kpsFormOptionHall']                 = 'true';
+        $setFormOption['kpsFormOptionClimbing']             = 'true';
+        $setFormOption['kpsFormOptionWalking']              = 'true';
+        $setFormOption['kpsFormOptionAlpineTours']          = 'true';
+        $setFormOption['kpsFormOptionKayak']                = 'true';
+        $setFormOption['kpsFormOptionFerratas']             = 'true';
+        $setFormOption['kpsFormOptionMountainBike']         = 'true';
+        $setFormOption['kpsFormOptionWinterSports']         = 'true';
+        $setFormOption['kpsFormOptionKayak']                = 'true';
+        $setFormOption['kpsFormOptionTravels']              = 'true';
+        $setFormOption['kpsFormOptionOneTime']              = 'true';
+        $setFormOption['kpsFormOptionMoreTime']             = 'true';
+        $setFormOption['kpsFormOptionSinglePerson']         = 'true';
+        $setFormOption['kpsFormOptionFamily']               = 'true';
+        $setFormOption['kpsFormOptionClubGroup']            = 'true';
+        $setFormOption['kpsFormOptionTelephone']            = $formOptions['kpsFormOptionTelephone'];
+        $setFormOption['kpsFormOptionMobile']               = $formOptions['kpsFormOptionMobile'];
+        $setFormOption['kpsFormOptionWhatsapp']             = $formOptions['kpsFormOptionWhatsapp'];
+        $setFormOption['kpsFormOptionSignal']               = $formOptions['kpsFormOptionSignal'];
+        $setFormOption['kpsFormOptionViper']                = $formOptions['kpsFormOptionViper'];
+        $setFormOption['kpsFormOptionTelegram']             = $formOptions['kpsFormOptionTelegram'];
+        $setFormOption['kpsFormOptionThreema']              = $formOptions['kpsFormOptionThreema'];
+        $setFormOption['kpsFormOptionFacebookMessenger']    = $formOptions['kpsFormOptionFacebookMessenger'];
+        $setFormOption['kpsFormOptionWire']                 = $formOptions['kpsFormOptionWire'];
+        $setFormOption['kpsFormOptionHoccer']               = $formOptions['kpsFormOptionHoccer'];
+        $setFormOption['kpsFormOptionSkype']                = $formOptions['kpsFormOptionSkype'];
+        $setFormOption['kpsFormOptionWebsite']              = $formOptions['kpsFormOptionWebsite'];
+        $setFormOption['kpsFormOptionInstagram']            = $formOptions['kpsFormOptionInstagram'];
+        $setFormOption['kpsFormOptionFacebook']             = $formOptions['kpsFormOptionFacebook'];
+
+        $setFormOption = serialize($setFormOption);
+
+        // Formularoptionen updaten
+        update_option('kps_formOptions', $setFormOption);
+
+        // Übersetzungen updaten
+        delete_option('kps_translations');
+        add_option('kps_translations', '');                          // Übersetzungen
     }
 
     // Version updaten

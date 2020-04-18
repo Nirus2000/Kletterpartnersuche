@@ -1,7 +1,7 @@
 <?php
 /**
  * @author        Alexander Ott
- * @copyright     2018-2019
+ * @copyright     2018-2020
  * @email         kps@nirus-online.de
  *
  * All rights reserved
@@ -330,7 +330,8 @@ between 1-499 messages. The range up to the automatic lock is between 2-500 mess
 function kps_Optionfields()
 {
     $verification   = false;
-    $userFormChoise = false;
+    $userSearchChoise = false;
+    $userIamChoise = false;
 
     // Token erstellen
     $token = wp_create_nonce('kpsFormOptionToken');
@@ -341,7 +342,12 @@ function kps_Optionfields()
         $postList = array(
             'kpsFormOptionHall',
             'kpsFormOptionClimbing',
-            'kpsFormOptionWalkiing',
+            'kpsFormOptionWalking',
+            'kpsFormOptionAlpineTours',
+            'kpsFormOptionKayak',
+            'kpsFormOptionFerratas',
+            'kpsFormOptionMountainBike',
+            'kpsFormOptionWinterSports',
             'kpsFormOptionTravels',
             'kpsFormOptionSinglePerson',
             'kpsFormOptionFamily',
@@ -384,26 +390,32 @@ function kps_Optionfields()
             // Prüfe, ob mindestens zwei "Ich suche für" ausgewählt sind
             if(((int)$postVars['kpsFormOptionHall'] +
                 (int)$postVars['kpsFormOptionClimbing'] +
-                (int)$postVars['kpsFormOptionWalkiing'] +
+                (int)$postVars['kpsFormOptionWalking'] +
+                (int)$postVars['kpsFormOptionAlpineTours'] +
+                (int)$postVars['kpsFormOptionKayak'] +
+                (int)$postVars['kpsFormOptionFerratas'] +
+                (int)$postVars['kpsFormOptionMountainBike'] +
+                (int)$postVars['kpsFormOptionWinterSports'] +
                 (int)$postVars['kpsFormOptionTravels']
                 )
                 === 1)
             {
-                $userFormChoise = true; // Reset Formularfeldauswahl
+                $userSearchChoise = true; // Reset Formularfeldauswahl
             }
 
             // Prüfe, ob "Ich suche für" ausgewählt ist
             if ($setFormOption['kpsFormOptionHall'] === 'false' AND
                 $setFormOption['kpsFormOptionClimbing'] === 'false' AND
-                $setFormOption['kpsFormOptionWalkiing'] === 'false' AND
+                $setFormOption['kpsFormOptionWalking'] === 'false' AND
+                $setFormOption['kpsFormOptionAlpineTours'] === 'false' AND
+                $setFormOption['kpsFormOptionKayak'] === 'false' AND
+                $setFormOption['kpsFormOptionFerratas'] === 'false' AND
+                $setFormOption['kpsFormOptionMountainBike'] === 'false' AND
+                $setFormOption['kpsFormOptionWinterSports'] === 'false' AND
                 $setFormOption['kpsFormOptionTravels'] === 'false'
                 )
             {
-                $setFormOption['kpsFormOptionHall'] = 'true';
-                $setFormOption['kpsFormOptionClimbing'] = 'true';
-                $setFormOption['kpsFormOptionWalkiing'] = 'true';
-                $setFormOption['kpsFormOptionTravels'] = 'true';
-                $userFormChoise = true; // Reset Formularfeldauswahl
+                $userSearchChoise = true; // Reset Formularfeldauswahl
             }
 
             // Prüfe, ob mindestens zwei "Ich bin" ausgewählt sind
@@ -413,7 +425,7 @@ function kps_Optionfields()
                 )
                 === 1)
             {
-                $userFormChoise = true; // Reset Formularfeldauswahl
+                $userIamChoise = true; // Reset Formularfeldauswahl
             }
 
             // Prüfe, ob "Ich bin" ausgewählt ist
@@ -422,11 +434,13 @@ function kps_Optionfields()
                 $setFormOption['kpsFormOptionClubGroup'] === 'false'
                 )
             {
-                $setFormOption['kpsFormOptionSinglePerson'] = 'true';
-                $setFormOption['kpsFormOptionFamily'] = 'true';
-                $setFormOption['kpsFormOptionClubGroup'] = 'true';
-                $userFormChoise = true; // Reset Formularfeldauswahl
+                $userIamChoise = true; // Reset Formularfeldauswahl
             }
+
+            // "Einmalig / Regelmßßig" setzen
+            $setFormOption['kpsFormOptionOneTime']  = 'true';
+            $setFormOption['kpsFormOptionMoreTime'] = 'true';
+
 
             // Formular Optionsfelder aktualisieren
             if (is_array($setFormOption)
@@ -436,7 +450,7 @@ function kps_Optionfields()
                 $setFormOption = serialize($setFormOption);
 
                 // Serialieren True --> Update DB
-                if (is_serialized($setFormOption) AND $userFormChoise === false)
+                if (is_serialized($setFormOption) AND $userSearchChoise === false AND $userIamChoise === false)
                 {
                     update_option('kps_formOptions', $setFormOption);
                     echo '
@@ -448,16 +462,30 @@ function kps_Optionfields()
                     </div>
                     ';
                 }
-                elseif ($userFormChoise === true)
+                elseif ($userSearchChoise === true OR $userIamChoise === true)
                 {
-                    echo '
-                    <div class="notice notice-error is-dismissible">
-                    	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('Two search options must be selected', 'kps') . '</strong></p>
-                    	<button type="button" class="notice-dismiss">
-                    		<span class="screen-reader-text">Dismiss this notice.</span>
-                    	</button>
-                    </div>
-                    ';
+                    if ($userSearchChoise === true)
+                    {
+                        echo '
+                        <div class="notice notice-error is-dismissible">
+                        	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('At least two "I Search for" options must be selected', 'kps') . '</strong></p>
+                        	<button type="button" class="notice-dismiss">
+                        		<span class="screen-reader-text">Dismiss this notice.</span>
+                        	</button>
+                        </div>
+                        ';
+                    }
+                    if ($userIamChoise === true)
+                    {
+                        echo '
+                        <div class="notice notice-error is-dismissible">
+                        	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('At least two "I am" options must be selected', 'kps') . '</strong></p>
+                        	<button type="button" class="notice-dismiss">
+                        		<span class="screen-reader-text">Dismiss this notice.</span>
+                        	</button>
+                        </div>
+                        ';
+                    }
                 }
                 else
                 {
@@ -497,10 +525,15 @@ function kps_Optionfields()
     }
 
     // Hole Formular Optionsfelder Einstellungen
-    $kpsFormOptions = kps_unserialize(get_option('kps_formOptions', false));
+    $kpsFormOptions                     = kps_unserialize(get_option('kps_formOptions', false));
     $kpsFormOptionHall                  = ($kpsFormOptions['kpsFormOptionHall'] === 'true') ? 'checked' : '';
     $kpsFormOptionClimbing              = ($kpsFormOptions['kpsFormOptionClimbing'] === 'true') ? 'checked' : '';
-    $kpsFormOptionWalking               = ($kpsFormOptions['kpsFormOptionWalkiing'] === 'true') ? 'checked' : '';
+    $kpsFormOptionWalking               = ($kpsFormOptions['kpsFormOptionWalking'] === 'true') ? 'checked' : '';
+    $kpsFormOptionAlpineTours           = ($kpsFormOptions['kpsFormOptionAlpineTours'] === 'true') ? 'checked' : '';
+    $kpsFormOptionKayak                 = ($kpsFormOptions['kpsFormOptionKayak'] === 'true') ? 'checked' : '';
+    $kpsFormOptionFerratas              = ($kpsFormOptions['kpsFormOptionFerratas'] === 'true') ? 'checked' : '';
+    $kpsFormOptionMountainBike          = ($kpsFormOptions['kpsFormOptionMountainBike'] === 'true') ? 'checked' : '';
+    $kpsFormOptionWinterSports          = ($kpsFormOptions['kpsFormOptionWinterSports'] === 'true') ? 'checked' : '';
     $kpsFormOptionTravels               = ($kpsFormOptions['kpsFormOptionTravels'] === 'true') ? 'checked' : '';
 
     $kpsFormOptionSinglePerson          = ($kpsFormOptions['kpsFormOptionSinglePerson'] === 'true') ? 'checked' : '';
@@ -534,10 +567,28 @@ function kps_Optionfields()
                             <td width="25%"><label class="labelCheckbox" for="kpsFormOptionHall">' . kps_getFormTranslation('Hall') . '</label></td>
                             <td width="25"><input type="checkbox" name="kpsFormOptionClimbing" id="kpsFormOptionClimbing" value="1" ' . $kpsFormOptionClimbing . ' /></td>
                             <td width="25%"><label class="labelCheckbox" for="kpsFormOptionClimbing">' . kps_getFormTranslation('Climbing') . '</label></td>
-                            <td width="25"><input type="checkbox" name="kpsFormOptionWalkiing" id="kpsFormOptionWalkiing" value="1" ' . $kpsFormOptionWalking . ' /></td>
-                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionWalkiing">' . kps_getFormTranslation('Walking') . '</label></td>
+                            <td width="25"><input type="checkbox" name="kpsFormOptionWalking" id="kpsFormOptionWalking" value="1" ' . $kpsFormOptionWalking . ' /></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionWalking">' . kps_getFormTranslation('Walking') . '</label></td>
+                            <td width="25"><input type="checkbox" name="kpsFormOptionAlpineTours" id="kpsFormOptionAlpineTours" value="1" ' . $kpsFormOptionAlpineTours . ' /></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionAlpineTours">' . kps_getFormTranslation('Alpine tours') . '</label></td>
+                        </tr>
+                        <tr>
+                            <td width="25"><input type="checkbox" name="kpsFormOptionKayak" id="kpsFormOptionKayak" value="1" ' . $kpsFormOptionKayak . ' /></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionKayak">' . kps_getFormTranslation('Kayak') . '</label></td>
+                            <td width="25"><input type="checkbox" name="kpsFormOptionFerratas" id="kpsFormOptionFerratas" value="1" ' . $kpsFormOptionFerratas . ' /></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionFerratas">' . kps_getFormTranslation('Ferratas') . '</label></td>
+                            <td width="25"><input type="checkbox" name="kpsFormOptionMountainBike" id="kpsFormOptionMountainBike" value="1" ' . $kpsFormOptionMountainBike . ' /></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionMountainBike">' . kps_getFormTranslation('Mountain bike') . '</label></td>
+                            <td width="25"><input type="checkbox" name="kpsFormOptionWinterSports" id="kpsFormOptionWinterSports" value="1" ' . $kpsFormOptionWinterSports . ' /></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionWinterSports">' . kps_getFormTranslation('Winter sports') . '</label></td>
+                        </tr>
+                        <tr>
                             <td width="25"><input type="checkbox" name="kpsFormOptionTravels" id="kpsFormOptionTravels" value="1" ' . $kpsFormOptionTravels . ' /></td>
                             <td width="25%"><label class="labelCheckbox" for="kpsFormOptionTravels">' . kps_getFormTranslation('Travels') . '</label></td>
+                            <td width="25"></td>
+                            <td width="25%"></td>
+                            <td width="25"></td>
+                            <td width="25%"></td>
                         </tr>
                         <tr>
                             <td colspan="8" class="kps-br"></td>
@@ -569,9 +620,9 @@ function kps_Optionfields()
                         </tr>
                         <tr>
                             <td width="25"><input type="checkbox" name="kpsFormOptionMobile" id="kpsFormOptionMobile" value="1" ' . $kpsFormOptionMobile . ' /></td>
-                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionMobile">' . esc_html__('Mobile Phone', 'kps') . '</label></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionMobile"><i class="fas fa-mobile-alt"></i>&#160;' . esc_html__('Mobile Phone', 'kps') . '</label></td>
                             <td width="25"><input type="checkbox" name="kpsFormOptionTelephone" id="kpsFormOptionTelephone" value="1" ' . $kpsFormOptionTelephone . ' /></td>
-                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionTelephone">' . esc_html__('Telephone', 'kps') . '</label></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionTelephone"><i class="fas fa-phone-volume"></i>&#160;' . esc_html__('Telephone', 'kps') . '</label></td>
                             <td width="25"></td>
                             <td width="25%"></td>
                             <td width="25"></td>
@@ -585,31 +636,31 @@ function kps_Optionfields()
                         </tr>
                         <tr>
                             <td width="25"><input type="checkbox" name="kpsFormOptionFacebookMessenger" id="kpsFormOptionFacebookMessenger" value="1" ' . $kpsFormOptionFacebookMessenger . ' /></td>
-                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionFacebookMessenger">' . esc_html__('Facebook-Messenger', 'kps') . '</label></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionFacebookMessenger"><i class="fab fa-facebook-messenger"></i>&#160;' . esc_html__('Facebook-Messenger', 'kps') . '</label></td>
                             <td width="25"><input type="checkbox" name="kpsFormOptionSkype" id="kpsFormOptionSkype" value="1" ' . $kpsFormOptionSkype . ' /></td>
-                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionSkype">' . esc_html__('Skype', 'kps') . '</label></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionSkype"><i class="fab fa-skype"></i>&#160;' . esc_html__('Skype', 'kps') . '</label></td>
                             <td width="25"><input type="checkbox" name="kpsFormOptionWhatsapp" id="kpsFormOptionWhatsapp" value="1" ' . $kpsFormOptionWhatsapp . ' /></td>
-                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionWhatsapp">' . esc_html__('Whatsapp', 'kps') . '</label></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionWhatsapp"><i class="fab fa-whatsapp"></i>&#160;' . esc_html__('Whatsapp', 'kps') . '</label></td>
                             <td width="25"></td>
                             <td width="25%"></td>
                         </tr>
                         <tr>
                             <td width="25"><input type="checkbox" name="kpsFormOptionHoccer" id="kpsFormOptionHoccer" value="1" ' . $kpsFormOptionHoccer . ' /></td>
-                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionHoccer">' . esc_html__('Hoccer', 'kps') . '</label></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionHoccer"><i class="far fa-comments"></i>&#160;' . esc_html__('Hoccer', 'kps') . '</label></td>
                             <td width="25"><input type="checkbox" name="kpsFormOptionTelegram" id="kpsFormOptionTelegram" value="1" ' . $kpsFormOptionTelegram . ' /></td>
-                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionTelegram">' . esc_html__('Telegram', 'kps') . '</label></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionTelegram"><i class="fab fa-telegram-plane"></i>&#160;' . esc_html__('Telegram', 'kps') . '</label></td>
                             <td width="25"><input type="checkbox" name="kpsFormOptionThreema" id="kpsFormOptionThreema" value="1" ' . $kpsFormOptionThreema . ' /></td>
-                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionThreema">' . esc_html__('Threema', 'kps') . '</label></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionThreema"><i class="far fa-comment-alt"></i>&#160;' . esc_html__('Threema', 'kps') . '</label></td>
                             <td width="25"></td>
                             <td width="25%"></td>
                         </tr>
                         <tr>
                             <td width="25"><input type="checkbox" name="kpsFormOptionWire" id="kpsFormOptionWire" value="1" ' . $kpsFormOptionWire . ' /></td>
-                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionWire">' . esc_html__('Wire', 'kps') . '</label></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionWire"><i class="far fa-comment-dots"></i>&#160;' . esc_html__('Wire', 'kps') . '</label></td>
                             <td width="25"><input type="checkbox" name="kpsFormOptionSignal" id="kpsFormOptionSignal" value="1" ' . $kpsFormOptionSignal . ' /></td>
-                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionSignal">' . esc_html__('Signal', 'kps') . '</label></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionSignal"><i class="fas fa-signal"></i>&#160;' . esc_html__('Signal', 'kps') . '</label></td>
                             <td width="25"><input type="checkbox" name="kpsFormOptionViper" id="kpsFormOptionViper" value="1" ' . $kpsFormOptionViper . ' /></td>
-                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionViper">' . esc_html__('Viper', 'kps') . '</label></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionViper"><i class="fab fa-viber"></i>&#160;' . esc_html__('Viper', 'kps') . '</label></td>
                             <td width="25"></td>
                             <td width="25%"></td>
                         </tr>
@@ -621,11 +672,11 @@ function kps_Optionfields()
                         </tr>
                         <tr>
                             <td width="25"><input type="checkbox" name="kpsFormOptionFacebook" id="kpsFormOptionFacebook" value="1" ' . $kpsFormOptionFacebook . ' /></td>
-                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionFacebook">' . esc_html__('Facebook', 'kps') . '</label></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionFacebook"><i class="fab fa-facebook-f"></i>&#160;' . esc_html__('Facebook', 'kps') . '</label></td>
                             <td width="25"><input type="checkbox" name="kpsFormOptionInstagram" id="kpsFormOptionInstagram" value="1" ' . $kpsFormOptionInstagram . ' /></td>
-                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionInstagram">' . esc_html__('Instagram', 'kps') . '</label></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionInstagram"><i class="fab fa-instagram"></i>&#160;' . esc_html__('Instagram', 'kps') . '</label></td>
                             <td width="25"><input type="checkbox" name="kpsFormOptionWebsite" id="kpsFormOptionWebsite" value="1" ' . $kpsFormOptionWebsite . ' /></td>
-                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionWebsite">' . esc_html__('Website', 'kps') . '</label></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionWebsite"><i class="fas fa-globe-asia"></i>&#160;' . esc_html__('Website', 'kps') . '</label></td>
                             <td width="25"></td>
                             <td width="25%"></td>
                         </tr>

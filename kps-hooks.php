@@ -1,7 +1,7 @@
 <?php
 /**
  * @author        Alexander Ott
- * @copyright     2018-2019
+ * @copyright     2018-2020
  * @email         kps@nirus-online.de
  *
  * All rights reserved
@@ -161,7 +161,7 @@ function kps_backend_enqueue_style()
     wp_enqueue_style('kps-backend', plugins_url('/admin/css/kps-backend.css', __FILE__) , array(), KPS_VER, 'all');
 
     //Fontawesome
-    wp_enqueue_style('kps-frontend-dashicons', 'https://use.fontawesome.com/releases/v5.8.1/css/all.css' , array(), KPS_VER, 'all');
+    wp_enqueue_style('kps-frontend-dashicons', 'https://use.fontawesome.com/releases/v5.13.0/css/all.css' , array(), KPS_VER, 'all');
 }
 add_action('admin_enqueue_scripts', 'kps_backend_enqueue_style');
 
@@ -173,7 +173,7 @@ function kps_frontend_enqueue_style()
     wp_enqueue_style('kps-frontend', plugins_url('/frontend/css/kps-frontend.css', __FILE__) , array(), KPS_VER, 'all');
 
     //Fontawesome
-    wp_enqueue_style('kps-frontend-dashicons', 'https://use.fontawesome.com/releases/v5.8.1/css/all.css' , array(), KPS_VER, 'all');
+    wp_enqueue_style('kps-frontend-dashicons', 'https://use.fontawesome.com/releases/v5.13.0/css/all.css' , array(), KPS_VER, 'all');
 }
 add_action('wp_enqueue_scripts', 'kps_frontend_enqueue_style');
 

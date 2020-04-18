@@ -1,7 +1,7 @@
 <?php
 /**
  * @author        Alexander Ott
- * @copyright     2018-2019
+ * @copyright     2018-2020
  * @email         kps@nirus-online.de
  *
  * All rights reserved
@@ -40,6 +40,28 @@ if (strpos($_SERVER['PHP_SELF'], basename(__FILE__)))
 }
 
 /**
+ * Funktion Formular Legende
+ */
+if (!function_exists('kps_getFormLegend'))
+{
+    function kps_getFormLegend() {
+
+        // Hole Formular Optionsfelder Einstellungen
+        $kpsFormOptions = kps_unserialize(get_option('kps_formOptions', false));
+
+        foreach($kpsFormOptions AS $legend => $show)
+        {
+            if ($show === 'true')
+            {
+                $legendArray[] = $legend;
+            }
+        }
+
+        return $legendArray;
+    }
+}
+
+/**
  * Funktion Formular Optionen Übersetzungen
  */
 if (!function_exists('kps_getFormTranslation'))
@@ -72,38 +94,84 @@ if (!function_exists('kps_getSingleIcon'))
 
         switch ($iconChoose)
         {
-            case 'hall':
-                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/hall.svg" width="35" height="35" alt="' . kps_getFormTranslation('Hall') . '" title="' . kps_getFormTranslation('Hall') . '" />';
+            case 'kpsFormOptionHall':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/hall.svg" width="30" height="30" alt="' . kps_getFormTranslation('Hall') . '" title="' . kps_getFormTranslation('Hall') . '" />';
+                $translation = kps_getFormTranslation('Hall');
+                $showInLegend = true;
             break;
-            case 'climbing':
-                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/nature.svg" width="35" height="35" alt="' . kps_getFormTranslation('Climbing') . '" title="' . kps_getFormTranslation('Climbing') . '" />';
+            case 'kpsFormOptionClimbing':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/nature.svg" width="30" height="30" alt="' . kps_getFormTranslation('Climbing') . '" title="' . kps_getFormTranslation('Climbing') . '" />';
+                $translation = kps_getFormTranslation('Climbing');
+                $showInLegend = true;
             break;
-            case 'walking':
-                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/travel.svg" width="35" height="35" alt="' . kps_getFormTranslation('Travels') . '" title="' . kps_getFormTranslation('Travels') . '" />';
+            case 'kpsFormOptionWalking':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/trekking.svg" width="30" height="30" alt="' . kps_getFormTranslation('Walking') . '" title="' . kps_getFormTranslation('Walking') . '" />';
+                $translation = kps_getFormTranslation('Walking');
+                $showInLegend = true;
             break;
-            case 'tracking':
-                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/trekking.svg" width="35" height="35" alt="' . kps_getFormTranslation('Walking') . '" title="' . kps_getFormTranslation('Walking') . '" />';
+            case 'kpsFormOptionAlpineTours':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/alpine.svg" width="30" height="30" alt="' . kps_getFormTranslation('Alpine tours') . '" title="' . kps_getFormTranslation('Alpine tours') . '" />';
+                $translation = kps_getFormTranslation('Alpine tours');
+                $showInLegend = true;
             break;
-            case 'unique':
-                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/onetime.svg" width="35" height="35" alt="' . kps_getFormTranslation('Unique') . '" title="' . kps_getFormTranslation('Unique') . '" />';
+            case 'kpsFormOptionKayak':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/kayak.svg" width="30" height="30" alt="' . kps_getFormTranslation('Kayak') . '" title="' . kps_getFormTranslation('Kayak') . '" />';
+                $translation = kps_getFormTranslation('Kayak');
+                $showInLegend = true;
             break;
-            case 'regularly':
-                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/moretime.svg" width="35" height="35" alt="' . kps_getFormTranslation('Regularly') . '" title="' . kps_getFormTranslation('Regularly') . '" />';
+            case 'kpsFormOptionFerratas':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/ferratas.svg" width="30" height="30" alt="' . kps_getFormTranslation('Ferratas') . '" title="' . kps_getFormTranslation('Ferratas') . '" />';
+                $translation = kps_getFormTranslation('Ferratas');
+                $showInLegend = true;
             break;
-            case 'goalone':
-                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/goalone.svg" width="35" height="35" alt="' . kps_getFormTranslation('Single person') . '" title="' . kps_getFormTranslation('Single person') . '" />';
+            case 'kpsFormOptionMountainBike':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/mountainbike.svg" width="30" height="30" alt="' . kps_getFormTranslation('Mountain bike') . '" title="' . kps_getFormTranslation('Mountain bike') . '" />';
+                $translation = kps_getFormTranslation('Mountain bike');
+                $showInLegend = true;
             break;
-            case 'family':
-                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/family.svg" width="35" height="35" alt="' . kps_getFormTranslation('Family') . '" title="' . kps_getFormTranslation('Family') . '" />';
+            case 'kpsFormOptionWinterSports':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/wintersports.svg" width="30" height="30" alt="' . kps_getFormTranslation('Winter sports') . '" title="' . kps_getFormTranslation('Winter sports') . '" />';
+                $translation = kps_getFormTranslation('Winter sports');
+                $showInLegend = true;
             break;
-            case 'comeclub':
-                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/comeclub.svg" width="35" height="35" alt="' . kps_getFormTranslation('Club/Group') . '" title="' . kps_getFormTranslation('Club/Group') . '" />';
+            case 'kpsFormOptionTravels':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/travel.svg" width="30" height="30" alt="' . kps_getFormTranslation('Travels') . '" title="' . kps_getFormTranslation('Travels') . '" />';
+                $translation = kps_getFormTranslation('Travels');
+                $showInLegend = true;
+            break;
+            case 'kpsFormOptionOneTime':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/onetime.svg" width="30" height="30" alt="' . kps_getFormTranslation('Unique') . '" title="' . kps_getFormTranslation('Unique') . '" />';
+                $translation = kps_getFormTranslation('Unique');
+                $showInLegend = true;
+            break;
+            case 'kpsFormOptionMoreTime':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/moretime.svg" width="30" height="30" alt="' . kps_getFormTranslation('Regularly') . '" title="' . kps_getFormTranslation('Regularly') . '" />';
+                $translation = kps_getFormTranslation('Regularly');
+                $showInLegend = true;
+            break;
+            case 'kpsFormOptionSinglePerson':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/goalone.svg" width="30" height="30" alt="' . kps_getFormTranslation('Single person') . '" title="' . kps_getFormTranslation('Single person') . '" />';
+                $translation = kps_getFormTranslation('Single person');
+                $showInLegend = true;
+            break;
+            case 'kpsFormOptionFamily':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/family.svg" width="30" height="30" alt="' . kps_getFormTranslation('Family') . '" title="' . kps_getFormTranslation('Family') . '" />';
+                $translation = kps_getFormTranslation('Family');
+                $showInLegend = true;
+            break;
+            case 'kpsFormOptionClubGroup':
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/comeclub.svg" width="30" height="30" alt="' . kps_getFormTranslation('Club/Group') . '" title="' . kps_getFormTranslation('Club/Group') . '" />';
+                $translation = kps_getFormTranslation('Club/Group');
+                $showInLegend = true;
             break;
             default:
+                $icon = '<img class="kps-icon-pak" src="' . KPS_RELATIV_FRONTEND_GFX . '/' . $icon['color'] . '/unknown.svg" width="30" height="30" alt="' . kps_getFormTranslation('Unknown') . '" title="' . kps_getFormTranslation('Unknown') . '" />';
+                $translation = kps_getFormTranslation('Unknown');
+                $showInLegend = false;
 
         }
 
-        return $icon;
+        return array($icon, $translation, $showInLegend);
     }
 }
 
@@ -233,6 +301,7 @@ if (!function_exists('kps_contact_informations'))
 
             return $data;
         }
+
         return false;
     }
 }
@@ -310,7 +379,7 @@ if (!function_exists('kps_array_whitelist_assoc'))
 
             /*
              * Leerzeichen entfernen im Value des Array's
-             * Wird nur auf erste Dimension des Array's' angewendet!
+             * Wird nur auf erste Dimension des Array's angewendet!
              */
             $multiArray = array_filter($array1,'is_array');
             if(count($multiArray) == 0)
@@ -319,6 +388,7 @@ if (!function_exists('kps_array_whitelist_assoc'))
             }
             return array_intersect_key($array1, array_flip($array2));
         }
+
         return false;
     }
 }
@@ -330,18 +400,19 @@ if (!function_exists('kps_sanitize_textarea'))
 {
     function kps_sanitize_textarea($textarea = '')
     {
-        $textarea = str_replace("&nbsp;", "", $textarea); // Leerzeichen entfernen
-        $textarea = str_replace("&#160;", "", $textarea); // Leerzeichen entfernen
-        $textarea = str_replace("&#x00A0;", "", $textarea); // Leerzeichen entfernen
-        $textarea = strval($textarea); // Variable in String konvertieren
+        $textarea = str_replace("&nbsp;", "", $textarea);           // Leerzeichen entfernen
+        $textarea = str_replace("&#160;", "", $textarea);           // Leerzeichen entfernen
+        $textarea = str_replace("&#x00A0;", "", $textarea);         // Leerzeichen entfernen
+        $textarea = strval($textarea);                              // Variable in String konvertieren
         $textarea = htmlspecialchars_decode($textarea, ENT_COMPAT); // Konvertiert Anführungszeichen doppelt
-        $textarea = strip_tags($textarea); // Entfernt HTML und PHP Tags
-        $textarea = stripslashes($textarea); // Entfernt Maskierungszeichen aus einem String.
-        $textarea = str_replace('\\', '&#92;', $textarea); // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
-        $textarea = str_replace('"', '&quot;', $textarea); // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
-        $textarea = str_replace("'", '&#39;', $textarea); // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
-        $textarea = trim($textarea); // Entfernt Whitespaces (oder andere Zeichen) am Anfang und Ende eines Strings
+        $textarea = strip_tags($textarea);                          // Entfernt HTML und PHP Tags
+        $textarea = stripslashes($textarea);                        // Entfernt Maskierungszeichen aus einem String.
+        $textarea = str_replace('\\', '&#92;', $textarea);          // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
+        $textarea = str_replace('"', '&quot;', $textarea);          // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
+        $textarea = str_replace("'", '&#39;', $textarea);           // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
+        $textarea = trim($textarea);                                // Entfernt Whitespaces (oder andere Zeichen) am Anfang und Ende eines Strings
         $textarea = sanitize_textarea_field($textarea);
+
         return $textarea;
     }
 }
@@ -353,18 +424,19 @@ if (!function_exists('kps_sanitize_field'))
 {
     function kps_sanitize_field($string = '')
     {
-        $string = str_replace("&nbsp;", "", $string); // Leerzeichen entfernen
-        $string = str_replace("&#160;", "", $string); // Leerzeichen entfernen
-        $string = str_replace("&#x00A0;", "", $string); // Leerzeichen entfernen
-        $string = strval($string); // Variable in String konvertieren
-        $string = htmlspecialchars_decode($string, ENT_COMPAT); // Konvertiert Anführungszeichen doppelt
-        $string = strip_tags($string); // Entfernt HTML und PHP Tags
-        $string = stripslashes($string); // Entfernt Maskierungszeichen aus einem String.
-        $string = str_replace('\\', '&#92;', $string); // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
-        $string = str_replace('"', '&quot;', $string); // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
-        $string = str_replace("'", '&#39;', $string); // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
-        $string = trim($string); // Entfernt Whitespaces (oder andere Zeichen) am Anfang und Ende eines Strings
+        $string = str_replace("&nbsp;", "", $string);               // Leerzeichen entfernen
+        $string = str_replace("&#160;", "", $string);               // Leerzeichen entfernen
+        $string = str_replace("&#x00A0;", "", $string);             // Leerzeichen entfernen
+        $string = strval($string);                                  // Variable in String konvertieren
+        $string = htmlspecialchars_decode($string, ENT_COMPAT);     // Konvertiert Anführungszeichen doppelt
+        $string = strip_tags($string);                              // Entfernt HTML und PHP Tags
+        $string = stripslashes($string);                            // Entfernt Maskierungszeichen aus einem String.
+        $string = str_replace('\\', '&#92;', $string);              // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
+        $string = str_replace('"', '&quot;', $string);              // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
+        $string = str_replace("'", '&#39;', $string);               // Ersetzt alle Vorkommen des Suchstrings durch einen anderen String
+        $string = trim($string);                                    // Entfernt Whitespaces (oder andere Zeichen) am Anfang und Ende eines Strings
         $string = sanitize_text_field($string);
+
         return $string;
     }
 }
@@ -380,6 +452,7 @@ if (!function_exists('kps_unserialize'))
         {
             return maybe_unserialize($string);
         }
+
         return false;
     }
 }
@@ -394,6 +467,7 @@ if (!function_exists('kps_getFirstChars'))
         {
             return mb_substr($string, 0, $length);
         }
+
         return false;
     }
 }
@@ -408,6 +482,7 @@ if (!function_exists('kps_getLastChars'))
         {
             return mb_substr($string, -$length, $length);
         }
+
         return false;
     }
 }

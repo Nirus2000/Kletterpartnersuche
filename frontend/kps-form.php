@@ -1,7 +1,7 @@
 <?php
 /**
  * @author        Alexander Ott
- * @copyright     2018-2019
+ * @copyright     2018-2020
  * @email         kps@nirus-online.de
  *
  * All rights reserved
@@ -417,10 +417,6 @@ function kps_frontend_form($shortCodeValues)
             $errorAuthorAGBDSGVO    = ($write->_acceptedAGBDSGVO) ? '' : 'kps-form_glowing';
             $errorCaptcha           = ($captchaValid === true) ? '' : 'kps-form_glowing';
 
-            if (isset($write->_authorSearchfor0)) { $authorSearchfor0 = $write->_authorSearchfor0;} else { $authorSearchfor0 = '';}
-            if (isset($write->_authorSearchfor1)) { $authorSearchfor1 = $write->_authorSearchfor1;} else { $authorSearchfor1 = '';}
-            if (isset($write->_authorSearchfor2)) { $authorSearchfor2 = $write->_authorSearchfor2;} else { $authorSearchfor2 = '';}
-            if (isset($write->_authorSearchfor3)) { $authorSearchfor3 = $write->_authorSearchfor3;} else { $authorSearchfor3 = '';}
 
             if (isset($write->_authorRule0)) { $authorRule0 = $write->_authorRule0;} else { $authorRule0 = '';}
             if (isset($write->_authorRule1)) { $authorRule1 = $write->_authorRule1;} else { $authorRule1 = '';}
@@ -546,31 +542,43 @@ function kps_frontend_form($shortCodeValues)
                                         <div class="kps-divTableCell"><input class="form form_field ' . $errorAuthorName . '" ' . $inputFieldDisabled . ' id="kps_authorName" name="kps_authorName" value="' . $setUserName . '" placeholder="' . esc_html__('First name, name or nickname', 'kps') . '" size="245" maxlength="245" aria-required="true" required="required" type="text"></div>
                                     </div>
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr" style="vertical-align: top;"><label for="kps_authorSearchfor">' . esc_html__('I am looking for', 'kps') . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorSearchfor">' . esc_html__('I am looking for', 'kps') . '&#160;<sup><span class="kps-required">*</span></sup></label></div>
                                         <div class="kps-divTableCell kps-nobr">
                                             <div class="kps-option ' . $errorAuthorSearchfor . '">
+                                                <select id="kps_authorSearchfor" name="kps_authorSearchfor" class="dropdown" required>
+                                                    <option label=" " value=" " disabled selected>' . esc_html__('Please choose', 'kps') . '</option>
                     ';
-                                                // Wenn "Halle" aktiviert ist
-                                                if ($formOptions['kpsFormOptionHall'] === 'true')
-                                                {
-                                                    $output .= '<input id="kps_authorSearchfor0" name="kps_authorSearchfor" value="0" aria-required="true" required="required" type="radio" ' . $authorSearchfor0 . '><label style="display: inline-block;" for="kps_authorSearchfor0">&#160;' . kps_getFormTranslation('Hall') . '</label><br />';
-                                                }
-                                                // Wenn "Klettern" aktiviert ist
-                                                if ($formOptions['kpsFormOptionClimbing'] === 'true')
-                                                {
-                                                    $output .= '<input id="kps_authorSearchfor1" name="kps_authorSearchfor" value="1" aria-required="true" required="required" type="radio" ' . $authorSearchfor1 . '><label style="display: inline-block;" for="kps_authorSearchfor1">&#160;' . kps_getFormTranslation('Climbing') . '</label><br />';
-                                                }
-                                                // Wenn "Wandern" aktiviert ist
-                                                if ($formOptions['kpsFormOptionWalkiing'] === 'true')
-                                                {
-                                                    $output .= '<input id="kps_authorSearchfor3" name="kps_authorSearchfor" value="3" aria-required="true" required="required" type="radio" ' . $authorSearchfor3 . '><label style="display: inline-block;" for="kps_authorSearchfor3">&#160;' . kps_getFormTranslation('Walking') . '</label><br />';
-                                                }
-                                                // Wenn "Reisen" aktiviert ist
-                                                if ($formOptions['kpsFormOptionTravels'] === 'true')
-                                                {
-                                                    $output .= '<input id="kps_authorSearchfor2" name="kps_authorSearchfor" value="2" aria-required="true" required="required" type="radio" ' . $authorSearchfor2 . '><label style="display: inline-block;" for="kps_authorSearchfor2">&#160;' . kps_getFormTranslation('Travels') . '</label>';
-                                                }
+
+        // Dropdown Auswahl
+        $authorSearchFor =  array(
+                                "0" => kps_getFormTranslation('Hall'),
+                                "1" => kps_getFormTranslation('Climbing'),
+                                "2" => kps_getFormTranslation('Travels'),
+                                "3" => kps_getFormTranslation('Walking'),
+                                "4" => kps_getFormTranslation('Alpine tours'),
+                                "5" => kps_getFormTranslation('Kayak'),
+                                "6" => kps_getFormTranslation('Ferratas'),
+                                "7" => kps_getFormTranslation('Mountain bike'),
+                                "8" => kps_getFormTranslation('Winter sports')
+                            );
+        // alphabetisch sortieren
+        asort($authorSearchFor);
+
+        foreach ($authorSearchFor AS $key => $value)
+        {
+                if ($key == $write->_authorSearchfor AND $write->_authorSearchfor !== NULL)
+                {
+                    // Ausgabe
+                    $output .= '<option value="' . $key. '" selected>' . $value . '</option>';                                            }
+                else
+                {
+                    // Ausgabe
+                    $output .= '<option value="' . $key. '">' . $value . '</option>';
+                }
+        }
+
         $output .= '
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -758,7 +766,7 @@ function kps_frontend_form($shortCodeValues)
         {
             $output .= '
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorFacebook"><i class="fab fa-facebook"></i>&#160;' . esc_html__('Facebook', 'kps') . '</label></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorFacebook"><i class="fab fa-facebook-f"></i>&#160;' . esc_html__('Facebook', 'kps') . '</label></div>
                                         <div class="kps-divTableCell"><input class="form_field" id="kps_authorFacebook" name="kps_authorFacebook" value="' . $setAuthorFacebook . '" placeholder="' . esc_html__('https://facebook.com/[Login-Name][.xyz]', 'kps') . '" size="245" maxlength="245" type="' . $html5TypUrl . '"></div>
                                     </div>
                         ';
@@ -794,7 +802,6 @@ function kps_frontend_form($shortCodeValues)
         {
             $output .= $formCheckboxAGBDSGVO;
         }
-
             $output .= '
                                     <div class="kps-br"></div>
                                     <div class="kps-divTableRow">
@@ -823,6 +830,8 @@ function kps_frontend_form($shortCodeValues)
                                 <li>' . esc_html__('All contact details, except those that may be publicly accessible in the user profile, are not published, but can only be accessed!', 'kps') . '</li>
                                 <li>' . esc_html__('It could be that the entry only becomes visible after we have approved it!', 'kps') . '</li>
                                 <li>' . esc_html__('We reserve the right to edit, delete or not publish entries!', 'kps') . '</li>
+                                <li>' . sprintf(esc_html__('Your entry is visible for a maximum of %d days.', 'kps'), get_option('kps_deleteEntryTime', false) / 24 / 60 / 60) . '</li>
+                                <li>' . sprintf(esc_html__('Entries that have not been activated are automatically deleted after %d days.', 'kps'), get_option('kps_deleteNoEntryTime', false) / 24 / 60 / 60) . '</li>
                             </ul>
                         </div>
                         </form>';

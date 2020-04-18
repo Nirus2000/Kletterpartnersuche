@@ -1,7 +1,7 @@
 <?php
 /**
  * @author        Alexander Ott
- * @copyright     2018-2019
+ * @copyright     2018-2020
  * @email         kps@nirus-online.de
  *
  * All rights reserved
@@ -498,12 +498,32 @@ class kps_entry_read
                     $pic    = "travel.svg";
                 break;
                 case '3':
-                    $alt    = kps_getFormTranslation('Walking/Trekking');
+                    $alt    = kps_getFormTranslation('Walking');
                     $pic    = "trekking.svg";
                 break;
+                case '4':
+                    $alt    = kps_getFormTranslation('Alpine tours');
+                    $pic    = "alpine.svg";
+                break;
+                case '5':
+                    $alt    = kps_getFormTranslation('Kayak');
+                    $pic    = "kayak.svg";
+                break;
+                case '6':
+                    $alt    = kps_getFormTranslation('Ferratas');
+                    $pic    = "ferratas.svg";
+                break;
+                case '7':
+                    $alt    = kps_getFormTranslation('Mountain bike');
+                    $pic    = "mountainbike.svg";
+                break;
+                case '8':
+                    $alt    = kps_getFormTranslation('Winter sports');
+                    $pic    = "wintersports.svg";
+                break;
                 default:
-                    $alt    = '';
-                    $pic    = '';
+                    $alt    = kps_getFormTranslation('Unknown');;
+                    $pic    = "unknown.svg";
             }
 
             $this->_authorSearchfor_raw     = $alt;
@@ -530,8 +550,8 @@ class kps_entry_read
                     $pic    = "moretime.svg";
                 break;
                 default:
-                    $alt    = '';
-                    $pic    = '';
+                    $alt    = kps_getFormTranslation('Unknown');;
+                    $pic    = "unknown.svg";
             }
 
             $this->_authorRule_raw      = $alt;
@@ -562,8 +582,8 @@ class kps_entry_read
                     $pic    = "comeclub.svg";
                 break;
                 default:
-                    $alt    = '';
-                    $pic    = '';
+                    $alt    = kps_getFormTranslation('Unknown');;
+                    $pic    = "unknown.svg";
             }
 
             $this->_yourRule_raw    = $alt;

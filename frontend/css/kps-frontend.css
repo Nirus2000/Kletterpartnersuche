@@ -2,7 +2,7 @@
  * Stylesheet CSS
  *
  * @author 		Alexander Ott
- * @copyright 	2018-2019
+ * @copyright 	2018-2020
  * @email 		kps@nirus-online.de
  *
  * All rights reserved
@@ -336,6 +336,24 @@
 }
 
 #kps .form_field {
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border: 1px solid #3C3C3C;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    vertical-align: middle;
+    color: rgba(55, 75, 108, 1);
+    letter-spacing: 1px;
+    padding: 3px 3px 3px 3px;
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+    font-size: 90%;
+}
+
+#kps .dropdown {
     display: inline-block;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;

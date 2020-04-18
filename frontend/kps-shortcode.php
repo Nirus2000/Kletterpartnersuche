@@ -1,7 +1,7 @@
 <?php
 /**
  * @author        Alexander Ott
- * @copyright     2018-2019
+ * @copyright     2018-2020
  * @email         kps@nirus-online.de
  *
  * All rights reserved
@@ -124,7 +124,7 @@ function get_kps($atts)
     }
     elseif (isset($kps_data) && $kps_data > '0' )
     {
-        // Anforderungs-ID
+        // Verifizierngs-ID
         $output .= kps_verifyId($kps_data);
     }
     elseif (isset($kps_require) && $kps_require > '0' )
@@ -134,18 +134,18 @@ function get_kps($atts)
     }
     elseif (isset($kps_report) && $kps_report > '0' )
     {
-        // Anforderungs-ID
+        // Meldungs-ID
         $output .= kps_report($kps_report);
     }
     else
     {
-        if ($shortCodeValues['button-write'] === "true")
+        if ($shortCodeValues['button-write'] === 'true')
         {
             // Hole Formular
             $output .= kps_frontend_form($shortCodeValues);
         }
 
-        if ($shortCodeValues['show-form-only'] === "false")
+        if ($shortCodeValues['show-form-only'] === 'false')
         {
             // Hole Einträge
             $output .= kps_frontend_entries($kps_paged);
