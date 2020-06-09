@@ -546,7 +546,7 @@ function kps_frontend_form($shortCodeValues)
                                         <div class="kps-divTableCell kps-nobr">
                                             <div class="kps-option ' . $errorAuthorSearchfor . '">
                                                 <select id="kps_authorSearchfor" name="kps_authorSearchfor" class="dropdown" required>
-                                                    <option label=" " value=" " disabled selected>' . esc_html__('Please choose', 'kps') . '</option>
+                                                    <option value=" " disabled selected>' . esc_html__('Please choose', 'kps') . '</option>
                     ';
 
         // Dropdown Auswahl
