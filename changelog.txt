@@ -1,3 +1,11 @@
+= v. 2.4.2 =
+*[13.07.2020]*
+* Fix: Activation-Link
+
+= v. 2.4.1 =
+*[09.06.2020]*
+* Fix: DropDown menu "Please Choose" in form
+
 = v. 2.4.0 =
 *[15.11.2019]*
 * Upd: Translation de_DE

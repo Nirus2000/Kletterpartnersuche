@@ -439,6 +439,12 @@ function kps_upgrade()
         add_option('kps_translations', '');                          // Übersetzungen
     }
 
+    if (version_compare($current_version, '2.4.2', '<'))
+    {
+        // Lösche Option Emailsettings
+        delete_option('kps_authorMailSettings');
+    }
+
     // Version updaten
     update_option('kps_version', KPS_VER);
 }

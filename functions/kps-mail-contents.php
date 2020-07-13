@@ -99,7 +99,7 @@ our database.
 
 Activate entry:
 *******************
-%linkaactivation%
+%linkactivation%
 
 Delete entry:
 *******************
