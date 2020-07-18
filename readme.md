@@ -1,12 +1,20 @@
 # Kletterpartner-Suche
 > Contributors: Nirus
+
 > Tags: Klettern, Climb, Wandern, Walking, Trekking, Climbing, Climb, Walking, Tekking, Hiking, Kletterpartner, Wanderpartner
+
 > Requires at least: 4.9.8
+
 > Tested up to: 5.4.2
+
 > Requires PHP: 5.2.4
+
 > Stable tag: 2.4.2
+
 > License: GPL Version 3 or later
+
 > License URI: https://www.gnu.org/licenses/gpl-3.0.html
+
 
 The "Climbing-Partner-Search" connects climbing, hiking, tracking and sports fans.
 
