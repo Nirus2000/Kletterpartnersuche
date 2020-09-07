@@ -2,7 +2,7 @@
 Contributors: Nirus
 Tags: Klettern, Climb, Wandern, Walking, Trekking, Climbing, Climb, Walking, Tekking, Hiking, Kletterpartner, Wanderpartner
 Requires at least: 4.9.8
-Tested up to: 5.4.2
+Tested up to: 5.5.1
 Requires PHP: 5.2.4
 Stable tag: 2.4.2
 License: GPL Version 3 or later

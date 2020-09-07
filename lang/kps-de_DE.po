@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kletterpartner-Suche\n"
-"POT-Creation-Date: 2020-07-13 16:27+0200\n"
-"PO-Revision-Date: 2020-07-13 16:32+0200\n"
+"POT-Creation-Date: 2020-07-19 08:58+0200\n"
+"PO-Revision-Date: 2020-07-19 08:58+0200\n"
 "Last-Translator: Alexander Ott <kps@nirus-online.de>\n"
 "Language-Team: Alexander Ott\n"
 "Language: de_DE\n"
@@ -820,7 +820,7 @@ msgid "Automatic-Lock enable"
 msgstr "Automatische Sperren aktivieren"
 
 #: admin/kps-settings.php:471
-msgid "At least two \"I Search for\" options must be selected"
+msgid "At least two \"I search for\" options must be selected"
 msgstr ""
 "Es müssen mindestens zwei \"Ich suche nach\" Optionen ausgewählt werden"
 

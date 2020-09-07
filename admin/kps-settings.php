@@ -468,7 +468,7 @@ function kps_Optionfields()
                     {
                         echo '
                         <div class="notice notice-error is-dismissible">
-                        	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('At least two "I Search for" options must be selected', 'kps') . '</strong></p>
+                        	<p><strong>' . esc_html__('Error!', 'kps') . '&#160;' . esc_html__('At least two "I search for" options must be selected', 'kps') . '</strong></p>
                         	<button type="button" class="notice-dismiss">
                         		<span class="screen-reader-text">Dismiss this notice.</span>
                         	</button>
