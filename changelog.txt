@@ -1,3 +1,7 @@
+= v. 2.4.3 =
+*[24.11.2020]*
+* Fix: Toggle in Adminpanel
+
 = v. 2.4.2 =
 *[13.07.2020]*
 * Fix: Activation-Link

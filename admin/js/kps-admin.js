@@ -89,17 +89,18 @@ jQuery(document)
 /*
  * Metabox Post-Container Toggeln ( hide / show)
  */
-jQuery(document)
-    .ready(function ($) {
-        "use strict";
-        jQuery('.kps .postbox button.handlediv')
-            .click(function () {
-                jQuery(jQuery(this)
-                        .parent()
-                        .get(0))
-                    .toggleClass('closed');
-            });
-    });
+jQuery(document).ready(function($) {
+	jQuery('.kps .postbox button.handlediv').click( function() {
+		jQuery(this).closest('.postbox').toggleClass('closed');
+	});
+});
+
+jQuery(document).ready(function($) {
+	jQuery('.kps .postbox h2').click( function() {
+		jQuery(this).closest('.postbox').toggleClass('closed');
+	});
+});
+
 
 /*
  * Toggeln ( hide / show)

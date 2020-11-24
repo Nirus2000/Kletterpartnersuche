@@ -2,9 +2,9 @@
 Contributors: Nirus
 Tags: Klettern, Climb, Wandern, Walking, Trekking, Climbing, Climb, Walking, Tekking, Hiking, Kletterpartner, Wanderpartner
 Requires at least: 4.9.8
-Tested up to: 5.5.1
+Tested up to: 5.5.3
 Requires PHP: 5.2.4
-Stable tag: 2.4.2
+Stable tag: 2.4.3
 License: GPL Version 3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -115,6 +115,10 @@ The "Climbing-Partner-Search" connects climbing, hiking, tracking and sports fan
 Bugfix and extension of the plugin...
 
 ## Changelog
+= v. 2.4.3 =
+*[24.11.2020]*
+* Fix: Toggle in Adminpanel
+
 = v. 2.4.2 =
 *[13.07.2020]*
 * Fix: Activation-Link
