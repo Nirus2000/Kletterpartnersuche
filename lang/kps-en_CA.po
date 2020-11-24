@@ -3,15 +3,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kletterpartner-Suche\n"
-"POT-Creation-Date: 2020-09-07 14:10+0200\n"
-"PO-Revision-Date: 2020-09-07 14:11+0200\n"
+"POT-Creation-Date: 2020-11-24 15:35+0100\n"
+"PO-Revision-Date: 2020-11-24 15:37+0100\n"
 "Last-Translator: Alexander Ott <kps@nirus-online.de>\n"
 "Language-Team: Alexander Ott\n"
 "Language: en_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -865,8 +865,8 @@ msgid "Skype"
 msgstr "Skype"
 
 #: admin/kps-settings.php:643 frontend/kps-form.php:736
-msgid "Whatsapp"
-msgstr "Whatsapp"
+msgid "WhatsApp"
+msgstr "WhatsApp"
 
 #: admin/kps-settings.php:649 frontend/kps-form.php:670
 msgid "Hoccer"
@@ -1899,8 +1899,8 @@ msgid "Threema-Messenger"
 msgstr "Threema-Messenger"
 
 #: functions/kps-functions.php:266
-msgid "Whatsapp-Messenger"
-msgstr "Whatsapp-Messenger"
+msgid "WhatsApp-Messenger"
+msgstr "WhatsApp-Messenger"
 
 #: functions/kps-functions.php:270
 msgid "Hoccer-Messenger"
