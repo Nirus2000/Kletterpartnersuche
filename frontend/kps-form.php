@@ -1,7 +1,7 @@
 <?php
 /**
  * @author        Alexander Ott
- * @copyright     2018-2020
+ * @copyright     2018-2021
  * @email         kps@nirus-online.de
  *
  * All rights reserved
@@ -733,7 +733,7 @@ function kps_frontend_form($shortCodeValues)
         {
             $output .= '
                                     <div class="kps-divTableRow">
-                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorWhatsapp"><i class="fab fa-whatsapp"></i>&#160;' . esc_html__('Whatsapp', 'kps') . '</label></div>
+                                        <div class="kps-divTableCell kps-nobr"><label for="kps_authorWhatsapp"><i class="fab fa-whatsapp"></i>&#160;' . esc_html__('WhatsApp', 'kps') . '</label></div>
                                         <div class="kps-divTableCell"><input class="form_field" id="kps_authorWhatsapp" name="kps_authorWhatsapp" value="' . $setAuthorWhatsapp . '" placeholder="' . esc_html__('0170/123456', 'kps') . '" size="60" maxlength="60" type="' . $html5TypTele . '"></div>
                                     </div>
                         ';

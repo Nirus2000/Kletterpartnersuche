@@ -1,7 +1,7 @@
 <?php
 /**
  * @author        Alexander Ott
- * @copyright     2018-2020
+ * @copyright     2018-2021
  * @email         kps@nirus-online.de
  *
  * All rights reserved
@@ -640,7 +640,7 @@ function kps_Optionfields()
                             <td width="25"><input type="checkbox" name="kpsFormOptionSkype" id="kpsFormOptionSkype" value="1" ' . $kpsFormOptionSkype . ' /></td>
                             <td width="25%"><label class="labelCheckbox" for="kpsFormOptionSkype"><i class="fab fa-skype"></i>&#160;' . esc_html__('Skype', 'kps') . '</label></td>
                             <td width="25"><input type="checkbox" name="kpsFormOptionWhatsapp" id="kpsFormOptionWhatsapp" value="1" ' . $kpsFormOptionWhatsapp . ' /></td>
-                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionWhatsapp"><i class="fab fa-whatsapp"></i>&#160;' . esc_html__('Whatsapp', 'kps') . '</label></td>
+                            <td width="25%"><label class="labelCheckbox" for="kpsFormOptionWhatsapp"><i class="fab fa-whatsapp"></i>&#160;' . esc_html__('WhatsApp', 'kps') . '</label></td>
                             <td width="25"></td>
                             <td width="25%"></td>
                         </tr>

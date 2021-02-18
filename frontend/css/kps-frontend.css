@@ -2,7 +2,7 @@
  * Stylesheet CSS
  *
  * @author 		Alexander Ott
- * @copyright 	2018-2020
+ * @copyright 	2018-2021
  * @email 		kps@nirus-online.de
  *
  * All rights reserved
@@ -63,7 +63,6 @@
 	margin: 20px 0 10px;
 }
 
-
 #kps button.kps-closeFrom {
 	position: absolute;
 	top: 0;
@@ -92,8 +91,6 @@
 	text-align: center;
     font-weight: 900;
 }
-
-
 
 /* ====== Formular Eintrag schreiben ======  */
 #kps form#kps-new-entry {
@@ -168,7 +165,6 @@
 .kps-widget--divTableBody {
 	display: table-row-group;
 }
-
 
 /* ====== Tabellen ======  */
 .kps-divTable{

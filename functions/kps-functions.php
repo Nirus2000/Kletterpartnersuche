@@ -1,7 +1,7 @@
 <?php
 /**
  * @author        Alexander Ott
- * @copyright     2018-2020
+ * @copyright     2018-2021
  * @email         kps@nirus-online.de
  *
  * All rights reserved
@@ -263,7 +263,7 @@ if (!function_exists('kps_contact_informations'))
                 }
                 elseif( $key == 'authorWhatsapp')
                 {
-                    $data .= esc_html__('Whatsapp-Messenger', 'kps') . ": " . $value . " \r\n";
+                    $data .= esc_html__('WhatsApp-Messenger', 'kps') . ": " . $value . " \r\n";
                 }
                 elseif( $key == 'authorHoccer')
                 {

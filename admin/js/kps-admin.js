@@ -2,7 +2,7 @@
  * JavaScript für KPS
  *
  * @author 		Alexander Ott
- * @copyright 	2018-2020
+ * @copyright 	2018-2021
  * @email 		kps@nirus-online.de
  *
  * All rights reserved
