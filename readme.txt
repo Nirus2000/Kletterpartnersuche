@@ -114,6 +114,11 @@ The "Climbing-Partner-Search" connects climbing, hiking, tracking and sports fan
 Bugfix and extension of the plugin...
 
 == Changelog ==
+= v. 2.4.4 =
+*[18.02.2021]*
+* Fix: ReadMe.md
+* Fix: Some translations
+
 = v. 2.4.3 =
 *[24.11.2020]*
 * Fix: Toggle in Adminpanel
